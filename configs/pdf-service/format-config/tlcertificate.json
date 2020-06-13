@@ -440,8 +440,8 @@
             },
             "receipt-logo-header": {
               "color": "#000000",
-              "fontSize": 20,
-              "letterSpacing": 0.74,
+              "fontSize": 18,
+              "letterSpacing": 0.70,
               "alignment": "center",
               "margin": [
                 0,
@@ -506,7 +506,7 @@
               "margin": [
                 50,
                 30,
-                -64,
+                -70,
                 0
               ]
             },
