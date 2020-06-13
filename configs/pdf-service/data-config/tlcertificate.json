@@ -81,17 +81,6 @@
              }
           },
               {
-                  "variable": "accessories",
-                  "value": {
-                    "path": "$.tradeLicenseDetail.accessories[0].accessoryCategory"
-                  },
-                  "localisation":{
-                    "required":true,
-                    "prefix": "TL",
-                    "module": "rainmaker-tl"
-                 }
-              },
-              {
                   "variable": "licenseIssueDate",
                   "value": {
                     "path": "$.issuedDate"
@@ -284,18 +273,6 @@
                   "variable": "trade_type",
                   "value": {
                     "path": "PDF_STATIC_LABEL_CONSOLIDATED_TLCERTIFICATE_TRADE_TYPE"
-                  },
-                  "type": "label",
-                  "localisation":{
-                    "required":true,
-                    "prefix": null,
-                    "module":"rainmaker-common"
-                 }
-              },
-              {
-                  "variable": "accessories_label",
-                  "value": {
-                    "path": "PDF_STATIC_LABEL_CONSOLIDATED_TLCERTIFICATE_ACCESSORIES_LABEL"
                   },
                   "type": "label",
                   "localisation":{

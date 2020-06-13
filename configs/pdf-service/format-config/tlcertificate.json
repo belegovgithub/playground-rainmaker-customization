@@ -313,28 +313,6 @@
                                "style":"noc-head",
                                "table":{
                                  "widths":[
-                                   "35%",
-                                   "65%"
-                                 ],
-                                 "body":[
-                                     [
-                                         {
-                                             "text":"{{accessories_label}}",
-                                             "style":"receipt-sub-logo-sub-header"
-                                         },
-                                         {
-                                             "text":"{{accessories}}",
-                                             "style":"receipt-sub-logo-sub-header"
-                                         }
-                                    ]
-                                 ]
-                               },
-                               "layout":"noBorders"
-                         },
-                         {
-                               "style":"noc-head",
-                               "table":{
-                                 "widths":[
                                   "35%",
                                    "65%"
                                  ],
@@ -528,7 +506,7 @@
               "margin": [
                 50,
                 30,
-                -120,
+                -64,
                 0
               ]
             },
@@ -540,7 +518,7 @@
               "margin": [
                 50,
                 30,
-                -110,
+                -120,
                 0
               ]
             }
