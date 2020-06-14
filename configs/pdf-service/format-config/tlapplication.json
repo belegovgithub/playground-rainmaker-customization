@@ -1115,20 +1115,30 @@
                       "1%"
                        ],
                      "body": [ 
-                          
-                      [
-                        {
-                          "text":"{{ownership_proof}}",
-                          "border":[
-                            false,
-                            false,
-                            false,
-                            false
-                          ],
-                           "style": "receipt-table-value-cont"
-                        },  
-                        {
-                          "text":"{{owners_id_proof}}",
+                          [
+                         {
+                           "text":"{{ownership_proof}}",
+                           "border":[
+                             false,
+                             false,
+                             false,
+                             false
+                           ],
+                            "style": "receipt-table-value-cont"
+                         },  
+                         {
+                           "text":"{{owners_id_proof}}",
+                           "border":[
+                             false,
+                             false,
+                             false,
+                             false
+                           ],
+                            "style": "receipt-table-value-cont",
+                            "fontSize": 11
+                         },
+                         {
+                          "text":"{{owner_photo}}",
                           "border":[
                             false,
                             false,
@@ -1137,122 +1147,32 @@
                           ],
                            "style": "receipt-table-value-cont",
                            "fontSize": 11
-                        },
-                        {
-                         "text":"{{owner_photo}}",
-                         "border":[
-                           false,
-                           false,
-                           false,
-                           false
-                         ],
-                          "style": "receipt-table-value-cont",
-                          "fontSize": 11
-                       }  ,
-                        {
-                         "text":"{{aadhar_card}}",
-                         "border":[
-                           false,
-                           false,
-                           false,
-                           false
-                         ],
-                          "style": "receipt-table-value-cont",
-                          "fontSize": 11
-                       }  ,
-                        {
-                         "text":"{{pan_card}}",
-                         "border":[
-                           false,
-                           false,
-                           false,
-                           false
-                         ],
-                          "style": "receipt-table-value-cont",
-                          "fontSize": 11
-                       }  ,
-                        {
-                         "text":"{{regt_cert}}",
-                         "border":[
-                           false,
-                           false,
-                           false,
-                           false
-                         ],
-                          "style": "receipt-table-value-cont",
-                          "fontSize": 11
-                       }  ,
-                        {
-                         "text":"{{ptax_receipt}}",
-                         "border":[
-                           false,
-                           false,
-                           false,
-                           false
-                         ],
-                          "style": "receipt-table-value-cont",
-                          "fontSize": 11
-                       }  ,
-                        {
-                         "text":"{{blue_print}}",
-                         "border":[
-                           false,
-                           false,
-                           false,
-                           false
-                         ],
-                          "style": "receipt-table-value-cont",
-                          "fontSize": 11
-                       }  ,
-                        {
-                         "text":"{{noc_neighbour1}}",
-                         "border":[
-                           false,
-                           false,
-                           false,
-                           false
-                         ],
-                          "style": "receipt-table-value-cont",
-                          "fontSize": 11
-                       }  ,
-                        {
-                         "text":"{{noc_neighbour2}}",
-                         "border":[
-                           false,
-                           false,
-                           false,
-                           false
-                         ],
-                          "style": "receipt-table-value-cont",
-                          "fontSize": 11
-                       }  ,
-                        {
-                         "text":"{{plan_cert}}",
-                         "border":[
-                           false,
-                           false,
-                           false,
-                           false
-                         ],
-                          "style": "receipt-table-value-cont",
-                          "fontSize": 11
-                       } ,
-                        {
-                         "text":"{{building_photo}}",
-                         "border":[
-                           false,
-                           false,
-                           false,
-                           false
-                         ],
-                          "style": "receipt-table-value-cont",
-                          "fontSize": 11
-                       }  
-                        
-                      ],
-                      [
-                        {
-                          "text":"{{ownershipProof}}",
+                        }  
+                         
+                       ],
+                       [
+                         {
+                           "text":"{{ownershipProof}}",
+                           "border":[
+                             false,
+                             false,
+                             false,
+                             false
+                           ],
+                            "style": "receipt-table2"
+                         },  
+                         {
+                           "text":"{{ownersIdProof}}",
+                           "border":[
+                             false,
+                             false,
+                             false,
+                             false
+                           ],
+                            "style": "receipt-table2"
+                         },
+                         {
+                          "text":"{{ownerPhoto}}",
                           "border":[
                             false,
                             false,
@@ -1260,118 +1180,8 @@
                             false
                           ],
                            "style": "receipt-table2"
-                        },  
-                        {
-                          "text":"{{ownersIdProof}}",
-                          "border":[
-                            false,
-                            false,
-                            false,
-                            false
-                          ],
-                           "style": "receipt-table2"
-                        },
-                        {
-                         "text":"{{ownerPhoto}}",
-                         "border":[
-                           false,
-                           false,
-                           false,
-                           false
-                         ],
-                          "style": "receipt-table2"
-                       },
-                        {
-                         "text":"{{aadharCard}}",
-                         "border":[
-                           false,
-                           false,
-                           false,
-                           false
-                         ],
-                          "style": "receipt-table2"
-                       } ,
-                        {
-                         "text":"{{panCard}}",
-                         "border":[
-                           false,
-                           false,
-                           false,
-                           false
-                         ],
-                          "style": "receipt-table2"
-                       } ,
-                        {
-                         "text":"{{regtCert}}",
-                         "border":[
-                           false,
-                           false,
-                           false,
-                           false
-                         ],
-                          "style": "receipt-table2"
-                       } ,
-                        {
-                         "text":"{{ptaxReceipt}}",
-                         "border":[
-                           false,
-                           false,
-                           false,
-                           false
-                         ],
-                          "style": "receipt-table2"
-                       } ,
-                        {
-                         "text":"{{bluePrint}}",
-                         "border":[
-                           false,
-                           false,
-                           false,
-                           false
-                         ],
-                          "style": "receipt-table2"
-                       } ,
-                        {
-                         "text":"{{nocNeighbour1}}",
-                         "border":[
-                           false,
-                           false,
-                           false,
-                           false
-                         ],
-                          "style": "receipt-table2"
-                       } ,
-                        {
-                         "text":"{{nocNeighbour2}}",
-                         "border":[
-                           false,
-                           false,
-                           false,
-                           false
-                         ],
-                          "style": "receipt-table2"
-                       } ,
-                        {
-                         "text":"{{planCert}}",
-                         "border":[
-                           false,
-                           false,
-                           false,
-                           false
-                         ],
-                          "style": "receipt-table2"
-                       } ,
-                        {
-                         "text":"{{buildingPhoto}}",
-                         "border":[
-                           false,
-                           false,
-                           false,
-                           false
-                         ],
-                          "style": "receipt-table2"
-                       }   
-                      ]
+                        }  
+                       ]
                           ]
                  },
                  "border":[
