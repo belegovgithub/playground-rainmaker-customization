@@ -587,6 +587,39 @@
                [
                   {
                      "table": {
+                      "widths":["*", "*", "*", "*"],
+                       "body": ["{{#variable14}}[{\"text\":\"{{accesory_type}}\", \"border\":[ false, false, false, false ], \"style\": \"receipt-table-value-cont\" },{ \"text\":\"{{uom_label}}\",\"border\":[ false, false, false, false ], \"style\": \"receipt-table-value-cont\", \"fontSize\": 11 }, { \"text\":\"{{uom_value}}\", \"border\":[ false, false, false, false ], \"style\": \"receipt-table-value-cont\" }, { \"text\":\"{{accessory_count}}\", \"border\":[ false, false, false, false ], \"style\": \"receipt-table-value-cont\" } ], [ { \"text\":\"{{accesoryType}}\", \"border\":[ false, false, false, false ], \"style\": \"receipt-table2\" }, { \"text\":\"{{uom}}\", \"border\":[ false, false, false, false ], \"style\": \"receipt-table2\" }, { \"text\":\"{{accessoryUomValue}}\", \"border\":[ false, false, false, false ], \"style\": \"receipt-table2\" }, { \"text\":\"{{accessoryCount}}\", \"border\":[ false, false, false, false ], \"style\": \"receipt-table2\" } ]{{/variable14}}" ]
+                      },
+                       "border":[
+                     true,
+                     false,
+                     true,
+                     false
+                   ]
+                }
+                
+               ],
+               [
+                  {
+                     "canvas": [
+                                 {
+                                     "type": "line",
+                                     "x1": 5, "y1": 0,
+                                     "x2": 550, "y2": 0,
+                                     "lineWidth": 1
+                                 }
+                             ],
+                          "border":[
+                             true,
+                             false,
+                             true,
+                             false
+                           ]
+                  }   
+                ],
+               [
+                  {
+                     "table": {
                       "widths": [
                       "25%",
                       "25%",
