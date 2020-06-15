@@ -1109,10 +1109,10 @@
                   {
                      "table": {
                       "widths": [
-                      "33%",
-                      "33%",
-                      "33%",
-                      "1%"
+                      "25%",
+                      "25%",
+                      "25%",
+                      "25%"
                        ],
                      "body": [ 
                           [
@@ -1147,7 +1147,18 @@
                           ],
                            "style": "receipt-table-value-cont",
                            "fontSize": 11
-                        }  
+                        },
+                        {
+                          "text":"{{aadhar_card}}",
+                          "border":[
+                            false,
+                            false,
+                            false,
+                            false
+                          ],
+                           "style": "receipt-table-value-cont",
+                           "fontSize": 11
+                        }    
                          
                        ],
                        [
@@ -1180,7 +1191,17 @@
                             false
                           ],
                            "style": "receipt-table2"
-                        }  
+                        },
+                        {
+                          "text":"{{aadharCard}}",
+                          "border":[
+                            false,
+                            false,
+                            false,
+                            false
+                          ],
+                           "style": "receipt-table2"
+                        }    
                        ]
                           ]
                  },
@@ -1192,7 +1213,7 @@
                    ]
                 }
                 
-                   ]
+              ]
               ],
               "unbreakable": true
            },

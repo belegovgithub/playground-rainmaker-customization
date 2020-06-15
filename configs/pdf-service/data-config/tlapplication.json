@@ -218,6 +218,11 @@
             "value": {
               "path": "$.additionalDetails.documents[?(@.title == 'TL_OWNERPHOTO')].name"
             }
+        }, {
+          "variable": "ownerPhoto",
+          "value": {
+            "path": "$.additionalDetails.documents[?(@.title == 'TL_AADHARCARD')].name"
+          }
         },
               {
                   "variable": "electricityConnectionNo",
@@ -938,7 +943,18 @@
                   "prefix": null,
                   "module":"rainmaker-common"
                }
-            },
+            },{
+              "variable": "aadhar_card",
+              "value": {
+                "path": "PDF_STATIC_LABEL_CONSOLIDATED_TLAPP_AADHARCARD"
+              },
+              "type": "label",
+              "localisation":{
+                "required":true,
+                "prefix": null,
+                "module":"rainmaker-common"
+             }
+          },
               {
                 "variable": "variable13",                        
                 "value":{
