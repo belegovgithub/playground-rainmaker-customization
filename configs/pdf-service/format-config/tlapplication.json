@@ -1290,7 +1290,8 @@
                          ],
                           "style": "receipt-table2"
                        }    
-                      ],[
+                      ],
+                      [
                         {
                           "text":"{{noc_neighbour2}}",
                           "border":[
@@ -1300,39 +1301,7 @@
                             false
                           ],
                            "style": "receipt-table-value-cont"
-                        },  
-                        {
-                          "text":"{{plan_cert}}",
-                          "border":[
-                            false,
-                            false,
-                            false,
-                            false
-                          ],
-                           "style": "receipt-table-value-cont",
-                           "fontSize": 11
-                        },
-                        {
-                         "text":"{{building_photo}}",
-                         "border":[
-                           false,
-                           false,
-                           false,
-                           false
-                         ],
-                          "style": "receipt-table-value-cont",
-                          "fontSize": 11
-                       } ,{
-                        "text":"SampleDoc",
-                        "border":[
-                          false,
-                          false,
-                          false,
-                          false
-                        ],
-                         "style": "receipt-table-value-cont",
-                         "fontSize": 11
-                      }  
+                        }
                       ],
                       [
                         {
@@ -1344,36 +1313,7 @@
                             false
                           ],
                            "style": "receipt-table2"
-                        },  
-                        {
-                          "text":"{{planCert}}",
-                          "border":[
-                            false,
-                            false,
-                            false,
-                            false
-                          ],
-                           "style": "receipt-table2"
-                        },
-                        {
-                         "text":"{{buildingPhoto}}",
-                         "border":[
-                           false,
-                           false,
-                           false,
-                           false
-                         ],
-                          "style": "receipt-table2"
-                       },{
-                        "text":"SampleDoc.png",
-                        "border":[
-                          false,
-                          false,
-                          false,
-                          false
-                        ],
-                         "style": "receipt-table2"
-                      }    
+                        } 
                       ] 
                     ]
                  },
