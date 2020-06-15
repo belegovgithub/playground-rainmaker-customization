@@ -1293,7 +1293,7 @@
                       ],
                       [
                         {
-                          "text":"{{application_type}}",
+                          "text":"{{noc_neighbour2}}",
                           "border":[
                             false,
                             false,
@@ -1303,7 +1303,7 @@
                            "style": "receipt-table-value-cont"
                         },  
                         {
-                          "text":"{{old_application_number}}",
+                          "text":"{{plan_cert}}",
                           "border":[
                             false,
                             false,
@@ -1312,21 +1312,34 @@
                           ],
                            "style": "receipt-table-value-cont",
                            "fontSize": 11
-                        },  
+                        },
                         {
-                          "text":"{{licence_type}}",
-                          "border":[
-                            false,
-                            false,
-                            false,
-                            false
-                          ],
-                           "style": "receipt-table-value-cont"
-                        }
+                         "text":"{{building_photo}}",
+                         "border":[
+                           false,
+                           false,
+                           false,
+                           false
+                         ],
+                          "style": "receipt-table-value-cont",
+                          "fontSize": 11
+                       },
+                       {
+                         "text":" ",
+                         "border":[
+                           false,
+                           false,
+                           false,
+                           false
+                         ],
+                          "style": "receipt-table-value-cont",
+                          "fontSize": 11
+                       }    
+                        
                       ],
                       [
                         {
-                          "text":"{{applicationType}}",
+                          "text":"{{nocNeighbour2}}",
                           "border":[
                             false,
                             false,
@@ -1336,7 +1349,7 @@
                            "style": "receipt-table2"
                         },  
                         {
-                          "text":"{{oldLicenseNumber}}",
+                          "text":"{{planCert}}",
                           "border":[
                             false,
                             false,
@@ -1344,19 +1357,28 @@
                             false
                           ],
                            "style": "receipt-table2"
-                        },  
+                        },
                         {
-                          "text":"{{licenseType}}",
-                          "border":[
-                            false,
-                            false,
-                            false,
-                            false
-                          ],
-                           "style": "receipt-table2"
-                        }
-                         
-                      ] 
+                         "text":"{{buildingPhoto}}",
+                         "border":[
+                           false,
+                           false,
+                           false,
+                           false
+                         ],
+                          "style": "receipt-table2"
+                       },
+                       {
+                         "text":" ",
+                         "border":[
+                           false,
+                           false,
+                           false,
+                           false
+                         ],
+                          "style": "receipt-table2"
+                       }    
+                      ]
                     ]
                  },
                  "border":[
