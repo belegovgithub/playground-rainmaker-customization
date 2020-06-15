@@ -1323,7 +1323,7 @@
                           "style": "receipt-table-value-cont",
                           "fontSize": 11
                        } ,{
-                        "text":"",
+                        "text":"SampleDoc",
                         "border":[
                           false,
                           false,
@@ -1365,7 +1365,7 @@
                          ],
                           "style": "receipt-table2"
                        },{
-                        "text":"",
+                        "text":"SampleDoc.png",
                         "border":[
                           false,
                           false,
