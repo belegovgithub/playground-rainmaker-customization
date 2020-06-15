@@ -219,7 +219,7 @@
               "path": "$.additionalDetails.documents[?(@.title == 'TL_OWNERPHOTO')].name"
             }
         }, {
-          "variable": "ownerPhoto",
+          "variable": "aadharCard",
           "value": {
             "path": "$.additionalDetails.documents[?(@.title == 'TL_AADHARCARD')].name"
           }
