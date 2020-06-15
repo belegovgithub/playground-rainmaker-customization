@@ -1322,7 +1322,17 @@
                          ],
                           "style": "receipt-table-value-cont",
                           "fontSize": 11
-                       }  
+                       } ,{
+                        "text":"",
+                        "border":[
+                          false,
+                          false,
+                          false,
+                          false
+                        ],
+                         "style": "receipt-table-value-cont",
+                         "fontSize": 11
+                      }  
                       ],
                       [
                         {
@@ -1354,7 +1364,16 @@
                            false
                          ],
                           "style": "receipt-table2"
-                       }   
+                       },{
+                        "text":"",
+                        "border":[
+                          false,
+                          false,
+                          false,
+                          false
+                        ],
+                         "style": "receipt-table2"
+                      }    
                       ] 
                     ]
                  },
