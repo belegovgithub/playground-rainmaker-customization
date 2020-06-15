@@ -1290,30 +1290,6 @@
                          ],
                           "style": "receipt-table2"
                        }    
-                      ],
-                      [
-                        {
-                          "text":"{{noc_neighbour2}}",
-                          "border":[
-                            false,
-                            false,
-                            false,
-                            false
-                          ],
-                           "style": "receipt-table-value-cont"
-                        }
-                      ],
-                      [
-                        {
-                          "text":"{{nocNeighbour2}}",
-                          "border":[
-                            false,
-                            false,
-                            false,
-                            false
-                          ],
-                           "style": "receipt-table2"
-                        } 
                       ] 
                     ]
                  },
