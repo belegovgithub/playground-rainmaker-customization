@@ -1322,17 +1322,7 @@
                             false
                           ],
                            "style": "receipt-table-value-cont"
-                        },  
-                        {
-                          "text":"{{trade_name}}",
-                          "border":[
-                            false,
-                            false,
-                            false,
-                            false
-                          ],
-                          "style": "receipt-table-value-cont"
-                        }  
+                        }
                       ],
                       [
                         {
@@ -1364,17 +1354,8 @@
                             false
                           ],
                            "style": "receipt-table2"
-                        },  
-                        {
-                          "text":"{{tradeName}}",
-                          "border":[
-                            false,
-                            false,
-                            false,
-                            false
-                          ],
-                           "style": "receipt-table2"
-                        }  
+                        }
+                         
                       ] 
                     ]
                  },
