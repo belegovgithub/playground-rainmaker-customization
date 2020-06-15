@@ -243,21 +243,6 @@
           "value": {
             "path": "$.additionalDetails.documents[?(@.title == 'TL_NBNOC1')].name"
           }
-        },{  
-          "variable": "nocNeighbour2",
-          "value": {
-            "path": "$.additionalDetails.documents[?(@.title == 'TL_NBNOC2')].name"
-          }
-        },{  
-          "variable": "planCert",
-          "value": {
-            "path": "$.additionalDetails.documents[?(@.title == 'TL_PLANCERT')].name"
-          }
-        },{  
-          "variable": "buildingPhoto",
-          "value": {
-            "path": "$.additionalDetails.documents[?(@.title == 'TL_BULDPHOTO')].name"
-          }
         },
               {
                   "variable": "electricityConnectionNo",
@@ -1026,39 +1011,6 @@
               "variable": "noc_neighbour1",
               "value": {
                 "path": "PDF_STATIC_LABEL_CONSOLIDATED_TLAPP_NBNOC1"
-              },
-              "type": "label",
-              "localisation":{
-                "required":true,
-                "prefix": null,
-                "module":"rainmaker-common"
-             }
-            },{
-              "variable": "noc_neighbour2",
-              "value": {
-                "path": "PDF_STATIC_LABEL_CONSOLIDATED_TLAPP_NBNOC2"
-              },
-              "type": "label",
-              "localisation":{
-                "required":true,
-                "prefix": null,
-                "module":"rainmaker-common"
-             }
-            },{
-              "variable": "plan_cert",
-              "value": {
-                "path": "PDF_STATIC_LABEL_CONSOLIDATED_TLAPP_PLANCERT"
-              },
-              "type": "label",
-              "localisation":{
-                "required":true,
-                "prefix": null,
-                "module":"rainmaker-common"
-             }
-            },{
-              "variable": "building_photo",
-              "value": {
-                "path": "PDF_STATIC_LABEL_CONSOLIDATED_TLAPP_BULDPHOTO"
               },
               "type": "label",
               "localisation":{
