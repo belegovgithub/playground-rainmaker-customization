@@ -1290,6 +1290,91 @@
                          ],
                           "style": "receipt-table2"
                        }    
+                      ],
+                      [
+                        {
+                          "text":"{{application_type}}",
+                          "border":[
+                            false,
+                            false,
+                            false,
+                            false
+                          ],
+                           "style": "receipt-table-value-cont"
+                        },  
+                        {
+                          "text":"{{old_application_number}}",
+                          "border":[
+                            false,
+                            false,
+                            false,
+                            false
+                          ],
+                           "style": "receipt-table-value-cont",
+                           "fontSize": 11
+                        },  
+                        {
+                          "text":"{{licence_type}}",
+                          "border":[
+                            false,
+                            false,
+                            false,
+                            false
+                          ],
+                           "style": "receipt-table-value-cont"
+                        },  
+                        {
+                          "text":"{{trade_name}}",
+                          "border":[
+                            false,
+                            false,
+                            false,
+                            false
+                          ],
+                          "style": "receipt-table-value-cont"
+                        }  
+                      ],
+                      [
+                        {
+                          "text":"{{applicationType}}",
+                          "border":[
+                            false,
+                            false,
+                            false,
+                            false
+                          ],
+                           "style": "receipt-table2"
+                        },  
+                        {
+                          "text":"{{oldLicenseNumber}}",
+                          "border":[
+                            false,
+                            false,
+                            false,
+                            false
+                          ],
+                           "style": "receipt-table2"
+                        },  
+                        {
+                          "text":"{{licenseType}}",
+                          "border":[
+                            false,
+                            false,
+                            false,
+                            false
+                          ],
+                           "style": "receipt-table2"
+                        },  
+                        {
+                          "text":"{{tradeName}}",
+                          "border":[
+                            false,
+                            false,
+                            false,
+                            false
+                          ],
+                           "style": "receipt-table2"
+                        }  
                       ] 
                     ]
                  },
