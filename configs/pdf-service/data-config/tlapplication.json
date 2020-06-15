@@ -221,7 +221,7 @@
         }, {  
           "variable": "aadharCard",
           "value": {
-            "path": "$.additionalDetails.documents[?(@.title == 'TL_AADHARCARD')].name"
+            "path": "$.additionalDetails.documents[?(@.title == 'TL_AADHAARCARD')].name"
           }
         },{  
           "variable": "regtCert",
