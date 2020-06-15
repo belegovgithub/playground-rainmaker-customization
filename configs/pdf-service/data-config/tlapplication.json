@@ -208,9 +208,9 @@
                 }
             },
             {
-              "variable": "ownersIdProof",
+              "variable": "panCard",
               "value": {
-                "path": "$.additionalDetails.documents[?(@.title == 'TL_OWNERIDPROOF')].name"
+                "path": "$.additionalDetails.documents[?(@.title == 'TL_PANCARD')].name"
               }
           },
           {
@@ -956,9 +956,9 @@
                  }
               },
               {
-                  "variable": "owners_id_proof",
+                  "variable": "pan_card",
                   "value": {
-                    "path": "PDF_STATIC_LABEL_CONSOLIDATED_TLAPP_OWNERS_ID"
+                    "path": "PDF_STATIC_LABEL_CONSOLIDATED_TLAPP_PANCARD"
                   },
                   "type": "label",
                   "localisation":{

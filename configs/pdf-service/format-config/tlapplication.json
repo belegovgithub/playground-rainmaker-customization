@@ -1127,7 +1127,7 @@
                             "style": "receipt-table-value-cont"
                          },  
                          {
-                           "text":"{{owners_id_proof}}",
+                           "text":"{{pan_card}}",
                            "border":[
                              false,
                              false,
@@ -1173,7 +1173,7 @@
                             "style": "receipt-table2"
                          },  
                          {
-                           "text":"{{ownersIdProof}}",
+                           "text":"{{panCard}}",
                            "border":[
                              false,
                              false,
