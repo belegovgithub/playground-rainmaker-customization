@@ -218,10 +218,45 @@
             "value": {
               "path": "$.additionalDetails.documents[?(@.title == 'TL_OWNERPHOTO')].name"
             }
-        }, {
+        }, {  
           "variable": "aadharCard",
           "value": {
             "path": "$.additionalDetails.documents[?(@.title == 'TL_AADHARCARD')].name"
+          }
+        },{  
+          "variable": "regtCert",
+          "value": {
+            "path": "$.additionalDetails.documents[?(@.title == 'TL_REGCERT')].name"
+          }
+        },{  
+          "variable": "ptaxReceipt",
+          "value": {
+            "path": "$.additionalDetails.documents[?(@.title == 'TL_PTAX')].name"
+          }
+        },{  
+          "variable": "bluePrint",
+          "value": {
+            "path": "$.additionalDetails.documents[?(@.title == 'TL_BLUPRNT')].name"
+          }
+        },{  
+          "variable": "nocNeighbour1",
+          "value": {
+            "path": "$.additionalDetails.documents[?(@.title == 'TL_NBNOC1')].name"
+          }
+        },{  
+          "variable": "nocNeighbour2",
+          "value": {
+            "path": "$.additionalDetails.documents[?(@.title == 'TL_NBNOC2')].name"
+          }
+        },{  
+          "variable": "planCert",
+          "value": {
+            "path": "$.additionalDetails.documents[?(@.title == 'TL_PLANCERT')].name"
+          }
+        },{  
+          "variable": "buildingPhoto",
+          "value": {
+            "path": "$.additionalDetails.documents[?(@.title == 'TL_BULDPHOTO')].name"
           }
         },
               {
@@ -954,7 +989,84 @@
                 "prefix": null,
                 "module":"rainmaker-common"
              }
-          },
+            },{
+              "variable": "regt_cert",
+              "value": {
+                "path": "PDF_STATIC_LABEL_CONSOLIDATED_TLAPP_REGCERT"
+              },
+              "type": "label",
+              "localisation":{
+                "required":true,
+                "prefix": null,
+                "module":"rainmaker-common"
+             }
+            },{
+              "variable": "ptax_receipt",
+              "value": {
+                "path": "PDF_STATIC_LABEL_CONSOLIDATED_TLAPP_PTAX"
+              },
+              "type": "label",
+              "localisation":{
+                "required":true,
+                "prefix": null,
+                "module":"rainmaker-common"
+             }
+            },{
+              "variable": "blue_print",
+              "value": {
+                "path": "PDF_STATIC_LABEL_CONSOLIDATED_TLAPP_BLUPRNT"
+              },
+              "type": "label",
+              "localisation":{
+                "required":true,
+                "prefix": null,
+                "module":"rainmaker-common"
+             }
+            },{
+              "variable": "noc_neighbour1",
+              "value": {
+                "path": "PDF_STATIC_LABEL_CONSOLIDATED_TLAPP_NBNOC1"
+              },
+              "type": "label",
+              "localisation":{
+                "required":true,
+                "prefix": null,
+                "module":"rainmaker-common"
+             }
+            },{
+              "variable": "noc_neighbour2",
+              "value": {
+                "path": "PDF_STATIC_LABEL_CONSOLIDATED_TLAPP_NBNOC2"
+              },
+              "type": "label",
+              "localisation":{
+                "required":true,
+                "prefix": null,
+                "module":"rainmaker-common"
+             }
+            },{
+              "variable": "plan_cert",
+              "value": {
+                "path": "PDF_STATIC_LABEL_CONSOLIDATED_TLAPP_PLANCERT"
+              },
+              "type": "label",
+              "localisation":{
+                "required":true,
+                "prefix": null,
+                "module":"rainmaker-common"
+             }
+            },{
+              "variable": "building_photo",
+              "value": {
+                "path": "PDF_STATIC_LABEL_CONSOLIDATED_TLAPP_BULDPHOTO"
+              },
+              "type": "label",
+              "localisation":{
+                "required":true,
+                "prefix": null,
+                "module":"rainmaker-common"
+             }
+            },
               {
                 "variable": "variable13",                        
                 "value":{
