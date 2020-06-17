@@ -212,7 +212,7 @@
                            "variable": "$variable",
                            "moduleName": "common-masters",
                            "masterName": "Department",
-                           "tenantId": "pg",
+                           "tenantId": "pb",
                            "filter": "[?(@.code == $department)]",
                            "filterMapping": [
                               {
@@ -226,7 +226,7 @@
                            "variable": "$variable",
                            "moduleName": "common-masters",
                            "masterName": "Department",
-                           "tenantId": "pg",
+                           "tenantId": "pb",
                            "filter": "[?(@.code == $department)]",
                            "filterMapping": [
                               {
