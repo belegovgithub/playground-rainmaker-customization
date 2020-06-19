@@ -1,0 +1,19 @@
+{
+  "topicContextConfigurations": [
+    {
+      "topic": "topicOne",
+      "dataContext": "collection",
+      "dataContextVersion": "v1"
+    },
+    {
+      "topic": "topicTwo",
+      "dataContext": "billing",
+      "dataContextVersion": "v1"
+    },
+    {
+      "topic": "egov.collection.payment-create",
+      "dataContext": "dss-payment",
+      "dataContextVersion": "v1"
+    }
+  ]
+}

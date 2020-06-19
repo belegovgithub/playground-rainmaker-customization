@@ -1,0 +1,19 @@
+[
+  {
+    "operation": "shift",
+    "spec": {
+      "tenantId": "tenantId",
+      "transactionNumber": "transactionId",
+      "transactionDate": "transactionDate",
+      "paymentMode": "paymentMode",
+      "payer": "payer",
+      "paidBy": "paidBy",
+      "paymentStatus": "paymentStatus",
+      "paymentDetails": "paymentDetails",
+      "auditDetails": "auditDetails",
+      "additionalDetails": "additionalDetails",
+      "tenantData": "tenantData",
+      "@timestamp": "@timestamp"
+    }
+  }
+]
