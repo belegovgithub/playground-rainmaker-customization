@@ -355,7 +355,7 @@
               {
                 "variable": "disclamer_1",
                 "value": {
-                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_DISCLAIMER_FIRST_LINE"
+                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_DISCLAIMER_FIRST_LINE_UC"
                 },
                 "type": "label",
                 "localisation":{
@@ -367,7 +367,7 @@
               {
                 "variable": "disclamer_2",
                 "value": {
-                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_DISCLAIMER_THIRD_LINE"
+                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_DISCLAIMER_SECOND_LINE_UC"
                 },
                 "type": "label",
                 "localisation":{
