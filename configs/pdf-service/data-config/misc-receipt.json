@@ -348,7 +348,31 @@
                 {
                   "variable": "disclamer_2",
                   "value": {
+                    "path": "PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_DISCLAIMER_SECOND_LINE"
+                  },
+                  "type": "label",
+                  "localisation":{
+                    "required":true,
+                    "prefix": null,
+                    "module":"rainmaker-common"
+                 }
+                },
+                {
+                  "variable": "disclamer_3",
+                  "value": {
                     "path": "PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_DISCLAIMER_THIRD_LINE"
+                  },
+                  "type": "label",
+                  "localisation":{
+                    "required":true,
+                    "prefix": null,
+                    "module":"rainmaker-common"
+                 }
+                },
+                {
+                  "variable": "disclamer_4",
+                  "value": {
+                    "path": "PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_DISCLAIMER_FOURTH_LINE"
                   },
                   "type": "label",
                   "localisation":{

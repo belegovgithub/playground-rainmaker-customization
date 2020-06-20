@@ -461,6 +461,16 @@
             "text": "{{disclamer_2}}",
             "bold": false,
             "style": "pt-disclaimer-value"
+          },
+          {
+            "text": "{{disclamer_3}}",
+            "bold": false,
+            "style": "pt-disclaimer-value"
+          },
+          {
+            "text": "{{disclamer_4}}",
+            "bold": false,
+            "style": "pt-disclaimer-value"
           }
         ]
       }
