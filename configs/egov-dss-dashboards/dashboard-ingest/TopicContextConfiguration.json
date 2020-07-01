@@ -3,12 +3,12 @@
     {
       "topic": "collectionsindex-v1-enriched",
       "dataContext": "collection",
-      "dataContextVersion": "v2"
+      "dataContextVersion": "v1"
     },
     {
       "topic": "topicTwo",
       "dataContext": "billing",
-      "dataContextVersion": "v2"
+      "dataContextVersion": "v1"
     }
   ]
 }
