@@ -2,4 +2,3 @@ rainmaker-pgr=https://raw.githubusercontent.com/belegovgithub/playground-rainmak
 rainmaker-pt=https://raw.githubusercontent.com/belegovgithub/playground-rainmaker-customization/master/configs/reports/configs/pt-reports.yml
 rainmaker-tl=https://raw.githubusercontent.com/belegovgithub/playground-rainmaker-customization/master/configs/reports/configs/tl-reports.yml
 rainmaker-uc=https://raw.githubusercontent.com/belegovgithub/playground-rainmaker-customization/master/configs/reports/configs/uc-reports.yml
-
