@@ -1378,7 +1378,8 @@
                          ],
                           "style": "receipt-table2"
                        }    
-                      ]
+                      ],
+                      ["{{#variable11}}[{\"text\":\"{{disclaimerContent}}\",\"border\":[false,false,false,false],\"style\":\"bill-message-value\"}]{{/variable11}}"]
                     ]
                  },
                  "border":[
