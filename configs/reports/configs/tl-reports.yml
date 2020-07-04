@@ -473,7 +473,7 @@ ReportDefinitions:
         	  INNER JOIN egcl_bill bill ON bill.consumercode = tl.applicationnumber  and bill.status != 'Cancelled'
         	  LEFT OUTER JOIN egcl_paymentdetail as pd ON pd.billid = bill.id
               LEFT OUTER JOIN (SELECT * FROM egcl_payment WHERE paymentmode = 'ONLINE') AS onl ON onl.id = pd.paymentid 
-              LEFT OUTER JOIN (SELECT * FROM egcl_payment WHERE paymentmode = 'COUNTER' ) AS offl ON offl.id = pd.paymentid 
+              LEFT OUTER JOIN (SELECT * FROM egcl_payment WHERE paymentmode != 'ONLINE' ) AS offl ON offl.id = pd.paymentid 
             WHERE tl.status IN ('APPROVED','PAID','REJECTED', 'CANCELLED') AND tl.tenantId != 'uk.testing'
             AND tl.tenantId LIKE $tenantid
   groupby: GROUP BY tradeSubType
