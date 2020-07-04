@@ -16,12 +16,12 @@ ReportDefinitions:
     source: tl
     total: false
   - name: g8issuedate
-    label: report.tl.MSC5/MSC2issuedate
+    label: report.tl.g8issuedate  
     type: string
     source: tl
     total: false
   - name: g8receiptno
-    label: report.tl.MSC5/MSC2receiptno
+    label: report.tl.g8receiptno
     type: string
     source: tl
     total: false
@@ -459,19 +459,35 @@ ReportDefinitions:
     isMandatory: false
     searchClause: AND issueddate <= $toDate
   query: |
-    SELECT 
+    # SELECT 
+    #   COUNT(applicationNumber) as transactionNumber,
+    #   tradeSubType,
+    #   SUM(onl.totalAmount) as online,
+    #   SUM(offl.totalAmount) as offline, 
+    #   COALESCE(SUM(onl.totalAmount),0) + COALESCE(SUM(offl.totalAmount),0) as total 
+    # FROM eg_tl_tradelicense tl 
+    # INNER JOIN eg_tl_tradelicensedetail tld ON tld.tradelicenseid = tl.id 
+    # INNER JOIN (
+    #   SELECT tradelicensedetailid,message.message as tradeSubType FROM eg_tl_tradeunit 
+    #   LEFT OUTER JOIN message ON CONCAT('TL_',split_part(tradeType, '.', 2)) = message.code AND message.locale='en_IN') tlunit ON tlunit.tradelicensedetailid = tld.id 
+    #   LEFT OUTER JOIN (SELECT * FROM egcl_receiptheader WHERE collectiontype = 'ONLINE' and status != 'Cancelled') AS onl ON onl.consumercode = tl.applicationnumber 
+    #   LEFT OUTER JOIN (SELECT * FROM egcl_receiptheader WHERE collectiontype = 'COUNTER' and status != 'Cancelled') AS offl ON offl.consumercode = tl.applicationnumber 
+    # WHERE tl.status IN ('APPROVED','PAID','REJECTED', 'CANCELLED') AND tl.tenantId != 'uk.testing'
+     SELECT 
       COUNT(applicationNumber) as transactionNumber,
       tradeSubType,
-      SUM(onl.totalAmount) as online,
-      SUM(offl.totalAmount) as offline, 
-      COALESCE(SUM(onl.totalAmount),0) + COALESCE(SUM(offl.totalAmount),0) as total 
+      SUM(onl.totalamountpaid) as online,
+      SUM(offl.totalamountpaid) as offline, 
+      COALESCE(SUM(onl.totalamountpaid),0) + COALESCE(SUM(offl.totalamountpaid),0) as total 
     FROM eg_tl_tradelicense tl 
     INNER JOIN eg_tl_tradelicensedetail tld ON tld.tradelicenseid = tl.id 
     INNER JOIN (
       SELECT tradelicensedetailid,message.message as tradeSubType FROM eg_tl_tradeunit 
-      LEFT OUTER JOIN message ON CONCAT('TL_',split_part(tradeType, '.', 2)) = message.code AND message.locale='en_IN') tlunit ON tlunit.tradelicensedetailid = tld.id 
-      LEFT OUTER JOIN (SELECT * FROM egcl_receiptheader WHERE collectiontype = 'ONLINE' and status != 'Cancelled') AS onl ON onl.consumercode = tl.applicationnumber 
-      LEFT OUTER JOIN (SELECT * FROM egcl_receiptheader WHERE collectiontype = 'COUNTER' and status != 'Cancelled') AS offl ON offl.consumercode = tl.applicationnumber 
+      LEFT OUTER JOIN message ON CONCAT('TRADELICENSE_TRADETYPE_',split_part(tradeType, '.', 2)) = message.code AND message.locale='en_IN') tlunit ON tlunit.tradelicensedetailid = tld.id 
+	  INNER JOIN egcl_bill bill ON bill.consumercode = tl.applicationnumber  and bill.status != 'Cancelled'
+	  LEFT OUTER JOIN egcl_paymentdetail as pd ON pd.billid = bill.id
+      LEFT OUTER JOIN (SELECT * FROM egcl_payment WHERE paymentmode = 'ONLINE') AS onl ON onl.id = pd.paymentid 
+      LEFT OUTER JOIN (SELECT * FROM egcl_payment WHERE paymentmode = 'COUNTER' ) AS offl ON offl.id = pd.paymentid 
     WHERE tl.status IN ('APPROVED','PAID','REJECTED', 'CANCELLED') AND tl.tenantId != 'uk.testing'
     AND tl.tenantId LIKE $tenantid
   groupby: GROUP BY tradeSubType
