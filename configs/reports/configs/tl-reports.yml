@@ -720,7 +720,7 @@ ReportDefinitions:
 
 - reportName: StateLevelTradeLicenseRegistryReport
   summary: TL Basic Report State Level
-  decryptionPathId: TradeLicenseRegistryReport
+  decryptionPathId: StateLevelTradeLicenseRegistryReport
   version: 1.0.0
   moduleName: rainmaker-tl
   sourceColumns:
