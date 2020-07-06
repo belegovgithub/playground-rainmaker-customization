@@ -762,11 +762,6 @@ ReportDefinitions:
     type: string
     source: tl
     total: false
-  # - name: acc
-  #   label: report.tl.accessorycategories
-  #   type: string
-  #   source: tl
-  #  total: false
   - name: tradeName
     label: report.tl.tradeName
     type: string
