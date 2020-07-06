@@ -785,14 +785,14 @@ ReportDefinitions:
     source: tl
     isMandatory: false
     searchClause: AND issueddate <= $toDate
-  # - name: ulb
-  #   label: ULB
-  #   type: singlevaluelist
-  #   pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=tenant&masterName=tenants|$.MdmsRes.tenant.tenants.*.code|$.MdmsRes.tenant.tenants.*.name
-  #   source: tl
-  #   wrapper: true
-  #   isMandatory: false
-  #   searchClause: AND tl.tenantId = $ulb
+  - name: ulb
+    label: ULB
+    type: singlevaluelist
+    pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=tenant&masterName=tenants|$.MdmsRes.tenant.tenants.*.code|$.MdmsRes.tenant.tenants.*.name
+    source: tl
+    wrapper: true
+    isMandatory: false
+    searchClause: AND tl.tenantId = $ulb
     query: >
           SELECT initcap(split_part(tl.tenantId,'.', 2)) as
           tenantId,licensenumber,to_char(To_timestamp(issueddate / 1000),
