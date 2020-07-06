@@ -778,21 +778,21 @@ ReportDefinitions:
     type: epoch
     source: tl
     isMandatory: false
-    searchClause: AND pd.receiptdate >= $fromDate
+    searchClause: AND issueddate >= $fromDate
   - name: toDate
     label: reports.tl.toDate
     type: epoch
     source: tl
     isMandatory: false
-    searchClause: AND pd.receiptdate <= $toDate
-  - name: ulb
-    label: ULB
-    type: singlevaluelist
-    pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=tenant&masterName=tenants|$.MdmsRes.tenant.tenants.*.code|$.MdmsRes.tenant.tenants.*.name
-    source: tl
-    wrapper: true
-    isMandatory: false
-    searchClause: AND tl.tenantId = $ulb
+    searchClause: AND issueddate <= $toDate
+  # - name: ulb
+  #   label: ULB
+  #   type: singlevaluelist
+  #   pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=tenant&masterName=tenants|$.MdmsRes.tenant.tenants.*.code|$.MdmsRes.tenant.tenants.*.name
+  #   source: tl
+  #   wrapper: true
+  #   isMandatory: false
+  #   searchClause: AND tl.tenantId = $ulb
     query: >
           SELECT initcap(split_part(tl.tenantId,'.', 2)) as
           tenantId,licensenumber,to_char(To_timestamp(issueddate / 1000),
@@ -815,5 +815,5 @@ ReportDefinitions:
           'Cancelled'LEFT OUTER JOIN egcl_paymentdetail as pd ON pd.billid =
           bill.id LEFT OUTER JOIN egcl_payment as pay ON pay.id = pd.paymentid
           and pay.paymentstatus != 'CANCELLED'WHERE tl.Status = 'APPROVED' AND
-          tl.tenantId != '.testing'
+          tl.tenantId != 'uk.testing'
   orderby: ORDER BY tl.tenantId asc
