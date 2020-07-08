@@ -535,7 +535,7 @@ ReportDefinitions:
     version: 1.0.0
     moduleName: rainmaker-uc
     sourceColumns:
-      - name: servicetype
+      - name: bl.servicetype
         label: reports.uc.serviceType
         type: string
         source: uc
