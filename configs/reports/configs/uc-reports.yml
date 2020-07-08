@@ -255,21 +255,21 @@ ReportDefinitions:
         type: epoch
         source: uc
         isMandatory: true
-        searchClause: AND rh.receiptdate >= $fromDate
+        searchClause: AND pd.receiptdate >= $fromDate
       - name: toDate
         label: reports.uc.toDate
         type: epoch
         source: uc
         isMandatory: true
-        searchClause: AND rh.receiptdate <= $toDate
+        searchClause: AND pd.receiptdate <= $toDate
       - name: businessservice
         label: reports.uc.businessservice
         type: singlevaluelist
-        pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?moduleName=BillingService&masterName=BusinessService&tenantId=$tenantid|$.MdmsRes.BillingService.BusinessService[*].code|$.MdmsRes.BillingService.BusinessService[*].code
+        pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?moduleName=BillingService&masterName=BusinessService&tenantId=$tenantid|$.MdmsRes.BillingService.BusinessService[*].code|$.MdmsRes.BillingService.BusinessService[*].businessService
         source: uc
         wrapper: true
         isMandatory: false
-        searchClause: AND rh.businessdetails = $businessservice
+        searchClause: AND bill.businessservice = $businessservice
       - name: collectorname
         label: reports.uc.collectorname
         type: singlevaluelist
