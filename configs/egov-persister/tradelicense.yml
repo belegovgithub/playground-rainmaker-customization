@@ -59,7 +59,7 @@ serviceMaps:
       - jsonPath: $.Licenses.*.workflowCode
 
 
-    - query: INSERT INTO eg_tl_tradelicensedetail( id, surveyno, subownershipcategory, channel, additionaldetail, tradelicenseid,structureType,operationalArea,noOfEmployees,adhocExemption,adhocPenalty,adhocExemptionReason,adhocPenaltyReason, createdby, lastmodifiedby, createdtime, lastmodifiedtime,cbrnumber,approverdate,selectedtradesubtype) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?, ?, ?, ?,?,?,?);
+    - query: INSERT INTO eg_tl_tradelicensedetail( id, surveyno, subownershipcategory, channel, additionaldetail, tradelicenseid,structureType,operationalArea,noOfEmployees,adhocExemption,adhocPenalty,adhocExemptionReason,adhocPenaltyReason, createdby, lastmodifiedby, createdtime, lastmodifiedtime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?, ?, ?, ?);
       basePath: Licenses.*.tradeLicenseDetail
       jsonMaps:
       - jsonPath: $.Licenses.*.tradeLicenseDetail.id
@@ -97,12 +97,6 @@ serviceMaps:
       - jsonPath: $.Licenses.*.auditDetails.createdTime
 
       - jsonPath: $.Licenses.*.auditDetails.lastModifiedTime
-
-      - jsonPath: $.Licenses.*.tradeLicenseDetail.cbrNumber
-
-      - jsonPath: $.Licenses.*.tradeLicenseDetail.approverDate
-
-      - jsonPath: $.Licenses.*.tradeLicenseDetail.selectedTradeSubType
 
 
 
