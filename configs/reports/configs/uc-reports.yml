@@ -255,21 +255,21 @@ ReportDefinitions:
         type: epoch
         source: uc
         isMandatory: true
-        searchClause: AND rh.receiptdate >= $fromDate
+        searchClause: AND pd.receiptdate >= $fromDate
       - name: toDate
         label: reports.uc.toDate
         type: epoch
         source: uc
         isMandatory: true
-        searchClause: AND rh.receiptdate <= $toDate
+        searchClause: AND pd.receiptdate <= $toDate
       - name: businessservice
         label: reports.uc.businessservice
         type: singlevaluelist
-        pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?moduleName=BillingService&masterName=BusinessService&tenantId=$tenantid|$.MdmsRes.BillingService.BusinessService[*].code|$.MdmsRes.BillingService.BusinessService[*].code
+        pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?moduleName=BillingService&masterName=BusinessService&tenantId=$tenantid|$.MdmsRes.BillingService.BusinessService[*].code|$.MdmsRes.BillingService.BusinessService[*].businessService
         source: uc
         wrapper: true
         isMandatory: false
-        searchClause: AND rh.businessdetails = $businessservice
+        searchClause: AND bill.businessservice = $businessservice
       - name: collectorname
         label: reports.uc.collectorname
         type: singlevaluelist
@@ -279,44 +279,6 @@ ReportDefinitions:
         isMandatory: false
         searchClause: AND eg_user.id = $collectorname::INTEGER
     query: |
-        -- Use CTE to force query plan, compute & use CTE later
-        # WITH receipt_breakup AS (
-        #             SELECT 
-        #               receiptheader, 
-        #               SUM(CASE WHEN taxheadcode LIKE '%_CGST' THEN adjustedamount ELSE 0 END) as cgst, 
-        #               SUM(CASE WHEN taxheadcode LIKE '%_TAX' THEN adjustedamount ELSE 0 END) as tax, 
-        #               SUM(CASE WHEN taxheadcode LIKE '%_SGST' THEN adjustedamount ELSE 0 END) as sgst, 
-        #               SUM(CASE WHEN taxheadcode LIKE '%_FIELD_FEE' THEN adjustedamount ELSE 0 END) as fieldcollection            
-        #             FROM egcl_receiptdetails_v1 as rd
-        #             INNER JOIN egcl_receiptheader_v1 as rh on rh.id = rd.receiptheader
-        #             where status!='Cancelled' and businessdetails not in ('PT','TL') and rd.tenantid=$tenantid
-        #             GROUP BY rd.receiptheader
-        # )
-        # SELECT 
-        #   rh.tenantid as ulb,
-        #   rh.receiptnumber as receiptnumber,
-        #   To_char((To_timestamp(rh.receiptdate / 1000) at time Zone 'Asia/Kolkata'), 'DD/MM/YYYY') as receiptdate,
-        #   To_char((To_timestamp(rh.manualreceiptdate / 1000) at time Zone 'Asia/Kolkata'), 'DD/MM/YYYY') as g8issuedate,
-        #   rh.manualreceiptnumber as g8receiptno,
-        #   rh.status as status,
-        #   businessdetails as servicecategory,
-        #   receipt_breakup.*,  
-        #   amount as totalamount, 
-        #   instrumenttype as paymentmode,
-        #   (case when instrumenttype like 'Cash' then '' else  transactionnumber end) as ddorchequenumber,
-        #   (case when instrumenttype like 'DD' or instrumenttype like 'Cheque' then To_char((To_timestamp(ih.transactiondate / 1000) at time Zone 'Asia/Kolkata'), 'DD/MM/YYYY') else '' end) as ddchequedate,
-        #   ih.bankid as bankname,
-        #   ih.branchname as branchname,
-        #   'System' as collectiontype,
-        #   eg_user.name as collectorname,
-        #   rh.additionaldetails->>'comment' as comments
-        # FROM egcl_receiptheader_v1 AS rh
-        # JOIN egcl_receiptinstrument_v1 AS ri ON rh.id = ri.receiptheader
-        # JOIN egcl_instrumentheader_v1 AS ih ON ih.id = ri.instrumentheader
-        # JOIN receipt_breakup ON rh.id = receipt_breakup.receiptheader
-        # JOIN eg_user ON rh.createdby::INTEGER=eg_user.id
-        # WHERE  rh.status != 'Cancelled'  AND businessdetails not in ('PT','TL')
-        # and rh.tenantid=$tenantid
              WITH receipt_breakup AS (
              SELECT 
                       billdetailid, 
@@ -330,30 +292,8 @@ ReportDefinitions:
                     INNER JOIN egcl_bill as bill on bill.id = rh.billid
                     where status!='Cancelled' and businessservice not in ('PT','TL') and rd.tenantid=$tenantid
                     GROUP BY rd.billdetailid)
-                    SELECT 
-          rh.tenantid as ulb,
-          pd.receiptnumber as receiptnumber,
-          To_char((To_timestamp(pd.receiptdate / 1000) at time Zone 'Asia/Kolkata'), 'DD/MM/YYYY') as receiptdate,
-          To_char((To_timestamp(pd.manualreceiptdate / 1000) at time Zone 'Asia/Kolkata'), 'DD/MM/YYYY') as g8issuedate,
-          pd.manualreceiptnumber as g8receiptno,
-          bill.status as status,
-          servicecategory,
-          receipt_breakup.*,  
-          amount as totalamount, 
-          pay.paymentmode as paymentmode,
-          (case when pay.paymentmode like 'Cash' then '' else  transactionnumber end) as transactionorchequenumber,
-          (case when pay.paymentmode like 'Cheque' then To_char((To_timestamp(pay.transactiondate / 1000) at time Zone 'Asia/Kolkata'), 'DD/MM/YYYY') else '' end) as ddchequedate,
-          'System' as collectiontype,
-          pay.paidby as collectorname  
-        FROM egcl_billdetial AS rh
-        INNER JOIN 
-        (SELECT bill.id,status, businessservice,message.message as servicecategory from egcl_bill bill
-        LEFT OUTER JOIN message ON CONCAT('BILLINGSERVICE_BUSINESSSERVICE_',replace(businessservice, '.', '_')) = message.code AND message.locale='en_IN')as bill ON bill.id = rh.billid and status != 'Cancelled' and businessservice not in ('PT','TL')
-        LEFT OUTER JOIN egcl_paymentdetail as pd ON pd.billid = bill.id
-        LEFT OUTER JOIN egcl_payment  AS pay ON pay.id = pd.paymentid 
-        JOIN receipt_breakup ON rh.id = receipt_breakup.billdetailid					
-        WHERE rh.tenantid=$tenantid
-    orderby: ORDER BY rh.receiptdate DESC
+                    SELECT rh.tenantid as ulb,pd.receiptnumber as receiptnumber,To_char((To_timestamp(pd.receiptdate / 1000) at time Zone 'Asia/Kolkata'), 'DD/MM/YYYY') as receiptdate,To_char((To_timestamp(pd.manualreceiptdate / 1000) at time Zone 'Asia/Kolkata'), 'DD/MM/YYYY') as g8issuedate,pd.manualreceiptnumber as g8receiptno,bill.status as status,servicecategory,receipt_breakup.*,  amount as totalamount,pay.paymentmode as paymentmode,(case when pay.paymentmode like 'Cash' then '' else  transactionnumber end) as transactionorchequenumber,(case when pay.paymentmode like 'Cheque' then To_char((To_timestamp(pay.transactiondate / 1000) at time Zone 'Asia/Kolkata'), 'DD/MM/YYYY') else '' end) as ddchequedate,'System' as collectiontype,pay.paidby as collectorname FROM egcl_billdetial AS rh INNER JOIN (SELECT bill.id,status, businessservice,message.message as servicecategory from egcl_bill bill LEFT OUTER JOIN message ON CONCAT('BILLINGSERVICE_BUSINESSSERVICE_',replace(businessservice, '.', '_')) = message.code AND message.locale='en_IN')as bill ON bill.id = rh.billid and status != 'Cancelled' and businessservice not in ('PT','TL')LEFT OUTER JOIN egcl_paymentdetail as pd ON pd.billid = bill.id LEFT OUTER JOIN egcl_payment  AS pay ON pay.id = pd.paymentid JOIN receipt_breakup ON rh.id = receipt_breakup.billdetailid WHERE rh.tenantid=$tenantid
+    orderby: ORDER BY pd.receiptdate DESC
 
   - reportName: MiscReceiptStateWide
     summary: State Receipt Register Miscellaneous
