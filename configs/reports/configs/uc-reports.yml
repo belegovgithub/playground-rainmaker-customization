@@ -293,7 +293,7 @@ ReportDefinitions:
                     where status!='Cancelled' and businessservice not in ('PT','TL') and rd.tenantid=$tenantid
                     GROUP BY rd.billdetailid)
                     SELECT rh.tenantid as ulb,pd.receiptnumber as receiptnumber,To_char((To_timestamp(pd.receiptdate / 1000) at time Zone 'Asia/Kolkata'), 'DD/MM/YYYY') as receiptdate,To_char((To_timestamp(pd.manualreceiptdate / 1000) at time Zone 'Asia/Kolkata'), 'DD/MM/YYYY') as g8issuedate,pd.manualreceiptnumber as g8receiptno,bill.status as status,servicecategory,receipt_breakup.*,  amount as totalamount,pay.paymentmode as paymentmode,(case when pay.paymentmode like 'Cash' then '' else  transactionnumber end) as transactionorchequenumber,(case when pay.paymentmode like 'Cheque' then To_char((To_timestamp(pay.transactiondate / 1000) at time Zone 'Asia/Kolkata'), 'DD/MM/YYYY') else '' end) as ddchequedate,'System' as collectiontype,pay.paidby as collectorname FROM egcl_billdetial AS rh INNER JOIN (SELECT bill.id,status, businessservice,message.message as servicecategory from egcl_bill bill LEFT OUTER JOIN message ON CONCAT('BILLINGSERVICE_BUSINESSSERVICE_',replace(businessservice, '.', '_')) = message.code AND message.locale='en_IN')as bill ON bill.id = rh.billid and status != 'Cancelled' and businessservice not in ('PT','TL')LEFT OUTER JOIN egcl_paymentdetail as pd ON pd.billid = bill.id LEFT OUTER JOIN egcl_payment  AS pay ON pay.id = pd.paymentid JOIN receipt_breakup ON rh.id = receipt_breakup.billdetailid WHERE rh.tenantid=$tenantid
-    orderby: ORDER BY rh.receiptdate DESC
+    orderby: ORDER BY pd.receiptdate DESC
 
   - reportName: MiscReceiptStateWide
     summary: State Receipt Register Miscellaneous
