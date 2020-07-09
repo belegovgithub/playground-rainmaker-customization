@@ -143,6 +143,7 @@ ReportDefinitions:
 
   - reportName: MiscReceiptULB
     summary: Receipt Register Miscellaneous
+    decryptionPathId: MiscReceiptULB
     version: 1.0.0
     moduleName: rainmaker-uc
     additionalConfig:
@@ -607,6 +608,7 @@ ReportDefinitions:
 
   - reportName: MiscReceiptULBCancelled
     summary: Cancelled Receipt Miscellaneous
+    decryptionPathId: MiscReceiptULBCancelled
     version: 1.0.0
     moduleName: rainmaker-uc
     additionalConfig:
@@ -694,13 +696,13 @@ ReportDefinitions:
         type: epoch
         source: uc
         isMandatory: false
-        searchClause: AND rh.receiptdate >= $fromDate
+        searchClause: AND pd.receiptdate >= $fromDate
       - name: toDate
         label: reports.uc.toDate
         type: epoch
         source: uc
         isMandatory: false
-        searchClause: AND rh.receiptdate <= $toDate
+        searchClause: AND pd.receiptdate <= $toDate
       - name: collectorname
         label: reports.uc.collectorname
         type: singlevaluelist
