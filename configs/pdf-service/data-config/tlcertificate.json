@@ -70,15 +70,21 @@
                }
             },
             {
-              "variable": "tradeType",
+              "variable": "tradeSubType",
               "value": {
-                "path": "$.tradeLicenseDetail.surveyNo"
+                "path": "$.tradeLicenseDetail.additionalDetail.tradeSubType"
+              }
+          },{
+              "variable": "cbrnDate",
+              "value": {
+                "path": "$.tradeLicenseDetail.additionalDetail.cbrnDate"
               },
-              "localisation":{
-                "required":false,
-                "prefix": "TRADELICENSE_TRADETYPE",
-                "module": "rainmaker-tl"
-             }
+              "type": "date"
+          },{
+              "variable": "cbrnNumber",
+              "value": {
+                "path": "$.tradeLicenseDetail.additionalDetail.cbrnNumber"
+              }
           },
               {
                   "variable": "licenseIssueDate",
@@ -280,7 +286,29 @@
                     "prefix": null,
                     "module":"rainmaker-common"
                  }
-              },
+              },{
+                  "variable": "cbrn_date",
+                  "value": {
+                    "path": "PDF_STATIC_LABEL_CONSOLIDATED_TLCERTIFICATE_CBRN_DATE"
+                  },
+                  "type": "label",
+                  "localisation":{
+                    "required":true,
+                    "prefix": null,
+                    "module":"rainmaker-common"
+                 }
+              },{
+                "variable": "cbrn_number",
+                "value": {
+                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_TLCERTIFICATE_CBRN_NUMBER"
+                },
+                "type": "label",
+                "localisation":{
+                  "required":true,
+                  "prefix": null,
+                  "module":"rainmaker-common"
+               }
+            },
               {
                   "variable": "trade_license_fee",
                   "value": {

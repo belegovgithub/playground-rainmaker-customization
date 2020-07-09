@@ -301,7 +301,50 @@
                                              "style":"receipt-sub-logo-sub-header"
                                          },
                                          {
-                                             "text":"{{tradeType}}",
+                                             "text":"{{tradeSubType}}",
+                                             "style":"receipt-sub-logo-sub-header"
+                                         }
+                                    ]
+                                 ]
+                               },
+                               "layout":"noBorders"
+                         },
+                          {
+                               "style":"noc-head",
+                               "table":{
+                                 "widths":[
+                                  "35%",
+                                   "65%"
+                                 ],
+                                 "body":[
+                                     [
+                                         {
+                                             "text":"{{cbrn_date}}",
+                                             "style":"receipt-sub-logo-sub-header"
+                                         },
+                                         {
+                                             "text":"{{cbrnDate}}",
+                                             "style":"receipt-sub-logo-sub-header"
+                                         }
+                                    ]
+                                 ]
+                               },
+                               "layout":"noBorders"
+                         },{
+                               "style":"noc-head",
+                               "table":{
+                                 "widths":[
+                                  "35%",
+                                   "65%"
+                                 ],
+                                 "body":[
+                                     [
+                                         {
+                                             "text":"{{cbrn_number}}",
+                                             "style":"receipt-sub-logo-sub-header"
+                                         },
+                                         {
+                                             "text":"{{cbrnNumber}}",
                                              "style":"receipt-sub-logo-sub-header"
                                          }
                                     ]
