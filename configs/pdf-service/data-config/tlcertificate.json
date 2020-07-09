@@ -79,7 +79,8 @@
               "value": {
                 "path": "$.tradeLicenseDetail.additionalDetail.cbrnDate"
               },
-              "type": "date"
+              "type": "date",
+              "format":"DD/MM/YYYY"
           },{
               "variable": "cbrnNumber",
               "value": {
