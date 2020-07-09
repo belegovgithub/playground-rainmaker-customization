@@ -535,7 +535,7 @@ ReportDefinitions:
     version: 1.0.0
     moduleName: rainmaker-uc
     sourceColumns:
-      - name: bl.servicetype
+      - name: service
         label: reports.uc.serviceType
         type: string
         source: uc
@@ -561,7 +561,7 @@ ReportDefinitions:
         source: uc
         total: true
       - name: fieldcollection
-        label: reports.uc.fieldCollection
+        label: reports.uc.fieldcollection
         type: string
         source: uc
         total: true
@@ -591,7 +591,7 @@ ReportDefinitions:
     query: |
         -- Use CTE to force query plan, compute & use CTE later
         SELECT
-          bl.servicetype,
+          bl.servicetype as service,
           count(distinct rd.billdetailid) as totalreceipts,
           SUM(CASE WHEN taxheadcode LIKE '%_CGST' THEN adjustedamount ELSE 0 END) as cgst, 
           SUM(CASE WHEN taxheadcode LIKE '%_TAX' THEN adjustedamount ELSE 0 END) as tax,
