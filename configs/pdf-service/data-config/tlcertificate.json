@@ -78,7 +78,8 @@
               "variable": "cbrnDate",
               "value": {
                 "path": "$.tradeLicenseDetail.additionalDetail.cbrnDate"
-              }
+              },
+              "type": "date"
           },{
               "variable": "cbrnNumber",
               "value": {
@@ -290,8 +291,12 @@
                   "value": {
                     "path": "PDF_STATIC_LABEL_CONSOLIDATED_TLCERTIFICATE_CBRN_DATE"
                   },
-                  "type": "date"
-                   
+                  "type": "label",
+                  "localisation":{
+                    "required":true,
+                    "prefix": null,
+                    "module":"rainmaker-common"
+                 }
               },{
                 "variable": "cbrn_number",
                 "value": {
