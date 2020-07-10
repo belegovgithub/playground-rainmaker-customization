@@ -799,7 +799,7 @@ ReportDefinitions:
           pay.payername as consumername,
           pay.mobilenumber as mobilenumber,
           To_char((To_timestamp(pd.receiptdate / 1000) at time Zone 'Asia/Kolkata'), 'DD/MM/YYYY') as receiptdate,
-          ri.businessservice as servicecategory,
+          bill.businessservice as servicecategory,
           rh.amount as amount, 
           eg_user.name as name
         FROM egcl_billdetial AS rh
