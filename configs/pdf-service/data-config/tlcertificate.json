@@ -290,12 +290,8 @@
                   "value": {
                     "path": "PDF_STATIC_LABEL_CONSOLIDATED_TLCERTIFICATE_CBRN_DATE"
                   },
-                  "type": "label",
-                  "localisation":{
-                    "required":true,
-                    "prefix": null,
-                    "module":"rainmaker-common"
-                 }
+                  "type": "date"
+                   
               },{
                 "variable": "cbrn_number",
                 "value": {
