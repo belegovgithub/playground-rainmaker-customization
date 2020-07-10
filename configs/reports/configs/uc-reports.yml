@@ -380,11 +380,11 @@ ReportDefinitions:
           SUM(rd.amount) as totalcollection
           FROM egcl_billaccountdetail as rd
           INNER JOIN egcl_billdetial as rh on rh.id =  rd.billdetailid					
-          INNER JOIN (SELECT distinct bill.id, status,billdate,businessservice,message.message as servicetype from egcl_bill bill  INNER JOIN message ON CONCAT('BILLINGSERVICE_BUSINESSSERVICE_',replace(businessservice, '.', '_')) = message.code AND message.locale='en_IN') as bl ON bl.id = rh.billid and status != 'Cancelled' and businessservice not in ('PT','TL') and rd.tenantid=$tenantid
+          INNER JOIN (SELECT distinct bill.id, status,billdate,businessservice,message.message as servicetype from egcl_bill bill  INNER JOIN message ON CONCAT('BILLINGSERVICE_BUSINESSSERVICE_',replace(businessservice, '.', '_')) = message.code AND message.locale='en_IN') as bl ON bl.id = rh.billid and status != 'Cancelled' and businessservice not in ('PT','TL')
     groupby: GROUP BY rd.tenantid,bl.servicetype
     orderby: ORDER BY rd.tenantid
 
-  - reportName: MiscReceiptState
+  - reportName: StateLevelMiscReceiptState
     summary: State Miscellaneous Receipt Register 
     version: 1.0.0
     moduleName: rainmaker-uc
@@ -419,6 +419,11 @@ ReportDefinitions:
         type: string
         source: uc
         total: true
+      - name: securitydeposit
+        label: reports.uc.securitydeposit
+        type: string
+        source: uc
+        total: true
       - name: totalamount
         label: reports.uc.totalamount
         type: string
@@ -436,7 +441,7 @@ ReportDefinitions:
         type: epoch
         source: uc
         isMandatory: false
-        searchClause: AND rh.receiptdate <= $toDate
+        searchClause: AND bl.receiptdate <= $toDate
       - name: ulb
         label: reports.uc.ulb
         type: singlevaluelist
@@ -447,16 +452,17 @@ ReportDefinitions:
         searchClause: AND rh.tenantid = $ulb
     query: |
         -- Use CTE to force query plan, compute & use CTE later
-        SELECT
-          rh.tenantid as ulb,
-          count(distinct rh.id) as noofreceipts,
-          SUM(CASE WHEN taxheadcode LIKE '%_TAX' THEN adjustedamount ELSE 0 END) as tax, 
+           initcap(split_part(rd.tenantid,'.', 2)) as ulb,
+          count(distinct rd.billdetailid) as totalreceipts,
           SUM(CASE WHEN taxheadcode LIKE '%_CGST' THEN adjustedamount ELSE 0 END) as cgst, 
+          SUM(CASE WHEN taxheadcode LIKE '%_TAX' THEN adjustedamount ELSE 0 END) as tax,
           SUM(CASE WHEN taxheadcode LIKE '%_SGST' THEN adjustedamount ELSE 0 END) as sgst, 
           SUM(CASE WHEN taxheadcode LIKE '%_FIELD_FEE' THEN adjustedamount ELSE 0 END) as fieldcollection,
-          sum(amount) as totalamount
-        from egcl_receiptheader_v1 rh, egcl_receiptdetails_v1 as rd
-        WHERE rh.id=rd.receiptheader and rh.status != 'Cancelled' AND rh.tenantid!='pb.testing' AND businessdetails not in ('PT','TL') 
+          SUM(CASE WHEN taxheadcode LIKE '%_SEC_DEP' THEN adjustedamount ELSE 0 END) as securitydeposit,
+          SUM(rd.amount) as totalcollection
+          FROM egcl_billaccountdetail as rd
+          INNER JOIN egcl_billdetial as rh on rh.id =  rd.billdetailid					
+          INNER JOIN (SELECT distinct bill.id, status,billdate,businessservice from egcl_bill bill  ) as bl ON bl.id = rh.billid and status != 'Cancelled' and businessservice not in ('PT','TL')
     groupby: group by rh.tenantid
 
 

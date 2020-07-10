@@ -788,7 +788,7 @@ ReportDefinitions:
     isMandatory: false
     searchClause: AND issueddate <= $toDate
   - name: ulb
-    label: ULB
+    label: report.tl.tenantId
     type: singlevaluelist
     pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=tenant&masterName=tenants|$.MdmsRes.tenant.tenants.*.code|$.MdmsRes.tenant.tenants.*.name
     source: tl
