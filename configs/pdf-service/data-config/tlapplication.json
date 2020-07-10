@@ -258,6 +258,26 @@
           "value": {
             "path": "$.additionalDetails.documents[?(@.title == 'TL_BULDPHOTO')].name"
           }
+        },{  
+          "variable": "eleBill",
+          "value": {
+            "path": "$.additionalDetails.documents[?(@.title == 'TL_ELECTBILL')].name"
+          }
+        },{  
+          "variable": "medCert",
+          "value": {
+            "path": "$.additionalDetails.documents[?(@.title == 'TL_MEDCERT')].name"
+          }
+        },{  
+          "variable": "shopactLicence",
+          "value": {
+            "path": "$.additionalDetails.documents[?(@.title == 'TL_SHOPACTLICENCE')].name"
+          }
+        },{  
+          "variable": "fireNoc",
+          "value": {
+            "path": "$.additionalDetails.documents[?(@.title == 'TL_FIRENOC')].name"
+          }
         },
               {
                   "variable": "electricityConnectionNo",
@@ -1059,6 +1079,50 @@
               "variable": "building_photo",
               "value": {
                 "path": "PDF_STATIC_LABEL_CONSOLIDATED_TLAPP_BULDPHOTO"
+              },
+              "type": "label",
+              "localisation":{
+                "required":true,
+                "prefix": null,
+                "module":"rainmaker-common"
+             }
+            },{
+              "variable": "ele_bill",
+              "value": {
+                "path": "PDF_STATIC_LABEL_CONSOLIDATED_TLAPP_ELECTBILL"
+              },
+              "type": "label",
+              "localisation":{
+                "required":true,
+                "prefix": null,
+                "module":"rainmaker-common"
+             }
+            },{
+              "variable": "med_cert",
+              "value": {
+                "path": "PDF_STATIC_LABEL_CONSOLIDATED_TLAPP_MEDCERT"
+              },
+              "type": "label",
+              "localisation":{
+                "required":true,
+                "prefix": null,
+                "module":"rainmaker-common"
+             }
+            },{
+              "variable": "shopact_licence",
+              "value": {
+                "path": "PDF_STATIC_LABEL_CONSOLIDATED_TLAPP_SHOPACTLICENCE"
+              },
+              "type": "label",
+              "localisation":{
+                "required":true,
+                "prefix": null,
+                "module":"rainmaker-common"
+             }
+            },{
+              "variable": "fire_noc",
+              "value": {
+                "path": "PDF_STATIC_LABEL_CONSOLIDATED_TLAPP_FIRENOC"
               },
               "type": "label",
               "localisation":{

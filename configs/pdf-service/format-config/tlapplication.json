@@ -1325,7 +1325,7 @@
                           "fontSize": 11
                        },
                        {
-                         "text":" ",
+                         "text":"{{ele_bill}}",
                          "border":[
                            false,
                            false,
@@ -1360,6 +1360,93 @@
                         },
                         {
                          "text":"{{buildingPhoto}}",
+                         "border":[
+                           false,
+                           false,
+                           false,
+                           false
+                         ],
+                          "style": "receipt-table2"
+                       },
+                       {
+                         "text":"{{eleBill}}",
+                         "border":[
+                           false,
+                           false,
+                           false,
+                           false
+                         ],
+                          "style": "receipt-table2"
+                       }    
+                      ],[
+                        {
+                          "text":"{{med_cert}}",
+                          "border":[
+                            false,
+                            false,
+                            false,
+                            false
+                          ],
+                           "style": "receipt-table-value-cont"
+                        },  
+                        {
+                          "text":"{{shopact_licence}}",
+                          "border":[
+                            false,
+                            false,
+                            false,
+                            false
+                          ],
+                           "style": "receipt-table-value-cont",
+                           "fontSize": 11
+                        },
+                        {
+                         "text":"{{fire_noc}}",
+                         "border":[
+                           false,
+                           false,
+                           false,
+                           false
+                         ],
+                          "style": "receipt-table-value-cont",
+                          "fontSize": 11
+                       },
+                       {
+                         "text":" ",
+                         "border":[
+                           false,
+                           false,
+                           false,
+                           false
+                         ],
+                          "style": "receipt-table-value-cont",
+                          "fontSize": 11
+                       }    
+                        
+                      ],
+                      [
+                        {
+                          "text":"{{medCert}}",
+                          "border":[
+                            false,
+                            false,
+                            false,
+                            false
+                          ],
+                           "style": "receipt-table2"
+                        },  
+                        {
+                          "text":"{{shopactLicence}}",
+                          "border":[
+                            false,
+                            false,
+                            false,
+                            false
+                          ],
+                           "style": "receipt-table2"
+                        },
+                        {
+                         "text":"{{fireNoc}}",
                          "border":[
                            false,
                            false,
