@@ -435,7 +435,7 @@ ReportDefinitions:
         type: epoch
         source: uc
         isMandatory: false
-        searchClause: AND rh.receiptdate >= $fromDate
+        searchClause: AND bl.receiptdate >= $fromDate
       - name: toDate
         label: reports.uc.toDate
         type: epoch
