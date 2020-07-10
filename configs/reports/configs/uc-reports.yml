@@ -801,7 +801,7 @@ ReportDefinitions:
           To_char((To_timestamp(pd.receiptdate / 1000) at time Zone 'Asia/Kolkata'), 'DD/MM/YYYY') as receiptdate,
           ri.businessservice as servicecategory,
           rh.amount as amount, 
-          eg_user.name as name,
+          eg_user.name as name
         FROM egcl_billdetial AS rh
         INNER JOIN (SELECT bill.id,status, businessservice,message.message as servicecategory from egcl_bill bill LEFT OUTER JOIN message ON CONCAT('BILLINGSERVICE_BUSINESSSERVICE_',replace(businessservice, '.', '_')) = message.code AND message.locale='en_IN')as bill ON bill.id = rh.billid and status != 'Cancelled' and businessservice not in ('PT','TL') and rh.tenantid=$tenantid  
         LEFT OUTER JOIN egcl_paymentdetail as pd ON pd.billid = bill.id LEFT OUTER JOIN egcl_payment  AS pay ON pay.id = pd.paymentid
