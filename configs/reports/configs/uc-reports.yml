@@ -452,7 +452,8 @@ ReportDefinitions:
         searchClause: AND rh.tenantid = $ulb
     query: |
         -- Use CTE to force query plan, compute & use CTE later
-           initcap(split_part(rd.tenantid,'.', 2)) as ulb,
+          SELECT 
+          initcap(split_part(rd.tenantid,'.', 2)) as ulb,
           count(distinct rd.billdetailid) as totalreceipts,
           SUM(CASE WHEN taxheadcode LIKE '%_CGST' THEN adjustedamount ELSE 0 END) as cgst, 
           SUM(CASE WHEN taxheadcode LIKE '%_TAX' THEN adjustedamount ELSE 0 END) as tax,
