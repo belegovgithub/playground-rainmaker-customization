@@ -352,13 +352,13 @@ ReportDefinitions:
         type: epoch
         source: uc
         isMandatory: false
-        searchClause: AND pd.receiptdate >= $fromDate
+        searchClause: AND bill.billdate >= $fromDate
       - name: toDate
         label: reports.uc.toDate
         type: epoch
         source: uc
         isMandatory: false
-        searchClause: AND pd.receiptdate <= $toDate
+        searchClause: AND bill.billdate <= $toDate
       - name: ulb
         label: reports.uc.ulb
         type: singlevaluelist
