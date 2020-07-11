@@ -311,7 +311,7 @@ ReportDefinitions:
         type: string
         source: uc
         total: false
-      - name: bl.servicetype
+      - name: service
         label: reports.uc.businessdetails
         type: string
         source: uc
@@ -377,7 +377,7 @@ ReportDefinitions:
           SUM(CASE WHEN taxheadcode LIKE '%_SGST' THEN adjustedamount ELSE 0 END) as sgst, 
           SUM(CASE WHEN taxheadcode LIKE '%_FIELD_FEE' THEN adjustedamount ELSE 0 END) as fieldcollection,
           SUM(CASE WHEN taxheadcode LIKE '%_SEC_DEP' THEN adjustedamount ELSE 0 END) as securitydeposit,
-          SUM(rd.amount) as totalcollection
+          SUM(rd.adjustedamount) as totalcollection
           FROM egcl_billaccountdetail as rd
           INNER JOIN egcl_billdetial as rh on rh.id =  rd.billdetailid					
           INNER JOIN (SELECT distinct bill.id, status,billdate,businessservice,message.message as servicetype from egcl_bill bill  INNER JOIN message ON CONCAT('BILLINGSERVICE_BUSINESSSERVICE_',replace(businessservice, '.', '_')) = message.code AND message.locale='en_IN') as bl ON bl.id = rh.billid and status != 'Cancelled' and businessservice not in ('PT','TL')
@@ -435,13 +435,13 @@ ReportDefinitions:
         type: epoch
         source: uc
         isMandatory: false
-        searchClause: AND bl.receiptdate >= $fromDate
+        searchClause: AND bl.billdate >= $fromDate
       - name: toDate
         label: reports.uc.toDate
         type: epoch
         source: uc
         isMandatory: false
-        searchClause: AND bl.receiptdate <= $toDate
+        searchClause: AND bl.billdate <= $toDate
       - name: ulb
         label: reports.uc.ulb
         type: singlevaluelist
@@ -460,7 +460,7 @@ ReportDefinitions:
           SUM(CASE WHEN taxheadcode LIKE '%_SGST' THEN adjustedamount ELSE 0 END) as sgst, 
           SUM(CASE WHEN taxheadcode LIKE '%_FIELD_FEE' THEN adjustedamount ELSE 0 END) as fieldcollection,
           SUM(CASE WHEN taxheadcode LIKE '%_SEC_DEP' THEN adjustedamount ELSE 0 END) as securitydeposit,
-          SUM(rd.amount) as totalcollection
+          SUM(rd.adjustedamount) as totalcollection
           FROM egcl_billaccountdetail as rd
           INNER JOIN egcl_billdetial as rh on rh.id =  rd.billdetailid					
           INNER JOIN (SELECT distinct bill.id, status,billdate,businessservice from egcl_bill bill  ) as bl ON bl.id = rh.billid and status != 'Cancelled' and businessservice not in ('PT','TL')
