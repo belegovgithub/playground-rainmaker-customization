@@ -311,7 +311,7 @@ ReportDefinitions:
         type: string
         source: uc
         total: false
-      - name: servicecategory
+      - name: bl.servicetype
         label: reports.uc.businessdetails
         type: string
         source: uc
@@ -341,7 +341,7 @@ ReportDefinitions:
         type: string
         source: uc
         total: true
-      - name: totalamount
+      - name: totalcollection
         label: reports.uc.totalamount
         type: string
         source: uc
@@ -394,7 +394,7 @@ ReportDefinitions:
         type: string
         source: uc
         total: false
-      - name: noofreceipts
+      - name: totalreceipts
         label: reports.uc.noOfReceipts
         type: string
         source: uc
@@ -424,7 +424,7 @@ ReportDefinitions:
         type: string
         source: uc
         total: true
-      - name: totalamount
+      - name: totalcollection
         label: reports.uc.totalamount
         type: string
         source: uc
@@ -449,7 +449,7 @@ ReportDefinitions:
         source: uc
         wrapper: true
         isMandatory: false
-        searchClause: AND rh.tenantid = $ulb
+        searchClause: AND rd.tenantid = $ulb
     query: |
         -- Use CTE to force query plan, compute & use CTE later
           SELECT 
@@ -464,7 +464,7 @@ ReportDefinitions:
           FROM egcl_billaccountdetail as rd
           INNER JOIN egcl_billdetial as rh on rh.id =  rd.billdetailid					
           INNER JOIN (SELECT distinct bill.id, status,billdate,businessservice from egcl_bill bill  ) as bl ON bl.id = rh.billid and status != 'Cancelled' and businessservice not in ('PT','TL')
-    groupby: group by rh.tenantid
+    groupby: group by rd.tenantid
 
 
 
