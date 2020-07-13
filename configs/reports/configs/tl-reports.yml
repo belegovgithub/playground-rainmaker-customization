@@ -16,16 +16,6 @@ ReportDefinitions:
     type: string
     source: tl
     total: false
-  - name: g8issuedate
-    label: report.tl.g8issuedate  
-    type: string
-    source: tl
-    total: false
-  - name: g8receiptno
-    label: report.tl.g8receiptno
-    type: string
-    source: tl
-    total: false
   - name: licensenumber
     label: report.tl.licensenumber
     type: string
@@ -71,11 +61,26 @@ ReportDefinitions:
     type: string
     source: tl
     total: false
+  - name: feeType
+    label: report.tl.feeType
+    type: string
+    source: tl
+    total: false
   - name: totalamount
     label: report.tl.receipt.totalamount
     type: string
     source: tl
     total: true
+  - name: g8issuedate
+    label: report.tl.g8issuedate  
+    type: string
+    source: tl
+    total: false
+  - name: g8receiptno
+    label: report.tl.g8receiptno
+    type: string
+    source: tl
+    total: false
   searchParams:
   - name: fromDate
     label: reports.tl.fromDate
@@ -102,6 +107,7 @@ ReportDefinitions:
       tlown.mobilenumber,
       pay.transactionnumber,
       pay.paymentmode as instrumenttype,
+      feeType,
       totalamount,
       pd.amountpaid,
       To_char(To_timestamp(pd.manualreceiptdate / 1000), 'DD/MM/YYYY') AS g8issuedate,
@@ -118,6 +124,7 @@ ReportDefinitions:
       group by tradelicensedetailid
     ) tlown ON tlown.tradelicensedetailid = tld.id
     INNER JOIN egcl_bill bill ON bill.consumercode = tl.applicationnumber  and bill.status != 'Cancelled'
+    JOIN egcl_billdetial as bild ON bild.billid = bill.id INNER JOIN(Select DISTINCT billdetailid,amount, taxheadcode,message.message as feeType from egcl_billaccountdetail bilaccd INNER JOIN message ON taxheadcode = message.code AND message.locale='en_IN')  as bilaccd ON bild.id = bilaccd .billdetailid and bilaccd.amount !=0 and feeType != 'Application Fee'
     LEFT OUTER JOIN egcl_paymentdetail as pd ON pd.billid = bill.id
     LEFT OUTER JOIN egcl_payment as pay ON pay.id = pd.paymentid and pay.paymentstatus != 'CANCELLED'
     WHERE tl.Status in ('APPROVED', 'PAID', 'CANCELLED') AND tl.tenantId != 'uk.testing' AND tl.tenantId LIKE $tenantid
@@ -739,16 +746,6 @@ ReportDefinitions:
     type: string
     source: tl
     total: false
-  - name: g8issuedate
-    label: report.tl.g8issuedate
-    type: string
-    source: tl
-    total: false
-  - name: g8receiptno
-    label: report.tl.g8receiptno
-    type: string
-    source: tl
-    total: false
   - name: name
     label: report.tl.user.name
     type: string
@@ -779,6 +776,16 @@ ReportDefinitions:
     type: string
     source: tl
     total: true
+  - name: g8issuedate
+    label: report.tl.g8issuedate
+    type: string
+    source: tl
+    total: false
+  - name: g8receiptno
+    label: report.tl.g8receiptno
+    type: string
+    source: tl
+    total: false
   searchParams:
   - name: fromDate
     label: reports.tl.fromDate
