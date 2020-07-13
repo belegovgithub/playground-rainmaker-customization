@@ -271,7 +271,7 @@ ReportDefinitions:
       - name: businessservice
         label: reports.uc.businessservice
         type: singlevaluelist
-        pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?moduleName=BillingService&masterName=BusinessService&filter=[?(@.type=='Adhoc')]&tenantId=$tenantid|$.MdmsRes.BillingService.BusinessService[*].code|$.MdmsRes.BillingService.BusinessService[*].businessService
+        pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?moduleName=BillingService&masterName=BusinessService&type='Adhoc'&tenantId=$tenantid|$.MdmsRes.BillingService.BusinessService[*].code|$.MdmsRes.BillingService.BusinessService[*].businessService
         source: uc
         wrapper: true
         isMandatory: false
