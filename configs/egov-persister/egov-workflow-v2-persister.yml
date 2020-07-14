@@ -7,7 +7,7 @@ serviceMaps:
    isTransaction: true
    queryMaps:
 
-       - query: INSERT INTO eg_wf_processinstance_v2( id,tenantid,businessService,businessId,moduleName,action,status,comment, assigner, assignee, stateSla,businessServiceSla, previousStatus, createdby, lastmodifiedby, createdtime, lastmodifiedtime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+       - query: INSERT INTO eg_wf_processinstance_v2( id,tenantid,businessService,businessId,moduleName,action,status,comment, assigner, stateSla,businessServiceSla, previousStatus, createdby, lastmodifiedby, createdtime, lastmodifiedtime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
          basePath: ProcessInstances.*
          jsonMaps:
           - jsonPath: $.ProcessInstances.*.id
@@ -27,8 +27,6 @@ serviceMaps:
           - jsonPath: $.ProcessInstances.*.comment
 
           - jsonPath: $.ProcessInstances.*.assigner.uuid
-
-          - jsonPath: $.ProcessInstances.*.assignee.uuid
 
           - jsonPath: $.ProcessInstances.*.stateSla
 
@@ -72,7 +70,22 @@ serviceMaps:
 
           - jsonPath: $.ProcessInstances.documents.*.auditDetails.lastModifiedTime
 
+        - query: INSERT INTO eg_wf_assignee_v2(processinstanceid, tenantid, assignee, createdby, lastmodifiedby, createdtime, lastmodifiedtime) VALUES (?, ?, ?, ?, ?, ?, ?);
+          basePath: ProcessInstances.*.assignes.*
+          jsonMaps:
+          - jsonPath: $.ProcessInstances[*][?({uuid} in @.assignes[*].uuid)].id
 
+          - jsonPath: $.ProcessInstances[*][?({uuid} in @.assignes[*].uuid)].tenantId
+
+          - jsonPath: $.ProcessInstances.*.assignes.*.uuid
+
+          - jsonPath: $.ProcessInstances[*][?({uuid} in @.assignes[*].uuid)].auditDetails.createdBy
+
+          - jsonPath: $.ProcessInstances[*][?({uuid} in @.assignes[*].uuid)].auditDetails.lastModifiedBy
+
+          - jsonPath: $.ProcessInstances[*][?({uuid} in @.assignes[*].uuid)].auditDetails.createdTime
+
+          - jsonPath: $.ProcessInstances[*][?({uuid} in @.assignes[*].uuid)].auditDetails.lastModifiedTime
 
 
  - version: 1.0
