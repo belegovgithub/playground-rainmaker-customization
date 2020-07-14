@@ -70,7 +70,9 @@ serviceMaps:
 
           - jsonPath: $.ProcessInstances.documents.*.auditDetails.lastModifiedTime
 
-        - query: INSERT INTO eg_wf_assignee_v2(processinstanceid, tenantid, assignee, createdby, lastmodifiedby, createdtime, lastmodifiedtime) VALUES (?, ?, ?, ?, ?, ?, ?);
+          
+
+      - query: INSERT INTO eg_wf_assignee_v2(processinstanceid, tenantid, assignee, createdby, lastmodifiedby, createdtime, lastmodifiedtime) VALUES (?, ?, ?, ?, ?, ?, ?);
           basePath: ProcessInstances.*.assignes.*
           jsonMaps:
           - jsonPath: $.ProcessInstances[*][?({uuid} in @.assignes[*].uuid)].id
