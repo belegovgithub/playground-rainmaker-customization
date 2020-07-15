@@ -29,6 +29,12 @@
                   {
                     "text": "{{serviceType}} {{payment_receipt}}",
                     "style": "receipt-logo-sub-header"
+                  },
+                  {
+                      "image": "{{qrcodeimage}}",
+                      "width": 64,
+                      "height": 64
+                    
                   }
                 ],
                 "alignment": "left",

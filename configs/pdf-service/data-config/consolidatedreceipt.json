@@ -474,7 +474,14 @@
                   ]
               }
             ]
-          }
+          },{
+            "qrcodeConfig": [
+              {
+                  "variable": "qrcodeimage",
+                  "value":"Payer Name : {{payerName}},Application Number: {{consumerID}}, Receipt Number: {{receiptNo}}, Transaction Id: {{transactionID}},Service Type: {{serviceType}},Billing Period: {{fromPeriod}} to {{toPeriod}}"
+              }
+            ]
+        }
         ]
       }
     ]

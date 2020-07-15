@@ -15,14 +15,14 @@
                       [
                           {
                               "image": "{{userpic}}",
-                              "width": 70,
-                              "height": 82,
+                              "width": 60,
+                              "height": 72,
                               "alignment": "center",
                                "margin": [
                                       0,
-                                      10,
+                                      5,
                                       0,
-                                      10
+                                      7
                               ]
                            }  
                       ],
@@ -98,7 +98,7 @@
                        "alignment":"left",
                        "margin":[
                          0,
-                         10,
+                         5,
                          0,
                          0
                        ]
@@ -458,7 +458,26 @@
                    "alignment":"right"
                  }
                ]
-             }
+             },
+             {
+              "table":{
+                "style":"qrHead",
+                "widths":[
+                  "*"
+                ],
+                "body":[ 
+                     [
+                         {
+                             "image": "{{qrcodeimage}}",
+                             "width": 64,
+                             "height": 64,
+                             "alignment": "center"                               
+                          }  
+                     ]
+                ] 
+             },
+             "layout":"noBorders"
+            }
            ],
            "styles": {
             "noc-head": {
@@ -469,6 +488,14 @@
                 -2
               ]
             },
+            "qrHead": {
+              "margin": [
+                0,
+                35,
+                0,
+                -20
+              ]
+            },
              "receipt-approver": {
               "color": "#000000",
               "fontSize": 14,
@@ -476,7 +503,7 @@
               "alignment": "center",
               "margin": [
                 -10,
-                50,
+                25,
                 0,
                 1
               ]
@@ -490,7 +517,7 @@
                 0,
                 0,
                 0,
-                5
+                0
               ]
             },
             "receipt-sub-logo-header": {
@@ -507,7 +534,7 @@
             },
             "receipt-logo-sub-header": {
               "color": "#484848",
-              "fontSize": 13,
+              "fontSize": 12,
               "letterSpacing": 0.6,
               "alignment": "center",
               "margin": [
@@ -519,7 +546,7 @@
             },
             "receipt-sub-logo-sub-header": {
               "color": "#484848",
-              "fontSize": 14,
+              "fontSize": 13,
               "letterSpacing": 0.6,
               "alignment": "left",
               "margin": [
@@ -531,7 +558,7 @@
             },
               "receipt-sub-address-sub-header": {
               "color": "#484848",
-              "fontSize": 14,
+              "fontSize": 13,
               "letterSpacing": 0.1,
               "alignment": "right",
               "margin": [
@@ -543,7 +570,7 @@
             },
              "receipt-sub-website-sub-header": {
               "color": "#484848",
-              "fontSize": 14,
+              "fontSize": 13,
               "letterSpacing": 0.1,
               "alignment": "right",
               "margin": [
@@ -555,7 +582,7 @@
             },
               "receipt-sub-email-sub-header": {
               "color": "#484848",
-              "fontSize": 14,
+              "fontSize": 13,
               "letterSpacing": 0.1,
               "alignment": "right",
               "margin": [
