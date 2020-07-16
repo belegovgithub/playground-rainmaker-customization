@@ -20,6 +20,10 @@
           "name": "Trade License",
           "id": "tradeLicense"
         },
+		{
+          "name": "Misc Collect",
+          "id": "mCollect"
+        },
         {
           "name": "PGR",
           "id": "pgr"
