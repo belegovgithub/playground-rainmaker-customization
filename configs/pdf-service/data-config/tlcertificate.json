@@ -12,11 +12,6 @@
           {
             "direct": [
               {
-                  "variable": "logoImage",                        
-                  "url":"https://raw.githubusercontent.com/egovernments/egov-web-app/master/web/rainmaker/dev-packages/egov-ui-kit-dev/src/assets/images/pblogo.png",
-                  "type":"image"      
-              },
-              {
                   "variable": "tradeLicenseNo",
                   "value": {
                     "path": "$.licenseNumber"
@@ -439,7 +434,15 @@
       }
         
      ]
-   }
+   },
+   {
+    "qrcodeConfig": [
+      {
+          "variable": "qrcodeimage",
+          "value":"Owner Name : {{tradeOwnerName}},Application number: {{applicationNo}}, Licence number: {{tradeLicenseNo}},Receipt number: {{recieptNo}}, Trade Name: {{tradeName}}, Licence Issue Date: {{licenseIssueDate}}, Licence Validity: {{licenseValidityFrom}} to {{licenseValidityTo}}"
+      }
+    ]
+}
  ]
 
 }
