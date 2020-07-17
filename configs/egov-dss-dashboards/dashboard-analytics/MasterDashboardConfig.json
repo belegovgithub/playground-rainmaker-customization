@@ -690,7 +690,7 @@
                   "headers": []
                 },
                 {
-                  "id": "totalCollectionv2",
+                  "id": "UCtotalCollectionv2",
                   "name": "DSS_TOTAL_COLLECTION",
                   "code": "",
                   "chartType": "metric",
