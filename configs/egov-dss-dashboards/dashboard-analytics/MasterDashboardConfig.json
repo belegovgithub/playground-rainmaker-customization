@@ -1048,7 +1048,7 @@
               },
               "charts": [
                 {
-                  "id": "totalCollectionv2",
+                  "id": "overviewTotalCollectionv2",
                   "name": "DSS_TOTAL_COLLECTION",
                   "code": "",
                   "chartType": "metric",
@@ -2596,7 +2596,7 @@
                   "headers": []
                 },
                 {
-                  "id": "totalCollectionv2",
+                  "id": "overviewTotalCollectionv2",
                   "name": "DSS_TOTAL_COLLECTION",
                   "code": "",
                   "chartType": "metric",
@@ -2879,7 +2879,7 @@
               },
               "charts": [
                 {
-                  "id": "totalCollectionv2",
+                  "id": "overviewTotalCollectionv2",
                   "name": "DSS_TOTAL_COLLECTION",
                   "code": "",
                   "chartType": "metric",
@@ -2922,7 +2922,7 @@
               "id": 121,
               "name": "DSS_PROPERTY_TAX",
               "vizType": "module",
-              "moduleLevel": "PT",
+              "moduleLevel": "TL",
               "type": "",
               "noUnit": false,
               "isCollapsible": false,
@@ -2934,7 +2934,7 @@
               "label": "",
               "charts": [
                 {
-                  "id": "totalCollectionv2",
+                  "id": "overviewTotalCollectionv2",
                   "name": "DSS_TOTAL_COLLECTION",
                   "code": "",
                   "chartType": "metric",
