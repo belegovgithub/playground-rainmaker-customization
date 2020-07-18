@@ -644,7 +644,7 @@
               "isCollapsible": true,
               "charts": [
                 {
-                  "id": "tlStatusByDDR",
+                  "id": "tlStatusByDDR2",
                   "name": "",
                   "code": "",
                   "chartType": "table",
@@ -2556,7 +2556,7 @@
               "isCollapsible": true,
               "charts": [
                 {
-                  "id": "tlStatusByDDR",
+                  "id": "tlStatusByDDR2",
                   "name": "",
                   "code": "",
                   "chartType": "table",
