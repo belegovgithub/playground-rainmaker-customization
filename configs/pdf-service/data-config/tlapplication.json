@@ -1247,7 +1247,19 @@
                   ]
               }
             ]
-          }
+          },
+          {
+            "qrcodeConfig": [
+              {
+                  "variable": "qrcodeimage",
+                  "value":"BEL UAT"
+              },
+              {
+                "variable": "qrcodeimage1",
+                "value":"Payer Name : {{name}},Application Number: {{applicationNumber}}, Mobile no: {{mobileNo}}"
+            }
+            ]
+        }
         ]
       }
     ]
