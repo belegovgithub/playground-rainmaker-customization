@@ -4,6 +4,7 @@
       "defaultStyle": {
           "font": "Cambay"
          },
+     "watermark": { "text": "BEL UAT BEL UAT", "color": "gery", "opacity": 0.1, "bold": true, "italics": false },
       "content": [
           {
            "style": "noc-head",
@@ -83,6 +84,7 @@
                               "table": {
                                      "widths": [
                                        "*",
+                                       "*",
                                        "*"
                                      ],
                                      "body": [
@@ -115,6 +117,7 @@
                               "table": {
                                      "widths": [
                                        "*",
+                                       "*",
                                        "*"
                                      ],
                                      "body": [
@@ -146,6 +149,7 @@
                              {
                               "table": {
                                      "widths": [
+                                       "*",
                                        "*",
                                        "*"
                                      ],
@@ -189,6 +193,7 @@
                               "table": {
                                      "widths": [
                                        "*",
+                                       "*",
                                        "*"
                                      ],
                                      "body": [
@@ -214,6 +219,18 @@
                                            ],
                                            "bold": true,
                                             "style": "receipt-table-value-down"
+                                         },
+                                         {
+                                            "image": "{{qrcodeimage}}",
+                                            "style":"receipt-table-value-total-Qr",
+                                            "border":[
+                                              false,
+                                              false,
+                                              false,
+                                              false
+                                            ],
+                                            "width": 72,
+                                            "height": 72
                                          }
                                        ]
                                        ]
@@ -1553,6 +1570,15 @@
              0
            ]
          },
+         "receipt-table-value-total-Qr": {
+          "alignment": "right",
+          "margin": [
+            0,
+            -60,
+             10,
+             0
+          ]
+        },
          "receipt-table-value-down": {
            "color": "#000000",
            "bold": false,

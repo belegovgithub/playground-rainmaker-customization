@@ -1,5 +1,5 @@
 {
-    "key": "tradelicence-appl-receipt",
+    "key": "tradelicense-appl-receipt",
     "DataConfigs": {
       "serviceName": "rainmaker-common",
       "version": "1.0.0",
@@ -399,7 +399,7 @@
             {
               "externalAPI": [     
                 { 
-                    "path": "http://localhost:8085/egov-mdms-service/v1/_get",
+                    "path": "http://egov-mdms-service:8080/egov-mdms-service/v1/_get",
                     "queryParam": "moduleName=tenant&masterName=tenants&tenantId=pb&filter=%5B?(@.code=='{$.tenantId}')%5D",
                     "apiRequest": null,
                     "responseMapping":[
@@ -436,7 +436,7 @@
                     ]
                 },
                 { 
-                  "path": "http://localhost:8085/egov-mdms-service/v1/_get",
+                  "path": "http://egov-mdms-service:8080/egov-mdms-service/v1/_get",
                   "queryParam": "moduleName=tenant&masterName=footer&tenantId=pb&filter=%5B?(@.code=='{$.tenantId}' %26%26 @.service=='{$.paymentDetails[0].businessService}')%5D",
                   "apiRequest": null,
                   "responseMapping":[
@@ -463,7 +463,19 @@
                   ]
               }
               ]
-            }
+            },
+            {
+              "qrcodeConfig": [
+                {
+                    "variable": "qrcodeimage1",
+                    "value":"Payer Name : {{payerName}},Application: {{consumerID}}, Receipt number: {{receiptNo}}, Date of payment: {{paymentDate}}, Fees Paid: {{paidAmount}}, Billing Period: {{fromPeriod}} to {{toPeriod}}"
+                },
+                {
+                  "variable": "qrcodeimage",
+                  "value":"BEL UAT"
+                }
+              ]
+          }
           ]
         }
       ]
