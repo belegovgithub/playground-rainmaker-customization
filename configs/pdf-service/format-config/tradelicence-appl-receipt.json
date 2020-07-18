@@ -4,6 +4,7 @@
       "defaultStyle": {
         "font": "Cambay"
        },
+       "watermark": { "text": "BEL UAT BEL UAT", "color": "gery", "opacity": 0.1, "bold": true, "italics": false },
       "content": [
         {
           "style": "noc-head",
@@ -29,7 +30,13 @@
                     {
                       "text": "{{serviceType}} {{payment_receipt}}",
                       "style": "receipt-logo-sub-header"
-                    }
+                    },
+                    {
+                      "image": "{{qrcodeimage}}",
+                      "width": 64,
+                      "height": 64
+                    
+                  }
                   ],
                   "alignment": "left",
                   "margin": [
