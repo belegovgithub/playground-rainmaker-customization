@@ -218,14 +218,14 @@
         "requestQueryMap": "{\"wardId\" : \"domainObject.ward.name.keyword\",\"module\" : \"dataObject.paymentDetails.businessService.keyword\", \"tenantId\" : \"dataObject.tenantId\", \"district\" : \"dataObject.tenantData.cityDistrictCode\" }",
         "dateRefField": "dataObject.paymentDetails.receiptDate",
         "indexName": "dss-payment_v2",
-        "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"dataObject.tenantId.keyword\":\"pb.testing\"}},{\"terms\":{\"dataObject.bill.status.keyword\":[\"Cancelled\"]}}]}},\"aggs\":{\"TL Tax\":{\"nested\":{\"path\":\"dataObject.paymentDetails.bill.billDetails.billAccountDetails\"},\"aggs\":{\"aggrFilter\":{\"filter\":{\"terms\":{\"dataObject.paymentDetails.bill.billDetails.billAccountDetails.taxHeadCode.keyword\":[\"TL_TAX\"]}},\"aggs\":{\"amount\":{\"sum\":{\"field\":\"dataObject.paymentDetails.bill.billDetails.billAccountDetails.amount\"}}}}}},\"Adhoc Penalty\":{\"nested\":{\"path\":\"dataObject.paymentDetails.bill.billDetails.billAccountDetails\"},\"aggs\":{\"aggrFilter\":{\"filter\":{\"terms\":{\"dataObject.paymentDetails.bill.billDetails.billAccountDetails.taxHeadCode.keyword\":[\"TL_ADHOC_PENALTY\"]}},\"aggs\":{\"amount\":{\"sum\":{\"field\":\"dataObject.paymentDetails.bill.billDetails.billAccountDetails.amount\"}}}}}},\"Adhoc Rebate\":{\"nested\":{\"path\":\"dataObject.paymentDetails.bill.billDetails.billAccountDetails\"},\"aggs\":{\"aggrFilter\":{\"filter\":{\"terms\":{\"dataObject.paymentDetails.bill.billDetails.billAccountDetails.taxHeadCode.keyword\":[\"TL_ADHOC_REBATE\"]}},\"aggs\":{\"amount\":{\"sum\":{\"field\":\"dataObject.paymentDetails.bill.billDetails.billAccountDetails.amount\"}}}}}}}}}}"
+        "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"dataObject.tenantId.keyword\":\"pb.testing\"}},{\"terms\":{\"dataObject.bill.status.keyword\":[\"Cancelled\"]}}]}},\"aggs\":{\"TL Tax2\":{\"nested\":{\"path\":\"dataObject.paymentDetails.bill.billDetails.billAccountDetails\"},\"aggs\":{\"aggrFilter\":{\"filter\":{\"terms\":{\"dataObject.paymentDetails.bill.billDetails.billAccountDetails.taxHeadCode.keyword\":[\"TL_APP_FEE\"]}},\"aggs\":{\"amount\":{\"sum\":{\"field\":\"dataObject.paymentDetails.bill.billDetails.billAccountDetails.amount\"}}}}}},\"Adhoc Penalty\":{\"nested\":{\"path\":\"dataObject.paymentDetails.bill.billDetails.billAccountDetails\"},\"aggs\":{\"aggrFilter\":{\"filter\":{\"terms\":{\"dataObject.paymentDetails.bill.billDetails.billAccountDetails.taxHeadCode.keyword\":[\"TL_APP_FEE\"]}},\"aggs\":{\"amount\":{\"sum\":{\"field\":\"dataObject.paymentDetails.bill.billDetails.billAccountDetails.amount\"}}}}}},\"Adhoc Rebate\":{\"nested\":{\"path\":\"dataObject.paymentDetails.bill.billDetails.billAccountDetails\"},\"aggs\":{\"aggrFilter\":{\"filter\":{\"terms\":{\"dataObject.paymentDetails.bill.billDetails.billAccountDetails.taxHeadCode.keyword\":[\"TL_APP_FEE\"]}},\"aggs\":{\"amount\":{\"sum\":{\"field\":\"dataObject.paymentDetails.bill.billDetails.billAccountDetails.amount\"}}}}}}}}}}"
       }
     ],
-    "isMdmsEnabled": true,
+    "isMdmsEnabled": false,
     "filterKeys": [
       {"key": "tenantId", "column": "DDRs"}
     ],
-    "isPostResponseHandlerA": true,
+    "isPostResponseHandlerA": false,
     "chartType": "xtable",
     "valueType": "number",
     "drillChart": "licenceTaxHeadsBreakupBoundaryv2",
@@ -233,7 +233,7 @@
     "action": "",
     "plotLabel": "DDRs",
     "aggregationPaths": [
-      "TL Tax",
+      "TL Tax2",
       "Adhoc Penalty",
       "Adhoc Rebate"
     ],
@@ -241,7 +241,7 @@
       {
         "postAggregationTheory" : "",
         "actionName": "AdditiveComputedField",
-        "fields" : ["TL Tax", "Adhoc Penalty", "Adhoc Rebate"],
+        "fields" : ["TL Tax2", "Adhoc Penalty", "Adhoc Rebate"],
         "newField" : "Total Amount",
         "_comments": "fields are field names picked from its aggregation query to use post aggregation newField value with given new field name  "
       }
@@ -1387,7 +1387,7 @@
       },
       {
         "module": "TL",
-        "dateRefField": "Data.@timestamp",
+        "dateRefField": "Data.tradelicense.applicationDate",
         "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\", \r\n  \"district\" : \"Data.tenantData.city.districtCode\", \r\n\"tenantId\" : \"Data.tenantId\" \r\n}",
         "indexName": "tlindex-v1",
         "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tradelicense.tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"Trade Licence\":{\"value_count\":{\"field\":\"Data.tradelicense.tenantId.keyword\"}}}}}}"
@@ -1413,6 +1413,29 @@
     "insight": {
     },
     "_comment": " totalApplication is the chartId"
+  },
+  "totalApplicationDeptWise2": {
+    "chartName": "DSS_TOTAL_CUMULATIVE_COLLECTION:_DEPARTMENT_WISE",
+    "queries": [
+      {
+        "module": "TL",
+        "dateRefField": "Data.tradelicense.applicationDate",
+        "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\", \r\n  \"district\" : \"Data.tenantData.city.districtCode\", \r\n\"tenantId\" : \"Data.tenantId\" \r\n}",
+        "indexName": "tlindex-v1",
+        "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tradelicense.tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"Trade Licence2\":{\"value_count\":{\"field\":\"Data.tradelicense.tenantId.keyword\"}}}}}}"
+      }
+    ],
+    "chartType": "pie",
+    "valueType": "number",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "Trade Licence2"
+    ],
+    "insight": {
+    },
+    "_comment": " "
   },
   "totalApplication&ClosedApplication": {
     "chartName": "DSS_TOTAL_APPLICATION_&_CLOSED_APPLICATION",
@@ -2672,6 +2695,75 @@
     },
     "_comment": " SLA Achieved Percentage "
   },
+  "tlStatusByDDR2": {
+    "chartName": "DSS_TL_STATUS_BY_DDR",
+    "queries": [
+      {
+        "module": "TL",
+        "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\", \"tenantId\" : \"Data.tradelicense.tenantId.keyword\" }",
+        "dateRefField": "Data.tradelicense.issuedDate",
+        "indexName": "tlindex-v1",
+        "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tradelicense.tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"Status\":{\"terms\":{\"field\":\"Data.tradelicense.status.keyword\",\"size\":1000,\"min_doc_count\":0},\"aggs\":{\"License Issued\":{\"value_count\":{\"field\":\"Data.tradelicense.licenseNumber.keyword\"}}}}}}}}"
+       
+      }
+    ],
+    "isMdmsEnabled": false,
+    "filterKeys": [
+      {"key": "tenantId", "column": "DDRs"}
+    ],
+    "chartType": "xtable",
+    "valueType": "number",
+    "drillChart": "tlStatusByTenant",
+    "drillFields": [
+      ""
+    ],
+    "documentType": "_doc",
+    "action": "",
+    "plotLabel": "DDRssss",
+    "aggregationPathsA": [
+      "Approved",
+      "Initiated",
+      "Applied",
+      "Rejected",
+      "Pending Approval",
+      "Field Inspection",
+      "Cancelled",
+      "Pending Payment",
+      "Paid"
+    ],
+    "pathDataTypeMappingA": [
+      {
+        "Approved": "number"
+      },
+      {
+        "Initiated": "number"
+      },
+      {
+        "Applied": "number"
+      },
+      {
+        "Rejected": "number"
+      },
+      {
+        "Pending Approval": "number"
+      },
+      {
+        "Field Inspection": "number"
+      },
+      {
+        "Cancelled": "number"
+      },
+      {
+        "Pending Payment": "number"
+      },
+      {
+        "Paid": "number"
+      }
+    ],
+    "insight": {
+    },
+    "_comment": ""
+  },
   "tlStatusByDDR": {
     "chartName": "DSS_TL_STATUS_BY_DDR",
     "queries": [
@@ -2681,7 +2773,7 @@
         "dateRefField": "Data.tradelicense.issuedDate",
         "indexName": "tlindex-v1",
         "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tradelicense.tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"Status\":{\"terms\":{\"field\":\"Data.tradelicense.status.keyword\",\"size\":1000,\"min_doc_count\":0},\"aggs\":{\"License Issued\":{\"value_count\":{\"field\":\"Data.tradelicense.licenseNumber.keyword\"}}}}}}}}",
-        "aggrQueryBC": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tradelicense.tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"Status\":{\"filters\":{\"filters\":{\"Approved\":{\"match\":{\"Data.tradelicense.status.keyword\":\"APPROVED\"}},\"Initiated\":{\"match\":{\"Data.tradelicense.status.keyword\":\"INITIATED\"}},\"Applied\":{\"match\":{\"Data.tradelicense.status.keyword\":\"APPLIED\"}},\"Rejected\":{\"match\":{\"Data.tradelicense.status.keyword\":\"REJECTED\"}},\"Pending Approval\":{\"match\":{\"Data.tradelicense.status.keyword\":\"PENDINGAPPROVAL\"}},\"Field Inspection\":{\"match\":{\"Data.tradelicense.status.keyword\":\"FIELDINSPECTION\"}},\"Cancelled\":{\"match\":{\"Data.tradelicense.status.keyword\":\"CANCELLED\"}},\"Pending Payment\":{\"match\":{\"Data.tradelicense.status.keyword\":\"PENDINGPAYMENT\"}},\"Paid\":{\"match\":{\"Data.tradelicense.status.keyword\":\"PAID\"}}}}}}}}}"
+        "aggrQueryBC": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tradelicense.tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"Status\":{\"filters\":{\"filters\":{\"Approved2\":{\"match\":{\"Data.tradelicense.status.keyword\":\"APPROVED\"}},\"Initiated\":{\"match\":{\"Data.tradelicense.status.keyword\":\"INITIATED\"}},\"Applied\":{\"match\":{\"Data.tradelicense.status.keyword\":\"APPLIED\"}},\"Rejected\":{\"match\":{\"Data.tradelicense.status.keyword\":\"REJECTED\"}},\"Pending Approval\":{\"match\":{\"Data.tradelicense.status.keyword\":\"PENDINGAPPROVAL\"}},\"Field Inspection\":{\"match\":{\"Data.tradelicense.status.keyword\":\"FIELDINSPECTION\"}},\"Cancelled\":{\"match\":{\"Data.tradelicense.status.keyword\":\"CANCELLED\"}},\"Pending Payment\":{\"match\":{\"Data.tradelicense.status.keyword\":\"PENDINGPAYMENT\"}},\"Paid\":{\"match\":{\"Data.tradelicense.status.keyword\":\"PAID\"}}}}}}}}}"
       }
     ],
     "isMdmsEnabled": true,
@@ -2698,7 +2790,7 @@
     "action": "",
     "plotLabel": "DDRs",
     "aggregationPathsA": [
-      "Approved",
+      "Approved2",
       "Initiated",
       "Applied",
       "Rejected",
