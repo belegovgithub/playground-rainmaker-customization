@@ -1,2 +1,2 @@
-rainmaker-tl=file:///work-dir/playground-rainmaker-customization/configs/reports/reports/configs/tl-reports.yml
-rainmaker-uc=file:///work-dir/playground-rainmaker-customization/configs/reports/reports/configs/uc-reports.yml
+rainmaker-tl=file:///work-dir/playground-rainmaker-customization/configs/reports/configs/tl-reports.yml
+rainmaker-uc=file:///work-dir/playground-rainmaker-customization/configs/reports/configs/uc-reports.yml
