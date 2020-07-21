@@ -48,11 +48,16 @@
                   }
               },
               {
-                  "variable": "tradeAddress",
-                  "value": {
-                    "path": "$.tradeLicenseDetail.address.locality.name"
-                  }
-              },
+                "variable": "tradeAddress",
+                "value": {
+                  "path": "$.tradeLicenseDetail.address.locality.code"
+                },
+                "localisation":{
+                  "required":true,
+                  "prefix": "TENANTS_MOHALLA",
+                  "module": "rainmaker-common"
+               }
+            },
               {
                 "variable": "city",
                 "value": {
