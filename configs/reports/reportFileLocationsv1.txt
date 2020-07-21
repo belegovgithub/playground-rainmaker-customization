@@ -1,4 +1,2 @@
-rainmaker-pgr=https://raw.githubusercontent.com/belegovgithub/playground-rainmaker-customization/master/configs/reports/configs/pgr-reports.yml
-rainmaker-pt=https://raw.githubusercontent.com/belegovgithub/playground-rainmaker-customization/master/configs/reports/configs/pt-reports.yml
-rainmaker-tl= file:///work-dir/playground-rainmaker-customization/configs/reports/configs/tl-reports.yml
-rainmaker-uc=https://raw.githubusercontent.com/belegovgithub/playground-rainmaker-customization/master/configs/reports/configs/uc-reports.yml
+rainmaker-tl=file:///work-dir/playground-rainmaker-customization/configs/reports/reports/configs/tl-reports.yml
+rainmaker-uc=file:///work-dir/playground-rainmaker-customization/configs/reports/reports/configs/uc-reports.yml
