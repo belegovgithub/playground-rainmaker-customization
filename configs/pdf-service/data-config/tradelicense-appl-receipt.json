@@ -421,7 +421,7 @@
                       },
                       {
                         "variable": "logoImage",                        
-                        "value":"$.MdmsRes.tenant.tenants[0].logoId",
+                        "value":"$.MdmsRes.tenant.tenants[0].logoIdPdf",
                         "type":"image"      
                       },
                       {
