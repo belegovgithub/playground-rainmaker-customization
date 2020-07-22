@@ -33,6 +33,14 @@
           "id": "overview"
         },
         {
+          "name": "ulb-home",
+          "id": "ulb-home"
+        },
+        {
+          "id": "ulb-tradeLicense",
+          "name": "ulb-tradeLicense"
+        },
+        {
           "id": "ws"
         }
       ]
@@ -52,6 +60,9 @@
         },
         {
           "id": "ulb-tradeLicense"
+        },
+        {
+          "id": "ulb-mCollect"
         },
         {
           "id": "ulb-overview"

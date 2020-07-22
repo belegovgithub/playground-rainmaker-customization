@@ -690,7 +690,7 @@
                   "headers": []
                 },
                 {
-                  "id": "UCtotalCollectionv2",
+                  "id": "totalCollectionv2",
                   "name": "DSS_TOTAL_COLLECTION",
                   "code": "",
                   "chartType": "metric",
@@ -706,7 +706,7 @@
                   "headers": []
                 },
                 {
-                  "id": "targetAchievedv2",
+                  "id": "mcTargetAchievedv2",
                   "name": "DSS_TARGET_ACHIEVED",
                   "code": "",
                   "chartType": "metric",
@@ -728,7 +728,89 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "cumulativeCollectionv2",
+                  "id": "mcCumulativeCollectionv2",
+                  "name": "Monthly",
+                  "code": "",
+                  "chartType": "line",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DSS_M_COLLECT_DASHBOARD",
+      "id": "ulb-mCollect",
+      "isActive": "",
+      "style": "linear",
+      "visualizations": [
+        {
+          "row": 1,
+          "name": "DSS_REVENUE",
+          "vizArray": [
+            {
+              "id": 311,
+              "name": "DSS_OVERVIEW",
+              "dimensions": {
+                "height": 350,
+                "width": 5
+              },
+              "vizType": "metric-collection",
+              "label": "DSS_OVERVIEW",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "todaysCollectionv2",
+                  "name": "DSS_TOTAL_COLLECTION_TODAY",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": {"title": "TODAY"},
+                  "headers": []
+                },
+                {
+                  "id": "totalCollectionv2",
+                  "name": "DSS_TOTAL_COLLECTION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "targetCollection",
+                  "name": "DSS_TARGET_COLLECTION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "mcTargetAchievedv2",
+                  "name": "DSS_TARGET_ACHIEVED",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 312,
+              "name": "Total Cumulative Collection",
+              "dimensions": {
+                "height": 350,
+                "width": 7
+              },
+              "vizType": "chart",
+              "label": "",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "mcCumulativeCollectionv2",
                   "name": "Monthly",
                   "code": "",
                   "chartType": "line",
@@ -1070,14 +1152,6 @@
                   "chartType": "metric",
                   "filter": "",
                   "headers": []
-                },
-                {
-                  "id": "slaAchieved",
-                  "name": "DSS_SLA_ACHIEVED",
-                  "code": "",
-                  "chartType": "metric",
-                  "filter": "",
-                  "headers": []
                 }
               ]
             }
@@ -1100,7 +1174,7 @@
               "label": "",
               "charts": [
                 {
-                  "id": "UCtotalCollectionv2",
+                  "id": "mcTotalCollectionv2",
                   "name": "DSS_TOTAL_COLLECTION",
                   "code": "",
                   "chartType": "metric",
@@ -2901,14 +2975,6 @@
                   "chartType": "metric",
                   "filter": "",
                   "headers": []
-                },
-                {
-                  "id": "slaAchieved",
-                  "name": "DSS_SLA_ACHIEVED",
-                  "code": "",
-                  "chartType": "metric",
-                  "filter": "",
-                  "headers": []
                 }
               ]
             }
@@ -2920,30 +2986,19 @@
           "vizArray": [
             {
               "id": 121,
-              "name": "DSS_PROPERTY_TAX",
+              "name": "DSS_M_COLLECT",
               "vizType": "module",
               "moduleLevel": "TL",
-              "type": "",
-              "noUnit": false,
-              "isCollapsible": false,
               "ref": {
-                "url": "ulb-propertyTax",
+                "url": "ulb-mCollect",
                 "logoUrl": "",
                 "type": "internal"
               },
               "label": "",
               "charts": [
                 {
-                  "id": "overviewTotalCollectionv2",
+                  "id": "mcTotalCollectionv2",
                   "name": "DSS_TOTAL_COLLECTION",
-                  "code": "",
-                  "chartType": "metric",
-                  "filter": "",
-                  "headers": []
-                },
-                {
-                  "id": "propertiesAssessed",
-                  "name": "DSS_PT_TOTAL_PROPERTIES_ASSESSED",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
@@ -2980,37 +3035,7 @@
                   "headers": []
                 }
               ]
-            },
-            {
-              "id": 141,
-              "name": "DSS_COMPLAINS",
-              "vizType": "module",
-              "moduleLevel": "PGR",
-              "ref": {
-                "url": "ulb-pgr",
-                "logoUrl": "",
-                "type": "internal"
-              },
-              "label": "",
-              "charts": [
-                {
-                  "id": "totalComplaints",
-                  "name": "DSS_PGR_TOTAL_COMPLAINTS",
-                  "code": "",
-                  "chartType": "metric",
-                  "filter": "",
-                  "headers": []
-                },
-                {
-                  "id": "slaAchieved",
-                  "name": "DSS_SLA_ACHIEVED",
-                  "code": "",
-                  "chartType": "metric",
-                  "filter": "",
-                  "headers": []
-                }
-              ]
-            }
+            }            
           ]
         }
       ]
