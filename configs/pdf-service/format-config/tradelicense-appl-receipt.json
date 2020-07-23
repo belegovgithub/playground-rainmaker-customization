@@ -28,7 +28,7 @@
                       "style": "receipt-logo-header"
                     },
                     {
-                      "text": "{{serviceType}} {{payment_receipt}}",
+                      "text": "{{appl_payment_receipt}}",
                       "style": "receipt-logo-sub-header"
                     },
                     {
@@ -239,7 +239,7 @@
                   "style": "receipt-table-value"
                 },
                 {
-                  "text": "{{serviceType}}",
+                  "text": "{{serviceType}} {{tlReceipt}}",
                   "border": [
                     false,
                     true,

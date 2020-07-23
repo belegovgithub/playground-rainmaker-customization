@@ -49,6 +49,18 @@
                  }
                 },
                 {
+                  "variable": "tlReceipt", 
+                  "value": {
+                    "path": "TL_RECEIPT"
+                  },
+                  "type": "label",
+                  "localisation":{
+                    "required":true,
+                    "prefix": null,
+                    "module":"rainmaker-tl"
+                 }
+                },
+                {
                   "variable": "paidAmount", 
                   "value": {
                     "path": "$.paymentDetails[0].totalAmountPaid"
@@ -124,9 +136,9 @@
                   }
                 },
                 {
-                  "variable": "payment_receipt",
+                  "variable": "appl_payment_receipt",
                   "value": {
-                    "path": "PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_PAYMENT_RECEIPT"
+                    "path": "PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_APPLICATION_RECEIPT"
                   },
                   "type": "label",
                   "localisation":{
