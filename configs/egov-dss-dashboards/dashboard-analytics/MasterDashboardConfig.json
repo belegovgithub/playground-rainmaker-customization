@@ -175,22 +175,6 @@
                   "chartType": "metric",
                   "filter": "",
                   "headers": []
-                },
-                {
-                  "id": "slaAchieved",
-                  "name": "DSS_SLA_ACHIEVED",
-                  "code": "",
-                  "chartType": "metric",
-                  "filter": "",
-                  "headers": []
-                },
-                {
-                  "id": "citizenRegistered",
-                  "name": "DSS_CITIZEN_REGISTERED",
-                  "code": "",
-                  "chartType": "metric",
-                  "filter": "",
-                  "headers": []
                 }
               ]
             },
@@ -633,7 +617,7 @@
           "vizArray": [
             {
               "id": 351,
-              "name": "DSS_TL_STATUS_BOUNDARY",
+              "name": "DSS_TL_LICENSE_BY_TRADETYPE",
               "dimensions": {
                 "height": 250,
                 "width": 4
@@ -644,14 +628,34 @@
               "isCollapsible": true,
               "charts": [
                 {
-                  "id": "tlStatusByDDR2",
+                  "id": "tlStatusByDDR3",
                   "name": "",
                   "code": "",
                   "chartType": "table",
                   "filter": "",
                   "headers": [],
-                  "tabName": "Boundary"
+                  "tab":""
 
+                }
+              ]
+            },
+            {
+              "id": 352,
+              "name": "DSS_TL_LICENSE_BY_TRADETYPE",
+              "dimensions": {
+                "height": 250,
+                "width": 4
+              },
+              "vizType": "chart",
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "licenseApplicationByTradeType",
+                  "name": "DSS_TL_LICENSE_BY_TRADETYPE",
+                  "code": "",
+                  "chartType": "donut",
+                  "filter": "",
+                  "headers": []
                 }
               ]
             }
@@ -2619,7 +2623,7 @@
           "vizArray": [
             {
               "id": 351,
-              "name": "DSS_TL_STATUS_BOUNDARY",
+              "name": "DSS_TL_LICENSE_BY_TRADETYPE",
               "dimensions": {
                 "height": 250,
                 "width": 4
@@ -2630,14 +2634,34 @@
               "isCollapsible": true,
               "charts": [
                 {
-                  "id": "tlStatusByDDR2",
+                  "id": "tlStatusByDDR3",
                   "name": "",
                   "code": "",
                   "chartType": "table",
                   "filter": "",
                   "headers": [],
-                  "tabName": "Boundary"
+                  "tab":""
 
+                }
+              ]
+            },
+             {
+              "id": 352,
+              "name": "DSS_TL_LICENSE_BY_TRADETYPE",
+              "dimensions": {
+                "height": 250,
+                "width": 4
+              },
+              "vizType": "chart",
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "licenseApplicationByTradeType",
+                  "name": "DSS_TL_LICENSE_BY_TRADETYPE",
+                  "code": "",
+                  "chartType": "donut",
+                  "filter": "",
+                  "headers": []
                 }
               ]
             }
@@ -2815,22 +2839,6 @@
                 {
                   "id": "closedApplication",
                   "name": "DSS_CLOSED_APPLICATION",
-                  "code": "",
-                  "chartType": "metric",
-                  "filter": "",
-                  "headers": []
-                },
-                {
-                  "id": "slaAchieved",
-                  "name": "DSS_SLA_ACHIEVED",
-                  "code": "",
-                  "chartType": "metric",
-                  "filter": "",
-                  "headers": []
-                },
-                {
-                  "id": "citizenRegistered",
-                  "name": "DSS_CITIZEN_REGISTERED",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
