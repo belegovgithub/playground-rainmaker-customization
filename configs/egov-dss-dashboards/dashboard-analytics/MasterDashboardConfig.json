@@ -425,58 +425,14 @@
           "row": 4,
           "name": "DSS_REVENUE",
           "vizArray": [
-            {
-              "id": 231,
-              "name": "DSS_TL_KEY_FY_INDICATORS",
-              "dimensions": {
-                "height": 350,
-                "width": 12
-              },
-              "vizType": "chart",
-              "label": "",
-              "noUnit": false,
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "licenseIssuedDDRRevenuev2",
-                  "name": "DSS_TL_DEMAND_COLLECTION_BOUNDARY",
-                  "code": "",
-                  "chartType": "table",
-                  "filter": "",
-                  "headers": [],
-                  "tabName": "Boundary"
-                }
-              ]
-            }
+            
           ]
         },
         {
           "row": 5,
           "name": "DSS_REVENUE",
           "vizArray": [
-            {
-              "id": 231,
-              "name": "DSS_TL_TAX_HEAD_BREAKUP",
-              "dimensions": {
-                "height": 350,
-                "width": 12
-              },
-              "vizType": "chart",
-              "label": "",
-              "noUnit": false,
-              "isCollapsible": true,
-              "charts": [
-                {
-                  "id": "licenceTaxHeadsBreakupDDRv2",
-                  "name": "DSS_TL_TAX_HEAD_BREAKUP_BOUNDARY",
-                  "code": "",
-                  "chartType": "table",
-                  "filter": "",
-                  "headers": [],
-                  "tabName": "Boundary"
-                }
-              ]
-            }
+            
           ]
         },
         {
@@ -615,50 +571,6 @@
           "row": 8,
           "name": "DSS_SERVICE",
           "vizArray": [
-            {
-              "id": 351,
-              "name": "DSS_TL_LICENSE_BY_TRADETYPE",
-              "dimensions": {
-                "height": 250,
-                "width": 4
-              },
-              "vizType": "chart",
-              "label": "",
-              "noUnit": false,
-              "isCollapsible": true,
-              "charts": [
-                {
-                  "id": "tlStatusByDDR3",
-                  "name": "",
-                  "code": "",
-                  "chartType": "table",
-                  "filter": "",
-                  "headers": [],
-                  "tab":""
-
-                }
-              ]
-            },
-            {
-              "id": 352,
-              "name": "DSS_TL_LICENSE_BY_TRADETYPE",
-              "dimensions": {
-                "height": 250,
-                "width": 4
-              },
-              "vizType": "chart",
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "licenseApplicationByTradeType",
-                  "name": "DSS_TL_LICENSE_BY_TRADETYPE",
-                  "code": "",
-                  "chartType": "donut",
-                  "filter": "",
-                  "headers": []
-                }
-              ]
-            }
           ]
         }
       ]
@@ -2431,58 +2343,14 @@
           "row": 4,
           "name": "DSS_REVENUE",
           "vizArray": [
-            {
-              "id": 231,
-              "name": "DSS_TL_KEY_FY_INDICATORS",
-              "dimensions": {
-                "height": 350,
-                "width": 12
-              },
-              "vizType": "chart",
-              "label": "",
-              "noUnit": false,
-              "isCollapsible": true,
-              "charts": [
-                {
-                  "id": "licenseIssuedDDRRevenuev2",
-                  "name": "DSS_TL_DEMAND_COLLECTION_BOUNDARY",
-                  "code": "",
-                  "chartType": "table",
-                  "filter": "",
-                  "headers": [],
-                  "tabName": "Boundary"
-                }
-              ]
-            }
+            
           ]
         },
         {
           "row": 5,
           "name": "DSS_REVENUE",
           "vizArray": [
-            {
-              "id": 231,
-              "name": "DSS_TL_TAX_HEAD_BREAKUP",
-              "dimensions": {
-                "height": 350,
-                "width": 12
-              },
-              "vizType": "chart",
-              "label": "",
-              "noUnit": false,
-              "isCollapsible": true,
-              "charts": [
-                {
-                  "id": "licenceTaxHeadsBreakupDDRv2",
-                  "name": "DSS_TL_TAX_HEAD_BREAKUP_BOUNDARY",
-                  "code": "",
-                  "chartType": "table",
-                  "filter": "",
-                  "headers": [],
-                  "tabName": "Boundary"
-                }
-              ]
-            }
+            
           ]
         },
         {
@@ -2621,50 +2489,7 @@
           "row": 8,
           "name": "DSS_SERVICE",
           "vizArray": [
-            {
-              "id": 351,
-              "name": "DSS_TL_LICENSE_BY_TRADETYPE",
-              "dimensions": {
-                "height": 250,
-                "width": 4
-              },
-              "vizType": "chart",
-              "label": "",
-              "noUnit": false,
-              "isCollapsible": true,
-              "charts": [
-                {
-                  "id": "tlStatusByDDR3",
-                  "name": "",
-                  "code": "",
-                  "chartType": "table",
-                  "filter": "",
-                  "headers": [],
-                  "tab":""
-
-                }
-              ]
-            },
-             {
-              "id": 352,
-              "name": "DSS_TL_LICENSE_BY_TRADETYPE",
-              "dimensions": {
-                "height": 250,
-                "width": 4
-              },
-              "vizType": "chart",
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "licenseApplicationByTradeType",
-                  "name": "DSS_TL_LICENSE_BY_TRADETYPE",
-                  "code": "",
-                  "chartType": "donut",
-                  "filter": "",
-                  "headers": []
-                }
-              ]
-            }
+            
           ]
         }
       ]
