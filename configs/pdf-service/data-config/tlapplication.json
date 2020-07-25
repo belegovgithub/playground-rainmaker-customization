@@ -1180,44 +1180,7 @@
                       }
                       ]
                 } 
-             },
-             {
-              "variable": "variable14",                        
-              "value":{
-                   "path":"$.tradeLicenseDetail.accessories.*"                          
-               },
-               "type":"array",
-               "format":{                            
-                  "type":"string",
-                  "scema":[
-                    {
-                      "variable": "accesoryType",
-                      "value": "accessoryCategory",
-                      "localisation":{
-                        "required":true,
-                        "prefix": "TRADELICENSE_ACCESSORIESCATEGORY",
-                        "module": "rainmaker-tl"
-                      }
-                    },
-                    {
-                      "variable": "accessoryUomValue",
-                      "value": "uomValue"
-                    },
-                    
-                    {
-                        "variable": "uom",
-                        "value": "uom"
-                    },
-                    {
-                        "variable": "accessoryCount",
-                        "value": "count"
-                    }
-                 
-                  ]
-              } 
-           }
-
-
+             }
 
             ]
           },
