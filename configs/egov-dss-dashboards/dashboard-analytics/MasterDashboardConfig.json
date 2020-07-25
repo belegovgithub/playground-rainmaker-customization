@@ -399,7 +399,7 @@
             },
             {
               "id": 323,
-              "name": "DSS_TL_LICENSE_BY_TYPE",
+              "name": "DSS_TL_LICENSE_BY_PAYMENT_TYPE",
               "dimensions": {
                 "height": 250,
                 "width": 4
@@ -411,7 +411,7 @@
               "charts": [
                 {
                   "id": "licenseByLicenseTypev2",
-                  "name": "DSS_TL_LICENSE_BY_TYPE",
+                  "name": "DSS_TL_LICENSE_BY_PAYMENT_TYPE",
                   "code": "",
                   "chartType": "donut",
                   "filter": "",
@@ -2317,7 +2317,7 @@
             },
             {
               "id": 323,
-              "name": "DSS_TL_LICENSE_BY_TYPE",
+              "name": "DSS_TL_LICENSE_BY_PAYMENT_TYPE",
               "dimensions": {
                 "height": 250,
                 "width": 4
@@ -2329,7 +2329,7 @@
               "charts": [
                 {
                   "id": "licenseByLicenseTypev2",
-                  "name": "DSS_TL_LICENSE_BY_TYPE",
+                  "name": "DSS_TL_LICENSE_BY_PAYMENT_TYPE",
                   "code": "",
                   "chartType": "donut",
                   "filter": "",
