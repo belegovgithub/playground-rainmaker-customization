@@ -108,7 +108,7 @@ ReportDefinitions:
       to_char(To_timestamp(pd.receiptdate / 1000), 'DD/MM/YYYY') as receiptIssueDate , 
       pd.receiptnumber,
       tradeTypeName,
-      name,
+      tlown.name,
       tlown.mobilenumber,
       pay.transactionnumber,
       pgtxn.bank_transaction_no as banktxnNo,
