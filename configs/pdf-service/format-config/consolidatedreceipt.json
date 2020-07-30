@@ -443,7 +443,7 @@
               {
                 "text": "{{GL_Code}}.",
                 "border": [
-                  true,
+                  false,
                   false,
                   false,
                   true

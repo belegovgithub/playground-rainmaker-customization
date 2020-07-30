@@ -103,15 +103,14 @@
                 "variable": "GLCode",
                 "value": {
                   "path": "$.paymentDetails[0].bill.billDetails[0].additionalDetails.GLcode"
-                },
-                "type": "date"
+                }
+               
               },
               {
                 "variable": "consumnerName",
                 "value": {
                   "path": "$.paymentDetails[0].bill.billDetails[0].additionalDetails.consumerName"
-                },
-                "type": "date"
+                }
               },
               {
                 "variable": "paymentDate", 
