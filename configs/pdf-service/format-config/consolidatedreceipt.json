@@ -403,7 +403,7 @@
                   true,
                   false,
                   false,
-                  true
+                  false
                 ],
                 "style": "receipt-table-value"
               },
@@ -413,7 +413,7 @@
                   false,
                   false,
                   false,
-                  true
+                  false
                 ],
                 "style": "receipt-table"
               },
@@ -443,7 +443,7 @@
               {
                 "text": "{{GL_Code}}.",
                 "border": [
-                  false,
+                  true,
                   false,
                   false,
                   true
