@@ -461,7 +461,7 @@
                 "style": "receipt-table"
               },
               {
-                "text" : " ",
+                "text" : "{{mcollect_comment}} ",
                 "border": [
                   false,
                   false,
@@ -471,7 +471,7 @@
                 "style": "receipt-table-value"
               },
               {
-                "text" : " ",
+                "text" : "{{Comment}}",
                 "border": [
                   false,
                   false,
