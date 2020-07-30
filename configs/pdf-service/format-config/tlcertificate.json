@@ -14,7 +14,29 @@
                  ],
                  "body":[ 
                       [
-                          {
+                        {
+                           
+                          "table": {
+                            "widths": [
+                              "*",
+                              "*",
+                              "*"
+                            ],
+                            "body": [
+                                [
+                                  {
+                              "image": "{{logoImage}}",
+                              "width": 60,
+                              "height": 72,
+                              "alignment": "left",
+                               "margin": [
+                                      20,
+                                      5,
+                                      0,
+                                      0
+                              ]
+								}, 
+								{
                               "image": "{{userpic}}",
                               "width": 60,
                               "height": 72,
@@ -25,7 +47,16 @@
                                       0,
                                       7
                               ]
-                           }  
+								},
+								{
+                              "text": " "
+                               
+								}
+                               ]
+                            ]
+                          },
+                          "layout": "noBorders"
+                    }  
                       ],
                    [
                      {
@@ -42,15 +73,21 @@
                           "style": "noc-head",
                           "table": {
                             "widths": [
-                              "*",
-                              "*"
+                              "30%",
+                              "40%",
+                              "30%"
                             ],
                             "body": [
-                                [
+                                [   {
+                                        "text": " "
+                                    },
                                     {
                                         "text": "{{corporation_contact}} : {{corporationContact}} ",
                                         "style": "receipt-sub-address-sub-header"
                                         
+                                    },
+                                    {
+                                      "text": " "
                                     }
                                ]
                             ]
@@ -61,16 +98,23 @@
                           "style": "noc-head",
                           "table": {
                             "widths": [
-                              "*",
-                              "*"
+                              "30%",
+                              "40%",
+                              "30%"
                             ],
                             "body": [
                                 [
-                                    {
+                                  {
+                                    "text": " "
+                                  },
+                                  {
                                         "text": "{{corporation_website}} : {{corporationWebsite}}",
                                         "style": "receipt-sub-website-sub-header"
                                         
-                                    }
+                                  },
+                                  {
+                                    "text": " "
+                                  }
                                ]
                             ]
                           },
@@ -80,29 +124,30 @@
                           "style": "noc-head",
                           "table": {
                             "widths": [
-                              "*",
-                              "*"
+                              "30%",
+                              "40%",
+                              "30%"
                             ],
                             "body": [
                                 [
-                                    {
-                                        "text": "{{corporation_email}} : {{corporationEmail}}",
-                                        "style": "receipt-sub-email-sub-header"
-                                        
-                                    }
+                                  {
+                                    "text": " "
+                                  },
+                                  {
+                                      "text": "{{corporation_email}} : {{corporationEmail}}",
+                                      "style": "receipt-sub-email-sub-header"
+                                      
+                                  },
+                                  {
+                                    "text": " "
+                                  }
                                ]
                             ]
                           },
                           "layout": "noBorders"
                     }
                        ],
-                       "alignment":"left",
-                       "margin":[
-                         0,
-                         5,
-                         0,
-                         0
-                       ]
+                       "alignment":"left"   
                      }
                    ],
                    [
@@ -243,7 +288,28 @@
                                  ]
                                },
                                "layout":"noBorders"
-                         },
+                         },{
+                          "style":"noc-head",
+                          "table":{
+                            "widths":[
+                             "35%",
+                              "65%"
+                            ],
+                            "body":[
+                                [
+                                    {
+                                        "text":"{{trade_owner_father_name}}",
+                                        "style":"receipt-sub-logo-sub-header"
+                                    },
+                                    {
+                                        "text":"{{tradeOwnerFatherName}}",
+                                        "style":"receipt-sub-logo-sub-header"
+                                    }
+                               ]
+                            ]
+                          },
+                          "layout":"noBorders"
+                    },
                                          {
                                "style":"noc-head",
                                "table":{
@@ -472,19 +538,38 @@
                              "image": "{{qrcodeimage}}",
                              "width": 64,
                              "height": 64,
-                             "alignment": "center"                               
+                             "alignment": "center",
+                             "margin": [
+                              0,
+                              -15,
+                              0,
+                              0
+                        ]                               
                           }  
                      ]
                 ] 
              },
              "layout":"noBorders"
+            },
+            {
+              
+                  "style": "pt-disclaimer-value",
+                  "table": {
+                    "widths": [
+                      "*"
+                    ],
+                    "body": ["{{#variable13}}[{\"text\": \"{{variable12}}\",\"border\":[ false, false, false, false ],\"bold\": true, \"style\": \"pt-disclaimer-value\"}]{{/variable13}},{{#variable11}}[{\"text\":\"{{disclaimerContent}}\",\"border\":[false,false,false,false],\"style\":\"pt-disclaimer-value\"}]{{/variable11}}"]
+                  },
+                  "layout": {}
+                
+              
             }
            ],
            "styles": {
             "noc-head": {
               "margin": [
                 -30,
-                -35,
+                -36,
                 0,
                 -2
               ]
@@ -504,7 +589,7 @@
               "alignment": "center",
               "margin": [
                 -10,
-                25,
+                15,
                 0,
                 1
               ]
@@ -528,7 +613,7 @@
               "alignment": "center",
               "margin": [
                 0,
-                5,
+                0,
                 0,
                 5
               ]
@@ -558,41 +643,62 @@
               ]
             },
               "receipt-sub-address-sub-header": {
-              "color": "#484848",
-              "fontSize": 13,
-              "letterSpacing": 0.1,
-              "alignment": "right",
-              "margin": [
-                50,
-                30,
-                -90,
-                0
-              ]
+                "color": "#484848",
+                "fontSize": 13,
+                "letterSpacing": 0.1,
+                "alignment": "left",
+                "margin": [
+                  30,
+                  40,
+                  -120,
+                  0
+                ]
+              
             },
              "receipt-sub-website-sub-header": {
               "color": "#484848",
               "fontSize": 13,
               "letterSpacing": 0.1,
-              "alignment": "right",
+              "alignment": "left",
               "margin": [
-                50,
                 30,
-                -70,
+                30,
+              -120,
                 0
               ]
             },
               "receipt-sub-email-sub-header": {
-              "color": "#484848",
-              "fontSize": 13,
-              "letterSpacing": 0.1,
-              "alignment": "right",
+                "color": "#484848",
+                "fontSize": 13,
+                "letterSpacing": 0.1,
+                "alignment": "left",
+                "margin": [
+                  30,
+                  30,
+                  -120,
+                  0
+                ]
+            },
+            "pt-disclaimer": {
+              "fontSize": 12,
               "margin": [
-                50,
-                30,
-                -122,
+                -27,
+                10,
+                -10,
                 0
-              ]
-            }
+              ],
+              "color": "#484848"
+            },
+            "pt-disclaimer-value": {
+              "fontSize": 12,
+              "margin": [
+                2,
+                5,
+                0,
+                0
+              ],
+              "color": "#484848"
+             }
           }
          }
       }
