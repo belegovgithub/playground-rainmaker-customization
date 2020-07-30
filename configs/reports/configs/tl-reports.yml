@@ -7,7 +7,7 @@ ReportDefinitions:
   moduleName: rainmaker-tl
   additionalConfig:
     print:
-      pdfPageSize: "A3"
+      pdfPageSize: "A2"
   sourceColumns:
   - name: receiptnumber
     label: report.tl.receiptnumber
