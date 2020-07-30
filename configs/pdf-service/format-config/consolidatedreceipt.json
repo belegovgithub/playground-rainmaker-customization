@@ -193,7 +193,7 @@
                 "style": "receipt-table"
               },
               {
-                "text" : " ",
+                "text" : "{{consumner_Name}}",
                 "border": [
                   false,
                   false,
@@ -203,7 +203,7 @@
                 "style": "receipt-table-value"
               },
               {
-                "text" : " ",
+                "text" : "{{consumnerName}}",
                 "border": [
                   false,
                   false,
@@ -429,6 +429,49 @@
               },
               {
                 "text": "{{G8ReceiptDate}}",
+                "border": [
+                  false,
+                  false,
+                  true,
+                  true
+                ],
+                "style": "receipt-table"
+              }
+            ],
+
+            [
+              {
+                "text": "{{GL_Code}}.",
+                "border": [
+                  true,
+                  false,
+                  false,
+                  true
+                ],
+                "style": "receipt-table-value"
+              },
+              {
+                "text": "{{GLCode}}",
+                "border": [
+                  false,
+                  false,
+                  false,
+                  true
+                ],
+                "style": "receipt-table"
+              },
+              {
+                "text" : " ",
+                "border": [
+                  false,
+                  false,
+                  false,
+                  true
+                ],
+                "style": "receipt-table-value"
+              },
+              {
+                "text" : " ",
                 "border": [
                   false,
                   false,
