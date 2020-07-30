@@ -40,15 +40,15 @@
       "domain": "TL",
       "indexName": "tlindex-v1",
       "documentType": "",
-      "query": "{\"query\":{\"bool\":{\"must\":[{\"match_phrase\":{\"Data.tradelicense.applicationnumber\":\"value\"}}]}}}",
+      "query": "{\"query\":{\"bool\":{\"must\":[{\"match_phrase\":{\"Data.tradelicense.applicationNumber\":\"value\"}}]}}}",
       "targetReferences": [
         {
-          "fieldName": "applicationnumber",
-          "argument": "Data.tradelicense.applicationnumber",
+          "fieldName": "applicationNumber",
+          "argument": "Data.tradelicense.applicationNumber",
           "dataType": "String",
           "value": "$value",
           "seperator": " ",
-          "expression": "applicationnumber"
+          "expression": "applicationNumber"
         }
       ],
       "sourceReferences": [
@@ -58,7 +58,7 @@
           "dataType": "String",
           "value": "$value",
           "seperator": " ",
-          "expression": "applicationnumber"
+          "expression": "applicationNumber"
         }
       ]
     },

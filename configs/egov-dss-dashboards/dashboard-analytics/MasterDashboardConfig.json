@@ -399,7 +399,7 @@
             },
             {
               "id": 323,
-              "name": "DSS_TL_LICENSE_BY_TYPE",
+              "name": "DSS_TL_LICENSE_BY_PAYMENT_TYPE",
               "dimensions": {
                 "height": 250,
                 "width": 4
@@ -411,7 +411,7 @@
               "charts": [
                 {
                   "id": "licenseByLicenseTypev2",
-                  "name": "DSS_TL_LICENSE_BY_TYPE",
+                  "name": "DSS_TL_LICENSE_BY_PAYMENT_TYPE",
                   "code": "",
                   "chartType": "donut",
                   "filter": "",
@@ -425,14 +425,12 @@
           "row": 4,
           "name": "DSS_REVENUE",
           "vizArray": [
-            
           ]
         },
         {
           "row": 5,
           "name": "DSS_REVENUE",
           "vizArray": [
-            
           ]
         },
         {
@@ -571,6 +569,7 @@
           "row": 8,
           "name": "DSS_SERVICE",
           "vizArray": [
+            
           ]
         }
       ]
@@ -2317,7 +2316,7 @@
             },
             {
               "id": 323,
-              "name": "DSS_TL_LICENSE_BY_TYPE",
+              "name": "DSS_TL_LICENSE_BY_PAYMENT_TYPE",
               "dimensions": {
                 "height": 250,
                 "width": 4
@@ -2329,7 +2328,7 @@
               "charts": [
                 {
                   "id": "licenseByLicenseTypev2",
-                  "name": "DSS_TL_LICENSE_BY_TYPE",
+                  "name": "DSS_TL_LICENSE_BY_PAYMENT_TYPE",
                   "code": "",
                   "chartType": "donut",
                   "filter": "",
@@ -2343,14 +2342,12 @@
           "row": 4,
           "name": "DSS_REVENUE",
           "vizArray": [
-            
           ]
         },
         {
           "row": 5,
           "name": "DSS_REVENUE",
           "vizArray": [
-            
           ]
         },
         {
@@ -2489,7 +2486,6 @@
           "row": 8,
           "name": "DSS_SERVICE",
           "vizArray": [
-            
           ]
         }
       ]

@@ -100,6 +100,26 @@
                 "type": "date"
               },
               {
+                "variable": "GLCode",
+                "value": {
+                  "path": "$.paymentDetails[0].bill.billDetails[0].additionalDetails.GLcode"
+                }
+               
+              },
+              {
+                "variable": "consumnerName",
+                "value": {
+                  "path": "$.paymentDetails[0].bill.billDetails[0].additionalDetails.consumerName"
+                }
+              },
+              {
+                "variable": "Comment",
+                "value": {
+                  "path": "$.paymentDetails[0].bill.billDetails[0].additionalDetails.comment"
+                }
+               
+              },
+              {
                 "variable": "paymentDate", 
                 "value": {
                   "path": "$.transactionDate"
@@ -152,6 +172,42 @@
                 "variable": "consumer_id",
                 "value": {
                   "path": "PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_CONSUMER_ID"
+                },
+                "type": "label",
+                "localisation":{
+                  "required":true,
+                  "prefix": null,
+                  "module":"rainmaker-common"
+               }
+              },
+              {
+                "variable": "GL_Code",
+                "value": {
+                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_GL_CODE"
+                },
+                "type": "label",
+                "localisation":{
+                  "required":true,
+                  "prefix": null,
+                  "module":"rainmaker-common"
+               }
+              },
+              {
+                "variable": "mcollect_comment",
+                "value": {
+                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_MCOLLECT_COMMENT"
+                },
+                "type": "label",
+                "localisation":{
+                  "required":true,
+                  "prefix": null,
+                  "module":"rainmaker-common"
+               }
+              },
+              {
+                "variable": "consumner_Name",
+                "value": {
+                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_CONSUMER_NAME"
                 },
                 "type": "label",
                 "localisation":{
