@@ -1510,7 +1510,7 @@
       {
         "module": "TL",
         "dateRefField": "Data.tradelicense.applicationDate",
-        "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\", \r\n  \"district\" : \"Data.tenantData.city.districtCode\", \r\n\"tenantId\" : \"Data.tenantId\" \r\n}",
+        "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\", \r\n  \"district\" : \"Data.tenantData.city.districtCode\", \r\n\"tenantId\" : \"Data.tradelicense.tenantId\" \r\n}",
         "indexName": "tlindex-v1",
         "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tradelicense.tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"Trade Licence\":{\"value_count\":{\"field\":\"Data.tradelicense.tenantId.keyword\"}}}}}}"
       },
@@ -1574,7 +1574,7 @@
         "dateRefField": "Data.tradelicense.applicationDate",
         "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\", \r\n  \"district\" : \"Data.tenantData.city.districtCode\", \r\n\"tenantId\" : \"Data.tradelicense.tenantId.keyword\" \r\n}",
         "indexName": "tlindex-v1",
-        "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tradelicense.tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"Total Application\":{\"date_histogram\":{\"field\":\"Data.tradelicense.applicationDate\",\"interval\":\"intervalvalue\"},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.tradelicense.applicationNumber.keyword\"}}}},\"Closed Application\":{\"date_histogram\":{\"field\":\"Data.tradelicense.applicationDate\",\"interval\":\"intervalvalue\"},\"aggs\":{\"Applications Closed\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.status.keyword\":[\"closed\",\"resolved\"]}}]}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.tradelicense.applicationNumber.keyword\"}}}}}}}}}}"
+        "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tradelicense.tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"Total Application\":{\"date_histogram\":{\"field\":\"Data.tradelicense.applicationDate\",\"interval\":\"intervalvalue\"},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.tradelicense.applicationNumber.keyword\"}}}},\"Closed Application\":{\"date_histogram\":{\"field\":\"Data.tradelicense.applicationDate\",\"interval\":\"intervalvalue\"},\"aggs\":{\"Applications Closed\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.tradelicense.status.keyword\":[\"REJECTED\",\"APPROVED\",\"CANCELLED\"]}}]}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.tradelicense.applicationNumber.keyword\"}}}}}}}}}}"
 
       },
       {
