@@ -196,6 +196,17 @@
                  }
               },
               {
+                "variable": "premisesType",
+                "value": {
+                  "path": "$.tradeLicenseDetail.additionalDetail.premisis"
+                },
+                "localisation":{
+                  "required":true,
+                  "prefix": "PDF_STATIC_LABEL_PREMISES",
+                  "module": "rainmaker-common"
+               }
+              },
+              {
                   "variable": "pincode",
                   "value": {
                     "path": "$.tradeLicenseDetail.address.pincode"
@@ -374,6 +385,12 @@
                   "value": {
                     "path": "$.tradeLicenseDetail.owners[0].permanentAddress"
                   }
+              },
+              {
+                "variable": "aadharCard",
+                "value": {
+                  "path": "$.tradeLicenseDetail.owners[0].aadhaarNumber"
+                }
               },
               {
                   "variable": "specialOwnerCategory",
@@ -784,6 +801,18 @@
                  }
               },
               {
+                "variable": "premises_type",
+                "value": {
+                  "path": "PDF_STATIC_LABEL_PREMISES"
+                },
+                "type": "label",
+                "localisation":{
+                  "required":true,
+                  "prefix": null,
+                  "module":"rainmaker-common"
+               }
+              },
+              {
                   "variable": "electricity_connection_no",
                   "value": {
                     "path": "PDF_STATIC_LABEL_CONSOLIDATED_TLAPP_ELECTRICITY_CONNECTION_NO"
@@ -951,6 +980,18 @@
                     "module":"rainmaker-common"
                  }
               },
+              {
+                "variable": "aadhar_card",
+                "value": {
+                  "path": "TL_AADHAARCARD"
+                },
+                "type": "label",
+                "localisation":{
+                  "required":true,
+                  "prefix": null,
+                  "module":"rainmaker-tl"
+               }
+            },
               {
                   "variable": "documents_label",
                   "value": {
