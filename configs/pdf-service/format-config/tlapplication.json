@@ -780,92 +780,7 @@
                            ],
                             "style": "receipt-table2"
                          } 
-                       ],
-                       [
-                        {
-                          "text":"{{premises_type}}",
-                          "border":[
-                            false,
-                            false,
-                            false,
-                            false
-                          ],
-                           "style": "receipt-table-value-cont"
-                        },  
-                        {
-                          "text":" ",
-                          "border":[
-                            false,
-                            false,
-                            false,
-                            false
-                          ],
-                           "style": "receipt-table-value-cont",
-                           "fontSize": 11
-                        },  
-                        {
-                          "text":" ",
-                          "border":[
-                            false,
-                            false,
-                            false,
-                            false
-                          ],
-                           "style": "receipt-table-value-cont"
-                        },  
-                        {
-                          "text":" ",
-                          "border":[
-                            false,
-                            false,
-                            false,
-                            false
-                          ],
-                          "style": "receipt-table-value-cont"
-                        }
-                      ],
-                      [
-                        {
-                          "text":"{{premisesType}}",
-                          "border":[
-                            false,
-                            false,
-                            false,
-                            false
-                          ],
-                           "style": "receipt-table2"
-                        },  
-                        {
-                          "text":" ",
-                          "border":[
-                            false,
-                            false,
-                            false,
-                            false
-                          ],
-                           "style": "receipt-table2"
-                        },  
-                        {
-                          "text":" ",
-                          "border":[
-                            false,
-                            false,
-                            false,
-                            false
-                          ],
-                           "style": "receipt-table2"
-                        },  
-                        {
-                          "text":" ",
-                          "border":[
-                            false,
-                            false,
-                            false,
-                            false
-                          ],
-                           "style": "receipt-table2"
-                        } 
-                      ]
+                       ]
                      ]
                  },
                  "border":[
@@ -1103,18 +1018,7 @@
                            ],
                             "style": "receipt-table-value-cont",
                             "fontSize": 11
-                         }, 
-                         {
-                          "text":"{{aadhar_card}}",
-                          "border":[
-                            false,
-                            false,
-                            false,
-                            false
-                          ],
-                           "style": "receipt-table-value-cont",
-                           "fontSize": 11
-                        },  
+                         },  
                          {
                            "text":"{{correspondance_address}}",
                            "border":[
@@ -1124,6 +1028,16 @@
                              false
                            ],
                             "style": "receipt-table-value-cont"
+                         },  
+                         {
+                           "text":"{{special_owner}}",
+                           "border":[
+                             false,
+                             false,
+                             false,
+                             false
+                           ],
+                           "style": "receipt-table-value-cont"
                          }  
                        ],
                        [
@@ -1146,17 +1060,7 @@
                              false
                            ],
                             "style": "receipt-table2"
-                         }, 
-                         {
-                          "text":"{{aadharCard}}",
-                          "border":[
-                            false,
-                            false,
-                            false,
-                            false
-                          ],
-                           "style": "receipt-table2"
-                        },  
+                         },  
                          {
                            "text":"{{correspondenceAddress}}",
                            "border":[
@@ -1166,93 +1070,17 @@
                              false
                            ],
                             "style": "receipt-table2"
+                         },  
+                         {
+                           "text":"{{specialOwnerCategory}}",
+                           "border":[
+                             false,
+                             false,
+                             false,
+                             false
+                           ],
+                            "style": "receipt-table2"
                          }  
-                       ],
-                       [
-                        {
-                          "text":"{{special_owner}}",
-                          "border":[
-                            false,
-                            false,
-                            false,
-                            false
-                          ],
-                          "style": "receipt-table-value-cont"
-                        },    
-                        {
-                          "text":" ",
-                          "border":[
-                            false,
-                            false,
-                            false,
-                            false
-                          ],
-                           "style": "receipt-table-value-cont",
-                           "fontSize": 11
-                        }, 
-                        {
-                         "text":" ",
-                         "border":[
-                           false,
-                           false,
-                           false,
-                           false
-                         ],
-                          "style": "receipt-table-value-cont",
-                          "fontSize": 11
-                       },  
-                        {
-                          "text":" ",
-                          "border":[
-                            false,
-                            false,
-                            false,
-                            false
-                          ],
-                           "style": "receipt-table-value-cont"
-                        }
-                       ],
-                       [
-                        {
-                          "text":"{{specialOwnerCategory}}",
-                          "border":[
-                            false,
-                            false,
-                            false,
-                            false
-                          ],
-                           "style": "receipt-table2"
-                        },
-                      {
-                        "text":" ",
-                        "border":[
-                          false,
-                          false,
-                          false,
-                          false
-                        ],
-                         "style": "receipt-table2"
-                      }, 
-                      {
-                       "text":" ",
-                       "border":[
-                         false,
-                         false,
-                         false,
-                         false
-                       ],
-                        "style": "receipt-table2"
-                     },  
-                      {
-                        "text":" ",
-                        "border":[
-                          false,
-                          false,
-                          false,
-                          false
-                        ],
-                         "style": "receipt-table2"
-                      }  
                        ]
                      ]
                  },
