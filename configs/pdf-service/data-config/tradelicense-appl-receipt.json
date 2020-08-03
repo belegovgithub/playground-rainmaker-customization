@@ -279,6 +279,18 @@
                  }
                 },
                 {
+                  "variable": "bank_transaction_no",
+                  "value": {
+                    "path": "NOC_PAYMENT_BANK_TRANSACTION_NO"
+                  },
+                  "type": "label",
+                  "localisation":{
+                    "required":true,
+                    "prefix": null,
+                    "module":"rainmaker-common"
+                 }
+                },
+                {
                   "variable": "transaction_id",
                   "value": {
                     "path": "PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_TRANSACTION_ID"
@@ -473,6 +485,17 @@
                       } 
                    }
                   ]
+              },
+              {
+                "path": "http://egov-pg-service:8080/pg-service/transaction/v1/_search",
+                "queryParam": "txnId=$.instrumentNumber",
+                "apiRequest": null,
+                "responseMapping":[
+                  {
+                    "variable":"bankTransactionNo",                        
+                    "value": "$.Transaction[0].bankTransactionNo" 
+                 }
+                ]
               }
               ]
             },

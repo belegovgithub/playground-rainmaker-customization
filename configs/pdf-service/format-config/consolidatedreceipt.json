@@ -446,7 +446,7 @@
                   true,
                   false,
                   false,
-                  true
+                  false
                 ],
                 "style": "receipt-table-value"
               },
@@ -456,7 +456,7 @@
                   false,
                   false,
                   false,
-                  true
+                  false
                 ],
                 "style": "receipt-table"
               },
@@ -466,12 +466,54 @@
                   false,
                   false,
                   false,
-                  true
+                  false
                 ],
                 "style": "receipt-table-value"
               },
               {
                 "text" : "{{Comment}}",
+                "border": [
+                  false,
+                  false,
+                  true,
+                  false
+                ],
+                "style": "receipt-table"
+              }
+            ],
+            [
+              {
+                "text": "{{bank_transaction_no}}.",
+                "border": [
+                  true,
+                  false,
+                  false,
+                  true
+                ],
+                "style": "receipt-table-value"
+              },
+              {
+                "text": "{{bankTransactionNo}}",
+                "border": [
+                  false,
+                  false,
+                  false,
+                  true
+                ],
+                "style": "receipt-table"
+              },
+              {
+                "text": " ",
+                "border": [
+                  false,
+                  false,
+                  false,
+                  true
+                ],
+                "style": "receipt-table-value"
+              },
+              {
+                "text": " ",
                 "border": [
                   false,
                   false,
@@ -607,7 +649,7 @@
       "fontSize": 12,
       "fontWeight": 400,
       "margin": [
-        -30,
+        -10,
         8,
         0,
         8
@@ -618,7 +660,7 @@
       "bold": true,
       "margin": [
         -27,
-        50,
+        30,
         -10,
         0
       ],
@@ -628,7 +670,7 @@
       "fontSize": 12,
       "margin": [
         -27,
-        35,
+        15,
         -10,
         0
       ],
@@ -638,7 +680,7 @@
       "fontSize": 12,
       "margin": [
         -27,
-        30,
+        10,
         -10,
         0
       ],
