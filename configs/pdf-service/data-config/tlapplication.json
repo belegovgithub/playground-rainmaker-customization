@@ -370,6 +370,18 @@
                  }
               },
               {
+                "variable": "garbage_collection",
+                "value": {
+                  "path": "TL_GARBAGE_FEE"
+                },
+                "type": "label",
+                "localisation":{
+                  "required":true,
+                  "prefix": null,
+                  "module":"rainmaker-common"
+               }
+            },
+              {
                   "variable": "penalty_label",
                   "value": {
                     "path": "PDF_STATIC_LABEL_CONSOLIDATED_TLAPP_PENALTY"
@@ -1240,6 +1252,10 @@
                     {
                       "variable":"rebate",
                       "value":"$.Bill[0].billDetails[0].billAccountDetails[?(@.taxHeadCode == 'TL_ADHOC_REBATE')].amount"
+                    },
+                    {
+                      "variable":"garbageCollection",
+                      "value":"$.Bill[0].billDetails[0].billAccountDetails[?(@.taxHeadCode == 'TL_GARBAGE_FEE')].amount"
                     },
                     {
                       "variable":"penalty",

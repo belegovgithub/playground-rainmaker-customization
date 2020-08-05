@@ -123,6 +123,39 @@
                                      "body": [
                                        [
                                          {
+                                           "text":"{{garbage_collection}}",
+                                           "border":[
+                                             false,
+                                             false,
+                                             false,
+                                             false
+                                           ],
+                                            "style": "receipt-table-value-down"
+                                         },
+                                         {
+                                           "text":"{{garbageCollection}}",
+                                           "border":[
+                                             false,
+                                             false,
+                                             false,
+                                             false
+                                           ],
+                                            "style": "receipt-table-value-down"
+                                         }
+                                       ]
+                                       ]
+                                   }
+                             },
+                             {
+                              "table": {
+                                     "widths": [
+                                       "*",
+                                       "*",
+                                       "*"
+                                     ],
+                                     "body": [
+                                       [
+                                         {
                                            "text":"{{rebate_label}}",
                                            "border":[
                                              false,
