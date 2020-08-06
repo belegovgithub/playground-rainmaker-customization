@@ -15,7 +15,7 @@
               {
                 "variable": "payerName", 
                 "value": {
-                  "path": "$.payerName"
+                  "path": "$.paidBy"
                 }
               },
               {
