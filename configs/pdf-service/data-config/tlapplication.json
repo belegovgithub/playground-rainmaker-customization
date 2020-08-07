@@ -296,114 +296,7 @@
                     "path": "$.tradeLicenseDetail.additionalDetail.electricityConnectionNo"
                   }
               },
-              {
-                  "variable": "typeOfOwnership",
-                  "value": {
-                    "path": "$.tradeLicenseDetail.subOwnerShipCategory"
-                  },
-                  "localisation":{
-                    "required":true,
-                    "prefix": "COMMON_MASTERS_OWNERSHIPCATEGORY",
-                    "module": "rainmaker-tl",
-                    "isCategoryRequired":true
-                 }
-                 
-              },
-              {
-                  "variable": "typeOfSubOwnership",
-                  "value": {
-                    "path": "$.tradeLicenseDetail.subOwnerShipCategory"
-                  },
-                  "localisation":{
-                    "required":true,
-                    "prefix": "COMMON_MASTERS_OWNERSHIPCATEGORY",
-                    "module": "rainmaker-tl",
-                    "isSubTypeRequired":true
-                 }
-              },
-              {
-                  "variable": "mobileNo",
-                  "value": {
-                    "path": "$..tradeLicenseDetail.owners[0].mobileNumber"
-                  }
-              },
-              {
-                  "variable": "name",
-                  "value": {
-                    "path": "$.tradeLicenseDetail.owners[0].name"
-                  }
-              },
-              {
-                  "variable": "fatherHusbandName",
-                  "value": {
-                    "path": "$.tradeLicenseDetail.owners[0].fatherOrHusbandName"
-                  }
-              },
-              {
-                  "variable": "relationship",
-                  "value": {
-                    "path": "$.tradeLicenseDetail.owners[0].relationship"
-                  },
-                  "localisation":{
-                    "required":true,
-                    "prefix": "COMMON_RELATION",
-                    "module": "rainmaker-tl"
-                 }
-              },
-              {
-                  "variable": "gender",
-                  "value": {
-                    "path": "$.tradeLicenseDetail.owners[0].gender"
-                  },
-                  "localisation":{
-                    "required":true,
-                    "prefix": "COMMON_GENDER",
-                    "module": "rainmaker-common"
-                 }
-              },
-              {
-                  "variable": "dateOfBirth",
-                  "value": {
-                    "path": "$.tradeLicenseDetail.owners[0].dob"
-                  },
-                  "type": "date"
-              },
-              {
-                  "variable": "email",
-                  "value": {
-                    "path": "$.tradeLicenseDetail.owners[0].emailId"
-                  }
-              },
-              {
-                  "variable": "panNo",
-                  "value": {
-                    "path": "$.tradeLicenseDetail.owners[0].pan"
-                  }
-              },
-              {
-                  "variable": "correspondenceAddress",
-                  "value": {
-                    "path": "$.tradeLicenseDetail.owners[0].permanentAddress"
-                  }
-              },
-              {
-                "variable": "aadharCard",
-                "value": {
-                  "path": "$.tradeLicenseDetail.owners[0].aadhaarNumber"
-                }
-              },
-              {
-                  "variable": "specialOwnerCategory",
-                  "value": {
-                    "path": "$.tradeLicenseDetail.owners[0].ownerType"
-                  },
-                  "localisation":{
-                    "required":true,
-                    "prefix": "COMMON_MASTERS_OWNERTYPE",
-                    "module":"rainmaker-common"
-                 }
-
-              },
+              
               {
                   "variable": "trade_license_application",
                   "value": {
@@ -476,6 +369,18 @@
                     "module":"rainmaker-common"
                  }
               },
+              {
+                "variable": "garbage_collection",
+                "value": {
+                  "path": "TL_GARBAGE_FEE"
+                },
+                "type": "label",
+                "localisation":{
+                  "required":true,
+                  "prefix": null,
+                  "module":"rainmaker-common"
+               }
+            },
               {
                   "variable": "penalty_label",
                   "value": {
@@ -1172,6 +1077,31 @@
                 "module":"rainmaker-common"
              }
             },
+            {
+              "variable": "typeOfOwnership",
+              "value": {
+                "path": "$.tradeLicenseDetail.subOwnerShipCategory"
+              },
+              "localisation":{
+                "required":true,
+                "prefix": "COMMON_MASTERS_OWNERSHIPCATEGORY",
+                "module": "rainmaker-tl",
+                "isCategoryRequired":true
+             }
+             
+          },
+          {
+              "variable": "typeOfSubOwnership",
+              "value": {
+                "path": "$.tradeLicenseDetail.subOwnerShipCategory"
+              },
+              "localisation":{
+                "required":true,
+                "prefix": "COMMON_MASTERS_OWNERSHIPCATEGORY",
+                "module": "rainmaker-tl",
+                "isSubTypeRequired":true
+             }
+          },
               {
                 "variable": "variable13",                        
                 "value":{
@@ -1221,7 +1151,86 @@
                       }
                       ]
                 } 
-             }
+             },
+             {
+              "variable": "variable15",                        
+              "value":{
+                   "path":"$.tradeLicenseDetail.owners.*"                          
+               },
+               "type":"array",
+               "format":{                            
+                  "type":"string",
+                  "scema":[
+                    
+                  {
+                    "variable": "mobileNo",
+                    "value":   "mobileNumber"
+                    
+                },
+                {
+                    "variable": "name",
+                    "value":  "name"
+                     
+                },
+                {
+                    "variable": "fatherHusbandName",
+                    "value":  "fatherOrHusbandName"
+                    
+                },
+                {
+                    "variable": "relationship",
+                    "value":   "relationship",
+                    "localisation":{
+                      "required":true,
+                      "prefix": "COMMON_RELATION",
+                      "module": "rainmaker-tl"
+                   }
+                },
+                {
+                    "variable": "gender",
+                    "value":  "gender",
+                    "localisation":{
+                      "required":true,
+                      "prefix": "COMMON_GENDER",
+                      "module": "rainmaker-common"
+                   }
+                },
+                {
+                    "variable": "dateOfBirth",
+                    "value": "dob",
+                    "type": "date"
+                },
+                {
+                    "variable": "email",
+                    "value":  "emailId"
+                    
+                },
+                {
+                    "variable": "panNo",
+                    "value": "pan"
+                     
+                },
+                {
+                    "variable": "correspondenceAddress",
+                    "value":  "permanentAddress"
+                },
+                {
+                  "variable": "aadharCard",
+                  "value":  "aadhaarNumber"
+                },
+                {
+                    "variable": "specialOwnerCategory",
+                    "value": "ownerType",
+                    "localisation":{
+                      "required":true,
+                      "prefix": "COMMON_MASTERS_OWNERTYPE",
+                      "module":"rainmaker-common"
+                   }
+  
+                }   
+                    ]
+              } 
+           }
 
             ]
           },
@@ -1243,6 +1252,10 @@
                     {
                       "variable":"rebate",
                       "value":"$.Bill[0].billDetails[0].billAccountDetails[?(@.taxHeadCode == 'TL_ADHOC_REBATE')].amount"
+                    },
+                    {
+                      "variable":"garbageCollection",
+                      "value":"$.Bill[0].billDetails[0].billAccountDetails[?(@.taxHeadCode == 'TL_GARBAGE_FEE')].amount"
                     },
                     {
                       "variable":"penalty",
