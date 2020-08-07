@@ -42,7 +42,7 @@ ServiceMaps:
           outJsonPath: $.Data.@timestamp
         externalUriMapping:
         - path: http://egov-localization.egov:8080/localization/messages/v1/_search
-          queryParam: module=rainmaker-dss,rainmaker-uc,rainmaker-tl&locale=en_IN&tenantId=pb&codes=$.paymentDetails[0].businessService+"test"
+          queryParam: module=rainmaker-dss,rainmaker-uc,rainmaker-tl&locale=en_IN&tenantId=pb&codes=DSS_PGR_COMPLETION_RATE
           apiRequest: {"RequestInfo":{"apiId":"Rainmaker","ver":".01","ts":"","action":"_search","did":"1","key":"","msgId":"20170310130900|en_IN","authToken":null}}
           uriResponseMapping:
           - inJsonPath: $.messages[0].code
