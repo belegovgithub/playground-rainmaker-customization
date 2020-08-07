@@ -29,13 +29,12 @@ ServiceMaps:
           uriResponseMapping:
           - inJsonPath: $.ProcessInstances
             outJsonPath: $.Data.history
-          
         mdmsMapping:
         - path: http://egov-mdms-service.egov:8080/egov-mdms-service/v1/_search
           moduleName: tenant
           masterName: tenants
           tenantId: pb
-          filter: "[?(@.code1 == $tenant)]"
+          filter: "[?(@.code == $tenant)]"
           filterMapping:
           - variable: $tenant
             valueJsonpath: $.tenantId
