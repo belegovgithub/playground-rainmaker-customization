@@ -481,7 +481,7 @@
                                                 "font": "Roboto"
                                              },
                                              {
-                                               "text":"{{bank_transaction_no}}.",
+                                               "text":"{{bank_transaction_no}}",
                                                "border":[
                                                  false,
                                                  false,
@@ -515,7 +515,7 @@
                                       "body": [
                                         [
                                             {
-                                              "text": "{{GL_Code}}.",
+                                              "text": "{{GL_Code}}",
                                               "border": [
                                                 false,
                                                 false,
