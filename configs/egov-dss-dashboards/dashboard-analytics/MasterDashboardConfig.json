@@ -2576,26 +2576,6 @@
                   "headers": []
                 }
               ]
-            },
-            {
-              "id": 353,
-              "name": "DSS_TL_LICENSE_BY_STATUS",
-              "dimensions": {
-                "height": 250,
-                "width": 4
-              },
-              "vizType": "chart",
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "licenseApplicationByStatus",
-                  "name": "DSS_TL_LICENSE_BY_STATUS",
-                  "code": "",
-                  "chartType": "donut",
-                  "filter": "",
-                  "headers": []
-                }
-              ]
             }
           ]
         } ,
