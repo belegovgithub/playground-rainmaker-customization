@@ -425,12 +425,14 @@
           "row": 4,
           "name": "DSS_REVENUE",
           "vizArray": [
+         
           ]
         },
         {
           "row": 5,
           "name": "DSS_REVENUE",
           "vizArray": [
+          
           ]
         },
         {
@@ -542,6 +544,32 @@
                   "headers": []
                 }
               ]
+            }
+          ]
+        },
+        {
+          "row": 8,
+          "name": "DSS_SERVICE",
+          "vizArray": [
+            {
+              "id": 352,
+              "name": "DSS_TL_LICENSE_BY_TRADETYPE",
+              "dimensions": {
+                "height": 100,
+                "width": 2
+              },
+              "vizType": "chart",
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "licenseApplicationByTradeType",
+                  "name": "DSS_TL_LICENSE_BY_TRADETYPE",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
             },
             {
               "id": 353,
@@ -563,13 +591,6 @@
                 }
               ]
             }
-          ]
-        },
-        {
-          "row": 8,
-          "name": "DSS_SERVICE",
-          "vizArray": [
-            
           ]
         }
       ]
@@ -653,6 +674,54 @@
               ]
             }
           ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_REVENUE",
+          "vizArray": [
+          {
+              "id": 123,
+              "name": "DSS_MC_COLLECTION:_CATEGORY_WISE",
+              "dimensions": {
+                "height": 250,
+                "width": 4
+              },
+              "vizType": "chart",
+              "noUnit": false,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "mcTotalCollectionCategoryWise",
+                  "name": "DSS_MC_COLLECTION:_CATEGORY_WISE",
+                  "code": "",
+                  "chartType": "horizontalBar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 123,
+              "name": "DSS_MC_COLLECTION:_CATEGORY_WISE_PERCENT",
+              "dimensions": {
+                "height": 250,
+                "width": 4
+              },
+              "vizType": "chart",
+              "noUnit": false,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "mcTotalCollectionCategoryWise",
+                  "name": "DSS_MC_COLLECTION:_CATEGORY_WISE",
+                  "code": "",
+                  "chartType": "donut",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -729,6 +798,54 @@
                   "name": "Monthly",
                   "code": "",
                   "chartType": "line",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_REVENUE",
+          "vizArray": [
+          {
+              "id": 123,
+              "name": "DSS_MC_COLLECTION:_CATEGORY_WISE",
+              "dimensions": {
+                "height": 250,
+                "width": 4
+              },
+              "vizType": "chart",
+              "noUnit": false,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "mcTotalCollectionCategoryWise",
+                  "name": "DSS_MC_COLLECTION:_CATEGORY_WISE",
+                  "code": "",
+                  "chartType": "horizontalBar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 123,
+              "name": "DSS_MC_COLLECTION:_CATEGORY_WISE_PERCENT",
+              "dimensions": {
+                "height": 250,
+                "width": 4
+              },
+              "vizType": "chart",
+              "noUnit": false,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "mcTotalCollectionCategoryWise",
+                  "name": "DSS_MC_COLLECTION:_CATEGORY_WISE",
+                  "code": "",
+                  "chartType": "donut",
                   "filter": "",
                   "headers": []
                 }
@@ -2459,6 +2576,32 @@
                   "headers": []
                 }
               ]
+            }
+          ]
+        } ,
+        {
+          "row": 8,
+          "name": "DSS_SERVICE",
+          "vizArray": [
+            {
+              "id": 352,
+              "name": "DSS_TL_LICENSE_BY_TRADETYPE",
+              "dimensions": {
+                "height": 100,
+                "width": 2
+              },
+              "vizType": "chart",
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "licenseApplicationByTradeType",
+                  "name": "DSS_TL_LICENSE_BY_TRADETYPE",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
             },
             {
               "id": 353,
@@ -2480,12 +2623,6 @@
                 }
               ]
             }
-          ]
-        },
-        {
-          "row": 8,
-          "name": "DSS_SERVICE",
-          "vizArray": [
           ]
         }
       ]

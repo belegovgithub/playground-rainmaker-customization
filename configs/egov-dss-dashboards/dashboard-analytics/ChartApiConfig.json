@@ -315,7 +315,31 @@
     },
     "_comment": ""
   },
-
+  
+  "mcTotalCollectionCategoryWise": {
+    "chartName": "DSS_MC_COLLECTION:_CATEGORY_WISE",
+    "queries": [
+      {
+        "module": "MC",
+        "requestQueryMap": "{\"wardId\" : \"domainObject.ward.name.keyword\", \"tenantId\" : \"dataObject.tenantId\", \"district\" : \"dataObject.tenantData.cityDistrictCode\"}",
+        "dateRefField": "dataObject.paymentDetails.receiptDate",
+        "indexName": "dss-payment_v2",
+        "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"dataObject.tenantId.keyword\":\"pb.testing\"}},{\"terms\":{\"dataObject.bill.status.keyword\":[\"Cancelled\"]}},{\"terms\":{\"dataObject.paymentDetails.businessService.keyword\":[\"PT\",\"TL\"]}}]}},\"aggs\":{\"Business Service\":{\"terms\":{\"field\":\"dataObject.paymentDetails.businessService.keyword\",\"size\":2000},\"aggs\":{\"total\":{\"sum\":{\"field\":\"dataObject.paymentDetails.bill.billDetails.amountPaid\"}}}}}}}}"
+      }
+    ],
+    "chartType": "pie",
+    "valueType": "number",
+    "action": "",
+    "documentType": "_doc",
+    "drillChart": "none",
+    "aggregationPaths": [
+      "Business Service"
+    ],
+    "insight": {
+    },
+    "_comment": " "
+  },
+  
   "totalCollectionDeptWisev2": {
     "chartName": "DSS_TOTAL_CUMULATIVE_COLLECTION:_DEPARTMENT_WISE",
     "queries": [
@@ -1685,6 +1709,7 @@
   },
 
   "_comment": "COMMON COLLECTION CHARTS",
+    "_comment": "COMMON COLLECTION CHARTS",
   "targetCollection": {
     "chartName": "DSS_TARGET_COLLECTION",
     "queries": [
@@ -2706,7 +2731,7 @@
         "module": "TL",
         "indexName": "tlindex-v1",
         "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tradelicense.tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\": {\"License Issued\": {\"value_count\": {\"field\": \"Data.tradelicense.licenseNumber.keyword\"}}}}}}",
-        "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\", \r\n  \"district\" : \"Data.tenantData.city.districtCode\", \r\n\"tenantId\" : \"Data.tradelicense.tenantid\" \r\n, \r\n\"businessService\" : \"dataObject.Bill.billDetails.businessServices\" \r\n}",
+        "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\",    \"district\" : \"Data.tenantData.city.districtCode\",  \"tenantId\" : \"Data.tradelicense.tenantId\"  ,  \"businessService\" : \"dataObject.Bill.billDetails.businessServices\"  }",
         "dateRefField": "Data.tradelicense.issuedDate"
       }
     ],
@@ -2763,24 +2788,26 @@
     "_comment": " Total Number of License having issued"
   },
   "licenseApplicationByTradeType": {
-    "chartName": "DSS_TL_LICENSE_BY_STATUS",
+    "chartName": "DSS_TL_LICENSE_BY_TRADETYPE",
     "queries": [
       {
         "module": "TL",
         "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\",  \"tenantId\" : \"Data.tenantData.code\", \"district\" : \"Data.tenantData.cityDistrictCode\"}",
-        "dateRefField": "Data.tradelicense.issuedDate",
+        "dateRefField": "Data.tradelicense.applicationDate",
         "indexName": "tlindex-v1",
-        "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tradelicense.tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"Status\":{\"terms\":{\"field\":\"Data.tradelicense.tradeLicenseDetail.tradeUnits.tradeType.keyword\",\"size\":1000,\"min_doc_count\":0},\"aggs\":{\"License Issued\":{\"value_count\":{\"field\":\"Data.tradelicense.tradeLicenseDetail.tradeUnits.tradeType.keyword\"}}}}}}}}"
+        "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tradelicense.tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"Applications Received\":{\"terms\":{\"field\":\"Data.tradelicense.tradeLicenseDetail.tradeUnits.tradeType.keyword\",\"size\":1000,\"min_doc_count\":0},\"aggs\":{\"License Issued\":{\"value_count\":{\"field\":\"Data.tradelicense.applicationNumber.keyword\"}}}},\"License Issued\":{\"terms\":{\"field\":\"Data.tradelicense.tradeLicenseDetail.tradeUnits.tradeType.keyword\",\"size\":1000,\"min_doc_count\":0},\"aggs\":{\"License Issued\":{\"value_count\":{\"field\":\"Data.tradelicense.licenseNumber.keyword\"}}}}}}}}"
       }
     ],
-    "chartType": "pie",
+    "chartType": "line",
     "valueType": "number",
     "action": "",
     "documentType": "_doc",
     "drillChart": "none",
     "aggregationPaths": [
-      "Status"
+      "Applications Received",
+      "License Issued"
     ],
+    "isCumulative": false,
     "insight": {
     },
     "_comment": " License Application which are issued by License Type"
