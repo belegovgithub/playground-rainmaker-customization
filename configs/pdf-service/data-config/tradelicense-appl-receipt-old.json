@@ -1,5 +1,5 @@
 {
-    "key": "consolidatedreceipt",
+    "key": "tradelicense-appl-receipt",
     "DataConfigs": {
       "serviceName": "rainmaker-common",
       "version": "1.0.0",
@@ -15,7 +15,7 @@
                 {
                   "variable": "payerName", 
                   "value": {
-                    "path": "$.paidBy"
+                    "path": "$.payerName"
                   }
                 },
                 {
@@ -44,8 +44,20 @@
                   },
                   "localisation":{
                     "required":true,
-                    "prefix":"MODULE",   
+                    "prefix":"MODULE_APPLFEE",   
                     "module":"rainmaker-common"
+                 }
+                },
+                {
+                  "variable": "tlReceipt", 
+                  "value": {
+                    "path": "TL_RECEIPT"
+                  },
+                  "type": "label",
+                  "localisation":{
+                    "required":true,
+                    "prefix": null,
+                    "module":"rainmaker-tl"
                  }
                 },
                 {
@@ -69,114 +81,6 @@
                   "type": "date"
                 },
                 {
-                    "variable": "letter-code",
-                    "value": {
-                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_LETTER_CODE"
-                    },
-                    "type": "label",
-                    "localisation":{
-                      "required":true,
-                      "prefix": null,
-                      "module":"rainmaker-common"
-                   }
-                  },
-                  {
-                    "variable": "letter-header",
-                    "value": {
-                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_LETTER_HEAD"
-                    },
-                    "type": "label",
-                    "localisation":{
-                      "required":true,
-                      "prefix": null,
-                      "module":"rainmaker-common"
-                   }
-                  },
-                  {
-                    "variable": "letter-section",
-                    "value": {
-                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_LETTER_SECTION_NO"
-                    },
-                    "type": "label",
-                    "localisation":{
-                      "required":true,
-                      "prefix": null,
-                      "module":"rainmaker-common"
-                   }
-                  },
-                  {
-                    "variable": "cantonment-board",
-                    "value": {
-                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_TLCERTIFICATE_MUNICIPAL_CORPORATION"
-                    },
-                    "type": "label",
-                    "localisation":{
-                      "required":true,
-                      "prefix": null,
-                      "module":"rainmaker-common"
-                   }
-                  },
-                  {
-                    "variable": "form-number",
-                    "value": {
-                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_LETTER_FORM_NO"
-                    },
-                    "type": "label",
-                    "localisation":{
-                      "required":true,
-                      "prefix": null,
-                      "module":"rainmaker-common"
-                   }
-                  },
-                  {
-                    "variable": "rule-number",
-                    "value": {
-                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_LETTER_RULENO"
-                    },
-                    "type": "label",
-                    "localisation":{
-                      "required":true,
-                      "prefix": null,
-                      "module":"rainmaker-common"
-                   }
-                  },
-                  {
-                    "variable": "challan",
-                    "value": {
-                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_CHALLAN"
-                    },
-                    "type": "label",
-                    "localisation":{
-                      "required":true,
-                      "prefix": null,
-                      "module":"rainmaker-common"
-                   }
-                  },
-                  {
-                    "variable": "letter-code",
-                    "value": {
-                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_TLCERTIFICATE_MUNICIPAL_CORPORATION"
-                    },
-                    "type": "label",
-                    "localisation":{
-                      "required":true,
-                      "prefix": null,
-                      "module":"rainmaker-common"
-                   }
-                  },
-                  {
-                    "variable": "application_no",
-                    "value": {
-                      "path": "NOC_COMMON_TABLE_COL_APP_NO"
-                    },
-                    "type": "label",
-                    "localisation":{
-                      "required":true,
-                      "prefix": null,
-                      "module":"rainmaker-common"
-                   }
-                  },
-                {
                   "variable": "paymentMode", 
                   "value": {
                     "path": "$.paymentMode"
@@ -194,12 +98,6 @@
                   }
                 },
                 {
-                    "variable": "consumnerName",
-                    "value": {
-                      "path": "$.paymentDetails[0].bill.billDetails[0].additionalDetails.consumerName"
-                    }
-                  },
-                {
                   "variable": "G8ReceiptDate",
                   "value": {
                     "path": "$.paymentDetails[0].manualReceiptDate"
@@ -207,22 +105,20 @@
                   "type": "date"
                 },
                 {
-                    "variable": "GLCode",
-                    "value": {
-                      "path": "$.paymentDetails[0].bill.billDetails[0].additionalDetails.GLcode"
-                    }
-                   
-                  },
-                {
                   "variable": "paymentDate", 
                   "value": {
                     "path": "$.transactionDate"
                   },
                   "type": "date"
                 },
-                 
                 {
-                  "variable": "applicationNo", 
+                  "variable": "excessAmountPaid", 
+                  "value": {
+                    "path": "$.paymentDetails[0].excessAmountPaid"
+                  }
+                },
+                {
+                  "variable": "consumerID", 
                   "value": {
                     "path": "$.paymentDetails[0].bill.consumerCode"
                   }
@@ -234,16 +130,15 @@
                   }
                 },
                 {
-                    "variable": "Comment",
-                    "value": {
-                      "path": "$.paymentDetails[0].bill.billDetails[0].additionalDetails.comment"
-                    }
-                   
-                  },
-                {
-                  "variable": "payment_receipt",
+                  "variable": "dueAmount", 
                   "value": {
-                    "path": "PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_PAYMENT_RECEIPT"
+                    "path": "$.paymentDetails[0].totalDue"
+                  }
+                },
+                {
+                  "variable": "appl_payment_receipt",
+                  "value": {
+                    "path": "PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_APPLICATION_RECEIPT"
                   },
                   "type": "label",
                   "localisation":{
@@ -252,42 +147,6 @@
                     "module":"rainmaker-common"
                  }
                 },
-                {
-                    "variable": "mcollect_comment",
-                    "value": {
-                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_MCOLLECT_COMMENT"
-                    },
-                    "type": "label",
-                    "localisation":{
-                      "required":true,
-                      "prefix": null,
-                      "module":"rainmaker-common"
-                   }
-                  },
-                  {
-                    "variable": "disclamer",
-                    "value": {
-                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_DISCLAIMER"
-                    },
-                    "type": "label",
-                    "localisation":{
-                      "required":true,
-                      "prefix": null,
-                      "module":"rainmaker-common"
-                   }
-                  },
-                  {
-                    "variable": "disclamer_1",
-                    "value": {
-                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_DISCLAIMER_FIRST_LINE_UC"
-                    },
-                    "type": "label",
-                    "localisation":{
-                      "required":true,
-                      "prefix": null,
-                      "module":"rainmaker-common"
-                   }
-                  },
                 {
                   "variable": "receipt_no",
                   "value": {
@@ -301,17 +160,16 @@
                  }
                 },
                 {
-                    "variable": "GL_Code",
-                    "value": {
-                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_GL_CODE"
-                    },
-                    "type": "label",
-                    "localisation":{
-                      "required":true,
-                      "prefix": null,
-                      "module":"rainmaker-common"
-                   }
-                  }, 
+                  "variable": "consumer_id",
+                  "value": {
+                    "path": "$.paymentDetails[0].businessService"
+                  },
+                  "localisation":{
+                    "required":true,
+                    "prefix": "PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_CONSUMER_ID",
+                    "module":"rainmaker-common"
+                 }
+                },
                 {
                   "variable": "payment_date",
                   "value": {
@@ -385,45 +243,33 @@
                  }
                 },
                 {
+                  "variable": "total_bill_amount",
+                  "value": {
+                    "path": "PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_TOTAL_BILL_AMOUNT"
+                  },
+                  "type": "label",
+                  "localisation":{
+                    "required":true,
+                    "prefix": null,
+                    "module":"rainmaker-common"
+                 }
+                },
+                {
+                  "variable": "pending_amount",
+                  "value": {
+                    "path": "PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_PENDING_AMOUNT"
+                  },
+                  "type": "label",
+                  "localisation":{
+                    "required":true,
+                    "prefix": null,
+                    "module":"rainmaker-common"
+                 }
+                },
+                {
                   "variable": "payment_mode",
                   "value": {
                     "path": "PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_PAYMENT_MODE"
-                  },
-                  "type": "label",
-                  "localisation":{
-                    "required":true,
-                    "prefix": null,
-                    "module":"rainmaker-common"
-                 }
-                },
-                {
-                  "variable": "transaction_id",
-                  "value": {
-                    "path": "PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_TRANSACTION_ID"
-                  },
-                  "type": "label",
-                  "localisation":{
-                    "required":true,
-                    "prefix": null,
-                    "module":"rainmaker-common"
-                 }
-                },
-                {
-                    "variable": "payment_receipt",
-                    "value": {
-                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_PAYMENT_RECEIPT"
-                    },
-                    "type": "label",
-                    "localisation":{
-                      "required":true,
-                      "prefix": null,
-                      "module":"rainmaker-common"
-                   }
-                  },
-                {
-                  "variable": "g8_receipt_no",
-                  "value": {
-                    "path": "PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_G8_RECEIPT_NO"
                   },
                   "type": "label",
                   "localisation":{
@@ -445,6 +291,30 @@
                  }
                 },
                 {
+                  "variable": "transaction_id",
+                  "value": {
+                    "path": "PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_TRANSACTION_ID"
+                  },
+                  "type": "label",
+                  "localisation":{
+                    "required":true,
+                    "prefix": null,
+                    "module":"rainmaker-common"
+                 }
+                },
+                {
+                  "variable": "g8_receipt_no",
+                  "value": {
+                    "path": "PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_G8_RECEIPT_NO"
+                  },
+                  "type": "label",
+                  "localisation":{
+                    "required":true,
+                    "prefix": null,
+                    "module":"rainmaker-common"
+                 }
+                },
+                {
                   "variable": "g8_receipt_date",
                   "value": {
                     "path": "PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_G8_RECEIPT_DATE"
@@ -457,17 +327,29 @@
                  }
                 },
                 {
-                    "variable": "consumner_Name",
-                    "value": {
-                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_CONSUMER_NAME"
-                    },
-                    "type": "label",
-                    "localisation":{
-                      "required":true,
-                      "prefix": null,
-                      "module":"rainmaker-common"
-                   }
+                  "variable": "generated_by",
+                  "value": {
+                    "path": "PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_GENERATED_BY"
                   },
+                  "type": "label",
+                  "localisation":{
+                    "required":true,
+                    "prefix": null,
+                    "module":"rainmaker-common"
+                 }
+                },
+                {
+                  "variable": "commissioner/eo",
+                  "value": {
+                    "path": "PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_COMMISSIONER_EO"
+                  },
+                  "type": "label",
+                  "localisation":{
+                    "required":true,
+                    "prefix": null,
+                    "module":"rainmaker-common"
+                 }
+                },
                 {
                   "variable": "no_signature",
                   "value": {
@@ -503,14 +385,45 @@
                     "prefix": null,
                     "module":"rainmaker-common"
                  }
+                },
+                {
+                  "variable": "Municipal_Corporation",
+                  "value": {
+                    "path": "PDF_STATIC_LABEL_MDMS_MUNICIPAL_CORPORATION"
+                  },
+                  "type": "label",
+                  "localisation":{
+                    "required":true,
+                    "prefix": null,
+                    "module":"rainmaker-common"
+                 }
+                },
+                {
+                  "variable": "excess_amount_paid",
+                  "value": {
+                    "path": "PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_EXCESS_AMOUNT_PAID"
+                  },
+                  "type": "label",
+                  "localisation":{
+                    "required":true,
+                    "prefix": null,
+                    "module":"rainmaker-common"
+                 }
                 }
-                 
               ]
             },
             {
+              "derived": [
+                 {
+                    "variable": "pendingAmount",
+                    "formula": "{{dueAmount}}-{{paidAmount}}"
+                 }
+              ]
+           },
+            {
               "externalAPI": [     
                 { 
-                    "path": "http://egov-mdms-service:8080/egov-mdms-service/v1/_get",
+                    "path": "http://localhost:8085/egov-mdms-service/v1/_get",
                     "queryParam": "moduleName=tenant&masterName=tenants&tenantId=pb&filter=%5B?(@.code=='{$.tenantId}')%5D",
                     "apiRequest": null,
                     "responseMapping":[
@@ -536,7 +449,7 @@
                         "type":"image"      
                       },
                       {
-                        "variable": "cb-name",
+                        "variable": "logo-header",
                         "value":"$.MdmsRes.tenant.tenants[0].code",
                         "localisation":{
                           "required":true,
@@ -547,7 +460,7 @@
                     ]
                 },
                 { 
-                  "path": "http://egov-mdms-service:8080/egov-mdms-service/v1/_get",
+                  "path": "http://localhost:8085/egov-mdms-service/v1/_get",
                   "queryParam": "moduleName=tenant&masterName=footer&tenantId=pb&filter=%5B?(@.code=='{$.tenantId}' %26%26 @.service=='{$.paymentDetails[0].businessService}')%5D",
                   "apiRequest": null,
                   "responseMapping":[
@@ -574,7 +487,7 @@
                   ]
               },
               {
-                "path": "http://egov-pg-service:8080/pg-service/transaction/v1/_search",
+                "path": "http://localhost:8086/pg-service/transaction/v1/_search",
                 "queryParam": "txnId=$.instrumentNumber",
                 "apiRequest": null,
                 "responseMapping":[
@@ -585,7 +498,7 @@
                 ]
               }
               ]
-            },      
+            },
             {
               "qrcodeConfig": [
                 {
