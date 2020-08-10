@@ -518,6 +518,17 @@
                       } 
                    }
                   ]
+              },
+              {
+                "path": "http://egov-pg-service:8080/pg-service/transaction/v1/_search",
+                "queryParam": "txnId=$.instrumentNumber",
+                "apiRequest": null,
+                "responseMapping":[
+                  {
+                    "variable":"bankTransactionNo",                        
+                    "value": "$.Transaction[0].bankTransactionNo" 
+                 }
+                ]
               }
               ]
             },      
