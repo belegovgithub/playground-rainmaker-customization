@@ -54,6 +54,12 @@
                   }
               },
               {
+                "variable": "permanentAddress",
+                "value": {
+                  "path": "$.tradeLicenseDetail.owners[0].permanentAddress"
+                }
+            },
+              {
                 "variable": "tradeAddress",
                 "value": {
                   "path": "$.tradeLicenseDetail.address.locality.code"
