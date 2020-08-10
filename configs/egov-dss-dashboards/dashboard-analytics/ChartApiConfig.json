@@ -2793,19 +2793,21 @@
       {
         "module": "TL",
         "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\",  \"tenantId\" : \"Data.tenantData.code\", \"district\" : \"Data.tenantData.cityDistrictCode\"}",
-        "dateRefField": "Data.tradelicense.issuedDate",
+        "dateRefField": "Data.tradelicense.applicationDate",
         "indexName": "tlindex-v1",
-        "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tradelicense.tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"Trade Type\":{\"terms\":{\"field\":\"Data.tradelicense.tradeLicenseDetail.tradeUnits.tradeType.keyword\",\"size\":1000,\"min_doc_count\":0},\"aggs\":{\"License Issued\":{\"value_count\":{\"field\":\"Data.tradelicense.licenseNumber.keyword\"}}}}}}}}"
+        "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tradelicense.tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"Applications Received\":{\"terms\":{\"field\":\"Data.tradelicense.tradeLicenseDetail.tradeUnits.tradeType.keyword\",\"size\":1000,\"min_doc_count\":0},\"aggs\":{\"License Issued\":{\"value_count\":{\"field\":\"Data.tradelicense.applicationNumber.keyword\"}}}},\"License Issued\":{\"terms\":{\"field\":\"Data.tradelicense.tradeLicenseDetail.tradeUnits.tradeType.keyword\",\"size\":1000,\"min_doc_count\":0},\"aggs\":{\"License Issued\":{\"value_count\":{\"field\":\"Data.tradelicense.licenseNumber.keyword\"}}}}}}}}"
       }
     ],
-    "chartType": "pie",
+    "chartType": "line",
     "valueType": "number",
     "action": "",
     "documentType": "_doc",
     "drillChart": "none",
     "aggregationPaths": [
-      "Trade Type"
+      "Applications Received",
+      "License Issued"
     ],
+    "isCumulative": false,
     "insight": {
     },
     "_comment": " License Application which are issued by License Type"
