@@ -449,6 +449,62 @@
                     "prefix": null,
                     "module":"rainmaker-common"
                  }
+                },
+                {
+                  "variable": "total_amount",
+                  "value": {
+                    "path": "PDF_STATIC_LABEL_CONSOLIDATED_TLAPP_TOTAL_AMOUNT"
+                  },
+                  "type": "label",
+                  "localisation": {
+                    "required": true,
+                    "prefix": null,
+                    "module": "rainmaker-common"
+                  }
+                },
+                {
+                  "variable": "Rs",
+                  "value": {
+                    "path": "PDF_STATIC_LABEL_CONSOLIDATED_TLAPP_RUPEE"
+                  },
+                  "type": "label",
+                  "localisation": {
+                    "required": true,
+                    "prefix": null,
+                    "module": "rainmaker-common"
+                  }
+                },
+                {
+                  "variable": "variable10",
+                  "value": {
+                    "path": "$.paymentDetails[0].bill.billDetails[0].billAccountDetails.*"
+                  },
+                  "type": "array",
+                  "format": {
+                    "type": "string",
+                    "scema": [
+                      {
+                        "variable": "trade_license_tax",
+                        "value": "taxHeadCode",
+                        "type": "string",
+                        "localisation": {
+                          "required": true,
+                          "prefix": null,
+                          "module": "rainmaker-common"
+                        }
+                      },
+                      {
+                        "variable": "tradeLicenseTax",
+                        "value": "amount"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "variable":"totalAmount",
+                  "value": {
+                    "path": "$.paymentDetails[0].bill.billDetails[0].amount"
+                  }
                 }
                  
               ]
@@ -489,7 +545,7 @@
                           "prefix": "TENANT_TENANTS",
                           "module":"rainmaker-common"
                           }
-                      }
+                        }
                     ]
                 },
                 { 

@@ -321,189 +321,172 @@
                                          ]
                                          ]
                                      }
-                                    }
-                                 ]
-                        }
-                    ]
-                    
-               ]
-             },
-             "layout": {}
-            },{
-             "style": "noc-table2",
-             "table": {
-               "widths": [
-                 "*"
-               ],
-               "body": [
-                    [
-                        {
-                             "stack":[
+                                    },
                                     {
-                                         "table": {
-                                       "widths": [
-                                         "20%",
-                                         "30%",
-                                         "20%",
-                                         "30%"
-                                       ],
-                                       "body": [
-                                         [
-                                           {
-                                             "text":"{{payment_mode}}",
-                                             "border":[
-                                               false,
-                                               false,
-                                               false,
-                                               false
-                                             ],
-                                              "style": "receipt-table-value"
-                                           },
-                                           {
-                                             "text":"{{paymentMode}} ",
-                                             "border":[
-                                               false,
-                                               false,
-                                               false,
-                                               false
-                                             ],
-                                              "style": "receipt-table-value-down",
-                                              "font": "Roboto"
-                                           },
-                                           {
-                                             "text":"{{paid_amount}}",
-                                             "border":[
-                                               false,
-                                               false,
-                                               false,
-                                               false
-                                             ],
-                                              "style": "receipt-table-value"
-                                           },
-                                           {
-                                             "text":"{{paidAmount}}",
-                                             "border":[
-                                               false,
-                                               false,
-                                               false,
-                                               false
-                                             ],
-                                              "style": "receipt-table-value-down"
-                                           }
-                                         ]
-                                         ]
-                                     }
-                                    },
-                                     {
-                                         "table": {
-                                       "widths": [
-                                         "20%",
-                                         "30%",
-                                         "20%",
-                                         "30%"
-                                       ],
-                                       "body": [
-                                         [
-                                           {
-                                             "text":"{{transaction_id}}",
-                                             "border":[
-                                               false,
-                                               false,
-                                               false,
-                                               false
-                                             ],
-                                              "style": "receipt-table-value"
-                                           },
-                                           {
-                                             "text":"{{transactionID}}",
-                                             "border":[
-                                               false,
-                                               false,
-                                               false,
-                                               false
-                                             ],
-                                              "style": "receipt-table-value-down",
-                                              "font": "Roboto"
-                                           },
-                                           {
-                                             "text":"{{g8_receipt_no}}.",
-                                             "border":[
-                                               false,
-                                               false,
-                                               false,
-                                               false
-                                             ],
-                                              "style": "receipt-table-value"
-                                           },
-                                           {
-                                             "text":"{{G8ReceiptNo}}",
-                                             "border":[
-                                               false,
-                                               false,
-                                               false,
-                                               false
-                                             ],
-                                              "style": "receipt-table-value-down"
-                                           }
-                                         ]
-                                         ]
-                                     }
-                                    },
-                                     {
-                                         "table": {
-                                       "widths": [
-                                         "20%",
-                                         "30%",
-                                         "20%",
-                                         "30%"
-                                       ],
-                                       "body": [
-                                         [
-                                           {
-                                             "text":"{{g8_receipt_date}}",
-                                             "border":[
-                                               false,
-                                               false,
-                                               false,
-                                               false
-                                             ],
-                                              "style": "receipt-table-value"
-                                           },
-                                           {
-                                             "text":"{{G8ReceiptDate}}",
-                                             "border":[
-                                               false,
-                                               false,
-                                               false,
-                                               false
-                                             ],
-                                              "style": "receipt-table-value-down",
-                                              "font": "Roboto"
-                                           },
-                                           {
-                                             "text":"{{bank_transaction_no}}.",
-                                             "border":[
-                                               false,
-                                               false,
-                                               false,
-                                               false
-                                             ],
-                                              "style": "receipt-table-value"
-                                           },
-                                           {
-                                             "text":"{{bankTransactionNo}}",
-                                             "border":[
-                                               false,
-                                               false,
-                                               false,
-                                               false
-                                             ],
-                                              "style": "receipt-table-value-down"
-                                           }
-                                         ]
-                                         ]
-                                     }
-                                    }
+                                      "table": {
+                                    "widths": [
+                                      "20%",
+                                      "30%",
+                                      "20%",
+                                      "30%"
+                                    ],
+                                    "body": [
+                                      [
+                                        {
+                                          "text":"{{payment_mode}}",
+                                          "border":[
+                                            false,
+                                            false,
+                                            false,
+                                            false
+                                          ],
+                                           "style": "receipt-table-value"
+                                        },
+                                        {
+                                          "text":"{{paymentMode}} ",
+                                          "border":[
+                                            false,
+                                            false,
+                                            false,
+                                            false
+                                          ],
+                                           "style": "receipt-table-value-down",
+                                           "font": "Roboto"
+                                        },
+                                        {
+                                          "text":"{{paid_amount}}",
+                                          "border":[
+                                            false,
+                                            false,
+                                            false,
+                                            false
+                                          ],
+                                           "style": "receipt-table-value"
+                                        },
+                                        {
+                                          "text":"{{paidAmount}}",
+                                          "border":[
+                                            false,
+                                            false,
+                                            false,
+                                            false
+                                          ],
+                                           "style": "receipt-table-value-down"
+                                        }
+                                      ]
+                                      ]
+                                  }
+                                 },
+                                  {
+                                      "table": {
+                                    "widths": [
+                                      "20%",
+                                      "30%",
+                                      "20%",
+                                      "30%"
+                                    ],
+                                    "body": [
+                                      [
+                                        {
+                                          "text":"{{transaction_id}}",
+                                          "border":[
+                                            false,
+                                            false,
+                                            false,
+                                            false
+                                          ],
+                                           "style": "receipt-table-value"
+                                        },
+                                        {
+                                          "text":"{{transactionID}}",
+                                          "border":[
+                                            false,
+                                            false,
+                                            false,
+                                            false
+                                          ],
+                                           "style": "receipt-table-value-down",
+                                           "font": "Roboto"
+                                        },
+                                        {
+                                          "text":"{{g8_receipt_no}}.",
+                                          "border":[
+                                            false,
+                                            false,
+                                            false,
+                                            false
+                                          ],
+                                           "style": "receipt-table-value"
+                                        },
+                                        {
+                                          "text":"{{G8ReceiptNo}}",
+                                          "border":[
+                                            false,
+                                            false,
+                                            false,
+                                            false
+                                          ],
+                                           "style": "receipt-table-value-down"
+                                        }
+                                      ]
+                                      ]
+                                  }
+                                 },
+                                  {
+                                      "table": {
+                                    "widths": [
+                                      "20%",
+                                      "30%",
+                                      "20%",
+                                      "30%"
+                                    ],
+                                    "body": [
+                                      [
+                                        {
+                                          "text":"{{g8_receipt_date}}",
+                                          "border":[
+                                            false,
+                                            false,
+                                            false,
+                                            false
+                                          ],
+                                           "style": "receipt-table-value"
+                                        },
+                                        {
+                                          "text":"{{G8ReceiptDate}}",
+                                          "border":[
+                                            false,
+                                            false,
+                                            false,
+                                            false
+                                          ],
+                                           "style": "receipt-table-value-down",
+                                           "font": "Roboto"
+                                        },
+                                        {
+                                          "text":"{{bank_transaction_no}}.",
+                                          "border":[
+                                            false,
+                                            false,
+                                            false,
+                                            false
+                                          ],
+                                           "style": "receipt-table-value"
+                                        },
+                                        {
+                                          "text":"{{bankTransactionNo}}",
+                                          "border":[
+                                            false,
+                                            false,
+                                            false,
+                                            false
+                                          ],
+                                           "style": "receipt-table-value-down"
+                                        }
+                                      ]
+                                      ]
+                                  }
+                                 }
                                  ]
                         }
                     ]
@@ -511,6 +494,116 @@
                ]
              },
              "layout": {}
+            }, 
+            {
+              "style": "noc-table3",
+              "table": {
+                "widths": [
+                  "*"
+                ],
+                "body": [
+                  [
+                    {
+                      "text": "{{total_amount}}",
+                      "border": [
+                        true,
+                        true,
+                        true,
+                        false
+                      ],
+                      "style": "receipt-table-value-total",
+                      "bold": false
+                    }
+                  ],
+                  [
+                    {
+                      "text": "{{Rs}} {{totalAmount}}",
+                      "border": [
+                        true,
+                        false,
+                        true,
+                        false
+                      ],
+                      "style": "receipt-table-value-total",
+                      "fontSize": 20
+                    }
+                  ]
+                ]
+              },
+              "layout": {}
+            },
+            {
+              "style": "noc-table4",
+              "table": {
+                "widths": [
+                  "*",
+                  "*",
+                  "*"
+                ],
+                "body": [
+                  "{{#variable10}}[{\"text\": \"{{trade_license_tax}}\",\"border\": [true,false,false,false], \"style\": \"receipt-table-value-down\"},{\"text\": \"{{tradeLicenseTax}}\", \"border\": [false,false,false,false], \"style\": \"receipt-table-value-down\"},{ \"text\": \" \",\"border\": [false,false,true, false ]}]{{/variable10}}"
+                ]
+              },
+              "layout": {}
+            },
+            {
+              "canvas": [
+                {
+                  "type": "line",
+                  "x1": -25,
+                  "y1": 0,
+                  "x2": 315,
+                  "y2": 0,
+                  "lineWidth": 1
+                }
+              ]
+            },
+            {
+              "style": "noc-table4",
+              "table": {
+                "widths": [
+                  "*",
+                  "*",
+                  "*"
+                ],
+                "body": [
+                  [
+                    {
+                      "text": "{{total_amount}}",
+                      "border": [
+                        true,
+                        false,
+                        false,
+                        true
+                      ],
+                      "bold": true,
+                      "style": "receipt-table-value-down"
+                    },
+                    {
+                      "text": "{{totalAmount}}",
+                      "border": [
+                        false,
+                        false,
+                        false,
+                        true
+                      ],
+                      "bold": true,
+                      "style": "receipt-table-value-down"
+                    },
+                    {
+                      "text": " ",
+                      "border": [
+                        false,
+                        false,
+                        true,
+                        true
+                      ]
+                       
+                    }
+                  ]
+                ]
+              },
+              "layout": {}
             },
             {
                 "table": {
@@ -590,6 +683,26 @@
         ],
         "color": "#484848"
       }, 
+      "noc-table3": {
+        "fontSize": 12,
+        "color": "#484848",
+        "margin": [
+          -25,
+          15,
+          -25,
+          -0
+        ]
+      },
+      "noc-table4": {
+        "fontSize": 12,
+        "color": "#484848",
+        "margin": [
+          -25,
+          0,
+          -25,
+          -0
+        ]
+      },
        "receipt-approver": {
         "fontSize": 12,
         "bold": true,
