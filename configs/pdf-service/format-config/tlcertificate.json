@@ -346,7 +346,7 @@
                                              "style":"receipt-sub-logo-sub-header"
                                          },
                                          {
-                                             "text":"{{tradeAddress}}, {{city}}",
+                                             "text":"{{permanentAddress}} , {{tradeAddress}}, {{city}}",
                                              "style":"receipt-sub-logo-sub-header"
                                          }
                                     ]
