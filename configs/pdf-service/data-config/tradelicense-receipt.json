@@ -249,7 +249,7 @@
                 {
                   "variable": "payment_date",
                   "value": {
-                    "path": "PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_PAYMENT_DATE"
+                    "path": "UC_COMMON_TABLE_COL_DATE"
                   },
                   "type": "label",
                   "localisation":{
@@ -451,29 +451,21 @@
                   }
                 },
                 {
-                  "variable": "variable10",
+                  "variable": "trade_license_tax", 
                   "value": {
-                    "path": "$.paymentDetails[0].bill.billDetails[0].billAccountDetails.*"
+                    "path": "$.paymentDetails[0].bill.billDetails[0].billAccountDetails[?(@.taxHeadCode == 'TL_TAX')].taxHeadCode"
                   },
-                  "type": "array",
-                  "format": {
-                    "type": "string",
-                    "scema": [
-                      {
-                        "variable": "trade_license_tax",
-                        "value": "taxHeadCode",
-                        "type": "string",
+                  "type": "string",
                         "localisation": {
                           "required": true,
                           "prefix": null,
                           "module": "rainmaker-common"
                         }
-                      },
-                      {
-                        "variable": "tradeLicenseTax",
-                        "value": "amount"
-                      }
-                    ]
+                },
+                {
+                  "variable": "tradeLicenseTax", 
+                  "value": {
+                    "path": "$.paymentDetails[0].bill.billDetails[0].billAccountDetails[?(@.taxHeadCode == 'TL_TAX')].amount"
                   }
                 },
                 {

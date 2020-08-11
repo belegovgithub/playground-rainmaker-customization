@@ -315,7 +315,7 @@
                 {
                   "variable": "payment_date",
                   "value": {
-                    "path": "PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_PAYMENT_DATE"
+                    "path": "UC_COMMON_TABLE_COL_DATE"
                   },
                   "type": "label",
                   "localisation":{

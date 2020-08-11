@@ -486,61 +486,7 @@
                                         ]
                                         ]
                                     }
-                                   },
-                                   {
-                                     "table": {
-                                   "widths": [
-                                     "20%",
-                                     "30%",
-                                     "20%",
-                                     "30%"
-                                   ],
-                                   "body": [
-                                     [
-                                         {
-                                           "text": "{{GL_Code}}",
-                                           "border": [
-                                             false,
-                                             false,
-                                             false,
-                                             false
-                                           ],
-                                           "style": "receipt-table-value"
-                                         },
-                                         {
-                                           "text": "{{GLCode}}",
-                                           "border": [
-                                             false,
-                                             false,
-                                             false,
-                                             false
-                                           ],
-                                           "style": "receipt-table-value-down"
-                                         },
-                                         {
-                                           "text" : "{{mcollect_comment}} ",
-                                           "border": [
-                                             false,
-                                             false,
-                                             false,
-                                             false
-                                           ],
-                                           "style": "receipt-table-value"
-                                         },
-                                         {
-                                           "text" : "{{Comment}}",
-                                           "border": [
-                                             false,
-                                             false,
-                                             false,
-                                             false
-                                           ],
-                                           "style": "receipt-table-value-down"
-                                         }
-                                       ]
-                                     ]
-                                 }
-                                }
+                                   }
                                    ]
                           }
                       ]
@@ -558,30 +504,17 @@
                   "body": [
                     [
                       {
-                        "text": "{{total_amount}}",
+                        "text": " ",
                         "border": [
                           true,
                           true,
                           true,
                           false
-                        ],
-                        "style": "receipt-table-value-total",
-                        "bold": false
+                        ]
+                        
+                         
                       }
-                    ],
-                    [
-                      {
-                        "text": "{{Rs}} {{totalAmount}}",
-                        "border": [
-                          true,
-                          false,
-                          true,
-                          false
-                        ],
-                        "style": "receipt-table-value-total",
-                        "fontSize": 20
-                      }
-                    ]
+                    ]  
                   ]
                 },
                 "layout": {}
@@ -590,9 +523,9 @@
                 "style": "noc-table4",
                 "table": {
                   "widths": [
-                    "*",
-                    "*",
-                    "*"
+                    "50%",
+                    "25%",
+                    "25%"
                   ],
                   "body": [
                     "{{#variable10}}[{\"text\": \"{{trade_license_tax}}\",\"border\": [true,false,false,false], \"style\": \"receipt-table-value-down\"},{\"text\": \"{{tradeLicenseTax}}\", \"border\": [false,false,false,false], \"style\": \"receipt-table-value-down\"},{ \"text\": \" \",\"border\": [false,false,true, false ]}]{{/variable10}}"
@@ -616,9 +549,9 @@
                 "style": "noc-table4",
                 "table": {
                   "widths": [
-                    "*",
-                    "*",
-                    "*"
+                    "50%",
+                    "25%",
+                    "25%"
                   ],
                   "body": [
                     [
@@ -631,7 +564,7 @@
                           true
                         ],
                         "bold": true,
-                        "style": "receipt-table-value-down"
+                        "style": "receipt-total-value"
                       },
                       {
                         "text": "{{totalAmount}}",
@@ -642,17 +575,19 @@
                           true
                         ],
                         "bold": true,
-                        "style": "receipt-table-value-down"
+                        "style": "receipt-total-value"
                       },
                       {
-                        "text": " ",
+                        "image": "{{qrcodeimage}}",
+                        "style": "receipt-table-value-total-Qr",
                         "border": [
                           false,
                           false,
                           true,
                           true
-                        ]
-                         
+                        ],
+                        "width": 72,
+                        "height": 72
                       }
                     ]
                   ]
@@ -662,24 +597,13 @@
               {
                   "table": {
                     "widths": [
-                      "75%",
-                      "25%"
+                      "*"
                     ],
                     "body": [
                          [         
                               {
                                   "style": "no-signature",
                                   "text": "{{no_signature}}"
-                              },
-                              {
-                                  
-                                      "style": "qr-head",
-                                      "image": "{{qrcodeimage}}",
-                                      "alignment": "right",
-                                      "width": 64,
-                                      "height": 64
-                                    
-                                  
                               }
                          ]
                     ]
@@ -734,7 +658,7 @@
               "color": "#484848",
               "margin": [
                 -25,
-                0,
+                -10,
                 -25,
                 -0
               ]
@@ -742,7 +666,7 @@
             "no-signature": {
           "fontSize": 12,
           "margin": [
-            -20,
+            -24,
             35,
             -10,
             0
@@ -825,9 +749,9 @@
                "fontWeight": 500,
                "margin": [
                  3,
-                 5,
+                 4,
                  0,
-                 5
+                 3
                ]
              },
              "receipt-table-value-total": {
@@ -847,7 +771,7 @@
               "alignment": "right",
               "margin": [
                 0,
-               -40,
+               -50,
                 20,
                 0
               ]
@@ -860,11 +784,24 @@
                "alignment": "left",
                "margin": [
                  3,
-                 5,
+                 4,
                  0,
-                 5
+                 3
                ]
              },
+             "receipt-total-value": {
+              "color": "#000000",
+              "bold": false,
+              "fontSize": 12,
+              "fontWeight": 400,
+              "alignment": "left",
+              "margin": [
+                3,
+                15,
+                0,
+                5
+              ]
+            },
              "receipt-table-value2": {
                "color": "#000000",
                "bold": false,
@@ -916,7 +853,7 @@
              "pt-disclaimer": {
               "fontSize": 11,
               "margin": [
-                -27,
+                -30,
                 0,
                 -10,
                 0
@@ -926,7 +863,7 @@
             "pt-disclaimer-value": {
               "fontSize": 10,
               "margin": [
-                2,
+                5,
                 5,
                 0,
                 0
