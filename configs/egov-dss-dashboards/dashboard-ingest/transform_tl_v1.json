@@ -14,7 +14,8 @@
 				"accountid": "tradeLicense.accountId",
 				"applicationdate": "tradeLicense.applicationDate",
 				"oldpropertyid": "tradeLicense.oldPropertyId",
-				"action": "tradeLicense.action"
+				"action": "tradeLicense.action",
+				"tradeUnits":"tradelicense.tradeLicenseDetail.tradeUnits"
 			},
 		        "ward": "ward"
 
