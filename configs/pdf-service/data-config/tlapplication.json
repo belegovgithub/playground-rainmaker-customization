@@ -324,7 +324,7 @@
               {
                   "variable": "total_amount",
                   "value": {
-                    "path": "PDF_STATIC_LABEL_CONSOLIDATED_TLAPP_TOTAL_AMOUNT"
+                    "path": "PAY_AMOUNT_TO_BE_PAID"
                   },
                   "type": "label",
                   "localisation":{
@@ -898,16 +898,16 @@
                }
             },
               {
-                  "variable": "documents_label",
-                  "value": {
-                    "path": "PDF_STATIC_LABEL_CONSOLIDATED_TLAPP_DOCUMENTS"
-                  },
-                  "type": "label",
-                  "localisation":{
-                    "required":true,
-                    "prefix": null,
-                    "module":"rainmaker-common"
-                 }
+                "variable": "documents_label",
+                "value": {
+                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_TLAPP_DOCUMENTS_ATTACHED"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-common"
+                }
               },
               {
                   "variable": "ownership_proof",
@@ -1138,130 +1138,151 @@
                         "required":true,
                         "prefix": "TRADELICENSE_TRADETYPE",
                         "module": "rainmaker-tl",
-                        "isSubTypeRequired":true
-                     }
-                   },
-                       {
-                        "variable": "UOM-measurement", 
-                        "value":"uom"
-                       },
-                       {
-                        "variable":"uomValue",
-                        "value":"uomValue"
+                        "isSubTypeRequired": true
                       }
-                      ]
-                } 
-             },
-             {
-              "variable": "variable15",                        
-              "value":{
-                   "path":"$.tradeLicenseDetail.owners.*"                          
-               },
-               "type":"array",
-               "format":{                            
-                  "type":"string",
-                  "scema":[
-                    
-                  {
-                    "variable": "mobileNo",
-                    "value":   "mobileNumber"
-                    
+                    },
+                    {
+                      "variable": "UOM-measurement",
+                      "value": "uom"
+                    },
+                    {
+                      "variable": "uomValue",
+                      "value": "uomValue"
+                    }
+                  ]
+                }
+              },
+              {
+                "variable": "variable15",
+                "value": {
+                  "path": "$.tradeLicenseDetail.owners.*"
                 },
-                {
-                    "variable": "name",
-                    "value":  "name"
-                     
+                "type": "array",
+                "format": {
+                  "type": "string",
+                  "scema": [
+                    {
+                      "variable": "mobileNo",
+                      "value": "mobileNumber"
+                    },
+                    {
+                      "variable": "name",
+                      "value": "name"
+                    },
+                    {
+                      "variable": "fatherHusbandName",
+                      "value": "fatherOrHusbandName"
+                    },
+                    {
+                      "variable": "relationship",
+                      "value": "relationship",
+                      "localisation": {
+                        "required": true,
+                        "prefix": "COMMON_RELATION",
+                        "module": "rainmaker-tl"
+                      }
+                    },
+                    {
+                      "variable": "gender",
+                      "value": "gender",
+                      "localisation": {
+                        "required": true,
+                        "prefix": "COMMON_GENDER",
+                        "module": "rainmaker-common"
+                      }
+                    },
+                    {
+                      "variable": "dateOfBirth",
+                      "value": "dob",
+                      "type": "date"
+                    },
+                    {
+                      "variable": "email",
+                      "value": "emailId"
+                    },
+                    {
+                      "variable": "panNo",
+                      "value": "pan"
+                    },
+                    {
+                      "variable": "correspondenceAddress",
+                      "value": "permanentAddress"
+                    },
+                    {
+                      "variable": "aadharCard",
+                      "value": "aadhaarNumber"
+                    },
+                    {
+                      "variable": "specialOwnerCategory",
+                      "value": "ownerType",
+                      "localisation": {
+                        "required": true,
+                        "prefix": "COMMON_MASTERS_OWNERTYPE",
+                        "module": "rainmaker-common"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "variable": "variable9",
+                "value": {
+                  "path": "$.tradeLicenseDetail.applicationDocuments.*"
                 },
-                {
-                    "variable": "fatherHusbandName",
-                    "value":  "fatherOrHusbandName"
-                    
-                },
-                {
-                    "variable": "relationship",
-                    "value":   "relationship",
-                    "localisation":{
-                      "required":true,
-                      "prefix": "COMMON_RELATION",
-                      "module": "rainmaker-tl"
-                   }
-                },
-                {
-                    "variable": "gender",
-                    "value":  "gender",
-                    "localisation":{
-                      "required":true,
-                      "prefix": "COMMON_GENDER",
-                      "module": "rainmaker-common"
-                   }
-                },
-                {
-                    "variable": "dateOfBirth",
-                    "value": "dob",
-                    "type": "date"
-                },
-                {
-                    "variable": "email",
-                    "value":  "emailId"
-                    
-                },
-                {
-                    "variable": "panNo",
-                    "value": "pan"
-                     
-                },
-                {
-                    "variable": "correspondenceAddress",
-                    "value":  "permanentAddress"
-                },
-                {
-                  "variable": "aadharCard",
-                  "value":  "aadhaarNumber"
-                },
-                {
-                    "variable": "specialOwnerCategory",
-                    "value": "ownerType",
-                    "localisation":{
-                      "required":true,
-                      "prefix": "COMMON_MASTERS_OWNERTYPE",
-                      "module":"rainmaker-common"
-                   }
-  
-                }   
-                    ]
-              } 
-           }
-
+                "type": "array",
+                "format": {
+                  "type": "string",
+                  "scema": [
+                    {
+                      "variable": "document_name",
+                      "value": "documentType",
+                      "localisation": {
+                        "required": true,
+                        "prefix": "TL_DOC",
+                        "module": "rainmaker-common"
+                      }
+                    }
+                  ]
+                }
+              }
             ]
           },
           {
-            "externalAPI": [    
+            "externalAPI": [
               {
-                "path": "http://billing-service:8080/billing-service/bill/v2/_fetchbill",
-                "queryParam": "tenantId=$.tenantId,consumerCode=$.applicationNumber,businessService=TL",
-                  "apiRequest": null,
-                  "responseMapping":[
-                    {            
-                      "variable":"totalAmount",
-                      "value":"$.Bill[0].totalAmount"
-                    },
-                    {
-                      "variable":"tradeLicenseTax",
-                      "value":"$.Bill[0].billDetails[0].billAccountDetails[?(@.taxHeadCode == 'TL_TAX')].amount"
-                    },
-                    {
-                      "variable":"rebate",
-                      "value":"$.Bill[0].billDetails[0].billAccountDetails[?(@.taxHeadCode == 'TL_ADHOC_REBATE')].amount"
-                    },
-                    {
-                      "variable":"garbageCollection",
-                      "value":"$.Bill[0].billDetails[0].billAccountDetails[?(@.taxHeadCode == 'TL_GARBAGE_FEE')].amount"
-                    },
-                    {
-                      "variable":"penalty",
-                      "value":"$.Bill[0].billDetails[0].billAccountDetails[?(@.taxHeadCode == 'TL_ADHOC_PENALTY')].amount"
+                "path": "http://billing-service:8080/billing-service/bill/v2/_search",
+                "queryParam": "tenantId=$.tenantId,consumerCode=$.applicationNumber,service=TL",
+                "apiRequest": null,
+                "responseMapping": [
+                  {
+                    "variable": "variable10",
+                    "value": "$.Bill[?(@.status=='ACTIVE' || @.status=='PAID')].billDetails[0].billAccountDetails.*",
+                    "type": "array",
+                    "format": {
+                      "type": "string",
+                      "scema": [
+                        {
+                          "variable": "trade_license_tax",
+                          "value": "taxHeadCode",
+                          "type": "string",
+                          "localisation": {
+                            "required": true,
+                            "prefix": null,
+                            "module": "rainmaker-common"
+                          }
+                        },
+                        {
+                          "variable": "tradeLicenseTax",
+                          "value": "amount"
+                        }
+                      ]
                     }
-                  ]
+                  },
+                  {
+                    "variable": "totalAmount",
+                    "value": "$.Bill[?(@.status=='ACTIVE' || @.status=='PAID')].totalAmount"
+                  }
+                ]
               }
             ]
           },
