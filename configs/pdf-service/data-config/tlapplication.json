@@ -322,16 +322,16 @@
                  }
               },
               {
-                  "variable": "total_amount",
-                  "value": {
-                    "path": "PDF_STATIC_LABEL_CONSOLIDATED_TLAPP_TOTAL_AMOUNT"
-                  },
-                  "type": "label",
-                  "localisation":{
-                    "required":true,
-                    "prefix": null,
-                    "module":"rainmaker-common"
-                 }
+                "variable": "total_amount",
+                "value": {
+                  "path": "PAY_AMOUNT_TO_BE_PAID"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-common"
+                }
               },
               {
                 "variable": "Rs",
@@ -898,16 +898,16 @@
                }
             },
               {
-                  "variable": "documents_label",
-                  "value": {
-                    "path": "PDF_STATIC_LABEL_CONSOLIDATED_TLAPP_DOCUMENTS"
-                  },
-                  "type": "label",
-                  "localisation":{
-                    "required":true,
-                    "prefix": null,
-                    "module":"rainmaker-common"
-                 }
+                "variable": "documents_label",
+                "value": {
+                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_TLAPP_DOCUMENTS_ATTACHED"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-common"
+                }
               },
               {
                   "variable": "ownership_proof",
@@ -1227,10 +1227,32 @@
                       "module":"rainmaker-common"
                    }
   
-                }   
+                }
+                    
                     ]
               } 
-           }
+           },
+           {
+            "variable": "variable9",
+            "value": {
+              "path": "$.tradeLicenseDetail.applicationDocuments.*"
+            },
+            "type": "array",
+            "format": {
+              "type": "string",
+              "scema": [
+                {
+                  "variable": "document_name",
+                  "value": "documentType",
+                  "localisation": {
+                    "required": true,
+                    "prefix": "TL_DOC",
+                    "module": "rainmaker-common"
+                  }
+                }
+              ]
+            }
+          } 
 
             ]
           },
