@@ -354,6 +354,78 @@
           "name": "DSS_REVENUE",
           "vizArray": [
             {
+              "id": 323,
+              "name": "DSS_TL_COLLECTION_BY_TRADETYPE",
+              "dimensions": {
+                "height": 250,
+                "width": 4
+              },
+              "vizType": "chart",
+              "label": "",
+              "noUnit": false,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "tlTotalCollectionByTradeType",
+                  "name": "DSS_TL_COLLECTION_BY_TRADETYPE",
+                  "code": "",
+                  "chartType": "horizontalBar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 323,
+              "name": "DSS_TL_COLLECTION_BY_TRADETYPE_PERCENT",
+              "dimensions": {
+                "height": 250,
+                "width": 4
+              },
+              "vizType": "chart",
+              "label": "",
+              "noUnit": false,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "tlTotalCollectionByTradeType",
+                  "name": "DSS_TL_COLLECTION_BY_TRADETYPE_PERCENT",
+                  "code": "",
+                  "chartType": "donut",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 323,
+              "name": "DSS_TL_LICENSE_BY_PAYMENT_TYPE",
+              "dimensions": {
+                "height": 250,
+                "width": 4
+              },
+              "vizType": "chart",
+              "label": "",
+              "noUnit": false,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "licenseByLicenseTypev2",
+                  "name": "DSS_TL_LICENSE_BY_PAYMENT_TYPE",
+                  "code": "",
+                  "chartType": "donut",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "name": "DSS_REVENUE",
+          "vizArray": [
+            {
               "id": 321,
               "name": "DSS_TL_TOP_3_PERFORMING_ULBS",
               "dimensions": {
@@ -392,28 +464,6 @@
                   "name": "DSS_TL_BOTTOM_3_PERFORMING_ULBS",
                   "code": "",
                   "chartType": "bar",
-                  "filter": "",
-                  "headers": []
-                }
-              ]
-            },
-            {
-              "id": 323,
-              "name": "DSS_TL_LICENSE_BY_PAYMENT_TYPE",
-              "dimensions": {
-                "height": 250,
-                "width": 4
-              },
-              "vizType": "chart",
-              "label": "",
-              "noUnit": false,
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "licenseByLicenseTypev2",
-                  "name": "DSS_TL_LICENSE_BY_PAYMENT_TYPE",
-                  "code": "",
-                  "chartType": "donut",
                   "filter": "",
                   "headers": []
                 }
@@ -503,6 +553,52 @@
           "name": "DSS_SERVICE",
           "vizArray": [
             {
+              "id": 352,
+              "name": "DSS_TL_LICENSE_BY_TRADETYPE",
+              "dimensions": {
+                "height": 100,
+                "width": 2
+              },
+              "vizType": "chart",
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "licenseApplicationByTradeType",
+                  "name": "DSS_TL_LICENSE_BY_TRADETYPE",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 353,
+              "name": "DSS_TL_LICENSE_BY_STATUS",
+              "dimensions": {
+                "height": 250,
+                "width": 4
+              },
+              "vizType": "chart",
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "licenseApplicationByStatus",
+                  "name": "DSS_TL_LICENSE_BY_STATUS",
+                  "code": "",
+                  "chartType": "donut",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+            
+          ]
+        },
+        {
+          "row": 8,
+          "name": "DSS_SERVICE",
+          "vizArray": [{
               "id": 351,
               "name": "DSS_PT_TOP_3_PERFORMING_ULBS",
               "dimensions": {
@@ -540,52 +636,6 @@
                   "name": "DSS_PT_BOTTOM_3_PERFORMING_ULBS",
                   "code": "",
                   "chartType": "bar",
-                  "filter": "",
-                  "headers": []
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "row": 8,
-          "name": "DSS_SERVICE",
-          "vizArray": [
-            {
-              "id": 352,
-              "name": "DSS_TL_LICENSE_BY_TRADETYPE",
-              "dimensions": {
-                "height": 100,
-                "width": 2
-              },
-              "vizType": "chart",
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "licenseApplicationByTradeType",
-                  "name": "DSS_TL_LICENSE_BY_TRADETYPE",
-                  "code": "",
-                  "chartType": "bar",
-                  "filter": "",
-                  "headers": []
-                }
-              ]
-            },
-            {
-              "id": 353,
-              "name": "DSS_TL_LICENSE_BY_STATUS",
-              "dimensions": {
-                "height": 250,
-                "width": 4
-              },
-              "vizType": "chart",
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "licenseApplicationByStatus",
-                  "name": "DSS_TL_LICENSE_BY_STATUS",
-                  "code": "",
-                  "chartType": "donut",
                   "filter": "",
                   "headers": []
                 }
@@ -722,6 +772,78 @@
               ]
             }
           ]
+        },
+        {
+          "row": 3,
+          "name": "DSS_REVENUE",
+          "vizArray": [
+            {
+              "id": 323,
+              "name": "DSS_MC_COLLECTION_BY_PAYMENT_TYPE",
+              "dimensions": {
+                "height": 250,
+                "width": 4
+              },
+              "vizType": "chart",
+              "label": "",
+              "noUnit": false,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "mcCollectionByPaymentType",
+                  "name": "DSS_MC_COLLECTION_BY_PAYMENT_TYPE",
+                  "code": "",
+                  "chartType": "donut",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 321,
+              "name": "DSS_TL_TOP_3_PERFORMING_ULBS",
+              "dimensions": {
+                "height": 250,
+                "width": 4
+              },
+              "vizType": "performing-metric",
+              "label": "",
+              "noUnit": false,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "topPerformingUlbsv2",
+                  "name": "DSS_TL_TOP_3_PERFORMING_ULBS",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 322,
+              "name": "DSS_TL_BOTTOM_3_PERFORMING_ULBS",
+              "dimensions": {
+                "height": 250,
+                "width": 4
+              },
+              "vizType": "performing-metric",
+              "label": "",
+              "noUnit": false,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "bottomPerformingUlbsv2",
+                  "name": "DSS_TL_BOTTOM_3_PERFORMING_ULBS",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -844,6 +966,28 @@
                 {
                   "id": "mcTotalCollectionCategoryWise",
                   "name": "DSS_MC_COLLECTION:_CATEGORY_WISE",
+                  "code": "",
+                  "chartType": "donut",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+             {
+              "id": 323,
+              "name": "DSS_MC_COLLECTION_BY_PAYMENT_TYPE",
+              "dimensions": {
+                "height": 250,
+                "width": 4
+              },
+              "vizType": "chart",
+              "label": "",
+              "noUnit": false,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "mcCollectionByPaymentType",
+                  "name": "DSS_MC_COLLECTION_BY_PAYMENT_TYPE",
                   "code": "",
                   "chartType": "donut",
                   "filter": "",
@@ -2387,45 +2531,45 @@
           "row": 2,
           "name": "DSS_REVENUE",
           "vizArray": [
-            {
-              "id": 321,
-              "name": "DSS_TL_TOP_3_PERFORMING_ULBS",
+          {
+              "id": 323,
+              "name": "DSS_TL_COLLECTION_BY_TRADETYPE",
               "dimensions": {
                 "height": 250,
                 "width": 4
               },
-              "vizType": "performing-metric",
+              "vizType": "chart",
               "label": "",
               "noUnit": false,
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "topPerformingUlbsv2",
-                  "name": "DSS_TL_TOP_3_PERFORMING_ULBS",
+                  "id": "tlTotalCollectionByTradeType",
+                  "name": "DSS_TL_COLLECTION_BY_TRADETYPE",
                   "code": "",
-                  "chartType": "bar",
+                  "chartType": "horizontalBar",
                   "filter": "",
                   "headers": []
                 }
               ]
             },
             {
-              "id": 322,
-              "name": "DSS_TL_BOTTOM_3_PERFORMING_ULBS",
+              "id": 323,
+              "name": "DSS_TL_COLLECTION_BY_TRADETYPE_PERCENT",
               "dimensions": {
                 "height": 250,
                 "width": 4
               },
-              "vizType": "performing-metric",
+              "vizType": "chart",
               "label": "",
               "noUnit": false,
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "bottomPerformingUlbsv2",
-                  "name": "DSS_TL_BOTTOM_3_PERFORMING_ULBS",
+                  "id": "tlTotalCollectionByTradeType",
+                  "name": "DSS_TL_COLLECTION_BY_TRADETYPE_PERCENT",
                   "code": "",
-                  "chartType": "bar",
+                  "chartType": "donut",
                   "filter": "",
                   "headers": []
                 }
@@ -2535,55 +2679,6 @@
           "name": "DSS_SERVICE",
           "vizArray": [
             {
-              "id": 351,
-              "name": "DSS_PT_TOP_3_PERFORMING_ULBS",
-              "dimensions": {
-                "height": 250,
-                "width": 4
-              },
-              "vizType": "performing-metric",
-              "label": "",
-              "noUnit": false,
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "topPerformingUlbsCompletionRate",
-                  "name": "DSS_PT_TOP_3_PERFORMING_ULBS",
-                  "code": "",
-                  "chartType": "bar",
-                  "filter": "",
-                  "headers": []
-                }
-              ]
-            },
-            {
-              "id": 352,
-              "name": "DSS_PT_BOTTOM_3_PERFORMING_ULBS",
-              "dimensions": {
-                "height": 250,
-                "width": 4
-              },
-              "vizType": "performing-metric",
-              "noUnit": false,
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "bottomPerformingUlbsCompletionRate",
-                  "name": "DSS_PT_BOTTOM_3_PERFORMING_ULBS",
-                  "code": "",
-                  "chartType": "bar",
-                  "filter": "",
-                  "headers": []
-                }
-              ]
-            }
-          ]
-        } ,
-        {
-          "row": 8,
-          "name": "DSS_SERVICE",
-          "vizArray": [
-            {
               "id": 352,
               "name": "DSS_TL_LICENSE_BY_TRADETYPE",
               "dimensions": {
@@ -2623,6 +2718,12 @@
                 }
               ]
             }
+          ]
+        } ,
+        {
+          "row": 8,
+          "name": "DSS_SERVICE",
+          "vizArray": [
           ]
         }
       ]
