@@ -15,7 +15,8 @@
 		  "applicationDate": "tradeLicense.applicationDate",
 		  "oldPropertyId": "tradeLicense.oldPropertyId",
 		  "action": "tradeLicense.action",
-		  "tradeLicenseDetail": { "tradeUnits": "tradeLicense.tradeUnits" }
+		  "tradeLicenseDetail": { "tradeUnits": "tradeLicense.tradeUnits" },
+		  "status": "tradeLicense.status"
 		},
 		"ward": "ward"
 	  }
