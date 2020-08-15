@@ -334,7 +334,7 @@
     ],
     "chartType": "xtable",
     "valueType": "number",
-    "drillChart": "",
+    "drillChart": "none",
     "documentType": "_doc",
     "action": "",
     "plotLabel": "Boundary",
