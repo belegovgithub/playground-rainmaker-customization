@@ -396,28 +396,6 @@
                   "headers": []
                 }
               ]
-            },
-            {
-              "id": 323,
-              "name": "DSS_TL_LICENSE_BY_PAYMENT_TYPE",
-              "dimensions": {
-                "height": 250,
-                "width": 4
-              },
-              "vizType": "chart",
-              "label": "",
-              "noUnit": false,
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "licenseByLicenseTypev2",
-                  "name": "DSS_TL_LICENSE_BY_PAYMENT_TYPE",
-                  "code": "",
-                  "chartType": "donut",
-                  "filter": "",
-                  "headers": []
-                }
-              ]
             }
           ]
         },
@@ -425,6 +403,28 @@
           "row": 3,
           "name": "DSS_REVENUE",
           "vizArray": [
+          {
+	              "id": 323,
+	              "name": "DSS_TL_LICENSE_BY_PAYMENT_TYPE",
+	              "dimensions": {
+	                "height": 250,
+	                "width": 4
+	              },
+	              "vizType": "chart",
+	              "label": "",
+	              "noUnit": false,
+	              "isCollapsible": false,
+	              "charts": [
+	                {
+	                  "id": "licenseByLicenseTypev2",
+	                  "name": "DSS_TL_LICENSE_BY_PAYMENT_TYPE",
+	                  "code": "",
+	                  "chartType": "donut",
+	                  "filter": "",
+	                  "headers": []
+	                }
+	              ]
+	            },
             {
               "id": 321,
               "name": "DSS_TL_TOP_3_PERFORMING_ULBS",
@@ -475,16 +475,81 @@
           "row": 4,
           "name": "DSS_REVENUE",
           "vizArray": [
-         
+                     {
+              "id": 231,
+              "name": "DSS_TL_TAX_HEAD_BREAKUP",
+              "dimensions": {
+                "height": 350,
+                "width": 12
+              },
+              "vizType": "chart",
+              "label": "",
+              "noUnit": false,
+              "isCollapsible": true,
+              "charts": [
+                {
+                  "id": "licenceTaxHeadsBreakupBoundaryv2",
+                  "name": "DSS_TL_TAX_HEAD_BREAKUP_BOUNDARY",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "Cantonment Board Wise"
+                },
+                {
+                  "id": "licenceTaxHeadsBreakupWardv2",
+                  "name": "DSS_TL_TAX_HEAD_BREAKUP_BOUNDARY",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "Ward Wise"
+                }
+              ]
+            }
+          
           ]
         },
         {
           "row": 5,
           "name": "DSS_REVENUE",
-          "vizArray": [
-          
+          "vizArray": [{
+              "id": 231,
+              "name": "DSS_TL_KEY_FY_INDICATORS",
+              "dimensions": {
+                "height": 350,
+                "width": 12
+              },
+              "vizType": "chart",
+              "label": "",
+              "noUnit": false,
+              "isCollapsible": true,
+              "charts": [
+                {
+                  "id": "licenseIssuedBoundaryRevenuev2",
+                  "name": "DSS_TL_DEMAND_COLLECTION_BOUNDARY",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "Cantonment Board Wise"
+                },
+                {
+                  "id": "licenseIssuedBoundaryDrillDownv2",
+                  "name": "DSS_TL_DEMAND_COLLECTION_BOUNDARY",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "Ward Wise"
+                }
+              ]
+            }
+	          
           ]
         },
+        
+        
         {
           "row": 6,
           "name": "DSS_SERVICE",
