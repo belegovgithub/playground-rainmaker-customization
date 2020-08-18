@@ -477,7 +477,7 @@
           "vizArray": [
                      {
               "id": 231,
-              "name": "DSS_TL_TAX_HEAD_BREAKUP",
+              "name": "DSS_TL_KEY_FY_INDICATORS",
               "dimensions": {
                 "height": 350,
                 "width": 12
@@ -489,7 +489,7 @@
               "charts": [
                 {
                   "id": "licenceTaxHeadsBreakupBoundaryv2",
-                  "name": "DSS_TL_TAX_HEAD_BREAKUP_BOUNDARY",
+                  "name": "DSS_TL_KEY_FY_INDICATORS",
                   "code": "",
                   "chartType": "table",
                   "filter": "",
@@ -498,7 +498,7 @@
                 },
                 {
                   "id": "licenceTaxHeadsBreakupWardv2",
-                  "name": "DSS_TL_TAX_HEAD_BREAKUP_BOUNDARY",
+                  "name": "DSS_TL_KEY_FY_INDICATORS",
                   "code": "",
                   "chartType": "table",
                   "filter": "",
@@ -513,39 +513,7 @@
         {
           "row": 5,
           "name": "DSS_REVENUE",
-          "vizArray": [{
-              "id": 231,
-              "name": "DSS_TL_KEY_FY_INDICATORS",
-              "dimensions": {
-                "height": 350,
-                "width": 12
-              },
-              "vizType": "chart",
-              "label": "",
-              "noUnit": false,
-              "isCollapsible": true,
-              "charts": [
-                {
-                  "id": "licenseIssuedBoundaryRevenuev2",
-                  "name": "DSS_TL_DEMAND_COLLECTION_BOUNDARY",
-                  "code": "",
-                  "chartType": "table",
-                  "filter": "",
-                  "headers": [],
-                  "tabName": "Cantonment Board Wise"
-                },
-                {
-                  "id": "licenseIssuedBoundaryDrillDownv2",
-                  "name": "DSS_TL_DEMAND_COLLECTION_BOUNDARY",
-                  "code": "",
-                  "chartType": "table",
-                  "filter": "",
-                  "headers": [],
-                  "tabName": "Ward Wise"
-                }
-              ]
-            }
-	          
+          "vizArray": [	          
           ]
         },
         
