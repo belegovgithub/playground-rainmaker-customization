@@ -161,8 +161,8 @@
                                "style":"noc-head",
                                "table":{
                                  "widths":[
-                                   "35%",
-                                   "65%"
+                                   "45%",
+                                   "55%"
                                  ],
                                  "body":[
                                      [
@@ -183,8 +183,8 @@
                                "style":"noc-head",
                                "table":{
                                  "widths":[
-                                   "35%",
-                                   "65%"
+                                   "45%",
+                                   "55%"
                                  ],
                                  "body":[
                                      [
@@ -205,8 +205,8 @@
                                "style":"noc-head",
                                "table":{
                                  "widths":[
-                                   "35%",
-                                   "65%"
+                                   "45%",
+                                   "55%"
                                  ],
                                  "body":[
                                      [
@@ -227,8 +227,8 @@
                                "style":"noc-head",
                                "table":{
                                  "widths":[
-                                   "35%",
-                                   "65%"
+                                   "45%",
+                                   "55%"
                                  ],
                                  "body":[
                                      [
@@ -249,8 +249,8 @@
                                "style":"noc-head",
                                "table":{
                                  "widths":[
-                                   "35%",
-                                   "65%"
+                                   "45%",
+                                   "55%"
                                  ],
                                  "body":[
                                      [
@@ -271,8 +271,8 @@
                                "style":"noc-head",
                                "table":{
                                  "widths":[
-                                  "35%",
-                                   "65%"
+                                  "45%",
+                                   "55%"
                                  ],
                                  "body":[
                                      [
@@ -292,8 +292,8 @@
                           "style":"noc-head",
                           "table":{
                             "widths":[
-                             "35%",
-                              "65%"
+                             "45%",
+                              "55%"
                             ],
                             "body":[
                                 [
@@ -314,8 +314,8 @@
                                "style":"noc-head",
                                "table":{
                                  "widths":[
-                                   "35%",
-                                   "65%"
+                                   "45%",
+                                   "55%"
                                  ],
                                  "body":[
                                      [
@@ -336,8 +336,8 @@
                                "style":"noc-head",
                                "table":{
                                  "widths":[
-                                   "35%",
-                                   "65%"
+                                   "45%",
+                                   "55%"
                                  ],
                                  "body":[
                                      [
@@ -346,7 +346,7 @@
                                              "style":"receipt-sub-logo-sub-header"
                                          },
                                          {
-                                             "text":"{{permanentAddress}} , {{tradeAddress}}, {{city}}",
+                                             "text":"{{doorNo}} {{buildingName}} {{street}} {{tradeAddress}}, {{city}}",
                                              "style":"receipt-sub-logo-sub-header"
                                          }
                                     ]
@@ -358,8 +358,8 @@
                                "style":"noc-head",
                                "table":{
                                  "widths":[
-                                  "35%",
-                                   "65%"
+                                  "45%",
+                                   "55%"
                                  ],
                                  "body":[
                                      [
@@ -380,8 +380,8 @@
                                "style":"noc-head",
                                "table":{
                                  "widths":[
-                                  "35%",
-                                   "65%"
+                                  "45%",
+                                   "55%"
                                  ],
                                  "body":[
                                      [
@@ -401,8 +401,8 @@
                                "style":"noc-head",
                                "table":{
                                  "widths":[
-                                  "35%",
-                                   "65%"
+                                  "45%",
+                                   "55%"
                                  ],
                                  "body":[
                                      [
@@ -423,8 +423,8 @@
                                "style":"noc-head",
                                "table":{
                                  "widths":[
-                                  "35%",
-                                   "65%"
+                                  "45%",
+                                   "55%"
                                  ],
                                  "body":[
                                      [
@@ -445,8 +445,8 @@
                                "style":"noc-head",
                                "table":{
                                  "widths":[
-                                  "35%",
-                                   "65%"
+                                  "45%",
+                                   "55%"
                                  ],
                                  "body":[
                                      [
@@ -467,8 +467,8 @@
                                "style":"noc-head",
                                "table":{
                                  "widths":[
-                                   "35%",
-                                   "65%"
+                                   "45%",
+                                   "55%"
                                  ],
                                  "body":[
                                      [
@@ -553,12 +553,12 @@
             },
             {
               
-                  "style": "pt-disclaimer-value",
+                  
                   "table": {
                     "widths": [
                       "*"
                     ],
-                    "body": ["{{#variable13}}[{\"text\": \"{{variable12}}\",\"border\":[ false, false, false, false ],\"bold\": true, \"style\": \"pt-disclaimer-value\"}]{{/variable13}},{{#variable11}}[{\"text\":\"{{disclaimerContent}}\",\"border\":[false,false,false,false],\"style\":\"pt-disclaimer-value\"}]{{/variable11}}"]
+                    "body": ["{{#variable13}}[{\"text\": \"{{variable12}}\",\"border\":[ false, false, false, false ],\"bold\": true, \"style\": \"pt-disclaimer-value-header\"}]{{/variable13}},{{#variable11}}[{\"text\":\"{{disclaimerContent}}\",\"border\":[false,false,false,false],\"style\":\"pt-disclaimer-value\"}]{{/variable11}}"]
                   },
                   "layout": {}
                 
@@ -571,7 +571,7 @@
                 -30,
                 -36,
                 0,
-                -2
+                -5
               ]
             },
             "qrHead": {
@@ -637,7 +637,7 @@
               "alignment": "left",
               "margin": [
                 50,
-                40,
+                35,
                 0,
                 0
               ]
@@ -689,11 +689,21 @@
               ],
               "color": "#484848"
             },
-            "pt-disclaimer-value": {
+            "pt-disclaimer-value-header": {
               "fontSize": 12,
               "margin": [
                 2,
-                5,
+                -2,
+                0,
+                0
+              ],
+              "color": "#484848"
+             },
+            "pt-disclaimer-value": {
+              "fontSize": 10.5,
+              "margin": [
+                2,
+                -5,
                 0,
                 0
               ],
