@@ -1,2 +1,3 @@
 rainmaker-tl=tl-reports.yml
 rainmaker-uc=uc-reports.yml
+rainmaker-pgr=pgr-reports.yml
