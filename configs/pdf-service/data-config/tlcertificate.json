@@ -54,11 +54,26 @@
                   }
               },
               {
-                "variable": "permanentAddress",
+                "variable": "doorNo",
                 "value": {
-                  "path": "$.tradeLicenseDetail.owners[0].permanentAddress"
-                }
+                  "path": "$.tradeLicenseDetail.address.doorNo"
+                },
+                "type":"setEmpty"
             },
+            {
+              "variable": "buildingName",
+              "value": {
+                "path": "$.tradeLicenseDetail.address.buildingName"
+              },
+              "type":"setEmpty"
+            },
+           {
+            "variable": "street",
+            "value": {
+              "path": "$.tradeLicenseDetail.address.street"
+              },
+              "type":"setEmpty"
+           },
               {
                 "variable": "tradeAddress",
                 "value": {
