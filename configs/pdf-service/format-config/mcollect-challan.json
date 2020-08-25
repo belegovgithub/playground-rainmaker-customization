@@ -113,7 +113,7 @@
                                          "body": [
                                            [
                                              {
-                                               "text":"{{receipt_no}}",
+                                               "text":"{{challan_no}}",
                                                "border":[
                                                  false,
                                                  false,
@@ -123,7 +123,7 @@
                                                 "style": "receipt-table-value"
                                              },
                                              {
-                                               "text":"{{receiptNo}}",
+                                               "text":"{{challanNo}}",
                                                "border":[
                                                  false,
                                                  false,
@@ -134,7 +134,7 @@
                                                  
                                              },
                                              {
-                                               "text":"{{payment_date}}",
+                                               "text":"{{challan_date}}",
                                                "border":[
                                                  false,
                                                  false,
@@ -144,7 +144,7 @@
                                                 "style": "receipt-table-value"
                                              },
                                              {
-                                               "text":"{{paymentDate}}",
+                                               "text":"{{challanDate}}",
                                                "border":[
                                                  false,
                                                  false,
@@ -188,7 +188,7 @@
                                                "style": "receipt-table-value-down"
                                             },
                                             {
-                                              "text":" ",
+                                              "text":"{{service_category}}",
                                               "border":[
                                                 false,
                                                 false,
@@ -198,7 +198,7 @@
                                                "style": "receipt-table-value"
                                             },
                                             {
-                                              "text":" ",
+                                              "text":"{{serviceCategory}}",
                                               "border":[
                                                 false,
                                                 false,
@@ -326,9 +326,7 @@
                                         "table": {
                                       "widths": [
                                         "20%",
-                                        "30%",
-                                        "20%",
-                                        "30%"
+                                        "80%"   
                                       ],
                                       "body": [
                                         [
@@ -352,26 +350,6 @@
                                             ],
                                              "style": "receipt-table-value-down",
                                              "font": "Roboto"
-                                          },
-                                          {
-                                            "text":"{{total_amount}}",
-                                            "border":[
-                                              false,
-                                              false,
-                                              false,
-                                              false
-                                            ],
-                                             "style": "receipt-table-value"
-                                          },
-                                          {
-                                            "text":"{{totalAmount}}",
-                                            "border":[
-                                              false,
-                                              false,
-                                              false,
-                                              false
-                                            ],
-                                             "style": "receipt-table-value-down"
                                           }
                                         ]
                                         ]
@@ -426,9 +404,9 @@
                 "style": "noc-table4",
                 "table": {
                   "widths": [
-                    "*",
-                    "*",
-                    "*"
+                    "60%",
+                    "30%",
+                    "10%"
                   ],
                   "body": [
                     "{{#variable10}}[{\"text\": \"{{trade_license_tax}}\",\"border\": [true,false,false,false], \"style\": \"receipt-table-value-down\"},{\"text\": \"{{tradeLicenseTax}}\", \"border\": [false,false,false,false], \"style\": \"receipt-table-value-down\"},{ \"text\": \" \",\"border\": [false,false,true, false ]}]{{/variable10}}"
@@ -452,9 +430,9 @@
                 "style": "noc-table4",
                 "table": {
                   "widths": [
-                    "*",
-                    "*",
-                    "*"
+                    "60%",
+                    "30%",
+                    "10%"
                   ],
                   "body": [
                     [
@@ -479,17 +457,8 @@
                         ],
                         "bold": true,
                         "style": "receipt-table-value-down"
-                      },
-                      {
-                        "text": " ",
-                        "border": [
-                          false,
-                          false,
-                          true,
-                          true
-                        ]
-                         
                       }
+                     
                     ]
                   ]
                 },
@@ -509,34 +478,21 @@
                               },
                               {
                                   
-                                      "style": "qr-head",
-                                      "image": "{{qrcodeimage}}",
-                                      "alignment": "right",
-                                      "width": 64,
-                                      "height": 64
-                                    
-                                  
-                              }
+                                "style": "qr-head",
+                                "image": "{{qrcodeimage}}",
+                                "alignment": "right",
+                                "width": 64,
+                                "height": 64
+                              
+                            
+                               }
+                               
                          ]
                     ]
                   },
                   "layout": "noBorders"
-              },
-          {
-              "style": "pt-disclaimer",
-              "stack": [
-                {
-                    "text": "{{disclamer}}",
-                    "bold": true,
-                    "style": "pt-disclaimer-value"
-                  },
-                  {
-                    "text": "{{disclamer_1}}",
-                    "bold": false,
-                    "style": "pt-disclaimer-value"
-                  } 
-              ]
-            }
+              }
+          
       ],
        "styles": {
               "noc-head": {
