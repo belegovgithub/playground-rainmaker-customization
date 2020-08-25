@@ -646,7 +646,7 @@ ReportDefinitions:
   version: 1.0.0
   moduleName: rainmaker-pgr
   sourceColumns:
-  - name: employee
+  - name: name
     label: reports.rainmaker-pgr.employee
     type: string
     source: pgr_data
@@ -712,7 +712,7 @@ ReportDefinitions:
     tenantid = $tenantid)
 
     select 
-      coalesce((select name from eg_user where id::varchar = assignee),'-- Unassigned --') as employee, 
+      coalesce((select name from eg_user where id::varchar = assignee),'') as name, 
       SUM (CASE WHEN status in ('rejected') THEN 1 ELSE 0 END) as rejected,
       SUM (CASE WHEN status in ('closed', 'resolved') THEN 1 ELSE 0 END) as resolved,
       SUM (CASE WHEN status in ('closed', 'resolved') and (resolvedtime - opentime) >= 14 * 86400 * 1000 THEN 1 ELSE 0 END) as resolvedoutsidesla,
