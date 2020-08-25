@@ -313,7 +313,7 @@ ReportDefinitions:
     INNER JOIN eg_user ON eg_pgr_service.accountid = eg_user.id::VARCHAR 
     INNER JOIN eg_pgr_address ON eg_pgr_service.addressid = eg_pgr_address.uuid
     WHERE eg_pgr_service.status = 'assigned' 
-    AND servicerequestid IN (SELECT DISTINCT businesskey FROM eg_pgr_action WHERE status = 'assigned' AND "when" IN (select max("when") FROM eg_pgr_action WHERE assignee NOTNULL GROUP BY businesskey) AND assignee = $userid) 
+    AND servicerequestid IN (SELECT DISTINCT businesskey FROM eg_pgr_action WHERE status = 'assigned' AND "when" IN (select max("when") FROM eg_pgr_action WHERE assignee NOTNULL GROUP BY businesskey) AND assignee is NOT NULL) 
   orderby: ORDER BY eg_pgr_service.createdtime asc
 
 - reportName: StateULBReport
