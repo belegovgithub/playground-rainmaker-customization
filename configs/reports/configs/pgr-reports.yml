@@ -36,6 +36,7 @@ ReportDefinitions:
   query: SELECT sum(case when source = 'mobileapp' then 1 else 0 end) as citizen_mobile_app, sum(case when source = 'web' then 1 else 0 end) as citizen_web_app, sum(case when source = 'ivr' then 1 else 0 end) as counter_desktop FROM eg_pgr_service WHERE tenantid = $tenantid
 
 - reportName: DescriptionReport
+  decryptionPathId: DescriptionReport
   summary: Fetches department wise reports based description of the complaint
   version: 1.0.0
   moduleName: rainmaker-pgr
@@ -209,6 +210,7 @@ ReportDefinitions:
   orderby: ORDER BY tenantid
 
 - reportName: EmployeeReport
+  decryptionPathId: EmployeeReport
   summary: Fetches complaints for employees
   version: 1.0.0
   moduleName: rainmaker-pgr
@@ -311,7 +313,7 @@ ReportDefinitions:
     INNER JOIN eg_user ON eg_pgr_service.accountid = eg_user.id::VARCHAR 
     INNER JOIN eg_pgr_address ON eg_pgr_service.addressid = eg_pgr_address.uuid
     WHERE eg_pgr_service.status = 'assigned' 
-    AND servicerequestid IN (SELECT DISTINCT businesskey FROM eg_pgr_action WHERE status = 'assigned' AND "when" IN (select max("when") FROM eg_pgr_action WHERE assignee NOTNULL GROUP BY businesskey) AND assignee = $userid) 
+    AND servicerequestid IN (SELECT DISTINCT businesskey FROM eg_pgr_action WHERE status = 'assigned' AND "when" IN (select max("when") FROM eg_pgr_action WHERE assignee NOTNULL GROUP BY businesskey) AND assignee is NOT NULL) 
   orderby: ORDER BY eg_pgr_service.createdtime asc
 
 - reportName: StateULBReport
@@ -639,11 +641,12 @@ ReportDefinitions:
   orderby: ORDER BY deptmap_def.name
 
 - reportName: ULBEmployeeWiseReport
+  decryptionPathId: ULBEmployeeWiseReport
   summary: Fetches employee wise assignment report
   version: 1.0.0
   moduleName: rainmaker-pgr
   sourceColumns:
-  - name: employee
+  - name: name
     label: reports.rainmaker-pgr.employee
     type: string
     source: pgr_data
@@ -709,7 +712,7 @@ ReportDefinitions:
     tenantid = $tenantid)
 
     select 
-      coalesce((select name from eg_user where id::varchar = assignee),'-- Unassigned --') as employee, 
+      coalesce((select name from eg_user where id::varchar = assignee),'') as name, 
       SUM (CASE WHEN status in ('rejected') THEN 1 ELSE 0 END) as rejected,
       SUM (CASE WHEN status in ('closed', 'resolved') THEN 1 ELSE 0 END) as resolved,
       SUM (CASE WHEN status in ('closed', 'resolved') and (resolvedtime - opentime) >= 14 * 86400 * 1000 THEN 1 ELSE 0 END) as resolvedoutsidesla,
@@ -717,6 +720,6 @@ ReportDefinitions:
       SUM (CASE WHEN status in ('open') THEN 1 ELSE 0 END) as open,
       SUM (CASE WHEN status in ('assigned', 'reassignrequested', 'open') and (extract(epoch from now()) * 1000 - opentime) >= 14 * 86400 * 1000 THEN 1 ELSE 0 END) as outsidesla
       from pgr_data
-      WHERE 1=1
+      WHERE 1=1 and assignee is not NULL
   orderby: ORDER BY assignee NULLS FIRST
   groupby: GROUP BY assignee
