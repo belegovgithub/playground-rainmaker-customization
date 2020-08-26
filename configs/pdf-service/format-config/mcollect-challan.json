@@ -420,7 +420,7 @@
                     "type": "line",
                     "x1": -25,
                     "y1": 0,
-                    "x2": 315,
+                    "x2": 345,
                     "y2": 0,
                     "lineWidth": 1
                   }
@@ -457,6 +457,18 @@
                         ],
                         "bold": true,
                         "style": "receipt-table-value-down"
+                      },
+                      {
+                         "image": "{{qrcodeimage}}",
+                        "style": "receipt-table-value-total-Qr",
+                        "border": [
+                          false,
+                          false,
+                          true,
+                          true
+                        ],
+                        "width": 72,
+                        "height": 72
                       }
                      
                     ]
@@ -467,26 +479,15 @@
               {
                   "table": {
                     "widths": [
-                      "75%",
-                      "25%"
+                      "*"
+                     
                     ],
                     "body": [
                          [         
                               {
                                   "style": "no-signature",
                                   "text": "{{no_signature}}"
-                              },
-                              {
-                                  
-                                "style": "qr-head",
-                                "image": "{{qrcodeimage}}",
-                                "alignment": "right",
-                                "width": 64,
-                                "height": 64
-                              
-                            
-                               }
-                               
+                              }  
                          ]
                     ]
                   },
@@ -639,9 +640,9 @@
               "alignment": "right",
               "margin": [
                 0,
-               -40,
-                20,
-                0
+          -40,
+          10,
+          0
               ]
             },
              "receipt-table-value-down": {
@@ -725,6 +726,7 @@
               ],
               "color": "#484848"
              }
+              
              
            }
       
