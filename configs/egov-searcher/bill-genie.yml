@@ -308,6 +308,9 @@ SearchDefinitions:
       isMandatory: false
       jsonPath: $.searchCriteria.consumerCode
       operator: ILIKE
+    - name: bd.businessservice
+      isMandatory: false
+      jsonPath: $.searchCriteria.businesService
     - name: b.mobilenumber
       isMandatory: false
       jsonPath: $.searchCriteria.mobileNumber
