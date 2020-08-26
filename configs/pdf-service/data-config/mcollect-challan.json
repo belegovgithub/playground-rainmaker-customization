@@ -212,7 +212,7 @@
                 {
                   "variable": "challanDate", 
                   "value": {
-                    "path": "$.transactionDate"
+                    "path": "$.billDate"
                   },
                   "type": "date"
                 },
@@ -232,19 +232,22 @@
                     "variable": "doorHouseNo",
                     "value": {
                       "path": "$.address.doorNo"
-                    }
+                    },
+                    "type":"setEmpty"
                 },
                 {
                     "variable": "buildingColonyName",
                     "value": {
                       "path": "$.address.buildingName"
-                    }
+                    },
+                    "type":"setEmpty"
                 },
                 {
                     "variable": "streetName",
                     "value": {
                       "path": "$.address.street"
-                    }
+                    },
+                    "type":"setEmpty"
                 },
                 {
                     "variable": "mohalla",
@@ -575,7 +578,7 @@
                 {
                   "variable":"totalAmount",
                   "value": {
-                    "path": "$.address.pincode"
+                    "path": "$.totalAmount"
                   }
                 }
                  
