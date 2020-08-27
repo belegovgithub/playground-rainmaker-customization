@@ -304,7 +304,7 @@ ReportDefinitions:
     source: eg_pgr_service
     wrapper: true
     isMandatory: false
-    searchClause: AND assignee = $name::INTEGER
+    searchClause: AND eg_pgr_action.assignee = $name::INTEGER
   query: |
     SELECT deptmap_def.name as department,
     regexp_replace(eg_pgr_service.servicecode, '([a-z])([A-Z])', '\1 \2','g') AS servicecode, 
