@@ -298,7 +298,7 @@ ReportDefinitions:
     isMandatory: false
     searchClause: AND eg_pgr_service.createdtime <= $toDate
   query: |
-    SELECT (SELECT deptmap.department FROM (VALUES tbl_dept) AS deptmap(serviceCode, department, slaHours) WHERE deptmap.serviceCode = eg_pgr_service.servicecode ) AS department,
+    SELECT deptmap_def.name as department,
     SELECT deptmap_def.name FROM(VALUES tbl_def_dept) AS deptmap_def(name,code) ON deptmap.department = deptmap_def.code) AS deptName,
     regexp_replace(eg_pgr_service.servicecode, '([a-z])([A-Z])', '\1 \2','g') AS servicecode, 
     servicerequestid AS complaintNo, 
@@ -313,6 +313,8 @@ ReportDefinitions:
     initcap(status) as status FROM eg_pgr_service 
     INNER JOIN eg_user ON eg_pgr_service.accountid = eg_user.id::VARCHAR 
     INNER JOIN eg_pgr_address ON eg_pgr_service.addressid = eg_pgr_address.uuid
+    INNER JOIN (VALUES tbl_dept) AS deptmap(serviceCode, department, slaHours) ON deptmap.serviceCode = eg_pgr_service.servicecode 
+    INNER JOIN (VALUES tbl_def_dept) AS deptmap_def(name,code) ON deptmap.department = deptmap_def.code
     WHERE eg_pgr_service.status = 'assigned' 
     AND servicerequestid IN (SELECT DISTINCT businesskey FROM eg_pgr_action WHERE status = 'assigned' AND "when" IN (select max("when") FROM eg_pgr_action WHERE assignee NOTNULL GROUP BY businesskey) AND assignee is NOT NULL) 
   orderby: ORDER BY eg_pgr_service.createdtime asc
