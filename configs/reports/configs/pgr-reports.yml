@@ -50,7 +50,7 @@ ReportDefinitions:
     keyOrder: name,code
     tableName: tbl_boundary
   sourceColumns:
-  - name: department
+  - name: deptmap_def.name
     label: reports.rainmaker-pgr.department
     type: string
     source: eg_pgr_service
