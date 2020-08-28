@@ -195,7 +195,7 @@ ReportDefinitions:
     type: string
     source: eg_pgr_service
     total: false
-  - name: phone
+  - name: mobileNumber
     label: reports.rainmaker-pgr.phone
     type: string
     source: eg_pgr_service
@@ -263,7 +263,7 @@ ReportDefinitions:
     servicerequestid AS complaintNo, 
     to_char(to_timestamp(TRUNC(CAST(eg_pgr_service.createdtime AS bigint) / 1000)), 'DD/MM/YYYY') AS createddate, 
     eg_user.name, 
-    eg_user.mobileNumber as phone, 
+    eg_user.mobileNumber as mobileNumber, 
     eg_pgr_address.landmark, 
     eg_pgr_address.housenoandstreetname as address, 
     description, 
