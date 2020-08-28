@@ -186,7 +186,7 @@ ReportDefinitions:
     source: eg_pgr_service
     total: false
   - name: createddate
-    label: reports.rainmaker-pgr.createddate
+    label: reports.rainmaker-pgr.date
     type: string
     source: eg_pgr_service
     total: false
