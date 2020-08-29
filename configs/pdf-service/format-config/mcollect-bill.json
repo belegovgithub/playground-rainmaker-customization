@@ -86,7 +86,7 @@
                                    "style": "receipt-logo-title"
                                  },
                                  {
-                                  "text":"{{bill}}",
+                                  "text":"{{challan}}",
                                    "alignment":"center",
                                    "style": "receipt-logo-title"
                                  } 
@@ -168,7 +168,7 @@
                                         "body": [
                                           [
                                             {
-                                              "text":"{{service_type}}",
+                                              "text":"{{service_category}}",
                                               "border":[
                                                 false,
                                                 false,
@@ -188,7 +188,7 @@
                                                "style": "receipt-table-value-down"
                                             },
                                             {
-                                              "text":"{{application_no}}",
+                                              "text":"{{challan_no}}",
                                               "border":[
                                                 false,
                                                 false,
@@ -211,6 +211,61 @@
                                           ]
                                       }
                                      }, 
+                                     {
+                                      "table": {
+                                    "widths": [
+                                      "20%",
+                                      "30%",
+                                      "20%",
+                                      "30%"
+                                    ],
+                                    "body": [
+                                      [
+                                        {
+                                          "text":"{{validity_from}}",
+                                          "border":[
+                                            false,
+                                            false,
+                                            false,
+                                            false
+                                          ],
+                                           "style": "receipt-table-value"
+                                        },
+                                        {
+                                          "text":"{{fromPeriod}}",
+                                          "border":[
+                                            false,
+                                            false,
+                                            false,
+                                            false
+                                          ],
+                                           "style": "receipt-table-value-down",
+                                           "font": "Roboto"
+                                        },
+                                        {
+                                          "text":"{{validity_to}}",
+                                          "border":[
+                                            false,
+                                            false,
+                                            false,
+                                            false
+                                          ],
+                                           "style": "receipt-table-value"
+                                        },
+                                        {
+                                          "text":"{{toPeriod}}",
+                                          "border":[
+                                            false,
+                                            false,
+                                            false,
+                                            false
+                                          ],
+                                           "style": "receipt-table-value-down"
+                                        }
+                                      ]
+                                      ]
+                                  }
+                                 },
                                        {
                                            "table": {
                                          "widths": [
@@ -266,7 +321,40 @@
                                            ]
                                            ]
                                        }
-                                      }
+                                      },
+                                      {
+                                        "table": {
+                                      "widths": [
+                                        "19%",
+                                        "81%"   
+                                      ],
+                                      "body": [
+                                        [
+                                          {
+                                            "text":"{{address_label}}",
+                                            "border":[
+                                              false,
+                                              false,
+                                              false,
+                                              false
+                                            ],
+                                             "style": "receipt-table-value"
+                                          },
+                                          {
+                                            "text":"{{doorHouseNo}} {{streetName}} {{mohalla}} {{pinCode}}",
+                                            "border":[
+                                              false,
+                                              false,
+                                              false,
+                                              false
+                                            ],
+                                             "style": "receipt-table-value-down",
+                                             "font": "Roboto"
+                                          }
+                                        ]
+                                        ]
+                                    }
+                                   }
                                        
                                    ]
                           }

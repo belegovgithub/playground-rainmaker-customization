@@ -48,9 +48,21 @@
                  }
                 },
                 {
-                    "variable": "application_no",
+                    "variable": "challan_no",
                     "value": {
-                      "path": "NOC_COMMON_TABLE_COL_APP_NO"
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_CHALLAN_NO"
+                    },
+                    "type": "label",
+                    "localisation":{
+                      "required":true,
+                      "prefix": null,
+                      "module":"rainmaker-common"
+                   }
+                  },
+                  {
+                    "variable": "challan",
+                    "value": {
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_CHALLAN"
                     },
                     "type": "label",
                     "localisation":{
@@ -73,14 +85,14 @@
                 {
                   "variable": "fromPeriod", 
                   "value": {
-                    "path": "$.taxPeriodFrom"
+                    "path": "$.billDetails[0].fromPeriod"
                   },
                   "type": "date"
                 },
                 {
                   "variable": "toPeriod", 
                   "value": {
-                    "path": "$.taxPeriodTo"
+                    "path": "$.billDetails[0].toPeriod"
                   },
                   "type": "date"
                 },
@@ -88,18 +100,6 @@
                     "variable": "letter-code",
                     "value": {
                       "path": "PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_LETTER_CODE"
-                    },
-                    "type": "label",
-                    "localisation":{
-                      "required":true,
-                      "prefix": null,
-                      "module":"rainmaker-common"
-                   }
-                  },
-                  {
-                    "variable": "service_category",
-                    "value": {
-                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_SERVICE_CATEGORY"
                     },
                     "type": "label",
                     "localisation":{
@@ -268,9 +268,16 @@
                     "type":"setEmpty"
                 },
                 {
+                  "variable": "pinCode",
+                  "value": {
+                    "path": "$.address.pincode"
+                  },
+                  "type":"setEmpty"
+              },
+                {
                     "variable": "mohalla",
                     "value": {
-                      "path": "$.address.locality.code"
+                      "path": "$.address.locality"
                     },
                     "localisation":{
                       "required":true,
@@ -375,9 +382,9 @@
                  }
                 },
                 {
-                  "variable": "service_type",
+                  "variable": "service_category",
                   "value": {
-                    "path": "PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_SERVICE_TYPE"
+                    "path": "PDF_STATIC_LABEL_CONSOLIDATED_SERVICE_CATEGORY"
                   },
                   "type": "label",
                   "localisation":{

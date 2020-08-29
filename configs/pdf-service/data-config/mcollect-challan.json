@@ -250,6 +250,13 @@
                     "type":"setEmpty"
                 },
                 {
+                  "variable": "pinCode",
+                  "value": {
+                    "path": "$.address.pincode"
+                  },
+                  "type":"setEmpty"
+              },
+                {
                     "variable": "mohalla",
                     "value": {
                       "path": "$.address.locality.code"
@@ -347,7 +354,7 @@
                 {
                   "variable": "payer_contact",
                   "value": {
-                    "path": "PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_PAYER_CONTACT"
+                    "path": "PDF_STATIC_LABEL_CONSOLIDATED_TLCERTIFICATE_LICENSE_CORPORATION_CONTACT"
                   },
                   "type": "label",
                   "localisation":{
