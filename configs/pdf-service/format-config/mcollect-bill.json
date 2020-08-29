@@ -86,7 +86,7 @@
                                    "style": "receipt-logo-title"
                                  },
                                  {
-                                  "text":"{{challan}}",
+                                  "text":"{{challan}} / {{bill}}",
                                    "alignment":"center",
                                    "style": "receipt-logo-title"
                                  } 
@@ -178,7 +178,7 @@
                                                "style": "receipt-table-value"
                                             },
                                             {
-                                              "text":"{{serviceType}}",
+                                              "text":"{{serviceCategory}}",
                                               "border":[
                                                 false,
                                                 false,
@@ -188,7 +188,7 @@
                                                "style": "receipt-table-value-down"
                                             },
                                             {
-                                              "text":"{{challan_no}}",
+                                              "text":"{{service_type}}",
                                               "border":[
                                                 false,
                                                 false,
@@ -198,7 +198,7 @@
                                                "style": "receipt-table-value"
                                             },
                                             {
-                                              "text":"{{applicationNo}}",
+                                              "text":"{{serviceType}}",
                                               "border":[
                                                 false,
                                                 false,
@@ -207,6 +207,7 @@
                                               ],
                                                "style": "receipt-table-value-down"
                                             }
+                                            
                                           ]
                                           ]
                                       }
@@ -325,8 +326,10 @@
                                       {
                                         "table": {
                                       "widths": [
-                                        "19%",
-                                        "81%"   
+                                        "20%",
+                                        "30%",
+                                        "20%",
+                                        "30%"   
                                       ],
                                       "body": [
                                         [
@@ -350,6 +353,26 @@
                                             ],
                                              "style": "receipt-table-value-down",
                                              "font": "Roboto"
+                                          },
+                                          {
+                                            "text":"{{challan_no}}",
+                                            "border":[
+                                              false,
+                                              false,
+                                              false,
+                                              false
+                                            ],
+                                             "style": "receipt-table-value"
+                                          },
+                                          {
+                                            "text":"{{applicationNo}}",
+                                            "border":[
+                                              false,
+                                              false,
+                                              false,
+                                              false
+                                            ],
+                                             "style": "receipt-table-value-down"
                                           }
                                         ]
                                         ]

@@ -37,17 +37,6 @@
                     }
                   },
                 {
-                  "variable": "serviceType", 
-                  "value": {
-                    "path": "$.businessService"
-                  },
-                  "localisation":{
-                    "required":true,
-                    "prefix":"BILLINGSERVICE_BUSINESSSERVICE",   
-                    "module":"rainmaker-uc"
-                 }
-                },
-                {
                     "variable": "challan_no",
                     "value": {
                       "path": "PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_CHALLAN_NO"
@@ -72,14 +61,16 @@
                    }
                   },
                 {
-                  "variable": "serviceCategory", 
+                  "variable": "serviceType", 
                   "value": {
-                    "path": "$.serviceType"
+                    "path": "$.businessService"
                   },
+                  "type": "splitString",
                   "localisation":{
                     "required":true,
-                    "prefix":"MODULE",   
-                    "module":"rainmaker-common"
+                    "prefix":"BILLINGSERVICE_BUSINESSSERVICE",   
+                    "module":"rainmaker-uc",
+                    "isCategoryRequired":true
                  }
                 },
                 {
@@ -285,6 +276,17 @@
                       "module": "rainmaker-common"
                    }
                 },
+                {
+                  "variable": "serviceCategory",
+                  "value": {
+                    "path": "$.businessService"
+                  },
+                  "localisation":{
+                    "required":true,
+                    "prefix":"BILLINGSERVICE_BUSINESSSERVICE",   
+                    "module":"rainmaker-uc"
+                 }
+              },
                 {
                     "variable": "mcollect_comment",
                     "value": {
@@ -542,6 +544,18 @@
                   "variable": "to",
                   "value": {
                     "path": "PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_TO"
+                  },
+                  "type": "label",
+                  "localisation":{
+                    "required":true,
+                    "prefix": null,
+                    "module":"rainmaker-common"
+                 }
+                },
+                {
+                  "variable": "service_type",
+                  "value": {
+                    "path": "PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_SERVICE_TYPE"
                   },
                   "type": "label",
                   "localisation":{
