@@ -486,61 +486,7 @@
                                         ]
                                         ]
                                     }
-                                   },
-                                   {
-                                     "table": {
-                                   "widths": [
-                                     "20%",
-                                     "30%",
-                                     "20%",
-                                     "30%"
-                                   ],
-                                   "body": [
-                                     [
-                                         {
-                                           "text": "{{GL_Code}}",
-                                           "border": [
-                                             false,
-                                             false,
-                                             false,
-                                             false
-                                           ],
-                                           "style": "receipt-table-value"
-                                         },
-                                         {
-                                           "text": "{{GLCode}}",
-                                           "border": [
-                                             false,
-                                             false,
-                                             false,
-                                             false
-                                           ],
-                                           "style": "receipt-table-value-down"
-                                         },
-                                         {
-                                           "text" : "{{mcollect_comment}} ",
-                                           "border": [
-                                             false,
-                                             false,
-                                             false,
-                                             false
-                                           ],
-                                           "style": "receipt-table-value"
-                                         },
-                                         {
-                                           "text" : "{{Comment}}",
-                                           "border": [
-                                             false,
-                                             false,
-                                             false,
-                                             false
-                                           ],
-                                           "style": "receipt-table-value-down"
-                                         }
-                                       ]
-                                     ]
-                                 }
-                                }
+                                   }
                                    ]
                           }
                       ]
