@@ -470,27 +470,6 @@
                     "queryParam": "moduleName=tenant&masterName=tenants&tenantId=bh&filter=%5B?(@.code=='{$.tenantId}')%5D",
                     "apiRequest": null,
                     "responseMapping":[
-                      {             
-                        "variable":"address",
-                        "value":"$.MdmsRes.tenant.tenants[0].address"
-                      },
-                      {
-                        "variable":"phoneNumber",
-                        "value":"$.MdmsRes.tenant.tenants[0].contactNumber"
-                      },
-                      {
-                        "variable":"website",
-                        "value":"$.MdmsRes.tenant.tenants[0].domainUrl"
-                      },
-                      {
-                        "variable":"email",
-                        "value":"$.MdmsRes.tenant.tenants[0].emailId"
-                      },
-                      {
-                        "variable": "logoImage",                        
-                        "value":"$.MdmsRes.tenant.tenants[0].logoId",
-                        "type":"image"      
-                      },
                       {
                         "variable": "logo-header",
                         "value":"$.MdmsRes.tenant.tenants[0].code",
