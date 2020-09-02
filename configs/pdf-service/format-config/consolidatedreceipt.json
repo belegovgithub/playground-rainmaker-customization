@@ -244,25 +244,25 @@
                                                 "font": "Roboto"
                                              },
                                              {
-                                               "text":"{{payer_name}}",
-                                               "border":[
-                                                 false,
-                                                 false,
-                                                 false,
-                                                 false
-                                               ],
-                                                "style": "receipt-table-value"
-                                             },
-                                             {
-                                               "text":"{{payerName}}",
-                                               "border":[
-                                                 false,
-                                                 false,
-                                                 false,
-                                                 false
-                                               ],
-                                                "style": "receipt-table-value-down"
-                                             }
+                                              "text":"{{consumner_Name}}",
+                                              "border":[
+                                                false,
+                                                false,
+                                                false,
+                                                false
+                                              ],
+                                               "style": "receipt-table-value"
+                                            },
+                                            {
+                                              "text":"{{consumnerName}}",
+                                              "border":[
+                                                false,
+                                                false,
+                                                false,
+                                                false
+                                              ],
+                                               "style": "receipt-table-value-down"
+                                            }
                                            ]
                                            ]
                                        }
@@ -277,6 +277,26 @@
                                          ],
                                          "body": [
                                            [
+                                            {
+                                              "text":"{{payer_name}}",
+                                              "border":[
+                                                false,
+                                                false,
+                                                false,
+                                                false
+                                              ],
+                                               "style": "receipt-table-value"
+                                            },
+                                            {
+                                              "text":"{{payerName}}",
+                                              "border":[
+                                                false,
+                                                false,
+                                                false,
+                                                false
+                                              ],
+                                               "style": "receipt-table-value-down"
+                                            },
                                              {
                                                "text":"{{payer_contact}}",
                                                "border":[
@@ -297,26 +317,6 @@
                                                ],
                                                 "style": "receipt-table-value-down",
                                                 "font": "Roboto"
-                                             },
-                                             {
-                                               "text":"{{consumner_Name}}",
-                                               "border":[
-                                                 false,
-                                                 false,
-                                                 false,
-                                                 false
-                                               ],
-                                                "style": "receipt-table-value"
-                                             },
-                                             {
-                                               "text":"{{consumnerName}}",
-                                               "border":[
-                                                 false,
-                                                 false,
-                                                 false,
-                                                 false
-                                               ],
-                                                "style": "receipt-table-value-down"
                                              }
                                            ]
                                            ]
@@ -409,7 +409,7 @@
                                              "font": "Roboto"
                                           },
                                           {
-                                            "text":"{{g8_receipt_no}}.",
+                                            "text":"{{bank_transaction_no}}",
                                             "border":[
                                               false,
                                               false,
@@ -419,7 +419,7 @@
                                              "style": "receipt-table-value"
                                           },
                                           {
-                                            "text":"{{G8ReceiptNo}}",
+                                            "text":"{{bankTransactionNo}}",
                                             "border":[
                                               false,
                                               false,
@@ -464,7 +464,7 @@
                                              "font": "Roboto"
                                           },
                                           {
-                                            "text":"{{bank_transaction_no}}",
+                                            "text":"{{g8_receipt_no}}.",
                                             "border":[
                                               false,
                                               false,
@@ -474,7 +474,7 @@
                                              "style": "receipt-table-value"
                                           },
                                           {
-                                            "text":"{{bankTransactionNo}}",
+                                            "text":"{{G8ReceiptNo}}",
                                             "border":[
                                               false,
                                               false,
@@ -483,6 +483,7 @@
                                             ],
                                              "style": "receipt-table-value-down"
                                           }
+                                          
                                         ]
                                         ]
                                     }
