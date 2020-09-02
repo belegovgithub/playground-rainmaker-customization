@@ -4214,8 +4214,8 @@
     },
     "_comment": " Complaints By Their Statuses"
   },
-  "pgrCitizenOnDateRange": {
-    "chartName": "DSS_PGR_CITIZEN",
+  "averageTurnAroundTime": {
+    "chartName": "DSS_AVERAGE_TURN_AROUND_TIME",
     "queries": [
       {
         "module": "PGR",
