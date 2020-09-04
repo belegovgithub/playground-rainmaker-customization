@@ -539,9 +539,9 @@
               "style": "noc-table4",
               "table": {
                 "widths": [
-                  "*",
-                  "*",
-                  "*"
+                  "60%",
+                  "30%",
+                  "10%"
                 ],
                 "body": [
                   "{{#variable10}}[{\"text\": \"{{trade_license_tax}}\",\"border\": [true,false,false,false], \"style\": \"receipt-table-value-down\"},{\"text\": \"{{tradeLicenseTax}}\", \"border\": [false,false,false,false], \"style\": \"receipt-table-value-down\"},{ \"text\": \" \",\"border\": [false,false,true, false ]}]{{/variable10}}"
@@ -555,7 +555,7 @@
                   "type": "line",
                   "x1": -25,
                   "y1": 0,
-                  "x2": 315,
+                  "x2": 345,
                   "y2": 0,
                   "lineWidth": 1
                 }
@@ -565,9 +565,9 @@
               "style": "noc-table4",
               "table": {
                 "widths": [
-                  "*",
-                  "*",
-                  "*"
+                  "60%",
+                    "30%",
+                    "10%"
                 ],
                 "body": [
                   [
@@ -594,15 +594,17 @@
                       "style": "receipt-table-value-down"
                     },
                     {
-                      "text": " ",
-                      "border": [
-                        false,
-                        false,
-                        true,
-                        true
-                      ]
-                       
-                    }
+                      "image": "{{qrcodeimage}}",
+                     "style": "receipt-table-value-total-Qr",
+                     "border": [
+                       false,
+                       false,
+                       true,
+                       true
+                     ],
+                     "width": 64,
+                     "height": 64
+                   }
                   ]
                 ]
               },
@@ -611,25 +613,15 @@
             {
                 "table": {
                   "widths": [
-                    "75%",
-                    "25%"
+                    "*"
                   ],
                   "body": [
                        [         
                             {
                                 "style": "no-signature",
                                 "text": "{{no_signature}}"
-                            },
-                            {
-                                
-                                    "style": "qr-head",
-                                    "image": "{{qrcodeimage}}",
-                                    "alignment": "right",
-                                    "width": 64,
-                                    "height": 64
-                                  
-                                
                             }
+                            
                        ]
                   ]
                 },
