@@ -150,11 +150,6 @@ ReportDefinitions:
       print:
         pdfPageSize: "A2"
     sourceColumns:
-      - name: ulb
-        label: reports.uc.ulb
-        type: string
-        source: uc
-        total: false
       - name: challanno
         label: reports.uc.challanno
         type: string
@@ -204,6 +199,11 @@ ReportDefinitions:
         type: string
         source: uc
         total: true
+      - name: totalamount
+        label: reports.uc.totalamount
+        type: string
+        source: uc
+        total: true
       - name: transactionorchequenumber
         label: reports.uc.ddorchequenumber
         type: string
@@ -229,21 +229,11 @@ ReportDefinitions:
       #   type: string
       #   source: uc
       #   total: false
-      - name: collectiontype
-        label: reports.uc.collectiontype
-        type: string
-        source: uc
-        total: false
       - name: name
         label: reports.uc.collectorname
         type: string
         source: uc
         total: false
-      - name: totalamount
-        label: reports.uc.totalamount
-        type: string
-        source: uc
-        total: true
       - name: paymentmode
         label: reports.uc.paymentmode
         type: string
