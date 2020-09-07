@@ -89,4 +89,25 @@ serviceMaps:
 
       - jsonPath: $.Challan.auditDetails.lastModifiedTime
 
+    
+  - version: 1.0
+    description: Update Challan details in eg_echallan  table
+    fromTopic: update-challan
+    isTransaction: true
+    queryMaps:
+    
+    - query: UPDATE eg_echallan SET applicationStatus = ?, lastmodifiedby = ?,  lastmodifiedtime = ? WHERE id=?;
+      basePath: Challan
+      jsonMaps:
+      
+      - jsonPath: $.Challan.applicationStatus
+
+      - jsonPath: $.Challan.auditDetails.lastModifiedBy
+
+      - jsonPath: $.Challan.auditDetails.lastModifiedTime
+
+      - jsonPath: $.Challan.id
+
+
+
 
