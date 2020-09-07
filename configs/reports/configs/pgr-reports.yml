@@ -659,7 +659,7 @@ ReportDefinitions:
     SUM(CASE WHEN status ='rejected' THEN 1 ELSE 0 END) as rejected,
     count(status) as total
     from eg_pgr_service
-    WHERE tenantid == $tenantId
+    WHERE tenantid = $tenantId
   groupby: GROUP BY servicecode
   orderby: ORDER BY servicecode
 
