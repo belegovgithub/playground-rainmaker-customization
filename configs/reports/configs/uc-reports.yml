@@ -141,9 +141,9 @@ ReportDefinitions:
         WHERE  rh.status != 'Cancelled'  AND rh.tenantid!='pb.testing' AND businessdetails not in ('PT','TL')
     orderby: ORDER BY rh.receiptdate DESC
 
-  - reportName: MiscReceiptULB
+  - reportName: MiscReceiptRegister
     summary: Receipt Register Miscellaneous
-    decryptionPathId: MiscReceiptULB
+    decryptionPathId: MiscReceiptRegister
     version: 1.0.0
     moduleName: rainmaker-uc
     additionalConfig:
