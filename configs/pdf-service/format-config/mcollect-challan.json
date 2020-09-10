@@ -348,8 +348,8 @@
                                               false,
                                               false
                                             ],
-                                             "style": "receipt-table-value-down",
-                                             "font": "Roboto"
+                                             "style": "receipt-table-value-down"
+                                     
                                           }
                                         ]
                                         ]
