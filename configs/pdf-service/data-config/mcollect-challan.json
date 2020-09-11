@@ -615,7 +615,7 @@
               "qrcodeConfig": [
                 {
                     "variable": "qrcodeimage1",
-                    "value":"Payer Name : {{payerName}},Application: {{consumerID}}, Receipt number: {{receiptNo}}, Date of payment: {{paymentDate}}, Fees Paid: {{paidAmount}}, Billing Period: {{fromPeriod}} to {{toPeriod}}"
+                    "value":"Payer Name : {{consumnerName}},Challan number: {{challanNo}}, Challan Date: {{billDate}}, Total Amount: {{totalAmount}}, Billing Period: {{fromPeriod}} to {{toPeriod}}"
                 },
                 {
                   "variable": "qrcodeimage",

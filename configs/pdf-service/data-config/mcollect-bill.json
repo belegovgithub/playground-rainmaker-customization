@@ -31,7 +31,7 @@
                   }
                 },
                 {
-                    "variable": "applicationNo", 
+                    "variable": "challanNo", 
                     "value": {
                       "path": "$.consumerCode"
                     }
@@ -187,18 +187,6 @@
                     "variable": "letter-code",
                     "value": {
                       "path": "PDF_STATIC_LABEL_CONSOLIDATED_TLCERTIFICATE_MUNICIPAL_CORPORATION"
-                    },
-                    "type": "label",
-                    "localisation":{
-                      "required":true,
-                      "prefix": null,
-                      "module":"rainmaker-common"
-                   }
-                  },
-                  {
-                    "variable": "application_no",
-                    "value": {
-                      "path": "NOC_COMMON_TABLE_COL_APP_NO"
                     },
                     "type": "label",
                     "localisation":{
@@ -647,7 +635,7 @@
               "qrcodeConfig": [
                 {
                     "variable": "qrcodeimage1",
-                    "value":"Payer Name : {{payerName}},Application: {{consumerID}}, Receipt number: {{receiptNo}}, Date of payment: {{paymentDate}}, Fees Paid: {{paidAmount}}, Billing Period: {{fromPeriod}} to {{toPeriod}}"
+                    "value":"Payer Name : {{payerName}},BillNo: {{billNumber}}, Challan number: {{challanNo}}, Bill Date: {{billDate}}, Total Amount: {{totalAmount}}, Billing Period: {{fromPeriod}} to {{toPeriod}}"
                 },
                 {
                   "variable": "qrcodeimage",

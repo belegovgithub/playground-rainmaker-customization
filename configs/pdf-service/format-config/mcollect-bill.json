@@ -364,7 +364,7 @@
                                              "style": "receipt-table-value"
                                           },
                                           {
-                                            "text":"{{applicationNo}}",
+                                            "text":"{{challanNo}}",
                                             "border":[
                                               false,
                                               false,
