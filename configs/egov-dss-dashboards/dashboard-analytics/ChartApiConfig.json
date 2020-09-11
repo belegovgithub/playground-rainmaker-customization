@@ -3726,9 +3726,7 @@
     "documentType": "_doc",
     "aggregationPaths": [
       "Ivr",
-      "Web",
-      "Whatsapp",
-      "Mobileapp"
+      "Web"
     ],
     "isCumulative": false,
     "interval": "month",
