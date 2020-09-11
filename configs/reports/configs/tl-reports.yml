@@ -396,7 +396,7 @@ ReportDefinitions:
     LEFT OUTER JOIN egcl_payment as pay ON pay.id = pd.paymentid 
     WHERE tl.Status in ('APPROVED', 'PAID', 'CANCELLED') AND tl.tenantId != 'uk.testing' AND tl.tenantId LIKE $tenantid
 
-- reportName: StateULBReport
+- reportName: StateCBReport
   summary: Nummber of applications by there status state level
   version: 1.0.0
   moduleName: rainmaker-tl
@@ -425,7 +425,7 @@ ReportDefinitions:
     isMandatory: false
     searchClause: AND tl.lastmodifiedtime <= $toDate
   - name: ulb
-    label: ULB
+    label: report.tl.tenantId
     type: singlevaluelist
     pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=tenant&masterName=tenants|$.MdmsRes.tenant.tenants.*.code|$.MdmsRes.tenant.tenants.*.name
     source: tl
@@ -534,7 +534,7 @@ ReportDefinitions:
   groupby: GROUP BY message.message
   orderby: ORDER BY case message.message when 'Pending Application' then 1 when 'Pending Payment' then 2 when 'Pending Approval' then 3 when 'Approved' then 4 when 'Rejected' then 5 when 'Cancelled' then 6 else 7 end
 
-- reportName: TradeLicenseULBWiseApplicationStatusReport
+- reportName: TradeLicenseCBWiseApplicationStatusReport
   summary: Nummber of applications by there status
   version: 1.0.0
   moduleName: rainmaker-tl

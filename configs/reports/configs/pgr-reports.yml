@@ -713,7 +713,7 @@ ReportDefinitions:
     total: true
   searchParams:
   - name: ulb
-    label: ULB
+    label: reports.rainmaker-pgr.ULB
     type: singlevaluelist
     pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=tenant&masterName=tenants|$.MdmsRes.tenant.tenants.*.code|$.MdmsRes.tenant.tenants.*.name
     source: pt
@@ -749,7 +749,7 @@ ReportDefinitions:
   groupby: GROUP BY tenantid,deptmap_def.name
   orderby: ORDER BY tenantid,deptmap_def.name
 
-- reportName: ULBDepartmentReport
+- reportName: CBDepartmentReport
   summary: Fetches complaint stats based on department types for a ULB
   version: 1.0.0
   moduleName: rainmaker-pgr
@@ -839,8 +839,8 @@ ReportDefinitions:
   groupby: GROUP BY deptmap_def.name
   orderby: ORDER BY deptmap_def.name
 
-- reportName: ULBEmployeeWiseReport
-  decryptionPathId: ULBEmployeeWiseReport
+- reportName: CBEmployeeWiseReport
+  decryptionPathId: CBEmployeeWiseReport
   summary: Fetches employee wise assignment report
   version: 1.0.0
   moduleName: rainmaker-pgr
