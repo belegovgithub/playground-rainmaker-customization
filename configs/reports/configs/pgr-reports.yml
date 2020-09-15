@@ -567,7 +567,7 @@ ReportDefinitions:
     source: pt
     wrapper: true
     isMandatory: false
-    searchClause: AND tenantid = $ulb
+    searchClause: AND tenantid != 'pb.testing' AND tenantid = $ulb
   - name: fromDate
     label: reports.rainmaker-pgr.datefrom
     type: epoch
@@ -821,7 +821,7 @@ ReportDefinitions:
       (select min("when") from eg_pgr_action where action='open' and businesskey = servicerequestid) as opentime
     from eg_pgr_service as ps
     where 
-    tenantid = $tenantid)
+    tenantid = $tenantid )
 
     select 
       deptmap_def.name as department,
@@ -908,7 +908,7 @@ ReportDefinitions:
       (select min("when") from eg_pgr_action where action='open' and businesskey = servicerequestid) as opentime
     from eg_pgr_service as ps
     where 
-    tenantid = $tenantid)
+    tenantid = $tenantid )
 
     select 
       coalesce((select name from eg_user where id::varchar = assignee),null) as name, 
