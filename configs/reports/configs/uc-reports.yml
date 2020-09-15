@@ -387,9 +387,9 @@ ReportDefinitions:
           SUM(CASE WHEN taxheadcode LIKE '%_FIELD_FEE' THEN adjustedamount ELSE 0 END) as fieldcollection,
           SUM(CASE WHEN taxheadcode LIKE '%_SEC_DEP' THEN adjustedamount ELSE 0 END) as securitydeposit,
           SUM(rd.adjustedamount) as totalcollection
-          FROM egcl_billaccountdetail as rd WHERE rd.tenantid != 'pb.testing'
+          FROM egcl_billaccountdetail as rd
           INNER JOIN egcl_billdetial as rh on rh.id =  rd.billdetailid					
-          INNER JOIN (SELECT distinct bill.id, status,billdate,businessservice,message.message as servicetype from egcl_bill bill  INNER JOIN message ON CONCAT('BILLINGSERVICE_BUSINESSSERVICE_',replace(businessservice, '.', '_')) = message.code AND message.locale='en_IN') as bl ON bl.id = rh.billid and status != 'Cancelled' and businessservice not in ('PT','TL')
+          INNER JOIN (SELECT distinct bill.id, status,billdate,businessservice,message.message as servicetype from egcl_bill bill  INNER JOIN message ON CONCAT('BILLINGSERVICE_BUSINESSSERVICE_',replace(businessservice, '.', '_')) = message.code AND message.locale='en_IN') as bl ON bl.id = rh.billid and status != 'Cancelled' and businessservice not in ('PT','TL') and rd.tenantid != 'pb.testing'
     groupby: GROUP BY rd.tenantid,bl.servicetype
     orderby: ORDER BY rd.tenantid
 
@@ -472,7 +472,7 @@ ReportDefinitions:
           SUM(rd.adjustedamount) as totalcollection
           FROM egcl_billaccountdetail as rd
           INNER JOIN egcl_billdetial as rh on rh.id =  rd.billdetailid					
-          INNER JOIN (SELECT distinct bill.id, status,billdate,businessservice from egcl_bill bill  ) as bl ON bl.id = rh.billid and status != 'Cancelled' and businessservice not in ('PT','TL') and tenantid != 'pb.testing'
+          INNER JOIN (SELECT distinct bill.id, status,billdate,businessservice from egcl_bill bill  ) as bl ON bl.id = rh.billid and status != 'Cancelled' and businessservice not in ('PT','TL') and rd.tenantid != 'pb.testing'
     groupby: group by rd.tenantid
 
 
