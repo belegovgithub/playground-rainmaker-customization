@@ -626,7 +626,7 @@ ReportDefinitions:
           SUM(rd.amount) as totalcollection
           FROM egcl_billaccountdetail as rd WHERE rd.tenantid != 'pb.testing'
           INNER JOIN egcl_billdetial as rh on rh.id =  rd.billdetailid					
-          INNER JOIN (SELECT distinct bill.id, status,billdate,businessservice,message.message as servicetype from egcl_bill bill  INNER JOIN message ON CONCAT('BILLINGSERVICE_BUSINESSSERVICE_',replace(businessservice, '.', '_')) = message.code AND message.locale='en_IN') as bl ON bl.id = rh.billid and status != 'Cancelled' and businessservice not in ('PT','TL') and rd.tenantid=$tenantid and rd.tenantid != 'pb.testing'
+          INNER JOIN (SELECT distinct bill.id, status,billdate,businessservice,message.message as servicetype from egcl_bill bill  INNER JOIN message ON CONCAT('BILLINGSERVICE_BUSINESSSERVICE_',replace(businessservice, '.', '_')) = message.code AND message.locale='en_IN') as bl ON bl.id = rh.billid and status != 'Cancelled' and businessservice not in ('PT','TL') and rd.tenantid=$tenantid
     groupby: GROUP BY bl.servicetype
     orderby: ORDER BY bl.servicetype
 
