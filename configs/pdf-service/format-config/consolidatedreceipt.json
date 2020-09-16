@@ -168,7 +168,7 @@
                                         "body": [
                                           [
                                             {
-                                              "text":"{{application_no}}",
+                                              "text":"{{challan_no}}",
                                               "border":[
                                                 false,
                                                 false,

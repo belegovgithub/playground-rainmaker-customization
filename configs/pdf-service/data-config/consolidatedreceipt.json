@@ -165,9 +165,9 @@
                    }
                   },
                   {
-                    "variable": "application_no",
+                    "variable": "challan_no",
                     "value": {
-                      "path": "NOC_COMMON_TABLE_COL_APP_NO"
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_CHALLAN_NO"
                     },
                     "type": "label",
                     "localisation":{
