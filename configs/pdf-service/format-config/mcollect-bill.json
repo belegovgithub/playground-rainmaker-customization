@@ -278,7 +278,7 @@
                                          "body": [
                                            [
                                             {
-                                              "text":"{{payer_Name}}",
+                                              "text":"{{consumer_Name}}",
                                               "border":[
                                                 false,
                                                 false,

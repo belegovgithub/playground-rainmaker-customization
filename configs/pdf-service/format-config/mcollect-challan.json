@@ -86,7 +86,7 @@
                                    "style": "receipt-logo-title"
                                  },
                                  {
-                                  "text":"{{challan}}",
+                                  "text":"{{challan}} / {{bill}}",
                                    "alignment":"center",
                                    "style": "receipt-logo-title"
                                  } 
@@ -157,6 +157,61 @@
                                            ]
                                        }
                                       },
+                                      {
+                                        "table": {
+                                      "widths": [
+                                        "20%",
+                                        "30%",
+                                        "20%",
+                                        "30%"
+                                      ],
+                                      "body": [
+                                        [
+                                          {
+                                            "text":"{{bill_no}}",
+                                            "border":[
+                                              false,
+                                              false,
+                                              false,
+                                              false
+                                            ],
+                                             "style": "receipt-table-value"
+                                          },
+                                          {
+                                            "text":"{{billNo}}",
+                                            "border":[
+                                              false,
+                                              false,
+                                              false,
+                                              false
+                                            ],
+                                             "style": "receipt-table-value-down"
+                                              
+                                          },
+                                          {
+                                            "text":"{{bill_date}}",
+                                            "border":[
+                                              false,
+                                              false,
+                                              false,
+                                              false
+                                            ],
+                                             "style": "receipt-table-value"
+                                          },
+                                          {
+                                            "text":"{{billDate}}",
+                                            "border":[
+                                              false,
+                                              false,
+                                              false,
+                                              false
+                                            ],
+                                             "style": "receipt-table-value-down"
+                                          }
+                                        ]
+                                        ]
+                                    }
+                                   },
                                       {
                                           "table": {
                                         "widths": [
@@ -277,7 +332,7 @@
                                          "body": [
                                            [
                                             {
-                                              "text":"{{consumner_Name}}",
+                                              "text":"{{consumer_Name}}",
                                               "border":[
                                                 false,
                                                 false,
@@ -287,7 +342,7 @@
                                                "style": "receipt-table-value"
                                             },
                                             {
-                                              "text":"{{consumnerName}}",
+                                              "text":"{{consumerName}}",
                                               "border":[
                                                 false,
                                                 false,

@@ -348,9 +348,9 @@
                  }
                 },
                 {
-                  "variable": "payer_name",
+                  "variable": "consumer_Name",
                   "value": {
-                    "path": "PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_PAYER_NAME"
+                    "path": "PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_CONSUMER_NAME"
                   },
                   "type": "label",
                   "localisation":{
@@ -362,7 +362,7 @@
                 {
                   "variable": "payer_contact",
                   "value": {
-                    "path": "PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_PAYER_CONTACT"
+                    "path": "PDF_STATIC_LABEL_CONSOLIDATED_TLCERTIFICATE_LICENSE_CORPORATION_CONTACT"
                   },
                   "type": "label",
                   "localisation":{
