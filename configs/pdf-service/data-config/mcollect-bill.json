@@ -247,6 +247,13 @@
                     "type":"setEmpty"
                 },
                 {
+                  "variable": "buildingName",
+                  "value": {
+                    "path": "$.address.buildingName"
+                  },
+                  "type":"setEmpty"
+              },
+                {
                   "variable": "pinCode",
                   "value": {
                     "path": "$.address.pincode"

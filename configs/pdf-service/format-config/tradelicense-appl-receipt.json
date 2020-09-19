@@ -310,7 +310,7 @@
                                              "style": "receipt-table-value"
                                           },
                                           {
-                                            "text":"{{paidAmount}}",
+                                            "text":"{{Rs}} {{paidAmount}}",
                                             "border":[
                                               false,
                                               false,
