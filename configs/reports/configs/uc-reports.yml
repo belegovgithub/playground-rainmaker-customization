@@ -104,7 +104,7 @@ ReportDefinitions:
         source: uc
         wrapper: true
         isMandatory: false
-        searchClause: AND rh.tenantid = $ulb
+        searchClause: AND rh.tenantid != 'pb.testing' AND rh.tenantid = $ulb
     query: |
         -- Use CTE to force query plan, compute & use CTE later
         WITH receipt_breakup AS (
@@ -375,7 +375,7 @@ ReportDefinitions:
         source: uc
         wrapper: true
         isMandatory: false
-        searchClause: AND rd.tenantid = $ulb
+        searchClause: AND rd.tenantid != 'pb.testing' AND rd.tenantid = $ulb
     query: |
         -- Use CTE to force query plan, compute & use CTE later
           SELECT
@@ -389,7 +389,7 @@ ReportDefinitions:
           SUM(rd.adjustedamount) as totalcollection
           FROM egcl_billaccountdetail as rd
           INNER JOIN egcl_billdetial as rh on rh.id =  rd.billdetailid					
-          INNER JOIN (SELECT distinct bill.id, status,billdate,businessservice,message.message as servicetype from egcl_bill bill  INNER JOIN message ON CONCAT('BILLINGSERVICE_BUSINESSSERVICE_',replace(businessservice, '.', '_')) = message.code AND message.locale='en_IN') as bl ON bl.id = rh.billid and status != 'Cancelled' and businessservice not in ('PT','TL')
+          INNER JOIN (SELECT distinct bill.id, status,billdate,businessservice,message.message as servicetype from egcl_bill bill  INNER JOIN message ON CONCAT('BILLINGSERVICE_BUSINESSSERVICE_',replace(businessservice, '.', '_')) = message.code AND message.locale='en_IN') as bl ON bl.id = rh.billid and status != 'Cancelled' and businessservice not in ('PT','TL') and rd.tenantid != 'pb.testing'
     groupby: GROUP BY rd.tenantid,bl.servicetype
     orderby: ORDER BY rd.tenantid
 
@@ -458,7 +458,7 @@ ReportDefinitions:
         source: uc
         wrapper: true
         isMandatory: false
-        searchClause: AND rd.tenantid = $ulb
+        searchClause: rd.tenantid != 'pb.testing' AND rd.tenantid = $ulb
     query: |
         -- Use CTE to force query plan, compute & use CTE later
           SELECT 
@@ -472,7 +472,7 @@ ReportDefinitions:
           SUM(rd.adjustedamount) as totalcollection
           FROM egcl_billaccountdetail as rd
           INNER JOIN egcl_billdetial as rh on rh.id =  rd.billdetailid					
-          INNER JOIN (SELECT distinct bill.id, status,billdate,businessservice from egcl_bill bill  ) as bl ON bl.id = rh.billid and status != 'Cancelled' and businessservice not in ('PT','TL')
+          INNER JOIN (SELECT distinct bill.id, status,billdate,businessservice from egcl_bill bill  ) as bl ON bl.id = rh.billid and status != 'Cancelled' and businessservice not in ('PT','TL') and rd.tenantid != 'pb.testing'
     groupby: group by rd.tenantid
 
 
@@ -537,7 +537,7 @@ ReportDefinitions:
         source: uc
         wrapper: true
         isMandatory: false
-        searchClause: AND rh.tenantid = $ulb
+        searchClause: rd.tenantid != 'pb.testing' AND rh.tenantid = $ulb
     query: |
         -- Use CTE to force query plan, compute & use CTE later
         SELECT
@@ -747,7 +747,7 @@ ReportDefinitions:
                     FROM egcl_billaccountdetail as rd
                     INNER JOIN egcl_billdetial as rh on rh.id = rd.billdetailid
                     INNER JOIN egcl_bill as bill on bill.id = rh.billid
-                    where status ='Cancelled' and businessservice not in ('PT','TL') and rd.tenantid=$tenantid
+                    where status ='Cancelled' and businessservice not in ('PT','TL') and rd.tenantid=$tenantid and rd.tenantid != 'pb.testing'
                     GROUP BY rd.billdetailid)
                     SELECT initcap(split_part(rh.tenantid,'.', 2)) as ulb,pd.receiptnumber as receiptnumber,To_char((To_timestamp(pd.receiptdate / 1000) at time Zone 'Asia/Kolkata'), 'DD/MM/YYYY') as receiptdate,servicecategory,receipt_breakup.*,  amount as totalamount,pay.paymentmode as paymentmode,(case when pay.paymentmode like 'Cash' then '' else  transactionnumber end) as transactionorchequenumber,(case when pay.paymentmode like 'Cheque' then To_char((To_timestamp(pay.transactiondate / 1000) at time Zone 'Asia/Kolkata'), 'DD/MM/YYYY') else '' end) as ddchequedate,eg_user.name as name FROM egcl_billdetial AS rh INNER JOIN (SELECT DISTINCT bill.id,status, businessservice,message.message as servicecategory from egcl_bill bill LEFT OUTER JOIN message ON CONCAT('BILLINGSERVICE_BUSINESSSERVICE_',replace(businessservice, '.', '_')) = message.code AND message.locale='en_IN')as bill ON bill.id = rh.billid and status = 'Cancelled' and businessservice not in ('PT','TL')LEFT OUTER JOIN egcl_paymentdetail as pd ON pd.billid = bill.id LEFT OUTER JOIN egcl_payment  AS pay ON pay.id = pd.paymentid JOIN eg_user ON pay.createdby::INTEGER=eg_user.id JOIN receipt_breakup ON rh.id = receipt_breakup.billdetailid WHERE rh.tenantid=$tenantid
     orderby: ORDER BY pd.receiptdate DESC
