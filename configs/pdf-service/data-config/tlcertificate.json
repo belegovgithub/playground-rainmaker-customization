@@ -125,7 +125,7 @@
                   "value": {
                     "path": "$.validFrom"
                   },
-                  "type": "date"
+                  "type": "newFinYear"
               },
               {
                 "variable": "licenseValidityTo",
