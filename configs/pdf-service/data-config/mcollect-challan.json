@@ -261,7 +261,7 @@
                 {
                   "variable": "challanDate", 
                   "value": {
-                    "path": "$.billDate"
+                    "path": "$.auditDetails.lastModifiedTime"
                   },
                   "type": "date"
                 },

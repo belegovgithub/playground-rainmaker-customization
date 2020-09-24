@@ -151,7 +151,8 @@
                                                  false,
                                                  false
                                                ],
-                                                "style": "receipt-table-value-down"
+                                                "style": "receipt-table-value-down",
+                                                "font": "Roboto"
                                              }
                                            ]
                                            ]
@@ -206,7 +207,8 @@
                                               false,
                                               false
                                             ],
-                                             "style": "receipt-table-value-down"
+                                             "style": "receipt-table-value-down",
+                                             "font": "Roboto"
                                           }
                                         ]
                                         ]
@@ -223,26 +225,6 @@
                                         "body": [
                                           [
                                             {
-                                              "text":"{{service_type}}",
-                                              "border":[
-                                                false,
-                                                false,
-                                                false,
-                                                false
-                                              ],
-                                               "style": "receipt-table-value"
-                                            },
-                                            {
-                                              "text":"{{serviceType}}",
-                                              "border":[
-                                                false,
-                                                false,
-                                                false,
-                                                false
-                                              ],
-                                               "style": "receipt-table-value-down"
-                                            },
-                                            {
                                               "text":"{{service_category}}",
                                               "border":[
                                                 false,
@@ -254,6 +236,26 @@
                                             },
                                             {
                                               "text":"{{serviceCategory}}",
+                                              "border":[
+                                                false,
+                                                false,
+                                                false,
+                                                false
+                                              ],
+                                               "style": "receipt-table-value-down"
+                                            },
+                                            {
+                                              "text":"{{service_type}}",
+                                              "border":[
+                                                false,
+                                                false,
+                                                false,
+                                                false
+                                              ],
+                                               "style": "receipt-table-value"
+                                            },
+                                            {
+                                              "text":"{{serviceType}}",
                                               "border":[
                                                 false,
                                                 false,
@@ -315,7 +317,8 @@
                                                  false,
                                                  false
                                                ],
-                                                "style": "receipt-table-value-down"
+                                                "style": "receipt-table-value-down",
+                                                "font": "Roboto"
                                              }
                                            ]
                                            ]
@@ -632,20 +635,6 @@
                  5
                ]
              }, 
-             "receipt-value-label": {
-              "color": "#000000",
-              "font": "Roboto",
-               "bold": false,
-               "fontSize": 12,
-               "fontWeight": 400,
-               "alignment": "left",
-               "margin": [
-                 -60,
-                 5,
-                 0,
-                 5
-               ]
-             },
               "noc-table": {
                "fontSize": 12,
                "color": "#484848",
