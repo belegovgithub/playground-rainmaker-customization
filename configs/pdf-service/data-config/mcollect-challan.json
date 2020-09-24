@@ -13,7 +13,7 @@
             {
               "direct": [
                 {
-                  "variable": "consumnerName", 
+                  "variable": "consumerName", 
                   "value": {
                     "path": "$.citizen.name"
                   }
@@ -60,11 +60,60 @@
                   "type": "date"
                 },
                 {
+                  "variable": "billNo", 
+                  "value": {
+                    "path": "$.billNo"
+                  }
+                },
+                {
+                  "variable": "billDate", 
+                  "value": {
+                    "path": "$.billDate"
+                  },
+                  "type": "date"
+                },
+                {
                   "variable": "toPeriod", 
                   "value": {
                     "path": "$.taxPeriodTo"
                   },
                   "type": "date"
+                },
+                {
+                  "variable": "bill",
+                  "value": {
+                    "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL"
+                  },
+                  "type": "label",
+                  "localisation":{
+                    "required":true,
+                    "prefix": null,
+                    "module":"rainmaker-common"
+                 }
+                },
+                {
+                  "variable": "bill_date",
+                  "value": {
+                    "path": "ABG_COMMON_TABLE_COL_BILL_DATE"
+                  },
+                  "type": "label",
+                  "localisation":{
+                    "required":true,
+                    "prefix": null,
+                    "module":"rainmaker-common"
+                 }
+                },
+                {
+                  "variable": "bill_no",
+                  "value": {
+                    "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_BILL_NO"
+                  },
+                  "type": "label",
+                  "localisation":{
+                    "required":true,
+                    "prefix": null,
+                    "module":"rainmaker-common"
+                 }
                 },
                 {
                     "variable": "letter-code",
@@ -212,7 +261,7 @@
                 {
                   "variable": "challanDate", 
                   "value": {
-                    "path": "$.billDate"
+                    "path": "$.auditDetails.lastModifiedTime"
                   },
                   "type": "date"
                 },
@@ -248,6 +297,13 @@
                       "path": "$.address.street"
                     },
                     "type":"setEmpty"
+                },
+                {
+                  "variable": "buildingName",
+                  "value": {
+                    "path": "$.address.buildingName"
+                  },
+                  "type":"setEmpty"
                 },
                 {
                   "variable": "pinCode",
@@ -485,7 +541,7 @@
                  }
                 },
                 {
-                    "variable": "consumner_Name",
+                    "variable": "consumer_Name",
                     "value": {
                       "path": "PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_CONSUMER_NAME"
                     },

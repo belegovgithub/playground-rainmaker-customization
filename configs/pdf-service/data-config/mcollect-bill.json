@@ -247,6 +247,13 @@
                     "type":"setEmpty"
                 },
                 {
+                  "variable": "buildingName",
+                  "value": {
+                    "path": "$.address.buildingName"
+                  },
+                  "type":"setEmpty"
+              },
+                {
                   "variable": "pinCode",
                   "value": {
                     "path": "$.address.pincode"
@@ -348,9 +355,9 @@
                  }
                 },
                 {
-                  "variable": "payer_name",
+                  "variable": "consumer_Name",
                   "value": {
-                    "path": "PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_PAYER_NAME"
+                    "path": "PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_CONSUMER_NAME"
                   },
                   "type": "label",
                   "localisation":{
@@ -362,7 +369,7 @@
                 {
                   "variable": "payer_contact",
                   "value": {
-                    "path": "PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_PAYER_CONTACT"
+                    "path": "PDF_STATIC_LABEL_CONSOLIDATED_TLCERTIFICATE_LICENSE_CORPORATION_CONTACT"
                   },
                   "type": "label",
                   "localisation":{
@@ -565,6 +572,18 @@
                   }
                 },
                 {
+                  "variable": "challan_date",
+                  "value": {
+                    "path": "PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_CHALLAN_DATE"
+                  },
+                  "type": "label",
+                  "localisation":{
+                    "required":true,
+                    "prefix": null,
+                    "module":"rainmaker-common"
+                 }
+                },
+                {
                   "variable": "Rs",
                   "value": {
                     "path": "PDF_STATIC_LABEL_CONSOLIDATED_TLAPP_RUPEE"
@@ -628,6 +647,18 @@
                           }
                       }
                     ]
+                },
+                {
+                  "path": "http://echallan-services:8080/echallan-services/eChallan/v1/_search",
+                  "queryParam": "challanNo=$.consumerCode,tenantId=$.tenantId",
+                  "apiRequest": null,
+                  "responseMapping":[
+                    {
+                      "variable":"challanDate",                        
+                      "value": "$.challans[0].auditDetails.lastModifiedTime",
+                      "type": "date" 
+                   }
+                  ]
                 }
               ]
             },      

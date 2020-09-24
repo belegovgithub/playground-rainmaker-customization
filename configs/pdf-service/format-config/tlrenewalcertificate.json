@@ -15,45 +15,46 @@
                         [
                           {
                              
-                            "table": {
-                              "widths": [
-                                "*",
-                                "*",
-                                "*"
-                              ],
-                              "body": [
-                                  [
-                                    {
-                                "image": "{{logoImage}}",
-                                "width": 60,
-                                "height": 72,
-                                "alignment": "left",
-                                 "margin": [
-                                        20,
-                                        5,
-                                        0,
-                                        0
-                                ]
-                                  }, 
+                           "table": {
+                            "widths": [
+                              "*",
+                              "*",
+                              "*"
+                            ],
+                            "body": [
+                                [
                                   {
-                                "image": "{{userpic}}",
-                                "width": 60,
-                                "height": 72,
-                                "alignment": "center",
-                                 "margin": [
-                                        0,
-                                        5,
-                                        0,
-                                        7
-                                ]
-                                  },
-                                  {
-                                "text": " "
-                                 
-                                  }
-                                 ]
+                              "image": "{{logoImage}}",
+                              "width": 60,
+                              "height": 72,
+                              "alignment": "left",
+                               "margin": [
+                                      20,
+                                      5,
+                                      0,
+                                      0
                               ]
-                            },
+								}, 
+								{
+								  "text": " "
+								   
+								},
+								{
+                              "image": "{{userpic}}",
+                              "width": 60,
+                              "height": 72,
+                              "alignment": "right",
+                               "margin": [
+                                      0,
+                                      5,
+                                      0,
+                                      7
+                              ]
+								}
+								
+                               ]
+                            ]
+                          },
                             "layout": "noBorders"
                       }  
                         ],
@@ -600,7 +601,7 @@
                 "alignment": "center",
                 "margin": [
                   0,
-                  0,
+                  -40,
                   0,
                   0
                 ]

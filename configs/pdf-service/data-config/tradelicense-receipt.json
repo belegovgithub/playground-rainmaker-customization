@@ -59,7 +59,7 @@
                   "value": {
                     "path": "$.paymentDetails[0].bill.billDetails[0].fromPeriod"
                   },
-                  "type": "date"
+                  "type": "newFinYear"
                 },
                 {
                   "variable": "toPeriod", 

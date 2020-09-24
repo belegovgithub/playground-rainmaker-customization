@@ -101,6 +101,62 @@
                       [
                           {
                                "stack":[
+                                          {
+                                            "table": {
+                                          "widths": [
+                                            "20%",
+                                            "30%",
+                                            "20%",
+                                            "30%"
+                                          ],
+                                          "body": [
+                                            [
+                                              {
+                                                "text":"{{challan_no}}",
+                                                "border":[
+                                                  false,
+                                                  false,
+                                                  false,
+                                                  false
+                                                ],
+                                                "style": "receipt-table-value"
+                                              },
+                                              {
+                                                "text":"{{challanNo}}",
+                                                "border":[
+                                                  false,
+                                                  false,
+                                                  false,
+                                                  false
+                                                ],
+                                                "style": "receipt-table-value-down"
+                                                  
+                                              },
+                                              {
+                                                "text":"{{challan_date}}",
+                                                "border":[
+                                                  false,
+                                                  false,
+                                                  false,
+                                                  false
+                                                ],
+                                                "style": "receipt-table-value"
+                                              },
+                                              {
+                                                "text":"{{challanDate}}",
+                                                "border":[
+                                                  false,
+                                                  false,
+                                                  false,
+                                                  false
+                                                ],
+                                                "style": "receipt-table-value-down",
+                                                "font": "Roboto"
+                                              }
+                                            ]
+                                            ]
+                                        }
+                                      },
                                       {
                                            "table": {
                                          "widths": [
@@ -150,7 +206,8 @@
                                                  false,
                                                  false
                                                ],
-                                                "style": "receipt-table-value-down"
+                                                "style": "receipt-table-value-down",
+                                                "font": "Roboto"
                                              }
                                            ]
                                            ]
@@ -260,7 +317,8 @@
                                             false,
                                             false
                                           ],
-                                           "style": "receipt-table-value-down"
+                                           "style": "receipt-table-value-down",
+                                           "font": "Roboto"
                                         }
                                       ]
                                       ]
@@ -277,7 +335,7 @@
                                          "body": [
                                            [
                                             {
-                                              "text":"{{payer_Name}}",
+                                              "text":"{{consumer_Name}}",
                                               "border":[
                                                 false,
                                                 false,
@@ -325,10 +383,8 @@
                                       {
                                         "table": {
                                       "widths": [
-                                        "20%",
-                                        "30%",
-                                        "20%",
-                                        "30%"   
+                                        "19%",
+                                        "81%"  
                                       ],
                                       "body": [
                                         [
@@ -343,27 +399,7 @@
                                              "style": "receipt-table-value"
                                           },
                                           {
-                                            "text":"{{doorHouseNo}} {{streetName}} {{mohalla}} {{pinCode}}",
-                                            "border":[
-                                              false,
-                                              false,
-                                              false,
-                                              false
-                                            ],
-                                             "style": "receipt-table-value-down"
-                                          },
-                                          {
-                                            "text":"{{challan_no}}",
-                                            "border":[
-                                              false,
-                                              false,
-                                              false,
-                                              false
-                                            ],
-                                             "style": "receipt-table-value"
-                                          },
-                                          {
-                                            "text":"{{challanNo}}",
+                                            "text":"{{doorHouseNo}} {{buildingName}} {{streetName}} {{mohalla}} {{pinCode}}",
                                             "border":[
                                               false,
                                               false,
@@ -595,20 +631,6 @@
                "margin": [
                  0,
                  0,
-                 0,
-                 5
-               ]
-             }, 
-             "receipt-value-label": {
-              "color": "#000000",
-              "font": "Roboto",
-               "bold": false,
-               "fontSize": 12,
-               "fontWeight": 400,
-               "alignment": "left",
-               "margin": [
-                 -60,
-                 5,
                  0,
                  5
                ]
