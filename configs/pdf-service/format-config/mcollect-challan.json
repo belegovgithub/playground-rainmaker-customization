@@ -225,26 +225,6 @@
                                         "body": [
                                           [
                                             {
-                                              "text":"{{service_type}}",
-                                              "border":[
-                                                false,
-                                                false,
-                                                false,
-                                                false
-                                              ],
-                                               "style": "receipt-table-value"
-                                            },
-                                            {
-                                              "text":"{{serviceType}}",
-                                              "border":[
-                                                false,
-                                                false,
-                                                false,
-                                                false
-                                              ],
-                                               "style": "receipt-table-value-down"
-                                            },
-                                            {
                                               "text":"{{service_category}}",
                                               "border":[
                                                 false,
@@ -256,6 +236,26 @@
                                             },
                                             {
                                               "text":"{{serviceCategory}}",
+                                              "border":[
+                                                false,
+                                                false,
+                                                false,
+                                                false
+                                              ],
+                                               "style": "receipt-table-value-down"
+                                            },
+                                            {
+                                              "text":"{{service_type}}",
+                                              "border":[
+                                                false,
+                                                false,
+                                                false,
+                                                false
+                                              ],
+                                               "style": "receipt-table-value"
+                                            },
+                                            {
+                                              "text":"{{serviceType}}",
                                               "border":[
                                                 false,
                                                 false,
