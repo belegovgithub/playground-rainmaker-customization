@@ -572,6 +572,18 @@
                   }
                 },
                 {
+                  "variable": "challan_date",
+                  "value": {
+                    "path": "PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_CHALLAN_DATE"
+                  },
+                  "type": "label",
+                  "localisation":{
+                    "required":true,
+                    "prefix": null,
+                    "module":"rainmaker-common"
+                 }
+                },
+                {
                   "variable": "Rs",
                   "value": {
                     "path": "PDF_STATIC_LABEL_CONSOLIDATED_TLAPP_RUPEE"
@@ -635,6 +647,18 @@
                           }
                       }
                     ]
+                },
+                {
+                  "path": "http://echallan-services:8080/echallan-services/eChallan/v1/_search",
+                  "queryParam": "challanNo=$.consumerCode,tenantId=$.tenantId",
+                  "apiRequest": null,
+                  "responseMapping":[
+                    {
+                      "variable":"challanDate",                        
+                      "value": "$.challans[0].auditDetails.lastModifiedTime",
+                      "type": "date" 
+                   }
+                  ]
                 }
               ]
             },      
