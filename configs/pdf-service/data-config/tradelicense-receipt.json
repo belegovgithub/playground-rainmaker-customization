@@ -167,13 +167,13 @@
                   {
                     "variable": "application_no",
                     "value": {
-                      "path": "NOC_COMMON_TABLE_COL_APP_NO_LABEL"
+                      "path": "TL_COMMON_TABLE_COL_APP_NO"
                     },
                     "type": "label",
                     "localisation":{
                       "required":true,
                       "prefix": null,
-                      "module":"rainmaker-noc"
+                      "module":"rainmaker-tl"
                    }
                   },
                 {
