@@ -858,6 +858,11 @@ ReportDefinitions:
         type: string
         source: uc
         total: false
+      - name: billdate
+        label: reports.uc.billdate
+        type: string
+        source: uc
+        total: false
     searchParams:
       - name: fromDate
         label: reports.uc.fromDate
@@ -873,5 +878,5 @@ ReportDefinitions:
         searchClause: AND bill.billdate <= $toDate
     query: |
         -- Use CTE to force query plan, compute & use CTE later
-        SELECT bill.status as status,servicecategory,amount as totalamount,consumername,challanno,To_char((To_timestamp(bill.billdate / 1000) at time Zone 'Asia/Kolkata'), 'DD/MM/YYYY') as billdate FROM egcl_billdetial AS rh INNER JOIN (SELECT DISTINCT bill.id,status,consumercode, businessservice,message.message as servicecategory from egcl_bill bill LEFT OUTER JOIN message ON CONCAT('BILLINGSERVICE_BUSINESSSERVICE_',replace(businessservice, '.', '_')) = message.code AND message.locale='en_IN')as bill ON bill.id = rh.billid  and businessservice not in ('PT','TL') JOIN (Select challanno as challanno,accountid,eg_user.name as consumername from eg_echallan challan LEFT OUTER JOIN eg_user ON challan.accountid=eg_user.uuid) as challan on challan.challanno = bill.consumercode WHERE rh.tenantid=$tenantid and rh.amount > rh.amountpaid
+        SELECT bill.status as status,servicecategory,amount as totalamount,consumername,challanno,To_char((To_timestamp(bill.billdate / 1000) at time Zone 'Asia/Kolkata'), 'DD/MM/YYYY') as billdate FROM egcl_billdetial AS rh INNER JOIN (SELECT DISTINCT bill.id,status,billdate,consumercode, businessservice,message.message as servicecategory from egcl_bill bill LEFT OUTER JOIN message ON CONCAT('BILLINGSERVICE_BUSINESSSERVICE_',replace(businessservice, '.', '_')) = message.code AND message.locale='en_IN')as bill ON bill.id = rh.billid  and businessservice not in ('PT','TL') JOIN (Select challanno as challanno,accountid,eg_user.name as consumername from eg_echallan challan LEFT OUTER JOIN eg_user ON challan.accountid=eg_user.uuid) as challan on challan.challanno = bill.consumercode WHERE rh.tenantid=$tenantid and rh.amount > rh.amountpaid
     orderby: ORDER BY bill.billdate DESC
