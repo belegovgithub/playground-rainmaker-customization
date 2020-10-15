@@ -62,6 +62,11 @@
                 "variable": "propertyUsageSubType",
                 "value": {
                   "path": "$.property.propertySubUsageType"
+                },
+                "localisation": {
+                  "required": true,
+                  "prefix": "WS_PROPSUBUSGTYPE",
+                  "module": "rainmaker-ws"
                 }
               },
               {
@@ -137,7 +142,7 @@
                       "value": "name"
                     },
                     {
-                      "variable": "emailLabel",
+                      "variable": "ownerEmailId",
                       "value":"emailId"
                     },
                     {
@@ -147,7 +152,7 @@
                     {
                       "variable": "dob",
                       "value": "dob",
-                      "type": "date"
+                      "type":"date"
                     },
                     {
                       "variable": "guardianName",
