@@ -81,6 +81,10 @@
                                    "style": "receipt-logo-title"
                                  },
                                  {
+                                  "text":"{{challanStatus}}",
+                                   "style": "receipt-logo-title-status"
+                                 },
+                                 {
                                   "text":"{{rule-number}}",
                                    "alignment":"center",
                                    "style": "receipt-logo-title"
@@ -635,6 +639,19 @@
                  5
                ]
              }, 
+             "receipt-logo-title-status": {
+              "color": "#FF0000",
+              "alignment": "right",
+              "bold": true,
+              "fontSize": 13,
+              "fontWeight": 500,
+              "margin": [
+                0,
+              -22,
+              30,
+                0
+              ]
+           },
               "noc-table": {
                "fontSize": 12,
                "color": "#484848",

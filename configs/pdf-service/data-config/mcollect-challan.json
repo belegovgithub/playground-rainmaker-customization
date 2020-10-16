@@ -312,6 +312,13 @@
                   },
                   "type":"setEmpty"
               },
+              {
+                "variable": "challanStatus",
+                "value": {
+                  "path": "$.applicationStatus"
+                },
+                "type":"challanStatus"
+              },
                 {
                     "variable": "mohalla",
                     "value": {
