@@ -319,6 +319,13 @@
                 },
                 "type":"challanStatus"
               },
+              {
+                "variable": "challanRemarks",
+                "value": {
+                  "path": "$.additionalDetail.cancellComment"
+                },
+                "type":"setEmpty"
+              },
                 {
                     "variable": "mohalla",
                     "value": {
