@@ -48,8 +48,8 @@
                   },
                   "localisation":{
                     "required":true,
-                    "prefix":"MODULE",   
-                    "module":"rainmaker-pdf"
+                    "prefix":"BILLINGSERVICE_BUSINESSSERVICE",   
+                    "module":"rainmaker-uc"
                  }
                 },
                 {
