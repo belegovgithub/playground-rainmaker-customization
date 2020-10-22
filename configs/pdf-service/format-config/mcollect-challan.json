@@ -85,10 +85,6 @@
                                    "style": "receipt-logo-title-status"
                                  },
                                  {
-                                  "text":"{{challanRemarks}}",
-                                   "style": "receipt-logo-title-remarks"
-                                 },
-                                 {
                                   "text":"{{rule-number}}",
                                    "alignment":"center",
                                    "style": "receipt-logo-title"
@@ -420,7 +416,28 @@
                                         ]
                                         ]
                                     }
-                                   }
+                                   },
+                                   {
+                                    "table": {
+                                    "widths": [
+                                                "*"   
+                                             ],
+                                    "body": [
+                                      [
+                                        {
+                                          "text":"{{challanRemarks}}",
+                                          "border":[
+                                              false,
+                                              false,
+                                              false,
+                                              false
+                                          ],
+                                         "style": "receipt-logo-title-remarks-new"
+                                        } 
+                                      ]
+                                    ]
+                                  }
+                                  }
                                    ]
                           }
                       ]
@@ -653,7 +670,7 @@
                 0,
               -22,
               60,
-                20
+                0
               ]
            },
            "receipt-logo-title-remarks": {
@@ -669,6 +686,18 @@
               -10
             ]
          },
+          "receipt-logo-title-remarks-new": {
+            "color": "#FF0000",
+            "bold": true,
+            "fontSize": 10,
+            "fontWeight": 500,
+            "margin": [
+              0,
+              0,
+              0,
+              0
+            ]
+        },
               "noc-table": {
                "fontSize": 12,
                "color": "#484848",

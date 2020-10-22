@@ -324,7 +324,7 @@
                 "value": {
                   "path": "$.additionalDetail.cancellComment"
                 },
-                "type":"setEmpty"
+                "type":"statusMessage"
               },
                 {
                     "variable": "mohalla",
