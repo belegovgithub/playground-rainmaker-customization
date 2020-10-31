@@ -2,7 +2,7 @@ serviceMaps:
  serviceName: lams-services
  mappings:
  - version: 1.0
-   description: Persists lease renewal details in eg_lams_leaserenewal  table
+   description: Persists lease renewal details in eg_lams_leaserenewal table
    fromTopic: save-lams-lr
    isTransaction: true
    queryMaps:
