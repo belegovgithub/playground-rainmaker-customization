@@ -26,7 +26,7 @@
                             {
                                 "variable": "municipalCouncil",
                                 "value": {
-                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_SUNAM_DEV_MUNICIPAL_COUNCIL"
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_MUNICIPAL_COUNCIL"
                                 },
                                 "type": "label",
                                 "localisation": {
