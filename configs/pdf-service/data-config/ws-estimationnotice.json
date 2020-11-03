@@ -1,7 +1,7 @@
 {
     "key": "ws-estimationnotice",
     "DataConfigs": {
-        "serviceName": "rainmaker-pdf",
+        "serviceName": "rainmaker-common",
         "version": "1.0.0",
         "baseKeyPath": "$.WnsConnection.*",
         "entityIdPath": "$.applicationNo",
@@ -484,17 +484,17 @@
                                 "apiRequest": null,
                                 "responseMapping": [
                                     {
-                                        "variable": "logoImage",                        
-                                        "value":"$.MdmsRes.tenant.tenants[0].logoIdPdf",
-                                        "type":"image"      
-                                      },
+                                        "variable": "logoImage",
+                                        "value": "$.MdmsRes.tenant.tenants[0].logoId",
+                                        "type": "image"
+                                    },
                                     {
                                         "variable": "logo_header",
                                         "value": "$.MdmsRes.tenant.tenants[0].code",
                                         "localisation": {
                                             "required": true,
                                             "prefix": "TENANT_TENANTS",
-                                            "module": "rainmaker-pdf"
+                                            "module": "rainmaker-common"
                                         }
                                     }
                                 ]
