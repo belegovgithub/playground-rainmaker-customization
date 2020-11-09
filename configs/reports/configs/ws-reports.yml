@@ -154,7 +154,7 @@ ReportDefinitions:
     type: string
     source: ws
     total: true
-  - name: total
+  - name: totalCollection
     label: report.ws.totalCollection
     type: string
     source: ws
