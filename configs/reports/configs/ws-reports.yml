@@ -184,3 +184,58 @@ ReportDefinitions:
    SELECT COUNT(applicationno) as totalConnections, connectiontype,SUM(onl.totalamountpaid) as online,SUM(offl.totalamountpaid) as offline, COALESCE(SUM(onl.totalamountpaid),0) + COALESCE(SUM(offl.totalamountpaid),0) as totalCollection FROM eg_ws_connection as ws INNER JOIN eg_ws_service as service ON service.connection_id =ws.id INNER JOIN egcl_bill bill ON bill.consumercode = ws.applicationno  and bill.status != 'Cancelled' LEFT OUTER JOIN egcl_paymentdetail as pd ON pd.billid = bill.id LEFT OUTER JOIN (SELECT * FROM egcl_payment WHERE paymentmode = 'ONLINE') AS onl ON onl.id = pd.paymentid LEFT OUTER JOIN (SELECT * FROM egcl_payment WHERE paymentmode != 'ONLINE' ) AS offl ON offl.id = pd.paymentid WHERE  ws.tenantId LIKE $tenantid  AND connectiontype IS NOT NULL AND ws.tenantId != 'pb.testing'
   groupby: group by connectiontype
 
+
+- reportName: UsageTypeWaterCollection 
+  summary: UsageTypeWaterCollection 
+  version: 1.0.0
+  moduleName: rainmaker-ws
+  sourceColumns:
+  - name: usagecategorycount
+    label: report.ws.usagecategorycount
+    type: string
+    source: ws
+    total: false
+  - name: usagecategory
+    label: report.ws.usagecategory
+    type: string
+    source: ws
+    total: false
+  - name: online
+    label: report.ws.online.collection
+    type: string
+    source: ws
+    total: true
+  - name: offline
+    label: report.ws.offline.collection
+    type: string
+    source: ws
+    total: true
+  - name: totalCollection
+    label: report.ws.totalCollection
+    type: string
+    source: ws
+    total: true
+  searchParams:
+  - name: fromDate
+    label: reports.ws.fromDate
+    type: epoch
+    source: ws
+    isMandatory: false
+    searchClause: AND ws.lastmodifiedtime >= $fromDate
+  - name: toDate
+    label: reports.ws.toDate
+    type: epoch
+    source: ws
+    isMandatory: false
+    searchClause: AND ws.lastmodifiedtime <= $toDate
+  - name: ulb
+    label: report.ws.tenantId
+    type: singlevaluelist
+    pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=tenant&masterName=tenants|$.MdmsRes.tenant.tenants.*.code|$.MdmsRes.tenant.tenants.*.name
+    source: ws
+    wrapper: true
+    isMandatory: false
+    searchClause: AND ws.tenantId = $ulb
+  query: |
+   SELECT COUNT(applicationno) as usagecategorycount,usagecategory,SUM(onl.totalamountpaid) as online,SUM(offl.totalamountpaid) as offline, COALESCE(SUM(onl.totalamountpaid),0) + COALESCE(SUM(offl.totalamountpaid),0) as totalCollection FROM eg_ws_connection as ws INNER JOIN eg_pt_property ON eg_pt_property.id =ws.property_id INNER JOIN egcl_bill bill ON bill.consumercode = ws.applicationno  and bill.status != 'Cancelled'LEFT OUTER JOIN egcl_paymentdetail as pd ON pd.billid = bill.id LEFT OUTER JOIN (SELECT * FROM egcl_payment WHERE paymentmode = 'ONLINE') AS onl ON onl.id = pd.paymentid LEFT OUTER JOIN (SELECT * FROM egcl_payment WHERE paymentmode != 'ONLINE' ) AS offl ON offl.id = pd.paymentid WHERE  ws.tenantId LIKE $tenantid  and usagecategory is NOT NULL
+  groupby: group by usagecategory
