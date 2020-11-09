@@ -59,7 +59,7 @@ ReportDefinitions:
     type: string
     source: ws
     total: false
-  - name: name
+  - name: username
     label: report.ws.eguser.username
     type: string
     source: ws
