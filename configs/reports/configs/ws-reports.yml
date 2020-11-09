@@ -59,6 +59,11 @@ ReportDefinitions:
     type: string
     source: ws
     total: false
+  - name: receiptnumber
+    label: report.ws.receiptnumber
+    type: string
+    source: ws
+    total: false 
   - name: name
     label: report.ws.eguser.username
     type: string
