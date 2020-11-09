@@ -145,7 +145,7 @@ ReportDefinitions:
 
 
 - reportName: CollectionforWaterConnectionType 
-  summary: CollectionforWaterConnectionType 
+  summary: Water Connection Type Report
   version: 1.0.0
   moduleName: rainmaker-ws
   sourceColumns:
@@ -201,7 +201,7 @@ ReportDefinitions:
 
 
 - reportName: UsageTypeWaterCollection 
-  summary: UsageTypeWaterCollection 
+  summary: Water Usage Type Report
   version: 1.0.0
   moduleName: rainmaker-ws
   sourceColumns:
