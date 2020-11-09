@@ -60,7 +60,7 @@ ReportDefinitions:
     source: ws
     total: false
   - name: name
-    label: report.ws.eguser.name
+    label: report.ws.eguser.username
     type: string
     source: ws
     total: false
