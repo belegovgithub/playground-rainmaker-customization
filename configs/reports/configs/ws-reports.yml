@@ -127,3 +127,60 @@ ReportDefinitions:
     searchClause: AND ws.tenantId = $ulb
   query: SELECT initcap(split_part(ws.tenantId,'.', 2)) as tenantId,message.message as status,to_char(To_timestamp(ws.lastmodifiedtime / 1000),'DD/MM/YYYY') as lastmodifiedtime,eg_user.username,eg_user.mobilenumber,applicationno,feeType,pgtxn.bank_transaction_no as banktxnNo,totalamount,To_char(To_timestamp(pd.manualreceiptdate/ 1000), 'DD/MM/YYYY') AS g8issuedate,pd.manualreceiptnumber as g8receiptno FROM eg_ws_connection ws   INNER JOIN egcl_bill bill ON bill.consumercode = ws.applicationno and bill.status !='Cancelled' JOIN egcl_billdetial as bild ON bild.billid = bill.id INNER JOIN(Select DISTINCT billdetailid,amount, taxheadcode,message.message as feeType from egcl_billaccountdetail bilaccd INNER JOIN message ON taxheadcode = message.code AND message.locale='en_IN')  as bilaccd ON bild.id = bilaccd .billdetailid LEFT OUTER JOIN egcl_paymentdetail as pd ON pd.billid =bill.id LEFT OUTER JOIN egcl_payment as pay ON pay.id = pd.paymentid and pay.paymentstatus != 'CANCELLED' LEFT OUTER Join eg_pg_transactions as pgtxn ON pay.transactionnumber = pgtxn.txn_id LEFT OUTER JOIN eg_pt_owner as owner ON owner.propertyid =property_id LEFT OUTER JOIN eg_user  ON uuid =owner.userid LEFT OUTER JOIN message ON substring(message.code,11) ='CONNECTION_ACTIVATED' AND message.locale = 'en_IN' WHERE ws.tenantId != 'pb.testing'
   orderby: ORDER BY ws.tenantId asc
+
+
+- reportName: WaterConnectionType Collection
+  summary: WaterConnectionType Collection
+  version: 1.0.0
+  moduleName: rainmaker-ws
+  sourceColumns:
+  - name: totalconnections
+    label: report.ws.totalconnections
+    type: string
+    source: ws
+    total: false
+  - name: connectiontype
+    label: report.ws.connectiontype
+    type: string
+    source: ws
+    total: false
+  - name: online
+    label: report.tl.online.collection
+    type: string
+    source: tl
+    total: true
+  - name: offline
+    label: report.tl.offline.collection
+    type: string
+    source: tl
+    total: true
+  - name: total
+    label: report.tl.totalCollection
+    type: string
+    source: tl
+    total: true
+  searchParams:
+  - name: fromDate
+    label: reports.tl.fromDate
+    type: epoch
+    source: tl
+    isMandatory: false
+    searchClause: AND issueddate >= $fromDate
+  - name: toDate
+    label: reports.tl.toDate
+    type: epoch
+    source: tl
+    isMandatory: false
+    searchClause: AND issueddate <= $toDate
+  - name: ulb
+    label: report.tl.tenantId
+    type: singlevaluelist
+    pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=tenant&masterName=tenants|$.MdmsRes.tenant.tenants.*.code|$.MdmsRes.tenant.tenants.*.name
+    source: tl
+    wrapper: true
+    isMandatory: false
+    searchClause: AND tl.tenantId = $ulb
+  query: |
+   SELECT COUNT(applicationno) as totalconnections, connectiontype,SUM(onl.totalamountpaid) as online,SUM(offl.totalamountpaid) as offline, COALESCE(SUM(onl.totalamountpaid),0) + COALESCE(SUM(offl.totalamountpaid),0) as totalcollection FROM eg_ws_connection as ws INNER JOIN eg_ws_service as service ON service.connection_id =ws.id INNER JOIN egcl_bill bill ON bill.consumercode = ws.applicationno  and bill.status != 'Cancelled' LEFT OUTER JOIN egcl_paymentdetail as pd ON pd.billid = bill.id LEFT OUTER JOIN (SELECT * FROM egcl_payment WHERE paymentmode = 'ONLINE') AS onl ON onl.id = pd.paymentid LEFT OUTER JOIN (SELECT * FROM egcl_payment WHERE paymentmode != 'ONLINE' ) AS offl ON offl.id = pd.paymentid WHERE  ws.tenantId LIKE $tenantid  AND connectiontype IS NOT NULL AND ws.tenantId != 'pb.testing'
+  groupby: group by connectiontype
+  orderby: ORDER BY tl.tenantId asc
