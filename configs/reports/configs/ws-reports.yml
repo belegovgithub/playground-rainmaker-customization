@@ -38,8 +38,9 @@ ReportDefinitions:
   orderby: ORDER BY case message.message when 'Pending Application' then 1 when 'Pending Payment' then 2 when 'Pending Approval' then 3 when 'Approved' then 4 when 'Rejected' then 5 when 'Cancelled' then 6 else 7 end
 
 
-- reportName: StateLevelWaterRegistryReport
+- reportName: WaterRegistryReport
   summary: Water Registry Report
+  decryptionPathId: WaterRegistryReport
   version: 1.0.0
   moduleName: rainmaker-ws
   externalService:
