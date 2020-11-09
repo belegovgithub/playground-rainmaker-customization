@@ -37,3 +37,92 @@ ReportDefinitions:
   groupby: GROUP BY message.message
   orderby: ORDER BY case message.message when 'Pending Application' then 1 when 'Pending Payment' then 2 when 'Pending Approval' then 3 when 'Approved' then 4 when 'Rejected' then 5 when 'Cancelled' then 6 else 7 end
 
+
+- reportName: StateLevelWaterRegistryReport
+  summary: Water Registry Report
+  version: 1.0.0
+  moduleName: rainmaker-ws
+  externalService:
+  - entity: $.messages[*]
+    apiURL: http://egov-localization:8080/localization/messages/v1/_search?locale=en_IN&tenantId=pb&module=rainmaker-ws
+    keyOrder: code,message
+    tableName: tbl_localization
+  sourceColumns:
+  - name: tenantId
+    label: report.ws.tenantId
+    type: string
+    source: ws
+    total: false
+  - name: applicationno
+    label: report.ws.applicationno
+    type: string
+    source: ws
+    total: false
+  - name: name
+    label: report.ws.eguser.name
+    type: string
+    source: ws
+    total: false
+  - name: mobilenumber
+    label: report.ws.eguser.mobilenumber
+    type: string
+    source: ws
+    total: false
+  - name: status
+    label: report.ws.status
+    type: string
+    source: ws
+    total: false
+  - name: lastmodifiedtime
+    label: report.ws.lastmodifiedtime
+    type: string
+    source: ws
+    total: false
+  - name: feeType
+    label: report.ws.feeType
+    type: string
+    source: ws
+    total: false
+  - name: totalamount
+    label: report.ws.receipt.totalamount
+    type: string
+    source: ws
+    total: true
+  - name: banktxnNo
+    label: report.tl.banktxnNo
+    type: string
+    source: ws
+    total: false
+  - name: g8issuedate
+    label: report.ws.g8issuedate
+    type: string
+    source: ws
+    total: false
+  - name: g8receiptno
+    label: report.ws.g8receiptno
+    type: string
+    source: ws
+    total: false
+  searchParams:
+  - name: fromDate
+    label: reports.ws.fromDate
+    type: epoch
+    source: ws
+    isMandatory: false
+    searchClause: AND lastmodifiedtime >= $fromDate
+  - name: toDate
+    label: reports.ws.toDate
+    type: epoch
+    source: ws
+    isMandatory: false
+    searchClause: AND lastmodifiedtime <= $toDate
+  - name: ulb
+    label: report.ws.tenantId
+    type: singlevaluelist
+    pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=tenant&masterName=tenants|$.MdmsRes.tenant.tenants.*.code|$.MdmsRes.tenant.tenants.*.name
+    source: ws
+    wrapper: true
+    isMandatory: false
+    searchClause: AND ws.tenantId = $ulb
+  query: SELECT initcap(split_part(ws.tenantId,'.', 2)) as tenantId,message.message as status,to_char(To_timestamp(ws.lastmodifiedtime / 1000),'DD/MM/YYYY') as lastmodifiedtime,eg_user.username,eg_user.mobilenumber,applicationno,feeType,pgtxn.bank_transaction_no as banktxnNo,totalamount,To_char(To_timestamp(pd.manualreceiptdate/ 1000), 'DD/MM/YYYY') AS g8issuedate,pd.manualreceiptnumber as g8receiptno FROM eg_ws_connection ws   INNER JOIN egcl_bill bill ON bill.consumercode = ws.applicationno and bill.status !='Cancelled' JOIN egcl_billdetial as bild ON bild.billid = bill.id INNER JOIN(Select DISTINCT billdetailid,amount, taxheadcode,message.message as feeType from egcl_billaccountdetail bilaccd INNER JOIN message ON taxheadcode = message.code AND message.locale='en_IN')  as bilaccd ON bild.id = bilaccd .billdetailid LEFT OUTER JOIN egcl_paymentdetail as pd ON pd.billid =bill.id LEFT OUTER JOIN egcl_payment as pay ON pay.id = pd.paymentid and pay.paymentstatus != 'CANCELLED' LEFT OUTER Join eg_pg_transactions as pgtxn ON pay.transactionnumber = pgtxn.txn_id LEFT OUTER JOIN eg_pt_owner as owner ON owner.propertyid =property_id LEFT OUTER JOIN eg_user  ON uuid =owner.userid LEFT OUTER JOIN message ON substring(message.code,11) ='CONNECTION_ACTIVATED' AND message.locale = 'en_IN' WHERE ws.tenantId != 'pb.testing'
+  orderby: ORDER BY ws.tenantId asc
