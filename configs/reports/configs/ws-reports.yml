@@ -109,13 +109,13 @@ ReportDefinitions:
     type: epoch
     source: ws
     isMandatory: false
-    searchClause: AND lastmodifiedtime >= $fromDate
+    searchClause: AND ws.lastmodifiedtime >= $fromDate
   - name: toDate
     label: reports.ws.toDate
     type: epoch
     source: ws
     isMandatory: false
-    searchClause: AND lastmodifiedtime <= $toDate
+    searchClause: AND ws.lastmodifiedtime <= $toDate
   - name: ulb
     label: report.ws.tenantId
     type: singlevaluelist
