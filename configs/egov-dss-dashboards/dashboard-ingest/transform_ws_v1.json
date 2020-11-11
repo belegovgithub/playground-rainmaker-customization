@@ -18,8 +18,8 @@
         "appCreatedDate": "appCreatedDate"
       },
       "propertyDetails": {
-        "usageCategory": ".usageCategory",
-        "propertyType": ".propertyType",
+        "usageCategory": "usageCategory",
+        "propertyType": "propertyType",
         "channel": "channel"
       }
     }
