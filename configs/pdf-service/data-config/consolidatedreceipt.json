@@ -45,7 +45,7 @@
                   "localisation":{
                     "required":true,
                     "prefix":"BILLINGSERVICE_BUSINESSSERVICE",   
-                    "module":"rainmaker-uc"
+                    "module":"rainmaker-abg"
                  }
                 },
                 {
@@ -156,18 +156,6 @@
                     "variable": "letter-code",
                     "value": {
                       "path": "PDF_STATIC_LABEL_CONSOLIDATED_TLCERTIFICATE_MUNICIPAL_CORPORATION"
-                    },
-                    "type": "label",
-                    "localisation":{
-                      "required":true,
-                      "prefix": null,
-                      "module":"rainmaker-pdf"
-                   }
-                  },
-                  {
-                    "variable": "challan_no",
-                    "value": {
-                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_CHALLAN_NO"
                     },
                     "type": "label",
                     "localisation":{
@@ -549,7 +537,7 @@
                       },
                       {
                         "variable": "tradeLicenseTax",
-                        "value": "amount"
+                        "value": "adjustedAmount"
                       }
                     ]
                   }
@@ -557,7 +545,7 @@
                 {
                   "variable":"totalAmount",
                   "value": {
-                    "path": "$.paymentDetails[0].bill.billDetails[0].amount"
+                    "path": "$.paymentDetails[0].bill.billDetails[0].amountPaid"
                   }
                 }
                  
@@ -581,6 +569,22 @@
                       }
                     ]
                 },
+                { 
+                  "path": "http://egov-mdms-service:8080/egov-mdms-service/v1/_get",
+                  "queryParam": "moduleName=common-masters&masterName=uiCommonPay&tenantId=pb&filter=%5B?(@.code=='{$.paymentDetails[0].businessService}')%5D",
+                  "apiRequest": null,
+                  "responseMapping":[
+                    {
+                      "variable": "challan_no",
+                      "value":"$.MdmsRes['common-masters'].uiCommonPay[0].headerBandLabel",
+                      "localisation":{
+                        "required":true,
+                        "prefix": null,
+                        "module":"rainmaker-common"
+                        }
+                    }
+                  ]
+              },
                 { 
                   "path": "http://egov-mdms-service:8080/egov-mdms-service/v1/_get",
                   "queryParam": "moduleName=tenant&masterName=footer&tenantId=pb&filter=%5B?(@.code=='{$.tenantId}' %26%26 @.service=='{$.paymentDetails[0].businessService}')%5D",
