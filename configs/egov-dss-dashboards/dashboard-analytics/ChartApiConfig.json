@@ -5495,7 +5495,7 @@
   },
   
   "swConCollection": {
-    "chartName": "DSS_CONNECTION_COLLECTION",
+    "chartName": "DSS_SW_CONNECTION_COLLECTION",
     "queries": [
      
        {
@@ -5520,7 +5520,7 @@
   },
   
   "swChargesCollection": {
-    "chartName": "DSS_WATER_CHARGES_COLLECTION",
+    "chartName": "DSS_SEWERAGE_CHARGES_COLLECTION",
     "queries": [
      
        {

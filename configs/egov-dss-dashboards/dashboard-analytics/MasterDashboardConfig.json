@@ -3701,36 +3701,6 @@
               ]
             }
           ]
-        },
-        {
-          "row": 9,
-          "name": "DSS_SERVICE",
-          "vizArray": [
-            {
-              "id": 231,
-              "name": "DSS_W&S_CONNECTION_AGEING",
-              "dimensions": {
-                "height": 350,
-                "width": 12
-              },
-              "vizType": "chart",
-              "label": "",
-              "noUnit": false,
-              "isCollapsible": true,
-              "charts": [
-                {
-                  "id": "wsConnectionAgeingDDR",
-                  "name": "",
-                  "code": "",
-                  "chartType": "table",
-                  "filter": "",
-                  "headers": [],
-                  "tabName": "Boundary"
-                }
-              ]
-            }
-
-          ]
         }
       ]
     },
@@ -4099,36 +4069,6 @@
               ]
             }
           ]
-        },
-        {
-          "row": 9,
-          "name": "DSS_SERVICE",
-          "vizArray": [
-            {
-              "id": 231,
-              "name": "DSS_W&S_CONNECTION_AGEING",
-              "dimensions": {
-                "height": 350,
-                "width": 12
-              },
-              "vizType": "chart",
-              "label": "",
-              "noUnit": false,
-              "isCollapsible": true,
-              "charts": [
-                {
-                  "id": "wsConnectionAgeingDDR",
-                  "name": "",
-                  "code": "",
-                  "chartType": "table",
-                  "filter": "",
-                  "headers": [],
-                  "tabName": "Boundary"
-                }
-              ]
-            }
-
-          ]
         }
       ]
     },
@@ -4172,7 +4112,7 @@
                 },
                 {
                   "id": "swConCollection",
-                  "name": "DSS_CONNECTION_COLLECTION",
+                  "name": "DSS_SW_CONNECTION_COLLECTION",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
@@ -4180,7 +4120,7 @@
                 },
                 {
                   "id": "swChargesCollection",
-                  "name": "DSS_WATER_CHARGES_COLLECTION",
+                  "name": "DSS_SEWERAGE_CHARGES_COLLECTION",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
@@ -4511,36 +4451,6 @@
                 }
               ]
             }
-          ]
-        },
-        {
-          "row": 9,
-          "name": "DSS_SERVICE",
-          "vizArray": [
-            {
-              "id": 231,
-              "name": "DSS_SW_CONNECTION_AGEING",
-              "dimensions": {
-                "height": 350,
-                "width": 12
-              },
-              "vizType": "chart",
-              "label": "",
-              "noUnit": false,
-              "isCollapsible": true,
-              "charts": [
-                {
-                  "id": "swConnectionAgeingDDR",
-                  "name": "",
-                  "code": "",
-                  "chartType": "table",
-                  "filter": "",
-                  "headers": [],
-                  "tabName": "Boundary"
-                }
-              ]
-            }
-
           ]
         }
       ]
@@ -4909,36 +4819,6 @@
                 }
               ]
             }
-          ]
-        },
-        {
-          "row": 9,
-          "name": "DSS_SERVICE",
-          "vizArray": [
-            {
-              "id": 231,
-              "name": "DSS_SW_CONNECTION_AGEING",
-              "dimensions": {
-                "height": 350,
-                "width": 12
-              },
-              "vizType": "chart",
-              "label": "",
-              "noUnit": false,
-              "isCollapsible": true,
-              "charts": [
-                {
-                  "id": "swConnectionAgeingDDR",
-                  "name": "",
-                  "code": "",
-                  "chartType": "table",
-                  "filter": "",
-                  "headers": [],
-                  "tabName": "Boundary"
-                }
-              ]
-            }
-
           ]
         }
       ]
