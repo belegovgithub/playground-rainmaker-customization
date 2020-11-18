@@ -46,7 +46,7 @@ serviceMaps:
 
           - jsonPath: $.leases.*.leaseDetails.surveyNo
 
-          - jsonPath: $.leases.*.leaseDetails.termno
+          - jsonPath: $.leases.*.leaseDetails.termNo
 
           - jsonPath: $.leases.*.leaseDetails.termExpiryDate
 
