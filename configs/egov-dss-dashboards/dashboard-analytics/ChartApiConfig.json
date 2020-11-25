@@ -3440,7 +3440,7 @@
     ],
     "chartType": "xtable",
     "valueType": "number",
-    "drillChart": "xpgrStatusByWard",
+    "drillChart": "none",
     "plotLabel": "Boundary",
     "excludedColumns": ["withinSLA"],
     "computedFields": [
