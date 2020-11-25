@@ -863,7 +863,7 @@ ReportDefinitions:
     type: string
     source: tl
     total: false
-  - name: tlexpiryDate
+  - name: formattedExpiredDate
     label: report.tl.tlexpiryDate
     type: string
     source: tl
