@@ -961,13 +961,13 @@ ReportDefinitions:
     type: epoch
     source: tl
     isMandatory: false
-    searchClause: AND formattedIssuedDate >= $fromDate
+    searchClause: AND tl.formattedIssuedDate >= $fromDate
   - name: toDate
     label: reports.tl.toDate
     type: epoch
     source: tl
     isMandatory: false
-    searchClause: AND formattedIssuedDate  <= $toDate
+    searchClause: AND tl.formattedExpiredDate  <= $toDate
   - name: status
     label: report.tl.status
     type: singlevaluelist
