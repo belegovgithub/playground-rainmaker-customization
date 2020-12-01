@@ -904,7 +904,7 @@ ReportDefinitions:
   - name: financialyear
     label: report.tl.financialyear
     type: singlevaluelist
-    pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=egf-master&masterName=FinancialYear|$.MdmsRes.egf-master.FinancialYear[*].endingDate|$.MdmsRes.egf-master.FinancialYear[*].code
+    pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=egf-master&masterName=FinancialYear&filter=%5B?(@.module=='TL')%5D|$.MdmsRes.egf-master.FinancialYear[*].endingDate|$.MdmsRes.egf-master.FinancialYear[*].code
     source: tl
     wrapper: true
     isMandatory: false
