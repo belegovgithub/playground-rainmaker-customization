@@ -137,7 +137,7 @@ ReportDefinitions:
     LEFT OUTER JOIN egcl_paymentdetail as pd ON pd.billid = bill.id
     LEFT OUTER JOIN egcl_payment as pay ON pay.id = pd.paymentid and pay.paymentstatus != 'CANCELLED'
     LEFT OUTER Join eg_pg_transactions as pgtxn ON pay.transactionnumber = pgtxn.txn_id
-    WHERE tl.Status in ('APPROVED', 'PAID', 'CANCELLED') AND tl.tenantId != 'pb.testing' AND tl.tenantId LIKE $tenantid
+    WHERE tl.Status in ('APPROVED', 'PAID', 'CANCELLED') AND tl.tenantId LIKE $tenantid
 
 - reportName: StateTradeLicenseCancelledRegistryReport
   summary: TL Cancelled Receipt Register Report
@@ -492,7 +492,7 @@ ReportDefinitions:
         	  LEFT OUTER JOIN egcl_paymentdetail as pd ON pd.billid = bill.id
               LEFT OUTER JOIN (SELECT * FROM egcl_payment WHERE paymentmode = 'ONLINE') AS onl ON onl.id = pd.paymentid 
               LEFT OUTER JOIN (SELECT * FROM egcl_payment WHERE paymentmode != 'ONLINE' ) AS offl ON offl.id = pd.paymentid 
-            WHERE tl.status IN ('APPROVED','PAID','REJECTED', 'CANCELLED') AND tl.tenantId != 'pb.testing'
+            WHERE tl.status IN ('APPROVED','PAID','REJECTED', 'CANCELLED')
             AND tl.tenantId LIKE $tenantid
   groupby: GROUP BY tradeSubType
 
@@ -980,7 +980,7 @@ ReportDefinitions:
   - name: status
     label: report.tl.status
     type: singlevaluelist
-    pattern: list://INITIATED:Initiated,PENDINGAPPLFEE:Pending for Application Fee,APPLIED:Pending for Document Verification,FIELDINSPECTION:Pending for Field Inspection,PENDINGAPPROVAL:Pending for Approval,APPROVED:Approved,PENDINGPAYMENT:Pending for Payment,EXPIRED:Expired,CANCELLED:Cancelled,REJECTED:Rejected
+    pattern: list://INITIATED:Initiated,PENDINGAPPLFEE:Pending for Application Fee,APPLIED:Pending For Engg Section Verification,FIELDINSPECTION:Pending For Sanitation Section Verification,CITIZENACTIONREQUIRED:Pending for Citizen Action,PENDINGAPPROVAL:Pending for Approval,APPROVED:Approved,PENDINGPAYMENT:Pending for Payment,EXPIRED:Expired,CANCELLED:Cancelled,REJECTED:Rejected
     source: uc
     wrapper: true
     isMandatory: false
