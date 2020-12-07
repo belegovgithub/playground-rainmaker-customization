@@ -209,3 +209,19 @@ serviceMaps:
           - jsonPath: $.leases.*.auditDetails.lastModifiedTime
 
           - jsonPath: $.leases.*.leaseDetails.id
+          
+ - version: 1.0
+   description: Persists lease Survey details in eg_lams_survey_no_details  table
+   fromTopic: update-lams-survey
+   isTransaction: true
+   queryMaps:
+       
+       - query: UPDATE eg_lams_survey_no_details SET lesse = ?, finaltermexpirydate = ? WHERE id = ?;
+         basePath: leases.*.leaseDetails
+         jsonMaps:
+
+          - jsonPath: $.leases.*.leaseDetails.lesseAsPerGLR
+
+          - jsonPath: $.leases.*.leaseDetails.finalTermExpiryDate
+
+          - jsonPath: $.leases.*.leaseDetails.surveyId
