@@ -4,6 +4,7 @@
         "defaultStyle": {
             "font": "Cambay"
              },
+             "watermark": { "text": "BEL UAT BEL UAT", "color": "gery", "opacity": 0.1, "bold": true, "italics": false },
             "content": [
                {
                  "style":"noc-head",
@@ -15,46 +16,45 @@
                         [
                           {
                              
-                           "table": {
-                            "widths": [
-                              "*",
-                              "*",
-                              "*"
-                            ],
-                            "body": [
-                                [
+                            "table": {
+                              "widths": [
+                                "*",
+                                "*",
+                                "*"
+                              ],
+                              "body": [
+                                  [
+                                    {
+                                "image": "{{logoImage}}",
+                                "width": 60,
+                                "height": 72,
+                                "alignment": "left",
+                                 "margin": [
+                                        20,
+                                        5,
+                                        0,
+                                        0
+                                ]
+                                  }, 
                                   {
-                              "image": "{{logoImage}}",
-                              "width": 60,
-                              "height": 72,
-                              "alignment": "left",
-                               "margin": [
-                                      20,
-                                      5,
-                                      0,
-                                      0
+                                "image": "{{userpic}}",
+                                "width": 60,
+                                "height": 72,
+                                "alignment": "center",
+                                 "margin": [
+                                        0,
+                                        5,
+                                        0,
+                                        7
+                                ]
+                                  },
+                                  {
+                                "text": " "
+                                 
+                                  }
+                                 ]
                               ]
-								}, 
-								{
-								  "text": " "
-								   
-								},
-								{
-                              "image": "{{userpic}}",
-                              "width": 60,
-                              "height": 72,
-                              "alignment": "right",
-                               "margin": [
-                                      0,
-                                      5,
-                                      0,
-                                      7
-                              ]
-								}
-								
-                               ]
-                            ]
-                          },
+                            },
                             "layout": "noBorders"
                       }  
                         ],
@@ -601,7 +601,7 @@
                 "alignment": "center",
                 "margin": [
                   0,
-                  -40,
+                  0,
                   0,
                   0
                 ]
