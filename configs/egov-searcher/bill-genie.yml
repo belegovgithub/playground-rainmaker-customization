@@ -290,7 +290,7 @@ SearchDefinitions:
             ad.additionaldetails as ad_additionaldetails,
             challanadd.doorNo as ptadd_doorNo, challanadd.landmark as ptadd_landmark, 
             challanadd.city as ptadd_city, challanadd.pincode as ptadd_pincode, 
-            challanadd.locality as ptadd_locality, challan.accountid as ptown_userid , challan.createdtime
+            challanadd.locality as ptadd_locality, challan.accountid as ptown_userid 
 
            FROM egbs_bill_v1 b INNER JOIN egbs_billdetail_v1 bd ON b.id = bd.billid AND b.tenantid = bd.tenantid
             INNER JOIN egbs_billaccountdetail_v1 ad ON bd.id = ad.billdetail AND bd.tenantid = ad.tenantid

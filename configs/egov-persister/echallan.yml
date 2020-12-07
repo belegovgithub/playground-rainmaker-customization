@@ -88,6 +88,7 @@ serviceMaps:
       - jsonPath: $.Challan.auditDetails.createdTime
 
       - jsonPath: $.Challan.auditDetails.lastModifiedTime
+
     
   - version: 1.0
     description: Update Challan details in eg_echallan  table
@@ -95,20 +96,18 @@ serviceMaps:
     isTransaction: true
     queryMaps:
     
-    - query: UPDATE eg_echallan SET applicationStatus = ?, taxPeriodFrom = ?,taxPeriodTo = ?, lastmodifiedby = ?,  lastmodifiedtime = ? WHERE id=?;
+    - query: UPDATE eg_echallan SET applicationStatus = ?, lastmodifiedby = ?,  lastmodifiedtime = ? WHERE id=?;
       basePath: Challan
       jsonMaps:
       
       - jsonPath: $.Challan.applicationStatus
-      
-      - jsonPath: $.Challan.taxPeriodFrom
-      
-      - jsonPath: $.Challan.taxPeriodTo
 
       - jsonPath: $.Challan.auditDetails.lastModifiedBy
 
       - jsonPath: $.Challan.auditDetails.lastModifiedTime
 
       - jsonPath: $.Challan.id
+
+
 
 

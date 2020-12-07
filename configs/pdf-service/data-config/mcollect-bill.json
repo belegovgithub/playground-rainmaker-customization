@@ -45,7 +45,7 @@
                     "localisation":{
                       "required":true,
                       "prefix": null,
-                      "module":"rainmaker-pdf"
+                      "module":"rainmaker-common"
                    }
                   },
                   {
@@ -57,7 +57,7 @@
                     "localisation":{
                       "required":true,
                       "prefix": null,
-                      "module":"rainmaker-pdf"
+                      "module":"rainmaker-common"
                    }
                   },
                 {
@@ -96,7 +96,7 @@
                     "localisation":{
                       "required":true,
                       "prefix": null,
-                      "module":"rainmaker-pdf"
+                      "module":"rainmaker-common"
                    }
                   },
                   {
@@ -108,7 +108,7 @@
                     "localisation":{
                       "required":true,
                       "prefix": null,
-                      "module":"rainmaker-pdf"
+                      "module":"rainmaker-common"
                    }
                   },
                   {
@@ -120,7 +120,7 @@
                     "localisation":{
                       "required":true,
                       "prefix": null,
-                      "module":"rainmaker-pdf"
+                      "module":"rainmaker-common"
                    }
                   },
                   {
@@ -132,7 +132,7 @@
                     "localisation":{
                       "required":true,
                       "prefix": null,
-                      "module":"rainmaker-pdf"
+                      "module":"rainmaker-common"
                    }
                   },
                   {
@@ -144,7 +144,7 @@
                     "localisation":{
                       "required":true,
                       "prefix": null,
-                      "module":"rainmaker-pdf"
+                      "module":"rainmaker-common"
                    }
                   },
                   {
@@ -156,7 +156,7 @@
                     "localisation":{
                       "required":true,
                       "prefix": null,
-                      "module":"rainmaker-pdf"
+                      "module":"rainmaker-common"
                    }
                   },
                   {
@@ -168,7 +168,7 @@
                     "localisation":{
                       "required":true,
                       "prefix": null,
-                      "module":"rainmaker-pdf"
+                      "module":"rainmaker-common"
                    }
                   },
                   {
@@ -180,7 +180,7 @@
                     "localisation":{
                       "required":true,
                       "prefix": null,
-                      "module":"rainmaker-pdf"
+                      "module":"rainmaker-common"
                    }
                   },
                   {
@@ -192,7 +192,7 @@
                     "localisation":{
                       "required":true,
                       "prefix": null,
-                      "module":"rainmaker-pdf"
+                      "module":"rainmaker-common"
                    }
                   },
                 {
@@ -203,7 +203,7 @@
                   "localisation":{
                     "required":true,
                     "prefix": "COMMON_MASTERS_PAYMENTMODE",
-                    "module": "rainmaker-pdf"
+                    "module": "rainmaker-common"
                  }
                 },
                 {
@@ -247,13 +247,6 @@
                     "type":"setEmpty"
                 },
                 {
-                  "variable": "buildingName",
-                  "value": {
-                    "path": "$.address.buildingName"
-                  },
-                  "type":"setEmpty"
-              },
-                {
                   "variable": "pinCode",
                   "value": {
                     "path": "$.address.pincode"
@@ -268,7 +261,7 @@
                     "localisation":{
                       "required":true,
                       "prefix": "TENANTS_MOHALLA",
-                      "module": "rainmaker-pdf"
+                      "module": "rainmaker-common"
                    }
                 },
                 {
@@ -291,7 +284,7 @@
                     "localisation":{
                       "required":true,
                       "prefix": null,
-                      "module":"rainmaker-pdf"
+                      "module":"rainmaker-common"
                    }
                   },
                   {
@@ -303,7 +296,7 @@
                     "localisation":{
                       "required":true,
                       "prefix": null,
-                      "module":"rainmaker-pdf"
+                      "module":"rainmaker-common"
                    }
                   },
                   {
@@ -315,7 +308,7 @@
                     "localisation":{
                       "required":true,
                       "prefix": null,
-                      "module":"rainmaker-pdf"
+                      "module":"rainmaker-common"
                    }
                   },
                 {
@@ -327,7 +320,7 @@
                   "localisation":{
                     "required":true,
                     "prefix": null,
-                    "module":"rainmaker-pdf"
+                    "module":"rainmaker-common"
                  }
                 },
                 {
@@ -355,27 +348,27 @@
                  }
                 },
                 {
-                  "variable": "consumer_Name",
+                  "variable": "payer_name",
                   "value": {
-                    "path": "PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_CONSUMER_NAME"
+                    "path": "PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_PAYER_NAME"
                   },
                   "type": "label",
                   "localisation":{
                     "required":true,
                     "prefix": null,
-                    "module":"rainmaker-pdf"
+                    "module":"rainmaker-common"
                  }
                 },
                 {
                   "variable": "payer_contact",
                   "value": {
-                    "path": "PDF_STATIC_LABEL_CONSOLIDATED_TLCERTIFICATE_LICENSE_CORPORATION_CONTACT"
+                    "path": "PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_PAYER_CONTACT"
                   },
                   "type": "label",
                   "localisation":{
                     "required":true,
                     "prefix": null,
-                    "module":"rainmaker-pdf"
+                    "module":"rainmaker-common"
                  }
                 },
                 {
@@ -387,7 +380,7 @@
                   "localisation":{
                     "required":true,
                     "prefix": null,
-                    "module":"rainmaker-pdf"
+                    "module":"rainmaker-common"
                  }
                 },
                 {
@@ -399,7 +392,7 @@
                   "localisation":{
                     "required":true,
                     "prefix": null,
-                    "module":"rainmaker-pdf"
+                    "module":"rainmaker-common"
                  }
                 },
                 {
@@ -411,7 +404,7 @@
                     "localisation":{
                       "required":true,
                       "prefix": null,
-                      "module":"rainmaker-pdf"
+                      "module":"rainmaker-common"
                    }
                   },
                 
@@ -424,7 +417,7 @@
                   "localisation":{
                     "required":true,
                     "prefix": null,
-                    "module":"rainmaker-pdf"
+                    "module":"rainmaker-common"
                  }
                 },
                 {
@@ -436,7 +429,7 @@
                   "localisation":{
                     "required":true,
                     "prefix": null,
-                    "module":"rainmaker-pdf"
+                    "module":"rainmaker-common"
                  }
                 },
                 {
@@ -448,7 +441,7 @@
                   "localisation":{
                     "required":true,
                     "prefix": null,
-                    "module":"rainmaker-pdf"
+                    "module":"rainmaker-common"
                  }
                 },
                 {
@@ -460,7 +453,7 @@
                     "localisation":{
                       "required":true,
                       "prefix": null,
-                      "module":"rainmaker-pdf"
+                      "module":"rainmaker-common"
                    }
                   },
                 {
@@ -472,7 +465,7 @@
                   "localisation":{
                     "required":true,
                     "prefix": null,
-                    "module":"rainmaker-pdf"
+                    "module":"rainmaker-common"
                  }
                 },
                 {
@@ -484,7 +477,7 @@
                   "localisation":{
                     "required":true,
                     "prefix": null,
-                    "module":"rainmaker-pdf"
+                    "module":"rainmaker-common"
                  }
                 },
                 {
@@ -496,7 +489,7 @@
                   "localisation":{
                     "required":true,
                     "prefix": null,
-                    "module":"rainmaker-pdf"
+                    "module":"rainmaker-common"
                  }
                 },
                 {
@@ -508,7 +501,7 @@
                     "localisation":{
                       "required":true,
                       "prefix": null,
-                      "module":"rainmaker-pdf"
+                      "module":"rainmaker-common"
                    }
                   },
                 {
@@ -520,7 +513,7 @@
                   "localisation":{
                     "required":true,
                     "prefix": null,
-                    "module":"rainmaker-pdf"
+                    "module":"rainmaker-common"
                  }
                 },
                 {
@@ -532,7 +525,7 @@
                   "localisation":{
                     "required":true,
                     "prefix": null,
-                    "module":"rainmaker-pdf"
+                    "module":"rainmaker-common"
                  }
                 },
                 {
@@ -544,7 +537,7 @@
                   "localisation":{
                     "required":true,
                     "prefix": null,
-                    "module":"rainmaker-pdf"
+                    "module":"rainmaker-common"
                  }
                 },
                 {
@@ -556,7 +549,7 @@
                   "localisation":{
                     "required":true,
                     "prefix": null,
-                    "module":"rainmaker-pdf"
+                    "module":"rainmaker-common"
                  }
                 },
                 {
@@ -568,20 +561,8 @@
                   "localisation": {
                     "required": true,
                     "prefix": null,
-                    "module": "rainmaker-pdf"
+                    "module": "rainmaker-common"
                   }
-                },
-                {
-                  "variable": "challan_date",
-                  "value": {
-                    "path": "PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_CHALLAN_DATE"
-                  },
-                  "type": "label",
-                  "localisation":{
-                    "required":true,
-                    "prefix": null,
-                    "module":"rainmaker-pdf"
-                 }
                 },
                 {
                   "variable": "Rs",
@@ -592,7 +573,7 @@
                   "localisation": {
                     "required": true,
                     "prefix": null,
-                    "module": "rainmaker-pdf"
+                    "module": "rainmaker-common"
                   }
                 },
                 {
@@ -647,26 +628,18 @@
                           }
                       }
                     ]
-                },
-                {
-                  "path": "http://echallan-services:8080/echallan-services/eChallan/v1/_search",
-                  "queryParam": "challanNo=$.consumerCode,tenantId=$.tenantId",
-                  "apiRequest": null,
-                  "responseMapping":[
-                    {
-                      "variable":"challanDate",                        
-                      "value": "$.challans[0].auditDetails.lastModifiedTime",
-                      "type": "date" 
-                   }
-                  ]
                 }
               ]
             },      
             {
               "qrcodeConfig": [
                 {
-                    "variable": "qrcodeimage",
+                    "variable": "qrcodeimage1",
                     "value":"Payer Name : {{payerName}},BillNo: {{billNumber}}, Challan number: {{challanNo}}, Bill Date: {{billDate}}, Total Amount: {{totalAmount}}, Billing Period: {{fromPeriod}} to {{toPeriod}}"
+                },
+                {
+                  "variable": "qrcodeimage",
+                  "value":"BEL UAT"
                 }
               ]
           }

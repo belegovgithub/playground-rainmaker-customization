@@ -186,8 +186,7 @@
                                                 false,
                                                 false
                                               ],
-                                               "style": "receipt-table-value-down",
-                                               "font": "Roboto"
+                                               "style": "receipt-table-value-down"
                                             },
                                             {
                                               "text":"{{billing_period}}",
@@ -207,7 +206,8 @@
                                                 false,
                                                 false
                                               ],
-                                               "style": "receipt-table-value-down"
+                                               "style": "receipt-table-value-down",
+                                               "font": "Roboto"
                                             }
                                           ]
                                           ]
@@ -296,7 +296,8 @@
                                               false,
                                               false
                                             ],
-                                             "style": "receipt-table-value-down"
+                                             "style": "receipt-table-value-down",
+                                             "font": "Roboto"
                                           },
                                           {
                                             "text":"{{paid_amount}}",
@@ -309,7 +310,7 @@
                                              "style": "receipt-table-value"
                                           },
                                           {
-                                            "text":"{{Rs}} {{paidAmount}}",
+                                            "text":"{{paidAmount}}",
                                             "border":[
                                               false,
                                               false,
@@ -730,6 +731,20 @@
                  5
                ]
              }, 
+             "receipt-value-label": {
+              "color": "#000000",
+              "font": "Roboto",
+               "bold": false,
+               "fontSize": 12,
+               "fontWeight": 400,
+               "alignment": "left",
+               "margin": [
+                 -60,
+                 5,
+                 0,
+                 5
+               ]
+             },
               "noc-table": {
                "fontSize": 12,
                "color": "#484848",
