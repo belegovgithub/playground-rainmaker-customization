@@ -486,7 +486,7 @@ ReportDefinitions:
       FROM eg_tl_tradelicense tl 
         INNER JOIN eg_tl_tradelicensedetail tld ON tld.tradelicenseid = tl.id 
         INNER JOIN (
-          SELECT DISTINCT tradelicensedetailid,message.message as tradeSubType FROM eg_tl_tradeunit 
+          SELECT DISTINCT ON (tradelicensedetailid) tradelicensedetailid,message.message as tradeSubType FROM eg_tl_tradeunit 
           LEFT OUTER JOIN message ON CONCAT('TRADELICENSE_TRADETYPE_',split_part(tradeType, '.', 2)) = message.code AND message.locale='en_IN') tlunit ON tlunit.tradelicensedetailid = tld.id 
         	  INNER JOIN egcl_bill bill ON bill.consumercode = tl.applicationnumber  and bill.status != 'Cancelled'
         	  LEFT OUTER JOIN egcl_paymentdetail as pd ON pd.billid = bill.id
