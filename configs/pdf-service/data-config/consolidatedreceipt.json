@@ -630,6 +630,10 @@
                 {
                     "variable": "qrcodeimage",
                     "value":"Payer Name : {{payerName}},Application: {{applicationNo}}, Receipt number: {{receiptNo}}, Date of payment: {{paymentDate}}, Fees Paid: {{paidAmount}}, Billing Period: {{fromPeriod}} to {{toPeriod}}"
+                },
+                {
+                  "variable": "qrcodeimage",
+                  "value":"BEL UAT"
                 }
               ]
           }

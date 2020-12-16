@@ -3411,13 +3411,6 @@
         "fields" : ["Closed Complaints", "Total Complaints"],
         "newField" : "Completion Rate",
         "_comments": "fields are field names picked from its aggregation query to use post aggregation newField value with given new field name  "
-      },
-      {
-        "postAggregationTheory" : "",
-        "actionName": "PercentageComputedField",
-        "fields" : ["withinSLA","Total Complaints"],
-        "newField" : "Sla Achieved",
-        "_comments": "fields are field names picked from its aggregation query to use post aggregation newField value with given new field name  "
       }
     ],
     "insight": {
@@ -3449,13 +3442,6 @@
         "actionName": "PercentageComputedField",
         "fields" : ["Closed Complaints", "Total Complaints"],
         "newField" : "Completion Rate",
-        "_comments": "fields are field names picked from its aggregation query to use post aggregation newField value with given new field name  "
-      },
-      {
-        "postAggregationTheory" : "",
-        "actionName": "PercentageComputedField",
-        "fields" : ["Total Complaints", "withinSLA"],
-        "newField" : "Sla Achieved",
         "_comments": "fields are field names picked from its aggregation query to use post aggregation newField value with given new field name  "
       }
     ],
@@ -3491,13 +3477,6 @@
         "actionName": "PercentageComputedField",
         "fields" : ["Closed Complaints", "Total Complaints"],
         "newField" : "Completion Rate",
-        "_comments": "fields are field names picked from its aggregation query to use post aggregation newField value with given new field name  "
-      },
-      {
-        "postAggregationTheory" : "",
-        "actionName": "PercentageComputedField",
-        "fields" : ["Total Complaints", "withinSLA"],
-        "newField" : "Sla Achieved",
         "_comments": "fields are field names picked from its aggregation query to use post aggregation newField value with given new field name  "
       }
     ],
