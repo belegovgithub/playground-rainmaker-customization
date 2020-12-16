@@ -1,0 +1,227 @@
+serviceMaps:
+ serviceName: lams-services
+ mappings:
+ - version: 1.0
+   description: Persists lease renewal details in eg_lams_leaserenewal table
+   fromTopic: save-lams-lr
+   isTransaction: true
+   queryMaps:
+
+       - query: INSERT INTO eg_lams_leaserenewal(id,accountid,tenantid,applicationnumber,applicationdate,action,status,createdby,lastmodifiedby,createdtime,lastmodifiedtime,businessservice,applicationtype,workflowcode) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ,? ,? ,?);
+         basePath: leases.*
+         jsonMaps:
+          - jsonPath: $.leases.*.id
+
+          - jsonPath: $.leases.*.accountId
+
+          - jsonPath: $.leases.*.tenantId
+
+          - jsonPath: $.leases.*.applicationNumber
+
+          - jsonPath: $.leases.*.applicationDate
+
+          - jsonPath: $.leases.*.action
+
+          - jsonPath: $.leases.*.status
+
+          - jsonPath: $.leases.*.auditDetails.createdBy
+
+          - jsonPath: $.leases.*.auditDetails.lastModifiedBy
+
+          - jsonPath: $.leases.*.auditDetails.createdTime
+
+          - jsonPath: $.leases.*.auditDetails.lastModifiedTime
+
+          - jsonPath: $.leases.*.businessService
+
+          - jsonPath: $.leases.*.applicationType
+
+          - jsonPath: $.leases.*.workflowCode
+
+
+       - query: INSERT INTO eg_lams_leaserenewaldetail(id,surveyno,termno,termexpirydate,annualrent,leaserenewalid,createdby,lastmodifiedby,createdtime,lastmodifiedtime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+         basePath: leases.*.leaseDetails
+         jsonMaps:
+          - jsonPath: $.leases.*.leaseDetails.id
+
+          - jsonPath: $.leases.*.leaseDetails.surveyNo
+
+          - jsonPath: $.leases.*.leaseDetails.termNo
+
+          - jsonPath: $.leases.*.leaseDetails.termExpiryDate
+
+          - jsonPath: $.leases.*.leaseDetails.annualRent
+
+          - jsonPath: $.leases.*.id
+
+          - jsonPath: $.leases.*.auditDetails.createdBy
+
+          - jsonPath: $.leases.*.auditDetails.lastModifiedBy
+
+          - jsonPath: $.leases.*.auditDetails.createdTime
+
+          - jsonPath: $.leases.*.auditDetails.lastModifiedTime
+          
+          
+       - query: INSERT INTO eg_lams_applicationdocument( id, active, documenttype, filestoreid, leaserenewaldetailid, createdby, lastmodifiedby, createdtime, lastmodifiedtime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);
+         basePath: leases.*.leaseDetails.applicationDocuments.*
+         jsonMaps:
+          - jsonPath: $.leases.*.leaseDetails.applicationDocuments.*.id
+
+          - jsonPath: $.leases.*.leaseDetails.applicationDocuments.*.active
+
+          - jsonPath: $.leases.*.leaseDetails.applicationDocuments.*.documentType
+
+          - jsonPath: $.leases.*.leaseDetails.applicationDocuments.*.fileStoreId
+
+          - jsonPath: $.leases[*][?({id} in @.leaseDetails.applicationDocuments[*].id)].leaseDetails.id
+
+          - jsonPath: $.leases[*][?({id} in @.leaseDetails.applicationDocuments[*].id)].auditDetails.createdBy
+
+          - jsonPath: $.leases[*][?({id} in @.leaseDetails.applicationDocuments[*].id)].auditDetails.lastModifiedBy
+
+          - jsonPath: $.leases[*][?({id} in @.leaseDetails.applicationDocuments[*].id)].auditDetails.createdTime
+
+          - jsonPath: $.leases[*][?({id} in @.leaseDetails.applicationDocuments[*].id)].auditDetails.lastModifiedTime
+
+  
+ - version: 1.0
+   description: Update lease details in eg_lams_leaserenewal table
+   fromTopic: update-lams-lr
+   isTransaction: true
+   queryMaps:
+
+       - query: INSERT INTO eg_lams_leaserenewal_audit SELECT * FROM eg_lams_leaserenewal WHERE id = ?;
+         basePath: leases.*
+         jsonMaps:
+          - jsonPath: $.leases.*.id
+
+
+       - query: UPDATE eg_lams_leaserenewal SET approveddate = ?, action = ?, status = ?,  lastmodifiedby = ?,  lastmodifiedtime = ? WHERE id=?;
+         basePath: leases.*
+         jsonMaps:
+          - jsonPath: $.leases.*.approvedDate
+
+          - jsonPath: $.leases.*.action
+
+          - jsonPath: $.leases.*.status
+
+          - jsonPath: $.leases.*.auditDetails.lastModifiedBy
+
+          - jsonPath: $.leases.*.auditDetails.lastModifiedTime
+
+          - jsonPath: $.leases.*.id
+          
+
+       - query: INSERT INTO eg_lams_leaserenewaldetail_audit SELECT * FROM eg_lams_leaserenewaldetail WHERE id = ?;
+         basePath: leases.*.leaseDetails
+         jsonMaps:
+          - jsonPath: $.leases.*.leaseDetails.id
+
+
+       - query: UPDATE eg_lams_leaserenewaldetail SET termno = ?, termexpirydate = ?, annualrent = ?, lastmodifiedby = ?,  lastmodifiedtime = ? WHERE id = ?;
+         basePath: leases.*.leaseDetails
+         jsonMaps:
+          - jsonPath: $.leases.*.leaseDetails.termNo
+
+          - jsonPath: $.leases.*.leaseDetails.termExpiryDate
+          
+          - jsonPath: $.leases.*.leaseDetails.annualRent
+
+          - jsonPath: $.leases.*.auditDetails.lastModifiedBy
+
+          - jsonPath: $.leases.*.auditDetails.lastModifiedTime
+
+          - jsonPath: $.leases.*.leaseDetails.id
+          
+          
+       - query: INSERT INTO eg_lams_applicationdocument( id, active, documenttype, filestoreid, leaserenewaldetailid, createdby, lastmodifiedby, createdtime, lastmodifiedtime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) ON CONFLICT (id) DO UPDATE SET active = ?, documenttype =?, filestoreid =?,lastmodifiedby =?, lastmodifiedtime =?;
+         basePath: leases.*.leaseDetails.applicationDocuments.*
+         jsonMaps:
+          - jsonPath: $.leases.*.leaseDetails.applicationDocuments.*.id
+
+          - jsonPath: $.leases.*.leaseDetails.applicationDocuments.*.active
+
+          - jsonPath: $.leases.*.leaseDetails.applicationDocuments.*.documentType
+
+          - jsonPath: $.leases.*.leaseDetails.applicationDocuments.*.fileStoreId
+
+          - jsonPath: $.leases[*][?({id} in @.leaseDetails.applicationDocuments[*].id)].leaseDetails.id
+
+          - jsonPath: $.leases[*][?({id} in @.leaseDetails.applicationDocuments[*].id)].auditDetails.createdBy
+
+          - jsonPath: $.leases[*][?({id} in @.leaseDetails.applicationDocuments[*].id)].auditDetails.lastModifiedBy
+
+          - jsonPath: $.leases[*][?({id} in @.leaseDetails.applicationDocuments[*].id)].auditDetails.createdTime
+
+          - jsonPath: $.leases[*][?({id} in @.leaseDetails.applicationDocuments[*].id)].auditDetails.lastModifiedTime
+
+          - jsonPath: $.leases.*.leaseDetails.applicationDocuments.*.active
+
+          - jsonPath: $.leases.*.leaseDetails.applicationDocuments.*.documentType
+
+          - jsonPath: $.leases.*.leaseDetails.applicationDocuments.*.fileStoreId
+
+          - jsonPath: $.leases[*][?({id} in @.leaseDetails.applicationDocuments[*].id)].auditDetails.lastModifiedBy
+
+          - jsonPath: $.leases[*][?({id} in @.leaseDetails.applicationDocuments[*].id)].auditDetails.lastModifiedTime
+          
+ - version: 1.0
+   description: Persists lease details in eg_lams_leaserenewal  table
+   fromTopic: update-lams-lr-workflow
+   isTransaction: true
+   queryMaps:
+
+       - query: INSERT INTO eg_lams_leaserenewal_audit SELECT * FROM eg_lams_leaserenewal WHERE id = ?;
+         basePath: leases.*
+         jsonMaps:
+          - jsonPath: $.leases.*.id
+
+
+       - query: INSERT INTO eg_lams_leaserenewaldetail_audit SELECT * FROM eg_lams_leaserenewaldetail WHERE id = ?;
+         basePath: leases.*.leaseDetails
+         jsonMaps:
+          - jsonPath: $.leases.*.leaseDetails.id   
+          
+
+       - query: UPDATE eg_lams_leaserenewal SET approveddate = ?, action = ?, status = ?,  lastmodifiedby = ?,  lastmodifiedtime = ? WHERE id=?;
+         basePath: leases.*
+         jsonMaps:
+          - jsonPath: $.leases.*.approvedDate
+
+          - jsonPath: $.leases.*.action
+
+          - jsonPath: $.leases.*.status
+
+          - jsonPath: $.leases.*.auditDetails.lastModifiedBy
+
+          - jsonPath: $.leases.*.auditDetails.lastModifiedTime
+
+          - jsonPath: $.leases.*.id
+
+
+       - query: UPDATE eg_lams_leaserenewaldetail SET lastmodifiedby = ?,  lastmodifiedtime = ? WHERE id = ?;
+         basePath: leases.*.leaseDetails
+         jsonMaps:
+
+          - jsonPath: $.leases.*.auditDetails.lastModifiedBy
+
+          - jsonPath: $.leases.*.auditDetails.lastModifiedTime
+
+          - jsonPath: $.leases.*.leaseDetails.id
+          
+ - version: 1.0
+   description: Persists lease Survey details in eg_lams_survey_no_details  table
+   fromTopic: update-lams-survey
+   isTransaction: true
+   queryMaps:
+       
+       - query: UPDATE eg_lams_survey_no_details SET lesse = ?, finaltermexpirydate = ? WHERE id = ?;
+         basePath: leases.*.leaseDetails
+         jsonMaps:
+
+          - jsonPath: $.leases.*.leaseDetails.lesseAsPerGLR
+
+          - jsonPath: $.leases.*.leaseDetails.finalTermExpiryDate
+
+          - jsonPath: $.leases.*.leaseDetails.surveyId
