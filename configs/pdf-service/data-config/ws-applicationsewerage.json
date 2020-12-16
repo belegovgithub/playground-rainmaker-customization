@@ -62,7 +62,12 @@
                                 "variable": "propertyUsageSubType",
                                 "value": {
                                     "path": "$.property.propertySubUsageType"
-                                }
+                                },
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": "WS_PROPSUBUSGTYPE",
+                                    "module": "rainmaker-ws"
+                                  }
                             },
                             {
                                 "variable": "plotSize",
@@ -84,7 +89,7 @@
                                 "localisation": {
                                   "required": true,
                                   "prefix": "HARVESTING",
-                                  "module": "rainmaker-common"
+                                  "module": "rainmaker-pdf"
                                 }
                               },
                             {
@@ -137,7 +142,7 @@
                                       "value": "name"
                                     },
                                     {
-                                      "variable": "emailLabel",
+                                      "variable": "ownerEmailId",
                                       "value":"emailId"
                                     },
                                     {
@@ -298,7 +303,7 @@
                                 "localisation": {
                                     "required": true,
                                     "prefix": null,
-                                    "module": "rainmaker-common"
+                                    "module": "rainmaker-pdf"
                                 }
                             },
                             {
@@ -310,7 +315,7 @@
                                 "localisation": {
                                     "required": true,
                                     "prefix": null,
-                                    "module": "rainmaker-common"
+                                    "module": "rainmaker-pdf"
                                 }
                             },
                             {
@@ -322,7 +327,7 @@
                                 "localisation": {
                                     "required": true,
                                     "prefix": null,
-                                    "module": "rainmaker-common"
+                                    "module": "rainmaker-pdf"
                                 }
                             },
                             {
@@ -334,7 +339,7 @@
                                 "localisation": {
                                     "required": true,
                                     "prefix": null,
-                                    "module": "rainmaker-common"
+                                    "module": "rainmaker-pdf"
                                 }
                             },
                             {
@@ -346,7 +351,7 @@
                                 "localisation": {
                                     "required": true,
                                     "prefix": null,
-                                    "module": "rainmaker-common"
+                                    "module": "rainmaker-pdf"
                                 }
                             },
                             {
@@ -358,7 +363,7 @@
                                 "localisation": {
                                     "required": true,
                                     "prefix": null,
-                                    "module": "rainmaker-common"
+                                    "module": "rainmaker-pdf"
                                 }
                             },
                             {
@@ -370,7 +375,7 @@
                                 "localisation": {
                                     "required": true,
                                     "prefix": null,
-                                    "module": "rainmaker-common"
+                                    "module": "rainmaker-pdf"
                                 }
                             },
                             {
@@ -382,7 +387,7 @@
                                 "localisation": {
                                     "required": true,
                                     "prefix": null,
-                                    "module": "rainmaker-common"
+                                    "module": "rainmaker-pdf"
                                 }
                             },
                             {
@@ -394,7 +399,7 @@
                                 "localisation": {
                                     "required": true,
                                     "prefix": null,
-                                    "module": "rainmaker-common"
+                                    "module": "rainmaker-pdf"
                                 }
                             },
                             {
@@ -406,7 +411,7 @@
                                 "localisation": {
                                     "required": true,
                                     "prefix": null,
-                                    "module": "rainmaker-common"
+                                    "module": "rainmaker-pdf"
                                 }
                             },
                             {
@@ -418,7 +423,7 @@
                                 "localisation": {
                                     "required": true,
                                     "prefix": null,
-                                    "module": "rainmaker-common"
+                                    "module": "rainmaker-pdf"
                                 }
                             },
                             {
@@ -430,7 +435,7 @@
                                 "localisation": {
                                     "required": true,
                                     "prefix": null,
-                                    "module": "rainmaker-common"
+                                    "module": "rainmaker-pdf"
                                 }
                             },
                             {
@@ -442,7 +447,7 @@
                                 "localisation": {
                                     "required": true,
                                     "prefix": null,
-                                    "module": "rainmaker-common"
+                                    "module": "rainmaker-pdf"
                                 }
                             },
                             {
@@ -454,7 +459,7 @@
                                 "localisation": {
                                     "required": true,
                                     "prefix": null,
-                                    "module": "rainmaker-common"
+                                    "module": "rainmaker-pdf"
                                 }
                             },
                             {
@@ -466,7 +471,7 @@
                                 "localisation": {
                                     "required": true,
                                     "prefix": null,
-                                    "module": "rainmaker-common"
+                                    "module": "rainmaker-pdf"
                                 }
                             },
                             {
@@ -478,7 +483,7 @@
                                 "localisation": {
                                     "required": true,
                                     "prefix": null,
-                                    "module": "rainmaker-common"
+                                    "module": "rainmaker-pdf"
                                 }
                             },
                             {
@@ -490,7 +495,7 @@
                                 "localisation": {
                                     "required": true,
                                     "prefix": null,
-                                    "module": "rainmaker-common"
+                                    "module": "rainmaker-pdf"
                                 }
                             },
                             {
@@ -502,7 +507,7 @@
                                 "localisation": {
                                     "required": true,
                                     "prefix": null,
-                                    "module": "rainmaker-common"
+                                    "module": "rainmaker-pdf"
                                 }
                             },
                             {
@@ -514,7 +519,7 @@
                                 "localisation": {
                                     "required": true,
                                     "prefix": null,
-                                    "module": "rainmaker-common"
+                                    "module": "rainmaker-pdf"
                                 }
                             },
                             {
@@ -526,7 +531,7 @@
                                 "localisation": {
                                     "required": true,
                                     "prefix": null,
-                                    "module": "rainmaker-common"
+                                    "module": "rainmaker-pdf"
                                 }
                             },
                             {
@@ -538,7 +543,7 @@
                                 "localisation": {
                                     "required": true,
                                     "prefix": null,
-                                    "module": "rainmaker-common"
+                                    "module": "rainmaker-pdf"
                                 }
                             },
                             {
@@ -550,7 +555,7 @@
                                 "localisation": {
                                     "required": true,
                                     "prefix": null,
-                                    "module": "rainmaker-common"
+                                    "module": "rainmaker-pdf"
                                 }
                             },
                             {
@@ -562,7 +567,7 @@
                                 "localisation": {
                                     "required": true,
                                     "prefix": null,
-                                    "module": "rainmaker-common"
+                                    "module": "rainmaker-pdf"
                                 }
                             },
                             {
@@ -574,7 +579,7 @@
                                 "localisation": {
                                     "required": true,
                                     "prefix": null,
-                                    "module": "rainmaker-common"
+                                    "module": "rainmaker-pdf"
                                 }
                             },
                             {
@@ -586,7 +591,7 @@
                                 "localisation": {
                                     "required": true,
                                     "prefix": null,
-                                    "module": "rainmaker-common"
+                                    "module": "rainmaker-pdf"
                                 }
                             },
                             {
@@ -598,7 +603,7 @@
                                 "localisation": {
                                     "required": true,
                                     "prefix": null,
-                                    "module": "rainmaker-common"
+                                    "module": "rainmaker-pdf"
                                 }
                             },
                             {
@@ -610,7 +615,7 @@
                                 "localisation": {
                                     "required": true,
                                     "prefix": null,
-                                    "module": "rainmaker-common"
+                                    "module": "rainmaker-pdf"
                                 }
                             },
                             {
@@ -622,7 +627,7 @@
                                 "localisation": {
                                     "required": true,
                                     "prefix": null,
-                                    "module": "rainmaker-common"
+                                    "module": "rainmaker-pdf"
                                 }
                             },
                             {
@@ -634,7 +639,7 @@
                                 "localisation": {
                                     "required": true,
                                     "prefix": null,
-                                    "module": "rainmaker-common"
+                                    "module": "rainmaker-pdf"
                                 }
                             },
                             {
@@ -646,7 +651,7 @@
                                 "localisation": {
                                     "required": true,
                                     "prefix": null,
-                                    "module": "rainmaker-common"
+                                    "module": "rainmaker-pdf"
                                 }
                             },
                             {
@@ -658,7 +663,7 @@
                                 "localisation": {
                                     "required": true,
                                     "prefix": null,
-                                    "module": "rainmaker-common"
+                                    "module": "rainmaker-pdf"
                                 }
                             },
                             {
@@ -670,7 +675,7 @@
                                 "localisation": {
                                     "required": true,
                                     "prefix": null,
-                                    "module": "rainmaker-common"
+                                    "module": "rainmaker-pdf"
                                 }
                             },
                             {
@@ -682,7 +687,7 @@
                                 "localisation": {
                                     "required": true,
                                     "prefix": null,
-                                    "module": "rainmaker-common"
+                                    "module": "rainmaker-pdf"
                                 }
                             },
                             {
@@ -694,7 +699,7 @@
                                 "localisation": {
                                     "required": true,
                                     "prefix": null,
-                                    "module": "rainmaker-common"
+                                    "module": "rainmaker-pdf"
                                 }
                             },
                             {
@@ -706,7 +711,7 @@
                                 "localisation": {
                                     "required": true,
                                     "prefix": null,
-                                    "module": "rainmaker-common"
+                                    "module": "rainmaker-pdf"
                                 }
                             },
                             {
@@ -718,7 +723,7 @@
                                 "localisation": {
                                     "required": true,
                                     "prefix": null,
-                                    "module": "rainmaker-common"
+                                    "module": "rainmaker-pdf"
                                 }
                             },
                             {
@@ -730,7 +735,7 @@
                                 "localisation": {
                                     "required": true,
                                     "prefix": null,
-                                    "module": "rainmaker-common"
+                                    "module": "rainmaker-pdf"
                                 }
                             },
                             {
@@ -742,7 +747,7 @@
                                 "localisation": {
                                     "required": true,
                                     "prefix": null,
-                                    "module": "rainmaker-common"
+                                    "module": "rainmaker-pdf"
                                 }
                             },
                             {
@@ -754,7 +759,7 @@
                                 "localisation": {
                                     "required": true,
                                     "prefix": null,
-                                    "module": "rainmaker-common"
+                                    "module": "rainmaker-pdf"
                                 }
                             },
                             {
@@ -766,7 +771,7 @@
                                 "localisation": {
                                     "required": true,
                                     "prefix": null,
-                                    "module": "rainmaker-common"
+                                    "module": "rainmaker-pdf"
                                 }
                             },
                             {
@@ -778,7 +783,7 @@
                                 "localisation": {
                                     "required": true,
                                     "prefix": null,
-                                    "module": "rainmaker-common"
+                                    "module": "rainmaker-pdf"
                                 }
                             },
                             {
@@ -790,7 +795,7 @@
                                 "localisation": {
                                     "required": true,
                                     "prefix": null,
-                                    "module": "rainmaker-common"
+                                    "module": "rainmaker-pdf"
                                 }
                             },
                             {
@@ -802,7 +807,7 @@
                                 "localisation": {
                                     "required": true,
                                     "prefix": null,
-                                    "module": "rainmaker-common"
+                                    "module": "rainmaker-pdf"
                                 }
                             },
                             {
@@ -814,7 +819,7 @@
                                 "localisation": {
                                     "required": true,
                                     "prefix": null,
-                                    "module": "rainmaker-common"
+                                    "module": "rainmaker-pdf"
                                 }
                             },
                             {
@@ -826,7 +831,7 @@
                                 "localisation": {
                                     "required": true,
                                     "prefix": null,
-                                    "module": "rainmaker-common"
+                                    "module": "rainmaker-pdf"
                                 }
                             },
                             {
@@ -838,7 +843,7 @@
                                 "localisation": {
                                     "required": true,
                                     "prefix": null,
-                                    "module": "rainmaker-common"
+                                    "module": "rainmaker-pdf"
                                 }
                             },
                             {
@@ -850,7 +855,7 @@
                                 "localisation": {
                                     "required": true,
                                     "prefix": null,
-                                    "module": "rainmaker-common"
+                                    "module": "rainmaker-pdf"
                                 }
                             },
                             {
@@ -862,7 +867,7 @@
                                 "localisation": {
                                     "required": true,
                                     "prefix": null,
-                                    "module": "rainmaker-common"
+                                    "module": "rainmaker-pdf"
                                 }
                             },
                             {
@@ -874,7 +879,7 @@
                                 "localisation": {
                                     "required": true,
                                     "prefix": null,
-                                    "module": "rainmaker-common"
+                                    "module": "rainmaker-pdf"
                                 }
                             },
                             {
@@ -886,7 +891,7 @@
                                 "localisation": {
                                     "required": true,
                                     "prefix": null,
-                                    "module": "rainmaker-common"
+                                    "module": "rainmaker-pdf"
                                 }
                             },
                             {
@@ -898,7 +903,7 @@
                                 "localisation": {
                                     "required": true,
                                     "prefix": null,
-                                    "module": "rainmaker-common"
+                                    "module": "rainmaker-pdf"
                                 }
                             },
                             {
@@ -910,7 +915,7 @@
                                 "localisation": {
                                     "required": true,
                                     "prefix": null,
-                                    "module": "rainmaker-common"
+                                    "module": "rainmaker-pdf"
                                 }
                             },
                             {
@@ -922,7 +927,7 @@
                                 "localisation": {
                                     "required": true,
                                     "prefix": null,
-                                    "module": "rainmaker-common"
+                                    "module": "rainmaker-pdf"
                                 }
                             },
                             {
@@ -934,7 +939,7 @@
                                 "localisation": {
                                     "required": true,
                                     "prefix": null,
-                                    "module": "rainmaker-common"
+                                    "module": "rainmaker-pdf"
                                 }
                             },
                             {
@@ -946,7 +951,7 @@
                                 "localisation": {
                                     "required": true,
                                     "prefix": null,
-                                    "module": "rainmaker-common"
+                                    "module": "rainmaker-pdf"
                                 }
                             },
                             {
@@ -958,7 +963,7 @@
                                 "localisation": {
                                     "required": true,
                                     "prefix": null,
-                                    "module": "rainmaker-common"
+                                    "module": "rainmaker-pdf"
                                 }
                             },
                             {
@@ -970,7 +975,7 @@
                                 "localisation": {
                                     "required": true,
                                     "prefix": null,
-                                    "module": "rainmaker-common"
+                                    "module": "rainmaker-pdf"
                                 }
                             },
                             {
@@ -982,7 +987,7 @@
                                 "localisation": {
                                     "required": true,
                                     "prefix": null,
-                                    "module": "rainmaker-common"
+                                    "module": "rainmaker-pdf"
                                 }
                             }
                         ]

@@ -35,23 +35,24 @@
                                       0,
                                       0
                               ]
-								}, 
+                }, 
+                {
+                  "text": " "
+                   
+                },
 								{
                               "image": "{{userpic}}",
                               "width": 60,
                               "height": 72,
-                              "alignment": "center",
+                              "alignment": "right",
                                "margin": [
                                       0,
                                       5,
                                       0,
                                       7
                               ]
-								},
-								{
-                              "text": " "
-                               
 								}
+								
                                ]
                             ]
                           },
@@ -601,7 +602,7 @@
               "alignment": "center",
               "margin": [
                 0,
-                0,
+                -40,
                 0,
                 0
               ]

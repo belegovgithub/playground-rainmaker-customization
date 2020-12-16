@@ -115,7 +115,7 @@ ReportDefinitions:
       tlown.mobilenumber,
       pay.transactionnumber,
       pgtxn.bank_transaction_no as banktxnNo,
-      pay.paymentmode as instrumenttype,
+      instrumenttype,
       feeType,
       totalamount,
       pd.amountpaid,
@@ -124,7 +124,7 @@ ReportDefinitions:
     FROM eg_tl_tradelicense tl 
     INNER JOIN eg_tl_tradelicensedetail tld ON tld.tradelicenseid = tl.id 
     INNER JOIN (
-      SELECT tradelicensedetailid,array_to_string(array_agg(message.message),', ') as tradeTypeName FROM eg_tl_tradeunit
+      SELECT tradelicensedetailid,array_to_string(array_agg(message.message),'; ') as tradeTypeName FROM eg_tl_tradeunit
       INNER JOIN message ON replace(substring(code, '_[A-Z]*_(.*)'),'_','.') = tradeType AND message.locale = 'en_IN' GROUP BY 1) tlunit ON tlunit.tradelicensedetailid = tld.id
     INNER JOIN (
       SELECT tradelicensedetailid, array_to_string(array_agg(name),', ') as name, array_to_string(array_agg(mobilenumber),', ') as mobilenumber
@@ -133,11 +133,11 @@ ReportDefinitions:
       group by tradelicensedetailid
     ) tlown ON tlown.tradelicensedetailid = tld.id
     INNER JOIN egcl_bill bill ON bill.consumercode = tl.applicationnumber  and bill.status != 'Cancelled'
-    JOIN egcl_billdetial as bild ON bild.billid = bill.id INNER JOIN(Select DISTINCT billdetailid,amount, taxheadcode,message.message as feeType from egcl_billaccountdetail bilaccd INNER JOIN message ON taxheadcode = message.code AND message.locale='en_IN')  as bilaccd ON bild.id = bilaccd .billdetailid and bilaccd.amount !=0 and feeType != 'Application Fee' and bilaccd.taxheadcode != 'TL_RENEWAL_REBATE' and bilaccd.taxheadcode != 'TL_ADHOC_PENALTY' and bilaccd.taxheadcode != 'TL_RENEWAL_PENALTY' and bilaccd.taxheadcode != 'TL_GARBAGE_FEE'
+    JOIN egcl_billdetial as bild ON bild.billid = bill.id INNER JOIN(Select DISTINCT billdetailid,amount, taxheadcode,message.message as feeType from egcl_billaccountdetail bilaccd INNER JOIN message ON taxheadcode = message.code AND message.locale='en_IN')  as bilaccd ON bild.id = bilaccd .billdetailid and bilaccd.amount !=0 and feeType != 'Application Fee' and bilaccd.taxheadcode not in ('TL_RENEWAL_REBATE' , 'TL_ADHOC_PENALTY', 'TL_RENEWAL_PENALTY' , 'TL_GARBAGE_FEE','TL_ADHOC_REBATE','TL_ADHOC_PENALTY','TL_RENEWAL_ADHOC_PENALTY','TL_RENEWAL_ADHOC_REBATE')
     LEFT OUTER JOIN egcl_paymentdetail as pd ON pd.billid = bill.id
-    LEFT OUTER JOIN egcl_payment as pay ON pay.id = pd.paymentid and pay.paymentstatus != 'CANCELLED'
+    LEFT OUTER JOIN (Select pay.id , paymentstatus,transactionnumber,message.message as instrumenttype  from egcl_payment pay LEFT OUTER JOIN message ON CONCAT('COMMON_MASTERS_PAYMENTMODE_',replace(paymentmode, '.', '_')) = message.code AND message.locale='en_IN') as pay ON pay.id = pd.paymentid and pay.paymentstatus != 'CANCELLED'
     LEFT OUTER Join eg_pg_transactions as pgtxn ON pay.transactionnumber = pgtxn.txn_id
-    WHERE tl.Status in ('APPROVED', 'PAID', 'CANCELLED') AND tl.tenantId != 'pb.testing' AND tl.tenantId LIKE $tenantid
+    WHERE tl.Status in ('APPROVED', 'PAID', 'CANCELLED') AND tl.tenantId LIKE $tenantid
 
 - reportName: StateTradeLicenseCancelledRegistryReport
   summary: TL Cancelled Receipt Register Report
@@ -260,7 +260,7 @@ ReportDefinitions:
     FROM eg_tl_tradelicense tl 
     INNER JOIN eg_tl_tradelicensedetail tld ON tld.tradelicenseid = tl.id 
     INNER JOIN (
-      SELECT tradelicensedetailid,array_to_string(array_agg(message.message),', ') as tradeTypeName FROM eg_tl_tradeunit
+      SELECT tradelicensedetailid,array_to_string(array_agg(message.message),'; ') as tradeTypeName FROM eg_tl_tradeunit
       INNER JOIN message ON split_part(message.code,'_',2) = tradeType AND message.locale = 'en_IN' GROUP BY 1) tlunit ON tlunit.tradelicensedetailid = tld.id
     INNER JOIN (
       SELECT tradelicensedetailid, array_to_string(array_agg(name),', ') as name, array_to_string(array_agg(mobilenumber),', ') as mobilenumber
@@ -383,7 +383,7 @@ ReportDefinitions:
     FROM eg_tl_tradelicense tl 
     INNER JOIN eg_tl_tradelicensedetail tld ON tld.tradelicenseid = tl.id 
     INNER JOIN (
-      SELECT tradelicensedetailid,array_to_string(array_agg(message.message),', ') as tradeTypeName FROM eg_tl_tradeunit
+      SELECT tradelicensedetailid,array_to_string(array_agg(message.message),'; ') as tradeTypeName FROM eg_tl_tradeunit
       INNER JOIN message ON replace(substring(code, '_[A-Z]*_(.*)'),'_','.') = tradeType AND message.locale = 'en_IN' GROUP BY 1) tlunit ON tlunit.tradelicensedetailid = tld.id
     INNER JOIN (
       SELECT tradelicensedetailid, array_to_string(array_agg(name),', ') as name, array_to_string(array_agg(mobilenumber),', ') as mobilenumber
@@ -486,13 +486,13 @@ ReportDefinitions:
       FROM eg_tl_tradelicense tl 
         INNER JOIN eg_tl_tradelicensedetail tld ON tld.tradelicenseid = tl.id 
         INNER JOIN (
-          SELECT DISTINCT tradelicensedetailid,message.message as tradeSubType FROM eg_tl_tradeunit 
+          SELECT DISTINCT ON (tradelicensedetailid) tradelicensedetailid,message.message as tradeSubType FROM eg_tl_tradeunit 
           LEFT OUTER JOIN message ON CONCAT('TRADELICENSE_TRADETYPE_',split_part(tradeType, '.', 2)) = message.code AND message.locale='en_IN') tlunit ON tlunit.tradelicensedetailid = tld.id 
         	  INNER JOIN egcl_bill bill ON bill.consumercode = tl.applicationnumber  and bill.status != 'Cancelled'
         	  LEFT OUTER JOIN egcl_paymentdetail as pd ON pd.billid = bill.id
               LEFT OUTER JOIN (SELECT * FROM egcl_payment WHERE paymentmode = 'ONLINE') AS onl ON onl.id = pd.paymentid 
               LEFT OUTER JOIN (SELECT * FROM egcl_payment WHERE paymentmode != 'ONLINE' ) AS offl ON offl.id = pd.paymentid 
-            WHERE tl.status IN ('APPROVED','PAID','REJECTED', 'CANCELLED') AND tl.tenantId != 'pb.testing'
+            WHERE tl.status IN ('APPROVED','PAID','REJECTED', 'CANCELLED')
             AND tl.tenantId LIKE $tenantid
   groupby: GROUP BY tradeSubType
 
@@ -530,7 +530,7 @@ ReportDefinitions:
     source: tl
     isMandatory: false
     searchClause: AND tl.lastmodifiedtime <= $toDate
-  query: SELECT COUNT(applicationnumber) as total,message.message as status from eg_tl_tradelicense tl LEFT OUTER JOIN message ON split_part(message.code,'_',2) = status AND message.locale = 'en_IN' AND message.module = 'rainmaker-tl' WHERE tl.tenantId != 'pb.testing' AND tl.tenantid LIKE $tenantid
+  query: SELECT COUNT(applicationnumber) as total,message.message as status from eg_tl_tradelicense tl LEFT OUTER JOIN message ON split_part(message.code,'_',2) = status AND message.locale = 'en_IN' AND message.module = 'rainmaker-tl' WHERE tl.tenantId LIKE $tenantid
   groupby: GROUP BY message.message
   orderby: ORDER BY case message.message when 'Pending Application' then 1 when 'Pending Payment' then 2 when 'Pending Approval' then 3 when 'Approved' then 4 when 'Rejected' then 5 when 'Cancelled' then 6 else 7 end
 
@@ -559,6 +559,21 @@ ReportDefinitions:
     type: number
     source: tl
     total: true
+  - name: pendingApplicationfee
+    label: TL_PENDINGAPPLFEE
+    type: number
+    source: tl
+    total: true
+  - name: applied
+    label: TL_APPLIED
+    type: number
+    source: tl
+    total: true
+  - name: fieldInspection
+    label: TL_FIELDINSPECTION
+    type: number
+    source: tl
+    total: true
   - name: pendingapproval
     label: TL_PENDINGAPPROVAL
     type: number
@@ -566,6 +581,11 @@ ReportDefinitions:
     total: true
   - name: approved
     label: TL_APPROVED
+    type: number
+    source: tl
+    total: true
+  - name: pendingpayment
+    label: TL_PENDINGPAYMENT
     type: number
     source: tl
     total: true
@@ -578,9 +598,8 @@ ReportDefinitions:
     label: TL_CANCELLED
     type: number
     source: tl
-    total: true
-  - name: pendingpayment
-    label: TL_PENDINGPAYMENT
+  - name: expired
+    label: TL_EXIPIRED
     type: number
     source: tl
     total: true
@@ -607,7 +626,10 @@ ReportDefinitions:
         SUM(CASE status when 'PENDINGAPPROVAL' then 1 else 0 end) as pendingapproval,
         SUM(CASE status when 'APPROVED' then 1 else 0 end) as approved,
         SUM(CASE status when 'APPLIED' then 1 else 0 end) as applied,
-        SUM(CASE status when 'CANCELLED' then 1 else 0 end) as cancelled
+        SUM(CASE status when 'CANCELLED' then 1 else 0 end) as cancelled,
+        SUM(CASE status when 'EXPIRED' then 1 else 0 end) as expired,
+        SUM(CASE status when 'PENDINGAPPLFEE' then 1 else 0 end) as pendingApplicationfee,
+        SUM (CASE status when 'FIELDINSPECTION' then 1 else 0 end) as fieldInspection,
       FROM eg_tl_tradelicense as tl
       WHERE tl.tenantid != 'pb.testing'
   groupby: GROUP BY tenantid
@@ -822,5 +844,146 @@ ReportDefinitions:
     wrapper: true
     isMandatory: false
     searchClause: AND tl.tenantId = $ulb
-  query: SELECT initcap(split_part(tl.tenantId,'.', 2)) as tenantId,licensenumber,to_char(To_timestamp(issueddate / 1000),'DD/MM/YYYY') as formattedIssuedDate,tl.tradeName,tradeTypeName,tlown.name,tlown.mobilenumber,feeType,pgtxn.bank_transaction_no as banktxnNo,totalamount,To_char(To_timestamp(pd.manualreceiptdate/ 1000), 'DD/MM/YYYY') AS g8issuedate,pd.manualreceiptnumber as g8receiptno FROM eg_tl_tradelicense tl INNER JOIN eg_tl_tradelicensedetail tld ON tld.tradelicenseid = tl.id INNER JOIN(SELECT tradelicensedetailid, array_to_string(array_agg(name),', ') as name, array_to_string(array_agg(mobilenumber),', ') as mobilenumber FROM eg_tl_owner tlowner INNER JOIN eg_user tluser ON tluser.uuid = tlowner.id group by tradelicensedetailid) tlown ON tlown.tradelicensedetailid = tld.id INNER JOIN (SELECT tradelicensedetailid,array_to_string(array_agg(message.message),', ')as tradeTypeName FROM eg_tl_tradeunit INNER JOIN message ON replace(substring(code, '_[A-Z]*_(.*)'),'_','.') = tradeType AND message.locale = 'en_IN' GROUP BY 1) tlunit ON tlunit.tradelicensedetailid = tld.id INNER JOIN egcl_bill bill ON bill.consumercode = tl.applicationnumber and bill.status !='Cancelled' JOIN egcl_billdetial as bild ON bild.billid = bill.id INNER JOIN(Select DISTINCT billdetailid,amount, taxheadcode,message.message as feeType from egcl_billaccountdetail bilaccd INNER JOIN message ON taxheadcode = message.code AND message.locale='en_IN')  as bilaccd ON bild.id = bilaccd .billdetailid and bilaccd.amount !=0 and feeType != 'Application Fee' and bilaccd.taxheadcode != 'TL_RENEWAL_REBATE' and bilaccd.taxheadcode != 'TL_ADHOC_PENALTY' and bilaccd.taxheadcode != 'TL_RENEWAL_PENALTY' and bilaccd.taxheadcode != 'TL_GARBAGE_FEE'LEFT OUTER JOIN egcl_paymentdetail as pd ON pd.billid =bill.id LEFT OUTER JOIN egcl_payment as pay ON pay.id = pd.paymentid and pay.paymentstatus != 'CANCELLED' LEFT OUTER Join eg_pg_transactions as pgtxn ON pay.transactionnumber = pgtxn.txn_id WHERE tl.Status in ('APPROVED', 'PAID', 'CANCELLED') AND tl.tenantId != 'pb.testing'
+  query: SELECT initcap(split_part(tl.tenantId,'.', 2)) as tenantId,licensenumber,to_char(To_timestamp(issueddate / 1000),'DD/MM/YYYY') as formattedIssuedDate,tl.tradeName,tradeTypeName,tlown.name,tlown.mobilenumber,feeType,pgtxn.bank_transaction_no as banktxnNo,totalamount,To_char(To_timestamp(pd.manualreceiptdate/ 1000), 'DD/MM/YYYY') AS g8issuedate,pd.manualreceiptnumber as g8receiptno FROM eg_tl_tradelicense tl INNER JOIN eg_tl_tradelicensedetail tld ON tld.tradelicenseid = tl.id INNER JOIN(SELECT tradelicensedetailid, array_to_string(array_agg(name),', ') as name, array_to_string(array_agg(mobilenumber),', ') as mobilenumber FROM eg_tl_owner tlowner INNER JOIN eg_user tluser ON tluser.uuid = tlowner.id group by tradelicensedetailid) tlown ON tlown.tradelicensedetailid = tld.id INNER JOIN (SELECT tradelicensedetailid,array_to_string(array_agg(message.message),'; ')as tradeTypeName FROM eg_tl_tradeunit INNER JOIN message ON replace(substring(code, '_[A-Z]*_(.*)'),'_','.') = tradeType AND message.locale = 'en_IN' GROUP BY 1) tlunit ON tlunit.tradelicensedetailid = tld.id INNER JOIN egcl_bill bill ON bill.consumercode = tl.applicationnumber and bill.status !='Cancelled' JOIN egcl_billdetial as bild ON bild.billid = bill.id INNER JOIN(Select DISTINCT billdetailid,amount, taxheadcode,message.message as feeType from egcl_billaccountdetail bilaccd INNER JOIN message ON taxheadcode = message.code AND message.locale='en_IN')  as bilaccd ON bild.id = bilaccd .billdetailid and bilaccd.amount !=0 and feeType != 'Application Fee' and bilaccd.taxheadcode not in ('TL_RENEWAL_REBATE' , 'TL_ADHOC_PENALTY', 'TL_RENEWAL_PENALTY' , 'TL_GARBAGE_FEE','TL_ADHOC_REBATE','TL_ADHOC_PENALTY','TL_RENEWAL_ADHOC_PENALTY','TL_RENEWAL_ADHOC_REBATE') LEFT OUTER JOIN egcl_paymentdetail as pd ON pd.billid =bill.id LEFT OUTER JOIN egcl_payment as pay ON pay.id = pd.paymentid and pay.paymentstatus != 'CANCELLED' LEFT OUTER Join eg_pg_transactions as pgtxn ON pay.transactionnumber = pgtxn.txn_id WHERE tl.Status in ('APPROVED', 'PAID', 'CANCELLED') AND tl.tenantId != 'pb.testing'
   orderby: ORDER BY tl.tenantId asc
+
+- reportName: TradeLicensePendingForRenewalReport
+  summary: TL Pending for Renewal Report
+  decryptionPathId: TradeLicensePendingForRenewalReport
+  version: 1.0.0
+  moduleName: rainmaker-tl
+  sourceColumns:
+  - name: licensenumber
+    label: report.tl.licensenumber
+    type: string
+    source: tl
+    total: false
+  - name: formattedIssuedDate
+    label: report.tl.issueddate
+    type: string
+    source: tl
+    total: false
+  - name: formattedExpiredDate
+    label: report.tl.tlexpiryDate
+    type: string
+    source: tl
+    total: false
+  - name: name
+    label: report.tl.user.name
+    type: string
+    source: tl
+    total: false
+  - name: mobilenumber
+    label: report.tl.user.mobilenumber
+    type: string
+    source: tl
+    total: false
+  - name: tradeTypeName
+    label: report.tl.tradetype
+    type: string
+    source: tl
+    total: false
+  - name: tradeName
+    label: report.tl.tradeName
+    type: string
+    source: tl
+    total: false
+  searchParams:
+  - name: fromDate
+    label: reports.tl.fromDate
+    type: epoch
+    source: tl
+    isMandatory: false
+    searchClause: AND issueddate >= $fromDate
+  - name: toDate
+    label: reports.tl.toDate
+    type: epoch
+    source: tl
+    isMandatory: false
+    searchClause: AND issueddate <= $toDate
+  - name: financialyear
+    label: report.tl.financialyear
+    type: singlevaluelist
+    pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=egf-master&masterName=FinancialYear&filter=%5B?(@.module=='TL')%5D|$.MdmsRes.egf-master.FinancialYear[*].endingDate|$.MdmsRes.egf-master.FinancialYear[*].code
+    source: tl
+    wrapper: true
+    isMandatory: false
+    searchClause: AND validto = $financialyear::BIGINT
+  query: |
+    SELECT licensenumber,issueddate,validto,to_char(To_timestamp(issueddate / 1000), 'DD/MM/YYYY') as formattedIssuedDate,to_char(To_timestamp(validto / 1000), 'DD/MM/YYYY') as formattedExpiredDate,tl.tradeName,tradeTypeName,tlown.name,tlown.mobilenumber FROM eg_tl_tradelicense tl INNER JOIN eg_tl_tradelicensedetail tld ON tld.tradelicenseid = tl.id INNER JOIN (SELECT tradelicensedetailid,array_to_string(array_agg(message.message),'; ') as tradeTypeName FROM eg_tl_tradeunit INNER JOIN message ON replace(substring(code, '_[A-Z]*_(.*)'),'_','.') = tradeType AND message.locale = 'en_IN' GROUP BY 1) tlunit ON tlunit.tradelicensedetailid = tld.id INNER JOIN (SELECT tradelicensedetailid, array_to_string(array_agg(name),', ') as name, array_to_string(array_agg(mobilenumber),', ') as mobilenumber FROM eg_tl_owner tlowner INNER JOIN eg_user tluser ON tluser.uuid = tlowner.id group by tradelicensedetailid) tlown ON tlown.tradelicensedetailid = tld.id WHERE status = 'APPROVED' AND tl.tenantId LIKE $tenantid
+  orderby: ORDER BY tl.issueddate
+
+- reportName: TradeLicenseAppplicationStatusRegistry
+  summary: TL Application Status Registry
+  decryptionPathId: TradeLicenseAppplicationStatusRegistry
+  version: 1.0.0
+  moduleName: rainmaker-tl
+  sourceColumns:
+  - name: applicationnumber
+    label: report.tl.appnumber
+    type: string
+    source: tl
+    total: false
+  - name: licensenumber
+    label: report.tl.licensenumber
+    type: string
+    source: tl
+    total: false
+  - name: name
+    label: report.tl.user.name
+    type: string
+    source: tl
+    total: false
+  - name: mobilenumber
+    label: report.tl.user.mobilenumber
+    type: string
+    source: tl
+    total: false
+  - name: tradeTypeName
+    label: report.tl.tradetype
+    type: string
+    source: tl
+    total: false
+  - name: tradeName
+    label: report.tl.tradeName
+    type: string
+    source: tl
+    total: false
+  - name: formattedIssuedDate
+    label: report.tl.issueddate
+    type: string
+    source: tl
+    total: false
+  - name: formattedExpiredDate
+    label: report.tl.tlexpiryDate
+    type: string
+    source: tl
+    total: false
+  - name: appstatus
+    label: report.tl.status
+    type: string
+    source: tl
+    total: false
+  searchParams:
+  - name: fromDate
+    label: reports.tl.fromDate
+    type: epoch
+    source: tl
+    isMandatory: false
+    searchClause: AND tl.issueddate >= $fromDate
+  - name: toDate
+    label: reports.tl.toDate
+    type: epoch
+    source: tl
+    isMandatory: false
+    searchClause: AND tl.issueddate <= $toDate
+  - name: status
+    label: report.tl.status
+    type: singlevaluelist
+    pattern: list://INITIATED:Initiated,PENDINGAPPLFEE:Pending for Application Fee,APPLIED:Pending For Engg Section Verification,FIELDINSPECTION:Pending For Sanitation Section Verification,CITIZENACTIONREQUIRED:Pending for Citizen Action,PENDINGAPPROVAL:Pending for Approval,APPROVED:Approved,PENDINGPAYMENT:Pending for Payment,EXPIRED:Expired,CANCELLED:Cancelled,REJECTED:Rejected
+    source: uc
+    wrapper: true
+    isMandatory: false
+    searchClause: AND tl.status = $status
+  query: SELECT applicationnumber,licensenumber,to_char(To_timestamp(issueddate / 1000), 'DD/MM/YYYY') as formattedIssuedDate,to_char(To_timestamp(validto / 1000), 'DD/MM/YYYY') as formattedExpiredDate,message.message as appstatus,tl.tradeName,tradeTypeName,tlown.name,tlown.mobilenumber,status FROM eg_tl_tradelicense tl LEFT OUTER JOIN message ON split_part(message.code,'_',2) = status AND message.locale = 'en_IN' AND message.module = 'rainmaker-tl' INNER JOIN eg_tl_tradelicensedetail tld ON tld.tradelicenseid = tl.id INNER JOIN (SELECT tradelicensedetailid,array_to_string(array_agg(message.message),'; ') as tradeTypeName FROM eg_tl_tradeunit INNER JOIN message ON replace(substring(code, '_[A-Z]*_(.*)'),'_','.') = tradeType AND message.locale = 'en_IN' GROUP BY 1) tlunit ON tlunit.tradelicensedetailid = tld.id INNER JOIN (SELECT tradelicensedetailid, array_to_string(array_agg(name),', ') as name, array_to_string(array_agg(mobilenumber),', ') as mobilenumber FROM eg_tl_owner tlowner INNER JOIN eg_user tluser ON tluser.uuid = tlowner.id group by tradelicensedetailid) tlown ON tlown.tradelicensedetailid = tld.id Where tl.tenantId LIKE $tenantid
+  orderby: ORDER BY  tl.applicationnumber

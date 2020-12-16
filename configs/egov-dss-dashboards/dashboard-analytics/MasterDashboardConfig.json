@@ -1443,6 +1443,66 @@
                   "headers": []
                 }
               ]
+            },
+            {
+              "id": 145,
+              "name": "DSS_WATER",
+              "vizType": "module",
+              "moduleLevel": "WS",
+              "ref": {
+                "url": "ws",
+                "logoUrl": "",
+                "type": "internal"
+              },
+              "label": "",
+              "charts": [
+                {
+                  "id": "wstotalCollection",
+                  "name": "DSS_WS_TOTAL_COLLECTION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "wstotalConnection",
+                  "name": "DSS_WS_TOTAL_CONNECTIONS",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 149,
+              "name": "DSS_SEWERAGE",
+              "vizType": "module",
+              "moduleLevel": "SW",
+              "ref": {
+                "url": "sw",
+                "logoUrl": "",
+                "type": "internal"
+              },
+              "label": "",
+              "charts": [
+                {
+                  "id": "swtotalCollection",
+                  "name": "DSS_SW_TOTAL_COLLECTION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "swtotalConnection",
+                  "name": "DSS_SW_TOTAL_CONNECTIONS",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
             }
           ]
         }
@@ -3179,6 +3239,66 @@
                   "headers": []
                 }
               ]
+            },
+            {
+              "id": 144,
+              "name": "DSS_WATER",
+              "vizType": "module",
+              "moduleLevel": "WS",
+              "ref": {
+                "url": "ws",
+                "logoUrl": "",
+                "type": "internal"
+              },
+              "label": "",
+              "charts": [
+                {
+                  "id": "wstotalCollection",
+                  "name": "DSS_WS_TOTAL_COLLECTION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "wstotalConnection",
+                  "name": "DSS_WS_TOTAL_CONNECTIONS",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+             {
+              "id": 144,
+              "name": "DSS_SEWERAGE",
+              "vizType": "module",
+              "moduleLevel": "SW",
+              "ref": {
+                "url": "sw",
+                "logoUrl": "",
+                "type": "internal"
+              },
+              "label": "",
+              "charts": [
+                {
+                  "id": "swtotalCollection",
+                  "name": "DSS_SW_TOTAL_COLLECTION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "swtotalConnection",
+                  "name": "DSS_SW_TOTAL_CONNECTIONS",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
             }            
           ]
         }
@@ -3224,6 +3344,22 @@
                   "headers": []
                 },
                 {
+                  "id": "wsConCollection",
+                  "name": "DSS_CONNECTION_COLLECTION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "wsChargesCollection",
+                  "name": "DSS_WATER_CHARGES_COLLECTION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
                   "id": "wstargetCollection",
                   "name": "DSS_W&S_TARGET_COLLECTION",
                   "code": "",
@@ -3313,7 +3449,7 @@
             },
             {
               "id": 223,
-              "name": "DSS_W&S_COLLECTION_BY_USAGE",
+              "name": "DSS_W&S_COLLECTION_BY_CONNECTION_TYPE",
               "dimensions": {
                 "height": 250,
                 "width": 4
@@ -3324,7 +3460,7 @@
               "charts": [
                 {
                   "id": "wscollectionByUsage",
-                  "name": "DSS_W&S_COLLECTION_BY_USAGE",
+                  "name": "DSS_W&S_COLLECTION_BY_CONNECTION_TYPE",
                   "code": "",
                   "chartType": "donut",
                   "filter": "",
@@ -3334,40 +3470,14 @@
             }
           ]
         },
+       
         {
           "row": 3,
           "name": "DSS_REVENUE",
           "vizArray": [
-            {
-              "id": 231,
-              "name": "DSS_W&S_DEMAND_COLLECTION_BOUNDARY",
-              "dimensions": {
-                "height": 350,
-                "width": 12
-              },
-              "vizType": "chart",
-              "noUnit": false,
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "wsFinancialIndicatorDDR",
-                  "name": "DSS_W&S_DEMAND_COLLECTION_BOUNDARY",
-                  "code": "",
-                  "chartType": "table",
-                  "filter": "",
-                  "headers": [],
-                  "tabName": "Boundary"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "row": 4,
-          "name": "DSS_REVENUE",
-          "vizArray": [
-            {
-              "id": 231,
+            
+             {
+              "id": 232,
               "name": "DSS_W&S_TAX_HEAD_BOUNDARY",
               "dimensions": {
                 "height": 350,
@@ -3379,18 +3489,66 @@
               "isCollapsible": true,
               "charts": [
                 {
-                  "id": "wsTaxHeadDDR",
+                  "id": "wsTaxHeadUlb",
                   "name": "DSS_W&S_TAX_HEAD_BOUNDARY",
                   "code": "",
                   "chartType": "table",
                   "filter": "",
                   "headers": [],
                   "tabName": "Boundary"
+                },
+                {
+                  "id": "wsTaxHeadWard",
+                  "name": "DSS_W&S_TAX_HEAD_BOUNDARY",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "Ward"
                 }
               ]
             }
           ]
         },
+        {
+          "row": 4,
+          "name": "DSS_REVENUE",
+          "vizArray": [
+        {
+              "id": 231,
+              "name": "DSS_WS_CON_TAX_HEAD_BOUNDARY",
+              "dimensions": {
+                "height": 350,
+                "width": 12
+              },
+              "vizType": "chart",
+              "label": "",
+              "noUnit": false,
+              "isCollapsible": true,
+              "charts": [
+                {
+                  "id": "waterConTaxHeadUlb",
+                  "name": "DSS_WS_CON_TAX_HEAD_BOUNDARY",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "Boundary"
+                },
+                {
+                  "id": "waterConTaxHeadWard",
+                  "name": "DSS_WS_CON_TAX_HEAD_BOUNDARY",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "Ward"
+                }
+              ]
+            }
+            ]
+            },
+           
         {
           "row": 7,
           "name": "DSS_SERVICE",
@@ -3407,6 +3565,14 @@
               "noUnit": false,
               "isCollapsible": true,
               "charts": [
+              {
+                  "id": "wstotalApplication",
+                  "name": "DSS_W&S_APPLICATIONS",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
                 {
                   "id": "wstotalConnection",
                   "name": "DSS_W&S_CONNECTIONS",
@@ -3415,22 +3581,7 @@
                   "filter": "",
                   "headers": []
                 },
-                {
-                  "id": "wsNewWaterConnection",
-                  "name": "DSS_W&S_WATER_CONNECTIONS",
-                  "code": "",
-                  "chartType": "metric",
-                  "filter": "",
-                  "headers": []
-                },
-                {
-                  "id": "wsNewSewerageConnection",
-                  "name": "DSS_W&S_SEWERAGE_CONNECTIONS",
-                  "code": "",
-                  "chartType": "metric",
-                  "filter": "",
-                  "headers": []
-                },
+               
                 {
                   "id": "wsActiveUlbs",
                   "name": "DSS_W&S_ACTIVE_ULBS",
@@ -3513,7 +3664,7 @@
             },
             {
               "id": 233,
-              "name": "DSS_W&S_CONNECTION_BY_CHANNEL",
+              "name": "DSS_W&S_CONNECTION_BY_STATUS",
               "dimensions": {
                 "height": 350,
                 "width": 12
@@ -3533,36 +3684,6 @@
                 }
               ]
             }
-          ]
-        },
-        {
-          "row": 9,
-          "name": "DSS_SERVICE",
-          "vizArray": [
-            {
-              "id": 231,
-              "name": "DSS_W&S_CONNECTION_AGEING",
-              "dimensions": {
-                "height": 350,
-                "width": 12
-              },
-              "vizType": "chart",
-              "label": "",
-              "noUnit": false,
-              "isCollapsible": true,
-              "charts": [
-                {
-                  "id": "wsConnectionAgeingDDR",
-                  "name": "",
-                  "code": "",
-                  "chartType": "table",
-                  "filter": "",
-                  "headers": [],
-                  "tabName": "Boundary"
-                }
-              ]
-            }
-
           ]
         }
       ]
@@ -3606,7 +3727,23 @@
                   "headers": []
                 },
                 {
-                  "id": "wstargetCollection",
+                  "id": "wsConCollection",
+                  "name": "DSS_CONNECTION_COLLECTION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "wsChargesCollection",
+                  "name": "DSS_WATER_CHARGES_COLLECTION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "targetCollection",
                   "name": "DSS_W&S_TARGET_COLLECTION",
                   "code": "",
                   "chartType": "metric",
@@ -3761,7 +3898,7 @@
               "isCollapsible": true,
               "charts": [
                 {
-                  "id": "wsTaxHeadDDR",
+                  "id": "wsTaxHeadUlb",
                   "name": "DSS_W&S_TAX_HEAD_BOUNDARY",
                   "code": "",
                   "chartType": "table",
@@ -3895,7 +4032,7 @@
             },
             {
               "id": 233,
-              "name": "DSS_W&S_CONNECTION_BY_CHANNEL",
+              "name": "DSS_W&S_CONNECTION_BY_STATUS",
               "dimensions": {
                 "height": 350,
                 "width": 12
@@ -3916,14 +4053,183 @@
               ]
             }
           ]
-        },
+        }
+      ]
+    },
+  	{
+      "name": "DSS_SW_DASHBOARD",
+      "id": "sw",
+      "isActive": "",
+      "style": "linear",
+      "visualizations": [
         {
-          "row": 9,
-          "name": "DSS_SERVICE",
+          "row": 1,
+          "name": "DSS_REVENUE",
           "vizArray": [
             {
-              "id": 231,
-              "name": "DSS_W&S_CONNECTION_AGEING",
+              "id": 211,
+              "name": "DSS_OVERVIEW",
+              "dimensions": {
+                "height": 350,
+                "width": 5
+              },
+              "vizType": "metric-collection",
+              "noUnit": true,
+              "isCollapsible": false,
+              "label": "DSS_OVERVIEW",
+              "charts": [
+                {
+                  "id": "swtodaysCollection",
+                  "name": "DSS_SW_TODAYS_COLLECTION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "swtotalCollection",
+                  "name": "DSS_SW_TOTAL_COLLECTION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "swConCollection",
+                  "name": "DSS_SW_CONNECTION_COLLECTION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "swChargesCollection",
+                  "name": "DSS_SEWERAGE_CHARGES_COLLECTION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "swtargetCollection",
+                  "name": "DSS_SW_TARGET_COLLECTION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "swtargetAchieved",
+                  "name": "DSS_SW_TARGET_ACHIEVED",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 212,
+              "name": "DSS_SW_TOTAL_CUMULATIVE_COLLECTION",
+              "dimensions": {
+                "height": 350,
+                "width": 7
+              },
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "swcumulativeCollections",
+                  "name": "Monthly",
+                  "code": "",
+                  "chartType": "line",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_REVENUE",
+          "vizArray": [
+            {
+              "id": 221,
+              "name": "DSS_SW_TOP_3_PERFORMING_ULBS",
+              "dimensions": {
+                "height": 250,
+                "width": 4
+              },
+              "vizType": "performing-metric",
+              "noUnit": false,
+              "isCollapsible": false,
+              "label": "",
+              "charts": [
+                {
+                  "id": "swtopPerformingUlbs",
+                  "name": "DSS_SW_TOP_3_PERFORMING_ULBS",
+                  "code": "",
+                  "chartType": "",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 222,
+              "name": "DSS_SW_BOTTOM_3_PERFORMING_ULBS",
+              "dimensions": {
+                "height": 250,
+                "width": 4
+              },
+              "vizType": "performing-metric",
+              "noUnit": false,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "swbottomPerformingUlbs",
+                  "name": "DSS_SW_BOTTOM_3_PERFORMING_ULBS",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 223,
+              "name": "DSS_SW_COLLECTION_BY_CONNECTION_TYPE",
+              "dimensions": {
+                "height": 250,
+                "width": 4
+              },
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "swcollectionByUsage",
+                  "name": "DSS_SW_COLLECTION_BY_CONNECTION_TYPE",
+                  "code": "",
+                  "chartType": "donut",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+       
+        {
+          "row": 3,
+          "name": "DSS_REVENUE",
+          "vizArray": [
+            
+             {
+              "id": 232,
+              "name": "DSS_SW_TAX_HEAD_BOUNDARY",
               "dimensions": {
                 "height": 350,
                 "width": 12
@@ -3934,8 +4240,388 @@
               "isCollapsible": true,
               "charts": [
                 {
-                  "id": "wsConnectionAgeingDDR",
+                  "id": "swTaxHeadUlb",
+                  "name": "DSS_SW_TAX_HEAD_BOUNDARY",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "Boundary"
+                },
+                {
+                  "id": "swTaxHeadWard",
+                  "name": "DSS_SW_TAX_HEAD_BOUNDARY",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "Ward"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 4,
+          "name": "DSS_REVENUE",
+          "vizArray": [
+        {
+              "id": 231,
+              "name": "DSS_SW_CON_TAX_HEAD_BOUNDARY",
+              "dimensions": {
+                "height": 350,
+                "width": 12
+              },
+              "vizType": "chart",
+              "label": "",
+              "noUnit": false,
+              "isCollapsible": true,
+              "charts": [
+                {
+                  "id": "swConTaxHeadUlb",
+                  "name": "DSS_SW_CON_TAX_HEAD_BOUNDARY",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "Boundary"
+                },
+                {
+                  "id": "swConTaxHeadWard",
+                  "name": "DSS_SW_CON_TAX_HEAD_BOUNDARY",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "Ward"
+                }
+              ]
+            }
+            ]
+            },
+           
+        {
+          "row": 7,
+          "name": "DSS_SERVICE",
+          "vizArray": [
+            {
+              "id": 231,
+              "name": "DSS_OVERVIEW",
+              "dimensions": {
+                "height": 350,
+                "width": 12
+              },
+              "vizType": "metric-collection",
+              "label": "",
+              "noUnit": false,
+              "isCollapsible": true,
+              "charts": [
+              {
+                  "id": "swtotalApplication",
+                  "name": "DSS_SW_APPLICATIONS",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "swtotalConnection",
+                  "name": "DSS_SW_CONNECTIONS",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+               
+                {
+                  "id": "swActiveUlbs",
+                  "name": "DSS_SW_ACTIVE_ULBS",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 232,
+              "name": "DSS_SW_CUMULATIVE_COLLECTION",
+              "dimensions": {
+                "height": 350,
+                "width": 7
+              },
+              "vizType": "chart",
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "swcumulativeConnections",
+                  "name": "Monthly",
+                  "code": "",
+                  "chartType": "line",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 8,
+          "name": "DSS_SERVICE",
+          "vizArray": [
+            {
+              "id": 231,
+              "name": "DSS_SW_WATER_CONNECTION_BY_USAGE",
+              "dimensions": {
+                "height": 350,
+                "width": 12
+              },
+              "vizType": "chart",
+              "label": "",
+              "noUnit": false,
+              "isCollapsible": true,
+              "charts": [
+                {
+                  "id": "swConsumersByConnectionType",
                   "name": "",
+                  "code": "",
+                  "chartType": "donut",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 232,
+              "name": "DSS_SW_CONNECTION_BY_USAGE",
+              "dimensions": {
+                "height": 350,
+                "width": 12
+              },
+              "vizType": "chart",
+              "label": "",
+              "noUnit": false,
+              "isCollapsible": true,
+              "charts": [
+                {
+                  "id": "swConsumersByUsageType",
+                  "name": "",
+                  "code": "",
+                  "chartType": "donut",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 233,
+              "name": "DSS_SW_CONNECTION_BY_STATUS",
+              "dimensions": {
+                "height": 350,
+                "width": 12
+              },
+              "vizType": "chart",
+              "label": "",
+              "noUnit": false,
+              "isCollapsible": true,
+              "charts": [
+                {
+                  "id": "swConsumersByChannel",
+                  "name": "",
+                  "code": "",
+                  "chartType": "donut",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DSS_SW_DASHBOARD",
+      "id": "ulb-sw",
+      "isActive": "",
+      "style": "linear",
+      "visualizations": [
+        {
+          "row": 1,
+          "name": "DSS_REVENUE",
+          "vizArray": [
+            {
+              "id": 211,
+              "name": "DSS_OVERVIEW",
+              "dimensions": {
+                "height": 350,
+                "width": 5
+              },
+              "vizType": "metric-collection",
+              "noUnit": true,
+              "isCollapsible": false,
+              "label": "DSS_OVERVIEW",
+              "charts": [
+                {
+                  "id": "swtodaysCollection",
+                  "name": "DSS_SW_TODAYS_COLLECTION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "swtotalCollection",
+                  "name": "DSS_SW_TOTAL_COLLECTION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "swConCollection",
+                  "name": "DSS_CONNECTION_COLLECTION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "swChargesCollection",
+                  "name": "DSS_WATER_CHARGES_COLLECTION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "targetCollection",
+                  "name": "DSS_SW_TARGET_COLLECTION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "swtargetAchieved",
+                  "name": "DSS_SW_TARGET_ACHIEVED",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 212,
+              "name": "DSS_SW_TOTAL_CUMULATIVE_COLLECTION",
+              "dimensions": {
+                "height": 350,
+                "width": 7
+              },
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "swcumulativeCollections",
+                  "name": "Monthly",
+                  "code": "",
+                  "chartType": "line",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_REVENUE",
+          "vizArray": [
+            {
+              "id": 221,
+              "name": "DSS_SW_TOP_3_PERFORMING_ULBS",
+              "dimensions": {
+                "height": 250,
+                "width": 4
+              },
+              "vizType": "performing-metric",
+              "noUnit": false,
+              "isCollapsible": false,
+              "label": "",
+              "charts": [
+                {
+                  "id": "swtopPerformingUlbs",
+                  "name": "DSS_SW_TOP_3_PERFORMING_ULBS",
+                  "code": "",
+                  "chartType": "",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 222,
+              "name": "DSS_SW_BOTTOM_3_PERFORMING_ULBS",
+              "dimensions": {
+                "height": 250,
+                "width": 4
+              },
+              "vizType": "performing-metric",
+              "noUnit": false,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "swbottomPerformingUlbs",
+                  "name": "DSS_SW_BOTTOM_3_PERFORMING_ULBS",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 223,
+              "name": "DSS_SW_COLLECTION_BY_USAGE",
+              "dimensions": {
+                "height": 250,
+                "width": 4
+              },
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "swcollectionByUsage",
+                  "name": "DSS_SW_COLLECTION_BY_USAGE",
+                  "code": "",
+                  "chartType": "donut",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "name": "DSS_REVENUE",
+          "vizArray": [
+            {
+              "id": 231,
+              "name": "DSS_SW_DEMAND_COLLECTION_BOUNDARY",
+              "dimensions": {
+                "height": 350,
+                "width": 12
+              },
+              "vizType": "chart",
+              "noUnit": false,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "swFinancialIndicatorDDR",
+                  "name": "DSS_SW_DEMAND_COLLECTION_BOUNDARY",
                   "code": "",
                   "chartType": "table",
                   "filter": "",
@@ -3944,7 +4630,179 @@
                 }
               ]
             }
-
+          ]
+        },
+        {
+          "row": 4,
+          "name": "DSS_REVENUE",
+          "vizArray": [
+            {
+              "id": 231,
+              "name": "DSS_SW_TAX_HEAD_BOUNDARY",
+              "dimensions": {
+                "height": 350,
+                "width": 12
+              },
+              "vizType": "chart",
+              "label": "",
+              "noUnit": false,
+              "isCollapsible": true,
+              "charts": [
+                {
+                  "id": "swTaxHeadUlb",
+                  "name": "DSS_SW_TAX_HEAD_BOUNDARY",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "Boundary"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 7,
+          "name": "DSS_SERVICE",
+          "vizArray": [
+            {
+              "id": 231,
+              "name": "DSS_OVERVIEW",
+              "dimensions": {
+                "height": 350,
+                "width": 12
+              },
+              "vizType": "metric-collection",
+              "label": "",
+              "noUnit": false,
+              "isCollapsible": true,
+              "charts": [
+                {
+                  "id": "swtotalConnection",
+                  "name": "DSS_SW_CONNECTIONS",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "swNewWaterConnection",
+                  "name": "DSS_SW_WATER_CONNECTIONS",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "swNewSewerageConnection",
+                  "name": "DSS_SW_SEWERAGE_CONNECTIONS",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "swActiveUlbs",
+                  "name": "DSS_SW_ACTIVE_ULBS",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 232,
+              "name": "DSS_SW_CUMULATIVE_COLLECTION",
+              "dimensions": {
+                "height": 350,
+                "width": 7
+              },
+              "vizType": "chart",
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "swcumulativeConnections",
+                  "name": "Monthly",
+                  "code": "",
+                  "chartType": "line",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 8,
+          "name": "DSS_SERVICE",
+          "vizArray": [
+            {
+              "id": 231,
+              "name": "DSS_SW_WATER_CONNECTION_BY_USAGE",
+              "dimensions": {
+                "height": 350,
+                "width": 12
+              },
+              "vizType": "chart",
+              "label": "",
+              "noUnit": false,
+              "isCollapsible": true,
+              "charts": [
+                {
+                  "id": "swConsumersByConnectionType",
+                  "name": "",
+                  "code": "",
+                  "chartType": "donut",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 232,
+              "name": "DSS_SW_CONNECTION_BY_USAGE",
+              "dimensions": {
+                "height": 350,
+                "width": 12
+              },
+              "vizType": "chart",
+              "label": "",
+              "noUnit": false,
+              "isCollapsible": true,
+              "charts": [
+                {
+                  "id": "swConsumersByUsageType",
+                  "name": "",
+                  "code": "",
+                  "chartType": "donut",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 233,
+              "name": "DSS_SW_CONNECTION_BY_STATUS",
+              "dimensions": {
+                "height": 350,
+                "width": 12
+              },
+              "vizType": "chart",
+              "label": "",
+              "noUnit": false,
+              "isCollapsible": true,
+              "charts": [
+                {
+                  "id": "swConsumersByChannel",
+                  "name": "",
+                  "code": "",
+                  "chartType": "donut",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
           ]
         }
       ]

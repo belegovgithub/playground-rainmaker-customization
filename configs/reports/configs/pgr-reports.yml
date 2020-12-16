@@ -8,14 +8,17 @@ ReportDefinitions:
     label: reports.rainmaker-pgr.source.mobileapp
     type: number
     source: eg_pgr_service
+    total: true
   - name: citizen_web_app
     label: reports.rainmaker-pgr.source.web
     type: number
     source: eg_pgr_service
+    total: true
   - name: counter_desktop
     label: reports.rainmaker-pgr.source.ivr
     type: number
     source: eg_pgr_service
+    total: true
   searchParams:  
   - name: fromDate
     label: reports.rainmaker-pgr.datefrom
@@ -166,7 +169,7 @@ ReportDefinitions:
     keyOrder: name,code
     tableName: tbl_def_dept
   - entity: $.TenantBoundary[0].boundary
-    apiURL: http://egov-location:8080/egov-location/location/v11/boundarys/_search?hierarchyTypeCode=ADMIN&boundaryType=Locality&tenantId=$tenantId
+    apiURL: http://egov-location:8080/egov-location/location/v11/boundarys/_search?hierarchyTypeCode=REVENUE&boundaryType=Locality&tenantId=$tenantId
     keyOrder: name,code
     tableName: tbl_boundary
   sourceColumns:
@@ -346,7 +349,7 @@ ReportDefinitions:
     keyOrder: serviceCode,department,slaHours
     tableName: tbl_dept
   - entity: $.TenantBoundary[0].boundary
-    apiURL: http://egov-location:8080/egov-location/location/v11/boundarys/_search?hierarchyTypeCode=ADMIN&boundaryType=Locality&tenantId=$tenantId
+    apiURL: http://egov-location:8080/egov-location/location/v11/boundarys/_search?hierarchyTypeCode=REVENUE&boundaryType=Locality&tenantId=$tenantId
     keyOrder: name,code
     tableName: tbl_boundary
   - entity: $.MdmsRes.common-masters.Department
