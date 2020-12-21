@@ -81,6 +81,10 @@
                                    "style": "receipt-logo-title"
                                  },
                                  {
+                                  "text":"{{challanStatus}}",
+                                   "style": "receipt-logo-title-status"
+                                 },
+                                 {
                                   "text":"{{rule-number}}",
                                    "alignment":"center",
                                    "style": "receipt-logo-title"
@@ -412,7 +416,28 @@
                                         ]
                                         ]
                                     }
-                                   }
+                                   },
+                                   {
+                                    "table": {
+                                    "widths": [
+                                                "*"   
+                                             ],
+                                    "body": [
+                                      [
+                                        {
+                                          "text":"{{challanRemarks}}",
+                                          "border":[
+                                              false,
+                                              false,
+                                              false,
+                                              false
+                                          ],
+                                         "style": "receipt-logo-title-remarks-new"
+                                        } 
+                                      ]
+                                    ]
+                                  }
+                                  }
                                    ]
                           }
                       ]
@@ -635,6 +660,44 @@
                  5
                ]
              }, 
+             "receipt-logo-title-status": {
+              "color": "#FF0000",
+              "alignment": "right",
+              "bold": true,
+              "fontSize": 13,
+              "fontWeight": 500,
+              "margin": [
+                0,
+              -22,
+              60,
+                0
+              ]
+           },
+           "receipt-logo-title-remarks": {
+            "color": "#000000",
+            "alignment": "right",
+            "bold": true,
+            "fontSize": 8,
+            "fontWeight": 500,
+            "margin": [
+              0,
+            -22,
+            70,
+              -10
+            ]
+         },
+          "receipt-logo-title-remarks-new": {
+            "color": "#FF0000",
+            "bold": true,
+            "fontSize": 10,
+            "fontWeight": 500,
+            "margin": [
+              0,
+              0,
+              0,
+              0
+            ]
+        },
               "noc-table": {
                "fontSize": 12,
                "color": "#484848",

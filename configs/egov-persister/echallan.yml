@@ -7,7 +7,7 @@ serviceMaps:
     isTransaction: true
     queryMaps:
 
-    - query: INSERT INTO eg_echallan( id, accountid, tenantid, challanNo, businessService, referenceId, applicationStatus,taxPeriodFrom,taxPeriodTo, additionalDetail, createdby, lastmodifiedby, createdtime, lastmodifiedtime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+    - query: INSERT INTO eg_echallan( id, accountid, tenantid, challanNo, businessService, referenceId, applicationStatus,taxPeriodFrom,taxPeriodTo, additionalDetail, createdby, lastmodifiedby, createdtime, lastmodifiedtime,description,filestoreid) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?);
       basePath: Challan
       jsonMaps:
       - jsonPath: $.Challan.id
@@ -40,7 +40,9 @@ serviceMaps:
 
       - jsonPath: $.Challan.auditDetails.lastModifiedTime
 
+      - jsonPath: $.Challan.description
 
+      - jsonPath: $.Challan.filestoreid
    
     - query: INSERT INTO eg_challan_address( id, tenantid, doorno,plotNo,street,buildingName, latitude,longitude,locality, district, landmark,city,pincode, region, state,country, detail, echallanId, createdby, lastmodifiedby, createdtime, lastmodifiedtime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
       basePath: Challan.address
@@ -88,7 +90,6 @@ serviceMaps:
       - jsonPath: $.Challan.auditDetails.createdTime
 
       - jsonPath: $.Challan.auditDetails.lastModifiedTime
-
     
   - version: 1.0
     description: Update Challan details in eg_echallan  table
@@ -96,18 +97,28 @@ serviceMaps:
     isTransaction: true
     queryMaps:
     
-    - query: UPDATE eg_echallan SET applicationStatus = ?, lastmodifiedby = ?,  lastmodifiedtime = ? WHERE id=?;
+    - query: UPDATE eg_echallan SET applicationStatus = ?, taxPeriodFrom = ?,taxPeriodTo = ?, lastmodifiedby = ?,  lastmodifiedtime = ?,description = ?, additionalDetail = ?, filestoreid = ? WHERE id=?;
       basePath: Challan
       jsonMaps:
       
       - jsonPath: $.Challan.applicationStatus
+      
+      - jsonPath: $.Challan.taxPeriodFrom
+      
+      - jsonPath: $.Challan.taxPeriodTo
 
       - jsonPath: $.Challan.auditDetails.lastModifiedBy
 
       - jsonPath: $.Challan.auditDetails.lastModifiedTime
 
+      - jsonPath: $.Challan.description
+
+      - jsonPath: $.Challan.additionalDetail
+        type: JSON
+        dbType: JSONB
+
+      - jsonPath: $.Challan.filestoreid
+
       - jsonPath: $.Challan.id
-
-
 
 

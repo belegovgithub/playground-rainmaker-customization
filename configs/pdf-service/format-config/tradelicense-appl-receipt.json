@@ -454,7 +454,7 @@
                                          "style": "receipt-table-value"
                                       },
                                       {
-                                        "text":"{{serviceType}} {{tlReceipt}}",
+                                        "text":"{{serviceType}}",
                                         "border":[
                                           false,
                                           false,
