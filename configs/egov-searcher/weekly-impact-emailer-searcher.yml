@@ -114,3 +114,12 @@
       jsonFormat: {"ResponseInfo": {}}
       outJsonPath: $.data
       responseInfoPath: $.ResponseInfo
+      
+   - name: citizensRegistered
+     query: 
+      baseQuery: select array_to_json(array_agg(row_to_json(citizensregistered))) from (SELECT count(*) FROM eg_user where username=mobilenumber ) citizensregistered
+	  
+     output:
+      jsonFormat: {"ResponseInfo": {}}
+      outJsonPath: $.data
+      responseInfoPath: $.ResponseInfo
