@@ -118,7 +118,12 @@
    - name: citizensRegistered
      query: 
       baseQuery: select array_to_json(array_agg(row_to_json(citizensregistered))) from (SELECT count(*) FROM eg_user where username=mobilenumber ) citizensregistered
-	  
+     searchParams:
+      condition: AND
+      params:
+      - name: intervalinsecs
+        isMandatory: true
+        jsonPath: $.searchCriteria.intervalinsecs
      output:
       jsonFormat: {"ResponseInfo": {}}
       outJsonPath: $.data
