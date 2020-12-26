@@ -81,8 +81,10 @@ serviceMaps:
 
        - jsonPath: $.billingSlab.*.auditDetails.lastModifiedTime
        
+       - jsonPath: $.billingSlab.*.applicationFee
+       
        - jsonPath: $.billingSlab.*.id
 
        - jsonPath: $.billingSlab.*.tenantId
 
-       - jsonPath: $.billingSlab.*.applicationFee
+
