@@ -81,9 +81,11 @@
                 },
                 "localisation":{
                   "required":true,
-                  "prefix": "TENANTS_MOHALLA",
-                  "module": "rainmaker-pdf"
-               }
+                  "prefix": "REVENUE",
+                  "module": "rainmaker",
+                  "prefixCbName":true
+               },
+               "type":"boundary"
             },
               {
                 "variable": "city",
