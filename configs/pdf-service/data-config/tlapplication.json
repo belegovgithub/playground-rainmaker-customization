@@ -140,12 +140,7 @@
                   "variable": "uomMeasurement",
                   "value": {
                     "path": "$.tradeLicenseDetail.tradeUnits[0].uom"
-                  },
-                  "localisation":{
-                    "required":true,
-                    "prefix": "COMMON_UOM",
-                    "module": "rainmaker-tl"
-                 }
+                  }
               },
               {
                   "variable": "uomValue1",
