@@ -117,7 +117,7 @@
       
    - name: citizensRegistered
      query: 
-      baseQuery: select array_to_json(array_agg(row_to_json(citizensregistered))) from (SELECT count(*) ,'Week0' as day FROM eg_user where username=mobilenumber  and createddate <= now() UNION SELECT count(*) ,'Week1' as day FROM eg_user where username=mobilenumber  and createddate <= now() - INTERVAL '7 DAYS' UNION SELECT count(*) ,'Week2' as day FROM eg_user where username=mobilenumber  and createddate <= now() - INTERVAL '14 DAYS' UNION SELECT count(*) ,'Week3' as day FROM eg_user where username=mobilenumber  and createddate <= now() - INTERVAL '21 DAYS' UNION SELECT count(*) ,'Week4' as day FROM eg_user where username=mobilenumber  and createddate <= now() - INTERVAL '28 DAYS' UNION SELECT count(*) ,'Week5' as day FROM eg_user where username=mobilenumber  and createddate <= now() - INTERVAL '35 DAYS') citizensregistered
+      baseQuery: select array_to_json(array_agg(row_to_json(citizensregistered))) from (SELECT count(*) ,'Week0' as day FROM eg_user where username=mobilenumber  and createddate <= date_trunc('week', current_date ) + interval '6 day'  - interval '1 second' UNION SELECT count(*) ,'Week1' as day FROM eg_user where username=mobilenumber  and createddate <= date_trunc('week', current_date ) + interval '6 DAYS'  - interval '1 second' - INTERVAL '7 DAYS' UNION SELECT count(*) ,'Week2' as day FROM eg_user where username=mobilenumber  and createddate <= date_trunc('week', current_date ) + interval '6 day'  - interval '1 second' - INTERVAL '14 DAYS' UNION SELECT count(*) ,'Week3' as day FROM eg_user where username=mobilenumber  and createddate <= date_trunc('week', current_date ) + interval '6 day'  - interval '1 second' - INTERVAL '21 DAYS' UNION SELECT count(*) ,'Week4' as day FROM eg_user where username=mobilenumber  and createddate <= date_trunc('week', current_date ) + interval '6 day'  - interval '1 second' - INTERVAL '28 DAYS' UNION SELECT count(*) ,'Week5' as day FROM eg_user where username=mobilenumber  and createddate <= date_trunc('week', current_date ) + interval '6 day'  - interval '1 second' - INTERVAL '35 DAYS') citizensregistered
      searchParams:
       condition: AND
       params:
@@ -128,3 +128,17 @@
       jsonFormat: {"ResponseInfo": {}}
       outJsonPath: $.data
       responseInfoPath: $.ResponseInfo
+
+   - name: citizensRegisteredDaily
+     query: 
+      baseQuery: select array_to_json(array_agg(row_to_json(citizensregistered))) from (SELECT count(*) ,'Week0' as day FROM eg_user where username=mobilenumber  and createddate <= (date_trunc('day',current_date) + interval '1 day' - interval '1 second') UNION SELECT count(*) ,'Week1' as day FROM eg_user where username=mobilenumber  and createddate <= (date_trunc('day',current_date) + interval '1 day' - interval '1 second') - INTERVAL '1 DAYS' UNION SELECT count(*) ,'Week2' as day FROM eg_user where username=mobilenumber  and createddate <= (date_trunc('day',current_date) + interval '1 day' - interval '1 second') - INTERVAL '2 DAYS' UNION SELECT count(*) ,'Week3' as day FROM eg_user where username=mobilenumber  and createddate <= (date_trunc('day',current_date) + interval '1 day' - interval '1 second') - INTERVAL '3 DAYS' UNION SELECT count(*) ,'Week4' as day FROM eg_user where username=mobilenumber  and createddate <= (date_trunc('day',current_date) + interval '1 day' - interval '1 second') - INTERVAL '4 DAYS' UNION SELECT count(*) ,'Week5' as day FROM eg_user where username=mobilenumber  and createddate <= (date_trunc('day',current_date) + interval '1 day' - interval '1 second') - INTERVAL '5 DAYS') citizensregistered
+     searchParams:
+      condition: AND
+      params:
+      - name: intervalinsecs
+        isMandatory: true
+        jsonPath: $.searchCriteria.intervalinsecs
+     output:
+      jsonFormat: {"ResponseInfo": {}}
+      outJsonPath: $.data
+      responseInfoPath: $.ResponseInfo      
