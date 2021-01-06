@@ -10,7 +10,7 @@ ReportDefinitions:
         type: string
         source: lams
         total: false
-      - name: applicantname
+      - name: name
         label: LAMS_APPLICANT_NAME
         type: string
         source: lams
@@ -83,7 +83,7 @@ ReportDefinitions:
         searchClause: AND applicationstatus = $status
     query: |
         -- Use CTE to force query plan, compute & use CTE later
-        Select DISTINCT leaserenewal.id,applicationnumber,accountid,eg_user.name as applicantname,applicationtype,status,leasedetail.surveyno as svyno,svydetail.area,svydetail.landlord,svydetail.holdersrights,svydetail.ownedby,svydetail.lessee,svydetail.date_of_exp_lease,To_char((To_timestamp(leaserenewal.applicationdate / 1000) at time Zone 'Asia/Kolkata'), 'DD/MM/YYYY') as applicationdate from eg_lams_leaserenewal AS leaserenewal INNER JOIN (Select  id,surveyno,leaserenewalid from eg_lams_leaserenewaldetail leasedetail) as leasedetail on leasedetail.leaserenewalid = leaserenewal.id INNER JOIN (Select surveyno,area,landlord,holdersrights,ownedby,lessee,date_of_exp_lease from eg_lams_survey_no_details svydetail) as svydetail on svydetail.surveyno = leasedetail.surveyno LEFT OUTER JOIN eg_user ON leaserenewal.accountid=eg_user.uuid  WHERE leaserenewal.tenantid like $tenantid
+        Select DISTINCT leaserenewal.id,applicationnumber,accountid,eg_user.name as name,applicationtype,status,leasedetail.surveyno as svyno,svydetail.area,svydetail.landlord,svydetail.holdersrights,svydetail.ownedby,svydetail.lessee,svydetail.date_of_exp_lease,To_char((To_timestamp(leaserenewal.applicationdate / 1000) at time Zone 'Asia/Kolkata'), 'DD/MM/YYYY') as applicationdate from eg_lams_leaserenewal AS leaserenewal INNER JOIN (Select  id,surveyno,leaserenewalid from eg_lams_leaserenewaldetail leasedetail) as leasedetail on leasedetail.leaserenewalid = leaserenewal.id INNER JOIN (Select surveyno,area,landlord,holdersrights,ownedby,lessee,date_of_exp_lease from eg_lams_survey_no_details svydetail) as svydetail on svydetail.surveyno = leasedetail.surveyno LEFT OUTER JOIN eg_user ON leaserenewal.accountid=eg_user.uuid  WHERE leaserenewal.tenantid like $tenantid
 
   - reportName: LeaseRenewalExtensionApplicationStatusReport
     summary: Nummber of applications by there status
