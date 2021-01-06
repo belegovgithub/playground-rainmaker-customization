@@ -5,7 +5,7 @@ ServiceMaps:
   - topic: save-lams-lr
     configKey: INDEX
     indexes:
-    - name: leaseIndex-v1
+    - name: leaseindex-v1
       type: leases
       id: $.id, $.tenantId
       isBulk: true
@@ -39,7 +39,7 @@ ServiceMaps:
   - topic: update-lams-lr
     configKey: INDEX
     indexes:
-    - name: leaseIndex-v1
+    - name: leaseindex-v1
       type: leases
       id: $.id, $.tenantId
       isBulk: true
