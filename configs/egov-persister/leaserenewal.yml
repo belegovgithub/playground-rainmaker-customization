@@ -39,7 +39,7 @@ serviceMaps:
           - jsonPath: $.leases.*.workflowCode
 
 
-       - query: INSERT INTO eg_lams_leaserenewaldetail(id,surveyno,surveyid,termno,termexpirydate,annualrent,leaserenewalid,createdby,lastmodifiedby,createdtime,lastmodifiedtime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+       - query: INSERT INTO eg_lams_leaserenewaldetail(id,surveyno,surveyid,termno,termexpirydate,annualrent,leaserenewalid,createdby,lastmodifiedby,createdtime,lastmodifiedtime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
          basePath: leases.*.leaseDetails
          jsonMaps:
           - jsonPath: $.leases.*.leaseDetails.id
