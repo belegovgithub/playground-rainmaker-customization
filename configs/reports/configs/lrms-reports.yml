@@ -123,7 +123,7 @@ ReportDefinitions:
     moduleName: rainmaker-lams
     sourceColumns:
     - name: status
-      label: report.lams.status
+      label: LAMS_TABLE_COL_STATUS
       type: string
       source: lams
       total: false
@@ -146,7 +146,7 @@ ReportDefinitions:
       isMandatory: false
       searchClause: AND lams.applicationdate >= $fromDate
     - name: ulb
-      label: report.lams.tenantId
+      label: WF_INBOX_HEADER_TENANTID 
       type: singlevaluelist
       pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=tenant&masterName=tenants|$.MdmsRes.tenant.tenants.*.code|$.MdmsRes.tenant.tenants.*.name
       source: tl
@@ -164,9 +164,9 @@ ReportDefinitions:
     moduleName: rainmaker-lams
     sourceColumns:
       - name: tenantId
-        label: report.tl.tenantid
+        label: WF_INBOX_HEADER_TENANTID
         type: string
-        source: tl
+        source: lams
         total: false
       - name: applicationnumber
         label: LAMS_APP_NO_LABEL
