@@ -980,13 +980,13 @@ ReportDefinitions:
     type: epoch
     source: tl
     isMandatory: false
-    searchClause: AND tl.issueddate >= $fromDate
+    searchClause: AND tl.lastmodifiedtime >= $fromDate
   - name: toDate
     label: reports.tl.toDate
     type: epoch
     source: tl
     isMandatory: false
-    searchClause: AND tl.issueddate <= $toDate
+    searchClause: AND tl.lastmodifiedtime <= $toDate
   - name: status
     label: report.tl.status
     type: singlevaluelist
