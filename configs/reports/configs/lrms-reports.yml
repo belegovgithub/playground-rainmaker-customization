@@ -1,0 +1,250 @@
+ReportDefinitions:
+  - reportName: LeaseRenewalExtensionStatusRegistry
+    summary: Lease Renewal Extension Status Register
+    decryptionPathId: LeaseRenewalExtensionStatusRegistry
+    version: 1.0.0
+    moduleName: rainmaker-lams
+    sourceColumns:
+      - name: applicationnumber
+        label: LAMS_APP_NO_LABEL
+        type: string
+        source: lams
+        total: false
+      - name: name
+        label: LAMS_APPLICANT_NAME
+        type: string
+        source: lams
+        total: false
+      - name: applicationtype
+        label: LAMS_APPLICATION_TYPE_LABEL
+        type: string
+        source: lams
+        total: false
+      - name: applicationdate
+        label: LAMS_TABLE_COL_APP_DATE
+        type: string
+        source: lams
+        total: false
+      - name: status
+        label: LAMS_TABLE_COL_STATUS
+        type: string
+        source: lams
+        total: false
+      - name: ownedby
+        label: LAMS_LOC
+        type: string
+        source: lams
+        total: false
+      - name: svyno
+        label: LAMS_SURVEYNO
+        type: string
+        source: lams
+        total: false
+      - name: area
+        label: LAMS_AREA
+        type: string
+        source: lams
+        total: false
+      - name: holdersrights
+        label: LAMS_NATUREOFHOLDERRIGHTS
+        type: string
+        source: lams
+        total: false
+      - name: landlord
+        label: LAMS_LANDLORD
+        type: string
+        source: lams
+        total: false
+      - name: date_of_exp_lease
+        label: LAMS_TERM_EXP_DATE
+        type: string
+        source: lams
+        total: false
+    searchParams:
+      - name: fromDate
+        label: reports.lams.fromDate
+        type: epoch
+        source: uc
+        isMandatory: false
+        searchClause: AND leaserenewal.applicationdate >= $fromDate
+      - name: toDate
+        label: reports.lams.toDate
+        type: epoch
+        source: uc
+        isMandatory: false
+        searchClause: AND leaserenewal.applicationdate <= $toDate
+      - name: status
+        label: LAMS_SEARCH_RESULTS_APP_STATUS_LABEL
+        type: singlevaluelist
+        pattern: list://APPLIED:Sent for CEO Examination,CITIZEN-REVIEW:Citizen Review,PDDE-EXAMINATION:Sent for PDDE Examination,MOD-EXAMINATION:Sent for MOD Examination,DGDE-EXAMINATION:Sent for DGDE Examination,DEO-EXAMINATION:Sent for DEO Examination,APPROVED:Approved,REJECTED:Rejected 
+        source: uc
+        wrapper: true
+        isMandatory: false
+        searchClause: AND status = $status
+    query: |
+        -- Use CTE to force query plan, compute & use CTE later
+        Select DISTINCT applicationnumber,accountid,eg_user.name as name,applicationtype,message.message as status,leasedetail.surveyno as svyno,svydetail.area as area,svydetail.landlord as landlord,svydetail.holdersrights as holdersrights,svydetail.ownedby as ownedby,svydetail.lessee as lessee,svydetail.date_of_exp_lease as date_of_exp_lease,To_char((To_timestamp(leaserenewal.applicationdate / 1000) at time Zone 'Asia/Kolkata'), 'DD/MM/YYYY') as applicationdate from eg_lams_leaserenewal AS leaserenewal INNER JOIN (Select  id,surveyno,leaserenewalid,surveyid from eg_lams_leaserenewaldetail leasedetail) as leasedetail on leasedetail.leaserenewalid = leaserenewal.id INNER JOIN (Select svydetail.id,surveyno,area,landlord,holdersrights,ownedby,lessee,date_of_exp_lease from eg_lams_survey_no_details svydetail) as svydetail on svydetail.id = leasedetail.surveyid LEFT OUTER JOIN message ON CONCAT('WF_LAMS_NEWLR_CEO_V3_HISTORYSTATUS_',status) = message.code AND message.locale = 'en_IN' AND message.module = 'rainmaker-lams' LEFT OUTER JOIN eg_user ON leaserenewal.accountid=eg_user.uuid  WHERE leaserenewal.tenantid like $tenantid
+
+  - reportName: LeaseRenewalExtensionApplicationStatusReport
+    summary: Nummber of applications by there status
+    version: 1.0.0
+    moduleName: rainmaker-lams
+    sourceColumns:
+    - name: status
+      label: LAMS_TABLE_COL_STATUS
+      type: string
+      source: lams
+      total: false
+    - name: total
+      label: report.lams.total
+      type: string
+      source: lams
+      total: true
+    searchParams:
+    - name: fromDate
+      label: reports.lams.fromDate
+      type: epoch
+      source: lams
+      isMandatory: false
+      searchClause: AND lams.applicationdate >= $fromDate
+    - name: toDate
+      label: reports.lams.toDate
+      type: epoch
+      source: lams
+      isMandatory: false
+      searchClause: AND lams.applicationdate <= $toDate
+    query: SELECT COUNT(applicationnumber) as total,message.message as status from eg_lams_leaserenewal lams LEFT OUTER JOIN message ON CONCAT('WF_LAMS_NEWLR_CEO_V3_HISTORYSTATUS_',status) = message.code AND message.locale = 'en_IN' AND message.module = 'rainmaker-lams' where lams.tenantId LIKE $tenantid
+    groupby: GROUP BY message.message
+    orderby: ORDER BY case message.message when 'CEO Examination' then 1 when 'Sent for DGDE Examination' then 2 when 'Sent for PDDE Examination' then 3 when 'Sent for MOD Examination' then 4 when 'Citizen Review' then 5 when 'Approved' then 6 else 7 end
+
+  - reportName: DGDELevelApplicationStatus
+    summary: Nummber of applications by there status state level
+    version: 1.0.0
+    moduleName: rainmaker-lams
+    sourceColumns:
+    - name: status
+      label: LAMS_TABLE_COL_STATUS
+      type: string
+      source: lams
+      total: false
+    - name: total
+      label: report.lams.total
+      type: string
+      source: lams
+      total: true
+    searchParams:
+    - name: fromDate
+      label: reports.lams.fromDate
+      type: epoch
+      source: lams
+      isMandatory: false
+      searchClause: AND lams.applicationdate >= $fromDate
+    - name: toDate
+      label: reports.lams.toDate
+      type: epoch
+      source: tl
+      isMandatory: false
+      searchClause: AND lams.applicationdate >= $fromDate
+    - name: ulb
+      label: WF_INBOX_HEADER_TENANTID 
+      type: singlevaluelist
+      pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=tenant&masterName=tenants|$.MdmsRes.tenant.tenants.*.code|$.MdmsRes.tenant.tenants.*.name
+      source: tl
+      wrapper: true
+      isMandatory: false
+      searchClause: AND lams.tenantId = $ulb
+    query: SELECT COUNT(applicationnumber) as total,message.message as status from eg_lams_leaserenewal lams LEFT OUTER JOIN message ON CONCAT('WF_LAMS_NEWLR_CEO_V3_HISTORYSTATUS_',status) = message.code AND message.locale = 'en_IN' AND message.module = 'rainmaker-lams' where lams.tenantId != 'pb.testing'
+    groupby: GROUP BY message.message
+    orderby: ORDER BY case message.message when 'Pending Application' then 1 when 'Pending Payment' then 2 when 'Pending Approval' then 3 when 'Approved' then 4 when 'Rejected' then 5 when 'Cancelled' then 6 else 7 end
+
+  - reportName: DGDELevelLeaseRenewalExtensionStatusRegistry
+    summary: DGDE Level Lease Renewal Extension Status Register
+    decryptionPathId: DGDELevelLeaseRenewalExtensionStatusRegistry
+    version: 1.0.0
+    moduleName: rainmaker-lams
+    sourceColumns:
+      - name: tenantId
+        label: WF_INBOX_HEADER_TENANTID
+        type: string
+        source: lams
+        total: false
+      - name: applicationnumber
+        label: LAMS_APP_NO_LABEL
+        type: string
+        source: lams
+        total: false
+      - name: name
+        label: LAMS_APPLICANT_NAME
+        type: string
+        source: lams
+        total: false
+      - name: applicationtype
+        label: LAMS_APPLICATION_TYPE_LABEL
+        type: string
+        source: lams
+        total: false
+      - name: applicationdate
+        label: LAMS_TABLE_COL_APP_DATE
+        type: string
+        source: lams
+        total: false
+      - name: status
+        label: LAMS_TABLE_COL_STATUS
+        type: string
+        source: lams
+        total: false
+      - name: ownedby
+        label: LAMS_LOC
+        type: string
+        source: lams
+        total: false
+      - name: svyno
+        label: LAMS_SURVEYNO
+        type: string
+        source: lams
+        total: false
+      - name: area
+        label: LAMS_AREA
+        type: string
+        source: lams
+        total: false
+      - name: holdersrights
+        label: LAMS_NATUREOFHOLDERRIGHTS
+        type: string
+        source: lams
+        total: false
+      - name: landlord
+        label: LAMS_LANDLORD
+        type: string
+        source: lams
+        total: false
+      - name: date_of_exp_lease
+        label: LAMS_TERM_EXP_DATE
+        type: string
+        source: lams
+        total: false
+    searchParams:
+      - name: fromDate
+        label: reports.lams.fromDate
+        type: epoch
+        source: uc
+        isMandatory: false
+        searchClause: AND leaserenewal.applicationdate >= $fromDate
+      - name: toDate
+        label: reports.lams.toDate
+        type: epoch
+        source: uc
+        isMandatory: false
+        searchClause: AND leaserenewal.applicationdate <= $toDate
+      - name: status
+        label: LAMS_SEARCH_RESULTS_APP_STATUS_LABEL
+        type: singlevaluelist
+        pattern: list://APPLIED:Sent for CEO Examination,CITIZEN-REVIEW:Citizen Review,PDDE-EXAMINATION:Sent for PDDE Examination,MOD-EXAMINATION:Sent for MOD Examination,DGDE-EXAMINATION:Sent for DGDE Examination,DEO-EXAMINATION:Sent for DEO Examination,APPROVED:Approved,REJECTED:Rejected 
+        source: uc
+        wrapper: true
+        isMandatory: false
+        searchClause: AND status = $status
+    query: |
+        -- Use CTE to force query plan, compute & use CTE later
+        Select initcap(split_part(leaserenewal.tenantId, '.', 2)) as tenantId,applicationnumber,accountid,eg_user.name as name,applicationtype,message.message as status,leasedetail.surveyno as svyno,svydetail.area as area,svydetail.landlord as landlord,svydetail.holdersrights as holdersrights,svydetail.ownedby as ownedby,svydetail.lessee as lessee,svydetail.date_of_exp_lease as date_of_exp_lease,To_char((To_timestamp(leaserenewal.applicationdate / 1000) at time Zone 'Asia/Kolkata'), 'DD/MM/YYYY') as applicationdate from eg_lams_leaserenewal AS leaserenewal INNER JOIN (Select  id,surveyno,leaserenewalid,surveyid from eg_lams_leaserenewaldetail leasedetail) as leasedetail on leasedetail.leaserenewalid = leaserenewal.id INNER JOIN (Select svydetail.id,surveyno,area,landlord,holdersrights,ownedby,lessee,date_of_exp_lease from eg_lams_survey_no_details svydetail) as svydetail on svydetail.id = leasedetail.surveyid LEFT OUTER JOIN message ON CONCAT('WF_LAMS_NEWLR_CEO_V3_HISTORYSTATUS_',status) = message.code AND message.locale = 'en_IN' AND message.module = 'rainmaker-lams' LEFT OUTER JOIN eg_user ON leaserenewal.accountid=eg_user.uuid  WHERE leaserenewal.tenantid != 'pb.testing'
+    orderby: ORDER BY leaserenewal.tenantId asc
