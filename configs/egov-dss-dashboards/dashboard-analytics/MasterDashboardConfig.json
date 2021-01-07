@@ -736,7 +736,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "cumulativeLicenseIssued",
+                  "id": "cumulativeLeasesApproved",
                   "name": "Monthly",
                   "code": "",
                   "chartType": "line",
@@ -901,7 +901,7 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "cumulativeLicenseIssued",
+                  "id": "cumulativeLeasesApproved",
                   "name": "Monthly",
                   "code": "",
                   "chartType": "line",
