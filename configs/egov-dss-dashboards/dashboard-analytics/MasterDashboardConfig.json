@@ -3590,7 +3590,7 @@
               "vizType": "module",
               "moduleLevel": "LAMS",
               "ref": {
-                "url": "lease",
+                "url": "ulb-lease",
                 "logoUrl": "",
                 "type": "internal"
               },
