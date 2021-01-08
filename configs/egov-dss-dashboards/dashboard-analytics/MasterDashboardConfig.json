@@ -716,6 +716,30 @@
                   "headers": []
                 },
                 {
+                  "id": "leaseApplicationsRejected",
+                  "name": "DSS_LEASE_REJECTED",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "leaseApplicationsProcessed",
+                  "name": "DSS_LEASE_PROCESSED",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "leaseProcessingRate",
+                  "name": "DSS_LEASE_PROCESSINGRATE",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
                   "id": "activeUlbs",
                   "name": "DSS_PT_TOTAL_ACTIVE_ULBS",
                   "code": "",
@@ -790,6 +814,26 @@
                   "headers": []
                 }
               ]
+            },
+            {
+              "id": 355,
+              "name": "DSS_LEASE_BY_LOCATED",
+              "dimensions": {
+                "height": 250,
+                "width": 4
+              },
+              "vizType": "chart",
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "leaseApplicationByLocated",
+                  "name": "DSS_LEASE_BY_LOCATED",
+                  "code": "",
+                  "chartType": "donut",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
             }
           ]
         },
@@ -840,6 +884,35 @@
               ]
             }
           ]
+        },
+       {
+          "row": 9,
+          "name": "DSS_SERVICE",
+          "vizArray": [
+            {
+              "id": 431,
+              "name": "DSS_LEASE_STATUS_BY_TENANT",
+              "dimensions": {
+                "height": 350,
+                "width": 12
+              },
+              "vizType": "chart",
+              "label": "",
+              "noUnit": false,
+              "isCollapsible": true,
+              "charts": [
+                {
+                  "id": "xleaseStatusByTenant",
+                  "name": "DSS_LEASE_BY_TENANT",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "Boundary"
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -881,8 +954,24 @@
                   "headers": []
                 },
                 {
-                  "id": "activeUlbs",
-                  "name": "DSS_PT_TOTAL_ACTIVE_ULBS",
+                  "id": "leaseApplicationsRejected",
+                  "name": "DSS_LEASE_REJECTED",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "leaseApplicationsProcessed",
+                  "name": "DSS_LEASE_PROCESSED",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "leaseProcessingRate",
+                  "name": "DSS_LEASE_PROCESSINGRATE",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
@@ -1795,6 +1884,14 @@
                 {
                   "id": "totalApplication",
                   "name": "DSS_TOTAL_APPLICATION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "leaseProcessingRate",
+                  "name": "DSS_LEASE_PROCESSINGRATE",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
@@ -3599,6 +3696,14 @@
                 {
                   "id": "totalApplication",
                   "name": "DSS_TOTAL_APPLICATION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "leaseProcessingRate",
+                  "name": "DSS_LEASE_PROCESSINGRATE",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
