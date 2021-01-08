@@ -458,7 +458,7 @@ ReportDefinitions:
         source: uc
         wrapper: true
         isMandatory: false
-        searchClause: rd.tenantid != 'pb.testing' AND rd.tenantid = $ulb
+        searchClause: AND rd.tenantid = $ulb
     query: |
         -- Use CTE to force query plan, compute & use CTE later
           SELECT 
