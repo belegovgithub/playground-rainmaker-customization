@@ -647,14 +647,68 @@ ReportDefinitions:
   version: 1.0.0
   moduleName: rainmaker-tl
   sourceColumns:
-  - name: status
-    label: report.tl.status
+  - name: tenantId
+    label: report.tl.tenantid
     type: string
     source: tl
     total: false
   - name: total
     label: report.tl.total
     type: string
+    source: tl
+    total: true
+  - name: initiated
+    label: TL_INITIATED
+    type: number
+    source: tl
+    total: true
+  - name: pendingApplicationfee
+    label: TL_PENDINGAPPLFEE
+    type: number
+    source: tl
+    total: true
+  - name: applied
+    label: TL_APPLIED
+    type: number
+    source: tl
+    total: true
+  - name: fieldInspection
+    label: TL_FIELDINSPECTION
+    type: number
+    source: tl
+    total: true
+  - name: citizenactionreq
+    label: TL_CITIZENACTIONREQUIRED
+    type: number
+    source: tl
+    total: true
+  - name: pendingapproval
+    label: TL_PENDINGAPPROVAL
+    type: number
+    source: tl
+    total: true
+  - name: approved
+    label: TL_APPROVED
+    type: number
+    source: tl
+    total: true
+  - name: pendingpayment
+    label: TL_PENDINGPAYMENT
+    type: number
+    source: tl
+    total: true
+  - name: rejected
+    label: TL_REJECTED
+    type: number
+    source: tl
+    total: true
+  - name: cancelled
+    label: TL_CANCELLED
+    type: number
+    source: tl
+  - name: expired
+    label: TL_EXIPIRED
+    type: number
     source: tl
     total: true
   searchParams:
@@ -678,11 +732,9 @@ ReportDefinitions:
     wrapper: true
     isMandatory: false
     searchClause: AND tl.tenantId = $ulb
-  query: SELECT COUNT(applicationnumber) as total,message.message as status from eg_tl_tradelicense tl LEFT OUTER JOIN message ON split_part(message.code,'_',2) = status AND message.locale = 'en_IN' AND message.module = 'rainmaker-tl' WHERE 1=1 and tl.tenantId != 'pb.testing'
-  groupby: GROUP BY message.message
-  orderby: ORDER BY case message.message when 'Pending Application' then 1 when 'Pending Payment' then 2 when 'Pending Approval' then 3 when 'Approved' then 4 when 'Rejected' then 5 when 'Cancelled' then 6 else 7 end
-
-
+  query: SELECT initcap(split_part(tenantId, '.', 2)) as tenantId,count(*) as total,SUM(CASE status when 'INITIATED' then 1 else 0 end) as initiated,SUM(CASE status when 'PENDINGAPPLFEE' then 1 else 0 end) as pendingApplicationfee,SUM(CASE status when 'APPLIED' then 1 else 0 end) as applied,SUM(CASE status when 'FIELDINSPECTION' then 1 else 0 end) as fieldInspection,SUM(CASE status when 'CITIZENACTIONREQUIRED' then 1 else 0 end) as citizenactionreq,SUM(CASE status when 'PENDINGAPPROVAL' then 1 else 0 end) as pendingapproval,SUM(CASE status when 'APPROVED' then 1 else 0 end) as approved,SUM(CASE status when 'PENDINGPAYMENT' then 1 else 0 end) as pendingpayment,SUM(CASE status when 'EXPIRED' then 1 else 0 end) as expired,SUM(CASE status when 'CANCELLED' then 1 else 0 end) as cancelled,SUM (CASE status when 'REJECTED' then 1 else 0 end) as rejected FROM eg_tl_tradelicense as tl WHERE tl.tenantid != 'pb.testing'
+  groupby: GROUP BY tenantid
+  orderby: ORDER BY tenantid
 
 - reportName: StateLevelTradeWiseCollection
   reportLabel: report.state.level.trade.wise.collection
