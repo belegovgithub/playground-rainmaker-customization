@@ -814,26 +814,6 @@
                   "headers": []
                 }
               ]
-            },
-            {
-              "id": 355,
-              "name": "DSS_LEASE_BY_LOCATED",
-              "dimensions": {
-                "height": 250,
-                "width": 4
-              },
-              "vizType": "chart",
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "leaseApplicationByLocated",
-                  "name": "DSS_LEASE_BY_LOCATED",
-                  "code": "",
-                  "chartType": "donut",
-                  "filter": "",
-                  "headers": []
-                }
-              ]
             }
           ]
         },

@@ -1548,6 +1548,13 @@
         "requestQueryMap": "{\"wardId\" : \"Data.complaintWard.name.keyword\", \r\n  \"district\" : \"Data.tenantData.city.districtCode\", \r\n\"tenantId\" : \"Data.tenantId\" \r\n}",
         "indexName": "pgrindex-v1",
         "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"Applications Closed\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.status.keyword\":[\"closed\",\"resolved\"]}}]}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.dateOfComplaint\"}}}}}}}}"
+      },
+      {
+        "module": "LAMS",
+        "indexName": "leaseindex-v1",
+        "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.lease.tenantId.keyword\":\"pb.testing\"}}],\"must\":[{\"terms\":{\"Data.lease.status.keyword\":[\"APPROVED\",\"REJECTED\"]}}]}},\"aggs\":{\"Applications Closed\":{\"value_count\":{\"field\":\"Data.lease.applicationNumber.keyword\"}}}}}}",
+        "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\",    \"district\" : \"Data.tenantData.city.districtCode\",  \"tenantId\" : \"Data.lease.tenantId\"  ,  \"businessService\" : \"Data.lease.businessService\"  }",
+        "dateRefField": "Data.lease.applicationDate"
       }
     ],
     "chartType": "metric",
@@ -1622,6 +1629,13 @@
         "requestQueryMap": "{\"wardId\" : \"Data.complaintWard.name.keyword\", \r\n  \"district\" : \"Data.tenantData.city.districtCode\", \r\n\"tenantId\" : \"Data.tenantId\" \r\n}",
         "indexName": "pgrindex-v1",
         "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"PGR\":{\"value_count\":{\"field\":\"Data.tenantId.keyword\"}}}}}}"
+      },
+      {
+        "module": "LAMS",
+        "dateRefField": "Data.lease.applicationDate",
+        "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\", \r\n  \"district\" : \"Data.tenantData.city.districtCode\", \r\n\"tenantId\" : \"Data.lease.tenantId\" \r\n}",
+        "indexName": "leaseindex-v1",
+        "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"Lease\":{\"value_count\":{\"field\":\"Data.lease.applicationNumber.keyword\"}}}}}}"
       }
     ],
     "chartType": "pie",
@@ -1632,7 +1646,8 @@
     "aggregationPaths": [
       "Property Tax",
       "Trade Licence",
-      "PGR"
+      "PGR",
+      "Lease"
     ],
     "insight": {
     },
@@ -1686,7 +1701,15 @@
         "indexName": "pgrindex-v1",
         "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"Total Application\":{\"date_histogram\":{\"field\":\"Data.dateOfComplaint\",\"interval\":\"intervalvalue\"},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.tenantId.keyword\"}}}},\"Closed Application\":{\"date_histogram\":{\"field\":\"Data.dateOfComplaint\",\"interval\":\"intervalvalue\"},\"aggs\":{\"Applications Closed\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.status.keyword\":[\"closed\",\"resolved\"]}}]}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.dateOfComplaint\"}}}}}}}}}}"
 
+      },
+      {
+        "module": "LAMS",
+        "indexName": "leaseindex-v1",
+        "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.lease.tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"Total Application\":{\"date_histogram\":{\"field\":\"Data.lease.applicationDate\",\"interval\":\"intervalvalue\"},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.lease.applicationNumber.keyword\"}}}},\"Closed Application\":{\"date_histogram\":{\"field\":\"Data.lease.applicationDate\",\"interval\":\"intervalvalue\"},\"aggs\":{\"Applications Closed\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.lease.status.keyword\":[\"APPROVED\",\"REJECTED\"]}}]}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.lease.applicationNumber.keyword\"}}}}}}}}}}",
+        "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\",    \"district\" : \"Data.tenantData.city.districtCode\",  \"tenantId\" : \"Data.lease.tenantId\"  ,  \"businessService\" : \"Data.lease.businessService\"  }",
+        "dateRefField": "Data.lease.applicationDate"
       }
+      
     ],
     "chartType": "line",
     "valueType": "number",
