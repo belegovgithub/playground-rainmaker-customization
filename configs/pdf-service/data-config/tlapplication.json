@@ -1289,11 +1289,7 @@
           {
             "qrcodeConfig": [
               {
-                  "variable": "qrcodeimage",
-                  "value":"BEL UAT"
-              },
-              {
-                "variable": "qrcodeimage1",
+                "variable": "qrcodeimage",
                 "value":"Payer Name : {{name}},Application Number: {{applicationNumber}}, Mobile no: {{mobileNo}}"
             }
             ]
