@@ -2989,7 +2989,7 @@
       {
         "module": "LAMS",
         "indexName": "leaseindex-v1",
-        "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.lease.tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"Total Applications2\":{\"date_histogram\":{\"field\":\"Data.lease.applicationDate\",\"interval\":\"intervalvalue\"},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.lease.applicationNumber.keyword\"}}}}}}}}",
+        "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.lease.tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"Total Applications\":{\"date_histogram\":{\"field\":\"Data.lease.applicationDate\",\"interval\":\"intervalvalue\"},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.lease.applicationNumber.keyword\"}}}}}}}}",
         "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\", \"tenantId\" : \"Data.tenantData.code\" ,\"district\" : \"Data.tenantData.city.districtCode\"}",
         "dateRefField": "Data.lease.applicationDate"
       }
@@ -3001,7 +3001,7 @@
     "drillChart": "none",
     "aggregationPaths": [
       "Applications approved",
-      "Total Applications2"
+      "Total Applications"
     ],
     "isCumulative": true,
     "interval": "week",
