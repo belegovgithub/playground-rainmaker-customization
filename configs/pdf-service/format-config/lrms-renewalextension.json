@@ -1,0 +1,552 @@
+{
+  "key": "lrms-renewalextension",
+  "config": {
+      "defaultStyle": {
+          "font": "Cambay"
+      },
+      "watermark": { "text": "BEL UAT BEL UAT", "color": "gery", "opacity": 0.1, "bold": true, "italics": false },
+	"content": [
+	    {
+                "style": "ws-head",
+                "table": {
+                    "widths": [
+                        "*"
+                    ],
+                    "body": [
+                        [
+                            {
+                                "stack": [
+                                     {
+                                        "text": "{{to_label}}",
+                                        "style": "receipt-value-down-sub"
+                                         
+                                    },
+                                    {
+                                        "text":"{{commissioner}} {{cb-name}}",
+                                        "style": "receipt-value-down-sub"
+                                         
+                                    }
+                                ]
+                              
+                                 
+                            }
+                        ]
+                    ]
+                },
+                "layout": "noBorders"
+            },
+            {
+                 "style": "ws-head",
+                "table": {
+                    "widths": [
+                        "*"
+                    ],
+                    "body": [
+                                        [ 
+                                            {
+                                                 "columns": [
+                                                    {
+                                                        "width": "10%",
+                                                        "text": "Subject:",
+                                                         "bold": true
+                                                        
+                                                    },
+                                                    {
+                                                        "text": "{{subject-description}} {{surveyNo}}",
+                                                        "width": "90%",
+                                                        "bold": true
+                                                         
+                                                    }
+                                                ],
+                                                "margin": [
+                                                                0,
+                                                                5,
+                                                                0,
+                                                                0
+                                                            ]
+                                            }
+                                        ]
+                         
+                    ]
+                },
+                "layout": "noBorders"
+            },
+            {
+                 "style": "ws-head",
+                "table": {
+                    "widths": [
+                        "*"
+                    ],
+                    "body": [
+                                        [ 
+                                                    {
+                                                        "text": "{{recepient-description}}",
+                                                        "alignment": "left",
+                                                        "margin": [
+                                                                0,
+                                                                20,
+                                                                0,
+                                                                10
+                                                            ]
+                                                    }
+                                                
+                                        ]
+                         
+                    ]
+                },
+                "layout": "noBorders"
+            },
+            {
+                 "style": "ws-head",
+                "table": {
+                    "widths": [
+                        "*"
+                    ],
+                    "body": [
+                                        [ 
+                                                    {
+                                                        "text": "{{body-description1}}",
+                                                        "alignment": "left",
+                                                        "margin": [
+                                                                30,
+                                                                0,
+                                                                0,
+                                                                0
+                                                            ]
+                                                    }
+                                                
+                                        ],
+                                        [ 
+                                                    {
+                                                        "text": "{{body-description2}} {{surveyNo}} {{inLabel}} {{cb-name}} {{body-description3}} {{duration}} {{months}}.",
+                                                        "alignment": "left",
+                                                        "margin": [
+                                                                0,
+                                                                0,
+                                                                0,
+                                                                10
+                                                            ]
+                                                    }
+                                                
+                                        ]
+                         
+                    ]
+                },
+                "layout": "noBorders"
+            },
+            {
+                 "style": "ws-head",
+                "table": {
+                    "widths": [
+                        "*"
+                    ],
+                    "body": [
+                                        [ 
+                                                    {
+                                                        "text": "{{body-description4}}",
+                                                        "alignment": "left",
+                                                        "margin": [
+                                                                30,
+                                                                0,
+                                                                0,
+                                                                -5
+                                                            ]
+                                                    }
+                                                
+                                        ],
+                                        [ 
+                                                    {
+                                                        "text": "{{body-description5}} {{body-description6}}",
+                                                        "alignment": "left",
+                                                        "margin": [
+                                                                0,
+                                                                0,
+                                                                0,
+                                                                10
+                                                            ]
+                                                    }
+                                                
+                                        ]
+                         
+                    ]
+                },
+                "layout": "noBorders"
+            },
+            {
+                 "style": "ws-head",
+                "table": {
+                    "widths": [
+                        "*"
+                    ],
+                    "body": [
+                                        [ 
+                                                    {
+                                                        "text": "{{body-description7}}",
+                                                        "alignment": "left",
+                                                        "margin": [
+                                                                30,
+                                                                0,
+                                                                0,
+                                                                -5
+                                                            ]
+                                                    }
+                                                
+                                        ],
+                                        [ 
+                                                    {
+                                                        "text": "{{body-description8}}",
+                                                        "alignment": "left",
+                                                        "margin": [
+                                                                0,
+                                                                0,
+                                                                0,
+                                                                10
+                                                            ]
+                                                    }
+                                                
+                                        ]
+                         
+                    ]
+                },
+                "layout": "noBorders"
+            },
+            {
+                 "style": "ws-head",
+                "table": {
+                    "widths": [
+                        "*"
+                    ],
+                    "body": [
+                                        [ 
+                                                    {
+                                                        "text": "{{body-description9}}",
+                                                        "alignment": "left",
+                                                        "margin": [
+                                                                30,
+                                                                0,
+                                                                0,
+                                                                -5
+                                                            ]
+                                                    }
+                                                
+                                        ],
+                                        [ 
+                                                    {
+                                                        "text": "{{body-description10}}",
+                                                        "alignment": "left",
+                                                        "margin": [
+                                                                0,
+                                                                0,
+                                                                0,
+                                                                10
+                                                            ]
+                                                    }
+                                                
+                                        ],
+                                        [ 
+                                                    {
+                                                        "text": "{{regardsLabel}}",
+                                                        "alignment": "right",
+                                                        "margin": [
+                                                                0,
+                                                                0,
+                                                                0,
+                                                                20
+                                                            ]
+                                                    }
+                                                
+                                        ],
+                                        [ 
+                                            {
+                                                "columns": [
+                                                    {
+                                                        "width": "35%", 
+                                                        "text": "{{applicantNameLabel}}",
+                                                        "alignment": "left"
+                                                    },
+                                                    {
+                                                        "text": "{{applicantName}}",
+                                                        "alignment": "left"
+                                                    }
+                                                    ]
+                                           }
+                                                
+                                        ],
+                                        [ 
+                                            {
+                                                "columns": [
+                                                    {
+                                                        "width": "35%", 
+                                                        "text": "{{fatherNameLabel}}",
+                                                        "alignment": "left"
+                                                    },
+                                                    {
+                                                        "width": "35%", 
+                                                        "text": "{{fatherName}}",
+                                                        "alignment": "left"
+                                                    }
+                                                    ]
+                                           }
+                                                
+                                        ],
+                                        [ 
+                                            {
+                                                "columns": [
+                                                    {
+                                                        "width": "35%", 
+                                                        "text": "{{mobileNoLabel}}",
+                                                        "alignment": "left"
+                                                    },
+                                                    {
+                                                        "text": "{{mobileNo}}",
+                                                        "alignment": "left"
+                                                    }
+                                                    ]
+                                           }
+                                                
+                                        ],
+                                        [ 
+                                            {
+                                                "columns": [
+                                                    {
+                                                        "width": "35%", 
+                                                        "text": "{{aadharNoLabel}}",
+                                                        "alignment": "left"
+                                                    },
+                                                    {
+                                                        "text": "{{aadharNo}}",
+                                                        "alignment": "left"
+                                                    }
+                                                    ]
+                                           }
+                                                
+                                        ]
+                         
+                    ]
+                },
+                "layout": "noBorders"
+            },
+            {
+                 "style": "ws-head",
+                "table": {
+                    "widths": [
+                        "*"
+                    ],
+                    "body": [
+                        [
+                            {
+                                
+                                "columns": [
+                                    {
+                                        "width": "100%",
+                                        "text": "{{instructionLabel}}",
+                                        "bold": true,
+                                        "decoration":"underline"
+                                    }
+                                ],
+                                "margin": [
+                                    0,
+                                    30,
+                                    0,
+                                    0
+                                ]
+                            }
+                        ],
+                                [
+                            {
+                                "border": [
+                                    false,
+                                    false,
+                                    false,
+                                    false
+                                ],
+                                "columns": [
+                                    {
+                                        "width": "100%",
+                                        "ol": [
+                                            {
+                                                "text": "{{instructionRule1}}",
+                                                "style": "receipt-value-down"
+                                            },
+                                            {
+                                                "text": "{{instructionRule2}}",
+                                                "style": "receipt-value-down"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "margin": [
+                                    7,
+                                    0,
+                                    0,
+                                    0
+                                ]
+                            }
+                        ]
+                         
+                    ]
+                },
+                "layout": "noBorders"
+            }
+	    ],
+  "styles": {
+    "pdf-header": {
+      "fillColor": "#F2F2F2",
+      "margin": [
+        -70,
+        -41,
+        -81,
+        10
+      ]
+    },
+    "receipt-value-down-sub": {
+                "color": "#000000",
+                "bold": false,
+                "fontSize": 11,
+                "fontWeight": 400,
+                "alignment": "left",
+                "margin": [
+                    0,
+                    0,
+                    0,
+                    5
+                ]
+            },
+    "receipt-value-down": {
+                "color": "#000000",
+                "bold": false,
+                "fontSize": 10,
+                "fontWeight": 400,
+                "alignment": "left",
+                "margin": [
+                    -8,
+                    0,
+                    0,
+                    5
+                ]
+            },
+    "pdf-application-no-value": {
+      "fontSize": 12,
+      "font": "Roboto",
+      "italics": true,
+      "margin": [
+        -18,
+        8,
+        0,
+        0
+      ],
+      "color": "#484848"
+    },
+    "pdf-header-text": {
+      "color": "#484848",
+      "fontSize": 20,
+      "bold": true,
+      "letterSpacing": 0.74,
+      "margin": [
+        0,
+        0,
+        0,
+        5
+      ]
+    },
+    "pdf-header-sub-text": {
+      "color": "#484848",
+      "fontSize": 15,
+      "letterSpacing": 0.6
+    },
+    "pdf-application-no": {
+      "fontSize": 12,
+      "bold": true,
+      "margin": [
+        -18,
+        8,
+        0,
+        0
+      ],
+      "color": "#484848"
+    },
+    "pdf-card-title": {
+      "fontSize": 11,
+      "bold": true,
+      "margin": [
+        -18,
+        16,
+        8,
+        8
+      ],
+      "color": "#484848",
+      "fontWeight": 500
+    },
+    "pdf-card-no-title": {
+      "fontSize": 11,
+      "bold": true,
+      "color": "#484848",
+      "fontWeight": 500
+    },
+    "pdf-table-card-white": {
+      "fillColor": "white",
+      "fontSize": 7,
+      "color": "#484848",
+      "margin": [
+        -20,
+        -2,
+        -8,
+        -8
+      ]
+    },
+    "pdf-table-card": {
+      "fillColor": "#F2F2F2",
+      "fontSize": 7,
+      "color": "#484848",
+      "margin": [
+        -20,
+        -2,
+        -8,
+        -8
+      ]
+    },
+    "pdf-card-key": {
+      "color": "rgba(0, 0, 0, 0.54)",
+      "fontSize": 8,
+      "margin": [
+        0,
+        1,
+        0,
+        0
+      ]
+    },
+    "pdf-card-sub-header": {
+      "color": "rgba(0, 0, 0, 0.94)",
+      "fontSize": 9,
+      "bold": true,
+      "margin": [
+        0,
+        3,
+        0,
+        0
+      ]
+    },
+    "pdf-card-value": {
+      "fontSize": 10,
+      "color": "rgba(0, 0, 0, 0.87)",
+      "margin": [
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    "pdf-head-qr-code": {
+      "fillColor": "#F2F2F2",
+      "margin": [
+        -70,
+        -41,
+        -81,
+        0
+      ]
+    }
+  }
+  
+  }
+}
+  
