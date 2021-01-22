@@ -182,7 +182,7 @@ serviceMaps:
 
 
 
-       - query: INSERT INTO eg_pt_address_v2(tenantId, id, property,doorNo, latitude,longitude, addressid, addressnumber, type, addressline1, addressline2, landmark, city, pincode, detail,buildingName,street, locality, createdby, lastmodifiedby, createdtime, lastmodifiedtime,additionaldetails)   VALUES (?,?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+       - query: INSERT INTO eg_pt_address_v2(tenantId, id, property,doorNo, latitude,longitude, addressid, addressnumber, type, addressline1, addressline2, landmark, city, pincode, detail,buildingName,street, locality, createdby, lastmodifiedby, createdtime, lastmodifiedtime)   VALUES (?,?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
          basePath: Properties.*.address
          jsonMaps:
 
@@ -229,8 +229,6 @@ serviceMaps:
          - jsonPath: $.Properties.*.auditDetails.createdTime
 
          - jsonPath: $.Properties.*.auditDetails.lastModifiedTime
-
-         - jsonPath: $.Properties.*.additionaldetails
 
 
        - query: INSERT INTO eg_pt_unit_v2(tenantId,id,propertyDetail,floorNo,unitType,unitArea,usageCategoryMajor,usageCategoryMinor,usageCategorySubMinor,usageCategoryDetail,occupancyType,occupancyDate,constructionType,constructionSubType,arv,createdby, lastmodifiedby, createdtime, lastmodifiedtime) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);
