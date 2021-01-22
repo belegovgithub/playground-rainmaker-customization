@@ -118,7 +118,7 @@
                                         ],
                                         [ 
                                                     {
-                                                        "text": "{{body-description2}} {{surveyNo}} {{inLabel}} {{cb-name}} {{body-description3}} {{duration}} {{months}}.",
+                                                        "text": "{{body-description2}} {{surveyNo}} {{inLabel}} {{cb-name}} {{body-description3}} {{months}} {{monthsLabel}}.",
                                                         "alignment": "left",
                                                         "margin": [
                                                                 0,
