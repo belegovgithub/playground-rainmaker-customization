@@ -263,10 +263,10 @@ serviceMaps:
    isTransaction: true
    queryMaps:
 
-       - query: INSERT INTO eg_lams_esign_detail_audit SELECT * FROM eg_lams_esign_detail WHERE id = ?;
+       - query: INSERT INTO eg_lams_esign_detail_audit SELECT * FROM eg_lams_esign_detail WHERE txnid = ?;
          basePath: LamsEsignDtls
          jsonMaps:
-          - jsonPath: $.LamsEsignDtls.id
+          - jsonPath: $.LamsEsignDtls.txnId
 
 
        - query: UPDATE eg_lams_esign_detail SET errorcode = ?, status = ?,  lastmodifiedtime = ? WHERE txnid=?;
