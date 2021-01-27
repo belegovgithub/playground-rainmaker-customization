@@ -227,3 +227,55 @@ serviceMaps:
           - jsonPath: $.leases.*.leaseDetails.finalTermExpiryDate
 
           - jsonPath: $.leases.*.leaseDetails.surveyId
+          
+ - version: 1.0
+   description: Persists lease esign details in eg_lams_esign_detail table
+   fromTopic: save-lams-esign
+   isTransaction: true
+   queryMaps:
+
+       - query: INSERT INTO eg_lams_esign_detail(id, txnid, filestoreid, status, errorcode, surveyid, createdby, lastmodifiedby, createdtime, lastmodifiedtime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+         basePath: LamsEsignDtls
+         jsonMaps:
+          - jsonPath: $.LamsEsignDtls.id
+
+          - jsonPath: $.LamsEsignDtls.txnId
+
+          - jsonPath: $.LamsEsignDtls.fileStoreId
+
+          - jsonPath: $.LamsEsignDtls.status
+
+          - jsonPath: $.LamsEsignDtls.errorCode
+
+          - jsonPath: $.LamsEsignDtls.surveyId
+
+          - jsonPath: $.LamsEsignDtls.auditDetails.createdBy
+
+          - jsonPath: $.LamsEsignDtls.auditDetails.lastModifiedBy
+
+          - jsonPath: $.LamsEsignDtls.auditDetails.createdTime
+
+          - jsonPath: $.LamsEsignDtls.auditDetails.lastModifiedTime
+          
+ - version: 1.0
+   description: Update lease esign details in eg_lams_esign_detail table
+   fromTopic: update-lams-esign
+   isTransaction: true
+   queryMaps:
+
+       - query: INSERT INTO eg_lams_esign_detail_audit SELECT * FROM eg_lams_esign_detail WHERE id = ?;
+         basePath: LamsEsignDtls
+         jsonMaps:
+          - jsonPath: $.LamsEsignDtls.id
+
+
+       - query: UPDATE eg_lams_esign_detail SET errorcode = ?, status = ?,  lastmodifiedtime = ? WHERE txnid=?;
+         basePath: LamsEsignDtls
+         jsonMaps:
+          - jsonPath: $.LamsEsignDtls.errorCode
+
+          - jsonPath: $.LamsEsignDtls.status
+
+          - jsonPath: $.LamsEsignDtls.auditDetails.lastModifiedTime
+
+          - jsonPath: $.LamsEsignDtls.txnId
