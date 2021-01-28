@@ -144,7 +144,7 @@ ReportDefinitions:
       type: epoch
       source: tl
       isMandatory: false
-      searchClause: AND lams.applicationdate >= $toDate
+      searchClause: AND lams.applicationdate <= $toDate
     - name: ulb
       label: WF_INBOX_HEADER_TENANTID 
       type: singlevaluelist
