@@ -81,13 +81,15 @@ serviceMaps:
 
        - jsonPath: $.SewerageConnection.auditDetails.lastModifiedTime
          
-    - query: INSERT INTO eg_sw_connectionholder(tenantid, connectionid, userid, status, isprimaryholder, connectionholdertype, holdershippercentage, relationship, createdby, createdtime, lastmodifiedby, lastmodifiedtime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+    - query: INSERT INTO eg_sw_connectionholder(tenantid, connectionid, propertyownership, userid, status, isprimaryholder, connectionholdertype, holdershippercentage, relationship, createdby, createdtime, lastmodifiedby, lastmodifiedtime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
       basePath: $.SewerageConnection.connectionHolders.*
       jsonMaps: 
 
        - jsonPath: $.SewerageConnection.tenantId
 
        - jsonPath: $.SewerageConnection.id
+
+       - jsonPath: $.SewerageConnection.propertyOwnership
 
        - jsonPath: $.SewerageConnection.connectionHolders.*.uuid
 
@@ -289,13 +291,15 @@ serviceMaps:
 
           - jsonPath: $.SewerageConnection.plumberInfo.*.auditDetails.lastModifiedTime
           
-    - query: INSERT INTO eg_sw_connectionholder(tenantid, connectionid, userid, status, isprimaryholder, connectionholdertype, holdershippercentage, relationship, createdby, createdtime, lastmodifiedby, lastmodifiedtime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ON CONFLICT (connectionid) DO UPDATE SET tenantid =?, userid =?,status =?, isprimaryholder =?, connectionholdertype =?, holdershippercentage =?, relationship=?, lastmodifiedby =?, lastmodifiedtime =?;
+    - query: INSERT INTO eg_sw_connectionholder(tenantid, connectionid, propertyownership, userid, status, isprimaryholder, connectionholdertype, holdershippercentage, relationship, createdby, createdtime, lastmodifiedby, lastmodifiedtime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ON CONFLICT (connectionid) DO UPDATE SET tenantid =?,propertyownership =?, userid =?,status =?, isprimaryholder =?, connectionholdertype =?, holdershippercentage =?, relationship=?, lastmodifiedby =?, lastmodifiedtime =?;
       basePath: $.SewerageConnection.connectionHolders.*
       jsonMaps: 
 
        - jsonPath: $.SewerageConnection.tenantId
 
        - jsonPath: $.SewerageConnection.id
+
+       - jsonPath: $.SewerageConnection.propertyOwnership
 
        - jsonPath: $.SewerageConnection.connectionHolders.*.uuid
 
@@ -319,6 +323,8 @@ serviceMaps:
        
        - jsonPath: $.SewerageConnection.tenantId
 
+       - jsonPath: $.SewerageConnection.propertyOwnership
+       
        - jsonPath: $.SewerageConnection.connectionHolders.*.uuid
 
        - jsonPath: $.SewerageConnection.connectionHolders.*.status
