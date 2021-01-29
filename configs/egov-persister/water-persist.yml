@@ -345,6 +345,104 @@ serviceMaps:
 
        - jsonPath: $.WaterConnection.auditDetails.lastModifiedTime
 
+    - query: INSERT INTO eg_ws_connection_taxhead(id, active, taxhead, amount, connection_id,additionaldetail, createdby,createdtime, lastmodifiedby, lastmodifiedtime)  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ON CONFLICT (id) DO UPDATE SET active = ?, taxhead = ?, amount = ?,additionaldetail=?,  lastmodifiedby = ?,  lastmodifiedtime = ?;
+      basePath: $.WaterConnection.wsTaxHeads.*
+      jsonMaps:      
+
+       - jsonPath: $.WaterConnection.wsTaxHeads.*.id
+
+       - jsonPath: $.WaterConnection.wsTaxHeads.*.active
+
+       - jsonPath: $.WaterConnection.wsTaxHeads.*.taxHeadCode
+
+       - jsonPath: $.WaterConnection.wsTaxHeads.*.amount
+
+       - jsonPath: $.WaterConnection.id
+
+       - jsonPath: $.WaterConnection.wsTaxHeads.*.additionalDetail
+         type: JSON
+         dbType: JSONB
+
+       - jsonPath: $.WaterConnection.auditDetails.createdBy
+
+       - jsonPath: $.WaterConnection.auditDetails.createdTime
+
+       - jsonPath: $.WaterConnection.auditDetails.lastModifiedBy
+
+       - jsonPath: $.WaterConnection.auditDetails.lastModifiedTime
+
+       - jsonPath: $.WaterConnection.wsTaxHeads.*.active
+
+       - jsonPath: $.WaterConnection.wsTaxHeads.*.taxHeadCode
+
+       - jsonPath: $.WaterConnection.wsTaxHeads.*.amount
+
+       - jsonPath: $.WaterConnection.wsTaxHeads.*.additionalDetail
+         type: JSON
+         dbType: JSONB
+
+       - jsonPath: $.WaterConnection.auditDetails.lastModifiedBy
+
+       - jsonPath: $.WaterConnection.auditDetails.lastModifiedTime
+
+
+
+    - query: INSERT INTO eg_ws_connection_roadtype(id, active, roadtype, length, breadth,depth,rate,connection_id,additionaldetail, createdby, createdtime,lastmodifiedby, lastmodifiedtime)  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ON CONFLICT (id) DO UPDATE SET active = ?, roadtype =?, length= ?, breadth=?,depth=?,rate=?,additionaldetail=?,  lastmodifiedby = ?,  lastmodifiedtime = ?;
+      basePath: $.WaterConnection.roadTypeEst.*
+      jsonMaps:      
+
+       - jsonPath: $.WaterConnection.roadTypeEst.*.id
+
+       - jsonPath: $.WaterConnection.roadTypeEst.*.active
+
+       - jsonPath: $.WaterConnection.roadTypeEst.*.roadType
+
+       - jsonPath: $.WaterConnection.roadTypeEst.*.length
+
+       - jsonPath: $.WaterConnection.roadTypeEst.*.breadth
+
+       - jsonPath: $.WaterConnection.roadTypeEst.*.depth
+
+       - jsonPath: $.WaterConnection.roadTypeEst.*.rate
+
+       - jsonPath: $.WaterConnection.id
+
+       - jsonPath: $.WaterConnection.roadTypeEst.*.additionalDetail
+         type: JSON
+         dbType: JSONB
+
+       - jsonPath: $.WaterConnection.auditDetails.createdBy
+
+       - jsonPath: $.WaterConnection.auditDetails.createdTime
+
+       - jsonPath: $.WaterConnection.auditDetails.lastModifiedBy
+
+       - jsonPath: $.WaterConnection.auditDetails.lastModifiedTime
+
+       - jsonPath: $.WaterConnection.roadTypeEst.*.active
+
+       - jsonPath: $.WaterConnection.roadTypeEst.*.roadType
+
+       - jsonPath: $.WaterConnection.roadTypeEst.*.length
+
+       - jsonPath: $.WaterConnection.roadTypeEst.*.breadth
+
+       - jsonPath: $.WaterConnection.roadTypeEst.*.depth
+
+       - jsonPath: $.WaterConnection.roadTypeEst.*.rate
+
+       - jsonPath: $.WaterConnection.roadTypeEst.*.additionalDetail
+         type: JSON
+         dbType: JSONB
+
+       - jsonPath: $.WaterConnection.auditDetails.lastModifiedBy
+
+       - jsonPath: $.WaterConnection.auditDetails.lastModifiedTime
+
+
+
+
+
  - version: 1.0
    name: WaterConnection
    description: update ConnectionDetails in eg_ws_connection and eg_ws_service
