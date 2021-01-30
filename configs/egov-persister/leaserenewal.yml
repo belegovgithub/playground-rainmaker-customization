@@ -269,10 +269,12 @@ serviceMaps:
           - jsonPath: $.LamsEsignDtls.txnId
 
 
-       - query: UPDATE eg_lams_esign_detail SET errorcode = ?, status = ?,  lastmodifiedtime = ? WHERE txnid=?;
+       - query: UPDATE eg_lams_esign_detail SET errorcode = ?, filestoreid =? , status = ?,  lastmodifiedtime = ? WHERE txnid=?;
          basePath: LamsEsignDtls
          jsonMaps:
           - jsonPath: $.LamsEsignDtls.errorCode
+
+          - jsonPath: $.LamsEsignDtls.fileStoreId
 
           - jsonPath: $.LamsEsignDtls.status
 
