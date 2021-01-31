@@ -346,7 +346,7 @@
                                                 "columns": [
                                                    {
                                                        "width": "5%", 
-                                                       "text": "",
+                                                       "text": " ",
                                                        "alignment": "left",
                                                         "margin": [
                                                                0,
@@ -484,7 +484,7 @@
                         "bold": true,
                         "fontSize": 11,
                         "fontWeight": 400,
-                        "alignment": "right",
+                        "alignment": "right"
             },
             "receipt-value-down-sub": {
                         "color": "#000000",
