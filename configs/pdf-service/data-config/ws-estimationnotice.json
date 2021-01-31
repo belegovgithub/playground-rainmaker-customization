@@ -146,11 +146,6 @@
                                 }
                             },
                             {
-                                "variable": "logoImage",
-                                "url": "https://raw.githubusercontent.com/egovernments/egov-web-app/master/web/rainmaker/dev-packages/egov-ui-kit-dev/src/assets/images/pblogo.png",
-                                "type": "image"
-                            },
-                            {
                                 "variable": "estimation_notice_header",
                                 "value": {
                                     "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_ESTIMATION_NOTICE_HEADER"
@@ -819,11 +814,6 @@
                                 "queryParam": "moduleName=tenant&masterName=tenants&tenantId=pb&filter=%5B?(@.code=='{$.property.tenantId}')%5D",
                                 "apiRequest": null,
                                 "responseMapping": [
-                                    {
-                                        "variable": "logoImage",
-                                        "value": "$.MdmsRes.tenant.tenants[0].logoId",
-                                        "type": "image"
-                                    },
                                     {
                                         "variable": "logo_header",
                                         "value": "$.MdmsRes.tenant.tenants[0].code",
