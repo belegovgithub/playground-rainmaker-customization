@@ -7,383 +7,302 @@
         "watermark": { "text": "BEL UAT BEL UAT", "color": "gery", "opacity": 0.1, "bold": true, "italics": false },
         "content": [
             {
-                "style": "ws-head",
-                "table": {
-                    "widths": [
-                        60,
-                        "*",
-                        120
-                    ],
-                    "body": [
-                        [
-                            {
-                                "image": "{{logoImage}}",
-                                "width": 60,
-                                "height": 61.25,
-                                "margin": [
-                                    50,
-                                    30,
-                                    12,
-                                    10
-                                ]
-                            },
-                            {
-                                "stack": [
-                                    {
-                                        "text": "{{municipalCouncil}}",
-                                        "style": "receipt-logo-header",
-                                        "margin": [
-                                            0,
-                                            0,
-                                            0,
-                                            10
-                                        ]
-                                    },
-                                    {
-                                        "text": "{{tenantName}}",
-                                        "style": "receipt-logo-header"
-                                    },
-                                    {
-                                        "text": "{{sanctionLetter}}",
-                                        "style": "receipt-logo-header"
-                                    }
-                                ],
-                                "alignment": "center",
-                                "margin": [
-                                    90,
-                                    30,
-                                    0,
-                                    0
-                                ]
-                            }
-                        ]
-                    ]
-                },
-                "layout": "noBorders"
-            },
-            {
-                "style": "ws-table-property",
-                "table": {
-                    "widths": [
-                        "103%"
-                    ],
-                    "body": [
-                        [
-                            {
-                                "border": [
-                                    false,
-                                    false,
-                                    false,
-                                    false
-                                ],
-                                "columns": [
-                                    {
-                                        "width": "auto",
-                                        "text": "{{date_label}}",
-                                        "style": "ws-sub-header",
-                                        "alignment": "right"
-                                    },
-                                    {
-                                        "width": "auto",
-                                        "text": "{{sanctionLetterDate}}",
-                                        "alignment": "right",
-                                        "style": "ws-sub-data"
-                                    }
-                                ]
-                            }
+                    "style": "ws-head",
+                    "table": {
+                        "widths": [
+                            "*"
                         ],
-                        [
-                            {
-                                "border": [
-                                    false,
-                                    false,
-                                    false,
-                                    false
-                                ],
-                                "columns": [
-                                    {
-                                        "width": "20%",
-                                        "text": "{{sub_label}}",
-                                        "style": "receipt-value-down-sub"
-                                    },
-                                    {
-                                        "width": "80%",
-                                        "text": "{{applicationType}} {{sub_data1}} {{applicationType}} {{sub_data2}} {{doorNo}} {{locality_label}} {{locality}} {{order_issued}} ",
-                                        "style": "receipt-value-down"
-                                    }
-                                ],
-                                "margin": [
-                                    50,
-                                    10,
-                                    0,
-                                    0
-                                ]
-                            }
-                        ],
-                        [
-                            {
-                                "border": [
-                                    false,
-                                    false,
-                                    false,
-                                    false
-                                ],
-                                "columns": [
-                                    {
-                                        "width": "20%",
-                                        "text": "{{ref_label}}",
-                                        "style": "receipt-value-down-sub"
-                                    },
-                                    {
-                                        "width": "80%",
-                                        "ol": [
-                                            {
-                                                "text": "{{ref_message1}} {{ownerName}} {{doorNo}} {{locality_label}} {{locality}} {{dated_label}} {{appCreatedDate}}",
-                                                "style": "receipt-value-down"
-                                            },
-                                            {
-                                                "text": "{{ref_message2}}{{applicationNumber}} {{dated_label}} {{estimationLetterDate}}",
-                                                "style": "receipt-value-down"
-                                            }
-                                        ]
-                                    }
-                                ],
-                                "margin": [
-                                    50,
-                                    10,
-                                    0,
-                                    0
-                                ]
-                            }
-                        ],
-                        [
-                            {
-                                "border": [
-                                    false,
-                                    false,
-                                    false,
-                                    false
-                                ],
-                                "columns": [
-                                    {
-                                        "width": "100%",
-                                        "text": "{{order_label}}",
-                                        "style": "receipt-value-down-sub"
-                                    }
-                                ],
-                                "margin": [
-                                    25,
-                                    10,
-                                    0,
-                                    0
-                                ]
-                            }
-                        ],
-                        [
-                            {
-                                "border": [
-                                    false,
-                                    false,
-                                    false,
-                                    false
-                                ],
-                                "columns": [
-                                    {
-                                        "width": "100%",
-                                        "text": "{{in_ref_label}} {{applicationNumber}} {{dated}} {{appCreatedDate}} {{order_message2}} {{applicationType}} {{order_message3}} {{door_no}} {{doorNo}} {{locality_label}} {{locality}}{{order_message4}} {{totalAmount}} {{order_message5}} {{applicationType}} {{order_message6}} {{totalAmount}} {{dated}} {{sanctionLetterDate}} {{order_message7}}",
-                                        "style": "receipt-value-down"
-                                    }
-                                ],
-                                "margin": [
-                                    50,
-                                    10,
-                                    0,
-                                    0
-                                ]
-                            }
-                        ],
-                        [
-                            {
-                                "border": [
-                                    false,
-                                    false,
-                                    false,
-                                    false
-                                ],
-                                "columns": [
-                                    {
-                                        "width": "100%",
-                                        "text": "{{order_message12}} {{plumberName}}{{order_message13}} {{licenceNo}}{{order_message14}} {{contactNo}}{{order_message10}} {{sla}} {{order_message15}} {{slaDate}}{{order_message11}}",
-                                        "style": "receipt-value-down"
-                                    }
-                                ],
-                                "margin": [
-                                    50,
-                                    10,
-                                    0,
-                                    0
-                                ]
-                            }
-                        ],
-                        [
-                            {
-                                "stack": [
-                                    {
-                                        "text": "{{for_commissioner_label}}",
-                                        "style": "receipt-table-value-total",
-                                        "fontSize": 12
-                                    }
-                                ],
-                                "border": [
-                                    false,
-                                    false,
-                                    false,
-                                    false
-                                ],
-                                "margin": [
-                                    40,
-                                    60,
-                                    0,
-                                    0
-                                ]
-                            }
-                        ],
-                        [
-                            {
-                                "stack": [
-                                    {
-                                        "table": {
-                                            "widths": [
-                                                "10%",
-                                                "40%"
-                                            ],
-                                            "body": [
-                                                [
-                                                    {
-                                                        "text": "{{to_label}}",
-                                                        "border": [
-                                                            false,
-                                                            false,
-                                                            false,
-                                                            false
-                                                        ],
-                                                        "style": "receipt-value-down-sub"
-                                                    },
-                                                    {
-                                                        "text": " ",
-                                                        "border": [
-                                                            false,
-                                                            false,
-                                                            false,
-                                                            false
-                                                        ],
-                                                        "style": "receipt-value-down-sub"
-                                                    }
-                                                ],
-                                                [
-                                                    {
-                                                        "text": "{{sri_smt_label}}",
-                                                        "border": [
-                                                            false,
-                                                            false,
-                                                            false,
-                                                            false
-                                                        ],
-                                                        "style": "receipt-value-down-sub"
-                                                    },
-                                                    {
-                                                        "text": "{{ownerName}}",
-                                                        "border": [
-                                                            false,
-                                                            false,
-                                                            false,
-                                                            false
-                                                        ],
-                                                        "style": "receipt-value-down-sub"
-                                                    }
-                                                ],
-                                                [
-                                                    {
-                                                        "text": "{{door_no_label}}",
-                                                        "border": [
-                                                            false,
-                                                            false,
-                                                            false,
-                                                            false
-                                                        ],
-                                                        "style": "receipt-value-down-sub"
-                                                    },
-                                                    {
-                                                        "text": "{{doorNo}}",
-                                                        "border": [
-                                                            false,
-                                                            false,
-                                                            false,
-                                                            false
-                                                        ],
-                                                        "style": "receipt-value-down-sub"
-                                                    }
-                                                ]
-                                            ]
+                        "body": [
+                            [
+                                {
+                                    "stack": [
+                                         {
+                                            "text": "{{annexture_c}}",
+                                            "style": "appendix-header"
+                                             
                                         }
-                                    },
-                                    [
+                                        
+                                    ]
+                                  
+                                     
+                                }
+                            ]
+                        ]
+                    },
+                    "layout": "noBorders"
+                },
+            {
+                    "alignment": "left",
+                    "table": {
+                        "widths": [
+                            "*"
+                        ],
+                        "body": [
+                            [
+                                {
+                                    "stack": [
                                         {
-                                            "border": [
-                                                false,
-                                                false,
-                                                false,
-                                                false
-                                            ],
-                                            "columns": [
-                                                {
-                                                    "width": "auto",
-                                                    "text": "{{app_no}}",
-                                                    "style": "receipt-value-down-sub"
-                                                },
-                                                {
-                                                    "width": "2%",
-                                                    "text": ":"
-                                                },
-                                                {
-                                                    "width": "auto",
-                                                    "text": "{{applicationNumber}}",
-                                                    "style": "receipt-value-down-sub"
-                                                }
-                                            ],
-                                            "margin": [
-                                                0,
-                                                10,
-                                                0,
-                                                0
-                                            ]
+                                            "table": {
+                                             "widths": [
+                                               "83%",
+                                               "20%"
+                                             ],
+                                             "body": [
+                                               [
+                                                 {
+                                                   "text":"{{file_no}}: {{appNo}}",
+                                                   "border":[
+                                                     false,
+                                                     false,
+                                                     false,
+                                                     false
+                                                   ],
+                                                    "style": "receipt-table-value"
+                                                 },
+                                                 {
+                                                   "text":"{{dateLabel}}: {{appDate}}",
+                                                   "border":[
+                                                     false,
+                                                     false,
+                                                     false,
+                                                     false
+                                                   ],
+                                                    "style": "receipt-table-value-down"
+                                                     
+                                                 }
+                                               ]
+                                               ]
+                                           }
                                         }
                                     ]
-                                ],
-                                "border": [
-                                    false,
-                                    false,
-                                    false,
-                                    false
-                                ],
-                                "margin": [
-                                    20,
-                                    5,
-                                    0,
-                                    0
-                                ]
-                            }
+                                  
+                                     
+                                }
+                            ]
                         ]
-                    ]
+                    },
+                    "layout": "noBorders",
+                    "margin": [
+                     -5,
+                     2,
+                     0,
+                     2
+                   ]
                 },
-                "layout": {}
-            },
-            {
-                "text": "{{approved_by}}",
-                "alignment": "center",
-                "style": "receipt-down-footer"
-            }
-        ],
+                {
+                    "style": "ws-head",
+                    "table": {
+                        "widths": [
+                            "*"
+                        ],
+                        "body": [
+                            [
+                                {
+                                    "stack": [
+                                         {
+                                            "text": "{{toLabel}}",
+                                            "style": "receipt-value-down-rec"
+                                             
+                                        },
+                                        {
+                                            "text": "{{name}}",
+                                            "style": "receipt-value-down-rec"
+                                             
+                                        },
+                                        {
+                                            "text": "{{houseNo}} {{address}} {{pincode}}",
+                                            "style": "receipt-value-down-rec"
+                                             
+                                        },{
+                                            "text": "{{logo_header}} {{cantt_board}}",
+                                            "style": "receipt-value-down-rec"
+                                             
+                                        }
+                                    ]
+                                  
+                                     
+                                }
+                            ]
+                        ]
+                    },
+                    "layout": "noBorders"
+                },
+                {
+                     "style": "ws-head",
+                    "table": {
+                        "widths": [
+                            "*"
+                        ],
+                        "body": [
+                                            [ 
+                                                {
+                                                     "columns": [
+                                                        {
+                                                            "width": "10%",
+                                                            "text": "Subject:",
+                                                             "bold": true
+                                                            
+                                                        },
+                                                        {
+                                                            "text": "{{statement_1}} {{name}} {{statement_2}} {{houseNo}} {{address}},{{pincode}},{{logo_header}} {{cantt_board}}",
+                                                            "width": "90%",
+                                                            "bold": true
+                                                             
+                                                        }
+                                                    ],
+                                                    "margin": [
+                                                                    0,
+                                                                    5,
+                                                                    0,
+                                                                    0
+                                                                ]
+                                                }
+                                            ]
+                             
+                        ]
+                    },
+                    "layout": "noBorders"
+                },
+                 {
+                     "style": "ws-head",
+                    "table": {
+                        "widths": [
+                            "*"
+                        ],
+                        "body": [
+                                            [ 
+                                                {
+                                                     "columns": [
+                                                        {
+                                                            "width": "18%",
+                                                            "text": "{{referenceLabel}}",
+                                                             "bold": false,
+                                                             "italics": true,
+                                                              "margin": [
+                                                                    25,
+                                                                    10,
+                                                                    0,
+                                                                    0
+                                                                ]
+                                                            
+                                                        },
+                                                        {
+                                                            "text": "{{referenceStatement1}} {{appNo}} {{referenceStatement2}} {{dateLabel}} {{applicationDate}} {{referenceStatement3}}",
+                                                            "width": "88%",
+                                                            "bold": false,
+                                                            "italics": true,
+                                                             "margin": [
+                                                                    0,
+                                                                    10,
+                                                                    0,
+                                                                    0
+                                                                ]
+                                                            
+                                                            
+                                                             
+                                                        }
+                                                    ],
+                                                    "margin": [
+                                                                    0,
+                                                                    0,
+                                                                    0,
+                                                                    0
+                                                                ]
+                                                }
+                                            ]
+                             
+                        ]
+                    },
+                    "layout": "noBorders"
+                },
+                 {
+                     "style": "ws-head",
+                    "table": {
+                        "widths": [
+                            "*"
+                        ],
+                        "body": [
+                            
+                                    [
+                                {
+                                    "border": [
+                                        false,
+                                        false,
+                                        false,
+                                        false
+                                    ],
+                                    "columns": [
+                                        {
+                                            "width": "100%",
+                                            "ol": [
+                                                {
+                                                    
+                                                },
+                                                {
+                                                    "text": "{{statement_3}} {{rupeesLabel}} {{totalAmount}} {{statement_4}} {{houseNo}} {{address}},{{pincode}},{{logo_header}} {{cantt_board}}",
+                                                    "style": "receipt-value-down"
+                                                },
+                                                {
+                                                    "text": "{{statement_5}}",
+                                                    "style": "receipt-value-down"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "margin": [
+                                        7,
+                                        10,
+                                        0,
+                                        0
+                                    ]
+                                }
+                            ]
+                            
+                        ]
+                    },
+                    "layout": "noBorders"
+                },
+                {
+                     "style": "ws-head",
+                    "table": {
+                        "widths": [
+                            "*"
+                        ],
+                        "body": [
+                                            
+                                            [ 
+                                                        {
+                                                            "text": "{{ceoLabel}}",
+                                                            "alignment": "right",
+                                                            "margin": [
+                                                                    0,
+                                                                    10,
+                                                                    0,
+                                                                    0
+                                                                ]
+                                                        }
+                                                    
+                                            ],
+                                            [ 
+                                                        {
+                                                            "text": "{{logo_header}} {{cantt_board}}",
+                                                            "alignment": "right",
+                                                            "margin": [
+                                                                    0,
+                                                                    0,
+                                                                    0,
+                                                                    20
+                                                                ]
+                                                        }
+                                                    
+                                            ]
+                                
+                        ]
+                    },
+                    "layout": "noBorders"
+                }
+              
+            ],
         "styles": {
             "ws-head": {
                 "margin": [

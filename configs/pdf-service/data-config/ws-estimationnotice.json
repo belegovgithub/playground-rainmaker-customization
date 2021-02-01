@@ -823,7 +823,20 @@
                                     "prefix": null,
                                     "module": "rainmaker-pdf"
                                 }
+                            },
+                            {
+                                "variable": "cantt_board",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_MUNICIPAL_COUNCIL"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
                             }
+
                         ]
                     },
                     {
