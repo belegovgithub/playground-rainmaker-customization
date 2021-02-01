@@ -21,7 +21,7 @@
                             {
                                 "variable": "appDate",
                                 "value": {
-                                    "path": "$.additionalDetails.appCreatedDate"
+                                    "path": "$.auditDetails.lastModifiedTime"
                                 },
                                 "type":"date"
                             },

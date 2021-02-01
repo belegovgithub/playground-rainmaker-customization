@@ -13,15 +13,23 @@
                     {
                         "direct": [
                             {
+                                "variable": "appNo",
+                                "value": {
+                                    "path": "$.applicationNo"
+                                }
+                            },
+                            {
                                 "variable": "tenantName",
                                 "value": {
                                     "path": "$.tenantName"
                                 }
                             },
                             {
-                                "variable": "logoImage",
-                                "url": "https://raw.githubusercontent.com/egovernments/egov-web-app/master/web/rainmaker/dev-packages/egov-ui-kit-dev/src/assets/images/pblogo.png",
-                                "type": "image"
+                                "variable": "appDate",
+                                "value": {
+                                    "path": "$.auditDetails.lastModifiedTime"
+                                },
+                                "type":"date"
                             },
                             {
                                 "variable": "municipalCouncil",
@@ -248,6 +256,12 @@
                             },
                             {
                                 "variable": "ownerName",
+                                "value": {
+                                    "path": "$.property.owners[0].name"
+                                }
+                            },
+                            {
+                                "variable": "name",
                                 "value": {
                                     "path": "$.property.owners[0].name"
                                 }
@@ -1190,11 +1204,6 @@
                                 "queryParam": "moduleName=tenant&masterName=tenants&tenantId=pb&filter=%5B?(@.code=='{$.property.tenantId}')%5D",
                                 "apiRequest": null,
                                 "responseMapping": [
-                                    {
-                                        "variable": "logoImage",
-                                        "value": "$.MdmsRes.tenant.tenants[0].logoId",
-                                        "type": "image"
-                                    },
                                     {
                                         "variable": "logo_header",
                                         "value": "$.MdmsRes.tenant.tenants[0].code",
