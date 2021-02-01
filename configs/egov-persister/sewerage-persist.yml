@@ -340,7 +340,102 @@ serviceMaps:
        - jsonPath: $.SewerageConnection.auditDetails.lastModifiedBy
 
        - jsonPath: $.SewerageConnection.auditDetails.lastModifiedTime
-          
+ 
+       
+    - query: INSERT INTO eg_sw_connection_taxhead(id, active, taxhead, amount, connection_id,additionaldetail, createdby,createdtime, lastmodifiedby, lastmodifiedtime)  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ON CONFLICT (id) DO UPDATE SET active = ?, taxhead = ?, amount = ?,additionaldetail=?,  lastmodifiedby = ?,  lastmodifiedtime = ?;
+      basePath: $.SewerageConnection.wsTaxHeads.*
+      jsonMaps:      
+
+       - jsonPath: $.SewerageConnection.wsTaxHeads.*.id
+
+       - jsonPath: $.SewerageConnection.wsTaxHeads.*.active
+
+       - jsonPath: $.SewerageConnection.wsTaxHeads.*.taxHeadCode
+
+       - jsonPath: $.SewerageConnection.wsTaxHeads.*.amount
+
+       - jsonPath: $.SewerageConnection.id
+
+       - jsonPath: $.SewerageConnection.wsTaxHeads.*.additionalDetail
+         type: JSON
+         dbType: JSONB
+
+       - jsonPath: $.SewerageConnection.auditDetails.createdBy
+
+       - jsonPath: $.SewerageConnection.auditDetails.createdTime
+
+       - jsonPath: $.SewerageConnection.auditDetails.lastModifiedBy
+
+       - jsonPath: $.SewerageConnection.auditDetails.lastModifiedTime
+
+       - jsonPath: $.SewerageConnection.wsTaxHeads.*.active
+
+       - jsonPath: $.SewerageConnection.wsTaxHeads.*.taxHeadCode
+
+       - jsonPath: $.SewerageConnection.wsTaxHeads.*.amount
+
+       - jsonPath: $.SewerageConnection.wsTaxHeads.*.additionalDetail
+         type: JSON
+         dbType: JSONB
+
+       - jsonPath: $.SewerageConnection.auditDetails.lastModifiedBy
+
+       - jsonPath: $.SewerageConnection.auditDetails.lastModifiedTime
+
+
+
+    - query: INSERT INTO eg_sw_connection_roadtype(id, active, roadtype, length, breadth,depth,rate,connection_id,additionaldetail, createdby, createdtime,lastmodifiedby, lastmodifiedtime)  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ON CONFLICT (id) DO UPDATE SET active = ?, roadtype =?, length= ?, breadth=?,depth=?,rate=?,additionaldetail=?,  lastmodifiedby = ?,  lastmodifiedtime = ?;
+      basePath: $.SewerageConnection.roadTypeEst.*
+      jsonMaps:      
+
+       - jsonPath: $.SewerageConnection.roadTypeEst.*.id
+
+       - jsonPath: $.SewerageConnection.roadTypeEst.*.active
+
+       - jsonPath: $.SewerageConnection.roadTypeEst.*.roadType
+
+       - jsonPath: $.SewerageConnection.roadTypeEst.*.length
+
+       - jsonPath: $.SewerageConnection.roadTypeEst.*.breadth
+
+       - jsonPath: $.SewerageConnection.roadTypeEst.*.depth
+
+       - jsonPath: $.SewerageConnection.roadTypeEst.*.rate
+
+       - jsonPath: $.SewerageConnection.id
+
+       - jsonPath: $.SewerageConnection.roadTypeEst.*.additionalDetail
+         type: JSON
+         dbType: JSONB
+
+       - jsonPath: $.SewerageConnection.auditDetails.createdBy
+
+       - jsonPath: $.SewerageConnection.auditDetails.createdTime
+
+       - jsonPath: $.SewerageConnection.auditDetails.lastModifiedBy
+
+       - jsonPath: $.SewerageConnection.auditDetails.lastModifiedTime
+
+       - jsonPath: $.SewerageConnection.roadTypeEst.*.active
+
+       - jsonPath: $.SewerageConnection.roadTypeEst.*.roadType
+
+       - jsonPath: $.SewerageConnection.roadTypeEst.*.length
+
+       - jsonPath: $.SewerageConnection.roadTypeEst.*.breadth
+
+       - jsonPath: $.SewerageConnection.roadTypeEst.*.depth
+
+       - jsonPath: $.SewerageConnection.roadTypeEst.*.rate
+
+       - jsonPath: $.SewerageConnection.roadTypeEst.*.additionalDetail
+         type: JSON
+         dbType: JSONB
+
+       - jsonPath: $.SewerageConnection.auditDetails.lastModifiedBy
+
+       - jsonPath: $.SewerageConnection.auditDetails.lastModifiedTime
+
 
  - version: 1.0
    name: SewerageConnection
