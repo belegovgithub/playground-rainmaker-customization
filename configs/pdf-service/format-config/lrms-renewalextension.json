@@ -22,7 +22,7 @@
                                          
                                     },
                                     {
-                                        "text":"{{commissioner}} {{cb-name}}",
+                                        "text":"{{addressee}} {{cb-name}}",
                                         "style": "receipt-value-down-sub"
                                          
                                     }
@@ -105,7 +105,7 @@
                     "body": [
                                         [ 
                                                     {
-                                                        "text": "{{body-description1}}",
+                                                        "text": "{{body-description1}} {{area}}",
                                                         "alignment": "left",
                                                         "margin": [
                                                                 30,
@@ -369,7 +369,7 @@
                                                 "style": "receipt-value-down"
                                             },
                                             {
-                                                "text": "{{instructionRule2}}",
+                                                "text": "{{instructionRule2}} {{boundary}} {{instructionRule3}}",
                                                 "style": "receipt-value-down"
                                             }
                                         ]

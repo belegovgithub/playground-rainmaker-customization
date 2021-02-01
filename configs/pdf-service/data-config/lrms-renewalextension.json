@@ -19,9 +19,27 @@
                   }
                 },
                 {
+                  "variable": "area", 
+                  "value": {
+                    "path": "$.area"
+                  }
+                },
+                {
                   "variable": "mobileNo", 
                   "value": {
                     "path": "$.mobileNo"
+                  }
+                },
+                {
+                  "variable": "boundary", 
+                  "value": {
+                    "path": "$.instruction"
+                  }
+                },
+                {
+                  "variable": "addressee", 
+                  "value": {
+                    "path": "$.addressee"
                   }
                 },
                 {
@@ -347,7 +365,19 @@
                       "prefix": null,
                       "module":"rainmaker-pdf"
                    }
-                  }         
+                  },
+                  {
+                    "variable": "instructionRule3",
+                    "value": {
+                      "path": "PDF_STATIC_LABEL_LRMS_CONSOLIDATED_INSTRUCTION_RULE3"
+                    },
+                    "type": "label",
+                    "localisation":{
+                      "required":true,
+                      "prefix": null,
+                      "module":"rainmaker-pdf"
+                   }
+                  }            
               ]
             },
             {
