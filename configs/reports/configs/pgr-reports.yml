@@ -258,7 +258,7 @@ ReportDefinitions:
     searchClause: AND eg_pgr_service.createdtime <= $toDate
   query: |
     SELECT 
-    (SELECT name from eg_user eas where eas.id::varchar in (select assignee from eg_pgr_action epa1 where epa1.businesskey = eg_pgr_service.servicerequestid and epa1.action in ('assign','reassign') and "when" = (select max("when") from eg_pgr_action epa where epa.businesskey = eg_pgr_service.servicerequestid and action in ('assign','reassign') group by epa.businesskey) and epa1.businesskey = eg_pgr_service.servicerequestid)) as lastassignedto,
+    (SELECT name from eg_user eas where eas.id::varchar in (select assignee from eg_pgr_action epa1 where epa1.businesskey = eg_pgr_service.servicerequestid and epa1.action in ('assign','reassign','reject','resolve') and "when" = (select max("when") from eg_pgr_action epa where epa.businesskey = eg_pgr_service.servicerequestid and action in ('assign','reassign','resolve','reject') group by epa.businesskey) and epa1.businesskey = eg_pgr_service.servicerequestid)) as lastassignedto,
     (SELECT deptmap_def.name FROM (VALUES tbl_def_dept) AS deptmap_def(name,code) INNER JOIN (VALUES tbl_dept) AS deptmap(serviceCode, department, slaHours) on deptmap.serviceCode = eg_pgr_service.servicecode and deptmap_def.code = deptmap.department) AS department, 
     regexp_replace(servicecode, '([a-z])([A-Z])', '\1 \2','g') AS servicecode, 
     (SELECT boundary_def.name FROM (VALUES tbl_boundary) AS boundary_def(name,code) where code=eg_pgr_address.mohalla) as locality, 
@@ -275,7 +275,7 @@ ReportDefinitions:
     FROM eg_pgr_service
     left outer join eg_pgr_address on eg_pgr_address.uuid = eg_pgr_service.addressid
     left outer join eg_user on eg_user.id = eg_pgr_service.accountid::int
-    left outer join eg_pgr_action as epa on epa.businesskey = eg_pgr_service.servicerequestid and epa.action in ('assign','reassign') and "when" = (select max("when") from eg_pgr_action epa2 where epa2.businesskey = eg_pgr_service.servicerequestid and action in ('assign','reassign') group by epa2.businesskey)
+    left outer join eg_pgr_action as epa on epa.businesskey = eg_pgr_service.servicerequestid and epa.action in ('assign','reassign','resolve','reject') and "when" = (select max("when") from eg_pgr_action epa2 where epa2.businesskey = eg_pgr_service.servicerequestid and action in ('assign','reassign','resolve','reject') group by epa2.businesskey)
     left outer join eg_user as ua on ua.id = epa.assignee::int 
     WHERE 
     eg_pgr_service.tenantid LIKE  $tenantid 
