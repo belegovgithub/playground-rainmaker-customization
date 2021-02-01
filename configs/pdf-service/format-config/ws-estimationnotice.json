@@ -44,13 +44,13 @@
                                     {
                                         "table": {
                                          "widths": [
-                                           "83%",
+                                           "80%",
                                            "20%"
                                          ],
                                          "body": [
                                            [
                                              {
-                                               "text":"{{file_no}} {{appNo}}",
+                                               "text":"{{file_no}}: {{appNo}}",
                                                "border":[
                                                  false,
                                                  false,
@@ -60,7 +60,7 @@
                                                 "style": "receipt-table-value"
                                              },
                                              {
-                                               "text":"{{dateLabel}} {{appDate}}",
+                                               "text":"{{dateLabel}}: {{appDate}}",
                                                "border":[
                                                  false,
                                                  false,
@@ -187,7 +187,7 @@
                                                         
                                                     },
                                                     {
-                                                        "text": "{{referenceStatement1}} {{appNo}} {{referenceStatement2}} {{dateLabel}} {{appDate}} {{referenceStatement3}}",
+                                                        "text": "{{referenceStatement1}} {{appNo}} {{referenceStatement2}} {{dateLabel}} {{applicationDate}} {{referenceStatement3}}",
                                                         "width": "88%",
                                                         "bold": false,
                                                         "italics": true,
@@ -268,7 +268,7 @@
                                                     },
                                                     {
                     
-                                                        "text": "{{rupeesLabel}} {{roadCharge}}",
+                                                        "text": "{{rupeesLabel}} {{waterConnCharge}}",
                                                         "alignment": "left"
                                                     }
                                                     ]
@@ -312,7 +312,7 @@
                                                     },
                                                     {
                     
-                                                        "text": "{{rupeesLabel}} {{roadCharge}}",
+                                                        "text": "{{rupeesLabel}} {{waterMiscCharge}}",
                                                         "alignment": "left"
                                                     }
                                                     ]
@@ -334,7 +334,7 @@
                                                     },
                                                     {
                     
-                                                        "text": "{{rupeesLabel}} {{roadCharge}}",
+                                                        "text": "{{rupeesLabel}} {{otherCharges}}",
                                                         "alignment": "left"
                                                     }
                                                     ]
@@ -479,6 +479,14 @@
                 10
               ]
             },
+            "ws-head": {
+                "margin": [
+                    0,
+                    -5,
+                    0,
+                    0
+                ]
+            },
              "appendix-header": {
              "color": "#000000",
                         "bold": true,
@@ -515,7 +523,7 @@
             "receipt-value-down": {
                         "color": "#000000",
                         "bold": false,
-                        "fontSize": 13,
+                        "fontSize": 12.5,
                         "fontWeight": 400,
                         "alignment": "left",
                         "margin": [

@@ -21,7 +21,14 @@
                             {
                                 "variable": "appDate",
                                 "value": {
-                                    "path": "$.connectionExecutionDate"
+                                    "path": "$.additionalDetails.appCreatedDate"
+                                },
+                                "type":"date"
+                            },
+                            {
+                                "variable": "applicationDate",
+                                "value": {
+                                    "path": "$.additionalDetails.appCreatedDate"
                                 },
                                 "type":"date"
                             },
@@ -80,7 +87,7 @@
                                 }
                             },
                             {
-                                "variable": "otherCharge",
+                                "variable": "otherCharges",
                                 "value": {
                                     "path": "$.pdfTaxhead[?(@.taxHeadCode == 'OTHER_CHARGE')].estimateAmount"
                                 }
@@ -107,6 +114,18 @@
                                 "variable": "oneTimeFee",
                                 "value": {
                                     "path": "$.pdfTaxhead[?(@.taxHeadCode == 'ONE_TIME_FEE')].estimateAmount"
+                                }
+                            },
+                            {
+                                "variable": "labourCharge",
+                                "value": {
+                                    "path": "$.pdfTaxhead[?(@.taxHeadCode == 'LABOUR_CHARGE')].estimateAmount"
+                                }
+                            },
+                            {
+                                "variable": "meterCharge",
+                                "value": {
+                                    "path": "$.pdfTaxhead[?(@.taxHeadCode == 'METER_CHARGE')].estimateAmount"
                                 }
                             },
                             {
@@ -808,9 +827,21 @@
                         ]
                     },
                     {
+                        "derived": [
+                           {
+                              "variable": "waterConnCharge",
+                              "formula": "{{securityCharge}}+{{oneTimeFee}}+{{ScrutinyFee}}+{{formFee}}"
+                           },
+                           {
+                            "variable": "waterMiscCharge",
+                            "formula": "{{meterCharge}}+{{labourCharge}}"
+                            } 
+                        ]
+                     },
+                    {
                         "externalAPI": [
                             {
-                                "path": "http://egov-mdms-service:8080/egov-mdms-service/v1/_get",
+                                "path": "http://egov-mdms-service/egov-mdms-service/v1/_get",
                                 "queryParam": "moduleName=tenant&masterName=tenants&tenantId=pb&filter=%5B?(@.code=='{$.property.tenantId}')%5D",
                                 "apiRequest": null,
                                 "responseMapping": [
