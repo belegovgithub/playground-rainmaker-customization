@@ -1842,6 +1842,66 @@
                   "headers": []
                 }
               ]
+            },
+            {
+              "id": 145,
+              "name": "DSS_WATER",
+              "vizType": "module",
+              "moduleLevel": "WS",
+              "ref": {
+                "url": "ws",
+                "logoUrl": "",
+                "type": "internal"
+              },
+              "label": "",
+              "charts": [
+                {
+                  "id": "wstotalCollection",
+                  "name": "DSS_WS_TOTAL_COLLECTION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "wstotalConnection",
+                  "name": "DSS_WS_TOTAL_CONNECTIONS",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 149,
+              "name": "DSS_SEWERAGE",
+              "vizType": "module",
+              "moduleLevel": "SW",
+              "ref": {
+                "url": "sw",
+                "logoUrl": "",
+                "type": "internal"
+              },
+              "label": "",
+              "charts": [
+                {
+                  "id": "swtotalCollection",
+                  "name": "DSS_SW_TOTAL_COLLECTION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "swtotalConnection",
+                  "name": "DSS_SW_TOTAL_CONNECTIONS",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
             }
           ]
         },
@@ -3653,8 +3713,67 @@
                   "headers": []
                 }
               ]
-            }
-                  
+            },
+            {
+              "id": 144,
+              "name": "DSS_WATER",
+              "vizType": "module",
+              "moduleLevel": "WS",
+              "ref": {
+                "url": "ws",
+                "logoUrl": "",
+                "type": "internal"
+              },
+              "label": "",
+              "charts": [
+                {
+                  "id": "wstotalCollection",
+                  "name": "DSS_WS_TOTAL_COLLECTION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "wstotalConnection",
+                  "name": "DSS_WS_TOTAL_CONNECTIONS",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+             {
+              "id": 144,
+              "name": "DSS_SEWERAGE",
+              "vizType": "module",
+              "moduleLevel": "SW",
+              "ref": {
+                "url": "sw",
+                "logoUrl": "",
+                "type": "internal"
+              },
+              "label": "",
+              "charts": [
+                {
+                  "id": "swtotalCollection",
+                  "name": "DSS_SW_TOTAL_COLLECTION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "swtotalConnection",
+                  "name": "DSS_SW_TOTAL_CONNECTIONS",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }            
           ]
         },
         {
