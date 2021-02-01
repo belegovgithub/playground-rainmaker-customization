@@ -7,7 +7,7 @@ serviceMaps:
    isTransaction: true
    queryMaps:
 
-       - query: INSERT INTO eg_lams_leaserenewal(id,accountid,tenantid,applicationnumber,applicationdate,action,status,createdby,lastmodifiedby,createdtime,lastmodifiedtime,businessservice,applicationtype,workflowcode) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ,? ,? ,?);
+       - query: INSERT INTO eg_lams_leaserenewal(id,accountid,tenantid,applicationnumber,applicationdate,action,status,createdby,lastmodifiedby,createdtime,lastmodifiedtime,businessservice,applicationtype,workflowcode,fatherorhusbandname,months) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ,? ,? ,?,?,?);
          basePath: leases.*
          jsonMaps:
           - jsonPath: $.leases.*.id
@@ -38,6 +38,9 @@ serviceMaps:
 
           - jsonPath: $.leases.*.workflowCode
 
+          - jsonPath: $.leases.*.fatherOrHusbandName
+
+          - jsonPath: $.leases.*.months
 
        - query: INSERT INTO eg_lams_leaserenewaldetail(id,surveyno,surveyid,termno,termexpirydate,annualrent,leaserenewalid,createdby,lastmodifiedby,createdtime,lastmodifiedtime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
          basePath: leases.*.leaseDetails
