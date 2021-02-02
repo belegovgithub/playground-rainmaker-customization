@@ -110,7 +110,7 @@
                                          
                                     },
                                     {
-                                        "text": "{{houseNo}} {{address}} {{pincode}}",
+                                        "text": "{{houseNo}} {{address}}",
                                         "style": "receipt-value-down-rec"
                                          
                                     },{
@@ -140,13 +140,15 @@
                                                     {
                                                         "width": "10%",
                                                         "text": "Subject:",
-                                                         "bold": true
+                                                         "bold": true,
+                                                         "fontSize": 12
                                                         
                                                     },
                                                     {
-                                                        "text": "{{grant_stmt}} {{name}} {{houseNo}} {{address}} {{pincode}},{{logo_header}} {{grant_stmt2}} {{houseNo}} {{address}} {{pincode}},{{logo_header}}",
+                                                        "text": "{{grant_stmt}} {{name}} {{grant_stmt2}} {{houseNo}} {{address}},{{logo_header}}",
                                                         "width": "90%",
-                                                        "bold": true
+                                                        "bold": true,
+                                                        "fontSize": 12
                                                          
                                                     }
                                                 ],
@@ -180,7 +182,7 @@
                                                          "italics": true,
                                                           "margin": [
                                                                 25,
-                                                                10,
+                                                                8,
                                                                 0,
                                                                 0
                                                             ]
@@ -193,7 +195,7 @@
                                                         "italics": true,
                                                          "margin": [
                                                                 0,
-                                                                10,
+                                                                8,
                                                                 0,
                                                                 0
                                                             ]
@@ -239,7 +241,7 @@
                                                 
                                             },
                                             {
-                                                "text": "{{applStatement1}} {{name}} {{houseNo}} {{address}} {{pincode}},{{logo_header}} {{applStatement2}} {{houseNo}} {{address}} {{pincode}},{{logo_header}} {{applStatement3}}.{{applStatement4}}  {{houseNo}} {{address}} {{pincode}} ,{{logo_header}} {{applStatement5}}",
+                                                "text": "{{applStatement1}} {{name}} {{applStatement2}} {{houseNo}} {{address}},{{logo_header}} {{applStatement3}}.{{applStatement4}}  {{houseNo}} {{address}} {{pincode}} ,{{logo_header}} {{applStatement5}}",
                                                 "style": "receipt-value-down"
                                             }
                                         ]
@@ -262,7 +264,7 @@
                                                         "alignment": "left"
                                                     },
                                                     {
-                                                         "width": "60%", 
+                                                         "width": "75%", 
                                                         "text": "{{water_conn_chargeLabel}}",
                                                         "alignment": "left"
                                                     },
@@ -280,11 +282,11 @@
                                                 "columns": [
                                                    {
                                                        "width": "5%", 
-                                                       "text": "a)",
+                                                       "text": "b)",
                                                        "alignment": "left"
                                                    },
                                                    {
-                                                        "width": "60%", 
+                                                        "width": "75%", 
                                                        "text": "{{security_fee_label}}",
                                                        "alignment": "left"
                                                    },
@@ -302,11 +304,11 @@
                                                  "columns": [
                                                     {
                                                         "width": "5%", 
-                                                        "text": "b)",
+                                                        "text": "c)",
                                                         "alignment": "left"
                                                     },
                                                     {
-                                                         "width": "60%", 
+                                                         "width": "75%", 
                                                         "text": "{{roadCuttingChargeLabel}}",
                                                         "alignment": "left"
                                                     },
@@ -324,11 +326,11 @@
                                                  "columns": [
                                                     {
                                                         "width": "5%", 
-                                                        "text": "c)",
+                                                        "text": "d)",
                                                         "alignment": "left"
                                                     },
                                                     {
-                                                         "width": "60%", 
+                                                         "width": "75%", 
                                                         "text": "{{meterLabourChargeLabel}}",
                                                         "alignment": "left"
                                                     },
@@ -346,11 +348,11 @@
                                                  "columns": [
                                                     {
                                                         "width": "5%", 
-                                                        "text": "d)",
+                                                        "text": "e)",
                                                         "alignment": "left"
                                                     },
                                                     {
-                                                         "width": "60%", 
+                                                         "width": "75%", 
                                                         "text": "{{otherChargesLabel}}",
                                                         "alignment": "left"
                                                     },
@@ -479,7 +481,7 @@
                                                                 0,
                                                                 0,
                                                                 0,
-                                                                20
+                                                                0
                                                             ]
                                                     }
                                                 
@@ -532,7 +534,7 @@
                 "receipt-value-down-rec": {
                         "color": "#000000",
                         "bold": false,
-                        "fontSize": 13,
+                        "fontSize": 12,
                         "fontWeight": 400,
                         "alignment": "left",
                         "margin": [
@@ -545,7 +547,7 @@
             "receipt-value-down": {
                         "color": "#000000",
                         "bold": false,
-                        "fontSize": 12.5,
+                        "fontSize": 12,
                         "fontWeight": 400,
                         "alignment": "left",
                         "margin": [
