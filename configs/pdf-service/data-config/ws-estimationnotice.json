@@ -381,6 +381,18 @@
                                 }
                             },
                             {
+                                "variable": "security_fee_label",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_SECURITY_CHARGE"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
                                 "variable": "rupeesLabel",
                                 "value": {
                                     "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_RUPEES"
@@ -405,7 +417,19 @@
                                 }
                             },
                             {
-                                "variable": "waterConnChargeLabel",
+                                "variable": "meterLabourChargeLabel",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_METER_LABOUR_CHARGE"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "waterConnMiscLabel",
                                 "value": {
                                     "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_WATER_CONN_CHARGES"
                                 },
@@ -843,7 +867,7 @@
                         "derived": [
                            {
                               "variable": "waterConnCharge",
-                              "formula": "{{securityCharge}}+{{oneTimeFee}}+{{ScrutinyFee}}+{{formFee}}"
+                              "formula": "{{oneTimeFee}}+{{ScrutinyFee}}+{{formFee}}"
                            },
                            {
                             "variable": "waterMiscCharge",

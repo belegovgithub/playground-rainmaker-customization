@@ -276,6 +276,28 @@
                             
                         ],
                         [
+                            {
+                                                "columns": [
+                                                   {
+                                                       "width": "5%", 
+                                                       "text": "a)",
+                                                       "alignment": "left"
+                                                   },
+                                                   {
+                                                        "width": "60%", 
+                                                       "text": "{{security_fee_label}}",
+                                                       "alignment": "left"
+                                                   },
+                                                   {
+                   
+                                                       "text": "{{rupeesLabel}} {{securityCharge}}",
+                                                       "alignment": "left"
+                                                   }
+                                                   ]
+                                          }
+                           
+                       ],
+                        [
                              {
                                                  "columns": [
                                                     {
@@ -307,7 +329,7 @@
                                                     },
                                                     {
                                                          "width": "60%", 
-                                                        "text": "{{waterConnChargeLabel}}",
+                                                        "text": "{{meterLabourChargeLabel}}",
                                                         "alignment": "left"
                                                     },
                                                     {
