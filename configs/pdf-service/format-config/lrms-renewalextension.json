@@ -22,7 +22,7 @@
                                          
                                     },
                                     {
-                                        "text":"{{addressee}} {{cb-name}}",
+                                        "text":"{{addressee}}, {{cb-name}}",
                                         "style": "receipt-value-down-sub"
                                          
                                     }
