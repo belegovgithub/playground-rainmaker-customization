@@ -304,23 +304,8 @@
                                                     ]
                                            }
                                                 
-                                        ],
-                                        [ 
-                                            {
-                                                "columns": [
-                                                    {
-                                                        "width": "35%", 
-                                                        "text": "{{aadharNoLabel}}",
-                                                        "alignment": "left"
-                                                    },
-                                                    {
-                                                        "text": "{{aadharNo}}",
-                                                        "alignment": "left"
-                                                    }
-                                                    ]
-                                           }
-                                                
                                         ]
+                                         
                          
                     ]
                 },

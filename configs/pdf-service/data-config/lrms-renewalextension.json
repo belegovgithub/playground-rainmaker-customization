@@ -61,12 +61,6 @@
                     }
                   },
                   {
-                    "variable": "aadharNo", 
-                    "value": {
-                      "path": "$.aadharNo"
-                    }
-                  },
-                  {
                     "variable": "cantonment-board",
                     "value": {
                       "path": "PDF_STATIC_LABEL_CONSOLIDATED_TLCERTIFICATE_MUNICIPAL_CORPORATION"
