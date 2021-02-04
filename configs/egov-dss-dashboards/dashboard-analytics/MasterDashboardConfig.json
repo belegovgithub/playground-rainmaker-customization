@@ -1902,15 +1902,9 @@
                   "headers": []
                 }
               ]
-            }
-          ]
-        },
-        {
-          "row": 3,
-          "name": "DSS_OVERVIEW",
-          "vizArray": [
-            {
-              "id": 131,
+            },
+             {
+              "id": 150,
               "name": "DSS_LEASE",
               "vizType": "module",
               "moduleLevel": "LAMS",
@@ -1939,6 +1933,12 @@
                 }
               ]
             }
+          ]
+        },
+        {
+          "row": 3,
+          "name": "DSS_OVERVIEW",
+          "vizArray": [
           ]
         }
       ]
@@ -3773,15 +3773,9 @@
                   "headers": []
                 }
               ]
-            }            
-          ]
-        },
-        {
-          "row": 3,
-          "name": "DSS_OVERVIEW",
-          "vizArray": [
+            },
             {
-              "id": 143,
+              "id": 145,
               "name": "DSS_LEASE",
               "vizType": "module",
               "moduleLevel": "LAMS",
@@ -3809,7 +3803,14 @@
                   "headers": []
                 }
               ]
-            }
+            }       
+          ]
+        },
+        {
+          "row": 3,
+          "name": "DSS_OVERVIEW",
+          "vizArray": [
+            
           ]
         }
       ]
@@ -3848,22 +3849,6 @@
                 {
                   "id": "wstotalCollection",
                   "name": "DSS_W&S_TOTAL_COLLECTION",
-                  "code": "",
-                  "chartType": "metric",
-                  "filter": "",
-                  "headers": []
-                },
-                {
-                  "id": "wsConCollection",
-                  "name": "DSS_CONNECTION_COLLECTION",
-                  "code": "",
-                  "chartType": "metric",
-                  "filter": "",
-                  "headers": []
-                },
-                {
-                  "id": "wsChargesCollection",
-                  "name": "DSS_WATER_CHARGES_COLLECTION",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
@@ -3975,46 +3960,6 @@
                   "chartType": "donut",
                   "filter": "",
                   "headers": []
-                }
-              ]
-            }
-          ]
-        },
-       
-        {
-          "row": 3,
-          "name": "DSS_REVENUE",
-          "vizArray": [
-            
-             {
-              "id": 232,
-              "name": "DSS_W&S_TAX_HEAD_BOUNDARY",
-              "dimensions": {
-                "height": 350,
-                "width": 12
-              },
-              "vizType": "chart",
-              "label": "",
-              "noUnit": false,
-              "isCollapsible": true,
-              "charts": [
-                {
-                  "id": "wsTaxHeadUlb",
-                  "name": "DSS_W&S_TAX_HEAD_BOUNDARY",
-                  "code": "",
-                  "chartType": "table",
-                  "filter": "",
-                  "headers": [],
-                  "tabName": "Boundary"
-                },
-                {
-                  "id": "wsTaxHeadWard",
-                  "name": "DSS_W&S_TAX_HEAD_BOUNDARY",
-                  "code": "",
-                  "chartType": "table",
-                  "filter": "",
-                  "headers": [],
-                  "tabName": "Ward"
                 }
               ]
             }
@@ -4237,22 +4182,6 @@
                   "headers": []
                 },
                 {
-                  "id": "wsConCollection",
-                  "name": "DSS_CONNECTION_COLLECTION",
-                  "code": "",
-                  "chartType": "metric",
-                  "filter": "",
-                  "headers": []
-                },
-                {
-                  "id": "wsChargesCollection",
-                  "name": "DSS_WATER_CHARGES_COLLECTION",
-                  "code": "",
-                  "chartType": "metric",
-                  "filter": "",
-                  "headers": []
-                },
-                {
                   "id": "targetCollection",
                   "name": "DSS_W&S_TARGET_COLLECTION",
                   "code": "",
@@ -4381,35 +4310,6 @@
                 {
                   "id": "wsFinancialIndicatorDDR",
                   "name": "DSS_W&S_DEMAND_COLLECTION_BOUNDARY",
-                  "code": "",
-                  "chartType": "table",
-                  "filter": "",
-                  "headers": [],
-                  "tabName": "Boundary"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "row": 4,
-          "name": "DSS_REVENUE",
-          "vizArray": [
-            {
-              "id": 231,
-              "name": "DSS_W&S_TAX_HEAD_BOUNDARY",
-              "dimensions": {
-                "height": 350,
-                "width": 12
-              },
-              "vizType": "chart",
-              "label": "",
-              "noUnit": false,
-              "isCollapsible": true,
-              "charts": [
-                {
-                  "id": "wsTaxHeadUlb",
-                  "name": "DSS_W&S_TAX_HEAD_BOUNDARY",
                   "code": "",
                   "chartType": "table",
                   "filter": "",
@@ -4605,22 +4505,6 @@
                   "headers": []
                 },
                 {
-                  "id": "swConCollection",
-                  "name": "DSS_SW_CONNECTION_COLLECTION",
-                  "code": "",
-                  "chartType": "metric",
-                  "filter": "",
-                  "headers": []
-                },
-                {
-                  "id": "swChargesCollection",
-                  "name": "DSS_SEWERAGE_CHARGES_COLLECTION",
-                  "code": "",
-                  "chartType": "metric",
-                  "filter": "",
-                  "headers": []
-                },
-                {
                   "id": "swtargetCollection",
                   "name": "DSS_SW_TARGET_COLLECTION",
                   "code": "",
@@ -4726,46 +4610,6 @@
                   "chartType": "donut",
                   "filter": "",
                   "headers": []
-                }
-              ]
-            }
-          ]
-        },
-       
-        {
-          "row": 3,
-          "name": "DSS_REVENUE",
-          "vizArray": [
-            
-             {
-              "id": 232,
-              "name": "DSS_SW_TAX_HEAD_BOUNDARY",
-              "dimensions": {
-                "height": 350,
-                "width": 12
-              },
-              "vizType": "chart",
-              "label": "",
-              "noUnit": false,
-              "isCollapsible": true,
-              "charts": [
-                {
-                  "id": "swTaxHeadUlb",
-                  "name": "DSS_SW_TAX_HEAD_BOUNDARY",
-                  "code": "",
-                  "chartType": "table",
-                  "filter": "",
-                  "headers": [],
-                  "tabName": "Boundary"
-                },
-                {
-                  "id": "swTaxHeadWard",
-                  "name": "DSS_SW_TAX_HEAD_BOUNDARY",
-                  "code": "",
-                  "chartType": "table",
-                  "filter": "",
-                  "headers": [],
-                  "tabName": "Ward"
                 }
               ]
             }
@@ -4988,22 +4832,6 @@
                   "headers": []
                 },
                 {
-                  "id": "swConCollection",
-                  "name": "DSS_CONNECTION_COLLECTION",
-                  "code": "",
-                  "chartType": "metric",
-                  "filter": "",
-                  "headers": []
-                },
-                {
-                  "id": "swChargesCollection",
-                  "name": "DSS_WATER_CHARGES_COLLECTION",
-                  "code": "",
-                  "chartType": "metric",
-                  "filter": "",
-                  "headers": []
-                },
-                {
                   "id": "targetCollection",
                   "name": "DSS_SW_TARGET_COLLECTION",
                   "code": "",
@@ -5132,35 +4960,6 @@
                 {
                   "id": "swFinancialIndicatorDDR",
                   "name": "DSS_SW_DEMAND_COLLECTION_BOUNDARY",
-                  "code": "",
-                  "chartType": "table",
-                  "filter": "",
-                  "headers": [],
-                  "tabName": "Boundary"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "row": 4,
-          "name": "DSS_REVENUE",
-          "vizArray": [
-            {
-              "id": 231,
-              "name": "DSS_SW_TAX_HEAD_BOUNDARY",
-              "dimensions": {
-                "height": 350,
-                "width": 12
-              },
-              "vizType": "chart",
-              "label": "",
-              "noUnit": false,
-              "isCollapsible": true,
-              "charts": [
-                {
-                  "id": "swTaxHeadUlb",
-                  "name": "DSS_SW_TAX_HEAD_BOUNDARY",
                   "code": "",
                   "chartType": "table",
                   "filter": "",
