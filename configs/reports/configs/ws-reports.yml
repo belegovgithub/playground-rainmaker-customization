@@ -133,7 +133,7 @@ ReportDefinitions:
     isMandatory: false
     searchClause: AND ws.lastmodifiedtime <= $toDate
   - name: ulb
-    label: report.ws.tenantId
+    label: WS_PROP_DETAIL_CITY
     type: singlevaluelist
     pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=tenant&masterName=tenants|$.MdmsRes.tenant.tenants.*.code|$.MdmsRes.tenant.tenants.*.name
     source: ws
