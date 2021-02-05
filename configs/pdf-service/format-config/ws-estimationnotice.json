@@ -369,7 +369,7 @@
                             {
                                                 "columns": [
                                                    {
-                                                       "width": "5%", 
+                                                       "width": "0%", 
                                                        "text": " ",
                                                        "alignment": "left",
                                                         "margin": [
@@ -380,8 +380,8 @@
                                                            ]
                                                    },
                                                    {
-                                                        "width": "60%", 
-                                                       "text": "{{totalLabel}} :{{totalLabel}}",
+                                                        "width": "80%", 
+                                                       "text": "{{totalLabel}} :{{totalInWords}}",
                                                        "alignment": "left",
                                                        "bold": true,
                                    

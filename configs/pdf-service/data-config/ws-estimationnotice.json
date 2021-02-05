@@ -165,6 +165,13 @@
                                 }
                             },
                             {
+                                "variable": "totalInWords",
+                                "value": {
+                                    "path": "$.totalAmount"
+                                },
+                                "type":"amountInWords"
+                            },
+                            {
                                 "variable": "estimation_notice_header",
                                 "value": {
                                     "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_ESTIMATION_NOTICE_HEADER"
