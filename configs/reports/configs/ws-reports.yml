@@ -11,24 +11,24 @@ ReportDefinitions:
     tableName: tbl_localization
   sourceColumns:
   - name: status
-    label: report.ws.status
+    label: WS_COMMON_TABLE_COL_APPLICATION_STATUS
     type: string
     source: ws
     total: false
   - name: total
-    label: report.ws.total
+    label: WS_VIEW_BREAK_UP_TOTAL
     type: string
     source: ws
     total: true
   searchParams:
   - name: fromDate
-    label: reports.ws.fromDate
+    label: WS_COMMON_FROM_DATE_LABEL
     type: epoch
     source: ws
     isMandatory: false
     searchClause: AND ws.lastmodifiedtime >= $fromDate
   - name: toDate
-    label: reports.ws.toDate
+    label: WS_COMMON_TO_DATE_LABEL
     type: epoch
     source: ws
     isMandatory: false
@@ -50,32 +50,32 @@ ReportDefinitions:
     tableName: tbl_localization
   sourceColumns:
   - name: tenantId
-    label: report.ws.tenantId
+    label: WS_PROP_DETAIL_CITY
     type: string
     source: ws
     total: false
   - name: applicationno
-    label: report.ws.applicationno
+    label: WS_COMMON_APPLICATION_NO_LABEL
     type: string
     source: ws
     total: false
   - name: receiptnumber
-    label: report.ws.receiptnumber
+    label: report.tl.receiptnumber
     type: string
     source: ws
     total: false 
   - name: name
-    label: report.ws.eguser.username
+    label: WS_OWN_DETAIL_NAME
     type: string
     source: ws
     total: false
   - name: mobilenumber
-    label: report.ws.eguser.mobilenumber
+    label: CORE_COMMON_MOBILE_NUMBER
     type: string
     source: ws
     total: false
   - name: status
-    label: report.ws.status
+    label: WS_COMMON_TABLE_COL_APPLICATION_STATUS
     type: string
     source: ws
     total: false
@@ -85,12 +85,12 @@ ReportDefinitions:
     source: ws
     total: false
   - name: connectiontype
-    label: report.ws.connectiontype
+    label: WS_COMMON_TABLE_COL_CONNECTIONTYPE_LABEL
     type: string
     source: ws
     total: false
   - name: roadtype
-    label: report.ws.roadtype
+    label: WS_ADDN_DETAIL_ROAD_TYPE
     type: string
     source: ws
     total: false
@@ -100,7 +100,7 @@ ReportDefinitions:
     source: ws
     total: false
   - name: totalamount
-    label: report.ws.receipt.totalamount
+    label: WS_COMMON_TOTAL_AMT
     type: string
     source: ws
     total: true
@@ -110,24 +110,24 @@ ReportDefinitions:
     source: ws
     total: false
   - name: g8issuedate
-    label: report.ws.g8issuedate
+    label: report.tl.g8issuedate
     type: string
     source: ws
     total: false
   - name: g8receiptno
-    label: report.ws.g8receiptno
+    label: report.tl.g8receiptno
     type: string
     source: ws
     total: false
   searchParams:
   - name: fromDate
-    label: reports.ws.fromDate
+    label: WS_COMMON_FROM_DATE_LABEL
     type: epoch
     source: ws
     isMandatory: false
     searchClause: AND ws.lastmodifiedtime >= $fromDate
   - name: toDate
-    label: reports.ws.toDate
+    label: WS_COMMON_TO_DATE_LABEL
     type: epoch
     source: ws
     isMandatory: false
@@ -155,40 +155,40 @@ ReportDefinitions:
     source: ws
     total: false
   - name: connectiontype
-    label: report.ws.connectiontype
+    label: WS_COMMON_TABLE_COL_CONNECTIONTYPE_LABEL
     type: string
     source: ws
     total: false
   - name: online
-    label: report.ws.online.collection
+    label: report.tl.online.collection
     type: string
     source: ws
     total: true
   - name: offline
-    label: report.ws.offline.collection
+    label: report.tl.offline.collection
     type: string
     source: ws
     total: true
   - name: totalCollection
-    label: report.ws.totalCollection
+    label: report.tl.totalCollection
     type: string
     source: ws
     total: true
   searchParams:
   - name: fromDate
-    label: reports.ws.fromDate
+    label: WS_COMMON_FROM_DATE_LABEL
     type: epoch
     source: ws
     isMandatory: false
     searchClause: AND ws.lastmodifiedtime >= $fromDate
   - name: toDate
-    label: reports.ws.toDate
+    label: WS_COMMON_TO_DATE_LABEL
     type: epoch
     source: ws
     isMandatory: false
     searchClause: AND ws.lastmodifiedtime <= $toDate
   - name: ulb
-    label: report.ws.tenantId
+    label: WS_PROP_DETAIL_CITY
     type: singlevaluelist
     pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=tenant&masterName=tenants|$.MdmsRes.tenant.tenants.*.code|$.MdmsRes.tenant.tenants.*.name
     source: ws
@@ -216,35 +216,35 @@ ReportDefinitions:
     source: ws
     total: false
   - name: online
-    label: report.ws.online.collection
+    label: report.tl.online.collection
     type: string
     source: ws
     total: true
   - name: offline
-    label: report.ws.offline.collection
+    label: report.tl.offline.collection
     type: string
     source: ws
     total: true
   - name: totalCollection
-    label: report.ws.totalCollection
+    label: report.tl.totalCollection
     type: string
     source: ws
     total: true
   searchParams:
   - name: fromDate
-    label: reports.ws.fromDate
+    label: WS_COMMON_FROM_DATE_LABEL
     type: epoch
     source: ws
     isMandatory: false
     searchClause: AND ws.lastmodifiedtime >= $fromDate
   - name: toDate
-    label: reports.ws.toDate
+    label: WS_COMMON_TO_DATE_LABEL
     type: epoch
     source: ws
     isMandatory: false
     searchClause: AND ws.lastmodifiedtime <= $toDate
   - name: ulb
-    label: report.ws.tenantId
+    label: WS_PROP_DETAIL_CITY
     type: singlevaluelist
     pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=tenant&masterName=tenants|$.MdmsRes.tenant.tenants.*.code|$.MdmsRes.tenant.tenants.*.name
     source: ws
