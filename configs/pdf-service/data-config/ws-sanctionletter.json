@@ -32,6 +32,13 @@
                                 "type":"date"
                             },
                             {
+                                "variable": "applicationDate",
+                                "value": {
+                                    "path": "$.additionalDetails.appCreatedDate"
+                                },
+                                "type":"date"
+                            },
+                            {
                                 "variable": "municipalCouncil",
                                 "value": {
                                     "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_MUNICIPAL_COUNCIL"

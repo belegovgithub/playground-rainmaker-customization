@@ -187,7 +187,7 @@
                                                             
                                                         },
                                                         {
-                                                            "text": "{{referenceStatement1}} {{appNo}} {{referenceStatement2}} {{dateLabel}} {{applicationDate}} {{referenceStatement3}}",
+                                                            "text": "{{referenceStatement1}} {{appNo}} {{referenceStatement2}} {{dateLabel}} {{applicationDate}}  {{referenceStatement3}}",
                                                             "width": "88%",
                                                             "bold": false,
                                                             "italics": true,
