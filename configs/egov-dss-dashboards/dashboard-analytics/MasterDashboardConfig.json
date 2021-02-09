@@ -48,6 +48,14 @@
                   "chartType": "metric",
                   "filter": "",
                   "headers": []
+                },
+                {
+                  "id": "totalTransactions",
+                  "name": "DSS_TOTAL_TRANSACTIONS",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
                 }
               ]
             },
@@ -1728,6 +1736,15 @@
                 "logoUrl": "",
                 "type": "internal"
               },
+              "removedCharts":[
+              	{
+                  "id": "targetAchievedv2",
+                  "name": "DSS_TARGET_ACHIEVED",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }],
               "charts": [
                 {
                   "id": "overviewTotalCollectionv2",
@@ -1738,16 +1755,24 @@
                   "headers": []
                 },
                 {
-                  "id": "targetAchievedv2",
-                  "name": "DSS_TARGET_ACHIEVED",
+                  "id": "totalApplication",
+                  "name": "DSS_TOTAL_APPLICATION",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
                   "headers": []
                 },
                 {
-                  "id": "totalApplication",
-                  "name": "DSS_TOTAL_APPLICATION",
+                  "id": "totalTransactions",
+                  "name": "DSS_TOTAL_TRANSACTIONS",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "allServices",
+                  "name": "DSS_ALL_SERVICES",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
@@ -1765,7 +1790,7 @@
               "id": 121,
               "name": "DSS_M_COLLECT",
               "vizType": "module",
-              "moduleLevel": "TL",
+              "moduleLevel": "MC",
               "ref": {
                 "url": "mCollect",
                 "logoUrl": "",
@@ -1774,8 +1799,16 @@
               "label": "",
               "charts": [
                 {
-                  "id": "mcTotalCollectionv2",
+                  "id": "totalCollectionv2",
                   "name": "DSS_TOTAL_COLLECTION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "totalTransactions",
+                  "name": "DSS_MC_TOTAL_TRANSACTIONS",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
@@ -3356,6 +3389,14 @@
                   "chartType": "metric",
                   "filter": "",
                   "headers": []
+                },
+                {
+                  "id": "totalTransactions",
+                  "name": "DSS_TOTAL_TRANSACTIONS",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
                 }
               ]
             },
@@ -3623,6 +3664,14 @@
                   "chartType": "metric",
                   "filter": "",
                   "headers": []
+                },
+                {
+                  "id": "totalTransactions",
+                  "name": "DSS_TOTAL_TRANSACTIONS",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
                 }
               ]
             }
@@ -3636,7 +3685,7 @@
               "id": 121,
               "name": "DSS_M_COLLECT",
               "vizType": "module",
-              "moduleLevel": "TL",
+              "moduleLevel": "MC",
               "ref": {
                 "url": "ulb-mCollect",
                 "logoUrl": "",
@@ -3645,8 +3694,16 @@
               "label": "",
               "charts": [
                 {
-                  "id": "mcTotalCollectionv2",
+                  "id": "totalCollectionv2",
                   "name": "DSS_TOTAL_COLLECTION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "totalTransactions",
+                  "name": "DSS_MC_TOTAL_TRANSACTIONS",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
