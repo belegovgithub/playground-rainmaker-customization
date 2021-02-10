@@ -564,6 +564,14 @@
                   "chartType": "metric",
                   "filter": "",
                   "headers": []
+                },
+                {
+                  "id": "tltotalApplicationInitiated",
+                  "name": "DSS_TOTAL_APPLICATION_INCL_INIT",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
                 }
               ]
             },
@@ -1813,6 +1821,14 @@
                   "chartType": "metric",
                   "filter": "",
                   "headers": []
+                },
+                {
+                  "id": "avgTransactions",
+                  "name": "DSS_MC_AVG_DAILY_TRANSACTIONS",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
                 }
               ]
             },
@@ -1827,18 +1843,42 @@
                 "type": "internal"
               },
               "label": "",
-              "charts": [
-                {
+              "removedCharts":[{
                   "id": "totalCollectionv2",
                   "name": "DSS_TOTAL_COLLECTION",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
                   "headers": []
-                },
+                }],
+              "charts": [
                 {
                   "id": "totalApplication",
                   "name": "DSS_TOTAL_APPLICATION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "totalApplicationsApproved",
+                  "name": "DSS_TOTAL_APPROVED",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "totalApplicationsRejected",
+                  "name": "DSS_TOTAL_REJECTED",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "averageProcessingTime",
+                  "name": "DSS_AVG_PROCESSING_TIME",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
@@ -1873,6 +1913,14 @@
                   "chartType": "metric",
                   "filter": "",
                   "headers": []
+                },
+                {
+                  "id": "averageProcessingTime",
+                  "name": "DSS_AVG_RESOLVE_TIME",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
                 }
               ]
             },
@@ -1887,18 +1935,42 @@
                 "type": "internal"
               },
               "label": "",
-              "charts": [
-                {
+              "removedCharts":[{
                   "id": "wstotalCollection",
                   "name": "DSS_WS_TOTAL_COLLECTION",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
                   "headers": []
+                }],
+              "charts": [
+                {
+                  "id": "totalApplication",
+                  "name": "DSS_TOTAL_APPLICATION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
                 },
                 {
-                  "id": "wstotalConnection",
-                  "name": "DSS_WS_TOTAL_CONNECTIONS",
+                  "id": "totalApplicationsApproved",
+                  "name": "DSS_TOTAL_APPROVED",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "totalApplicationsRejected",
+                  "name": "DSS_TOTAL_REJECTED",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "averageProcessingTime",
+                  "name": "DSS_AVG_PROCESSING_TIME",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
@@ -1917,18 +1989,42 @@
                 "type": "internal"
               },
               "label": "",
-              "charts": [
-                {
+              "removedCharts":[                {
                   "id": "swtotalCollection",
                   "name": "DSS_SW_TOTAL_COLLECTION",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
                   "headers": []
+                }],
+              "charts": [
+                {
+                  "id": "totalApplication",
+                  "name": "DSS_TOTAL_APPLICATION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
                 },
                 {
-                  "id": "swtotalConnection",
-                  "name": "DSS_SW_TOTAL_CONNECTIONS",
+                  "id": "totalApplicationsApproved",
+                  "name": "DSS_TOTAL_APPROVED",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "totalApplicationsRejected",
+                  "name": "DSS_TOTAL_REJECTED",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "averageProcessingTime",
+                  "name": "DSS_AVG_PROCESSING_TIME",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
@@ -1947,6 +2043,14 @@
                 "type": "internal"
               },
               "label": "",
+              "removedCharts":[{
+                  "id": "leaseProcessingRate",
+                  "name": "DSS_LEASE_PROCESSINGRATE",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }],
               "charts": [
                 {
                   "id": "totalApplication",
@@ -1957,8 +2061,24 @@
                   "headers": []
                 },
                 {
-                  "id": "leaseProcessingRate",
-                  "name": "DSS_LEASE_PROCESSINGRATE",
+                  "id": "totalApplicationsApproved",
+                  "name": "DSS_TOTAL_APPROVED",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "totalApplicationsRejected",
+                  "name": "DSS_TOTAL_REJECTED",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "averageProcessingTime",
+                  "name": "DSS_AVG_PROCESSING_TIME",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
@@ -3259,6 +3379,14 @@
                 {
                   "id": "activeUlbs",
                   "name": "DSS_PT_TOTAL_ACTIVE_ULBS",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "tltotalApplicationInitiated",
+                  "name": "DSS_TOTAL_APPLICATION_INCL_INIT",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
