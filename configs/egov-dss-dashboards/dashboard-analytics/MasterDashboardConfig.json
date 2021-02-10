@@ -1862,7 +1862,7 @@
                 },
                 {
                   "id": "totalApplicationsApproved",
-                  "name": "DSS_TOTAL_APPROVED",
+                  "name": "DSS_TL_APPROVED",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
@@ -1954,7 +1954,7 @@
                 },
                 {
                   "id": "totalApplicationsApproved",
-                  "name": "DSS_TOTAL_APPROVED",
+                  "name": "DSS_WS_SW_CONNECTIONS",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
@@ -2008,7 +2008,7 @@
                 },
                 {
                   "id": "totalApplicationsApproved",
-                  "name": "DSS_TOTAL_APPROVED",
+                  "name": "DSS_WS_SW_CONNECTIONS",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
