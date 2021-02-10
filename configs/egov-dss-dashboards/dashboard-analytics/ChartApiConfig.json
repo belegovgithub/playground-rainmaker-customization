@@ -57,6 +57,36 @@
    },
    "_comment": " "
  },
+ "avgTransactions": {
+   "chartName": "DSS_MC_AVG_DAILY_TRANSACTIONS",
+   "queries": [
+     {
+       "module": "MC",
+       "dateRefField": "dataObject.paymentDetails.receiptDate",
+       "requestQueryMap": "{\"wardId\" : \"domainObject.ward.name.keyword\",\"module\" : \"dataObject.paymentDetails.businessService.keyword\", \"tenantId\" : \"dataObject.tenantId\"}",
+       "indexName": "dss-payment_v2",
+       "aggrQuery": "{\"size\":0,\"aggs\":{\"trans_per_day\":{\"date_histogram\":{\"field\":\"dataObject.paymentDetails.receiptDate\",\"interval\":\"day\"},\"aggs\":{\"transactions\":{\"value_count\":{\"field\":\"identifier.keyword\"}}}},\"avg_daily_transactions\":{\"avg_bucket\":{\"buckets_path\":\"trans_per_day>transactions\"}}}}"
+     }
+   ],
+   "chartType": "metric",
+   "valueType": "number",
+   "drillChart": "none",
+   "documentType": "_doc",
+   "action": "",
+   "aggregationPaths": [
+     "avg_daily_transactions"
+   ],
+   "insight": {
+     "chartResponseMap" : "avg_daily_transactions",
+     "action" : "differenceOfNumbers",
+     "upwardIndicator" : "positive",
+     "downwardIndicator" : "negative",
+     "textMessage" : "$indicator$value% than last $insightInterval",
+     "colorCode" : "#228B22",
+     "insightInterval" : "month"
+   },
+   "_comment": " "
+ },
  "allServices": {
    "chartName": "DSS_ALL_SERVICES",
    "queries": [
@@ -1711,13 +1741,218 @@
 
 
  "_comment": "COMMON NON-COLLECTION CHARTS",
+ "_comment": "tltotalApplicationInitiated",
+ "tltotalApplicationInitiated": {
+   "chartName": "DSS_TOTAL_APPLICATION",
+   "queries": [
+     {
+       "module": "TL",
+       "indexName": "tlindex-v1",
+       "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tradelicense.tenantId.keyword\":\"pb.testing\"}}],\"must\":[{\"terms\":{\"Data.tradelicense.status.keyword\":[\"INITIATED\"]}}]}},\"aggs\":{\"Total Application\":{\"value_count\":{\"field\":\"Data.tradelicense.applicationNumber.keyword\"}}}}}}",
+       "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\", \r\n  \"district\" : \"Data.tenantData.city.districtCode\", \r\n\"tenantId\" : \"Data.tradelicense.tenantId.keyword\" \r\n}", 
+       "dateRefField": "Data.tradelicense.applicationDate"
+     }
+   ],
+   "chartType": "metric",
+   "valueType": "number",
+   "action": "",
+   "documentType": "_doc",
+   "drillChart": "none",
+   "aggregationPaths": [
+     "Total Application"
+   ],
+   "insight": {
+     "chartResponseMap" : "totalApplication",
+     "action" : "differenceOfNumbers",
+     "upwardIndicator" : "positive",
+     "downwardIndicator" : "negative",
+     "textMessage" : "$indicator$value% than last $insightInterval",
+     "colorCode" : "#228B22",
+     "insightInterval" : "month"
+   },
+   "_comment": " totalApplication is the chartId"
+ },
+ "totalApplicationsApproved": {
+   "chartName": "DSS_TOTAL_APPROVED",
+   "queries": [
+     {
+       "module": "TL",
+       "indexName": "tlindex-v1",
+       "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tradelicense.tenantId.keyword\":\"pb.testing\"}},{\"terms\":{\"Data.tradelicense.status.keyword\":[\"INITIATED\"]}}],\"must\":[{\"terms\":{\"Data.tradelicense.status.keyword\":[\"APPROVED\"]}}]}},\"aggs\":{\"Total Application Approved\":{\"value_count\":{\"field\":\"Data.tradelicense.applicationNumber.keyword\"}}}}}}",
+       "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\", \r\n  \"district\" : \"Data.tenantData.city.districtCode\", \r\n\"tenantId\" : \"Data.tradelicense.tenantId.keyword\" \r\n}", 
+       "dateRefField": "Data.tradelicense.applicationDate"
+     },
+     {
+       "module": "PGR",
+       "indexName": "pgrindex-v1",
+       "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"pb.testing\"}}],\"must\":[{\"terms\":{\"Data.status.keyword\":[\"closed\",\"resolved\"]}}]}},\"aggs\":{\"Total Application Approved\":{\"value_count\":{\"field\":\"Data.dateOfComplaint\"}}}}}}",
+       "requestQueryMap": "{\"wardId\" : \"Data.complaintWard.name.keyword\", \r\n  \"district\" : \"Data.tenantData.city.districtCode\", \r\n\"tenantId\" : \"Data.tenantId\" \r\n}",
+       "dateRefField": "Data.dateOfComplaint"
+     },
+     {
+       "module": "LAMS",
+       "indexName": "leaseindex-v1",
+       "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.lease.tenantId.keyword\":\"pb.testing\"}}],\"must\":[{\"terms\":{\"Data.lease.status.keyword\":[\"APPROVED\"]}}]}},\"aggs\":{\"Total Application Approved\":{\"value_count\":{\"field\":\"Data.lease.applicationNumber.keyword\"}}}}}}",
+       "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\", \r\n  \"district\" : \"Data.tenantData.city.districtCode\", \r\n\"tenantId\" : \"Data.lease.tenantId\" \r\n}",
+       "dateRefField": "Data.lease.applicationDate"
+     },
+     {
+       "module": "WS",
+       "indexName": "water-services",
+       "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"Total Application Approved\":{\"value_count\":{\"field\":\"Data.connectionNo.keyword\"}}}}}}",
+       "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\", \r\n  \"district\" : \"Data.tenantData.city.districtCode\", \r\n\"tenantId\" : \"Data.tenantId.keyword\" \r\n}", 
+       "dateRefField": "Data.additionalDetails.appCreatedDate"
+     },
+    {
+     "module": "SW",
+     "indexName": "sewerage-services",
+     "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"Total Application Approved\":{\"value_count\":{\"field\":\"Data.connectionNo.keyword\"}}}}}}",
+     "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\", \r\n  \"district\" : \"Data.tenantData.city.districtCode\", \r\n\"tenantId\" : \"Data.tenantId.keyword\" \r\n}", 
+     "dateRefField": "Data.additionalDetails.appCreatedDate"
+   }
+   ],
+   "chartType": "metric",
+   "valueType": "number",
+   "action": "",
+   "documentType": "_doc",
+   "drillChart": "none",
+   "aggregationPaths": [
+     "Total Application Approved"
+   ],
+   "insight": {
+     "chartResponseMap" : "totalApplication",
+     "action" : "differenceOfNumbers",
+     "upwardIndicator" : "positive",
+     "downwardIndicator" : "negative",
+     "textMessage" : "$indicator$value% than last $insightInterval",
+     "colorCode" : "#228B22",
+     "insightInterval" : "month"
+   },
+   "_comment": " totalApplication is the chartId"
+ },
+ "totalApplicationsRejected": {
+   "chartName": "DSS_TOTAL_REJECTED",
+   "queries": [
+     {
+       "module": "TL",
+       "indexName": "tlindex-v1",
+       "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tradelicense.tenantId.keyword\":\"pb.testing\"}},{\"terms\":{\"Data.tradelicense.status.keyword\":[\"INITIATED\"]}}],\"must\":[{\"terms\":{\"Data.tradelicense.status.keyword\":[\"REJECTED\"]}}]}},\"aggs\":{\"Total Application Rejected\":{\"value_count\":{\"field\":\"Data.tradelicense.applicationNumber.keyword\"}}}}}}",
+       "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\", \r\n  \"district\" : \"Data.tenantData.city.districtCode\", \r\n\"tenantId\" : \"Data.tradelicense.tenantId.keyword\" \r\n}", 
+       "dateRefField": "Data.tradelicense.applicationDate"
+     },
+     {
+       "module": "PGR",
+       "indexName": "pgrindex-v1",
+       "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"pb.testing\"}}],\"must\":[{\"terms\":{\"Data.status.keyword\":[\"rejected\"]}}]}},\"aggs\":{\"Total Application Rejected\":{\"value_count\":{\"field\":\"Data.dateOfComplaint\"}}}}}}",
+       "requestQueryMap": "{\"wardId\" : \"Data.complaintWard.name.keyword\", \r\n  \"district\" : \"Data.tenantData.city.districtCode\", \r\n\"tenantId\" : \"Data.tenantId\" \r\n}",
+       "dateRefField": "Data.dateOfComplaint"
+     },
+     {
+       "module": "LAMS",
+       "indexName": "leaseindex-v1",
+       "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.lease.tenantId.keyword\":\"pb.testing\"}}],\"must\":[{\"terms\":{\"Data.lease.status.keyword\":[\"REJECTED\"]}}]}},\"aggs\":{\"Total Application Rejected\":{\"value_count\":{\"field\":\"Data.lease.applicationNumber.keyword\"}}}}}}",
+       "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\", \r\n  \"district\" : \"Data.tenantData.city.districtCode\", \r\n\"tenantId\" : \"Data.lease.tenantId\" \r\n}",
+       "dateRefField": "Data.lease.applicationDate"
+     },
+     {
+       "module": "WS",
+       "indexName": "water-services",
+       "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"pb.testing\"}}],\"must\":[{\"terms\":{\"Data.applicationStatus.keyword\":[\"REJECTED\"]}}]}},\"aggs\":{\"Total Application Rejected\":{\"value_count\":{\"field\":\"Data.applicationNo.keyword\"}}}}}}",
+       "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\", \r\n  \"district\" : \"Data.tenantData.city.districtCode\", \r\n\"tenantId\" : \"Data.tenantId.keyword\" \r\n}", 
+       "dateRefField": "Data.additionalDetails.appCreatedDate"
+     },
+    {
+     "module": "SW",
+     "indexName": "sewerage-services",
+     "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"pb.testing\"}}],\"must\":[{\"terms\":{\"Data.status.keyword\":[\"REJECTED\"]}}]}},\"aggs\":{\"Total Application Rejected\":{\"value_count\":{\"field\":\"Data.applicationNo.keyword\"}}}}}}",
+     "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\", \r\n  \"district\" : \"Data.tenantData.city.districtCode\", \r\n\"tenantId\" : \"Data.tenantId.keyword\" \r\n}", 
+     "dateRefField": "Data.additionalDetails.appCreatedDate"
+   }
+   ],
+   "chartType": "metric",
+   "valueType": "number",
+   "action": "",
+   "documentType": "_doc",
+   "drillChart": "none",
+   "aggregationPaths": [
+     "Total Application Rejected"
+   ],
+   "insight": {
+     "chartResponseMap" : "totalApplication",
+     "action" : "differenceOfNumbers",
+     "upwardIndicator" : "positive",
+     "downwardIndicator" : "negative",
+     "textMessage" : "$indicator$value% than last $insightInterval",
+     "colorCode" : "#228B22",
+     "insightInterval" : "month"
+   },
+   "_comment": " totalApplication is the chartId"
+ },
+ "averageProcessingTime": {
+   "chartName": "DSS_AVG_PROCESSING_TIME",
+   "queries": [
+     {
+       "module": "TL",
+       "indexName": "tlindex-v1",
+       "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tradelicense.tenantId.keyword\":\"pb.testing\"}}],\"must\":[{\"term\":{\"Data.tradelicense.status.keyword\":\"APPROVED\"}}]}},\"aggs\":{\"averageProcessingTime\":{\"avg\":{\"script\":{\"lang\":\"painless\",\"source\":\"long d1 = doc['Data.tradelicense.applicationDate'].value;long d2 = doc['Data.tradelicense.issuedDate'].value;long differenceInMillis = d1-d2;return Math.abs(differenceInMillis\/86400000);\"}}}}}}}",
+       "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\", \r\n  \"district\" : \"Data.tenantData.city.districtCode\", \r\n\"tenantId\" : \"Data.tradelicense.tenantId.keyword\" \r\n}", 
+       "dateRefField": "Data.tradelicense.applicationDate"
+     },
+     {
+       "module": "PGR",
+       "indexName": "pgrindex-v1",
+       "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"pb.testing\"}}],\"must\":[{\"terms\":{\"Data.status.keyword\":[\"resolved\",\"closed\"]}}]}},\"aggs\":{\"averageProcessingTime\":{\"avg\":{\"script\":{\"lang\":\"painless\",\"source\":\"long d1 =  doc['Data.dateOfComplaint'].value ; long d2 = params._source.Data.actionHistory.actions[0].when ;long differenceInMillis = d1-d2;return Math.abs(differenceInMillis\/86400000);\"}}}}}}}",
+       "requestQueryMap": "{\"wardId\" : \"Data.complaintWard.name.keyword\", \r\n  \"district\" : \"Data.tenantData.city.districtCode\", \r\n\"tenantId\" : \"Data.tenantId\" \r\n}",
+       "dateRefField": "Data.dateOfComplaint"
+     },
+     {
+       "module": "LAMS",
+       "indexName": "leaseindex-v1",
+       "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.lease.tenantId.keyword\":\"pb.testing\"}}],\"must\":[{\"term\":{\"Data.lease.status.keyword\":\"APPROVED\"}}]}},\"aggs\":{\"averageProcessingTime\":{\"avg\":{\"script\":{\"lang\":\"painless\",\"source\":\"long d1 =  doc['Data.lease.applicationDate'].value ; long d2 = doc['Data.lease.approvedDate'].value;long differenceInMillis = d1-d2;return Math.abs(differenceInMillis\/86400000);\"}}}}}}}",
+       "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\", \r\n  \"district\" : \"Data.tenantData.city.districtCode\", \r\n\"tenantId\" : \"Data.lease.tenantId\" \r\n}",
+       "dateRefField": "Data.lease.applicationDate"
+     },
+     {
+       "module": "WS",
+       "indexName": "water-services",
+       "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"pb.testing\"}}],\"must\":[{\"term\":{\"Data.applicationStatus.keyword\":\"CONNECTION_ACTIVATED\"}}]}},\"aggs\":{\"averageProcessingTime\":{\"avg\":{\"script\":{\"lang\":\"painless\",\"source\":\"long d1 =  doc['Data.additionalDetails.appCreatedDate'].value ; long d2 = doc['Data.connectionExecutionDate'].value;long differenceInMillis = d1-d2;return Math.abs(differenceInMillis\/86400000);\"}}}}}}}",
+       "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\", \r\n  \"district\" : \"Data.tenantData.city.districtCode\", \r\n\"tenantId\" : \"Data.tenantId.keyword\" \r\n}", 
+       "dateRefField": "Data.additionalDetails.appCreatedDate"
+     },
+    {
+     "module": "SW",
+     "indexName": "sewerage-services",
+     "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"pb.testing\"}}],\"must\":[{\"term\":{\"Data.applicationStatus.keyword\":\"CONNECTION_ACTIVATED\"}}]}},\"aggs\":{\"averageProcessingTime\":{\"avg\":{\"script\":{\"lang\":\"painless\",\"source\":\"long d1 =  doc['Data.additionalDetails.appCreatedDate'].value ; long d2 = doc['Data.connectionExecutionDate'].value;long differenceInMillis = d1-d2;return Math.abs(differenceInMillis\/86400000);\"}}}}}}}",
+     "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\", \r\n  \"district\" : \"Data.tenantData.city.districtCode\", \r\n\"tenantId\" : \"Data.tenantId.keyword\" \r\n}", 
+     "dateRefField": "Data.additionalDetails.appCreatedDate"
+   }
+   ],
+   "chartType": "metric",
+   "valueType": "number",
+   "action": "",
+   "documentType": "_doc",
+   "drillChart": "none",
+   "aggregationPaths": [
+     "averageProcessingTime"
+   ],
+   "insight": {
+     "chartResponseMap" : "totalApplication",
+     "action" : "differenceOfNumbers",
+     "upwardIndicator" : "positive",
+     "downwardIndicator" : "negative",
+     "textMessage" : "$indicator$value% than last $insightInterval",
+     "colorCode" : "#228B22",
+     "insightInterval" : "month"
+   },
+   "_comment": " totalApplication is the chartId"
+ },
  "totalApplication": {
    "chartName": "DSS_TOTAL_APPLICATION",
    "queries": [
      {
        "module": "TL",
        "indexName": "tlindex-v1",
-       "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tradelicense.tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"Total Application99\":{\"value_count\":{\"field\":\"Data.tradelicense.applicationNumber.keyword\"}}}}}}",
+       "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tradelicense.tenantId.keyword\":\"pb.testing\"}},{\"terms\":{\"Data.tradelicense.status.keyword\":[\"INITIATED\"]}}],\"must\":[]}},\"aggs\":{\"Total Application99\":{\"value_count\":{\"field\":\"Data.tradelicense.applicationNumber.keyword\"}}}}}}",
        "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\", \r\n  \"district\" : \"Data.tenantData.city.districtCode\", \r\n\"tenantId\" : \"Data.tradelicense.tenantId.keyword\" \r\n}", 
        "dateRefField": "Data.tradelicense.applicationDate"
      },
@@ -2029,7 +2264,7 @@
        "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\", \"module\" : \"businessService.keyword\",\"tenantId\" : \"Data.tenantData.code\" ,  \"district\" : \"Data.tenantData.city.districtCode\"}",
        "dateRefField": "Data.tradelicense.applicationDate",
        "indexName": "tlindex-v1",
-       "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tradelicense.tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"Closed Application\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.tradelicense.status.keyword\":[\"REJECTED\",\"APPROVED\",\"CANCELLED\"]}}]}},\"aggs\":{\"count\":{\"terms\":{\"field\":\"Data.tenantData.code.keyword\"},\"aggs\":{\"tenant_count\":{\"value_count\":{\"field\":\"Data.tenantData.code.keyword\"}}}}}},\"Total Application\":{\"filter\":{\"exists\":{\"field\":\"Data.tradelicense.applicationDate\"}},\"aggs\":{\"count\":{\"terms\":{\"field\":\"Data.tenantData.code.keyword\"},\"aggs\":{\"tenant_count\":{\"value_count\":{\"field\":\"Data.tenantData.code.keyword\"}}}}}}}}}}"
+       "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tradelicense.tenantId.keyword\":\"pb.testing\"}},{\"term\":{\"Data.tradelicense.status.keyword\":\"INITIATED\"}}]}},\"aggs\":{\"Closed Application\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.tradelicense.status.keyword\":[\"REJECTED\",\"APPROVED\",\"CANCELLED\"]}}]}},\"aggs\":{\"count\":{\"terms\":{\"field\":\"Data.tenantData.code.keyword\"},\"aggs\":{\"tenant_count\":{\"value_count\":{\"field\":\"Data.tenantData.code.keyword\"}}}}}},\"Total Application\":{\"filter\":{\"exists\":{\"field\":\"Data.tradelicense.applicationDate\"}},\"aggs\":{\"count\":{\"terms\":{\"field\":\"Data.tenantData.code.keyword\"},\"aggs\":{\"tenant_count\":{\"value_count\":{\"field\":\"Data.tenantData.code.keyword\"}}}}}}}}}}"
      },
      {
        "module": "LAMS",
@@ -2091,7 +2326,7 @@
        "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\", \"module\" : \"businessService.keyword\",\"tenantId\" : \"Data.tenantData.code\" ,  \"district\" : \"Data.tenantData.city.districtCode\"}",
        "dateRefField": "Data.tradelicense.applicationDate",
        "indexName": "tlindex-v1",
-       "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tradelicense.tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"Closed Application\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.tradelicense.status.keyword\":[\"REJECTED\",\"APPROVED\",\"CANCELLED\"]}}]}},\"aggs\":{\"count\":{\"terms\":{\"field\":\"Data.tenantData.code.keyword\"},\"aggs\":{\"tenant_count\":{\"value_count\":{\"field\":\"Data.tenantData.code.keyword\"}}}}}},\"Total Application\":{\"filter\":{\"exists\":{\"field\":\"Data.tradelicense.applicationDate\"}},\"aggs\":{\"count\":{\"terms\":{\"field\":\"Data.tenantData.code.keyword\"},\"aggs\":{\"tenant_count\":{\"value_count\":{\"field\":\"Data.tenantData.code.keyword\"}}}}}}}}}}"
+       "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tradelicense.tenantId.keyword\":\"pb.testing\"}},{\"term\":{\"Data.tradelicense.status.keyword\":\"INITIATED\"}}]}},\"aggs\":{\"Closed Application\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.tradelicense.status.keyword\":[\"REJECTED\",\"APPROVED\",\"CANCELLED\"]}}]}},\"aggs\":{\"count\":{\"terms\":{\"field\":\"Data.tenantData.code.keyword\"},\"aggs\":{\"tenant_count\":{\"value_count\":{\"field\":\"Data.tenantData.code.keyword\"}}}}}},\"Total Application\":{\"filter\":{\"exists\":{\"field\":\"Data.tradelicense.applicationDate\"}},\"aggs\":{\"count\":{\"terms\":{\"field\":\"Data.tenantData.code.keyword\"},\"aggs\":{\"tenant_count\":{\"value_count\":{\"field\":\"Data.tenantData.code.keyword\"}}}}}}}}}}"
      },
      {
        "module": "LAMS",
@@ -3265,7 +3500,7 @@
      {
        "module": "TL",
        "indexName": "tlindex-v1",
-       "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tradelicense.tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"Total Application\":{\"date_histogram\":{\"field\":\"Data.tradelicense.applicationDate\",\"interval\":\"intervalvalue\"},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.tradelicense.applicationNumber.keyword\"}}}}}}}}",
+       "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tradelicense.tenantId.keyword\":\"pb.testing\"}},{\"terms\":{\"Data.tradelicense.status.keyword\":[\"INITIATED\"]}}]}},\"aggs\":{\"Total Application\":{\"date_histogram\":{\"field\":\"Data.tradelicense.applicationDate\",\"interval\":\"intervalvalue\"},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.tradelicense.applicationNumber.keyword\"}}}}}}}}",
        "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\", \"tenantId\" : \"Data.tenantData.code\" ,\"district\" : \"Data.tenantData.city.districtCode\"}",
        "dateRefField": "Data.tradelicense.applicationDate"
      }
@@ -3326,7 +3561,7 @@
        "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\",  \"tenantId\" : \"Data.tenantData.code\", \"district\" : \"Data.tenantData.cityDistrictCode\"}",
        "dateRefField": "Data.tradelicense.applicationDate",
        "indexName": "tlindex-v1",
-       "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tradelicense.tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"Applications Received\":{\"terms\":{\"field\":\"Data.tradelicense.tradeLicenseDetail.tradeUnits.tradeType.keyword\",\"size\":1000,\"min_doc_count\":0},\"aggs\":{\"License Issued\":{\"value_count\":{\"field\":\"Data.tradelicense.applicationNumber.keyword\"}}}},\"License Issued\":{\"terms\":{\"field\":\"Data.tradelicense.tradeLicenseDetail.tradeUnits.tradeType.keyword\",\"size\":1000,\"min_doc_count\":0},\"aggs\":{\"License Issued\":{\"value_count\":{\"field\":\"Data.tradelicense.licenseNumber.keyword\"}}}}}}}}"
+       "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tradelicense.tenantId.keyword\":\"pb.testing\"}},{\"terms\":{\"Data.tradelicense.status.keyword\":[\"INITIATED\"]}}]}},\"aggs\":{\"Applications Received\":{\"terms\":{\"field\":\"Data.tradelicense.tradeLicenseDetail.tradeUnits.tradeType.keyword\",\"size\":1000,\"min_doc_count\":0},\"aggs\":{\"License Issued\":{\"value_count\":{\"field\":\"Data.tradelicense.applicationNumber.keyword\"}}}},\"License Issued\":{\"terms\":{\"field\":\"Data.tradelicense.tradeLicenseDetail.tradeUnits.tradeType.keyword\",\"size\":1000,\"min_doc_count\":0},\"aggs\":{\"License Issued\":{\"value_count\":{\"field\":\"Data.tradelicense.licenseNumber.keyword\"}}}}}}}}"
      }
    ],
    "chartType": "line",
