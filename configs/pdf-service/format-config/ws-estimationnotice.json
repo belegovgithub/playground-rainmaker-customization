@@ -110,7 +110,7 @@
                                          
                                     },
                                     {
-                                        "text": "{{houseNo}} {{address}}",
+                                        "text": "{{houseNo}}, {{address}}",
                                         "style": "receipt-value-down-rec"
                                          
                                     },{
@@ -145,7 +145,7 @@
                                                         
                                                     },
                                                     {
-                                                        "text": "{{grant_stmt}} {{name}} {{grant_stmt2}} {{houseNo}} {{address}},{{logo_header}}",
+                                                        "text": "{{grant_stmt}} {{name}} {{grant_stmt2}} {{houseNo}}, {{address}},{{logo_header}} {{cantt_board}}",
                                                         "width": "90%",
                                                         "bold": true,
                                                         "fontSize": 12
@@ -241,7 +241,7 @@
                                                 
                                             },
                                             {
-                                                "text": "{{applStatement1}} {{name}} {{applStatement2}} {{houseNo}} {{address}},{{logo_header}} {{applStatement3}}.{{applStatement4}}  {{houseNo}} {{address}} {{pincode}} ,{{logo_header}} {{applStatement5}}",
+                                                "text": "{{applStatement1}} {{name}} {{applStatement2}} {{houseNo}}, {{address}},{{logo_header}} {{cantt_board}} {{applStatement3}}.{{applStatement4}} {{finYear}},{{applStatement4_1}} {{houseNo}} {{address}} ,{{logo_header}} {{cantt_board}} {{applStatement5}}",
                                                 "style": "receipt-value-down"
                                             }
                                         ]
@@ -432,7 +432,7 @@
                                                 "style": "receipt-value-down"
                                             },
                                             {
-                                                "text": "{{paymentStatement3}}. {{paymentStatement4}}. {{PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_PAYMENT_STATEMENT5}}",
+                                                "text": "{{paymentStatement3}}. {{paymentStatement4}} {{paymentStatement5}}",
                                                 "style": "receipt-value-down"
                                             }
                                         ]

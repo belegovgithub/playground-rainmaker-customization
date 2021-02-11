@@ -172,6 +172,13 @@
                                 "type":"amountInWords"
                             },
                             {
+                                "variable": "finYear",
+                                "value": {
+                                    "path": "$.auditDetails.lastModifiedTime"
+                                },
+                                "type":"currentFinYear"
+                            },
+                            {
                                 "variable": "estimation_notice_header",
                                 "value": {
                                     "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_ESTIMATION_NOTICE_HEADER"
@@ -355,6 +362,18 @@
                                 "variable": "applStatement4",
                                 "value": {
                                     "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_APPL_STATEMENT4"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "applStatement4_1",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_APPL_STATEMENT4_1"
                                 },
                                 "type": "label",
                                 "localisation": {
