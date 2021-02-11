@@ -1878,7 +1878,7 @@
                 },
                 {
                   "id": "averageProcessingTime",
-                  "name": "DSS_AVG_PROCESSING_TIME",
+                  "name": "DSS_AVG_PROCESSING_TIME_TL",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
@@ -1970,7 +1970,7 @@
                 },
                 {
                   "id": "averageProcessingTime",
-                  "name": "DSS_AVG_PROCESSING_TIME",
+                  "name": "DSS_AVG_PROCESSING_TIME_WSSW",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
@@ -2024,7 +2024,7 @@
                 },
                 {
                   "id": "averageProcessingTime",
-                  "name": "DSS_AVG_PROCESSING_TIME",
+                  "name": "DSS_AVG_PROCESSING_TIME_WSSW",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
@@ -2078,7 +2078,7 @@
                 },
                 {
                   "id": "averageProcessingTime",
-                  "name": "DSS_AVG_PROCESSING_TIME",
+                  "name": "DSS_AVG_PROCESSING_TIME_LAMS",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
