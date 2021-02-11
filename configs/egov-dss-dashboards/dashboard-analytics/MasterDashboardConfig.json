@@ -540,6 +540,7 @@
               "vizType": "metric-collection",
               "isCollapsible": false,
               "label": "DSS_OVERVIEW",
+              "moduleLevel":"TL",
               "charts": [
                 {
                   "id": "totalApplication",
@@ -3385,7 +3386,7 @@
                   "headers": []
                 },
                 {
-                  "id": "tltotalApplicationInitiated",
+                  "id": "totalApplicationInitiated",
                   "name": "DSS_TOTAL_APPLICATION_INCL_INIT",
                   "code": "",
                   "chartType": "metric",
@@ -4204,6 +4205,7 @@
               "label": "",
               "noUnit": false,
               "isCollapsible": true,
+              "moduleLevel":"WS",
               "charts": [
               {
                   "id": "wstotalApplication",
@@ -4225,6 +4227,14 @@
                 {
                   "id": "wsActiveUlbs",
                   "name": "DSS_W&S_ACTIVE_ULBS",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "totalApplicationInitiated",
+                  "name": "DSS_TOTAL_APPLICATION_INCL_INIT",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
@@ -4520,6 +4530,7 @@
               "label": "",
               "noUnit": false,
               "isCollapsible": true,
+              "moduleLevel":"WS",
               "charts": [
                 {
                   "id": "wstotalConnection",
@@ -4530,24 +4541,16 @@
                   "headers": []
                 },
                 {
-                  "id": "wsNewWaterConnection",
-                  "name": "DSS_W&S_WATER_CONNECTIONS",
-                  "code": "",
-                  "chartType": "metric",
-                  "filter": "",
-                  "headers": []
-                },
-                {
-                  "id": "wsNewSewerageConnection",
-                  "name": "DSS_W&S_SEWERAGE_CONNECTIONS",
-                  "code": "",
-                  "chartType": "metric",
-                  "filter": "",
-                  "headers": []
-                },
-                {
                   "id": "wsActiveUlbs",
                   "name": "DSS_W&S_ACTIVE_ULBS",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "totalApplicationInitiated",
+                  "name": "DSS_TOTAL_APPLICATION_INCL_INIT",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
@@ -4854,6 +4857,7 @@
               "label": "",
               "noUnit": false,
               "isCollapsible": true,
+              "moduleLevel":"SW", 
               "charts": [
               {
                   "id": "swtotalApplication",
@@ -4875,6 +4879,14 @@
                 {
                   "id": "swActiveUlbs",
                   "name": "DSS_SW_ACTIVE_ULBS",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "totalApplicationInitiated",
+                  "name": "DSS_TOTAL_APPLICATION_INCL_INIT",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
@@ -5170,6 +5182,7 @@
               "label": "",
               "noUnit": false,
               "isCollapsible": true,
+              "moduleLevel":"SW",
               "charts": [
                 {
                   "id": "swtotalConnection",
@@ -5180,24 +5193,16 @@
                   "headers": []
                 },
                 {
-                  "id": "swNewWaterConnection",
-                  "name": "DSS_SW_WATER_CONNECTIONS",
-                  "code": "",
-                  "chartType": "metric",
-                  "filter": "",
-                  "headers": []
-                },
-                {
-                  "id": "swNewSewerageConnection",
-                  "name": "DSS_SW_SEWERAGE_CONNECTIONS",
-                  "code": "",
-                  "chartType": "metric",
-                  "filter": "",
-                  "headers": []
-                },
-                {
                   "id": "swActiveUlbs",
                   "name": "DSS_SW_ACTIVE_ULBS",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "totalApplicationInitiated",
+                  "name": "DSS_TOTAL_APPLICATION_INCL_INIT",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
