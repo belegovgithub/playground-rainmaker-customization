@@ -2160,6 +2160,14 @@
                   "chartType": "metric",
                   "filter": "",
                   "headers": []
+                },
+                {
+                  "id": "totalCitizens",
+                  "name": "DSS_CITIZENS_REGISTERED",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
                 }
               ]
             }
