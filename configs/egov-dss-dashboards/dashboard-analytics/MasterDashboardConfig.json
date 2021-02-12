@@ -1753,7 +1753,8 @@
                   "chartType": "metric",
                   "filter": "",
                   "headers": []
-                },
+                }],
+              "charts": [
                 {
                   "id": "totalApplication",
                   "name": "DSS_TOTAL_APPLICATION",
@@ -1761,17 +1762,7 @@
                   "chartType": "metric",
                   "filter": "",
                   "headers": []
-                }],
-              "charts": [
-                {
-                  "id": "overviewTotalCollectionv2",
-                  "name": "DSS_TOTAL_COLLECTION",
-                  "code": "",
-                  "chartType": "metric",
-                  "filter": "",
-                  "headers": []
                 },
-                
                 {
                   "id": "totalTransactions",
                   "name": "DSS_TOTAL_TRANSACTIONS",
@@ -1816,14 +1807,6 @@
               },
               "label": "",
               "charts": [
-                {
-                  "id": "totalCollectionv2",
-                  "name": "DSS_TOTAL_COLLECTION",
-                  "code": "",
-                  "chartType": "metric",
-                  "filter": "",
-                  "headers": []
-                },
                 {
                   "id": "totalTransactions",
                   "name": "DSS_MC_TOTAL_TRANSACTIONS",
