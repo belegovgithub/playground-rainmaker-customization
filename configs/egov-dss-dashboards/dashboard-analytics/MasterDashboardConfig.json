@@ -48,6 +48,14 @@
                   "chartType": "metric",
                   "filter": "",
                   "headers": []
+                },
+                {
+                  "id": "totalTransactions",
+                  "name": "DSS_TOTAL_TRANSACTIONS",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
                 }
               ]
             },
@@ -532,6 +540,7 @@
               "vizType": "metric-collection",
               "isCollapsible": false,
               "label": "DSS_OVERVIEW",
+              "moduleLevel":"TL",
               "charts": [
                 {
                   "id": "totalApplication",
@@ -552,6 +561,14 @@
                 {
                   "id": "activeUlbs",
                   "name": "DSS_PT_TOTAL_ACTIVE_ULBS",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "tltotalApplicationInitiated",
+                  "name": "DSS_TOTAL_APPLICATION_INCL_INIT",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
@@ -1728,6 +1745,15 @@
                 "logoUrl": "",
                 "type": "internal"
               },
+              "removedCharts":[
+              	{
+                  "id": "targetAchievedv2",
+                  "name": "DSS_TARGET_ACHIEVED",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }],
               "charts": [
                 {
                   "id": "overviewTotalCollectionv2",
@@ -1738,16 +1764,24 @@
                   "headers": []
                 },
                 {
-                  "id": "targetAchievedv2",
-                  "name": "DSS_TARGET_ACHIEVED",
+                  "id": "totalApplication",
+                  "name": "DSS_TOTAL_APPLICATION",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
                   "headers": []
                 },
                 {
-                  "id": "totalApplication",
-                  "name": "DSS_TOTAL_APPLICATION",
+                  "id": "totalTransactions",
+                  "name": "DSS_TOTAL_TRANSACTIONS",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "allServices",
+                  "name": "DSS_ALL_SERVICES",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
@@ -1765,7 +1799,7 @@
               "id": 121,
               "name": "DSS_M_COLLECT",
               "vizType": "module",
-              "moduleLevel": "TL",
+              "moduleLevel": "MC",
               "ref": {
                 "url": "mCollect",
                 "logoUrl": "",
@@ -1774,8 +1808,24 @@
               "label": "",
               "charts": [
                 {
-                  "id": "mcTotalCollectionv2",
+                  "id": "totalCollectionv2",
                   "name": "DSS_TOTAL_COLLECTION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "totalTransactions",
+                  "name": "DSS_MC_TOTAL_TRANSACTIONS",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "avgTransactions",
+                  "name": "DSS_MC_AVG_DAILY_TRANSACTIONS",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
@@ -1794,18 +1844,42 @@
                 "type": "internal"
               },
               "label": "",
-              "charts": [
-                {
+              "removedCharts":[{
                   "id": "totalCollectionv2",
                   "name": "DSS_TOTAL_COLLECTION",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
                   "headers": []
-                },
+                }],
+              "charts": [
                 {
                   "id": "totalApplication",
                   "name": "DSS_TOTAL_APPLICATION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "totalApplicationsApproved",
+                  "name": "DSS_TL_APPROVED",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "totalApplicationsRejected",
+                  "name": "DSS_TOTAL_REJECTED",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "averageProcessingTime",
+                  "name": "DSS_AVG_PROCESSING_TIME_TL",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
@@ -1840,26 +1914,36 @@
                   "chartType": "metric",
                   "filter": "",
                   "headers": []
+                },
+                {
+                  "id": "averageProcessingTime",
+                  "name": "DSS_AVG_RESOLVE_TIME",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
                 }
               ]
-            }
-          ]
-        },
-        {
-          "row": 3,
-          "name": "DSS_OVERVIEW",
-          "vizArray": [
+            },
             {
-              "id": 131,
-              "name": "DSS_LEASE",
+              "id": 145,
+              "name": "DSS_WATER",
               "vizType": "module",
-              "moduleLevel": "LAMS",
+              "moduleLevel": "WS",
               "ref": {
-                "url": "lease",
+                "url": "ws",
                 "logoUrl": "",
                 "type": "internal"
               },
               "label": "",
+              "removedCharts":[{
+                  "id": "wstotalCollection",
+                  "name": "DSS_WS_TOTAL_COLLECTION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }],
               "charts": [
                 {
                   "id": "totalApplication",
@@ -1870,8 +1954,132 @@
                   "headers": []
                 },
                 {
+                  "id": "totalApplicationsApproved",
+                  "name": "DSS_WS_SW_CONNECTIONS",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "totalApplicationsRejected",
+                  "name": "DSS_TOTAL_REJECTED",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "averageProcessingTime",
+                  "name": "DSS_AVG_PROCESSING_TIME_WSSW",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 149,
+              "name": "DSS_SEWERAGE",
+              "vizType": "module",
+              "moduleLevel": "SW",
+              "ref": {
+                "url": "sw",
+                "logoUrl": "",
+                "type": "internal"
+              },
+              "label": "",
+              "removedCharts":[                {
+                  "id": "swtotalCollection",
+                  "name": "DSS_SW_TOTAL_COLLECTION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }],
+              "charts": [
+                {
+                  "id": "totalApplication",
+                  "name": "DSS_TOTAL_APPLICATION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "totalApplicationsApproved",
+                  "name": "DSS_WS_SW_CONNECTIONS",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "totalApplicationsRejected",
+                  "name": "DSS_TOTAL_REJECTED",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "averageProcessingTime",
+                  "name": "DSS_AVG_PROCESSING_TIME_WSSW",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+             {
+              "id": 150,
+              "name": "DSS_LEASE",
+              "vizType": "module",
+              "moduleLevel": "LAMS",
+              "ref": {
+                "url": "lease",
+                "logoUrl": "",
+                "type": "internal"
+              },
+              "label": "",
+              "removedCharts":[{
                   "id": "leaseProcessingRate",
                   "name": "DSS_LEASE_PROCESSINGRATE",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }],
+              "charts": [
+                {
+                  "id": "totalApplication",
+                  "name": "DSS_TOTAL_APPLICATION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "totalApplicationsApproved",
+                  "name": "DSS_TOTAL_APPROVED",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "totalApplicationsRejected",
+                  "name": "DSS_TOTAL_REJECTED",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "averageProcessingTime",
+                  "name": "DSS_AVG_PROCESSING_TIME_LAMS",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
@@ -1879,6 +2087,12 @@
                 }
               ]
             }
+          ]
+        },
+        {
+          "row": 3,
+          "name": "DSS_OVERVIEW",
+          "vizArray": [
           ]
         }
       ]
@@ -3170,6 +3384,14 @@
                   "chartType": "metric",
                   "filter": "",
                   "headers": []
+                },
+                {
+                  "id": "totalApplicationInitiated",
+                  "name": "DSS_TOTAL_APPLICATION_INCL_INIT",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
                 }
               ]
             },
@@ -3292,6 +3514,14 @@
                 {
                   "id": "targetAchievedv2",
                   "name": "DSS_TARGET_ACHIEVED",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "totalTransactions",
+                  "name": "DSS_TOTAL_TRANSACTIONS",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
@@ -3563,6 +3793,14 @@
                   "chartType": "metric",
                   "filter": "",
                   "headers": []
+                },
+                {
+                  "id": "totalTransactions",
+                  "name": "DSS_TOTAL_TRANSACTIONS",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
                 }
               ]
             }
@@ -3576,7 +3814,7 @@
               "id": 121,
               "name": "DSS_M_COLLECT",
               "vizType": "module",
-              "moduleLevel": "TL",
+              "moduleLevel": "MC",
               "ref": {
                 "url": "ulb-mCollect",
                 "logoUrl": "",
@@ -3585,8 +3823,16 @@
               "label": "",
               "charts": [
                 {
-                  "id": "mcTotalCollectionv2",
+                  "id": "totalCollectionv2",
                   "name": "DSS_TOTAL_COLLECTION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "totalTransactions",
+                  "name": "DSS_MC_TOTAL_TRANSACTIONS",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
@@ -3653,16 +3899,69 @@
                   "headers": []
                 }
               ]
-            }
-                  
-          ]
-        },
-        {
-          "row": 3,
-          "name": "DSS_OVERVIEW",
-          "vizArray": [
+            },
             {
-              "id": 143,
+              "id": 144,
+              "name": "DSS_WATER",
+              "vizType": "module",
+              "moduleLevel": "WS",
+              "ref": {
+                "url": "ws",
+                "logoUrl": "",
+                "type": "internal"
+              },
+              "label": "",
+              "charts": [
+                {
+                  "id": "wstotalCollection",
+                  "name": "DSS_WS_TOTAL_COLLECTION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "wstotalConnection",
+                  "name": "DSS_WS_TOTAL_CONNECTIONS",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+             {
+              "id": 144,
+              "name": "DSS_SEWERAGE",
+              "vizType": "module",
+              "moduleLevel": "SW",
+              "ref": {
+                "url": "sw",
+                "logoUrl": "",
+                "type": "internal"
+              },
+              "label": "",
+              "charts": [
+                {
+                  "id": "swtotalCollection",
+                  "name": "DSS_SW_TOTAL_COLLECTION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "swtotalConnection",
+                  "name": "DSS_SW_TOTAL_CONNECTIONS",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 145,
               "name": "DSS_LEASE",
               "vizType": "module",
               "moduleLevel": "LAMS",
@@ -3690,7 +3989,14 @@
                   "headers": []
                 }
               ]
-            }
+            }       
+          ]
+        },
+        {
+          "row": 3,
+          "name": "DSS_OVERVIEW",
+          "vizArray": [
+            
           ]
         }
       ]
@@ -3729,22 +4035,6 @@
                 {
                   "id": "wstotalCollection",
                   "name": "DSS_W&S_TOTAL_COLLECTION",
-                  "code": "",
-                  "chartType": "metric",
-                  "filter": "",
-                  "headers": []
-                },
-                {
-                  "id": "wsConCollection",
-                  "name": "DSS_CONNECTION_COLLECTION",
-                  "code": "",
-                  "chartType": "metric",
-                  "filter": "",
-                  "headers": []
-                },
-                {
-                  "id": "wsChargesCollection",
-                  "name": "DSS_WATER_CHARGES_COLLECTION",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
@@ -3861,46 +4151,6 @@
             }
           ]
         },
-       
-        {
-          "row": 3,
-          "name": "DSS_REVENUE",
-          "vizArray": [
-            
-             {
-              "id": 232,
-              "name": "DSS_W&S_TAX_HEAD_BOUNDARY",
-              "dimensions": {
-                "height": 350,
-                "width": 12
-              },
-              "vizType": "chart",
-              "label": "",
-              "noUnit": false,
-              "isCollapsible": true,
-              "charts": [
-                {
-                  "id": "wsTaxHeadUlb",
-                  "name": "DSS_W&S_TAX_HEAD_BOUNDARY",
-                  "code": "",
-                  "chartType": "table",
-                  "filter": "",
-                  "headers": [],
-                  "tabName": "Boundary"
-                },
-                {
-                  "id": "wsTaxHeadWard",
-                  "name": "DSS_W&S_TAX_HEAD_BOUNDARY",
-                  "code": "",
-                  "chartType": "table",
-                  "filter": "",
-                  "headers": [],
-                  "tabName": "Ward"
-                }
-              ]
-            }
-          ]
-        },
         {
           "row": 4,
           "name": "DSS_REVENUE",
@@ -3955,6 +4205,7 @@
               "label": "",
               "noUnit": false,
               "isCollapsible": true,
+              "moduleLevel":"WS",
               "charts": [
               {
                   "id": "wstotalApplication",
@@ -3976,6 +4227,14 @@
                 {
                   "id": "wsActiveUlbs",
                   "name": "DSS_W&S_ACTIVE_ULBS",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "totalApplicationInitiated",
+                  "name": "DSS_TOTAL_APPLICATION_INCL_INIT",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
@@ -4112,22 +4371,6 @@
                 {
                   "id": "wstotalCollection",
                   "name": "DSS_W&S_TOTAL_COLLECTION",
-                  "code": "",
-                  "chartType": "metric",
-                  "filter": "",
-                  "headers": []
-                },
-                {
-                  "id": "wsConCollection",
-                  "name": "DSS_CONNECTION_COLLECTION",
-                  "code": "",
-                  "chartType": "metric",
-                  "filter": "",
-                  "headers": []
-                },
-                {
-                  "id": "wsChargesCollection",
-                  "name": "DSS_WATER_CHARGES_COLLECTION",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
@@ -4273,35 +4516,6 @@
           ]
         },
         {
-          "row": 4,
-          "name": "DSS_REVENUE",
-          "vizArray": [
-            {
-              "id": 231,
-              "name": "DSS_W&S_TAX_HEAD_BOUNDARY",
-              "dimensions": {
-                "height": 350,
-                "width": 12
-              },
-              "vizType": "chart",
-              "label": "",
-              "noUnit": false,
-              "isCollapsible": true,
-              "charts": [
-                {
-                  "id": "wsTaxHeadUlb",
-                  "name": "DSS_W&S_TAX_HEAD_BOUNDARY",
-                  "code": "",
-                  "chartType": "table",
-                  "filter": "",
-                  "headers": [],
-                  "tabName": "Boundary"
-                }
-              ]
-            }
-          ]
-        },
-        {
           "row": 7,
           "name": "DSS_SERVICE",
           "vizArray": [
@@ -4316,6 +4530,7 @@
               "label": "",
               "noUnit": false,
               "isCollapsible": true,
+              "moduleLevel":"WS",
               "charts": [
                 {
                   "id": "wstotalConnection",
@@ -4326,24 +4541,16 @@
                   "headers": []
                 },
                 {
-                  "id": "wsNewWaterConnection",
-                  "name": "DSS_W&S_WATER_CONNECTIONS",
-                  "code": "",
-                  "chartType": "metric",
-                  "filter": "",
-                  "headers": []
-                },
-                {
-                  "id": "wsNewSewerageConnection",
-                  "name": "DSS_W&S_SEWERAGE_CONNECTIONS",
-                  "code": "",
-                  "chartType": "metric",
-                  "filter": "",
-                  "headers": []
-                },
-                {
                   "id": "wsActiveUlbs",
                   "name": "DSS_W&S_ACTIVE_ULBS",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "totalApplicationInitiated",
+                  "name": "DSS_TOTAL_APPLICATION_INCL_INIT",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
@@ -4486,22 +4693,6 @@
                   "headers": []
                 },
                 {
-                  "id": "swConCollection",
-                  "name": "DSS_SW_CONNECTION_COLLECTION",
-                  "code": "",
-                  "chartType": "metric",
-                  "filter": "",
-                  "headers": []
-                },
-                {
-                  "id": "swChargesCollection",
-                  "name": "DSS_SEWERAGE_CHARGES_COLLECTION",
-                  "code": "",
-                  "chartType": "metric",
-                  "filter": "",
-                  "headers": []
-                },
-                {
                   "id": "swtargetCollection",
                   "name": "DSS_SW_TARGET_COLLECTION",
                   "code": "",
@@ -4612,46 +4803,6 @@
             }
           ]
         },
-       
-        {
-          "row": 3,
-          "name": "DSS_REVENUE",
-          "vizArray": [
-            
-             {
-              "id": 232,
-              "name": "DSS_SW_TAX_HEAD_BOUNDARY",
-              "dimensions": {
-                "height": 350,
-                "width": 12
-              },
-              "vizType": "chart",
-              "label": "",
-              "noUnit": false,
-              "isCollapsible": true,
-              "charts": [
-                {
-                  "id": "swTaxHeadUlb",
-                  "name": "DSS_SW_TAX_HEAD_BOUNDARY",
-                  "code": "",
-                  "chartType": "table",
-                  "filter": "",
-                  "headers": [],
-                  "tabName": "Boundary"
-                },
-                {
-                  "id": "swTaxHeadWard",
-                  "name": "DSS_SW_TAX_HEAD_BOUNDARY",
-                  "code": "",
-                  "chartType": "table",
-                  "filter": "",
-                  "headers": [],
-                  "tabName": "Ward"
-                }
-              ]
-            }
-          ]
-        },
         {
           "row": 4,
           "name": "DSS_REVENUE",
@@ -4706,6 +4857,7 @@
               "label": "",
               "noUnit": false,
               "isCollapsible": true,
+              "moduleLevel":"SW", 
               "charts": [
               {
                   "id": "swtotalApplication",
@@ -4727,6 +4879,14 @@
                 {
                   "id": "swActiveUlbs",
                   "name": "DSS_SW_ACTIVE_ULBS",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "totalApplicationInitiated",
+                  "name": "DSS_TOTAL_APPLICATION_INCL_INIT",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
@@ -4863,22 +5023,6 @@
                 {
                   "id": "swtotalCollection",
                   "name": "DSS_SW_TOTAL_COLLECTION",
-                  "code": "",
-                  "chartType": "metric",
-                  "filter": "",
-                  "headers": []
-                },
-                {
-                  "id": "swConCollection",
-                  "name": "DSS_CONNECTION_COLLECTION",
-                  "code": "",
-                  "chartType": "metric",
-                  "filter": "",
-                  "headers": []
-                },
-                {
-                  "id": "swChargesCollection",
-                  "name": "DSS_WATER_CHARGES_COLLECTION",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
@@ -5024,35 +5168,6 @@
           ]
         },
         {
-          "row": 4,
-          "name": "DSS_REVENUE",
-          "vizArray": [
-            {
-              "id": 231,
-              "name": "DSS_SW_TAX_HEAD_BOUNDARY",
-              "dimensions": {
-                "height": 350,
-                "width": 12
-              },
-              "vizType": "chart",
-              "label": "",
-              "noUnit": false,
-              "isCollapsible": true,
-              "charts": [
-                {
-                  "id": "swTaxHeadUlb",
-                  "name": "DSS_SW_TAX_HEAD_BOUNDARY",
-                  "code": "",
-                  "chartType": "table",
-                  "filter": "",
-                  "headers": [],
-                  "tabName": "Boundary"
-                }
-              ]
-            }
-          ]
-        },
-        {
           "row": 7,
           "name": "DSS_SERVICE",
           "vizArray": [
@@ -5067,6 +5182,7 @@
               "label": "",
               "noUnit": false,
               "isCollapsible": true,
+              "moduleLevel":"SW",
               "charts": [
                 {
                   "id": "swtotalConnection",
@@ -5077,24 +5193,16 @@
                   "headers": []
                 },
                 {
-                  "id": "swNewWaterConnection",
-                  "name": "DSS_SW_WATER_CONNECTIONS",
-                  "code": "",
-                  "chartType": "metric",
-                  "filter": "",
-                  "headers": []
-                },
-                {
-                  "id": "swNewSewerageConnection",
-                  "name": "DSS_SW_SEWERAGE_CONNECTIONS",
-                  "code": "",
-                  "chartType": "metric",
-                  "filter": "",
-                  "headers": []
-                },
-                {
                   "id": "swActiveUlbs",
                   "name": "DSS_SW_ACTIVE_ULBS",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "totalApplicationInitiated",
+                  "name": "DSS_TOTAL_APPLICATION_INCL_INIT",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
