@@ -40,6 +40,9 @@
         },
         {
           "id": "lease"
+        },
+        {
+          "id": "citizen-home"
         }
       ]
     },
@@ -76,6 +79,9 @@
         },
         {
           "id": "ulb-lease"
+        },
+                {
+          "id": "citizen-home"
         }
       ]
     }

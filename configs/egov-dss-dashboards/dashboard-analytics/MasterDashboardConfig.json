@@ -1753,6 +1753,14 @@
                   "chartType": "metric",
                   "filter": "",
                   "headers": []
+                },
+                {
+                  "id": "totalApplication",
+                  "name": "DSS_TOTAL_APPLICATION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
                 }],
               "charts": [
                 {
@@ -1763,14 +1771,7 @@
                   "filter": "",
                   "headers": []
                 },
-                {
-                  "id": "totalApplication",
-                  "name": "DSS_TOTAL_APPLICATION",
-                  "code": "",
-                  "chartType": "metric",
-                  "filter": "",
-                  "headers": []
-                },
+                
                 {
                   "id": "totalTransactions",
                   "name": "DSS_TOTAL_TRANSACTIONS",
@@ -2156,6 +2157,14 @@
                 {
                   "id": "allServices",
                   "name": "DSS_ALL_SERVICES",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "totalCitizens",
+                  "name": "DSS_CITIZENS_REGISTERED",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
