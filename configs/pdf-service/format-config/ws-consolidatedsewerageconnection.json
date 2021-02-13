@@ -29,7 +29,7 @@
               {
                 "stack": [
                   {
-                    "text": "{{logo_header}} {{Municipal_Corporation}}",
+                    "text": "{{logo_header}} {{cantt_board}}",
                     "style": "receipt-logo-header"
                   },
                   {
@@ -153,7 +153,7 @@
                         "style": "ws-sub-table"
                       },
                       {
-                        "text": "{{unit_of_measurement}}",
+                        "text": "{{water_closet_label}}",
                         "border": [
                           false,
                           false,
@@ -163,7 +163,7 @@
                         "style": "ws-sub-table"
                       },
                       {
-                        "text": " ",
+                        "text": "{{noof_toilets_label}}",
                         "border": [
                           false,
                           false,
@@ -195,7 +195,91 @@
                         "style": "ws-sub-table-value"
                       },
                       {
-                        "text": "{{uom}}",
+                        "text": "{{noOfWaterClosets}}",
+                        "border": [
+                          false,
+                          false,
+                          false,
+                          false
+                        ],
+                        "style": "ws-sub-table-value"
+                      },
+                      {
+                        "text": "{{noOfToilets}}",
+                        "border": [
+                          false,
+                          false,
+                          false,
+                          false
+                        ],
+                        "style": "ws-sub-table-value"
+                      }
+                    ],
+                    [
+                      {
+                        "text": "{{drainage_pipe_size_label}}",
+                        "border": [
+                          false,
+                          false,
+                          false,
+                          false
+                        ],
+                        "style": "ws-sub-table"
+                      },
+                      {
+                        "text": " ",
+                        "border": [
+                          false,
+                          false,
+                          false,
+                          false
+                        ],
+                        "style": "ws-sub-table"
+                      },
+                      {
+                        "text": " ",
+                        "border": [
+                          false,
+                          false,
+                          false,
+                          false
+                        ],
+                        "style": "ws-sub-table"
+                      },
+                      {
+                        "text": " ",
+                        "border": [
+                          false,
+                          false,
+                          false,
+                          false
+                        ],
+                        "style": "ws-sub-table"
+                      }
+                    ],
+                    [
+                      {
+                        "text": "{{drainageSize}}",
+                        "border": [
+                          false,
+                          false,
+                          false,
+                          false
+                        ],
+                        "style": "ws-sub-table-value"
+                      },
+                      {
+                        "text": " ",
+                        "border": [
+                          false,
+                          false,
+                          false,
+                          false
+                        ],
+                        "style": "ws-sub-table-value"
+                      },
+                      {
+                        "text": " ",
                         "border": [
                           false,
                           false,
@@ -282,7 +366,7 @@
                         "style": "ws-sub-table"
                       },
                       {
-                        "text": " ",
+                        "text": "{{property_ID}}",
                         "border": [
                           false,
                           false,
@@ -324,7 +408,7 @@
                         "style": "ws-sub-table-value"
                       },
                       {
-                        "text": " ",
+                        "text": "{{propertyID}}",
                         "border": [
                           false,
                           false,
@@ -335,16 +419,6 @@
                       }
                     ],
                     [
-                      {
-                        "text": "{{property_ID}}",
-                        "border": [
-                          false,
-                          false,
-                          false,
-                          false
-                        ],
-                        "style": "ws-sub-table"
-                      },
                       {
                         "text": "{{city_label}}",
                         "border": [
@@ -374,19 +448,19 @@
                           false
                         ],
                         "style": "ws-sub-table"
-                      }
-                    ],
-                    [
+                      },
                       {
-                        "text": "{{propertyID}}",
+                        "text": "{{street_name}}",
                         "border": [
                           false,
                           false,
                           false,
                           false
                         ],
-                        "style": "ws-sub-table-value"
-                      },
+                        "style": "ws-sub-table"
+                      }
+                    ],
+                    [
                       {
                         "text": "{{city}}",
                         "border": [
@@ -416,19 +490,19 @@
                           false
                         ],
                         "style": "ws-sub-table-value"
-                      }
-                    ],
-                    [
+                      },
                       {
-                        "text": "{{street_name}}",
+                        "text": "{{streetName}}",
                         "border": [
                           false,
                           false,
                           false,
                           false
                         ],
-                        "style": "ws-sub-table"
-                      },
+                        "style": "ws-sub-table-value"
+                      }
+                    ],
+                    [
                       {
                         "text": "{{locality_label}}",
                         "border": [
@@ -457,12 +531,10 @@
                           false,
                           false
                         ],
-                        "style": "ws-sub-table-value"
-                      }
-                    ],
-                    [
+                        "style": "ws-sub-table"
+                      },
                       {
-                        "text": "{{streetName}}",
+                        "text": " ",
                         "border": [
                           false,
                           false,
@@ -470,7 +542,10 @@
                           false
                         ],
                         "style": "ws-sub-table-value"
-                      },
+                      }
+                    ],
+                    [
+                      
                       {
                         "text": "{{locality}}",
                         "border": [
@@ -493,6 +568,16 @@
                       },
                       {
                         "text": "{{lat}} {{long}}",
+                        "border": [
+                          false,
+                          false,
+                          false,
+                          false
+                        ],
+                        "style": "ws-sub-table-value"
+                      },
+                      {
+                        "text": " ",
                         "border": [
                           false,
                           false,

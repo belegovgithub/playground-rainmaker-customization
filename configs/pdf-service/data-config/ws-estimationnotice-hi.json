@@ -1,5 +1,5 @@
 {
-    "key": "ws-estimationnotice",
+    "key": "ws-estimationnotice-hi",
     "DataConfigs": {
         "serviceName": "rainmaker-common",
         "version": "1.0.0",
@@ -239,9 +239,9 @@
                                 }
                             },
                             {
-                                "variable": "grant_stmt",
+                                "variable": "grant_stmt_hi",
                                 "value": {
-                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_GRANT_STATEMENT"
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_GRANT_STATEMENT_HI"
                                 },
                                 "type": "label",
                                 "localisation": {
@@ -251,9 +251,9 @@
                                 }
                             },
                             {
-                                "variable": "grant_stmt2",
+                                "variable": "grant_stmt2_hi",
                                 "value": {
-                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_GRANT_STATEMENT2"
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_GRANT_STATEMENT2_HI"
                                 },
                                 "type": "label",
                                 "localisation": {
@@ -337,7 +337,7 @@
                             {
                                 "variable": "applStatement1",
                                 "value": {
-                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_APPL_STATEMENT1"
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_APPL_STATEMENT1_HI"
                                 },
                                 "type": "label",
                                 "localisation": {
@@ -349,7 +349,7 @@
                             {
                                 "variable": "applStatement2",
                                 "value": {
-                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_APPL_STATEMENT2"
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_APPL_STATEMENT2_HI"
                                 },
                                 "type": "label",
                                 "localisation": {
@@ -361,7 +361,7 @@
                             {
                                 "variable": "applStatement3",
                                 "value": {
-                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_APPL_STATEMENT3"
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_APPL_STATEMENT3_HI"
                                 },
                                 "type": "label",
                                 "localisation": {
@@ -373,7 +373,7 @@
                             {
                                 "variable": "applStatement4",
                                 "value": {
-                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_APPL_STATEMENT4"
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_APPL_STATEMENT4_HI"
                                 },
                                 "type": "label",
                                 "localisation": {
@@ -385,7 +385,7 @@
                             {
                                 "variable": "applStatement4_1",
                                 "value": {
-                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_APPL_STATEMENT4_1"
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_APPL_STATEMENT4_1_HI"
                                 },
                                 "type": "label",
                                 "localisation": {
@@ -397,7 +397,19 @@
                             {
                                 "variable": "applStatement5",
                                 "value": {
-                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_APPL_STATEMENT5"
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_APPL_STATEMENT5_HI"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "applStatement6",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_APPL_STATEMENT6_HI"
                                 },
                                 "type": "label",
                                 "localisation": {
@@ -433,7 +445,7 @@
                             {
                                 "variable": "rupeesLabel",
                                 "value": {
-                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_RUPEES"
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_RUPEES_HI"
                                 },
                                 "type": "label",
                                 "localisation": {
@@ -553,7 +565,7 @@
                             {
                                 "variable": "totalLabel",
                                 "value": {
-                                    "path": "PDF_STATIC_LABELWS_CONSOLIDATED_ACKNOWELDGMENT_TOTAL"
+                                    "path": "PDF_STATIC_LABELWS_CONSOLIDATED_ACKNOWELDGMENT_TOTAL_HI"
                                 },
                                 "type": "label",
                                 "localisation": {

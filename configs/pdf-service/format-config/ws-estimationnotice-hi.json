@@ -1,5 +1,5 @@
 {
-    "key": "ws-estimationnotice",
+    "key": "ws-estimationnotice-hi",
     "config": {
         "defaultStyle": {
             "font": "Cambay"
@@ -145,7 +145,7 @@
                                                         
                                                     },
                                                     {
-                                                        "text": "{{grant_stmt}} {{name}} {{grant_stmt2}} {{houseNo}}, {{address}},{{logo_header}} {{cantt_board}}",
+                                                        "text": "{{address}},{{logo_header}} {{cantt_board}} {{grant_stmt_hi}} {{name}} {{grant_stmt2_hi}}",
                                                         "width": "90%",
                                                         "bold": true,
                                                         "fontSize": 12
@@ -176,7 +176,7 @@
                                             {
                                                  "columns": [
                                                     {
-                                                        "width": "18%",
+                                                        "width": "12%",
                                                         "text": "{{referenceLabel}}",
                                                          "bold": false,
                                                          "italics": true,
@@ -241,7 +241,7 @@
                                                 
                                             },
                                             {
-                                                "text": "{{applStatement1}} {{name}} {{applStatement2}} {{houseNo}}, {{address}},{{logo_header}} {{cantt_board}} {{applStatement3}}.{{applStatement4}} {{finYear}},{{applStatement4_1}} {{houseNo}} {{address}} ,{{logo_header}} {{cantt_board}} {{applStatement5}}",
+                                                "text": "{{applStatement1}} {{houseNo}}, {{address}},{{logo_header}} {{cantt_board}} {{applStatement2}} {{name}}   {{applStatement3}} {{applStatement4}} {{finYear}},{{applStatement4_1}} {{houseNo}} {{address}} ,{{logo_header}} {{cantt_board}} {{applStatement5}} {{applStatement6}}",
                                                 "style": "receipt-value-down"
                                             }
                                         ]
@@ -270,7 +270,7 @@
                                                     },
                                                     {
                     
-                                                        "text": "{{rupeesLabel}} {{waterConnCharge}}",
+                                                        "text": "{{waterConnCharge}} {{rupeesLabel}}",
                                                         "alignment": "left"
                                                     }
                                                     ]
@@ -292,7 +292,7 @@
                                                    },
                                                    {
                    
-                                                       "text": "{{rupeesLabel}} {{securityCharge}}",
+                                                       "text": "{{securityCharge}} {{rupeesLabel}}",
                                                        "alignment": "left"
                                                    }
                                                    ]
@@ -314,7 +314,7 @@
                                                     },
                                                     {
                     
-                                                        "text": "{{rupeesLabel}} {{roadCharge}}",
+                                                        "text": "{{roadCharge}} {{rupeesLabel}}",
                                                         "alignment": "left"
                                                     }
                                                     ]
@@ -336,7 +336,7 @@
                                                     },
                                                     {
                     
-                                                        "text": "{{rupeesLabel}} {{waterMiscCharge}}",
+                                                        "text": "{{waterMiscCharge}} {{rupeesLabel}}",
                                                         "alignment": "left"
                                                     }
                                                     ]
@@ -358,7 +358,7 @@
                                                     },
                                                     {
                     
-                                                        "text": "{{rupeesLabel}} {{otherCharges}}",
+                                                        "text": "{{otherCharges}} {{rupeesLabel}}",
                                                         "alignment": "left"
                                                     }
                                                     ]
@@ -394,7 +394,7 @@
                                                    },
                                                    {
                    
-                                                       "text": "{{rupeesLabel}} {{totalAmount}}",
+                                                       "text": "{{totalAmount}} {{rupeesLabel}}",
                                                        "alignment": "left",
                                                        "bold": true,
                                    
@@ -428,7 +428,7 @@
                                                 
                                             },
                                             {
-                                                "text": "{{paymentStatement}} {{totalAmount}} {{paymentStatement2}}",
+                                                "text": "{{paymentStatement}} {{totalAmount}}{{rupeesLabel}} {{paymentStatement2}}",
                                                 "style": "receipt-value-down"
                                             },
                                             {
