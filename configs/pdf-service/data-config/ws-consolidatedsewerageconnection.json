@@ -38,6 +38,24 @@
                 }
               },
               {
+                "variable": "noOfWaterClosets",
+                "value": {
+                  "path": "$.noOfWaterClosets"
+                }
+              },
+              {
+                "variable": "noOfToilets",
+                "value": {
+                  "path": "$.noOfToilets"
+                }
+              },
+              {
+                "variable": "drainageSize",
+                "value": {
+                  "path": "$.drainageSize"
+                }
+              },
+              {
                 "variable": "propertyType",
                 "value": {
                   "path": "$.property.propertyType"
@@ -184,6 +202,18 @@
                   "module":"rainmaker-common"
                }
               },
+              {
+                "variable": "cantt_board",
+                "value": {
+                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_MUNICIPAL_COUNCIL"
+                },
+                "type": "label",
+                "localisation": {
+                    "required": true,
+                    "prefix": null,
+                    "module": "rainmaker-pdf"
+                }
+            },
               {
                 "variable": "logo_sub_header",
                 "value": {
@@ -524,6 +554,42 @@
                 "variable": "sewarage_label",
                 "value": {
                   "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_SEWERAGE"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-pdf"
+                }
+              },
+              {
+                "variable": "water_closet_label",
+                "value": {
+                  "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_NO_OF_WATER_CLOSETS"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-pdf"
+                }
+              },
+              {
+                "variable": "noof_toilets_label",
+                "value": {
+                  "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_NO_OF_TOILETS"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-pdf"
+                }
+              },
+              {
+                "variable": "drainage_pipe_size_label",
+                "value": {
+                  "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_DRAINAGE_PIPE_SIZE"
                 },
                 "type": "label",
                 "localisation": {
