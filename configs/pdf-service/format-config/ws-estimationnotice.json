@@ -534,7 +534,7 @@
                 "receipt-value-down-rec": {
                         "color": "#000000",
                         "bold": false,
-                        "fontSize": 12,
+                        "fontSize": 11.5,
                         "fontWeight": 400,
                         "alignment": "left",
                         "margin": [
@@ -547,7 +547,7 @@
             "receipt-value-down": {
                         "color": "#000000",
                         "bold": false,
-                        "fontSize": 12,
+                        "fontSize": 11.5,
                         "fontWeight": 400,
                         "alignment": "left",
                         "margin": [
