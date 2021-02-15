@@ -141,14 +141,14 @@
                                                         "width": "10%",
                                                         "text": "{{subjectLabel}}",
                                                          "bold": true,
-                                                         "fontSize": 12
+                                                         "fontSize": 11.5
                                                         
                                                     },
                                                     {
                                                         "text": "{{grant_stmt}} {{name}} {{grant_stmt2}} {{houseNo}}, {{address}},{{logo_header}} {{cantt_board}}",
                                                         "width": "90%",
                                                         "bold": true,
-                                                        "fontSize": 12
+                                                        "fontSize": 11.5
                                                          
                                                     }
                                                 ],
