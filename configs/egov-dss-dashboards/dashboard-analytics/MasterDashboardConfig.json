@@ -567,7 +567,7 @@
                   "headers": []
                 },
                 {
-                  "id": "tltotalApplicationInitiated",
+                  "id": "totalApplicationInitiated",
                   "name": "DSS_TOTAL_APPLICATION_INCL_INIT",
                   "code": "",
                   "chartType": "metric",
@@ -3735,6 +3735,7 @@
               "vizType": "metric-collection",
               "isCollapsible": false,
               "label": "DSS_OVERVIEW",
+              "moduleLevel":"TL",
               "charts": [
                 {
                   "id": "totalApplication",
@@ -4964,6 +4965,55 @@
               ]
             }
           ]
+        },
+        {
+          "row": 9,
+          "name": "DSS_SERVICE",
+          "vizArray": [
+            {
+              "id": 141,
+              "name": "DSS_TOP_PERFORMING_ULBS",
+              "dimensions": {
+                "height": 250,
+                "width": 4
+              },
+              "vizType": "performing-metric",
+              "isCollapsible": false,
+              "moduleLevel":"WS",
+              "label": "",
+              "charts": [
+                {
+                  "id": "topPerformingUlbsCompletionRate",
+                  "name": "DSS_TOP_PERFORMING_ULBS",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 142,
+              "name": "DSS_BOTTOM_PERFORMING_ULBS",
+              "dimensions": {
+                "height": 250,
+                "width": 4
+              },
+              "vizType": "performing-metric",
+              "isCollapsible": false,
+              "moduleLevel":"WS",
+              "charts": [
+                {
+                  "id": "bottomPerformingUlbsCompletionRate",
+                  "name": "DSS_BOTTOM_PERFORMING_ULBS",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -5610,6 +5660,54 @@
                   "name": "",
                   "code": "",
                   "chartType": "donut",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 9,
+          "name": "DSS_SERVICE",
+          "vizArray": [{
+              "id": 141,
+              "name": "DSS_TOP_PERFORMING_ULBS",
+              "dimensions": {
+                "height": 250,
+                "width": 4
+              },
+              "vizType": "performing-metric",
+              "isCollapsible": false,
+              "moduleLevel":"WS",
+              "label": "",
+              "charts": [
+                {
+                  "id": "topPerformingUlbsCompletionRate",
+                  "name": "DSS_TOP_PERFORMING_ULBS",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 142,
+              "name": "DSS_BOTTOM_PERFORMING_ULBS",
+              "dimensions": {
+                "height": 250,
+                "width": 4
+              },
+              "vizType": "performing-metric",
+              "isCollapsible": false,
+              "moduleLevel":"WS",
+              "charts": [
+                {
+                  "id": "bottomPerformingUlbsCompletionRate",
+                  "name": "DSS_BOTTOM_PERFORMING_ULBS",
+                  "code": "",
+                  "chartType": "bar",
                   "filter": "",
                   "headers": []
                 }
