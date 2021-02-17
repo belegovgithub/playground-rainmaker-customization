@@ -110,7 +110,7 @@ ReportDefinitions:
   - name: paymentmode
     label: report.tl.paymentmode
     type: multivaluelist
-    pattern: list://ONLINE:COMMON_MASTERS_PAYMENTMODE_ONLINE,CASH:Cash,CARD:Credit/ Debit Card Payment,CHEQUE:Cheque,OFFLINE_NEFT:NEFT,OFFLINE_RTGS:RTGS
+    pattern: list://ONLINE:Online,CASH:Cash,CARD:Credit/ Debit Card Payment,CHEQUE:Cheque,OFFLINE_NEFT:NEFT,OFFLINE_RTGS:RTGS
     source: tl
     wrapper: true
     isMandatory: false
