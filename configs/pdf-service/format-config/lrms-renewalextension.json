@@ -350,10 +350,6 @@
                                         "width": "100%",
                                         "ol": [
                                             {
-                                                "text": "{{instructionRule1}}",
-                                                "style": "receipt-value-down"
-                                            },
-                                            {
                                                 "text": "{{instructionRule2}} {{boundary}} {{instructionRule3}}",
                                                 "style": "receipt-value-down"
                                             }
