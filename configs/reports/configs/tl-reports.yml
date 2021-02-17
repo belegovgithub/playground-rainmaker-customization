@@ -114,7 +114,7 @@ ReportDefinitions:
     source: tl
     wrapper: true
     isMandatory: false
-    searchClause: AND pay.paymentmode = $paymentmode 
+    searchClause: AND pay.paymentmode in ($paymentmode) 
   query: |
     SELECT DISTINCT 
       applicationnumber, 
