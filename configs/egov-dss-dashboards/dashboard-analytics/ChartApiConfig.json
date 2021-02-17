@@ -1539,6 +1539,7 @@
        "module": "COMMON",
        "dateRefField": "",
        "requestQueryMap": "{\"tenantId\" : \"tenantId\"}",
+       "oldReqMap":"{\"tenantId\" : \"tenantId\"}",
        "indexName": "dss-citizen-count",
        "aggrQuery": "{\"aggs\":{\"Total Citizens\":{\"sum\":{\"field\":\"citizenCount\"}}}}"
      }
