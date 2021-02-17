@@ -348,13 +348,36 @@
                                 "columns": [
                                     {
                                         "width": "100%",
-                                        "ol": [
-                                            {
-                                                "text": "{{instructionRule2}} {{boundary}} {{instructionRule3}}",
+                                                "text": "{{instruction1}}",
                                                 "style": "receipt-value-down"
-                                            }
-                                        ]
+                                           
+                                        
                                     }
+                                    
+                                ],
+                                "margin": [
+                                    7,
+                                    0,
+                                    0,
+                                    0
+                                ]
+                            }
+                        ],
+                        [
+                            {
+                                "border": [
+                                    false,
+                                    false,
+                                    false,
+                                    false
+                                ],
+                                "columns": [
+                                    {
+                                        "width": "100%",
+                                                "text": "{{instruction2}}",
+                                                "style": "receipt-value-down"   
+                                    }
+                                    
                                 ],
                                 "margin": [
                                     7,

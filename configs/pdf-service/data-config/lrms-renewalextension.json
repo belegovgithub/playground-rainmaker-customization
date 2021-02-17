@@ -37,6 +37,19 @@
                   }
                 },
                 {
+                  "variable": "instruction1", 
+                  "value": {
+                    "path": "$.instruction1"
+                  }
+                },
+                {
+                  "variable": "instruction2", 
+                  "value": {
+                    "path": "$.instruction2"
+                  },
+                  "type":"setEmpty"
+                },
+                {
                   "variable": "addressee", 
                   "value": {
                     "path": "$.addressee"
