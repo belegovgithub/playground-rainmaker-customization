@@ -293,6 +293,14 @@ ReportDefinitions:
         wrapper: true
         isMandatory: false
         searchClause: AND eg_user.id = $name::INTEGER
+      - name: paymentmode
+        label: report.uc.paymentmode
+        type: multivaluelist
+        pattern: list://ONLINE:Online,CASH:Cash,CARD:Credit/ Debit Card Payment,CHEQUE:Cheque,OFFLINE_NEFT:NEFT,OFFLINE_RTGS:RTGS
+        source: uc
+        wrapper: true
+        isMandatory: false
+        searchClause: AND pay.paymentmode in ($paymentmode) 
     query: |
              WITH receipt_breakup AS (
              SELECT 
