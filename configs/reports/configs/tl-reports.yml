@@ -109,7 +109,7 @@ ReportDefinitions:
     searchClause: AND pd.receiptdate  <= $toDate
   - name: paymentmode
     label: report.tl.paymentmode
-    type: singlevaluelist
+    type: multivaluelist
     pattern: list://ONLINE:Online,CASH:Cash,CARD:Credit/ Debit Card Payment,CHEQUE:Cheque,OFFLINE_NEFT:NEFT,OFFLINE_RTGS:RTGS
     source: tl
     wrapper: true
