@@ -106,7 +106,15 @@ ReportDefinitions:
     type: epoch
     source: tl
     isMandatory: false
-    searchClause: AND pd.receiptdate  <= $toDate 
+    searchClause: AND pd.receiptdate  <= $toDate
+  - name: paymentmode
+    label: report.tl.paymentmode
+    type: singlevaluelist
+    pattern: list://ONLINE:Online,CASH:Cash,CARD:Credit/ Debit Card Payment,CHEQUE:Cheque,OFFLINE_NEFT:NEFT,OFFLINE_RTGS:RTGS
+    source: tl
+    wrapper: true
+    isMandatory: false
+    searchClause: AND pay.paymentmode = $paymentmode 
   query: |
     SELECT DISTINCT 
       applicationnumber, 
