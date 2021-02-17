@@ -266,7 +266,52 @@
    },
    "_comment": " License Application which are issued by License Type"
  },
- 
+ "xMcCollectionByTenant": {
+   "chartName": "DSS_MC_COLLECTION_BY_TENANT",
+   "queries": [
+     {
+       "module": "MC",
+       "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\", \"tenantId\" : \"dataObject.tenantId.keyword\" }",
+       "dateRefField": "dataObject.paymentDetails.receiptDate",
+       "indexName": "dss-payment_v2",
+       "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.lease.tenantId.keyword\":\"pb.testing\"}},{\"terms\":{\"dataObject.bill.status.keyword\":[\"Cancelled\"]}},{\"terms\":{\"dataObject.paymentDetails.businessService.keyword\":[\"PT\",\"TL\",\"SW\",\"SW.ONE_TIME_FEE\",\"WS\",\"WS.ONE_TIME_FEE\"]}}]}},\"aggs\":{\"ULBs \":{\"terms\":{\"field\":\"dataObject.tenantId.keyword\",\"size\":1000,\"order\":{\"_term\":\"asc\"}},\"aggs\":{\"Total Transactions\":{\"filter\":{\"bool\":{\"must_not\":[]}},\"aggs\":{\"Transactions\":{\"value_count\":{\"field\":\"dataObject.paymentDetails.bill.billDetails.billId.keyword\"}}}},\"Total Amount\":{\"filter\":{\"bool\":{\"must_not\":[]}},\"aggs\":{\"Amount\":{\"sum\":{\"field\":\"dataObject.paymentDetails.bill.billDetails.amount\"}}}}}}}}}}"
+     }
+   ],
+   "filterKeys": [
+     {"key": "tenantId", "column": "Boundary"}
+   ],
+   "chartType": "xtable",
+   "valueType": "number",
+   "drillChart": "none",
+   "plotLabel": "Boundary",
+   "excludedColumns": [],
+   "oldComputedFields": [
+     {
+       "postAggregationTheory" : "",
+       "actionName": "AdditiveComputedField",
+       "fields" : ["Renewal Applications", "Extension Applications"],
+       "newField" : "Total Applications ",
+       "_comments": "fields are field names picked from its aggregation query to use post aggregation newField value with given new field name  "
+     },
+     {
+       "postAggregationTheory" : "",
+       "actionName": "AdditiveComputedField",
+       "fields" : ["Extension Approved", "Renewal Approved","Extension Rejected","Renewal Rejected" ],
+       "newField" : "Total Processed",
+       "_comments": "fields are field names picked from its aggregation query to use post aggregation newField value with given new field name  "
+     },
+     {
+       "postAggregationTheory" : "",
+       "actionName": "PercentageComputedField",
+       "fields" : ["Total Processed", "Total Applications"],
+       "newField" : "Processing Rate",
+       "_comments": "fields are field names picked from its aggregation query to use post aggregation newField value with given new field name  "
+     }
+   ],
+   "insight": {
+   },
+   "_comment": ""
+ },
  "licenseIssuedDDRRevenuev2": {
    "chartName": "DSS_TL_KEY_FY_INDICATORS",
    "queries": [
