@@ -369,13 +369,13 @@ ReportDefinitions:
         type: epoch
         source: uc
         isMandatory: false
-        searchClause: AND bl.billdate >= $fromDate
+        searchClause: AND pd.receiptdate >= $fromDate
       - name: toDate
         label: reports.uc.toDate
         type: epoch
         source: uc
         isMandatory: false
-        searchClause: AND bl.billdate <= $toDate
+        searchClause: AND pd.receiptdate <= $toDate
       - name: ulb
         label: reports.uc.ulb
         type: singlevaluelist
@@ -615,13 +615,13 @@ ReportDefinitions:
         type: epoch
         source: uc
         isMandatory: false
-        searchClause: AND bl.billdate >= $fromDate
+        searchClause: AND pd.receiptdate >= $fromDate
       - name: toDate
         label: reports.uc.toDate
         type: epoch
         source: uc
         isMandatory: false
-        searchClause: AND bl.billdate <= $toDate
+        searchClause: AND pd.receiptdate <= $toDate
     query: |
         -- Use CTE to force query plan, compute & use CTE later
         SELECT
@@ -636,6 +636,7 @@ ReportDefinitions:
           FROM egcl_billaccountdetail as rd
           INNER JOIN egcl_billdetial as rh on rh.id =  rd.billdetailid					
           INNER JOIN (SELECT distinct bill.id, status,billdate,businessservice,message.message as servicetype from egcl_bill bill  INNER JOIN message ON CONCAT('BILLINGSERVICE_BUSINESSSERVICE_',replace(businessservice, '.', '_')) = message.code AND message.locale='en_IN' AND message.module='rainmaker-uc') as bl ON bl.id = rh.billid and status != 'Cancelled' and businessservice not in ('PT','TL','WS','SW') and rd.tenantid=$tenantid
+          LEFT OUTER JOIN egcl_paymentdetail as pd ON pd.billid = bl.id 
     groupby: GROUP BY bl.servicetype
     orderby: ORDER BY bl.servicetype
 
