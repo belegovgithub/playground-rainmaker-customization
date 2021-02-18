@@ -452,13 +452,13 @@ ReportDefinitions:
         type: epoch
         source: uc
         isMandatory: false
-        searchClause: AND bl.billdate >= $fromDate
+        searchClause: AND pd.receiptdate >= $fromDate
       - name: toDate
         label: reports.uc.toDate
         type: epoch
         source: uc
         isMandatory: false
-        searchClause: AND bl.billdate <= $toDate
+        searchClause: AND pd.receiptdate <= $toDate
       - name: ulb
         label: reports.uc.ulb
         type: singlevaluelist
@@ -480,7 +480,7 @@ ReportDefinitions:
           SUM(rd.adjustedamount) as totalcollection
           FROM egcl_billaccountdetail as rd
           INNER JOIN egcl_billdetial as rh on rh.id =  rd.billdetailid					
-          INNER JOIN (SELECT distinct bill.id, status,billdate,businessservice from egcl_bill bill  ) as bl ON bl.id = rh.billid and status != 'Cancelled' and businessservice not in ('PT','TL','WS','SW') and rd.tenantid != 'pb.testing'
+          INNER JOIN (SELECT distinct bill.id, status,billdate,businessservice from egcl_bill bill  ) as bl ON bl.id = rh.billid and status != 'Cancelled' and businessservice not in ('PT','TL','WS','SW') and rd.tenantid != 'pb.testing' LEFT OUTER JOIN egcl_paymentdetail as pd ON pd.billid = bl.id
     groupby: group by rd.tenantid
 
 
