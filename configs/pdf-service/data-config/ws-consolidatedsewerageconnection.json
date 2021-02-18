@@ -38,6 +38,24 @@
                 }
               },
               {
+                "variable": "noOfWaterClosets",
+                "value": {
+                  "path": "$.noOfWaterClosets"
+                }
+              },
+              {
+                "variable": "noOfToilets",
+                "value": {
+                  "path": "$.noOfToilets"
+                }
+              },
+              {
+                "variable": "drainageSize",
+                "value": {
+                  "path": "$.drainageSize"
+                }
+              },
+              {
                 "variable": "propertyType",
                 "value": {
                   "path": "$.property.propertyType"
@@ -173,11 +191,6 @@
                 }
               },
               {
-                "variable": "logoImage",
-                "url": "https://raw.githubusercontent.com/egovernments/egov-web-app/master/web/rainmaker/dev-packages/egov-ui-kit-dev/src/assets/images/pblogo.png",
-                "type": "image"
-              },
-              {
                 "variable": "Municipal_Corporation",
                 "value": {
                   "path": "PDF_STATIC_LABEL_MDMS_MUNICIPAL_CORPORATION"
@@ -190,6 +203,18 @@
                }
               },
               {
+                "variable": "cantt_board",
+                "value": {
+                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_MUNICIPAL_COUNCIL"
+                },
+                "type": "label",
+                "localisation": {
+                    "required": true,
+                    "prefix": null,
+                    "module": "rainmaker-pdf"
+                }
+            },
+              {
                 "variable": "logo_sub_header",
                 "value": {
                   "path": "PDF_STATIC_LABEL_SW_CONSOLIDATED_ACKNOWELDGMENT_LOGO_SUB_HEADER"
@@ -198,7 +223,7 @@
                 "localisation": {
                   "required": true,
                   "prefix": null,
-                  "module": "rainmaker-common"
+                  "module": "rainmaker-pdf"
                 }
               },
               {
@@ -210,7 +235,7 @@
                 "localisation": {
                   "required": true,
                   "prefix": null,
-                  "module": "rainmaker-common"
+                  "module": "rainmaker-pdf"
                 }
               },
               {
@@ -222,7 +247,7 @@
                 "localisation": {
                   "required": true,
                   "prefix": null,
-                  "module": "rainmaker-common"
+                  "module": "rainmaker-pdf"
                 }
               },
               {
@@ -234,7 +259,7 @@
                 "localisation": {
                   "required": true,
                   "prefix": null,
-                  "module": "rainmaker-common"
+                  "module": "rainmaker-pdf"
                 }
               },
               {
@@ -246,7 +271,7 @@
                 "localisation": {
                   "required": true,
                   "prefix": null,
-                  "module": "rainmaker-common"
+                  "module": "rainmaker-pdf"
                 }
               },
               {
@@ -258,7 +283,7 @@
                 "localisation": {
                   "required": true,
                   "prefix": null,
-                  "module": "rainmaker-common"
+                  "module": "rainmaker-pdf"
                 }
               },
               {
@@ -270,7 +295,7 @@
                 "localisation": {
                   "required": true,
                   "prefix": null,
-                  "module": "rainmaker-common"
+                  "module": "rainmaker-pdf"
                 }
               },
               {
@@ -282,7 +307,7 @@
                 "localisation": {
                   "required": true,
                   "prefix": null,
-                  "module": "rainmaker-common"
+                  "module": "rainmaker-pdf"
                 }
               },
               {
@@ -294,7 +319,7 @@
                 "localisation": {
                   "required": true,
                   "prefix": null,
-                  "module": "rainmaker-common"
+                  "module": "rainmaker-pdf"
                 }
               },
               {
@@ -306,7 +331,7 @@
                 "localisation": {
                   "required": true,
                   "prefix": null,
-                  "module": "rainmaker-common"
+                  "module": "rainmaker-pdf"
                 }
               },
               {
@@ -318,7 +343,7 @@
                 "localisation": {
                   "required": true,
                   "prefix": null,
-                  "module": "rainmaker-common"
+                  "module": "rainmaker-pdf"
                 }
               },
               {
@@ -330,7 +355,7 @@
                 "localisation": {
                   "required": true,
                   "prefix": null,
-                  "module": "rainmaker-common"
+                  "module": "rainmaker-pdf"
                 }
               },
               {
@@ -342,7 +367,7 @@
                 "localisation": {
                   "required": true,
                   "prefix": null,
-                  "module": "rainmaker-common"
+                  "module": "rainmaker-pdf"
                 }
               },
               {
@@ -354,7 +379,7 @@
                 "localisation": {
                   "required": true,
                   "prefix": null,
-                  "module": "rainmaker-common"
+                  "module": "rainmaker-pdf"
                 }
               },
               {
@@ -366,7 +391,7 @@
                 "localisation": {
                   "required": true,
                   "prefix": null,
-                  "module": "rainmaker-common"
+                  "module": "rainmaker-pdf"
                 }
               },
               {
@@ -378,7 +403,7 @@
                 "localisation": {
                   "required": true,
                   "prefix": null,
-                  "module": "rainmaker-common"
+                  "module": "rainmaker-pdf"
                 }
               },
               {
@@ -390,7 +415,7 @@
                 "localisation": {
                   "required": true,
                   "prefix": null,
-                  "module": "rainmaker-common"
+                  "module": "rainmaker-pdf"
                 }
               },
               {
@@ -402,7 +427,7 @@
                 "localisation": {
                   "required": true,
                   "prefix": null,
-                  "module": "rainmaker-common"
+                  "module": "rainmaker-pdf"
                 }
               },
               {
@@ -414,7 +439,7 @@
                 "localisation": {
                   "required": true,
                   "prefix": null,
-                  "module": "rainmaker-common"
+                  "module": "rainmaker-pdf"
                 }
               },
               {
@@ -426,7 +451,7 @@
                 "localisation": {
                   "required": true,
                   "prefix": null,
-                  "module": "rainmaker-common"
+                  "module": "rainmaker-pdf"
                 }
               },
               {
@@ -438,7 +463,7 @@
                 "localisation": {
                   "required": true,
                   "prefix": null,
-                  "module": "rainmaker-common"
+                  "module": "rainmaker-pdf"
                 }
               },
               {
@@ -450,7 +475,7 @@
                 "localisation": {
                   "required": true,
                   "prefix": null,
-                  "module": "rainmaker-common"
+                  "module": "rainmaker-pdf"
                 }
               },
               {
@@ -462,7 +487,7 @@
                 "localisation": {
                   "required": true,
                   "prefix": null,
-                  "module": "rainmaker-common"
+                  "module": "rainmaker-pdf"
                 }
               },
               {
@@ -474,7 +499,7 @@
                 "localisation": {
                   "required": true,
                   "prefix": null,
-                  "module": "rainmaker-common"
+                  "module": "rainmaker-pdf"
                 }
               },
               {
@@ -486,7 +511,7 @@
                 "localisation": {
                   "required": true,
                   "prefix": null,
-                  "module": "rainmaker-common"
+                  "module": "rainmaker-pdf"
                 }
               },
               {
@@ -498,7 +523,7 @@
                 "localisation": {
                   "required": true,
                   "prefix": null,
-                  "module": "rainmaker-common"
+                  "module": "rainmaker-pdf"
                 }
               },
               {
@@ -510,7 +535,7 @@
                 "localisation": {
                   "required": true,
                   "prefix": null,
-                  "module": "rainmaker-common"
+                  "module": "rainmaker-pdf"
                 }
               },
               {
@@ -522,7 +547,7 @@
                 "localisation": {
                   "required": true,
                   "prefix": null,
-                  "module": "rainmaker-common"
+                  "module": "rainmaker-pdf"
                 }
               },
               {
@@ -534,7 +559,43 @@
                 "localisation": {
                   "required": true,
                   "prefix": null,
-                  "module": "rainmaker-common"
+                  "module": "rainmaker-pdf"
+                }
+              },
+              {
+                "variable": "water_closet_label",
+                "value": {
+                  "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_NO_OF_WATER_CLOSETS"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-pdf"
+                }
+              },
+              {
+                "variable": "noof_toilets_label",
+                "value": {
+                  "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_NO_OF_TOILETS"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-pdf"
+                }
+              },
+              {
+                "variable": "drainage_pipe_size_label",
+                "value": {
+                  "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_DRAINAGE_PIPE_SIZE"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-pdf"
                 }
               }
             ]
@@ -563,7 +624,15 @@
                   ]
               }
             ]
-          }
+          },
+          {
+            "qrcodeConfig": [
+              {
+                  "variable": "qr_code_image",
+                  "value":"Owner Name : {{ownerName}},Mobile no : {{ownerMobileNumber}},Consumer No: {{consumerNo}}, Service: {{water_label}}, meter Id: {{meterID}}, Property Id: {{propertyID}}"
+              }
+            ]
+        }
         ]
       }
     ]
