@@ -116,7 +116,7 @@ ReportDefinitions:
                       SUM(CASE WHEN taxheadcode LIKE '%_FIELD_FEE' THEN adjustedamount ELSE 0 END) as fieldcollection            
                     FROM egcl_receiptdetails_v1 as rd
                     INNER JOIN egcl_receiptheader_v1 as rh on rh.id = rd.receiptheader
-                    WHERE  rh.status != 'Cancelled'  AND rh.tenantid !='pb.testing' AND businessdetails not in ('PT','TL','WS','SW')
+                    WHERE  rh.status != 'Cancelled'  AND rh.tenantid !='pb.testing' AND businessdetails not in ('PT','TL','WS','SW','WS.ONE_TIME_FEE','SW.ONE_TIME_FEE')
                     GROUP BY rd.receiptheader
         )
         SELECT 
@@ -138,7 +138,7 @@ ReportDefinitions:
         JOIN egcl_instrumentheader_v1 AS ih ON ih.id = ri.instrumentheader
         JOIN receipt_breakup ON rh.id = receipt_breakup.receiptheader
         JOIN eg_user ON rh.createdby::INTEGER=eg_user.id
-        WHERE  rh.status != 'Cancelled'  AND rh.tenantid!='pb.testing' AND businessdetails not in ('PT','TL','WS','SW')
+        WHERE  rh.status != 'Cancelled'  AND rh.tenantid!='pb.testing' AND businessdetails not in ('PT','TL','WS','SW','WS.ONE_TIME_FEE','SW.ONE_TIME_FEE')
     orderby: ORDER BY rh.receiptdate DESC
 
   - reportName: MiscReceiptRegister
@@ -305,9 +305,9 @@ ReportDefinitions:
                     FROM egcl_billaccountdetail as rd
                     INNER JOIN egcl_billdetial as rh on rh.id = rd.billdetailid
                     INNER JOIN egcl_bill as bill on bill.id = rh.billid
-                    where status!='Cancelled' and businessservice not in ('PT','TL','WS','SW') and rd.tenantid=$tenantid
+                    where status!='Cancelled' and businessservice not in ('PT','TL','WS','SW','WS.ONE_TIME_FEE','SW.ONE_TIME_FEE') and rd.tenantid=$tenantid
                     GROUP BY rd.billdetailid)
-                    SELECT initcap(split_part(rh.tenantid,'.', 2)) as ulb,pd.receiptnumber as receiptnumber,To_char((To_timestamp(pd.receiptdate / 1000) at time Zone 'Asia/Kolkata'),'DD/MM/YYYY') as receiptdate,To_char((To_timestamp(pd.manualreceiptdate / 1000) at time Zone 'Asia/Kolkata'), 'DD/MM/YYYY') as g8issuedate,pd.manualreceiptnumber as g8receiptno,bill.status as status,servicecategory,receipt_breakup.*,challan.additionaldetail->>'GLcode' as GLCode,challan.description as comments,amount as totalamount,paymentmode,(case when pay.paymentmode ilike 'CASH' then '' else  transactionnumber end) as transactionorchequenumber,(case when pay.paymentmode ilike 'CHEQUE' then To_char((To_timestamp(pay.instrumentdate / 1000) at time Zone 'Asia/Kolkata'), 'DD/MM/YYYY') else '' end) as ddchequedate,pgtxn.bank_transaction_no as banktxnNo,eg_user.name as name,consumername,challanno FROM egcl_billdetial AS rh INNER JOIN (SELECT DISTINCT bill.id,status,consumercode, businessservice,message.message as servicecategory from egcl_bill bill LEFT OUTER JOIN message ON CONCAT('BILLINGSERVICE_BUSINESSSERVICE_',replace(businessservice, '.', '_')) = message.code AND message.locale='en_IN' AND message.module='rainmaker-uc')as bill ON bill.id = rh.billid and status != 'Cancelled' and businessservice not in ('PT','TL','WS','SW')LEFT OUTER JOIN egcl_paymentdetail as pd ON pd.billid = bill.id LEFT OUTER JOIN (Select pay.id ,instrumentdate, paymentstatus,transactionnumber,message.message as paymentmode ,pay.createdby from egcl_payment pay LEFT OUTER JOIN message ON CONCAT('COMMON_MASTERS_PAYMENTMODE_',replace(paymentmode, '.', '_')) = message.code AND message.locale='en_IN')  AS pay ON pay.id = pd.paymentid LEFT OUTER Join eg_pg_transactions as pgtxn ON pay.transactionnumber = pgtxn.txn_id JOIN (Select challanno as challanno,accountid,eg_user.name as consumername,description,additionaldetail from eg_echallan challan LEFT OUTER JOIN eg_user ON challan.accountid=eg_user.uuid) as challan on challan.challanno = bill.consumercode JOIN receipt_breakup ON rh.id = receipt_breakup.billdetailid JOIN eg_user ON pay.createdby::INTEGER=eg_user.id  WHERE rh.tenantid=$tenantid
+                    SELECT initcap(split_part(rh.tenantid,'.', 2)) as ulb,pd.receiptnumber as receiptnumber,To_char((To_timestamp(pd.receiptdate / 1000) at time Zone 'Asia/Kolkata'),'DD/MM/YYYY') as receiptdate,To_char((To_timestamp(pd.manualreceiptdate / 1000) at time Zone 'Asia/Kolkata'), 'DD/MM/YYYY') as g8issuedate,pd.manualreceiptnumber as g8receiptno,bill.status as status,servicecategory,receipt_breakup.*,challan.additionaldetail->>'GLcode' as GLCode,challan.description as comments,amount as totalamount,paymentmode,(case when pay.paymentmode ilike 'CASH' then '' else  transactionnumber end) as transactionorchequenumber,(case when pay.paymentmode ilike 'CHEQUE' then To_char((To_timestamp(pay.instrumentdate / 1000) at time Zone 'Asia/Kolkata'), 'DD/MM/YYYY') else '' end) as ddchequedate,pgtxn.bank_transaction_no as banktxnNo,eg_user.name as name,consumername,challanno FROM egcl_billdetial AS rh INNER JOIN (SELECT DISTINCT bill.id,status,consumercode, businessservice,message.message as servicecategory from egcl_bill bill LEFT OUTER JOIN message ON CONCAT('BILLINGSERVICE_BUSINESSSERVICE_',replace(businessservice, '.', '_')) = message.code AND message.locale='en_IN' AND message.module='rainmaker-uc')as bill ON bill.id = rh.billid and status != 'Cancelled' and businessservice not in ('PT','TL','WS','SW','WS.ONE_TIME_FEE','SW.ONE_TIME_FEE')LEFT OUTER JOIN egcl_paymentdetail as pd ON pd.billid = bill.id LEFT OUTER JOIN (Select pay.id ,instrumentdate, paymentstatus,transactionnumber,message.message as paymentmode ,pay.createdby from egcl_payment pay LEFT OUTER JOIN message ON CONCAT('COMMON_MASTERS_PAYMENTMODE_',replace(paymentmode, '.', '_')) = message.code AND message.locale='en_IN')  AS pay ON pay.id = pd.paymentid LEFT OUTER Join eg_pg_transactions as pgtxn ON pay.transactionnumber = pgtxn.txn_id JOIN (Select challanno as challanno,accountid,eg_user.name as consumername,description,additionaldetail from eg_echallan challan LEFT OUTER JOIN eg_user ON challan.accountid=eg_user.uuid) as challan on challan.challanno = bill.consumercode JOIN receipt_breakup ON rh.id = receipt_breakup.billdetailid JOIN eg_user ON pay.createdby::INTEGER=eg_user.id  WHERE rh.tenantid=$tenantid
     orderby: ORDER BY pd.receiptdate DESC
 
   - reportName: StateLevelMiscCollectReceiptRegister
@@ -389,7 +389,7 @@ ReportDefinitions:
           SUM(rd.adjustedamount) as totalcollection
           FROM egcl_billaccountdetail as rd
           INNER JOIN egcl_billdetial as rh on rh.id =  rd.billdetailid					
-          INNER JOIN (SELECT distinct bill.id, status,billdate,businessservice,message.message as servicetype from egcl_bill bill  INNER JOIN message ON CONCAT('BILLINGSERVICE_BUSINESSSERVICE_',replace(businessservice, '.', '_')) = message.code AND message.locale='en_IN' AND message.module='rainmaker-uc') as bl ON bl.id = rh.billid and status != 'Cancelled' and businessservice not in ('PT','TL','WS','SW') and rd.tenantid != 'pb.testing'
+          INNER JOIN (SELECT distinct bill.id, status,billdate,businessservice,message.message as servicetype from egcl_bill bill  INNER JOIN message ON CONCAT('BILLINGSERVICE_BUSINESSSERVICE_',replace(businessservice, '.', '_')) = message.code AND message.locale='en_IN' AND message.module='rainmaker-uc') as bl ON bl.id = rh.billid and status != 'Cancelled' and businessservice not in ('PT','TL','WS','SW','WS.ONE_TIME_FEE','SW.ONE_TIME_FEE') and rd.tenantid != 'pb.testing'
           LEFT OUTER JOIN egcl_paymentdetail as pd ON pd.billid = bl.id where pd.tenantid != 'pb.testing'
     groupby: GROUP BY rd.tenantid,bl.servicetype
     orderby: ORDER BY rd.tenantid
@@ -473,7 +473,7 @@ ReportDefinitions:
           SUM(rd.adjustedamount) as totalcollection
           FROM egcl_billaccountdetail as rd
           INNER JOIN egcl_billdetial as rh on rh.id =  rd.billdetailid					
-          INNER JOIN (SELECT distinct bill.id, status,billdate,businessservice from egcl_bill bill  ) as bl ON bl.id = rh.billid and status != 'Cancelled' and businessservice not in ('PT','TL','WS','SW') and rd.tenantid != 'pb.testing' LEFT OUTER JOIN egcl_paymentdetail as pd ON pd.billid = bl.id where pd.tenantid != 'pb.testing'
+          INNER JOIN (SELECT distinct bill.id, status,billdate,businessservice from egcl_bill bill  ) as bl ON bl.id = rh.billid and status != 'Cancelled' and businessservice not in ('PT','TL','WS','SW','WS.ONE_TIME_FEE','SW.ONE_TIME_FEE') and rd.tenantid != 'pb.testing' LEFT OUTER JOIN egcl_paymentdetail as pd ON pd.billid = bl.id where pd.tenantid != 'pb.testing'
     groupby: group by rd.tenantid
 
 
@@ -552,7 +552,7 @@ ReportDefinitions:
         from egcl_receiptheader_v1 as rh
         inner join egcl_receiptinstrument_v1 as ri on ri.receiptheader = rh.id
         inner join egcl_instrumentheader_v1 as ih on ih.id = ri.instrumentheader
-        where rh.businessdetails not in ('PT','TL','WS','SW') and rh.status !='Cancelled' and rh.tenantid !='pb.testing'
+        where rh.businessdetails not in ('PT','TL','WS','SW','WS.ONE_TIME_FEE','SW.ONE_TIME_FEE') and rh.status !='Cancelled' and rh.tenantid !='pb.testing'
     groupby: GROUP BY rh.tenantid
     orderby: ORDER BY rh.tenantId asc
 
@@ -627,7 +627,7 @@ ReportDefinitions:
           SUM(rd.amount) as totalcollection
           FROM egcl_billaccountdetail as rd
           INNER JOIN egcl_billdetial as rh on rh.id =  rd.billdetailid					
-          INNER JOIN (SELECT distinct bill.id, status,billdate,businessservice,message.message as servicetype from egcl_bill bill  INNER JOIN message ON CONCAT('BILLINGSERVICE_BUSINESSSERVICE_',replace(businessservice, '.', '_')) = message.code AND message.locale='en_IN' AND message.module='rainmaker-uc') as bl ON bl.id = rh.billid and status != 'Cancelled' and businessservice not in ('PT','TL','WS','SW') and rd.tenantid=$tenantid
+          INNER JOIN (SELECT distinct bill.id, status,billdate,businessservice,message.message as servicetype from egcl_bill bill  INNER JOIN message ON CONCAT('BILLINGSERVICE_BUSINESSSERVICE_',replace(businessservice, '.', '_')) = message.code AND message.locale='en_IN' AND message.module='rainmaker-uc') as bl ON bl.id = rh.billid and status != 'Cancelled' and businessservice not in ('PT','TL','WS','SW','WS.ONE_TIME_FEE','SW.ONE_TIME_FEE') and rd.tenantid=$tenantid
           LEFT OUTER JOIN egcl_paymentdetail as pd ON pd.billid = bl.id where pd.tenantid = $tenantid
     groupby: GROUP BY bl.servicetype
     orderby: ORDER BY bl.servicetype
@@ -749,9 +749,9 @@ ReportDefinitions:
                     FROM egcl_billaccountdetail as rd
                     INNER JOIN egcl_billdetial as rh on rh.id = rd.billdetailid
                     INNER JOIN egcl_bill as bill on bill.id = rh.billid
-                    where status ='Cancelled' and businessservice not in ('PT','TL','WS','SW') and rd.tenantid=$tenantid and rd.tenantid != 'pb.testing'
+                    where status ='Cancelled' and businessservice not in ('PT','TL','WS','SW','WS.ONE_TIME_FEE','SW.ONE_TIME_FEE') and rd.tenantid=$tenantid and rd.tenantid != 'pb.testing'
                     GROUP BY rd.billdetailid)
-                    SELECT initcap(split_part(rh.tenantid,'.', 2)) as ulb,pd.receiptnumber as receiptnumber,To_char((To_timestamp(pd.receiptdate / 1000) at time Zone 'Asia/Kolkata'), 'DD/MM/YYYY') as receiptdate,servicecategory,receipt_breakup.*,  amount as totalamount,pay.paymentmode as paymentmode,(case when pay.paymentmode like 'CASH' then '' else  transactionnumber end) as transactionorchequenumber,(case when pay.paymentmode like 'CHEQUE' then To_char((To_timestamp(pay.instrumentdate / 1000) at time Zone 'Asia/Kolkata'), 'DD/MM/YYYY') else '' end) as ddchequedate,eg_user.name as name FROM egcl_billdetial AS rh INNER JOIN (SELECT DISTINCT bill.id,status, businessservice,message.message as servicecategory from egcl_bill bill LEFT OUTER JOIN message ON CONCAT('BILLINGSERVICE_BUSINESSSERVICE_',replace(businessservice, '.', '_')) = message.code AND message.locale='en_IN' AND message.module='rainmaker-uc')as bill ON bill.id = rh.billid and status = 'Cancelled' and businessservice not in ('PT','TL','WS','SW')LEFT OUTER JOIN egcl_paymentdetail as pd ON pd.billid = bill.id LEFT OUTER JOIN egcl_payment  AS pay ON pay.id = pd.paymentid JOIN eg_user ON pay.createdby::INTEGER=eg_user.id JOIN receipt_breakup ON rh.id = receipt_breakup.billdetailid WHERE rh.tenantid=$tenantid
+                    SELECT initcap(split_part(rh.tenantid,'.', 2)) as ulb,pd.receiptnumber as receiptnumber,To_char((To_timestamp(pd.receiptdate / 1000) at time Zone 'Asia/Kolkata'), 'DD/MM/YYYY') as receiptdate,servicecategory,receipt_breakup.*,  amount as totalamount,pay.paymentmode as paymentmode,(case when pay.paymentmode like 'CASH' then '' else  transactionnumber end) as transactionorchequenumber,(case when pay.paymentmode like 'CHEQUE' then To_char((To_timestamp(pay.instrumentdate / 1000) at time Zone 'Asia/Kolkata'), 'DD/MM/YYYY') else '' end) as ddchequedate,eg_user.name as name FROM egcl_billdetial AS rh INNER JOIN (SELECT DISTINCT bill.id,status, businessservice,message.message as servicecategory from egcl_bill bill LEFT OUTER JOIN message ON CONCAT('BILLINGSERVICE_BUSINESSSERVICE_',replace(businessservice, '.', '_')) = message.code AND message.locale='en_IN' AND message.module='rainmaker-uc')as bill ON bill.id = rh.billid and status = 'Cancelled' and businessservice not in ('PT','TL','WS','SW','WS.ONE_TIME_FEE','SW.ONE_TIME_FEE')LEFT OUTER JOIN egcl_paymentdetail as pd ON pd.billid = bill.id LEFT OUTER JOIN egcl_payment  AS pay ON pay.id = pd.paymentid JOIN eg_user ON pay.createdby::INTEGER=eg_user.id JOIN receipt_breakup ON rh.id = receipt_breakup.billdetailid WHERE rh.tenantid=$tenantid
     orderby: ORDER BY pd.receiptdate DESC
 
   - reportName: MiscReceiptCB
@@ -831,7 +831,7 @@ ReportDefinitions:
         searchClause: AND eg_user.id = $name::INTEGER
     query: |
         -- Use CTE to force query plan, compute & use CTE later
-        SELECT pay.payername as payername,consumername,pay.mobilenumber as mobilenumber,To_char((To_timestamp(pd.receiptdate / 1000) at time Zone 'Asia/Kolkata'), 'DD/MM/YYYY') as receiptdate,bill.servicecategory,rh.amount as amount,eg_user.name as name,pd.receiptnumber as receiptnumber FROM egcl_billdetial AS rh INNER JOIN (SELECT DISTINCT bill.id,status,consumercode, businessservice,message.message as servicecategory from egcl_bill bill LEFT OUTER JOIN message ON CONCAT('BILLINGSERVICE_BUSINESSSERVICE_',replace(businessservice, '.', '_')) = message.code AND message.locale='en_IN' AND message.module='rainmaker-uc')as bill ON bill.id = rh.billid and status != 'Cancelled' and businessservice not in ('PT','TL','WS','SW') LEFT OUTER JOIN egcl_paymentdetail as pd ON pd.billid = bill.id LEFT OUTER JOIN egcl_payment  AS pay ON pay.id = pd.paymentid JOIN (Select challanno as challanno,accountid,eg_user.name as consumername,additionaldetail from eg_echallan challan LEFT OUTER JOIN eg_user ON challan.accountid=eg_user.uuid) as challan on challan.challanno = bill.consumercode JOIN eg_user ON pay.createdby::INTEGER=eg_user.id WHERE rh.tenantid=$tenantid
+        SELECT pay.payername as payername,consumername,pay.mobilenumber as mobilenumber,To_char((To_timestamp(pd.receiptdate / 1000) at time Zone 'Asia/Kolkata'), 'DD/MM/YYYY') as receiptdate,bill.servicecategory,rh.amount as amount,eg_user.name as name,pd.receiptnumber as receiptnumber FROM egcl_billdetial AS rh INNER JOIN (SELECT DISTINCT bill.id,status,consumercode, businessservice,message.message as servicecategory from egcl_bill bill LEFT OUTER JOIN message ON CONCAT('BILLINGSERVICE_BUSINESSSERVICE_',replace(businessservice, '.', '_')) = message.code AND message.locale='en_IN' AND message.module='rainmaker-uc')as bill ON bill.id = rh.billid and status != 'Cancelled' and businessservice not in ('PT','TL','WS','SW','WS.ONE_TIME_FEE','SW.ONE_TIME_FEE') LEFT OUTER JOIN egcl_paymentdetail as pd ON pd.billid = bill.id LEFT OUTER JOIN egcl_payment  AS pay ON pay.id = pd.paymentid JOIN (Select challanno as challanno,accountid,eg_user.name as consumername,additionaldetail from eg_echallan challan LEFT OUTER JOIN eg_user ON challan.accountid=eg_user.uuid) as challan on challan.challanno = bill.consumercode JOIN eg_user ON pay.createdby::INTEGER=eg_user.id WHERE rh.tenantid=$tenantid
     orderby: ORDER BY pd.receiptdate DESC
 
   - reportName: ChallanStatusRegistry
