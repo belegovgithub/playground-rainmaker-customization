@@ -483,13 +483,13 @@ ReportDefinitions:
     type: epoch
     source: tl
     isMandatory: false
-    searchClause: AND issueddate >= $fromDate
+    searchClause: AND pd.receiptdate >= $fromDate
   - name: toDate
     label: reports.tl.toDate
     type: epoch
     source: tl
     isMandatory: false
-    searchClause: AND issueddate <= $toDate
+    searchClause: AND pd.receiptdate <= $toDate
   query: |
      SELECT 
       COUNT(applicationNumber) as transactionNumber,
@@ -786,13 +786,13 @@ ReportDefinitions:
     type: epoch
     source: tl
     isMandatory: false
-    searchClause: AND issueddate >= $fromDate
+    searchClause: AND pd.receiptdate >= $fromDate
   - name: toDate
     label: reports.tl.toDate
     type: epoch
     source: tl
     isMandatory: false
-    searchClause: AND issueddate <= $toDate
+    searchClause: AND pd.receiptdate <= $toDate
   - name: ulb
     label: report.tl.tenantId
     type: singlevaluelist
@@ -899,13 +899,13 @@ ReportDefinitions:
     type: epoch
     source: tl
     isMandatory: false
-    searchClause: AND issueddate >= $fromDate
+    searchClause: AND pd.receiptdate >= $fromDate
   - name: toDate
     label: reports.tl.toDate
     type: epoch
     source: tl
     isMandatory: false
-    searchClause: AND issueddate <= $toDate
+    searchClause: AND pd.receiptdate <= $toDate
   - name: ulb
     label: report.tl.tenantId
     type: singlevaluelist
