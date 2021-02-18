@@ -398,7 +398,7 @@ ReportDefinitions:
           FROM egcl_billaccountdetail as rd
           INNER JOIN egcl_billdetial as rh on rh.id =  rd.billdetailid					
           INNER JOIN (SELECT distinct bill.id, status,billdate,businessservice,message.message as servicetype from egcl_bill bill  INNER JOIN message ON CONCAT('BILLINGSERVICE_BUSINESSSERVICE_',replace(businessservice, '.', '_')) = message.code AND message.locale='en_IN' AND message.module='rainmaker-uc') as bl ON bl.id = rh.billid and status != 'Cancelled' and businessservice not in ('PT','TL','WS','SW') and rd.tenantid != 'pb.testing'
-          LEFT OUTER JOIN egcl_paymentdetail as pd ON pd.billid = bl.id
+          LEFT OUTER JOIN egcl_paymentdetail as pd ON pd.billid = bl.id where pd.tenantid != 'pb.testing'
     groupby: GROUP BY rd.tenantid,bl.servicetype
     orderby: ORDER BY rd.tenantid
 
@@ -481,7 +481,7 @@ ReportDefinitions:
           SUM(rd.adjustedamount) as totalcollection
           FROM egcl_billaccountdetail as rd
           INNER JOIN egcl_billdetial as rh on rh.id =  rd.billdetailid					
-          INNER JOIN (SELECT distinct bill.id, status,billdate,businessservice from egcl_bill bill  ) as bl ON bl.id = rh.billid and status != 'Cancelled' and businessservice not in ('PT','TL','WS','SW') and rd.tenantid != 'pb.testing' LEFT OUTER JOIN egcl_paymentdetail as pd ON pd.billid = bl.id
+          INNER JOIN (SELECT distinct bill.id, status,billdate,businessservice from egcl_bill bill  ) as bl ON bl.id = rh.billid and status != 'Cancelled' and businessservice not in ('PT','TL','WS','SW') and rd.tenantid != 'pb.testing' LEFT OUTER JOIN egcl_paymentdetail as pd ON pd.billid = bl.id where pd.tenantid != 'pb.testing'
     groupby: group by rd.tenantid
 
 
@@ -636,7 +636,7 @@ ReportDefinitions:
           FROM egcl_billaccountdetail as rd
           INNER JOIN egcl_billdetial as rh on rh.id =  rd.billdetailid					
           INNER JOIN (SELECT distinct bill.id, status,billdate,businessservice,message.message as servicetype from egcl_bill bill  INNER JOIN message ON CONCAT('BILLINGSERVICE_BUSINESSSERVICE_',replace(businessservice, '.', '_')) = message.code AND message.locale='en_IN' AND message.module='rainmaker-uc') as bl ON bl.id = rh.billid and status != 'Cancelled' and businessservice not in ('PT','TL','WS','SW') and rd.tenantid=$tenantid
-          LEFT OUTER JOIN egcl_paymentdetail as pd ON pd.billid = bl.id 
+          LEFT OUTER JOIN egcl_paymentdetail as pd ON pd.billid = bl.id where pd.tenantid = $tenantid
     groupby: GROUP BY bl.servicetype
     orderby: ORDER BY bl.servicetype
 
