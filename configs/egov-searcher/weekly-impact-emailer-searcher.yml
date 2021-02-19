@@ -141,4 +141,18 @@
      output:
       jsonFormat: {"ResponseInfo": {}}
       outJsonPath: $.data
+      responseInfoPath: $.ResponseInfo
+
+   - name: citizensRegisteredInTenant
+     query: 
+      baseQuery: select array_to_json(array_agg(row_to_json(citizensregisteredintenant))) from (select count(id) as count,tenantid  from (select id,tenantid from ((select us.id,pg.tenantid from eg_pgr_service pg left join eg_user us on CAST( pg.accountid AS int) =us.id where us.username=us.mobilenumber and pg.tenantid is not null) Union (select us.id,pay.tenantid from  eg_user us left  join eg_user_address ad on us.id=ad.userid left  join egcl_payment pay on pay.payerid=us.uuid where us.username=us.mobilenumber  and ad.type='PERMANENT' and pay.payerid is not null and pay.tenantid is not null) union (select us.id,ad.city from  eg_user us left  join eg_user_address ad on us.id=ad.userid where us.username=us.mobilenumber  and ad.type='PERMANENT' and ad.city  is not null)) tab group by id,tenantid having count(*) = 1) tab1 group by tenantid ) citizensregisteredintenant;
+     searchParams:
+      condition: AND
+      params:
+      - name: intervalinsecs
+        isMandatory: true
+        jsonPath: $.searchCriteria.intervalinsecs
+     output:
+      jsonFormat: {"ResponseInfo": {}}
+      outJsonPath: $.data
       responseInfoPath: $.ResponseInfo      
