@@ -112,15 +112,7 @@ ReportDefinitions:
     source: ws
     isMandatory: false
     searchClause: AND pd.receiptdate <= $toDate
-  - name: ulb
-    label: WS_PROP_DETAIL_CITY
-    type: singlevaluelist
-    pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=tenant&masterName=tenants|$.MdmsRes.tenant.tenants.*.code|$.MdmsRes.tenant.tenants.*.name
-    source: ws
-    wrapper: true
-    isMandatory: false
-    searchClause: AND ws.tenantId = $ulb
-  query: SELECT distinct pd.receiptnumber,service.connectiontype,msgroad.message as roadtype,ws.roadcuttingarea,message.message as status,eg_user.name as name,eg_user.mobilenumber,applicationno,pgtxn.bank_transaction_no as banktxnNo,totalamount,To_char(To_timestamp(pd.manualreceiptdate/ 1000), 'DD/MM/YYYY') AS g8issuedate,pd.manualreceiptnumber as g8receiptno FROM eg_ws_connection ws   INNER JOIN egcl_bill bill ON bill.consumercode = ws.applicationno and bill.status !='Cancelled' JOIN egcl_billdetial as bild ON bild.billid = bill.id INNER JOIN(Select DISTINCT billdetailid,amount, taxheadcode,message.message as feeType from egcl_billaccountdetail bilaccd INNER JOIN message ON taxheadcode = message.code AND message.locale='en_IN')  as bilaccd ON bild.id = bilaccd .billdetailid LEFT OUTER JOIN egcl_paymentdetail as pd ON pd.billid =bill.id LEFT OUTER JOIN egcl_payment as pay ON pay.id = pd.paymentid and pay.paymentstatus != 'CANCELLED' LEFT OUTER Join eg_pg_transactions as pgtxn ON pay.transactionnumber = pgtxn.txn_id LEFT OUTER JOIN eg_pt_owner as owner ON owner.propertyid =property_id LEFT OUTER JOIN eg_user  ON uuid =owner.userid LEFT OUTER JOIN message ON substring(message.code,11) ='CONNECTION_ACTIVATED' AND message.locale = 'en_IN'  LEFT OUTER JOIN message as msgroad ON CONCAT('WS_ROADTYPE_',ws.roadtype) = msgroad.code AND msgroad.locale='en_IN' AND msgroad.module='rainmaker-ws' LEFT OUTER JOIN eg_ws_service as service ON service.connection_id=ws.id WHERE ws.tenantId = $tenantId AND service.connectiontype is NOT NULL
+  query: SELECT distinct pd.receiptnumber,service.connectiontype,msgroad.message as roadtype,ws.roadcuttingarea,message.message as status,eg_user.name as name,eg_user.mobilenumber,applicationno,pgtxn.bank_transaction_no as banktxnNo,totalamount,To_char(To_timestamp(pd.manualreceiptdate/ 1000), 'DD/MM/YYYY') AS g8issuedate,pd.manualreceiptnumber as g8receiptno FROM eg_ws_connection ws   INNER JOIN egcl_bill bill ON bill.consumercode = ws.applicationno and bill.status !='Cancelled' JOIN egcl_billdetial as bild ON bild.billid = bill.id INNER JOIN(Select DISTINCT billdetailid,amount, taxheadcode,message.message as feeType from egcl_billaccountdetail bilaccd INNER JOIN message ON taxheadcode = message.code AND message.locale='en_IN')  as bilaccd ON bild.id = bilaccd .billdetailid LEFT OUTER JOIN egcl_paymentdetail as pd ON pd.billid =bill.id LEFT OUTER JOIN egcl_payment as pay ON pay.id = pd.paymentid and pay.paymentstatus != 'CANCELLED' LEFT OUTER Join eg_pg_transactions as pgtxn ON pay.transactionnumber = pgtxn.txn_id LEFT OUTER JOIN eg_pt_owner as owner ON owner.propertyid =property_id LEFT OUTER JOIN eg_user  ON uuid =owner.userid LEFT OUTER JOIN message ON substring(message.code,11) ='CONNECTION_ACTIVATED' AND message.locale = 'en_IN'  LEFT OUTER JOIN message as msgroad ON CONCAT('WS_ROADTYPE_',ws.roadtype) = msgroad.code AND msgroad.locale='en_IN' AND msgroad.module='rainmaker-ws' LEFT OUTER JOIN eg_ws_service as service ON service.connection_id=ws.id WHERE ws.tenantid like $tenantid AND service.connectiontype is NOT NULL
 
 - reportName: CBWaterRegistryReport
   summary: CB Level Water Registry Report
@@ -429,7 +421,7 @@ ReportDefinitions:
   version: 1.0.0
   moduleName: rainmaker-ws
   sourceColumns:
-  - name: applicationnumber
+  - name: ws.applicationno
     label: WS_COMMON_APPLICATION_NO_LABEL
     type: string
     source: ws
@@ -471,24 +463,24 @@ ReportDefinitions:
     total: false
   searchParams:
   - name: fromDate
-    label: reports.ws.fromDate
+    label: WS_COMMON_FROM_DATE_LABEL
     type: epoch
     source: ws
     isMandatory: false
     searchClause: AND ws.lastmodifiedtime >= $fromDate
   - name: toDate
-    label: reports.ws.toDate
+    label: WS_COMMON_TO_DATE_LABEL
     type: epoch
     source: ws
     isMandatory: false
     searchClause: AND ws.lastmodifiedtime <= $toDate
   - name: status
-    label: report.tl.status
+    label: WS_COMMON_TABLE_COL_APPLICATION_STATUS_LABEL
     type: singlevaluelist
     pattern: list://INITIATED:Initiated,PENDING_FOR_DOCUMENT_VERIFICATION:Pending For Document Verification,PENDING_FOR_FIELD_INSPECTION:Pending For Field Inspection,PENDING_FOR_CITIZEN_ACTION:Pending for Citizen Action,PENDING_APPROVAL_FOR_CONNECTION:Pending for Approval,PENDING_FOR_PAYMENT:Pending for Payment,PENDING_FOR_CONNECTION_ACTIVATION:Pending for Connection Activation,CONNECTION_ACTIVATED:Connection Activated,REJECTED:Rejected,APPROVED:Approved Modified Water Connection
     source: ws
     wrapper: true
     isMandatory: false
     searchClause: AND ws.applicationstatus = $status
-  query: select ws.applicationno,ws.connectionno,eg_user.name as name, msg.message as applicationType,message.message as appStatus,ws.dateeffectivefrom,service.connectiontype , msgroad.message as roadtype from eg_ws_connection ws LEFT OUTER JOIN eg_pt_owner as owner ON owner.propertyid =property_id  Left outer JOIN eg_ws_service as service ON service.connection_id=ws.id LEFT OUTER JOIN message ON CONCAT('WF_EMPLOYEE_NEWWS1_',ws.applicationstatus) = message.code AND message.locale='en_IN' AND message.module='rainmaker-ws' LEFT OUTER JOIN message as msg ON CONCAT('WS_CONNECTION_TYPE_',ws.applicationtype) = msg.code AND msg.locale='en_IN' AND msg.module='rainmaker-ws' LEFT OUTER JOIN message as msgroad ON CONCAT('WS_ROADTYPE_',ws.roadtype) = msgroad.code AND msgroad.locale='en_IN' AND msgroad.module='rainmaker-ws' LEFT OUTER JOIN eg_user ON owner.userid=eg_user.uuid WHERE ws.tenantid like $tenantid
+  query: select ws.applicationno,ws.connectionno,eg_user.name as name, msg.message as applicationType,message.message as appStatus,ws.dateeffectivefrom,service.connectiontype, msgroad.message as roadtype from eg_ws_connection ws LEFT OUTER JOIN eg_pt_owner as owner ON owner.propertyid =property_id  Left outer JOIN eg_ws_service as service ON service.connection_id=ws.id LEFT OUTER JOIN message ON CONCAT('WF_EMPLOYEE_NEWWS1_',ws.applicationstatus) = message.code AND message.locale='en_IN' AND message.module='rainmaker-ws' LEFT OUTER JOIN message as msg ON CONCAT('WS_CONNECTION_TYPE_',ws.applicationtype) = msg.code AND msg.locale='en_IN' AND msg.module='rainmaker-ws' LEFT OUTER JOIN message as msgroad ON CONCAT('WS_ROADTYPE_',ws.roadtype) = msgroad.code AND msgroad.locale='en_IN' AND msgroad.module='rainmaker-ws' LEFT OUTER JOIN eg_user ON owner.userid=eg_user.uuid WHERE ws.tenantid like $tenantid
   orderby: ORDER BY  ws.applicationno 
