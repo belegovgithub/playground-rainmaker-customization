@@ -280,13 +280,13 @@ ReportDefinitions:
     source: ws
   searchParams:
   - name: fromDate
-    label: reports.ws.fromDate
+    label: WS_COMMON_FROM_DATE_LABEL
     type: epoch
     source: ws
     isMandatory: false
     searchClause: AND ws.lastmodifiedtime >= $fromDate
   - name: toDate
-    label: reports.ws.toDate
+    label: WS_COMMON_TO_DATE_LABEL
     type: epoch
     source: ws
     isMandatory: false
@@ -421,7 +421,7 @@ ReportDefinitions:
   version: 1.0.0
   moduleName: rainmaker-ws
   sourceColumns:
-  - name: ws.applicationno
+  - name: applicationno
     label: WS_COMMON_APPLICATION_NO_LABEL
     type: string
     source: ws
