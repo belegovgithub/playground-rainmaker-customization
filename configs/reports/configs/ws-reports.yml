@@ -292,7 +292,7 @@ ReportDefinitions:
     isMandatory: false
     searchClause: AND ws.lastmodifiedtime <= $toDate
   - name: ulb
-    label: report.ws.tenantId
+    label: WS_COMMON_TABLE_COL_TENANTID_LABEL
     type: singlevaluelist
     pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=tenant&masterName=tenants|$.MdmsRes.tenant.tenants.*.code|$.MdmsRes.tenant.tenants.*.name
     source: ws
@@ -474,13 +474,13 @@ ReportDefinitions:
     source: ws
     isMandatory: false
     searchClause: AND ws.lastmodifiedtime <= $toDate
-  - name: status
-    label: WS_COMMON_TABLE_COL_APPLICATION_STATUS_LABEL
-    type: singlevaluelist
-    pattern: list://INITIATED:Initiated,PENDING_FOR_DOCUMENT_VERIFICATION:Pending For Document Verification,PENDING_FOR_FIELD_INSPECTION:Pending For Field Inspection,PENDING_FOR_CITIZEN_ACTION:Pending for Citizen Action,PENDING_APPROVAL_FOR_CONNECTION:Pending for Approval,PENDING_FOR_PAYMENT:Pending for Payment,PENDING_FOR_CONNECTION_ACTIVATION:Pending for Connection Activation,CONNECTION_ACTIVATED:Connection Activated,REJECTED:Rejected,APPROVED:Approved Modified Water Connection
-    source: ws
-    wrapper: true
-    isMandatory: false
-    searchClause: AND ws.applicationstatus = $status
+  # - name: status
+  #   label: WS_COMMON_TABLE_COL_APPLICATION_STATUS_LABEL
+  #   type: singlevaluelist
+  #   pattern: list://INITIATED:Initiated,PENDING_FOR_DOCUMENT_VERIFICATION:Pending For Document Verification,PENDING_FOR_FIELD_INSPECTION:Pending For Field Inspection,PENDING_FOR_CITIZEN_ACTION:Pending for Citizen Action,PENDING_APPROVAL_FOR_CONNECTION:Pending for Approval,PENDING_FOR_PAYMENT:Pending for Payment,PENDING_FOR_CONNECTION_ACTIVATION:Pending for Connection Activation,CONNECTION_ACTIVATED:Connection Activated,REJECTED:Rejected,APPROVED:Approved Modified Water Connection
+  #   source: ws
+  #   wrapper: true
+  #   isMandatory: false
+  #   searchClause: AND ws.applicationstatus = $status
   query: select ws.applicationno,ws.connectionno,eg_user.name as name, msg.message as applicationType,message.message as appStatus,ws.dateeffectivefrom,service.connectiontype, msgroad.message as roadtype from eg_ws_connection ws LEFT OUTER JOIN eg_pt_owner as owner ON owner.propertyid =property_id  Left outer JOIN eg_ws_service as service ON service.connection_id=ws.id LEFT OUTER JOIN message ON CONCAT('WF_EMPLOYEE_NEWWS1_',ws.applicationstatus) = message.code AND message.locale='en_IN' AND message.module='rainmaker-ws' LEFT OUTER JOIN message as msg ON CONCAT('WS_CONNECTION_TYPE_',ws.applicationtype) = msg.code AND msg.locale='en_IN' AND msg.module='rainmaker-ws' LEFT OUTER JOIN message as msgroad ON CONCAT('WS_ROADTYPE_',ws.roadtype) = msgroad.code AND msgroad.locale='en_IN' AND msgroad.module='rainmaker-ws' LEFT OUTER JOIN eg_user ON owner.userid=eg_user.uuid WHERE ws.tenantid like $tenantid
   orderby: ORDER BY  ws.applicationno 
