@@ -1583,10 +1583,10 @@
      {
        "module": "COMMON",
        "dateRefField": "",
-       "requestQueryMap": "",
+       "requestQueryMap": "{\"tenantId\" : \"tenantId\"}",
        "oldReqMap":"{\"tenantId\" : \"tenantId\"}",
        "indexName": "dss-citizen-count",
-       "aggrQuery": "{\"aggs\":{\"Total Citizens\":{\"sum\":{\"field\":\"citizenCount\"}}}}"
+       "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"terms\":{\"tenantId\":[\"pb.testing\",\"pb\",\"all\"]}}]}},\"aggs\":{\"Total Citizens\":{\"sum\":{\"field\":\"citizenCount\"}}}}}}"
      }
    ],
    "chartType": "metric",
