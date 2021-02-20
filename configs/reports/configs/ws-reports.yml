@@ -38,6 +38,9 @@ ReportDefinitions:
   decryptionPathId: WaterRegistryReport
   version: 1.0.0
   moduleName: rainmaker-ws
+  additionalConfig:
+    print:
+      pdfPageSize: "A3"
   sourceColumns:
   - name: applicationno
     label: WS_COMMON_APPLICATION_NO_LABEL
@@ -119,6 +122,9 @@ ReportDefinitions:
   decryptionPathId: CBWaterRegistryReport
   version: 1.0.0
   moduleName: rainmaker-ws
+  additionalConfig:
+    print:
+      pdfPageSize: "A3"
   sourceColumns:
   - name: tenantId
     label: WS_PROP_DETAIL_CITY
@@ -516,6 +522,9 @@ ReportDefinitions:
   decryptionPathId: SewerageRegistryReport
   version: 1.0.0
   moduleName: rainmaker-ws
+  additionalConfig:
+    print:
+      pdfPageSize: "A3"
   sourceColumns:
   - name: applicationno
     label: WS_COMMON_APPLICATION_NO_LABEL
@@ -568,7 +577,7 @@ ReportDefinitions:
     source: ws
     total: false
   - name: executiondate
-    label: report.tl.banktxnNo
+    label: WS_SERV_DETAIL_CONN_EXECUTION_DATE
     type: string
     source: ws
     total: false
@@ -602,6 +611,9 @@ ReportDefinitions:
   decryptionPathId: CBWaterRegistryReport
   version: 1.0.0
   moduleName: rainmaker-ws
+  additionalConfig:
+    print:
+      pdfPageSize: "A3"
   sourceColumns:
   - name: tenantId
     label: WS_PROP_DETAIL_CITY
