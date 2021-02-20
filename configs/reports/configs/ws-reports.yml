@@ -298,7 +298,6 @@ ReportDefinitions:
   groupby: GROUP BY tenantid
   orderby: ORDER BY tenantid
 
-
 - reportName: CollectionforWaterConnectionType 
   summary: Water Connection Type Report
   version: 1.0.0
@@ -353,7 +352,6 @@ ReportDefinitions:
   query: |
    SELECT COUNT(applicationno) as totalConnections, connectiontype,SUM(onl.totalamountpaid) as online,SUM(offl.totalamountpaid) as offline, COALESCE(SUM(onl.totalamountpaid),0) + COALESCE(SUM(offl.totalamountpaid),0) as totalCollection FROM eg_ws_connection as ws INNER JOIN eg_ws_service as service ON service.connection_id =ws.id INNER JOIN egcl_bill bill ON bill.consumercode = ws.applicationno  and bill.status != 'Cancelled' LEFT OUTER JOIN egcl_paymentdetail as pd ON pd.billid = bill.id LEFT OUTER JOIN (SELECT * FROM egcl_payment WHERE paymentmode = 'ONLINE') AS onl ON onl.id = pd.paymentid LEFT OUTER JOIN (SELECT * FROM egcl_payment WHERE paymentmode != 'ONLINE' ) AS offl ON offl.id = pd.paymentid WHERE  ws.tenantId LIKE $tenantid  AND connectiontype IS NOT NULL AND ws.tenantId != 'pb.testing'
   groupby: group by connectiontype
-
 
 - reportName: UsageTypeWaterCollection 
   summary: Water Usage Type Report
@@ -635,11 +633,6 @@ ReportDefinitions:
     type: string
     source: ws
     total: false
-  # - name: lastmodifiedtime
-  #   label: report.ws.lastmodifiedtime
-  #   type: string
-  #   source: ws
-    # total: false
   - name: connectiontype
     label: WS_COMMON_TABLE_COL_CONNECTIONTYPE_LABEL
     type: string
