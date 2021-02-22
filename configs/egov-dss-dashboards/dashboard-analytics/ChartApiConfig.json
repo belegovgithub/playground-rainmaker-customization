@@ -312,6 +312,87 @@
    },
    "_comment": ""
  },
+ "xOverviewServicesByTenant": {
+   "chartName": "DSS_ALL_SERVICES_BY_TENANT",
+   "queries": [
+     {
+       "module": "MC",
+       "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\", \"tenantId\" : \"dataObject.tenantId.keyword\" }",
+       "dateRefField": "dataObject.paymentDetails.receiptDate",
+       "indexName": "dss-payment_v2",
+       "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"dataObject.tenantId.keyword\":\"pb.testing\"}},{\"terms\":{\"dataObject.bill.status.keyword\":[\"Cancelled\"]}},{\"terms\":{\"dataObject.paymentDetails.businessService.keyword\":[\"PT\",\"TL\",\"SW\",\"SW.ONE_TIME_FEE\",\"WS\",\"WS.ONE_TIME_FEE\"]}}]}},\"aggs\":{\"ULBs \":{\"terms\":{\"field\":\"dataObject.tenantId.keyword\",\"size\":1000,\"order\":{\"_term\":\"asc\"}},\"aggs\":{\"Total Transactions\":{\"filter\":{\"bool\":{\"must_not\":[]}},\"aggs\":{\"Total Services\":{\"value_count\":{\"field\":\"dataObject.paymentDetails.bill.billDetails.billId.keyword\"}}}}}}}}}}"
+     },
+     {
+       "module": "TL",
+       "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\", \"tenantId\" : \"Data.tradelicense.tenantId.keyword\" }",
+       "dateRefField": "Data.tradelicense.applicationDate",
+       "indexName": "tlindex-v1",
+       "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tradelicense.tenantId.keyword\":\"pb.testing\"}},{\"term\":{\"Data.tradelicense.status.keyword\":\"INITIATED\"}}]}},\"aggs\":{\"ULBs \":{\"terms\":{\"field\":\"Data.tradelicense.tenantId.keyword\",\"size\":1000,\"order\":{\"_term\":\"asc\"}},\"aggs\":{\"Total Transactions\":{\"filter\":{\"bool\":{\"must_not\":[]}},\"aggs\":{\"Total Services\":{\"value_count\":{\"field\":\"Data.tradelicense.id.keyword\"}}}}}}}}}}"
+     },
+     {
+       "module": "PGR",
+       "requestQueryMap": "{\"wardId\" : \"Data.complaintWard.name.keyword\", \r\n  \"district\" : \"Data.tenantData.city.districtCode\", \r\n\"tenantId\" : \"Data.tenantId\" \r\n}",
+       "dateRefField": "Data.dateOfComplaint",
+       "indexName": "pgrindex-v1",
+       "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"ULBs \":{\"terms\":{\"field\":\"Data.tenantId.keyword\",\"size\":1000,\"order\":{\"_term\":\"asc\"}},\"aggs\":{\"Total Transactions\":{\"filter\":{\"bool\":{\"must_not\":[]}},\"aggs\":{\"Total Services\":{\"value_count\":{\"field\":\"Data.serviceRequestId.keyword\"}}}}}}}}}}"
+     },
+     {
+       "module": "LAMS",
+       "indexName": "leaseindex-v1",
+       "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.lease.tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"ULBs \":{\"terms\":{\"field\":\"Data.lease.tenantId.keyword\",\"size\":1000,\"order\":{\"_term\":\"asc\"}},\"aggs\":{\"Total Transactions\":{\"filter\":{\"bool\":{\"must_not\":[]}},\"aggs\":{\"Total Services\":{\"value_count\":{\"field\":\"Data.lease.applicationNumber.keyword\"}}}}}}}}}}",
+       "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\", \r\n  \"district\" : \"Data.tenantData.city.districtCode\", \r\n\"tenantId\" : \"Data.lease.tenantId\" \r\n}",
+       "dateRefField": "Data.lease.applicationDate"
+     },
+     {
+       "module": "WS",
+       "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\", \r\n  \"district\" : \"Data.tenantData.city.districtCode\", \r\n\"tenantId\" : \"Data.tenantId.keyword\" \r\n}",
+       "dateRefField": "Data.additionalDetails.appCreatedDate",
+       "indexName": "water-services",
+       "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"pb.testing\"}},{\"term\":{\"Data.applicationStatus.keyword\":\"INITIATED\"}}]}},\"aggs\":{\"ULBs \":{\"terms\":{\"field\":\"Data.tenantId.keyword\",\"size\":1000,\"order\":{\"_term\":\"asc\"}},\"aggs\":{\"Total Transactions\":{\"filter\":{\"bool\":{\"must_not\":[]}},\"aggs\":{\"Total Services\":{\"value_count\":{\"field\":\"Data.applicationNo.keyword\"}}}}}}}}}}"
+     },
+     {
+       "module": "SW",
+       "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\", \r\n  \"district\" : \"Data.tenantData.city.districtCode\", \r\n\"tenantId\" : \"Data.tenantId.keyword\" \r\n}",
+       "dateRefField": "Data.additionalDetails.appCreatedDate",
+       "indexName": "sewerage-services",
+       "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"pb.testing\"}},{\"term\":{\"Data.applicationStatus.keyword\":\"INITIATED\"}}]}},\"aggs\":{\"ULBs \":{\"terms\":{\"field\":\"Data.tenantId.keyword\",\"size\":1000,\"order\":{\"_term\":\"asc\"}},\"aggs\":{\"Total Transactions\":{\"filter\":{\"bool\":{\"must_not\":[]}},\"aggs\":{\"Total Services\":{\"value_count\":{\"field\":\"Data.applicationNo.keyword\"}}}}}}}}}}"
+     }
+   ],
+   "filterKeys": [
+     {"key": "tenantId", "column": "Boundary"}
+   ],
+   "chartType": "xtable",
+   "valueType": "number",
+   "drillChart": "none",
+   "plotLabel": "Boundary",
+   "excludedColumns": [],
+   "oldComputedFields": [
+     {
+       "postAggregationTheory" : "",
+       "actionName": "AdditiveComputedField",
+       "fields" : ["Renewal Applications", "Extension Applications"],
+       "newField" : "Total Applications ",
+       "_comments": "fields are field names picked from its aggregation query to use post aggregation newField value with given new field name  "
+     },
+     {
+       "postAggregationTheory" : "",
+       "actionName": "AdditiveComputedField",
+       "fields" : ["Extension Approved", "Renewal Approved","Extension Rejected","Renewal Rejected" ],
+       "newField" : "Total Processed",
+       "_comments": "fields are field names picked from its aggregation query to use post aggregation newField value with given new field name  "
+     },
+     {
+       "postAggregationTheory" : "",
+       "actionName": "PercentageComputedField",
+       "fields" : ["Total Processed", "Total Applications"],
+       "newField" : "Processing Rate",
+       "_comments": "fields are field names picked from its aggregation query to use post aggregation newField value with given new field name  "
+     }
+   ],
+   "insight": {
+   },
+   "_comment": ""
+ },
  "licenseIssuedDDRRevenuev2": {
    "chartName": "DSS_TL_KEY_FY_INDICATORS",
    "queries": [

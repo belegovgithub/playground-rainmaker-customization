@@ -274,7 +274,36 @@
               ]
             }
           ]
-        }
+        },
+        {
+	          "row": 9,
+	          "name": "DSS_DRILLDOWN",
+	          "vizArray": [
+	            {
+	              "id": 431,
+	              "name": "DSS_ALL_SERVICES_BY_TENANT",
+	              "dimensions": {
+	                "height": 350,
+	                "width": 12
+	              },
+	              "vizType": "chart",
+	              "label": "",
+	              "noUnit": false,
+	              "isCollapsible": true,
+	              "charts": [
+	                {
+	                  "id": "xOverviewServicesByTenant",
+	                  "name": "DSS_MC_COLLECTION_BY_TENANT",
+	                  "code": "",
+	                  "chartType": "table",
+	                  "filter": "",
+	                  "headers": [],
+	                  "tabName": "Boundary"
+	                }
+	              ]
+	            }
+	          ]
+	        }
       ]
     },
     {
