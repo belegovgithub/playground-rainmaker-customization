@@ -1749,7 +1749,7 @@
               "isCollapsible": true,
               "charts": [
                 {
-                  "id": "xMcTransationsByTenant",
+                  "id": "xMcTransactionsByTenant",
                   "name": "DSS_MC_TRANSACTIONS_BY_TENANT",
                   "code": "",
                   "chartType": "table",
