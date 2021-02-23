@@ -43,6 +43,27 @@
         },
         {
           "id": "citizen-home"
+        },
+        {
+          "id": "citizen-home-mCollect"
+        },
+        {
+          "id": "citizen-home-overview"
+        },
+        {
+          "id": "citizen-home-tradelicense"
+        },
+        {
+          "id": "citizen-home-pgr"
+        },
+        {
+          "id": "citizen-home-ws"
+        },
+        {
+          "id": "citizen-home-sw"
+        },
+        {
+          "id": "citizen-home-lease"
         }
       ]
     },

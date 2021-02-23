@@ -155,7 +155,7 @@
         },
         {
           "row": 3,
-          "name": "DSS_SERVICE",
+          "name": "DSS_SERVICE_REQUEST",
           "vizArray": [
             {
               "id": 131,
@@ -210,7 +210,7 @@
         },
         {
           "row": 4,
-          "name": "DSS_SERVICE",
+          "name": "DSS_SERVICE_REQUEST",
           "vizArray": [
             {
               "id": 141,
@@ -274,7 +274,36 @@
               ]
             }
           ]
-        }
+        },
+        {
+	          "row": 9,
+	          "name": "DSS_ALL_SERVICES_AVAILED",
+	          "vizArray": [
+	            {
+	              "id": 431,
+	              "name": "DSS_ALL_SERVICES_BY_TENANT",
+	              "dimensions": {
+	                "height": 350,
+	                "width": 12
+	              },
+	              "vizType": "chart",
+	              "label": "",
+	              "noUnit": false,
+	              "isCollapsible": true,
+	              "charts": [
+	                {
+	                  "id": "xOverviewServicesByTenant",
+	                  "name": "DSS_MC_COLLECTION_BY_TENANT",
+	                  "code": "",
+	                  "chartType": "table",
+	                  "filter": "",
+	                  "headers": [],
+	                  "tabName": "Boundary"
+	                }
+	              ]
+	            }
+	          ]
+	        }
       ]
     },
     {
@@ -696,6 +725,173 @@
       ]
     },
     {
+      "name": "DSS_TRADE_LICENSE_DASHBOARD",
+      "id": "citizen-home-tradeLicense",
+      "isActive": "",
+      "style": "linear",
+      "visualizations": [  
+        {
+          "row": 6,
+          "name": "DSS_SERVICE",
+          "vizArray": [
+            {
+              "id": 341,
+              "name": "DSS_OVERVIEW",
+              "dimensions": {
+                "height": 350,
+                "width": 5
+              },
+              "vizType": "metric-collection",
+              "isCollapsible": false,
+              "label": "DSS_OVERVIEW",
+              "moduleLevel":"TL",
+              "charts": [
+                {
+                  "id": "totalApplication",
+                  "name": "DSS_TOTAL_APPLICATION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "licenseIssued",
+                  "name": "DSS_TL_LICENSE_ISSUED",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "activeUlbs",
+                  "name": "DSS_PT_TOTAL_ACTIVE_ULBS",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 342,
+              "name": "DSS_TL_CUMULATIVE_LICENSE_ISSUED",
+              "dimensions": {
+                "height": 350,
+                "width": 7
+              },
+              "vizType": "chart",
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "cumulativeLicenseIssued",
+                  "name": "Monthly",
+                  "code": "",
+                  "chartType": "line",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 7,
+          "name": "DSS_SERVICE",
+          "vizArray": [
+            {
+              "id": 352,
+              "name": "DSS_TL_LICENSE_BY_TRADETYPE",
+              "dimensions": {
+                "height": 100,
+                "width": 2
+              },
+              "vizType": "chart",
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "licenseApplicationByTradeType",
+                  "name": "DSS_TL_LICENSE_BY_TRADETYPE",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 353,
+              "name": "DSS_TL_LICENSE_BY_STATUS",
+              "dimensions": {
+                "height": 250,
+                "width": 4
+              },
+              "vizType": "chart",
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "licenseApplicationByStatus",
+                  "name": "DSS_TL_LICENSE_BY_STATUS",
+                  "code": "",
+                  "chartType": "donut",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+            
+          ]
+        },
+        {
+          "row": 8,
+          "name": "DSS_SERVICE",
+          "vizArray": [{
+              "id": 351,
+              "name": "DSS_PT_TOP_3_PERFORMING_ULBS",
+              "dimensions": {
+                "height": 250,
+                "width": 4
+              },
+              "vizType": "performing-metric",
+              "label": "",
+              "noUnit": false,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "topPerformingUlbsCompletionRate",
+                  "name": "DSS_PT_TOP_3_PERFORMING_ULBS",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 352,
+              "name": "DSS_PT_BOTTOM_3_PERFORMING_ULBS",
+              "dimensions": {
+                "height": 250,
+                "width": 4
+              },
+              "vizType": "performing-metric",
+              "noUnit": false,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "bottomPerformingUlbsCompletionRate",
+                  "name": "DSS_PT_BOTTOM_3_PERFORMING_ULBS",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "name": "DSS_LEASE_DASHBOARD",
       "id": "lease",
       "isActive": "",
@@ -751,6 +947,208 @@
                 {
                   "id": "leaseProcessingRate",
                   "name": "DSS_LEASE_PROCESSINGRATE",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "activeUlbs",
+                  "name": "DSS_PT_TOTAL_ACTIVE_ULBS",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 342,
+              "name": "DSS_TL_CUMULATIVE_LICENSE_ISSUED",
+              "dimensions": {
+                "height": 350,
+                "width": 7
+              },
+              "vizType": "chart",
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "cumulativeLeasesApproved",
+                  "name": "Monthly",
+                  "code": "",
+                  "chartType": "line",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 7,
+          "name": "DSS_SERVICE",
+          "vizArray": [
+            {
+              "id": 353,
+              "name": "DSS_LEASE_BY_STATUS",
+              "dimensions": {
+                "height": 250,
+                "width": 4
+              },
+              "vizType": "chart",
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "leaseApplicationByStatus",
+                  "name": "DSS_LEASE_BY_STATUS",
+                  "code": "",
+                  "chartType": "donut",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 354,
+              "name": "DSS_LEASE_BY_APPTYPE",
+              "dimensions": {
+                "height": 250,
+                "width": 4
+              },
+              "vizType": "chart",
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "leaseApplicationByAppType",
+                  "name": "DSS_LEASE_BY_APPTYPE",
+                  "code": "",
+                  "chartType": "donut",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 8,
+          "name": "DSS_SERVICE",
+          "vizArray": [{
+              "id": 351,
+              "name": "DSS_PT_TOP_3_PERFORMING_ULBS",
+              "dimensions": {
+                "height": 250,
+                "width": 4
+              },
+              "vizType": "performing-metric",
+              "label": "",
+              "noUnit": false,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "topPerformingUlbsCompletionRate",
+                  "name": "DSS_PT_TOP_3_PERFORMING_ULBS",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 352,
+              "name": "DSS_PT_BOTTOM_3_PERFORMING_ULBS",
+              "dimensions": {
+                "height": 250,
+                "width": 4
+              },
+              "vizType": "performing-metric",
+              "noUnit": false,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "bottomPerformingUlbsCompletionRate",
+                  "name": "DSS_PT_BOTTOM_3_PERFORMING_ULBS",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+       {
+          "row": 9,
+          "name": "DSS_SERVICE",
+          "vizArray": [
+            {
+              "id": 431,
+              "name": "DSS_LEASE_STATUS_BY_TENANT",
+              "dimensions": {
+                "height": 350,
+                "width": 12
+              },
+              "vizType": "chart",
+              "label": "",
+              "noUnit": false,
+              "isCollapsible": true,
+              "charts": [
+                {
+                  "id": "xleaseStatusByTenant",
+                  "name": "DSS_LEASE_BY_TENANT",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "Boundary"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DSS_LEASE_DASHBOARD",
+      "id": "citizen-home-lease",
+      "isActive": "",
+      "style": "linear",
+      "visualizations": [
+        {
+          "row": 6,
+          "name": "DSS_SERVICE",
+          "vizArray": [
+            {
+              "id": 341,
+              "name": "DSS_OVERVIEW",
+              "dimensions": {
+                "height": 350,
+                "width": 5
+              },
+              "vizType": "metric-collection",
+              "isCollapsible": false,
+              "label": "DSS_OVERVIEW",
+              "charts": [
+                {
+                  "id": "totalApplication",
+                  "name": "DSS_TOTAL_APPLICATION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "licenseIssued",
+                  "name": "DSS_LEASE_APPROVED",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "leaseApplicationsRejected",
+                  "name": "DSS_LEASE_REJECTED",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
@@ -1326,6 +1724,47 @@
       
       ]
     },
+
+{
+      "name": "DSS_M_COLLECT_DASHBOARD",
+      "id": "citizen-home-mCollect",
+      "isActive": "",
+      "style": "linear",
+      "visualizations": [
+        
+      {
+          "row": 9,
+          "name": "DSS_SERVICE",
+          "vizArray": [
+            {
+              "id": 431,
+              "name": "DSS_MC_TRANSACTIONS_BY_TENANT",
+              "dimensions": {
+                "height": 350,
+                "width": 12
+              },
+              "vizType": "chart",
+              "label": "",
+              "noUnit": false,
+              "isCollapsible": true,
+              "charts": [
+                {
+                  "id": "xMcTransationsByTenant",
+                  "name": "DSS_MC_TRANSACTIONS_BY_TENANT",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "Boundary"
+                }
+              ]
+            }
+          ]
+        }
+      
+      ]
+    },
+    
     {
       "name": "DSS_M_COLLECT_DASHBOARD",
       "id": "ulb-mCollect",
@@ -1753,6 +2192,281 @@
       ]
     },
 
+	{
+      "name": "DSS_PGR_DASHBOARD",
+      "id": "citizen-home-pgr",
+      "isActive": "",
+      "style": "linear",
+      "visualizations": [
+        {
+          "row": 1,
+          "name": "DSS_SERVICE",
+          "vizArray": [
+            {
+              "id": 412,
+              "name": "DSS_OVERVIEW",
+              "dimensions": {
+                "height": 350,
+                "width": 5
+              },
+              "vizType": "metric-collection",
+              "label": "DSS_OVERVIEW",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "totalComplaints",
+                  "name": "DSS_PGR_TOTAL_COMPLAINTS",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "closedComplaints",
+                  "name": "DSS_PGR_CLOSED_COMPLAINTS",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "completionRate",
+                  "name": "DSS_PGR_COMPLETION_RATE",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 412,
+              "name": "DSS_TOTAL_CUMULATIVE_CLOSED_COMPLAINTS",
+              "dimensions": {
+                "height": 350,
+                "width": 7
+              },
+              "vizType": "chart",
+              "isCollapsible": false,
+              "label": "",
+              "charts": [
+                {
+                  "id": "cumulativeClosedComplaints",
+                  "name": "Monthly",
+                  "code": "",
+                  "chartType": "line",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_SERVICE",
+          "vizArray": [
+            {
+              "id": 412,
+              "name": "DSS_TOTAL_COMPLAINTS_BY_SOURCE",
+              "dimensions": {
+                "height": 350,
+                "width": 7
+              },
+              "vizType": "chart",
+              "isCollapsible": false,
+              "label": "",
+              "charts": [
+                {
+                  "id": "totalComplaintsbySource",
+                  "name": "Monthly",
+                  "code": "",
+                  "chartType": "line",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 413,
+              "name": "DSS_TOTAL_COMPLAINTS_STATUS",
+              "dimensions": {
+                "height": 350,
+                "width": 7
+              },
+              "vizType": "chart",
+              "isCollapsible": false,
+              "label": "",
+              "charts": [
+                {
+                  "id": "totalComplaintsbyStatus",
+                  "name": "",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "name": "DSS_SERVICE",
+          "vizArray": [
+            {
+              "id": 421,
+              "name": "DSS_PGR_COMPLAINTS_BY_STATUS",
+              "dimensions": {
+                "height": 250,
+                "width": 4
+              },
+              "vizType": "chart",
+              "isCollapsible": false,
+              "label": "",
+              "charts": [
+                {
+                  "id": "complaintsByStatus",
+                  "name": "DSS_PGR_COMPLAINTS_BY_STATUS",
+                  "code": "",
+                  "chartType": "donut",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 423,
+              "name": "DSS_PGR_COMPLAINTS_BY_CHANNEL",
+              "dimensions": {
+                "height": 250,
+                "width": 4
+              },
+              "vizType": "chart",
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "complaintsByChannel",
+                  "name": "DSS_PGR_COMPLAINTS_BY_CHANNEL",
+                  "code": "",
+                  "chartType": "donut",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 423,
+              "name": "DSS_PGR_COMPLAINTS_BY_DEPARTMENT",
+              "dimensions": {
+                "height": 250,
+                "width": 4
+              },
+              "vizType": "chart",
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "complaintsByDepartment",
+                  "name": "DSS_PGR_COMPLAINTS_BY_DEPARTMENT",
+                  "code": "",
+                  "chartType": "donut",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+
+          ]
+        },
+        {
+          "row": 4,
+          "name": "DSS_SERVICE",
+          "vizArray": [
+            {
+              "id": 421,
+              "name": "DSS_PGR_CITIZENS",
+              "dimensions": {
+                "height": 250,
+                "width": 4
+              },
+              "vizType": "chart",
+              "isCollapsible": false,
+              "label": "",
+              "charts": [
+                {
+                  "id": "pgrCitizenOnDateRange",
+                  "name": "DSS_PGR_CITIZENS",
+                  "code": "",
+                  "chartType": "line",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 424,
+              "name": "DSS_PGR_TOP_COMPLAINTS",
+              "dimensions": {
+                "height": 250,
+                "width": 4
+              },
+              "vizType": "chart",
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "topFiveComplaints",
+                  "name": "DSS_PGR_TOP_COMPLAINTS",
+                  "code": "",
+                  "chartType": "horizontalBar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 4,
+          "name": "DSS_SERVICE",
+          "vizArray": [
+            {
+              "id": 431,
+              "name": "DSS_PGR_STATUS_BY_TENANT",
+              "dimensions": {
+                "height": 350,
+                "width": 12
+              },
+              "vizType": "chart",
+              "label": "",
+              "noUnit": false,
+              "isCollapsible": true,
+              "charts": [
+                {
+                  "id": "xpgrStatusByTenant",
+                  "name": "DSS_PGR_STATUS_BY_TENANT",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "Boundary"
+                },
+                {
+                  "id": "xpgrStatusByDept",
+                  "name": "DSS_PGR_STATUS_BY_DEPARTMENT",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "Department"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
     {
       "name": "DSS_HOME_DASHBOARD",
       "id": "home",
@@ -1791,20 +2505,19 @@
                   "chartType": "metric",
                   "filter": "",
                   "headers": []
+                },
+                {
+                  "id": "totalTransactions",
+                  "name": "DSS_TOTAL_TRANSACTIONS",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
                 }],
               "charts": [
                 {
                   "id": "overviewTotalCollectionv2",
                   "name": "DSS_TOTAL_COLLECTION",
-                  "code": "",
-                  "chartType": "metric",
-                  "filter": "",
-                  "headers": []
-                },
-                
-                {
-                  "id": "totalTransactions",
-                  "name": "DSS_TOTAL_TRANSACTIONS",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
@@ -2154,7 +2867,7 @@
               "noUnit": true,
               "isCollapsible": false,
               "ref": {
-                "url": "overview",
+                "url": "citizen-home-overview",
                 "logoUrl": "",
                 "type": "internal"
               },
@@ -2166,19 +2879,19 @@
                   "chartType": "metric",
                   "filter": "",
                   "headers": []
+                },
+                {
+                  "id": "totalTransactions",
+                  "name": "DSS_TOTAL_TRANSACTIONS",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
                 }],
               "charts": [
                 {
                   "id": "totalApplication",
                   "name": "DSS_TOTAL_APPLICATION",
-                  "code": "",
-                  "chartType": "metric",
-                  "filter": "",
-                  "headers": []
-                },
-                {
-                  "id": "totalTransactions",
-                  "name": "DSS_TOTAL_TRANSACTIONS",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
@@ -2214,7 +2927,7 @@
               "vizType": "module",
               "moduleLevel": "MC",
               "ref": {
-                "url": "mCollect",
+                "url": "citizen-home-mCollect",
                 "logoUrl": "",
                 "type": "internal"
               },
@@ -2244,7 +2957,7 @@
               "vizType": "module",
               "moduleLevel": "TL",
               "ref": {
-                "url": "tradelicense",
+                "url": "citizen-home-tradelicense",
                 "logoUrl": "",
                 "type": "internal"
               },
@@ -2298,7 +3011,7 @@
               "vizType": "module",
               "moduleLevel": "PGR",
               "ref": {
-                "url": "pgr",
+                "url": "citizen-home-pgr",
                 "logoUrl": "",
                 "type": "internal"
               },
@@ -2336,7 +3049,7 @@
               "vizType": "module",
               "moduleLevel": "WS",
               "ref": {
-                "url": "ws",
+                "url": "citizen-home-ws",
                 "logoUrl": "",
                 "type": "internal"
               },
@@ -2390,7 +3103,7 @@
               "vizType": "module",
               "moduleLevel": "SW",
               "ref": {
-                "url": "sw",
+                "url": "citizen-home-sw",
                 "logoUrl": "",
                 "type": "internal"
               },
@@ -2444,7 +3157,7 @@
               "vizType": "module",
               "moduleLevel": "LAMS",
               "ref": {
-                "url": "lease",
+                "url": "citizen-home-lease",
                 "logoUrl": "",
                 "type": "internal"
               },
@@ -2502,6 +3215,168 @@
         }
       ]
     },
+	
+	{
+      "name": "DSS_OVERVIEW_DASHBOARD",
+      "id": "citizen-home-overview",
+      "isActive": "",
+      "style": "",
+      "visualizations": [
+    
+        {
+          "row": 3,
+          "name": "DSS_SERVICE_REQUEST",
+          "vizArray": [
+            {
+              "id": 131,
+              "name": "DSS_OVERVIEW",
+              "dimensions": {
+                "height": 450,
+                "width": 5
+              },
+              "vizType": "metric-collection",
+              "isCollapsible": false,
+              "label": "",
+              "charts": [
+                {
+                  "id": "totalApplication",
+                  "name": "DSS_TOTAL_APPLICATION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "closedApplication",
+                  "name": "DSS_CLOSED_APPLICATION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 132,
+              "name": "DSS_TOTAL_APPLICATION_&_CLOSED_APPLICATION",
+              "dimensions": {
+                "height": 450,
+                "width": 7
+              },
+              "vizType": "chart",
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "totalApplication&ClosedApplication",
+                  "name": "DSS_TOTAL_APPLICATION_&_CLOSED_APPLICATION",
+                  "code": "",
+                  "chartType": "line",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 4,
+          "name": "DSS_SERVICE_REQUEST",
+          "vizArray": [
+            {
+              "id": 141,
+              "name": "DSS_TOP_PERFORMING_ULBS",
+              "dimensions": {
+                "height": 250,
+                "width": 4
+              },
+              "vizType": "performing-metric",
+              "isCollapsible": false,
+              "label": "",
+              "charts": [
+                {
+                  "id": "topPerformingUlbsCompletionRate",
+                  "name": "DSS_TOP_PERFORMING_ULBS",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 142,
+              "name": "DSS_BOTTOM_PERFORMING_ULBS",
+              "dimensions": {
+                "height": 250,
+                "width": 4
+              },
+              "vizType": "performing-metric",
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "bottomPerformingUlbsCompletionRate",
+                  "name": "DSS_BOTTOM_PERFORMING_ULBS",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 143,
+              "name": "DSS_TOTAL_APPLICATIONS:_DEPARTMENT_WISE",
+              "dimensions": {
+                "height": 250,
+                "width": 4
+              },
+              "vizType": "chart",
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "totalApplicationDeptWise",
+                  "name": "DSS_TOTAL_APPLICATIONS:_DEPARTMENT_WISE",
+                  "code": "",
+                  "chartType": "donut",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+	          "row": 9,
+	          "name": "DSS_ALL_SERVICES_AVAILED",
+	          "vizArray": [
+	            {
+	              "id": 431,
+	              "name": "DSS_ALL_SERVICES_BY_TENANT",
+	              "dimensions": {
+	                "height": 350,
+	                "width": 12
+	              },
+	              "vizType": "chart",
+	              "label": "",
+	              "noUnit": false,
+	              "isCollapsible": true,
+	              "charts": [
+	                {
+	                  "id": "xOverviewServicesByTenant",
+	                  "name": "DSS_MC_COLLECTION_BY_TENANT",
+	                  "code": "",
+	                  "chartType": "table",
+	                  "filter": "",
+	                  "headers": [],
+	                  "tabName": "Boundary"
+	                }
+	              ]
+	            }
+	          ]
+	        }
+      ]
+    },
+    
     {
       "name": "DSS_PROPERTY_TAX_DASHBOARD",
       "id": "propertyTax",
@@ -4868,7 +5743,7 @@
               "moduleLevel":"WS",
               "charts": [
               {
-                  "id": "wstotalApplication",
+                  "id": "totalApplication",
                   "name": "DSS_W&S_APPLICATIONS",
                   "code": "",
                   "chartType": "metric",
@@ -4885,7 +5760,7 @@
                 },
                
                 {
-                  "id": "wsActiveUlbs",
+                  "id": "activeUlbs",
                   "name": "DSS_W&S_ACTIVE_ULBS",
                   "code": "",
                   "chartType": "metric",
@@ -5047,6 +5922,202 @@
         }
       ]
     },
+    {
+      "name": "DSS_W&S_DASHBOARD",
+      "id": "citizen-home-ws",
+      "isActive": "",
+      "style": "linear",
+      "visualizations": [
+        {
+          "row": 7,
+          "name": "DSS_SERVICE",
+          "vizArray": [
+            {
+              "id": 231,
+              "name": "DSS_OVERVIEW",
+              "dimensions": {
+                "height": 350,
+                "width": 12
+              },
+              "vizType": "metric-collection",
+              "label": "",
+              "noUnit": false,
+              "isCollapsible": true,
+              "moduleLevel":"WS",
+              "charts": [
+              {
+                  "id": "totalApplication",
+                  "name": "DSS_W&S_APPLICATIONS",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "wstotalConnection",
+                  "name": "DSS_W&S_CONNECTIONS",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+               
+                {
+                  "id": "activeUlbs",
+                  "name": "DSS_W&S_ACTIVE_ULBS",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 232,
+              "name": "DSS_W&S_CUMULATIVE_COLLECTION",
+              "dimensions": {
+                "height": 350,
+                "width": 7
+              },
+              "vizType": "chart",
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "wscumulativeConnections",
+                  "name": "Monthly",
+                  "code": "",
+                  "chartType": "line",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 8,
+          "name": "DSS_SERVICE",
+          "vizArray": [
+            {
+              "id": 231,
+              "name": "DSS_W&S_WATER_CONNECTION_BY_USAGE",
+              "dimensions": {
+                "height": 350,
+                "width": 12
+              },
+              "vizType": "chart",
+              "label": "",
+              "noUnit": false,
+              "isCollapsible": true,
+              "charts": [
+                {
+                  "id": "wsConsumersByConnectionType",
+                  "name": "",
+                  "code": "",
+                  "chartType": "donut",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 232,
+              "name": "DSS_W&S_CONNECTION_BY_USAGE",
+              "dimensions": {
+                "height": 350,
+                "width": 12
+              },
+              "vizType": "chart",
+              "label": "",
+              "noUnit": false,
+              "isCollapsible": true,
+              "charts": [
+                {
+                  "id": "wsConsumersByUsageType",
+                  "name": "",
+                  "code": "",
+                  "chartType": "donut",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 233,
+              "name": "DSS_W&S_CONNECTION_BY_STATUS",
+              "dimensions": {
+                "height": 350,
+                "width": 12
+              },
+              "vizType": "chart",
+              "label": "",
+              "noUnit": false,
+              "isCollapsible": true,
+              "charts": [
+                {
+                  "id": "wsConsumersByChannel",
+                  "name": "",
+                  "code": "",
+                  "chartType": "donut",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 9,
+          "name": "DSS_SERVICE",
+          "vizArray": [
+            {
+              "id": 141,
+              "name": "DSS_TOP_PERFORMING_ULBS",
+              "dimensions": {
+                "height": 250,
+                "width": 4
+              },
+              "vizType": "performing-metric",
+              "isCollapsible": false,
+              "moduleLevel":"WS",
+              "label": "",
+              "charts": [
+                {
+                  "id": "topPerformingUlbsCompletionRate",
+                  "name": "DSS_TOP_PERFORMING_ULBS",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 142,
+              "name": "DSS_BOTTOM_PERFORMING_ULBS",
+              "dimensions": {
+                "height": 250,
+                "width": 4
+              },
+              "vizType": "performing-metric",
+              "isCollapsible": false,
+              "moduleLevel":"WS",
+              "charts": [
+                {
+                  "id": "bottomPerformingUlbsCompletionRate",
+                  "name": "DSS_BOTTOM_PERFORMING_ULBS",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    
     {
       "name": "DSS_W&S_DASHBOARD",
       "id": "ulb-ws",
@@ -5250,7 +6321,7 @@
                   "headers": []
                 },
                 {
-                  "id": "wsActiveUlbs",
+                  "id": "activeUlbs",
                   "name": "DSS_W&S_ACTIVE_ULBS",
                   "code": "",
                   "chartType": "metric",
@@ -5569,7 +6640,7 @@
               "moduleLevel":"SW", 
               "charts": [
               {
-                  "id": "swtotalApplication",
+                  "id": "totalApplication",
                   "name": "DSS_SW_APPLICATIONS",
                   "code": "",
                   "chartType": "metric",
@@ -5586,7 +6657,7 @@
                 },
                
                 {
-                  "id": "swActiveUlbs",
+                  "id": "activeUlbs",
                   "name": "DSS_SW_ACTIVE_ULBS",
                   "code": "",
                   "chartType": "metric",
@@ -5747,6 +6818,202 @@
         }
       ]
     },
+    
+    {
+      "name": "DSS_SW_DASHBOARD",
+      "id": "citizen-home-sw",
+      "isActive": "",
+      "style": "linear",
+      "visualizations": [
+        {
+          "row": 7,
+          "name": "DSS_SERVICE",
+          "vizArray": [
+            {
+              "id": 231,
+              "name": "DSS_OVERVIEW",
+              "dimensions": {
+                "height": 350,
+                "width": 12
+              },
+              "vizType": "metric-collection",
+              "label": "",
+              "noUnit": false,
+              "isCollapsible": true,
+              "moduleLevel":"SW", 
+              "charts": [
+              {
+                  "id": "totalApplication",
+                  "name": "DSS_SW_APPLICATIONS",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "swtotalConnection",
+                  "name": "DSS_SW_CONNECTIONS",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+               
+                {
+                  "id": "activeUlbs",
+                  "name": "DSS_SW_ACTIVE_ULBS",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 232,
+              "name": "DSS_SW_CUMULATIVE_COLLECTION",
+              "dimensions": {
+                "height": 350,
+                "width": 7
+              },
+              "vizType": "chart",
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "swcumulativeConnections",
+                  "name": "Monthly",
+                  "code": "",
+                  "chartType": "line",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 8,
+          "name": "DSS_SERVICE",
+          "vizArray": [
+            {
+              "id": 231,
+              "name": "DSS_SW_WATER_CONNECTION_BY_USAGE",
+              "dimensions": {
+                "height": 350,
+                "width": 12
+              },
+              "vizType": "chart",
+              "label": "",
+              "noUnit": false,
+              "isCollapsible": true,
+              "charts": [
+                {
+                  "id": "swConsumersByConnectionType",
+                  "name": "",
+                  "code": "",
+                  "chartType": "donut",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 232,
+              "name": "DSS_SW_CONNECTION_BY_USAGE",
+              "dimensions": {
+                "height": 350,
+                "width": 12
+              },
+              "vizType": "chart",
+              "label": "",
+              "noUnit": false,
+              "isCollapsible": true,
+              "charts": [
+                {
+                  "id": "swConsumersByUsageType",
+                  "name": "",
+                  "code": "",
+                  "chartType": "donut",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 233,
+              "name": "DSS_SW_CONNECTION_BY_STATUS",
+              "dimensions": {
+                "height": 350,
+                "width": 12
+              },
+              "vizType": "chart",
+              "label": "",
+              "noUnit": false,
+              "isCollapsible": true,
+              "charts": [
+                {
+                  "id": "swConsumersByChannel",
+                  "name": "",
+                  "code": "",
+                  "chartType": "donut",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 9,
+          "name": "DSS_SERVICE",
+          "vizArray": [{
+              "id": 141,
+              "name": "DSS_TOP_PERFORMING_ULBS",
+              "dimensions": {
+                "height": 250,
+                "width": 4
+              },
+              "vizType": "performing-metric",
+              "isCollapsible": false,
+              "moduleLevel":"WS",
+              "label": "",
+              "charts": [
+                {
+                  "id": "topPerformingUlbsCompletionRate",
+                  "name": "DSS_TOP_PERFORMING_ULBS",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 142,
+              "name": "DSS_BOTTOM_PERFORMING_ULBS",
+              "dimensions": {
+                "height": 250,
+                "width": 4
+              },
+              "vizType": "performing-metric",
+              "isCollapsible": false,
+              "moduleLevel":"WS",
+              "charts": [
+                {
+                  "id": "bottomPerformingUlbsCompletionRate",
+                  "name": "DSS_BOTTOM_PERFORMING_ULBS",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    
     {
       "name": "DSS_SW_DASHBOARD",
       "id": "ulb-sw",
@@ -5950,7 +7217,7 @@
                   "headers": []
                 },
                 {
-                  "id": "swActiveUlbs",
+                  "id": "activeUlbs",
                   "name": "DSS_SW_ACTIVE_ULBS",
                   "code": "",
                   "chartType": "metric",
