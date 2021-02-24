@@ -145,7 +145,7 @@
                                                         
                                                     },
                                                     {
-                                                        "text": "{{grant_stmt}} {{name}} {{grant_stmt2}} {{houseNo}}, {{address}},{{logo_header}} {{cantt_board}}",
+                                                        "text": "{{grant_stmt}} {{water_conn}} {{to_smt}}{{name}} {{with_stmt}} {{water_conn}} {{grant_stmt2}} {{houseNo}}, {{address}},{{logo_header}} {{cantt_board}}",
                                                         "width": "90%",
                                                         "bold": true,
                                                         "fontSize": 11.5
@@ -241,7 +241,7 @@
                                                 
                                             },
                                             {
-                                                "text": "{{applStatement1}} {{name}} {{applStatement2}} {{houseNo}}, {{address}},{{logo_header}} {{cantt_board}} {{applStatement3}}.{{applStatement4}} {{finYear}},{{applStatement4_1}} {{houseNo}} {{address}} ,{{logo_header}} {{cantt_board}} {{applStatement5}}",
+                                                "text": "{{applStatement1}} {{water_conn}} {{to_applicant}} {{name}} {{with_stmt}} {{water_conn}} {{grant_stmt2}} {{houseNo}}, {{address}},{{logo_header}} {{cantt_board}} {{applStatement3}}.{{applStatement4}} {{finYear}},{{applStatement4_1}} {{water_conn}} {{to_smt}} {{houseNo}} {{address}} ,{{logo_header}} {{cantt_board}} {{applStatement5}}",
                                                 "style": "receipt-value-down"
                                             }
                                         ]
@@ -428,11 +428,11 @@
                                                 
                                             },
                                             {
-                                                "text": "{{paymentStatement}} {{totalAmount}} {{paymentStatement2}}",
+                                                "text": "{{paymentStatement}} {{totalAmount}} {{paymentStatement2}} {{water_conn}} {{paymentStatement2_1}}",
                                                 "style": "receipt-value-down"
                                             },
                                             {
-                                                "text": "{{paymentStatement3}}. {{paymentStatement4}} {{paymentStatement5}}",
+                                                "text": "{{paymentStatement3}} {{water_conn}} {{paymentStatement3_1}}. {{paymentStatement4}} {{water_conn}} {{paymentStatement5}}",
                                                 "style": "receipt-value-down"
                                             }
                                         ]
