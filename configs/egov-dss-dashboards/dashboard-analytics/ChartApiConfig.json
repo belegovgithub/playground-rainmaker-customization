@@ -4439,25 +4439,97 @@
        "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\", \"tenantId\" : \"Data.tradelicense.tenantId.keyword\" }",
        "dateRefField": "Data.tradelicense.applicationDate",
        "indexName": "tlindex-v1",
-       "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tradelicense.tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"ULBs \":{\"terms\":{\"field\":\"Data.tradelicense.tenantId.keyword\",\"size\":1000},\"aggs\":{\"Total Applications\":{\"filter\":{\"bool\":{\"must_not\":[{\"terms\":{\"Data.tradelicense.status.keyword\":[\"INITIATED\"]}}]}},\"aggs\":{\"Total Applications\":{\"value_count\":{\"field\":\"Data.tenantId.keyword\"}}}},\"Licences Granted\":{\"filter\":{\"terms\":{\"Data.tradelicense.status.keyword\":[\"APPROVED\"]}},\"aggs\":{\"Licences Granted\":{\"value_count\":{\"field\":\"Data.tradelicense.tenantId.keyword\"}}}},\"Applications Rejected\":{\"filter\":{\"terms\":{\"Data.tradelicense.status.keyword\":[\"REJECTED\"]}},\"aggs\":{\"Applications Rejected\":{\"value_count\":{\"field\":\"Data.tradelicense.tenantId.keyword\"}}}},\"Total Processed\":{\"filter\":{\"terms\":{\"Data.tradelicense.status.keyword\":[\"REJECTED\",\"APPROVED\",\"CANCELLED\"]}},\"aggs\":{\"Total Processed\":{\"value_count\":{\"field\":\"Data.tradelicense.tenantId.keyword\"}}}}}}}}}}"
+       "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tradelicense.tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"ULBs \":{\"terms\":{\"field\":\"Data.tradelicense.tenantId.keyword\",\"size\":1000},\"aggs\":{\"Total Applications\":{\"filter\":{\"bool\":{\"must_not\":[{\"terms\":{\"Data.tradelicense.status.keyword\":[\"INITIATED\"]}}]}},\"aggs\":{\"Total Applications\":{\"value_count\":{\"field\":\"Data.tradelicense.tenantId.keyword\"}}}},\"Licences Granted\":{\"filter\":{\"terms\":{\"Data.tradelicense.status.keyword\":[\"APPROVED\"]}},\"aggs\":{\"Licences Granted\":{\"value_count\":{\"field\":\"Data.tradelicense.tenantId.keyword\"}}}},\"Applications Rejected\":{\"filter\":{\"terms\":{\"Data.tradelicense.status.keyword\":[\"REJECTED\"]}},\"aggs\":{\"Applications Rejected\":{\"value_count\":{\"field\":\"Data.tradelicense.tenantId.keyword\"}}}},\"Total Processed\":{\"filter\":{\"terms\":{\"Data.tradelicense.status.keyword\":[\"REJECTED\",\"APPROVED\",\"CANCELLED\"]}},\"aggs\":{\"Total Processed\":{\"value_count\":{\"field\":\"Data.tradelicense.tenantId.keyword\"}}}}}}}}}}"
      }
    ],
+   "removedFilterKeys":[{"key": "tenantId", "column": "Boundary"}],
    "filterKeys": [
-     {"key": "tenantId", "column": "Boundary"}
+     
    ],
    "chartType": "xtable",
    "valueType": "number",
    "drillChart": "none",
    "plotLabel": "Boundary",
    "excludedColumns": ["Total Processed"],
-   "computedFields": [
-     {
+   "tempRemoveComputedFields":[{
        "postAggregationTheory" : "",
        "actionName": "PercentageComputedField",
        "fields" : ["Total Processed", "Total Applications"],
        "newField" : "Completion Rate",
        "_comments": "fields are field names picked from its aggregation query to use post aggregation newField value with given new field name  "
+     }],
+   "computedFields": [
+     
+   ],
+   "insight": {
+   },
+   "_comment": ""
+ },
+ 
+ "xWsServiceStatusByTenant": {
+   "chartName": "DSS_WS_SERVICE_BY_TENANT",
+   "queries": [
+     {
+       "module": "WS",
+       "requestQueryMap": "{\"wardId\" : \"Data.ward.code.keyword\", \"tenantId\" : \"Data.tenantId.keyword\" }",
+       "dateRefField": "Data.additionalDetails.appCreatedDate",
+       "indexName": "water-services",
+       "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"ULBs \":{\"terms\":{\"field\":\"Data.tenantId.keyword\",\"size\":1000},\"aggs\":{\"Total Applications\":{\"filter\":{\"bool\":{\"must_not\":[{\"terms\":{\"Data.applicationStatus.keyword\":[\"INITIATED\"]}}]}},\"aggs\":{\"Total Applications\":{\"value_count\":{\"field\":\"Data.tenantId.keyword\"}}}},\"Connections Provided\":{\"filter\":{\"exists\":{\"field\":\"Data.connectionNo.keyword\"}},\"aggs\":{\"Connections Provided\":{\"value_count\":{\"field\":\"Data.connectionNo.keyword\"}}}},\"Applications Rejected\":{\"filter\":{\"terms\":{\"Data.applicationStatus.keyword\":[\"REJECTED\"]}},\"aggs\":{\"Applications Rejected\":{\"value_count\":{\"field\":\"Data.applicationNo.keyword\"}}}},\"Total Processed\":{\"filter\":{\"terms\":{\"Data.applicationStatus.keyword\":[\"REJECTED\",\"APPROVED\",\"CANCELLED\"]}},\"aggs\":{\"Total Processed\":{\"value_count\":{\"field\":\"Data.tenantId.keyword\"}}}}}}}}}}"
      }
+   ],
+   "removedFilterKeys":[{"key": "tenantId", "column": "Boundary"}],
+   "filterKeys": [
+     
+   ],
+   "chartType": "xtable",
+   "valueType": "number",
+   "drillChart": "none",
+   "plotLabel": "Boundary",
+   "excludedColumns": ["Total Processed"],
+   "tempRemoveComputedFields":[{
+       "postAggregationTheory" : "",
+       "actionName": "PercentageComputedField",
+       "fields" : ["Total Processed", "Total Applications"],
+       "newField" : "Completion Rate",
+       "_comments": "fields are field names picked from its aggregation query to use post aggregation newField value with given new field name  "
+     }],
+   "computedFields": [
+     
+   ],
+   "insight": {
+   },
+   "_comment": ""
+ },
+ 
+ "xSwServiceStatusByTenant": {
+   "chartName": "DSS_SW_SERVICE_BY_TENANT",
+   "queries": [
+     {
+       "module": "SW",
+       "requestQueryMap": "{\"wardId\" : \"Data.ward.code.keyword\", \"tenantId\" : \"Data.tenantId.keyword\" }",
+       "dateRefField": "Data.additionalDetails.appCreatedDate",
+       "indexName": "sewerage-services",
+       "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"ULBs \":{\"terms\":{\"field\":\"Data.tenantId.keyword\",\"size\":1000},\"aggs\":{\"Total Applications\":{\"filter\":{\"bool\":{\"must_not\":[{\"terms\":{\"Data.applicationStatus.keyword\":[\"INITIATED\"]}}]}},\"aggs\":{\"Total Applications\":{\"value_count\":{\"field\":\"Data.tenantId.keyword\"}}}},\"Connections Provided\":{\"filter\":{\"exists\":{\"field\":\"Data.connectionNo.keyword\"}},\"aggs\":{\"Connections Provided\":{\"value_count\":{\"field\":\"Data.connectionNo.keyword\"}}}},\"Applications Rejected\":{\"filter\":{\"terms\":{\"Data.applicationStatus.keyword\":[\"REJECTED\"]}},\"aggs\":{\"Applications Rejected\":{\"value_count\":{\"field\":\"Data.applicationNo.keyword\"}}}},\"Total Processed\":{\"filter\":{\"terms\":{\"Data.applicationStatus.keyword\":[\"REJECTED\",\"APPROVED\",\"CANCELLED\"]}},\"aggs\":{\"Total Processed\":{\"value_count\":{\"field\":\"Data.tenantId.keyword\"}}}}}}}}}}"
+     }
+   ],
+   "removedFilterKeys":[{"key": "tenantId", "column": "Boundary"}],
+   "filterKeys": [
+     
+   ],
+   "chartType": "xtable",
+   "valueType": "number",
+   "drillChart": "none",
+   "plotLabel": "Boundary",
+   "excludedColumns": ["Total Processed"],
+   "tempRemoveComputedFields":[{
+       "postAggregationTheory" : "",
+       "actionName": "PercentageComputedField",
+       "fields" : ["Total Processed", "Total Applications"],
+       "newField" : "Completion Rate",
+       "_comments": "fields are field names picked from its aggregation query to use post aggregation newField value with given new field name  "
+     }],
+   "computedFields": [
+     
    ],
    "insight": {
    },

@@ -721,6 +721,35 @@
               ]
             }
           ]
+        },
+        {
+          "row": 9,
+          "name": "DSS_SERVICE",
+          "vizArray": [
+          {
+              "id": 431,
+              "name": "DSS_TL_SERVICE_BY_TENANT",
+              "dimensions": {
+                "height": 350,
+                "width": 12
+              },
+              "vizType": "chart",
+              "label": "",
+              "noUnit": false,
+              "isCollapsible": true,
+              "charts": [
+                {
+                  "id": "xTlServiceStatusByTenant",
+                  "name": "DSS_TL_SERVICE_BY_TENANT",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "Boundary"
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -884,6 +913,35 @@
                   "chartType": "bar",
                   "filter": "",
                   "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 8,
+          "name": "DSS_SERVICE",
+          "vizArray": [
+          {
+              "id": 431,
+              "name": "DSS_TL_SERVICE_BY_TENANT",
+              "dimensions": {
+                "height": 350,
+                "width": 12
+              },
+              "vizType": "chart",
+              "label": "",
+              "noUnit": false,
+              "isCollapsible": true,
+              "charts": [
+                {
+                  "id": "xTlServiceStatusByTenant",
+                  "name": "DSS_TL_SERVICE_BY_TENANT",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "Boundary"
                 }
               ]
             }
@@ -5919,6 +5977,35 @@
               ]
             }
           ]
+        },
+        {
+          "row": 10,
+          "name": "DSS_SERVICE",
+          "vizArray": [
+          {
+              "id": 431,
+              "name": "DSS_WS_SERVICE_BY_TENANT",
+              "dimensions": {
+                "height": 350,
+                "width": 12
+              },
+              "vizType": "chart",
+              "label": "",
+              "noUnit": false,
+              "isCollapsible": true,
+              "charts": [
+                {
+                  "id": "xWsServiceStatusByTenant",
+                  "name": "DSS_WS_SERVICE_BY_TENANT",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "Boundary"
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -6110,6 +6197,35 @@
                   "chartType": "bar",
                   "filter": "",
                   "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 10,
+          "name": "DSS_SERVICE",
+          "vizArray": [
+          {
+              "id": 431,
+              "name": "DSS_WS_SERVICE_BY_TENANT",
+              "dimensions": {
+                "height": 350,
+                "width": 12
+              },
+              "vizType": "chart",
+              "label": "",
+              "noUnit": false,
+              "isCollapsible": true,
+              "charts": [
+                {
+                  "id": "xWsServiceStatusByTenant",
+                  "name": "DSS_WS_SERVICE_BY_TENANT",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "Boundary"
                 }
               ]
             }
@@ -6815,6 +6931,35 @@
               ]
             }
           ]
+        },
+        {
+          "row": 10,
+          "name": "DSS_SERVICE",
+          "vizArray": [
+          {
+              "id": 431,
+              "name": "DSS_SW_SERVICE_BY_TENANT",
+              "dimensions": {
+                "height": 350,
+                "width": 12
+              },
+              "vizType": "chart",
+              "label": "",
+              "noUnit": false,
+              "isCollapsible": true,
+              "charts": [
+                {
+                  "id": "xSwServiceStatusByTenant",
+                  "name": "DSS_SW_SERVICE_BY_TENANT",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "Boundary"
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -7006,6 +7151,35 @@
                   "chartType": "bar",
                   "filter": "",
                   "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 10,
+          "name": "DSS_SERVICE",
+          "vizArray": [
+          {
+              "id": 431,
+              "name": "DSS_SW_SERVICE_BY_TENANT",
+              "dimensions": {
+                "height": 350,
+                "width": 12
+              },
+              "vizType": "chart",
+              "label": "",
+              "noUnit": false,
+              "isCollapsible": true,
+              "charts": [
+                {
+                  "id": "xSwServiceStatusByTenant",
+                  "name": "DSS_SW_SERVICE_BY_TENANT",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "Boundary"
                 }
               ]
             }
