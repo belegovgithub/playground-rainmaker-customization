@@ -2447,7 +2447,7 @@
        "dateRefField": "Data.@timestamp",
         "removedTenantFilter": "\"tenantId\" : \"Data.tenantId\" ," ,
        "indexName": "pgrindex-v1",
-       "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"Closed Application\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"resolved\"}},\"aggs\":{\"count\":{\"terms\":{\"field\":\"Data.tenantId.keyword\",\"order\":{\"_key\":\"asc\"},\"size\":100},\"aggs\":{\"tenant_count\":{\"value_count\":{\"field\":\"Data.tenantId.keyword\"}}}}}},\"Total Application74\":{\"terms\":{\"field\":\"Data.tenantId.keyword\",\"order\":{\"_key\":\"asc\"},\"size\":100},\"aggs\":{\"tenant_count\":{\"value_count\":{\"field\":\"Data.tenantId.keyword\"}}}}}}}}"
+       "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"Closed Application\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.status.keyword\":[\"closed\",\"rejected\",\"resolved\"]}}],\"must_not\":[{\"terms\":{\"Data.tenantId.keyword\":[\"pb.testing\"]}}]}},\"aggs\":{\"count\":{\"terms\":{\"field\":\"Data.tenantId.keyword\",\"order\":{\"_key\":\"asc\"},\"size\":100},\"aggs\":{\"tenant_count\":{\"value_count\":{\"field\":\"Data.tenantId.keyword\"}}}}}},\"Total Application74\":{\"filter\":{\"bool\":{\"must_not\":[{\"terms\":{\"Data.tenantId.keyword\":[\"pb.testing\"]}}]}},\"aggs\":{\"count\":{\"terms\":{\"field\":\"Data.tenantId.keyword\",\"order\":{\"_key\":\"asc\"},\"size\":100},\"aggs\":{\"tenant_count\":{\"value_count\":{\"field\":\"Data.tenantId.keyword\"}}}}}}}}}}"
      },
      {
        "module": "PT",
@@ -2514,7 +2514,7 @@
        "requestQueryMap": "{\"wardId\" : \"Data.complaintWard.name.keyword\", \"module\" : \"businessService.keyword\", \"district\" : \"Data.tenantData.city.districtCode\"}",
        "dateRefField": "Data.@timestamp",
        "indexName": "pgrindex-v1",
-       "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"Closed Application\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"resolved\"}},\"aggs\":{\"count\":{\"terms\":{\"field\":\"Data.tenantId.keyword\"},\"aggs\":{\"tenant_count\":{\"value_count\":{\"field\":\"Data.tenantId.keyword\"}}}}}},\"Total Application\":{\"terms\":{\"field\":\"Data.tenantId.keyword\"},\"aggs\":{\"tenant_count\":{\"value_count\":{\"field\":\"Data.tenantId.keyword\"}}}}}}}}"
+       "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"Closed Application\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.status.keyword\":[\"closed\",\"rejected\",\"resolved\"]}}],\"must_not\":[{\"terms\":{\"Data.tenantId.keyword\":[\"pb.testing\"]}}]}},\"aggs\":{\"count\":{\"terms\":{\"field\":\"Data.tenantId.keyword\",\"order\":{\"_key\":\"asc\"},\"size\":100},\"aggs\":{\"tenant_count\":{\"value_count\":{\"field\":\"Data.tenantId.keyword\"}}}}}},\"Total Application74\":{\"filter\":{\"bool\":{\"must_not\":[{\"terms\":{\"Data.tenantId.keyword\":[\"pb.testing\"]}}]}},\"aggs\":{\"count\":{\"terms\":{\"field\":\"Data.tenantId.keyword\",\"order\":{\"_key\":\"asc\"},\"size\":100},\"aggs\":{\"tenant_count\":{\"value_count\":{\"field\":\"Data.tenantId.keyword\"}}}}}}}}}}"
      },
      {
        "module": "PT",
