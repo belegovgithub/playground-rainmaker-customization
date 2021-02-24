@@ -275,6 +275,18 @@
                                 }
                             },
                             {
+                                "variable": "water_conn_small",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_WATER_CONN_SMALL_STATEMENT"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
                                 "variable": "grant_stmt2",
                                 "value": {
                                     "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_GRANT_STATEMENT2"
