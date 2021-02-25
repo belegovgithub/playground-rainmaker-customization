@@ -467,9 +467,9 @@
                                 }
                             },
                             {
-                                "variable": "water_conn_chargeLabel",
+                                "variable": "sw_conn_chargeLabel",
                                 "value": {
-                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_WATER_CONN_CHARGE"
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_SW_CONN_CHARGE"
                                 },
                                 "type": "label",
                                 "localisation": {
