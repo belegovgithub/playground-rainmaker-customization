@@ -381,7 +381,14 @@
        "dateRefField": "Data.additionalDetails.appCreatedDate",
        "indexName": "sewerage-services",
        "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"pb.testing\"}},{\"term\":{\"Data.applicationStatus.keyword\":\"INITIATED\"}}]}},\"aggs\":{\"ULBs \":{\"terms\":{\"field\":\"Data.tenantId.keyword\",\"size\":1000,\"order\":{\"_term\":\"asc\"}},\"aggs\":{\"Total Transactions\":{\"filter\":{\"bool\":{\"must_not\":[]}},\"aggs\":{\"Total Services\":{\"value_count\":{\"field\":\"Data.applicationNo.keyword\"}}}}}}}}}}"
-     }
+     },
+     {
+       "module": "COMMON",
+       "requestQueryMap": "{\"tenantId\" : \"tenantId.keyword\"}",
+       "dateRefField": "",
+       "indexName": "dss-citizen-count",
+       "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"terms\":{\"tenantId.keyword\":[\"pb.testing\",\"all\",\"dgde\",\"pb\"]}}]}},\"aggs\":{\"ULBs \":{\"terms\":{\"field\":\"tenantId.keyword\",\"size\":1000,\"order\":{\"_term\":\"asc\"}},\"aggs\":{\"Total Citizens\":{\"filter\":{\"bool\":{\"must_not\":[]}},\"aggs\":{\"Total Citizens\":{\"sum\":{\"field\":\"citizenCount\"}}}}}}}}}}"
+     }     
    ],
    "filterKeys": [
      {"key": "tenantId", "column": "Boundary"}
