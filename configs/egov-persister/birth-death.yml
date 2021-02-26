@@ -1,0 +1,53 @@
+serviceMaps:
+  serviceName: birth-death-services
+  mappings:
+  - version: 1.0
+    description: Persists birthCertificate details in eg_birth_cert_request  table
+    fromTopic: save-birth-topic
+    isTransaction: true
+    queryMaps:
+
+    - query: INSERT INTO public.eg_birth_cert_request (id, birthcertificateno, createdby, createdtime, birthdtlid, filestoreid, lastmodifiedtime, lastmodifiedby, status, additionaldetail) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+      basePath: birthCertificate
+      jsonMaps:
+      - jsonPath: $.birthCertificate.id
+
+      - jsonPath: $.birthCertificate.birthCertificateNo
+
+      - jsonPath: $.birthCertificate.auditDetails.createdBy
+
+      - jsonPath: $.birthCertificate.auditDetails.createdTime
+
+      - jsonPath: $.birthCertificate.birthDtlId
+
+      - jsonPath: $.birthCertificate.filestoreid
+
+      - jsonPath: $.birthCertificate.auditDetails.lastModifiedTime
+      
+      - jsonPath: $.birthCertificate.auditDetails.lastModifiedBy
+      
+      - jsonPath: $.birthCertificate.applicationStatus
+
+      - jsonPath: $.birthCertificate.additionalDetail
+        type: JSON
+        dbType: JSONB
+      
+  - version: 1.0
+    description: Update birthCertificate details in eg_birth_cert_request  table
+    fromTopic: update-birth-topic
+    isTransaction: true
+    queryMaps:
+    
+    - query: UPDATE eg_birth_cert_request SET status = ?, lastmodifiedby = ?,  lastmodifiedtime = ? WHERE id=?;
+      basePath: birthCertificate
+      jsonMaps:
+      
+      - jsonPath: $.birthCertificate.applicationStatus
+
+      - jsonPath: $.birthCertificate.auditDetails.lastModifiedBy
+
+      - jsonPath: $.birthCertificate.auditDetails.lastModifiedTime
+
+      - jsonPath: $.birthCertificate.id
+
+
