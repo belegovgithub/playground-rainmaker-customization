@@ -28,65 +28,71 @@
                     "type": "image"
                 },
                 {
-                  "variable": "months", 
+                  "variable": "name", 
                   "value": {
-                    "path": "$.months"
+                    "path": "$.firstname"
                   }
                 },
                 {
-                  "variable": "area", 
+                  "variable": "dob", 
                   "value": {
-                    "path": "$.area"
+                    "path": "$.dateofbirth"
                   }
                 },
                 {
-                  "variable": "mobileNo", 
+                  "variable": "gender", 
                   "value": {
-                    "path": "$.mobileNo"
+                    "path": "$.gender"
                   }
                 },
                 {
-                  "variable": "boundary", 
+                  "variable": "registrationNo", 
                   "value": {
-                    "path": "$.instruction"
+                    "path": "$.registrationno"
                   }
                 },
                 {
-                  "variable": "instruction1", 
+                  "variable": "fatherName", 
                   "value": {
-                    "path": "$.instruction1"
+                    "path": "$.birthFatherInfo.firstname"
                   },
                   "type":"setEmpty"
                 },
                 {
-                  "variable": "instruction2", 
+                  "variable": "motherName", 
                   "value": {
-                    "path": "$.instruction2"
+                    "path": "$.birthMotherInfo.firstname"
                   },
                   "type":"setEmpty"
                 },
                 {
-                  "variable": "addressee", 
+                  "variable": "childAddress", 
                   "value": {
-                    "path": "$.addressee"
+                    "path": "$.birthPermaddr.fullAddress"
                   }
                 },
                 {
-                  "variable": "applicantName", 
+                  "variable": "parentsAddress", 
                   "value": {
-                    "path": "$.name"
+                    "path": "$.birthPresentaddr.fullAddress"
                   }
                 },
                 {
-                    "variable": "fatherName", 
+                    "variable": "fatherUid", 
                     "value": {
-                      "path": "$.fatherOrHusbandName"
+                      "path": "$.fatherUid"
                     }
                   },
                   {
-                    "variable": "surveyNo", 
+                    "variable": "motherUid", 
                     "value": {
-                      "path": "$.surveyNo"
+                      "path": "$.motherUid"
+                    }
+                  },
+                  {
+                    "variable": "placeOfBirth", 
+                    "value": {
+                      "path": "$.placeOfBirth"
                     }
                   },
                   {
