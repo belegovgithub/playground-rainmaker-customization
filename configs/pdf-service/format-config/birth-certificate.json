@@ -18,7 +18,7 @@
                     "image": "{{emblemImage}}",
                     "width": 35,
                     "height": 45,
-                    "style": "appendix-header"
+                    "style": "appendix-header-emblem"
                   } 
                    
                 ]
@@ -48,38 +48,42 @@
                                     ]
                                 },
                                 {
-                                    "stack": [  
+                                    "stack": [
+                                          {
+                                            "text": "{{govt_label_multiLang}}",
+                                            "style": "appendix-header-body"
+                                            
+                                        },   
                                         {
                                             "text": "{{govt_label}}",
-                                            "style": "appendix-header-body",
+                                            "style": "appendix-header-body" ,
                                             "margin": [
                                               0,
                                               0,
                                               0,
                                               5
-                                          ]
-                                             
+                                          ]   
                                         },  
                                         {
-                                            "text": "{{dept_label}}",
-                                              "style": "appendix-header-body",
-                                              "margin": [
-                                                0,
-                                                0,
-                                                0,
-                                                5
-                                            ]
+                                            "text": "{{dept_label_multiLang}}",
+                                              "style": "appendix-header-body"   
+                                        },
+                                        {
+                                          "text": "{{dept_label}}",
+                                            "style": "appendix-header-body" 
+                                             
+                                      },
+                                        {
+                                            "text": "{{gram_panchayat_label_multiLang}}",
+                                            "style": "appendix-header-body"
                                              
                                         },
                                         {
-                                            "text": "{{gram_panchayat_label}}",
-                                            "style": "appendix-header-body"
-                                             
-                                        }
+                                          "text": "{{gram_panchayat_label}}",
+                                          "style": "appendix-header-body" 
+                                      }
                                          
-                                    ]
-                                  
-                                     
+                                    ]   
                                 },
                                 {
                                  "image": "{{form5}}",
@@ -97,6 +101,24 @@
                     },
                     "layout": "noBorders"
                 },
+            {
+              "style": "ws-head",
+              "table": {
+                "widths": [
+                  "*"
+                ],
+                "body": [
+                  [
+                    {
+                      "text": "{{certificate_label_multiLang}}",
+                      "style": "title-header_multiLang"
+                    } 
+                      
+                  ]
+                ]
+              },
+              "layout": "noBorders"
+            },
            {
             "style": "ws-head",
             "table": {
@@ -122,6 +144,17 @@
                             "*"
                         ],
                         "body": [
+                                              [ 
+                                                {
+                                                    "columns": [
+                                                        
+                                                        {
+                                                            "text": "{{rule1_label_multiLang}}",
+                                                            "style": "rule-header_multiLang"
+                                                        }
+                                                    ] 
+                                                }
+                                            ],
                                             [ 
                                                 {
                                                      "columns": [
@@ -146,6 +179,17 @@
                             "*"
                         ],
                         "body": [
+                                              [ 
+                                                {
+                                                    "columns": [
+                                                        
+                                                        {
+                                                            "text": "{{rule2_label_multiLang}}",
+                                                            "style": "rule-body_multiLang"
+                                                        }
+                                                    ] 
+                                                }
+                                            ],
                                             [ 
                                                 {
                                                      "columns": [
@@ -175,17 +219,17 @@
                                                      "columns": [
                                                          
                                                         {
-                                                            "text": "{{name_label}}: {{name}}",
-                                                            "width": "40%",
+                                                            "text": "{{name_label_multiLang}} / {{name_label}}: {{name}}",
+                                                            "width": "45%",
                                                              "style": "details-body"
                                                         },
                                                         {
                                                             "text": " ",
-                                                            "width": "20%"
+                                                            "width": "10%"
                                                             
                                                         },
                                                         {
-                                                            "text": "{{gender_label}} : {{gender}}",
+                                                            "text": "{{gender_label_multiLang}} / {{gender_label}} : {{gender}}",
                                                              "style": "details-body"
                                                         }
                                                     ] 
@@ -196,17 +240,17 @@
                                                      "columns": [
                                                          
                                                         {
-                                                            "text": "{{dob_label}}: {{dob}}",
-                                                            "width": "40%",
+                                                            "text": "{{dob_label_multiLang}} / {{dob_label}}: {{dob}}",
+                                                            "width": "45%",
                                                              "style": "details-body"
                                                         },
                                                         {
                                                             "text": " ",
-                                                            "width": "20%"
+                                                            "width": "10%"
                                                             
                                                         },
                                                         {
-                                                            "text": "{{pob_label}}: {{placeOfBirth}}",
+                                                            "text": "{{pob_label_multiLang}} / {{pob_label}}: {{placeOfBirth}}",
                                                              "style": "details-body"
                                                         }
                                                     ] 
@@ -217,17 +261,17 @@
                                                      "columns": [
                                                          
                                                         {
-                                                            "text": "{{mother_name_label}}: {{motherName}}",
-                                                            "width": "40%",
+                                                            "text": "{{mother_name_label_multiLang}} / {{mother_name_label}}: {{motherName}}",
+                                                            "width": "45%",
                                                              "style": "details-body"
                                                         },
                                                         {
                                                             "text": " ",
-                                                            "width": "20%"
+                                                            "width": "10%"
                                                             
                                                         },
                                                         {
-                                                            "text": "{{father_name_label}}: {{fatherName}}",
+                                                            "text": "{{father_name_label_multiLang}} / {{father_name_label}}: {{fatherName}}",
                                                              "style": "details-body"
                                                         }
                                                     ] 
@@ -238,17 +282,17 @@
                                                      "columns": [
                                                          
                                                         {
-                                                            "text": "{{mother_uid_label}}: {{motherUid}}",
-                                                            "width": "40%",
+                                                            "text": "{{mother_uid_label_multiLang}} / {{mother_uid_label}}: {{motherUid}}",
+                                                            "width": "45%",
                                                              "style": "details-body"
                                                         },
                                                         {
                                                             "text": " ",
-                                                            "width": "20%"
+                                                            "width": "10%"
                                                             
                                                         },
                                                         {
-                                                            "text": "{{father_uid_label}}: {{fatherUid}}",
+                                                            "text": "{{father_uid_label_multiLang}} / {{father_uid_label}}: {{fatherUid}}",
                                                              "style": "details-body"
                                                         }
                                                     ] 
@@ -259,17 +303,17 @@
                                                      "columns": [
                                                          
                                                         {
-                                                            "text": "{{child_address_label}}: {{childAddress}}",
-                                                            "width": "40%",
+                                                            "text": "{{child_address_label_multiLang}} / {{child_address_label}}: {{childAddress}}",
+                                                            "width": "45%",
                                                              "style": "details-body"
                                                         },
                                                         {
                                                             "text": " ",
-                                                            "width": "20%"
+                                                            "width": "10%"
                                                             
                                                         },
                                                         {
-                                                            "text": "{{parent_address_label}}: {{parentsAddress}}",
+                                                            "text": "{{parent_address_label_multiLang}} / {{parent_address_label}}: {{parentsAddress}}",
                                                              "style": "details-body"
                                                         }
                                                     ] 
@@ -280,17 +324,17 @@
                                                      "columns": [
                                                          
                                                         {
-                                                            "text": "{{registration_label}}: {{registrationNo}}",
-                                                            "width": "40%",
+                                                            "text": "{{registration_label_multiLang}} / {{registration_label}}: {{registrationNo}}",
+                                                            "width": "45%",
                                                              "style": "details-body"
                                                         },
                                                         {
                                                             "text": " ",
-                                                            "width": "20%"
+                                                            "width": "10%"
                                                             
                                                         },
                                                         {
-                                                            "text": "{{registration_date_label}}: {{registration_date}}",
+                                                            "text": "{{registration_date_label_multiLang}} / {{registration_date_label}}: {{registration_date}}",
                                                              "style": "details-body"
                                                         }
                                                     ] 
@@ -301,13 +345,13 @@
                                                      "columns": [
                                                          
                                                         {
-                                                            "text": "{{remarks_label}}: {{remarks}}",
-                                                            "width": "40%",
+                                                            "text": "{{remarks_label_multiLang}} / {{remarks_label}}: {{remarks}}",
+                                                            "width": "45%",
                                                              "style": "details-body"
                                                         },
                                                         {
                                                             "text": " ",
-                                                            "width": "20%"
+                                                            "width": "10%"
                                                             
                                                         },
                                                         {
@@ -322,17 +366,17 @@
                                                      "columns": [
                                                          
                                                         {
-                                                            "text": "{{issue_date_label}}: {{issueDate}}",
-                                                            "width": "40%",
+                                                            "text": "{{issue_date_label_multiLang}} / {{issue_date_label}}: {{issueDate}}",
+                                                            "width": "45%",
                                                              "style": "details-body"
                                                         },
                                                         {
                                                             "text": " ",
-                                                            "width": "20%"
+                                                            "width": "10%"
                                                             
                                                         },
                                                         {
-                                                            "text": "{{issuing_authority_label}}: {{issuing_authority}}",
+                                                            "text": "{{issuing_authority_label_multiLang}} / {{issuing_authority_label}}: {{issuing_authority_multiLang}} / {{issuing_authority}}",
                                                              "style": "details-body"
                                                         }
                                                     ] 
@@ -353,8 +397,8 @@
                 [
                   {
                     "image": "{{qr_code_image}}",
-                    "width": 50,
-                    "height": 61.25,
+                    "width": 70,
+                    "height": 70,
                     "style": "qr-code"
                   } 
                    
@@ -421,6 +465,16 @@
                     "fontWeight": 400,
                     "alignment": "center"
         },
+        "appendix-header-emblem": {
+          "color": "#000000",           
+          "alignment": "center",
+          "margin": [
+            0,
+          -30,
+            0,
+            0
+          ]
+         },
          "instruction-body": {
          "color": "#000000",
                     "bold": false,
@@ -430,30 +484,40 @@
         },
          "qr-code": {
          "color": "#000000",
-                    "bold": true,
-                    "fontSize": 9,
-                    "fontWeight": 400,
                     "alignment": "left",
                     "margin": [
                         0,
+                        -30,
                         0,
-                        0,
-                        10
+                        0
                     ]
         },
          "title-header": {
          "color": "#000000",
                     "bold": true,
-                    "fontSize": 15,
+                    "fontSize": 14,
                     "fontWeight": 400,
                     "alignment": "center",
                      "margin": [
                         0,
-                        15,
+                        1,
                         0,
                         0
                     ]
         },
+        "title-header_multiLang": {
+          "color": "#000000",
+                     "bold": true,
+                     "fontSize": 15,
+                     "fontWeight": 400,
+                     "alignment": "center",
+                      "margin": [
+                         0,
+                         3,
+                         0,
+                         0
+                     ]
+         },
         "rule-header": {
          "color": "#696969",
                     "bold": true,
@@ -463,9 +527,21 @@
                         0,
                         0,
                         0,
-                        10
+                        5
                     ]
         },
+        "rule-header_multiLang": {
+          "color": "#696969",
+                     "bold": true,
+                     "fontSize": 11,
+                     "fontWeight": 400,
+                      "margin": [
+                         0,
+                         0,
+                         0,
+                         5
+                     ]
+         },
         "rule-body": {
          "color": "#696969",
                     "bold": true,
@@ -478,14 +554,26 @@
                         0
                     ]
         },
+        "rule-body_multiLang": {
+          "color": "#696969",
+                     "bold": true,
+                     "fontSize": 11,
+                     "fontWeight": 400,
+                      "margin": [
+                         0,
+                         0,
+                         0,
+                         0
+                     ]
+         },
         "details-body": {
          "color": "#696969",
                     "bold": true,
-                    "fontSize": 9.5,
+                    "fontSize": 11,
                     "fontWeight": 400,
                      "margin": [
                         0,
-                        15,
+                        5,
                         0,
                         0
                     ]
