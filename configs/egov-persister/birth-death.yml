@@ -32,6 +32,13 @@ serviceMaps:
         type: JSON
         dbType: JSONB
       
+    - query: UPDATE public.eg_birth_dtls SET counter=counter+1 WHERE id=?;
+      basePath: birthCertificate
+      jsonMaps:
+
+      - jsonPath: $.birthCertificate.birthDtlId
+
+
   - version: 1.0
     description: Update birthCertificate details in eg_birth_cert_request  table
     fromTopic: update-birth-topic
