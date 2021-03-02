@@ -39,11 +39,13 @@ serviceMaps:
     isTransaction: true
     queryMaps:
     
-    - query: UPDATE eg_birth_cert_request SET status = ?, lastmodifiedby = ?,  lastmodifiedtime = ? WHERE id=?;
+    - query: UPDATE eg_birth_cert_request SET status = ?, filestoreid =?, lastmodifiedby = ?,  lastmodifiedtime = ? WHERE id=?;
       basePath: birthCertificate
       jsonMaps:
       
       - jsonPath: $.birthCertificate.applicationStatus
+
+      - jsonPath: $.birthCertificate.filestoreid      
 
       - jsonPath: $.birthCertificate.auditDetails.lastModifiedBy
 
