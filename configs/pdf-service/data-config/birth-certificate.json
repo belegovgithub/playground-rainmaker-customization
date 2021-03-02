@@ -43,7 +43,7 @@
                 {
                   "variable": "gender", 
                   "value": {
-                    "path": "$.gender"
+                    "path": "$.genderStr"
                   }
                 },
                 {
@@ -52,6 +52,13 @@
                     "path": "$.registrationno"
                   }
                 },
+                {
+                    "variable": "registration_date", 
+                    "value": {
+                      "path": "$.dateofreport"
+                    },
+                    "type": "date"
+                  },
                 {
                   "variable": "fatherName", 
                   "value": {
@@ -94,6 +101,19 @@
                     "variable": "placeOfBirth", 
                     "value": {
                       "path": "$.placeOfBirth"
+                    }
+                  },
+                  {
+                    "variable": "issueDate", 
+                    "value": {
+                      "path": "$.dateofissue"
+                    },
+                    "type": "date"
+                  },
+                  {
+                    "variable": "placeOfBirth", 
+                    "value": {
+                      "path": "$.hospitalname"
                     }
                   },
                   {
