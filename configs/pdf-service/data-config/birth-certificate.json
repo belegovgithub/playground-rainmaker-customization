@@ -19,7 +19,7 @@
                 },
                 {
                     "variable": "govtImage",
-                    "url": "https://raw.githubusercontent.com/belsoftware/webaccess/master/images/birth/jharkhandGovt.png",
+                    "url": "https://raw.githubusercontent.com/belsoftware/webaccess/master/images/birth/upGovt.png",
                     "type": "image"
                 },
                 {
@@ -131,7 +131,7 @@
                   {
                     "variable": "govt_label",
                     "value": {
-                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_GOVT_JHARKHAND"
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_GOVT_UP"
                     },
                     "type": "label",
                     "localisation":{
@@ -143,7 +143,7 @@
                   {
                     "variable": "govt_label_multiLang",
                     "value": {
-                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_GOVT_JHARKHAND_MULTILANG"
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_GOVT_UP_MULTILANG"
                     },
                     "type": "label",
                     "localisation":{
