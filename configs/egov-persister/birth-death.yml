@@ -38,6 +38,12 @@ serviceMaps:
     fromTopic: update-birth-topic
     isTransaction: true
     queryMaps:
+
+    - query: INSERT INTO eg_birth_cert_request_audit SELECT * FROM eg_birth_cert_request WHERE id = ?;
+      basePath: birthCertificate
+      jsonMaps:
+      
+      - jsonPath: $.birthCertificate.id
     
     - query: UPDATE eg_birth_cert_request SET status = ?, filestoreid =?, lastmodifiedby = ?,  lastmodifiedtime = ? WHERE id=?;
       basePath: birthCertificate
@@ -52,5 +58,27 @@ serviceMaps:
       - jsonPath: $.birthCertificate.auditDetails.lastModifiedTime
 
       - jsonPath: $.birthCertificate.id
+      
+      
+      
+  - version: 1.0
+    description: Update birthCertificate details in eg_birth_cert_request  table
+    fromTopic: update-birthdownload-topic
+    isTransaction: true
+    queryMaps:
 
+    - query: INSERT INTO eg_birth_cert_request_audit SELECT * FROM eg_birth_cert_request WHERE id = ?;
+      jsonMaps:
+      
+      - jsonPath: id
+    
+    - query: UPDATE eg_birth_cert_request SET status = ?, lastmodifiedby = ?,  lastmodifiedtime = ? WHERE birthCertificateNo=?;
+      jsonMaps:
+      
+      - jsonPath: applicationStatus    
 
+      - jsonPath: auditDetails.lastModifiedBy
+
+      - jsonPath: auditDetails.lastModifiedTime
+
+      - jsonPath: birthCertificateNo
