@@ -68,17 +68,19 @@ serviceMaps:
     queryMaps:
 
     - query: INSERT INTO eg_birth_cert_request_audit SELECT * FROM eg_birth_cert_request WHERE id = ?;
+      basePath: birthCertificate    
       jsonMaps:
       
-      - jsonPath: id
+      - jsonPath: $.birthCertificate.id
     
-    - query: UPDATE eg_birth_cert_request SET status = ?, lastmodifiedby = ?,  lastmodifiedtime = ? WHERE birthCertificateNo=?;
+    - query: UPDATE eg_birth_cert_request SET status = ?, lastmodifiedby = ?,  lastmodifiedtime = ? WHERE id=?;
+      basePath: birthCertificate    
       jsonMaps:
       
-      - jsonPath: applicationStatus    
+      - jsonPath: $.birthCertificate.applicationStatus    
 
-      - jsonPath: auditDetails.lastModifiedBy
+      - jsonPath: $.birthCertificate.auditDetails.lastModifiedBy
 
-      - jsonPath: auditDetails.lastModifiedTime
+      - jsonPath: $.birthCertificate.auditDetails.lastModifiedTime
 
-      - jsonPath: birthCertificateNo
+      - jsonPath: $.birthCertificate.id
