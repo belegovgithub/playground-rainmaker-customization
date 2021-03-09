@@ -65,8 +65,15 @@
                             {
                                 "variable": "address",
                                 "value": {
-                                    "path": "$.property.address.locality.name"
-                                }
+                                    "path": "$.property.address.locality.code"
+                                },
+                                "localisation":{
+                                    "required":true,
+                                    "prefix": "REVENUE",
+                                    "module": "rainmaker",
+                                    "prefixCbName":true
+                                 },
+                                 "type":"boundary"
                             },
                             {
                                 "variable": "pincode",

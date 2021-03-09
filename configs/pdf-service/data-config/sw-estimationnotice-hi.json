@@ -65,8 +65,15 @@
                             {
                                 "variable": "address",
                                 "value": {
-                                    "path": "$.property.address.locality.name"
-                                }
+                                    "path": "$.property.address.locality.code"
+                                },
+                                "localisation":{
+                                    "required":true,
+                                    "prefix": "REVENUE",
+                                    "module": "rainmaker",
+                                    "prefixCbName":true
+                                 },
+                                 "type":"boundary"
                             },
                             {
                                 "variable": "pincode",
@@ -241,7 +248,7 @@
                             {
                                 "variable": "grant_stmt_hi",
                                 "value": {
-                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_GRANT_STATEMENT_HI"
+                                    "path": "PDF_STATIC_LABEL_SW_CONSOLIDATED_ACKNOWELDGMENT_GRANT_STATEMENT_HI"
                                 },
                                 "type": "label",
                                 "localisation": {
@@ -253,7 +260,7 @@
                             {
                                 "variable": "grant_stmt2_hi",
                                 "value": {
-                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_GRANT_STATEMENT2_HI"
+                                    "path": "PDF_STATIC_LABEL_SW_CONSOLIDATED_ACKNOWELDGMENT_GRANT_STATEMENT2_HI"
                                 },
                                 "type": "label",
                                 "localisation": {
@@ -349,7 +356,7 @@
                             {
                                 "variable": "applStatement2",
                                 "value": {
-                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_APPL_STATEMENT2_HI"
+                                    "path": "PDF_STATIC_LABEL_SW_CONSOLIDATED_ACKNOWELDGMENT_APPL_STATEMENT2_HI"
                                 },
                                 "type": "label",
                                 "localisation": {
@@ -361,7 +368,7 @@
                             {
                                 "variable": "applStatement3",
                                 "value": {
-                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_APPL_STATEMENT3_HI"
+                                    "path": "PDF_STATIC_LABEL_SW_CONSOLIDATED_ACKNOWELDGMENT_APPL_STATEMENT3_HI"
                                 },
                                 "type": "label",
                                 "localisation": {
@@ -397,7 +404,7 @@
                             {
                                 "variable": "applStatement5",
                                 "value": {
-                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_APPL_STATEMENT5_HI"
+                                    "path": "PDF_STATIC_LABEL_SW_CONSOLIDATED_ACKNOWELDGMENT_APPL_STATEMENT5_HI"
                                 },
                                 "type": "label",
                                 "localisation": {
@@ -409,7 +416,7 @@
                             {
                                 "variable": "applStatement6",
                                 "value": {
-                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_APPL_STATEMENT6_HI"
+                                    "path": "PDF_STATIC_LABEL_SW_CONSOLIDATED_ACKNOWELDGMENT_APPL_STATEMENT6_HI"
                                 },
                                 "type": "label",
                                 "localisation": {
@@ -421,7 +428,7 @@
                             {
                                 "variable": "water_conn_chargeLabel",
                                 "value": {
-                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_WATER_CONN_CHARGE"
+                                    "path": "PDF_STATIC_LABEL_SW_CONSOLIDATED_ACKNOWELDGMENT_WATER_CONN_CHARGE"
                                 },
                                 "type": "label",
                                 "localisation": {
@@ -517,7 +524,7 @@
                             {
                                 "variable": "paymentStatement2",
                                 "value": {
-                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_PAYMENT_STATEMENT2"
+                                    "path": "PDF_STATIC_LABEL_SW_CONSOLIDATED_ACKNOWELDGMENT_PAYMENT_STATEMENT2"
                                 },
                                 "type": "label",
                                 "localisation": {
@@ -529,7 +536,7 @@
                             {
                                 "variable": "paymentStatement3",
                                 "value": {
-                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_PAYMENT_STATEMENT3"
+                                    "path": "PDF_STATIC_LABEL_SW_CONSOLIDATED_ACKNOWELDGMENT_PAYMENT_STATEMENT3"
                                 },
                                 "type": "label",
                                 "localisation": {
@@ -553,7 +560,7 @@
                             {
                                 "variable": "paymentStatement5",
                                 "value": {
-                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_PAYMENT_STATEMENT5"
+                                    "path": "PDF_STATIC_LABEL_SW_CONSOLIDATED_ACKNOWELDGMENT_PAYMENT_STATEMENT5"
                                 },
                                 "type": "label",
                                 "localisation": {
