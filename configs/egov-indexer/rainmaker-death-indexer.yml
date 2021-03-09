@@ -1,0 +1,29 @@
+ServiceMaps:
+ serviceName: Death Certificate Download
+ version: 1.0.0
+ mappings:
+  - topic: save-death-topic
+    configKey: INDEX
+    indexes:
+      - name: death-cert-v1
+        type: general
+        id: $.id
+        jsonPath: $.deathCertificate
+        customJsonMapping:
+          indexMapping: {"Data":{}}
+          fieldMapping:
+          - inJsonPath: $
+            outJsonPath: $.Data
+  
+  - topic: update-death-topic
+    configKey: INDEX
+    indexes:
+      - name: death-cert-v1
+        type: general
+        id: $.id
+        jsonPath: $.deathCertificate
+        customJsonMapping:
+          indexMapping: {"Data":{}}
+          fieldMapping:
+          - inJsonPath: $
+            outJsonPath: $.Data
