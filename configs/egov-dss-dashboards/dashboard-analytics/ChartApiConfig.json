@@ -4701,7 +4701,7 @@
        "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\", \"tenantId\" : \"Data.lease.tenantId.keyword\" }",
        "dateRefField": "Data.lease.applicationDate",
        "indexName": "leaseindex-v1",
-       "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.lease.tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"ULBs \":{\"terms\":{\"field\":\"Data.lease.tenantId.keyword\",\"size\":1000,\"order\":{\"_term\":\"asc\"}},\"aggs\":{\"Renewal Applications\":{\"filter\":{\"terms\":{\"Data.lease.applicationType.keyword\":[\"RENEWAL\"]}},\"aggs\":{\"Renewal Applications\":{\"value_count\":{\"field\":\"Data.lease.applicationNumber.keyword\"}}}},\"Renewal Approved\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.lease.applicationType.keyword\":[\"RENEWAL\"]}},{\"terms\":{\"Data.lease.status.keyword\":[\"APPROVED\"]}}]}},\"aggs\":{\"Renewal Approved\":{\"value_count\":{\"field\":\"Data.lease.applicationNumber.keyword\"}}}},\"Renewal Rejected\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.lease.applicationType.keyword\":[\"RENEWAL\"]}},{\"terms\":{\"Data.lease.status.keyword\":[\"REJECTED\"]}}]}},\"aggs\":{\"Renewal Rejected\":{\"value_count\":{\"field\":\"Data.lease.applicationNumber.keyword\"}}}},\"Extension Applications\":{\"filter\":{\"terms\":{\"Data.lease.applicationType.keyword\":[\"EXTENSION\"]}},\"aggs\":{\"Extension Applications\":{\"value_count\":{\"field\":\"Data.lease.applicationNumber.keyword\"}}}},\"Extension Approved\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.lease.applicationType.keyword\":[\"EXTENSION\"]}},{\"terms\":{\"Data.lease.status.keyword\":[\"APPROVED\"]}}]}},\"aggs\":{\"Extension Approved\":{\"value_count\":{\"field\":\"Data.lease.applicationNumber.keyword\"}}}},\"Extension Rejected\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.lease.applicationType.keyword\":[\"EXTENSION\"]}},{\"terms\":{\"Data.lease.status.keyword\":[\"REJECTED\"]}}]}},\"aggs\":{\"Extension Rejected\":{\"value_count\":{\"field\":\"Data.lease.applicationNumber.keyword\"}}}},\"Total Applications\":{\"value_count\":{\"field\":\"Data.lease.applicationNumber.keyword\"}}}}}}}}"
+       "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.lease.tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"ULBs \":{\"terms\":{\"field\":\"Data.lease.tenantId.keyword\",\"size\":1000,\"order\":{\"_term\":\"asc\"}},\"aggs\":{\"Renewal Applications\":{\"filter\":{\"terms\":{\"Data.lease.applicationType.keyword\":[\"RENEWAL\"]}},\"aggs\":{\"Renewal Applications\":{\"value_count\":{\"field\":\"Data.lease.applicationNumber.keyword\"}}}},\"Renewal Approved\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.lease.applicationType.keyword\":[\"RENEWAL\"]}},{\"terms\":{\"Data.lease.status.keyword\":[\"APPROVED\"]}}]}},\"aggs\":{\"Renewal Approved\":{\"value_count\":{\"field\":\"Data.lease.applicationNumber.keyword\"}}}},\"Renewal Rejected\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.lease.applicationType.keyword\":[\"RENEWAL\"]}},{\"terms\":{\"Data.lease.status.keyword\":[\"REJECTED\"]}}]}},\"aggs\":{\"Renewal Rejected\":{\"value_count\":{\"field\":\"Data.lease.applicationNumber.keyword\"}}}},\"Extension Applications\":{\"filter\":{\"terms\":{\"Data.lease.applicationType.keyword\":[\"EXTENSION\"]}},\"aggs\":{\"Extension Applications\":{\"value_count\":{\"field\":\"Data.lease.applicationNumber.keyword\"}}}},\"Extension Approved\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.lease.applicationType.keyword\":[\"EXTENSION\"]}},{\"terms\":{\"Data.lease.status.keyword\":[\"APPROVED\"]}}]}},\"aggs\":{\"Extension Approved\":{\"value_count\":{\"field\":\"Data.lease.applicationNumber.keyword\"}}}},\"Extension Rejected\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.lease.applicationType.keyword\":[\"EXTENSION\"]}},{\"terms\":{\"Data.lease.status.keyword\":[\"REJECTED\"]}}]}},\"aggs\":{\"Extension Rejected\":{\"value_count\":{\"field\":\"Data.lease.applicationNumber.keyword\"}}}},\"Approved Applications\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.lease.status.keyword\":[\"APPROVED\"]}}]}},\"aggs\":{\"Approved Applications\":{\"value_count\":{\"field\":\"Data.lease.applicationNumber.keyword\"}}}},\"Rejected Applications\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.lease.status.keyword\":[\"REJECTED\"]}}]}},\"aggs\":{\"Rejected Applications\":{\"value_count\":{\"field\":\"Data.lease.applicationNumber.keyword\"}}}},\"Total Processed\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.lease.status.keyword\":[\"REJECTED\",\"APPROVED\"]}}]}},\"aggs\":{\"Total Processed\":{\"value_count\":{\"field\":\"Data.lease.applicationNumber.keyword\"}}}},\"Total Applications\":{\"value_count\":{\"field\":\"Data.lease.applicationNumber.keyword\"}}}}}}}}"
      }
    ],
    "filterKeys": [
@@ -4712,6 +4712,13 @@
    "drillChart": "none",
    "plotLabel": "Boundary",
    "excludedColumns": ["Total Applications", "Renewal Approved", "Extension Approved","Extension Rejected","Renewal Rejected"],
+   "removedFields":[     {
+       "postAggregationTheory" : "",
+       "actionName": "AdditiveComputedField",
+       "fields" : ["Extension Approved", "Renewal Approved","Extension Rejected","Renewal Rejected" ],
+       "newField" : "Total Processed",
+       "_comments": "fields are field names picked from its aggregation query to use post aggregation newField value with given new field name  "
+     }],
    "computedFields": [
      {
        "postAggregationTheory" : "",
@@ -4720,13 +4727,7 @@
        "newField" : "Total Applications",
        "_comments": "fields are field names picked from its aggregation query to use post aggregation newField value with given new field name  "
      },
-     {
-       "postAggregationTheory" : "",
-       "actionName": "AdditiveComputedField",
-       "fields" : ["Extension Approved", "Renewal Approved","Extension Rejected","Renewal Rejected" ],
-       "newField" : "Total Processed",
-       "_comments": "fields are field names picked from its aggregation query to use post aggregation newField value with given new field name  "
-     },
+
      {
        "postAggregationTheory" : "",
        "actionName": "PercentageComputedField",
