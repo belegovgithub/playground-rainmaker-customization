@@ -246,7 +246,7 @@
                                                 false,
                                                 false
                                               ],
-                                               "style": "receipt-table-value-down"
+                                               "style": "receipt-table-value-val"
                                             },
                                             {
                                               "text":"{{service_type}}",
@@ -266,7 +266,7 @@
                                                 false,
                                                 false
                                               ],
-                                               "style": "receipt-table-value-down"
+                                               "style": "receipt-table-value-val"
                                             }
                                           ]
                                           ]
@@ -410,7 +410,7 @@
                                               false,
                                               false
                                             ],
-                                             "style": "receipt-table-value-down"
+                                             "style": "receipt-table-value-val"
                                      
                                           }
                                         ]
@@ -492,7 +492,7 @@
                     "10%"
                   ],
                   "body": [
-                    "{{#variable10}}[{\"text\": \"{{trade_license_tax}}\",\"border\": [true,false,false,false], \"style\": \"receipt-table-value-down\"},{\"text\": \"{{tradeLicenseTax}}\", \"border\": [false,false,false,false], \"style\": \"receipt-table-value-down\"},{ \"text\": \" \",\"border\": [false,false,true, false ]}]{{/variable10}}"
+                    "{{#variable10}}[{\"text\": \"{{trade_license_tax}}\",\"border\": [true,false,false,false], \"style\": \"receipt-table-value\"},{\"text\": \"{{tradeLicenseTax}}\", \"border\": [false,false,false,false], \"style\": \"receipt-table-value-down\"},{ \"text\": \" \",\"border\": [false,false,true, false ]}]{{/variable10}}"
                   ]
                 },
                 "layout": {}
@@ -780,6 +780,19 @@
                  5
                ]
              },
+             "receipt-table-value-val": {
+              "color": "#000000",
+              "bold": false,
+              "fontSize": 12,
+              "fontWeight": 400,
+              "alignment": "left",
+              "margin": [
+                3,
+                5,
+                0,
+                5
+              ]
+            },
              "receipt-table-value2": {
                "color": "#000000",
                "bold": false,
