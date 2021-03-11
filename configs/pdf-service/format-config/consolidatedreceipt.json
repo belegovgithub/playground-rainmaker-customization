@@ -19,6 +19,7 @@
                      {
                        "text":"{{letter-code}}",
                        "style": "receipt-logo-header"
+                      
                      },
                      {
                          "text":"{{letter-header}}",
@@ -89,6 +90,7 @@
                                   "text":"{{serviceType}} {{payment_receipt}}",
                                    "alignment":"center",
                                    "style": "receipt-logo-title"
+                                  
                                  } 
                                ],
                                  "border":[
@@ -200,7 +202,7 @@
                                                "style": "receipt-table-value"
                                             },
                                             {
-                                              "text":"{{serviceType}} {{tlReceipt}}",
+                                              "text":"{{serviceType}} {{payment_receipt}}",
                                               "border":[
                                                 false,
                                                 false,
@@ -234,7 +236,7 @@
                                                 "style": "receipt-table-value"
                                              },
                                              {
-                                               "text":"{{fromPeriod}} {{to}} {{toPeriod}}",
+                                               "text":"{{fromPeriod}} - {{toPeriod}}",
                                                "border":[
                                                  false,
                                                  false,
@@ -350,7 +352,7 @@
                                               false,
                                               false
                                             ],
-                                             "style": "receipt-table-value-down"
+                                             "style": "receipt-table-value-spcl"
                                           },
                                           {
                                             "text":"{{paid_amount}}",
@@ -524,8 +526,9 @@
                           true,
                           false
                         ],
-                        "style": "receipt-table-value-total",
+                        "style": "receipt-table-value-total-val",
                         "fontSize": 20
+                       
                       }
                     ]
                   ]
@@ -700,7 +703,7 @@
         },
           "receipt-logo-title": {
                 "color": "#000000",
-               "bold": true,
+               "bold": false,
           "fontSize": 9,
           "fontWeight": 500
              },
@@ -767,6 +770,20 @@
                  0
                ]
              },
+             "receipt-table-value-total-val": {
+              "color": "#000000",
+              "bold": true,
+              "fontSize": 12,
+              "font": "Cambay",
+              "fontWeight": 500,
+              "alignment": "right",
+              "margin": [
+                0,
+                5,
+                30,
+                0
+              ]
+            },
              "receipt-table-value-total-Qr": {
               "alignment": "right",
               "margin": [
@@ -781,6 +798,7 @@
                "bold": false,
                "fontSize": 12,
                "fontWeight": 400,
+               "font": "Cambay",
                "alignment": "left",
                "margin": [
                  3,
@@ -789,6 +807,19 @@
                  2
                ]
              },
+             "receipt-table-value-spcl": {
+              "color": "#000000",
+              "bold": false,
+              "fontSize": 12,
+              "fontWeight": 400,
+              "alignment": "left",
+              "margin": [
+                3,
+                2,
+                0,
+                2
+              ]
+            },
              "receipt-table-value2": {
                "color": "#000000",
                "bold": false,
