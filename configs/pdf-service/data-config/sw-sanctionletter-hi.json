@@ -1,5 +1,5 @@
 {
-    "key": "ws-sanctionletter",
+    "key": "sw-sanctionletter-hi",
     "DataConfigs": {
         "serviceName": "rainmaker-common",
         "version": "1.0.0",
@@ -360,6 +360,18 @@
                                 }
                             },
                             {
+                                "variable": "subjectLabel",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_SUBJECT"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
                                 "variable": "formFee",
                                 "value": {
                                     "path": "$.pdfTaxhead[?(@.taxHeadCode == 'FORM_FEE')].estimateAmount"
@@ -480,31 +492,7 @@
                             {
                                 "variable": "statement_1",
                                 "value": {
-                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_STATEMENT1"
-                                },
-                                "type": "label",
-                                "localisation": {
-                                    "required": true,
-                                    "prefix": null,
-                                    "module": "rainmaker-pdf"
-                                }
-                            },
-                            {
-                                "variable": "to_smt",
-                                "value": {
-                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_TO_STATEMENT"
-                                },
-                                "type": "label",
-                                "localisation": {
-                                    "required": true,
-                                    "prefix": null,
-                                    "module": "rainmaker-pdf"
-                                }
-                            },
-                            {
-                                "variable": "water_conn",
-                                "value": {
-                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_WATER_CONN_STATEMENT"
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_STATEMENT1_HI"
                                 },
                                 "type": "label",
                                 "localisation": {
@@ -516,7 +504,19 @@
                             {
                                 "variable": "statement_2",
                                 "value": {
-                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_STATEMENT2"
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_STATEMENT2_HI"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "statement_2_1",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_STATEMENT2_1_HI"
                                 },
                                 "type": "label",
                                 "localisation": {
@@ -528,7 +528,7 @@
                             {
                                 "variable": "statement_3",
                                 "value": {
-                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_STATEMENT3"
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_STATEMENT3_HI"
                                 },
                                 "type": "label",
                                 "localisation": {
@@ -540,19 +540,7 @@
                             {
                                 "variable": "statement_4",
                                 "value": {
-                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_STATEMENT4"
-                                },
-                                "type": "label",
-                                "localisation": {
-                                    "required": true,
-                                    "prefix": null,
-                                    "module": "rainmaker-pdf"
-                                }
-                            },
-                            {
-                                "variable": "statement_4_1",
-                                "value": {
-                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_STATEMENT4_1"
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_STATEMENT4_HI"
                                 },
                                 "type": "label",
                                 "localisation": {
@@ -564,19 +552,7 @@
                             {
                                 "variable": "statement_5",
                                 "value": {
-                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_STATEMENT5"
-                                },
-                                "type": "label",
-                                "localisation": {
-                                    "required": true,
-                                    "prefix": null,
-                                    "module": "rainmaker-pdf"
-                                }
-                            },
-                            {
-                                "variable": "water_conn_small",
-                                "value": {
-                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_WATER_CONN_SMALL_STATEMENT"
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_STATEMENT5_HI"
                                 },
                                 "type": "label",
                                 "localisation": {

@@ -246,7 +246,7 @@
                                                 false,
                                                 false
                                               ],
-                                               "style": "receipt-table-value-down"
+                                               "style": "receipt-table-value-val"
                                             },
                                             {
                                               "text":"{{service_type}}",
@@ -266,7 +266,7 @@
                                                 false,
                                                 false
                                               ],
-                                               "style": "receipt-table-value-down"
+                                               "style": "receipt-table-value-val"
                                             }
                                           ]
                                           ]
@@ -410,7 +410,7 @@
                                               false,
                                               false
                                             ],
-                                             "style": "receipt-table-value-down"
+                                             "style": "receipt-table-value-val"
                                      
                                           }
                                         ]
@@ -475,7 +475,7 @@
                           true,
                           false
                         ],
-                        "style": "receipt-table-value-total",
+                        "style": "receipt-table-value-total-val",
                         "fontSize": 20
                       }
                     ]
@@ -492,7 +492,7 @@
                     "10%"
                   ],
                   "body": [
-                    "{{#variable10}}[{\"text\": \"{{trade_license_tax}}\",\"border\": [true,false,false,false], \"style\": \"receipt-table-value-down\"},{\"text\": \"{{tradeLicenseTax}}\", \"border\": [false,false,false,false], \"style\": \"receipt-table-value-down\"},{ \"text\": \" \",\"border\": [false,false,true, false ]}]{{/variable10}}"
+                    "{{#variable10}}[{\"text\": \"{{trade_license_tax}}\",\"border\": [true,false,false,false], \"style\": \"receipt-table-value\"},{\"text\": \"{{tradeLicenseTax}}\", \"border\": [false,false,false,false], \"style\": \"receipt-table-value-down\"},{ \"text\": \" \",\"border\": [false,false,true, false ]}]{{/variable10}}"
                   ]
                 },
                 "layout": {}
@@ -528,7 +528,7 @@
                           true
                         ],
                         "bold": true,
-                        "style": "receipt-table-value-down"
+                        "style": "receipt-table-value "
                       },
                       {
                         "text": "{{totalAmount}}",
@@ -743,6 +743,20 @@
                  0
                ]
              },
+             "receipt-table-value-total-val": {
+              "color": "#000000",
+              "bold": true,
+              "fontSize": 12,
+              "font": "Cambay",
+              "fontWeight": 500,
+              "alignment": "right",
+              "margin": [
+                0,
+                5,
+                30,
+                0
+              ]
+            },
              "receipt-table-value-total-Qr": {
               "alignment": "right",
               "margin": [
@@ -755,6 +769,7 @@
              "receipt-table-value-down": {
                "color": "#000000",
                "bold": false,
+               "font": "Cambay",
                "fontSize": 12,
                "fontWeight": 400,
                "alignment": "left",
@@ -765,6 +780,19 @@
                  5
                ]
              },
+             "receipt-table-value-val": {
+              "color": "#000000",
+              "bold": false,
+              "fontSize": 12,
+              "fontWeight": 400,
+              "alignment": "left",
+              "margin": [
+                3,
+                5,
+                0,
+                5
+              ]
+            },
              "receipt-table-value2": {
                "color": "#000000",
                "bold": false,
