@@ -528,7 +528,7 @@
                           true
                         ],
                         "bold": true,
-                        "style": "receipt-table-value-down"
+                        "style": "receipt-table-value "
                       },
                       {
                         "text": "{{totalAmount}}",

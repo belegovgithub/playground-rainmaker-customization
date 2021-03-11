@@ -209,7 +209,7 @@
                                                 false,
                                                 false
                                               ],
-                                               "style": "receipt-table-value-down"
+                                               "style": "receipt-table-value"
                                             }
                                           ]
                                           ]
@@ -544,7 +544,7 @@
                     "10%"
                   ],
                   "body": [
-                    "{{#variable10}}[{\"text\": \"{{trade_license_tax}}\",\"border\": [true,false,false,false], \"style\": \"receipt-table-value-down\"},{\"text\": \"{{tradeLicenseTax}}\", \"border\": [false,false,false,false], \"style\": \"receipt-table-value-down\"},{ \"text\": \" \",\"border\": [false,false,true, false ]}]{{/variable10}}"
+                    "{{#variable10}}[{\"text\": \"{{trade_license_tax}}\",\"border\": [true,false,false,false], \"style\": \"receipt-table-value\"},{\"text\": \"{{tradeLicenseTax}}\", \"border\": [false,false,false,false], \"style\": \"receipt-table-value-down\"},{ \"text\": \" \",\"border\": [false,false,true, false ]}]{{/variable10}}"
                   ]
                 },
                 "layout": {}
@@ -580,7 +580,7 @@
                           true
                         ],
                         "bold": true,
-                        "style": "receipt-table-value-down"
+                        "style": "receipt-table-value"
                       },
                       {
                         "text": "{{totalAmount}}",
