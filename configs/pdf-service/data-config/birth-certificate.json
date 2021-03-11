@@ -34,6 +34,12 @@
                   }
                 },
                 {
+                  "variable": "embeddedUrl", 
+                  "value": {
+                    "path": "$.embeddedUrl"
+                  }
+                },
+                {
                   "variable": "dob", 
                   "value": {
                     "path": "$.dateofbirth"
@@ -711,7 +717,7 @@
                 "qrcodeConfig": [
                   {
                       "variable": "qr_code_image",
-                      "value":"Date Of Birth : {{dateofbirth}}"
+                      "value":"{{embeddedUrl}}"
                   }
                 ]
             },
