@@ -7,7 +7,7 @@ serviceMaps:
     isTransaction: true
     queryMaps:
 
-    - query: INSERT INTO public.eg_birth_cert_request (id, birthcertificateno, createdby, createdtime, birthdtlid, filestoreid, lastmodifiedtime, lastmodifiedby, status, additionaldetail, embeddedurl) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+    - query: INSERT INTO public.eg_birth_cert_request (id, birthcertificateno, createdby, createdtime, birthdtlid, filestoreid, lastmodifiedtime, lastmodifiedby, status, additionaldetail, embeddedurl, dateofissue) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
       basePath: birthCertificate
       jsonMaps:
       - jsonPath: $.birthCertificate.id
@@ -33,6 +33,8 @@ serviceMaps:
         dbType: JSONB
 
       - jsonPath: $.birthCertificate.embeddedUrl
+      
+      - jsonPath: $.deathCertificate.dateofissue       
 
   - version: 1.0
     description: Update birthCertificate details in eg_birth_cert_request  table
@@ -46,7 +48,7 @@ serviceMaps:
       
       - jsonPath: $.birthCertificate.id
     
-    - query: UPDATE eg_birth_cert_request SET status = ?, filestoreid =?, embeddedurl = ? ,lastmodifiedby = ?,  lastmodifiedtime = ? WHERE id=?;
+    - query: UPDATE eg_birth_cert_request SET status = ?, filestoreid =?, embeddedurl = ? ,dateofissue =?, lastmodifiedby = ?,  lastmodifiedtime = ? WHERE id=?;
       basePath: birthCertificate
       jsonMaps:
       
@@ -54,7 +56,9 @@ serviceMaps:
 
       - jsonPath: $.birthCertificate.filestoreid      
       
-      - jsonPath: $.birthCertificate.embeddedUrl      
+      - jsonPath: $.birthCertificate.embeddedUrl  
+
+      - jsonPath: $.deathCertificate.dateofissue       
 
       - jsonPath: $.birthCertificate.auditDetails.lastModifiedBy
 
@@ -69,7 +73,7 @@ serviceMaps:
     isTransaction: true
     queryMaps:
 
-    - query: INSERT INTO public.eg_death_cert_request (id, deathcertificateno, createdby, createdtime, deathdtlid, filestoreid, lastmodifiedtime, lastmodifiedby, status, additionaldetail ,embeddedurl) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+    - query: INSERT INTO public.eg_death_cert_request (id, deathcertificateno, createdby, createdtime, deathdtlid, filestoreid, lastmodifiedtime, lastmodifiedby, status, additionaldetail ,embeddedurl ,dateofissue) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
       basePath: deathCertificate
       jsonMaps:
       - jsonPath: $.deathCertificate.id
@@ -95,6 +99,8 @@ serviceMaps:
         dbType: JSONB
 
       - jsonPath: $.deathCertificate.embeddedUrl
+      
+      - jsonPath: $.deathCertificate.dateofissue      
 
   - version: 1.0
     description: Update deathCertificate details in eg_death_cert_request  table
@@ -108,7 +114,7 @@ serviceMaps:
       
       - jsonPath: $.deathCertificate.id
     
-    - query: UPDATE eg_death_cert_request SET status = ?, filestoreid =?, embeddedurl = ? , lastmodifiedby = ?,  lastmodifiedtime = ? WHERE id=?;
+    - query: UPDATE eg_death_cert_request SET status = ?, filestoreid =?, embeddedurl = ? , dateofissue = ? , lastmodifiedby = ?,  lastmodifiedtime = ? WHERE id=?;
       basePath: deathCertificate
       jsonMaps:
       
@@ -116,8 +122,10 @@ serviceMaps:
 
       - jsonPath: $.deathCertificate.filestoreid    
 
-      - jsonPath: $.deathCertificate.embeddedUrl      
-
+      - jsonPath: $.deathCertificate.embeddedUrl    
+      
+      - jsonPath: $.deathCertificate.dateofissue 
+      
       - jsonPath: $.deathCertificate.auditDetails.lastModifiedBy
 
       - jsonPath: $.deathCertificate.auditDetails.lastModifiedTime
