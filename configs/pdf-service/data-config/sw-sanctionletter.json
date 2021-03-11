@@ -1,5 +1,5 @@
 {
-    "key": "ws-sanctionletter",
+    "key": "sw-sanctionletter",
     "DataConfigs": {
         "serviceName": "rainmaker-common",
         "version": "1.0.0",
@@ -502,9 +502,9 @@
                                 }
                             },
                             {
-                                "variable": "water_conn",
+                                "variable": "sw_conn",
                                 "value": {
-                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_WATER_CONN_STATEMENT"
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_SW_CONN_STATEMENT"
                                 },
                                 "type": "label",
                                 "localisation": {
@@ -574,9 +574,9 @@
                                 }
                             },
                             {
-                                "variable": "water_conn_small",
+                                "variable": "sw_conn_small",
                                 "value": {
-                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_WATER_CONN_SMALL_STATEMENT"
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_SW_CONN_SMALL_STATEMENT"
                                 },
                                 "type": "label",
                                 "localisation": {

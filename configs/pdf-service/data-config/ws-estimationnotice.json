@@ -65,8 +65,15 @@
                             {
                                 "variable": "address",
                                 "value": {
-                                    "path": "$.property.address.locality.name"
-                                }
+                                    "path": "$.property.address.locality.code"
+                                },
+                                "localisation":{
+                                    "required":true,
+                                    "prefix": "REVENUE",
+                                    "module": "rainmaker",
+                                    "prefixCbName":true
+                                 },
+                                 "type":"boundary"  
                             },
                             {
                                 "variable": "pincode",
@@ -251,9 +258,57 @@
                                 }
                             },
                             {
+                                "variable": "to_smt",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_TO_STATEMENT"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "water_conn",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_WATER_CONN_STATEMENT"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "water_conn_small",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_WATER_CONN_SMALL_STATEMENT"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
                                 "variable": "grant_stmt2",
                                 "value": {
                                     "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_GRANT_STATEMENT2"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "with_stmt",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_WITH_STATEMENT"
                                 },
                                 "type": "label",
                                 "localisation": {
@@ -338,6 +393,18 @@
                                 "variable": "applStatement1",
                                 "value": {
                                     "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_APPL_STATEMENT1"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "to_applicant",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_APPLICANT_STATEMENT"
                                 },
                                 "type": "label",
                                 "localisation": {
@@ -515,9 +582,33 @@
                                 }
                             },
                             {
+                                "variable": "paymentStatement2_1",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_PAYMENT_STATEMENT2_1"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
                                 "variable": "paymentStatement3",
                                 "value": {
                                     "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_PAYMENT_STATEMENT3"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "paymentStatement3_1",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_PAYMENT_STATEMENT3_1"
                                 },
                                 "type": "label",
                                 "localisation": {

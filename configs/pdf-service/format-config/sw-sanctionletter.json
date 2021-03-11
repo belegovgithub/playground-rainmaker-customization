@@ -1,5 +1,5 @@
 {
-    "key": "ws-sanctionletter",
+    "key": "sw-sanctionletter",
     "config": {
         "defaultStyle": {
             "font": "Cambay"
@@ -144,7 +144,7 @@
                                                             
                                                         },
                                                         {
-                                                            "text": "{{statement_1}} {{water_conn}} {{to_smt}} {{name}} {{statement_2}} {{doorNo}} {{locality}},{{logo_header}} {{cantt_board}}",
+                                                            "text": "{{statement_1}} {{sw_conn}} {{to_smt}} {{name}} {{statement_2}} {{doorNo}} {{locality}},{{logo_header}} {{cantt_board}}",
                                                             "width": "90%",
                                                             "bold": true
                                                              
@@ -239,11 +239,11 @@
                                                     
                                                 },
                                                 {
-                                                    "text": "{{statement_3}} {{rupeesLabel}} {{totalAmount}} {{statement_4}} {{water_conn}} {{statement_4_1}} {{doorNo}} {{locality}},{{logo_header}} {{cantt_board}}",
+                                                    "text": "{{statement_3}} {{rupeesLabel}} {{totalAmount}} {{statement_4}} {{sw_conn}} {{statement_4_1}} {{doorNo}} {{locality}},{{logo_header}} {{cantt_board}}",
                                                     "style": "receipt-value-down"
                                                 },
                                                 {
-                                                    "text": "{{water_conn}} {{statement_5}}",
+                                                    "text": "{{sw_conn}} {{statement_5}}",
                                                     "style": "receipt-value-down"
                                                 }
                                             ]

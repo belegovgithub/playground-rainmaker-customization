@@ -1,5 +1,5 @@
 {
-    "key": "ws-sanctionletter",
+    "key": "sw-sanctionletter-hi",
     "config": {
         "defaultStyle": {
             "font": "Cambay"
@@ -139,12 +139,12 @@
                                                      "columns": [
                                                         {
                                                             "width": "10%",
-                                                            "text": "Subject:",
+                                                            "text": "{{subjectLabel}}",
                                                              "bold": true
                                                             
                                                         },
                                                         {
-                                                            "text": "{{statement_1}} {{water_conn}} {{to_smt}} {{name}} {{statement_2}} {{doorNo}} {{locality}},{{logo_header}} {{cantt_board}}",
+                                                            "text": "{{name}} {{statement_1}} {{logo_header}} {{cantt_board}} {{statement_2}} {{doorNo}} {{locality}},{{statement_2_1}}",
                                                             "width": "90%",
                                                             "bold": true
                                                              
@@ -174,7 +174,7 @@
                                                 {
                                                      "columns": [
                                                         {
-                                                            "width": "18%",
+                                                            "width": "12%",
                                                             "text": "{{referenceLabel}}",
                                                              "bold": false,
                                                              "italics": true,
@@ -239,11 +239,11 @@
                                                     
                                                 },
                                                 {
-                                                    "text": "{{statement_3}} {{rupeesLabel}} {{totalAmount}} {{statement_4}} {{water_conn}} {{statement_4_1}} {{doorNo}} {{locality}},{{logo_header}} {{cantt_board}}",
+                                                    "text": "{{logo_header}} {{cantt_board}} {{statement_2}} {{doorNo}} {{locality}} {{statement_2}} {{statement_3}} {{totalAmount}} {{rupeesLabel}}  {{statement_4}}",
                                                     "style": "receipt-value-down"
                                                 },
                                                 {
-                                                    "text": "{{water_conn}} {{statement_5}}",
+                                                    "text": "{{statement_5}}",
                                                     "style": "receipt-value-down"
                                                 }
                                             ]

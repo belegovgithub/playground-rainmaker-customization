@@ -234,7 +234,7 @@
                                                 "style": "receipt-table-value"
                                              },
                                              {
-                                               "text":"{{fromPeriod}} {{to}} {{toPeriod}}",
+                                               "text":"{{fromPeriod}} - {{toPeriod}}",
                                                "border":[
                                                  false,
                                                  false,
@@ -350,7 +350,7 @@
                                               false,
                                               false
                                             ],
-                                             "style": "receipt-table-value-down"
+                                             "style": "receipt-table-value-spcl"
                                           },
                                           {
                                             "text":"{{paid_amount}}",
@@ -525,7 +525,8 @@
                           false
                         ],
                         "style": "receipt-table-value-total",
-                        "fontSize": 20
+                        "fontSize": 20,
+                        "font": "Cambay"
                       }
                     ]
                   ]
@@ -700,7 +701,7 @@
         },
           "receipt-logo-title": {
                 "color": "#000000",
-               "bold": true,
+               "bold": false,
           "fontSize": 9,
           "fontWeight": 500
              },
@@ -781,6 +782,7 @@
                "bold": false,
                "fontSize": 12,
                "fontWeight": 400,
+               "font": "Cambay",
                "alignment": "left",
                "margin": [
                  3,
@@ -789,6 +791,19 @@
                  2
                ]
              },
+             "receipt-table-value-spcl": {
+              "color": "#000000",
+              "bold": false,
+              "fontSize": 12,
+              "fontWeight": 400,
+              "alignment": "left",
+              "margin": [
+                3,
+                2,
+                0,
+                2
+              ]
+            },
              "receipt-table-value2": {
                "color": "#000000",
                "bold": false,
