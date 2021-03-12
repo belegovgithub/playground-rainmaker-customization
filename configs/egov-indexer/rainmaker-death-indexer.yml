@@ -12,8 +12,26 @@ ServiceMaps:
         customJsonMapping:
           indexMapping: {"Data":{}}
           fieldMapping:
-          - inJsonPath: $
-            outJsonPath: $.Data
+          - inJsonPath: $.deathCertificateNo
+            outJsonPath: $.Data.deathCertificateNo
+          - inJsonPath: $.filestoreid
+            outJsonPath: $.Data.filestoreid          
+          - inJsonPath: $.deathDtlId
+            outJsonPath: $.Data.deathDtlId
+          - inJsonPath: $.additionalDetail
+            outJsonPath: $.Data.additionalDetail
+          - inJsonPath: $.applicationStatus
+            outJsonPath: $.Data.applicationStatus            
+          - inJsonPath: $.dateofissue
+            outJsonPath: $.Data.dateofissue
+          - inJsonPath: $.dateofissue
+            outJsonPath: $.Data.dateofissue
+          - inJsonPath: $.tenantId
+            outJsonPath: $.Data.tenantId
+          - inJsonPath: $.id
+            outJsonPath: $.Data.id
+          - inJsonPath: $.embeddedUrl
+            outJsonPath: $.Data.embeddedUrl
   
   - topic: update-death-topic
     configKey: INDEX
@@ -25,5 +43,23 @@ ServiceMaps:
         customJsonMapping:
           indexMapping: {"Data":{}}
           fieldMapping:
-          - inJsonPath: $
-            outJsonPath: $.Data
+          - inJsonPath: $.deathCertificateNo
+            outJsonPath: $.Data.deathCertificateNo
+          - inJsonPath: $.filestoreid
+            outJsonPath: $.Data.filestoreid          
+          - inJsonPath: $.deathDtlId
+            outJsonPath: $.Data.deathDtlId
+          - inJsonPath: $.additionalDetail
+            outJsonPath: $.Data.additionalDetail
+          - inJsonPath: $.applicationStatus
+            outJsonPath: $.Data.applicationStatus            
+          - inJsonPath: $.dateofissue
+            outJsonPath: $.Data.dateofissue
+          - inJsonPath: $.dateofissue
+            outJsonPath: $.Data.dateofissue
+          - inJsonPath: $.tenantId
+            outJsonPath: $.Data.tenantId
+          - inJsonPath: $.id
+            outJsonPath: $.Data.id
+          - inJsonPath: $.embeddedUrl
+            outJsonPath: $.Data.embeddedUrl
