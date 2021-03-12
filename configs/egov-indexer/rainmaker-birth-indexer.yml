@@ -9,6 +9,7 @@ ServiceMaps:
         type: general
         id: $.id
         jsonPath: $.birthCertificate
+        timeStampField: $.dateofissue
         customJsonMapping:
           indexMapping: {"Data":{}}
           fieldMapping:
