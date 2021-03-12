@@ -32,6 +32,8 @@ ServiceMaps:
             outJsonPath: $.Data.id
           - inJsonPath: $.embeddedUrl
             outJsonPath: $.Data.embeddedUrl
+          - inJsonPath: $.auditDetails
+            outJsonPath: $.Data.auditDetails
 
   - topic: update-birth-topic
     configKey: INDEX
@@ -63,3 +65,5 @@ ServiceMaps:
             outJsonPath: $.Data.id
           - inJsonPath: $.embeddedUrl
             outJsonPath: $.Data.embeddedUrl
+          - inJsonPath: $.auditDetails
+            outJsonPath: $.Data.auditDetails
