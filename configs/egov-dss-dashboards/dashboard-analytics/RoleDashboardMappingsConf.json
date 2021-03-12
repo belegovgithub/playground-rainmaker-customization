@@ -42,6 +42,12 @@
           "id": "lease"
         },
         {
+          "id": "birth"
+        },
+        {
+          "id": "death"
+        },
+        {
           "id": "citizen-home"
         },
         {
@@ -64,6 +70,12 @@
         },
         {
           "id": "citizen-home-lease"
+        },
+        {
+          "id": "citizen-home-birth"
+        },
+        {
+          "id": "citizen-home-death"
         }
       ]
     },
@@ -97,6 +109,12 @@
         },
         {
           "id": "ulb-sw"
+        },
+        {
+          "id": "ulb-birth"
+        },
+        {
+          "id": "ulb-death"
         },
         {
           "id": "ulb-lease"
