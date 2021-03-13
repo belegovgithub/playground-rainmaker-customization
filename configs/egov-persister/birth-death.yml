@@ -34,7 +34,7 @@ serviceMaps:
 
       - jsonPath: $.birthCertificate.embeddedUrl
       
-      - jsonPath: $.deathCertificate.dateofissue       
+      - jsonPath: $.birthCertificate.dateofissue       
 
   - version: 1.0
     description: Update birthCertificate details in eg_birth_cert_request  table
@@ -58,7 +58,7 @@ serviceMaps:
       
       - jsonPath: $.birthCertificate.embeddedUrl  
 
-      - jsonPath: $.deathCertificate.dateofissue       
+      - jsonPath: $.birthCertificate.dateofissue       
 
       - jsonPath: $.birthCertificate.auditDetails.lastModifiedBy
 
