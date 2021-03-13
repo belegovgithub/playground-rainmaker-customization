@@ -1,5 +1,5 @@
 {
-    "key": "birth-certificate",
+    "key": "bd-uttarpradesh-birth",
     "DataConfigs": {
       "serviceName": "rainmaker-common",
       "version": "1.0.0",
@@ -123,6 +123,12 @@
                     }
                   },
                   {
+                    "variable": "certificateType", 
+                    "value": {
+                      "path": "$.certificateType"
+                    }
+                  },
+                  {
                     "variable": "cantonment-board",
                     "value": {
                       "path": "PDF_STATIC_LABEL_CONSOLIDATED_TLCERTIFICATE_MUNICIPAL_CORPORATION"
@@ -195,6 +201,18 @@
                    }
                   },
                   {
+                    "variable": "cb_label_name_multiLang",
+                    "value": {
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_TLCERTIFICATE_MUNICIPAL_CORPORATION_HI"
+                    },
+                    "type": "label",
+                    "localisation":{
+                      "required":true,
+                      "prefix": null,
+                      "module":"rainmaker-pdf" 
+                   }
+                  },
+                  {
                     "variable": "gram_panchayat_label_multiLang",
                     "value": {
                       "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_GRAM_PANCHAYAT_MULTILANG"
@@ -221,7 +239,19 @@
                   {
                     "variable": "certificate_label_multiLang",
                     "value": {
-                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_CERTIFICATE_BIRTH_MULTILANG"
+                      "path": "PDF_STATIC_LABEL_BD_HI_CERTIFICATE"
+                    },
+                    "type": "label",
+                    "localisation":{
+                      "required":true,
+                      "prefix": null,
+                      "module":"rainmaker-pdf"
+                   }
+                  },
+                  {
+                    "variable": "certificate_label",
+                    "value": {
+                      "path": "PDF_STATIC_LABEL_BD_EN_CERTIFICATE"
                     },
                     "type": "label",
                     "localisation":{
@@ -709,6 +739,30 @@
                       "prefix": null,
                       "module":"rainmaker-pdf"
                    }
+                  },
+                  {
+                    "variable": "cb_letter_label_multilang",
+                    "value": {
+                      "path": "PDF_STATIC_LABEL_BD_HI_CB"
+                    },
+                    "type": "label",
+                    "localisation":{
+                      "required":true,
+                      "prefix": null,
+                      "module":"rainmaker-pdf"
+                   }
+                  },
+                  {
+                    "variable": "cb_letter_label",
+                    "value": {
+                      "path": "PDF_STATIC_LABEL_BD_EN_CB"
+                    },
+                    "type": "label",
+                    "localisation":{
+                      "required":true,
+                      "prefix": null,
+                      "module":"rainmaker-pdf"
+                   }
                   }
                   
               ]
@@ -733,8 +787,18 @@
                           "value":"$.MdmsRes.tenant.tenants[0].code",
                           "localisation":{
                             "required":true,
-                            "prefix": "TENANT_TENANTS",
-                            "module":"rainmaker-common"
+                            "prefix": "PDF_STATIC_LABEL_BD_EN",
+                            "module":"rainmaker-pdf"
+                            }
+                        },
+                        {
+                          "variable": "cb-name-multilang",
+                          "value":"$.MdmsRes.tenant.tenants[0].code",
+                          "localisation":{
+                            "required":true,
+                            "prefix": "PDF_STATIC_LABEL_BD_HI",
+                            "module":"rainmaker-pdf"
+                            
                             }
                         }
                       ]

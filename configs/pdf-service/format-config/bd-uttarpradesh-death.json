@@ -1,5 +1,5 @@
 {
-    "key": "birth-certificate",
+    "key": "bd-uttarpradesh-death",
     "config": {
       "defaultStyle": {
         "font": "Cambay"
@@ -55,7 +55,7 @@
                                             
                                         },   
                                         {
-                                            "text": "{{govt_label}}",
+                                            "text": "GOVERNMENT OF UTTAR PRADESH",
                                             "style": "appendix-header-body" ,
                                             "margin": [
                                               0,
@@ -69,19 +69,19 @@
                                               "style": "appendix-header-body"   
                                         },
                                         {
-                                          "text": "{{dept_label}}",
+                                          "text": "DEPARTMENT OF MEDICAL AND HEALTH",
                                             "style": "appendix-header-body" 
                                              
                                       },
-                                        {
-                                            "text": "{{gram_panchayat_label_multiLang}}",
-                                            "style": "appendix-header-body"
-                                             
-                                        },
-                                        {
-                                          "text": "{{gram_panchayat_label}}",
-                                          "style": "appendix-header-body" 
-                                      }
+                                      {
+                                        "text": "{{cb_label_name_multiLang}} {{cb-name-multilang}} {{cb_letter_label_multilang}}",
+                                        "style": "appendix-header-body"
+                                         
+                                    },
+                                    {
+                                      "text": "CANTONMENT BOARD {{cb-name}} {{cb_letter_label}}",
+                                      "style": "appendix-header-body" 
+                                  }
                                          
                                     ]   
                                 },
@@ -110,7 +110,7 @@
                 "body": [
                   [
                     {
-                      "text": "{{certificate_label_multiLang}}",
+                      "text": "मृत्यु प्रमाण पत्र",
                       "style": "title-header_multiLang"
                     } 
                       
@@ -128,7 +128,7 @@
               "body": [
                 [
                   {
-                    "text": "{{certificate_label}}",
+                    "text": "DEATH CERTIFICATE",
                     "style": "title-header"
                   } 
                    
@@ -219,7 +219,7 @@
                                                      "columns": [
                                                          
                                                         {
-                                                            "text": "{{name_label_multiLang}} / {{name_label}}: {{name}}",
+                                                            "text": "{{name_label_multiLang}} / NAME OF DECEASED: {{name}}",
                                                             "width": "45%",
                                                              "style": "details-body"
                                                         },
@@ -229,18 +229,31 @@
                                                             
                                                         },
                                                         {
-                                                            "text": "{{gender_label_multiLang}} / {{gender_label}} : {{gender}}",
+                                                            "text": "{{gender_label_multiLang}} / SEX : {{gender}}",
                                                              "style": "details-body"
                                                         }
                                                     ] 
                                                 }
                                             ],
                                             [ 
+                                              {
+                                                   "columns": [
+                                                       
+                                                      {
+                                                          "text": "{{aadhar_label_multiLang}} / AADHAR NUMBER: {{aadharno}}",
+                                                          "width": "45%",
+                                                           "style": "details-body"
+                                                      }
+                                                       
+                                                  ] 
+                                              }
+                                          ],
+                                            [ 
                                                 {
                                                      "columns": [
                                                          
                                                         {
-                                                            "text": "{{dob_label_multiLang}} / {{dob_label}}: {{dob}}",
+                                                            "text": "{{dod_label_multiLang}} / DATE OF DEATH: {{dob}}",
                                                             "width": "45%",
                                                              "style": "details-body"
                                                         },
@@ -250,7 +263,7 @@
                                                             
                                                         },
                                                         {
-                                                            "text": "{{pob_label_multiLang}} / {{pob_label}}: {{placeOfBirth}}",
+                                                            "text": "{{pod_label_multiLang}} / PLACE OF DEATH: {{placeOfDeath}}",
                                                              "style": "details-body"
                                                         }
                                                     ] 
@@ -261,7 +274,7 @@
                                                      "columns": [
                                                          
                                                         {
-                                                            "text": "{{mother_name_label_multiLang}} / {{mother_name_label}}: {{motherName}}",
+                                                            "text": "{{mother_name_label_multiLang}} / NAME OF MOTHER: {{motherName}}",
                                                             "width": "45%",
                                                              "style": "details-body"
                                                         },
@@ -271,7 +284,7 @@
                                                             
                                                         },
                                                         {
-                                                            "text": "{{father_name_label_multiLang}} / {{father_name_label}}: {{fatherName}}",
+                                                            "text": "{{father_name_label_multiLang}} / NAME OF FATHER: {{fatherName}}",
                                                              "style": "details-body"
                                                         }
                                                     ] 
@@ -282,7 +295,7 @@
                                                      "columns": [
                                                          
                                                         {
-                                                            "text": "{{mother_uid_label_multiLang}} / {{mother_uid_label}}: {{motherUid}}",
+                                                            "text": "{{mother_aadhar_label_multiLang}} / MOTHER AADHAR NO: {{motherUid}}",
                                                             "width": "45%",
                                                              "style": "details-body"
                                                         },
@@ -292,7 +305,7 @@
                                                             
                                                         },
                                                         {
-                                                            "text": "{{father_uid_label_multiLang}} / {{father_uid_label}}: {{fatherUid}}",
+                                                            "text": "{{father_aadhar_label_multiLang}} / FATHER AADHAR NO: {{fatherUid}}",
                                                              "style": "details-body"
                                                         }
                                                     ] 
@@ -303,7 +316,7 @@
                                                      "columns": [
                                                          
                                                         {
-                                                            "text": "{{child_address_label_multiLang}} / {{child_address_label}}: {{childAddress}}",
+                                                            "text": "{{death_address_label_multiLang}} / ADDRESS OF DECEASED AT THE TIME OF BIRTH: {{childAddress}}",
                                                             "width": "45%",
                                                              "style": "details-body"
                                                         },
@@ -313,7 +326,7 @@
                                                             
                                                         },
                                                         {
-                                                            "text": "{{parent_address_label_multiLang}} / {{parent_address_label}}: {{parentsAddress}}",
+                                                            "text": "{{death_perm_address_label_multiLang}} / PERMANENT ADDRESS OF DECEASED: {{parentsAddress}}",
                                                              "style": "details-body"
                                                         }
                                                     ] 
@@ -324,7 +337,7 @@
                                                      "columns": [
                                                          
                                                         {
-                                                            "text": "{{registration_label_multiLang}} / {{registration_label}}: {{registrationNo}}",
+                                                            "text": "{{registration_label_multiLang}} / REGISTRATION NO: {{registrationNo}}",
                                                             "width": "45%",
                                                              "style": "details-body"
                                                         },
@@ -334,7 +347,7 @@
                                                             
                                                         },
                                                         {
-                                                            "text": "{{registration_date_label_multiLang}} / {{registration_date_label}}: {{registration_date}}",
+                                                            "text": "{{registration_date_label_multiLang}} / DATE OF REGISTRATION: {{registration_date}}",
                                                              "style": "details-body"
                                                         }
                                                     ] 
@@ -345,7 +358,7 @@
                                                      "columns": [
                                                          
                                                         {
-                                                            "text": "{{remarks_label_multiLang}} / {{remarks_label}}: {{remarks}}",
+                                                            "text": "{{remarks_label_multiLang}} / REMARKS(IF ANY): {{remarks}}",
                                                             "width": "45%",
                                                              "style": "details-body"
                                                         },
@@ -366,7 +379,7 @@
                                                      "columns": [
                                                          
                                                         {
-                                                            "text": "{{issue_date_label_multiLang}} / {{issue_date_label}}: {{issueDate}}",
+                                                            "text": "{{issue_date_label_multiLang}} / DATE OF ISSUE: {{issueDate}}",
                                                             "width": "45%",
                                                              "style": "details-body"
                                                         },
@@ -376,7 +389,7 @@
                                                             
                                                         },
                                                         {
-                                                            "text": "{{issuing_authority_label_multiLang}} / {{issuing_authority_label}}: {{issuing_authority_multiLang}} / {{issuing_authority}}",
+                                                            "text": "{{issuing_authority_label_multiLang}} / ISSUING AUTHORITY: {{issuing_authority_multiLang}} / {{issuing_authority}}",
                                                              "style": "details-body"
                                                         }
                                                     ] 
