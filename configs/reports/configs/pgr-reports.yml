@@ -939,7 +939,12 @@ ReportDefinitions:
     apiURL: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?moduleName=common-masters&masterName=Department&tenantId=$tenantId
     keyOrder: name,code
     tableName: tbl_def_dept
-  sourceColumns:    
+  sourceColumns: 
+  - name: tenantId
+    label: reports.rainmaker-pgr.ULB
+    type: string
+    source: eg_pgr_service
+    total: false   
   - name: department
     label: reports.rainmaker-pgr.department
     type: string
@@ -1007,7 +1012,7 @@ ReportDefinitions:
     from eg_pgr_service as ps where tenantid != 'pb.testing' )
 
     select
-      initcap(split_part(tenantId,'.', 2)) as tenantId, 
+      initcap(split_part(tenantid,'.', 2)) as tenantId, 
       deptmap_def.name as department,
       count(*) as total,
       SUM (CASE WHEN status in ('rejected') THEN 1 ELSE 0 END) as rejected,
