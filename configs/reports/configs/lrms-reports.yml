@@ -30,11 +30,11 @@ ReportDefinitions:
         type: string
         source: lams
         total: false
-      - name: wf_process.wfComment
+      - name: wfComment
         label: COMMENTS
         type: string
         source: lams
-        total: false  
+        total: false 
       - name: ownedby
         label: LAMS_LOC
         type: string
@@ -199,7 +199,7 @@ ReportDefinitions:
         type: string
         source: lams
         total: false
-      - name:  wf_process.wfComment
+      - name: wfComment
         label: COMMENTS
         type: string
         source: lams
