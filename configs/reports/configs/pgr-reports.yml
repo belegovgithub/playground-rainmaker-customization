@@ -1138,9 +1138,9 @@ ReportDefinitions:
     source: pgr
     wrapper: true
     isMandatory: false
-    searchClause: AND ltenantid = $ulb  
+    searchClause: AND eg_pgr_service.tenantid = $ulb  
   query: |
-    SELECT initcap(split_part(tenantid,'.', 2)) as tenantId,
+    SELECT initcap(split_part(eg_pgr_service.tenantid,'.', 2)) as tenantId,
     (SELECT name from eg_user eas where eas.id::varchar in (select assignee from eg_pgr_action epa1 where epa1.businesskey = eg_pgr_service.servicerequestid and epa1.action in ('assign','reassign','reject','resolve') and "when" = (select max("when") from eg_pgr_action epa where epa.businesskey = eg_pgr_service.servicerequestid and action in ('assign','reassign','resolve','reject') group by epa.businesskey) and epa1.businesskey = eg_pgr_service.servicerequestid)) as lastassignedto,
     (SELECT deptmap_def.name FROM (VALUES tbl_def_dept) AS deptmap_def(name,code) INNER JOIN (VALUES tbl_dept) AS deptmap(serviceCode, department, slaHours) on deptmap.serviceCode = eg_pgr_service.servicecode and deptmap_def.code = deptmap.department) AS department, 
     regexp_replace(servicecode, '([a-z])([A-Z])', '\1 \2','g') AS servicecode,
@@ -1163,4 +1163,4 @@ ReportDefinitions:
     eg_pgr_service.tenantid != 'pb.testing'
     AND eg_pgr_address.uuid = eg_pgr_service.addressid
     AND eg_pgr_service.status IN ('open','assigned','reassigrequested','rejected','closed','resolved')
-  orderby: ORDER BY tenantId,servicerequestid, epa."when" desc
+  orderby: ORDER BY eg_pgr_service.tenantid,servicerequestid, epa."when" desc
