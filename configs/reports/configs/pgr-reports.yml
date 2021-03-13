@@ -1025,5 +1025,5 @@ ReportDefinitions:
       INNER JOIN (VALUES tbl_dept) AS deptmap(serviceCode, department, slaHours) ON deptmap.serviceCode = pgr_data.servicecode
       INNER JOIN (VALUES tbl_def_dept) AS deptmap_def(name,code) ON deptmap.department = deptmap_def.code
       WHERE 1=1
-  groupby: GROUP BY deptmap_def.name
-  orderby: ORDER BY deptmap_def.name
+  groupby: GROUP BY tenantId,deptmap_def.name
+  orderby: ORDER BY tenantId,deptmap_def.name
