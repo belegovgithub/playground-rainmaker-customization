@@ -1913,7 +1913,7 @@
               "isCollapsible": true,
               "charts": [
                 {
-                  "id": "xBirthCollectionStatusByTenant",
+                  "id": "xBirthCollectionByTenant",
                   "name": "DSS_CERT_COLLECTION_BY_TENANT",
                   "code": "",
                   "chartType": "table",
@@ -1980,7 +1980,7 @@
               "isCollapsible": true,
               "charts": [
                 {
-                  "id": "xDeathCollectionStatusByTenant",
+                  "id": "xDeathCollectionByTenant",
                   "name": "DSS_CERT_COLLECTION_BY_TENANT",
                   "code": "",
                   "chartType": "table",
@@ -2048,7 +2048,7 @@
               "isCollapsible": true,
               "charts": [
                 {
-                  "id": "xBirthCollectionStatusByTenant",
+                  "id": "xBirthCollectionByTenant",
                   "name": "DSS_CERT_COLLECTION_BY_TENANT",
                   "code": "",
                   "chartType": "table",
@@ -2116,7 +2116,7 @@
               "isCollapsible": true,
               "charts": [
                 {
-                  "id": "xDeathCollectionStatusByTenant",
+                  "id": "xDeathCollectionByTenant",
                   "name": "DSS_CERT_COLLECTION_BY_TENANT",
                   "code": "",
                   "chartType": "table",
