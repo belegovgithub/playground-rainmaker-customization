@@ -1002,7 +1002,7 @@ ReportDefinitions:
     isMandatory: false
     searchClause: AND ltenantid = $ulb
   query: |
-    with pgr_data as (select tenantid
+    with pgr_data as (select tenantid,
       servicerequestid, 
       servicecode,
       createdtime, 
