@@ -1007,7 +1007,7 @@ ReportDefinitions:
     from eg_pgr_service as ps where tenantid != 'pb.testing' )
 
     select
-      initcap(split_part(tenantId,'.', 2)) as tenantId 
+      initcap(split_part(tenantId,'.', 2)) as tenantId, 
       deptmap_def.name as department,
       count(*) as total,
       SUM (CASE WHEN status in ('rejected') THEN 1 ELSE 0 END) as rejected,
