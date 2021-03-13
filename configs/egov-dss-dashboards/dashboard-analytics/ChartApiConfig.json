@@ -4758,7 +4758,7 @@
    "_comment": " Total Number of Complaints "
  },
  "xBirthDownloadStatusByTenant": {
-   "chartName": "DSS_TOTAL_CERT_DOWNLOAD",
+   "chartName": "DSS_BND_CERT_DOWNLOAD_BY_TENANT",
    "queries": [
      {
        "module": "BIRTH",
@@ -4786,7 +4786,7 @@
    "_comment": ""
  },
  "xDeathDownloadStatusByTenant": {
-   "chartName": "DSS_TOTAL_CERT_DOWNLOAD",
+   "chartName": "DSS_BND_CERT_DOWNLOAD_BY_TENANT",
    "queries": [
      {
        "module": "DEATH",

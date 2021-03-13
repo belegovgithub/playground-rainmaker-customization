@@ -3260,7 +3260,7 @@
               "charts": [
                 {
                   "id": "totalApplication",
-                  "name": "DSS_BND_TOTAL_CERT_DOWNLOAD",
+                  "name": "DSS_TOTAL_CERT_DOWNLOAD",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
@@ -3282,7 +3282,7 @@
               "charts": [
                 {
                   "id": "totalApplication",
-                  "name": "DSS_BND_TOTAL_CERT_DOWNLOAD",
+                  "name": "DSS_TOTAL_CERT_DOWNLOAD",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
@@ -3670,7 +3670,7 @@
               "charts": [
                 {
                   "id": "totalApplication",
-                  "name": "DSS_BND_TOTAL_CERT_DOWNLOAD",
+                  "name": "DSS_TOTAL_CERT_DOWNLOAD",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
@@ -3692,7 +3692,7 @@
               "charts": [
                 {
                   "id": "totalApplication",
-                  "name": "DSS_BND_TOTAL_CERT_DOWNLOAD",
+                  "name": "DSS_TOTAL_CERT_DOWNLOAD",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
@@ -5780,7 +5780,7 @@
               "charts": [
                 {
                   "id": "totalApplication",
-                  "name": "DSS_BND_TOTAL_CERT_DOWNLOAD",
+                  "name": "DSS_TOTAL_CERT_DOWNLOAD",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
@@ -5802,7 +5802,7 @@
               "charts": [
                 {
                   "id": "totalApplication",
-                  "name": "DSS_BND_TOTAL_CERT_DOWNLOAD",
+                  "name": "DSS_TOTAL_CERT_DOWNLOAD",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
