@@ -296,7 +296,7 @@ ReportDefinitions:
       - name: command
         label: reports.uc.command
         type: singlevaluelist
-        pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=tenant&masterName=CBcommandMapping&filter=%5B?(@.tenant==$tenantid)%5D|$.MdmsRes.tenant.CBcommandMapping.*.code|$.MdmsRes.tenant.CBcommandMapping.*.name
+        pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=tenant&masterName=CBcommandMapping&tenantId=$tenantid&filter=%5B?(@.tenant==$tenantid)%5D|$.MdmsRes.tenant.CBcommandMapping.*.code|$.MdmsRes.tenant.CBcommandMapping.*.name
         source: uc
         wrapper: true
         isMandatory: false
