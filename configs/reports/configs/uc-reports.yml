@@ -300,7 +300,7 @@ ReportDefinitions:
         source: uc
         wrapper: true
         isMandatory: false
-        searchClause: AND eg_user.id = $name::INTEGER
+        searchClause: AND rd.tenantid in ($command)
     query: |
              WITH receipt_breakup AS (
              SELECT 
