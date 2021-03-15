@@ -458,7 +458,7 @@
               "body": [
                 [
                   {
-                    "text": "{{instruction1_label}}",
+                    "text": "\"THIS IS A COMPUTER GENERATED CERTIFICATE.\"",
                     "width": 50,
                     "height": 61.25,
                     "style": "instruction-body"
@@ -478,7 +478,7 @@
               "body": [
                 [
                   {
-                    "text": "{{instruction2_label}}",
+                    "text": "\"THE GOVT. OF INDIA VIDE CIRCULAR NO. 1/12/2014-VS(CRS) DATED 27-JULY-2015  HAS APPROVED THIS CERTIFICATE AS A VALID LEGAL DOCUMENT FOR ALL OFFICIAL PURPOSES\"",
                     "width": 50,
                     "height": 61.25,
                     "style": "instruction-body"
