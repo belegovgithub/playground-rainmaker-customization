@@ -1,5 +1,5 @@
 {
-    "key": "bd-uttarpradesh-death",
+    "key": "bd-uttarakhand-death",
     "config": {
       "defaultStyle": {
         "font": "Cambay"
@@ -63,12 +63,12 @@
                               {
                                   "stack": [
                                         {
-                                          "text": "{{govt_label_multiLang}}",
+                                          "text": "उत्तराखंड सरकार",
                                           "style": "appendix-header-body"
                                           
                                       },   
                                       {
-                                          "text": "GOVERNMENT OF UTTAR PRADESH",
+                                          "text": "GOVERNMENT OF UTTARAKHAND",
                                           "style": "appendix-header-body" ,
                                           "margin": [
                                             0,
@@ -78,21 +78,21 @@
                                         ]   
                                       },  
                                       {
-                                          "text": "{{dept_label_multiLang}}",
+                                          "text": "चिकित्सा स्वस्थ्य एवं परिवार कल्याण विभाग",
                                             "style": "appendix-header-body"   
                                       },
                                       {
-                                        "text": "DEPARTMENT OF MEDICAL AND HEALTH",
+                                        "text": "DEPARTMENT OF MEDICAL HEALTH AND FAMILY WELFARE",
                                           "style": "appendix-header-body" 
                                            
                                       },
                                       {
-                                          "text": "{{cb_label_name_multiLang}} {{cb-name-multilang}} {{cb_letter_label_multilang}}",
+                                          "text": "{{cb_label_name_multiLang}} {{cb-name-multilang}}",
                                           "style": "appendix-header-body"
                                            
                                       },
                                       {
-                                        "text": "CANTONMENT BOARD {{cb-name}} {{cb_letter_label}}",
+                                        "text": "CANTONMENT BOARD {{cb-name}}",
                                         "style": "appendix-header-body" 
                                     }
                                        
@@ -178,7 +178,7 @@
                                                     "columns": [
                                                         
                                                         {
-                                                            "text": "{{rule1_label_multiLang}}",
+                                                            "text": "(जन्म मृत्यु रजिस्ट्रीकरण अधिनियम,1969 की धारा 12/17 तथा उत्तराखंड जन्म मृत्यु रजिस्ट्रीकरण, 2003 के  नियम 8/13 के अंतर्गत, जारी किया गया)",
                                                             "style": "rule-header_multiLang"
                                                         }
                                                     ] 
@@ -189,7 +189,7 @@
                                                      "columns": [
                                                          
                                                         {
-                                                            "text": "{{rule1_label}}",
+                                                            "text": "(ISSUED  UNDER SECTION  12/17 OF THE REGISTRATION OF BIRTHS & DEATHS ACT, 1969  AND RULE 8/13  OF THE UTTARAKHAND REGISTRATION OF BIRTHS & DEATHS RULES 2003)",
                                                              "style": "rule-header"
                                                         }
                                                     ] 
@@ -213,7 +213,7 @@
                                                     "columns": [
                                                         
                                                         {
-                                                            "text": "{{rule2_label_multiLang}}",
+                                                            "text": "यह प्रमाणित किया जाता है निम्नलिखित सूचना मृत्यु के मूल अभिलेख से ली गई है जो की छावनी परिषद रानीखेत  तहसील रानीखेत जिला अल्मोड़ा राज्य/संघ प्रदेश उत्तराखंड, भारत के रजिस्टर मे उलिखित है ।",
                                                             "style": "rule-body_multiLang"
                                                         }
                                                     ] 
@@ -224,7 +224,7 @@
                                                      "columns": [
                                                          
                                                         {
-                                                            "text": "{{rule2_label}}",
+                                                            "text": "THIS  IS TO CERTIFY THAT THE  FOLLOWING  INFORMATION  HAS BEEN  TAKEN FROM  THE  ORIGINAL RECORD OF BIRTH WHICH  IS THE  REGISTER  FOR CANTONMENT BOARD RANIKHET OF TAHSIL/BLOCK RANIKHET OF DISTRICT ALMORA OF STATE/UNION TERRITORY UTTARAKHAND, INDIA.",
                                                              "style": "rule-body"
                                                         }
                                                     ] 
@@ -264,19 +264,7 @@
                                                     ] 
                                                 }
                                             ],
-                                            [ 
-                                              {
-                                                   "columns": [
-                                                       
-                                                      {
-                                                          "text": "{{aadhar_label_multiLang}} / AADHAR NUMBER: {{aadharno}}",
-                                                          "width": "45%",
-                                                           "style": "details-body"
-                                                      }
-                                                       
-                                                  ] 
-                                              }
-                                          ],
+      
                                             [ 
                                                 {
                                                      "columns": [
@@ -298,6 +286,49 @@
                                                     ] 
                                                 }
                                             ],
+                                            [ 
+                                              {
+                                                   "columns": [
+                                                       
+                                                      {
+                                                          "text": "मृतक की उम्र /AGE OF DECEASED : {{age}}",
+                                                          "width": "45%",
+                                                           "style": "details-body"
+                                                      },
+                                                      {
+                                                          "text": " ",
+                                                          "width": "10%"
+                                                          
+                                                      },
+                                                      {
+                                                          "text": "पति / पत्नी का नाम/ NAME OF HUSBAND/WIFE: {{spouseName}}",
+                                                           "style": "details-body"
+                                                      }
+                                                  ] 
+                                              }
+                                          ],
+                                          [ 
+                                            {
+                                                 "columns": [
+                                                  {
+                                                    "text": " ",
+                                                    "width": "45%",
+                                                     "style": "details-body"
+                                                },
+                                                {
+                                                    "text": " ",
+                                                    "width": "10%"
+                                                    
+                                                },
+                                                    {
+                                                        "text": "आधार  नंबर  / HUSBAND/WIFE  AADHAAR NO: {{spouceAadharNo}}",
+                                                        "width": "45%",
+                                                         "style": "details-body"
+                                                    }
+                                                     
+                                                ] 
+                                            }
+                                        ],
                                              [ 
                                                 {
                                                      "columns": [
@@ -345,7 +376,7 @@
                                                      "columns": [
                                                          
                                                         {
-                                                            "text": "{{death_address_label_multiLang}} / ADDRESS OF DECEASED AT THE TIME OF BIRTH: {{childAddress}}",
+                                                            "text": "{{death_address_label_multiLang}} / ADDRESS OF DECEASED AT THE TIME OF DEATH: {{childAddress}}",
                                                             "width": "45%",
                                                              "style": "details-body"
                                                         },
@@ -517,6 +548,30 @@
             0
           ]
          },
+         "appendix-header-serialNo": {
+          "color": "#000000",
+                     "bold": false,
+                     "fontSize": 8,
+                     "fontWeight": 400,
+                     "margin": [
+                      0,
+                      -5,
+                      0,
+                      0
+                  ]
+         },
+         "appendix-header-formNo": {
+          "color": "#000000",
+                     "bold": false,
+                     "fontSize": 8,
+                     "fontWeight": 400,
+                     "margin": [
+                      20,
+                      -5,
+                      0,
+                      0
+                  ]
+         },
          "instruction-body": {
          "color": "#000000",
                     "bold": false,
@@ -627,30 +682,6 @@
                     "fontWeight": 400,
                     "alignment": "center"
         },
-        "appendix-header-serialNo": {
-          "color": "#000000",
-                     "bold": false,
-                     "fontSize": 8,
-                     "fontWeight": 400,
-                     "margin": [
-                      0,
-                      -5,
-                      0,
-                      0
-                  ]
-         },
-         "appendix-header-formNo": {
-          "color": "#000000",
-                     "bold": false,
-                     "fontSize": 8,
-                     "fontWeight": 400,
-                     "margin": [
-                      20,
-                      -5,
-                      0,
-                      0
-                  ]
-         },
         "receipt-value-down-sub": {
                     "color": "#000000",
                     "bold": false,

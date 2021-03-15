@@ -1,5 +1,5 @@
 {
-    "key": "bd-uttarpradesh-birth",
+    "key": "bd-uttarakhand-birth",
     "DataConfigs": {
       "serviceName": "rainmaker-common",
       "version": "1.0.0",
@@ -19,7 +19,7 @@
                 },
                 {
                     "variable": "govtImage",
-                    "url": "https://raw.githubusercontent.com/belsoftware/webaccess/master/images/birth/upGovt.png",
+                    "url": "https://raw.githubusercontent.com/belsoftware/webaccess/master/images/birth/uttarakhandGovt.png",
                     "type": "image"
                 },
                 {
