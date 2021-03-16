@@ -1,9 +1,9 @@
 {
-    "key": "bd-madhyapradesh-birth",
+    "key": "bd-madhyapradesh-death",
     "DataConfigs": {
       "serviceName": "rainmaker-common",
       "version": "1.0.0",
-      "baseKeyPath": "$.BirthCertificate.*",
+      "baseKeyPath": "$.DeathCertificate.*",
       "entityIdPath":"$.id",
       "isCommonTableBorderRequired": true,
       "mappings": [

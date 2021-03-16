@@ -1,5 +1,5 @@
 {
-    "key": "bd-uttarakhand-death",
+    "key": "bd-delhi-death",
     "config": {
       "defaultStyle": {
         "font": "Cambay"
@@ -35,137 +35,84 @@
                             "20%"
                         ],
                         "body": [
-                          [
-                            {
-                              "stack": [
-                              {
-                                          "text": "सं. 1",
-                                          "style": "appendix-header-serialNo"             
-                              },
-                               {
-                                          "text": "No .1",
-                                          "style": "appendix-header-serialNo"            
-                              },
-                              {
-                                "image": "{{govtImage}}",
-                                "width": 70,
-                                "height": 70.25,
-                                   "margin": [
-                                     -10,
-                                     0,
-                                     0,
-                                     0
-                                   ]
-                               }
-                              ]
-                                  
-                              },
-                              {
-                                  "stack": [
-                                        {
-                                          "text": "उत्तराखंड सरकार",
-                                          "style": "appendix-header-body"
-                                          
-                                      },   
-                                      {
-                                          "text": "GOVERNMENT OF UTTARAKHAND",
-                                          "style": "appendix-header-body" ,
-                                          "margin": [
-                                            0,
-                                            0,
-                                            0,
-                                            5
-                                        ]   
-                                      },  
-                                      {
-                                          "text": "चिकित्सा स्वस्थ्य एवं परिवार कल्याण विभाग",
-                                            "style": "appendix-header-body"   
-                                      },
-                                      {
-                                        "text": "DEPARTMENT OF MEDICAL HEALTH AND FAMILY WELFARE",
-                                          "style": "appendix-header-body" 
-                                           
-                                      },
-                                      {
-                                          "text": "{{cb_label_name_multiLang}} {{cb-name-multilang}}",
-                                          "style": "appendix-header-body"
-                                           
-                                      },
-                                      {
-                                        "text": "CANTONMENT BOARD {{cb-name}}",
-                                        "style": "appendix-header-body" 
-                                    }
-                                       
-                                  ]   
-                              },
-                              {
-                                "stack": [
-                                    {
-                                                "text": "प्रपत्र-5",
-                                                "style": "appendix-header-formNo" 
-                                               
-                                                 
-                                    },
-                                     {
-                                                "text": "FORM-5",
-                                                "style": "appendix-header-formNo" 
-                                               
-                                                 
-                                    },
-                                    {
-                                      "image": "{{form5}}",
-                                      "width": 65,
-                                      "height": 60.25,
-                                      "margin": [
-                                       10,
-                                       0,
-                                       0,
-                                       0
-                                     ]
-                                     }
+                            [
+                                 {
+                                 "image": "{{govtImage}}",
+                                 "width": 70,
+                                 "height": 70.25,
+                                    "margin": [
+                                      0,
+                                      -10,
+                                      0,
+                                      0
                                     ]
-                                    }
-                          ]
+                                },
+                                {
+                                    "stack": [
+                                      {
+                                        "text": "{{form_5_label}}",
+                                        "style": "appendix-header-body"
+                                        
+                                        }, 
+                                          {
+                                            "text": "{{govt_label_multiLang}}",
+                                            "style": "appendix-header-body"
+                                            
+                                        },   
+                                        {
+                                            "text": "Government of National Capital Territory of Delhi",
+                                            "style": "appendix-header-body" ,
+                                            "margin": [
+                                              0,
+                                              0,
+                                              0,
+                                              5
+                                          ]   
+                                        },  
+                                        {
+                                            "text": "{{cb_delhi_label_multiLang}}",
+                                            "style": "appendix-header-body"
+                                             
+                                        },
+                                        {
+                                          "text": "DELHI CANTONMENT BOARD",
+                                          "style": "appendix-header-body" 
+                                        },
+                                        {
+                                          "text": "मृत्यु-प्रमाण पत्र",
+                                          "style": "title-header_multiLang"
+                                        },
+                                        {
+                                          "text": "Death Certificate",
+                                          "style": "title-header"
+                                        },
+                                        {
+                                          "text": "{{rule_label_multiLang}}",
+                                          "style": "appendix-header-body"
+                                      },
+                                      {
+                                        "text": "(Issued under section 12/17 of the Registrations of Births and Deaths Act,1969 and Rule 8/13 of the Delhi Registrations of Births and Deaths Rules,1999)",
+                                        "style": "appendix-header-body" 
+                                      } 
+                                         
+                                    ]   
+                                },
+                                {
+                                 "image": "{{form5}}",
+                                 "width": 65,
+                                 "height": 60.25,
+                                 "margin": [
+                                  0,
+                                  -10,
+                                  0,
+                                  0
+                                ]
+                                }
+                            ]
                         ]
                     },
                     "layout": "noBorders"
                 },
-            {
-              "style": "ws-head",
-              "table": {
-                "widths": [
-                  "*"
-                ],
-                "body": [
-                  [
-                    {
-                      "text": "मृत्यु प्रमाण पत्र",
-                      "style": "title-header_multiLang"
-                    } 
-                      
-                  ]
-                ]
-              },
-              "layout": "noBorders"
-            },
-           {
-            "style": "ws-head",
-            "table": {
-              "widths": [
-                "*"
-              ],
-              "body": [
-                [
-                  {
-                    "text": "DEATH CERTIFICATE",
-                    "style": "title-header"
-                  } 
-                   
-                ]
-              ]
-            },
-            "layout": "noBorders"
-          },
                 {
                      "style": "ws-head",
                     "table": {
@@ -178,7 +125,7 @@
                                                     "columns": [
                                                         
                                                         {
-                                                            "text": "(जन्म मृत्यु रजिस्ट्रीकरण अधिनियम,1969 की धारा 12/17 तथा उत्तराखंड जन्म मृत्यु रजिस्ट्रीकरण, 2003 के  नियम 8/13 के अंतर्गत, जारी किया गया)",
+                                                            "text": "यह प्रमाणित किया जाता है कि निम्नलिखित सूचना मृत्यु के मूल लेख से लिया गया है जो कि (स्थानीय क्षेत्र) दिल्ली छावनी परिषद् जिला दक्षिण-पश्चिम राज्य रास्ट्रीय राजधानी क्षेत्र दिल्ली के रजिस्टर में उल्लिखित है |",
                                                             "style": "rule-header_multiLang"
                                                         }
                                                     ] 
@@ -189,7 +136,7 @@
                                                      "columns": [
                                                          
                                                         {
-                                                            "text": "(ISSUED  UNDER SECTION  12/17 OF THE REGISTRATION OF BIRTHS & DEATHS ACT, 1969  AND RULE 8/13  OF THE UTTARAKHAND REGISTRATION OF BIRTHS & DEATHS RULES 2003)",
+                                                            "text": "This is to certify that the following information has been taken from the original record of death which is the register the Delhi Cantonment Board of District South-West of National Capital Territory of Delhi.",
                                                              "style": "rule-header"
                                                         }
                                                     ] 
@@ -208,47 +155,12 @@
                             "*"
                         ],
                         "body": [
-                          [ 
-                            {
-                                "columns": [
-                                    
-                                    {
-                                        "text": "यह प्रमाणित किया जाता है निम्नलिखित सूचना मृत्यु के मूल अभिलेख से ली गई है जो की छावनी परिषद {{cb-name-multilang}} तहसील {{cb-name-multilang}} जिला अल्मोड़ा राज्य/संघ प्रदेश उत्तराखंड, भारत के रजिस्टर मे उलिखित है ।",
-                                        "style": "rule-body_multiLang"
-                                    }
-                                ] 
-                            }
-                        ],
-                        [ 
-                            {
-                                 "columns": [
-                                     
-                                    {
-                                        "text": "THIS  IS TO CERTIFY THAT THE  FOLLOWING  INFORMATION  HAS BEEN  TAKEN FROM  THE  ORIGINAL RECORD OF BIRTH WHICH  IS THE  REGISTER  FOR CANTONMENT BOARD {{cb-name}} OF TAHSIL/BLOCK {{cb-name}} OF DISTRICT ALMORA OF STATE/UNION TERRITORY UTTARAKHAND, INDIA.",
-                                         "style": "rule-body"
-                                    }
-                                ] 
-                            }
-                        ]
-                         
-         
-                      ]
-                    },
-                    "layout": "noBorders"
-                },
-                 {
-                     "style": "ws-head",
-                    "table": {
-                        "widths": [
-                            "*"
-                        ],
-                        "body": [
                                             [ 
                                                 {
                                                      "columns": [
                                                          
                                                         {
-                                                            "text": "{{name_label_multiLang}} / NAME OF DECEASED: {{name}}",
+                                                            "text": "{{name_label}}: {{name}}",
                                                             "width": "45%",
                                                              "style": "details-body"
                                                         },
@@ -258,19 +170,18 @@
                                                             
                                                         },
                                                         {
-                                                            "text": "{{gender_label_multiLang}} / SEX : {{gender}}",
+                                                            "text": "{{gender_label}} : {{gender}}",
                                                              "style": "details-body"
                                                         }
                                                     ] 
                                                 }
                                             ],
-      
                                             [ 
                                                 {
                                                      "columns": [
                                                          
                                                         {
-                                                            "text": "{{dod_label_multiLang}} / DATE OF DEATH: {{dob}}",
+                                                            "text": "Date of Death: {{dod}}",
                                                             "width": "45%",
                                                              "style": "details-body"
                                                         },
@@ -280,7 +191,49 @@
                                                             
                                                         },
                                                         {
-                                                            "text": "{{pod_label_multiLang}} / PLACE OF DEATH: {{placeOfDeath}}",
+                                                            "text": " ",
+                                                             "style": "details-body"
+                                                        }
+                                                    ] 
+                                                }
+                                            ],
+                                             [ 
+                                                {
+                                                     "columns": [
+                                                         
+                                                        {
+                                                            "text": "{{mother_name_label}}: {{motherName}}",
+                                                            "width": "45%",
+                                                             "style": "details-body"
+                                                        },
+                                                        {
+                                                            "text": " ",
+                                                            "width": "10%"
+                                                            
+                                                        },
+                                                        {
+                                                            "text": "Place of Death: {{placeOfDeath}}",
+                                                             "style": "details-body"
+                                                        }
+                                                    ] 
+                                                }
+                                            ],
+                                            [ 
+                                                {
+                                                     "columns": [
+                                                         
+                                                        {
+                                                            "text": "{{father_name_label}}: {{fatherName}}",
+                                                            "width": "45%",
+                                                             "style": "details-body"
+                                                        },
+                                                        {
+                                                            "text": " ",
+                                                            "width": "10%"
+                                                            
+                                                        },
+                                                        {
+                                                            "text": "Permanent address of deceased: {{permanentAddress}}",
                                                              "style": "details-body"
                                                         }
                                                     ] 
@@ -291,50 +244,20 @@
                                                    "columns": [
                                                        
                                                       {
-                                                          "text": "मृतक की उम्र /AGE OF DECEASED : {{age}}",
+                                                          "text": "Name of Husband/Wife : {{nameOfSpouse}}",
                                                           "width": "45%",
                                                            "style": "details-body"
-                                                      },
-                                                      {
-                                                          "text": " ",
-                                                          "width": "10%"
-                                                          
-                                                      },
-                                                      {
-                                                          "text": "पति / पत्नी का नाम/ NAME OF HUSBAND/WIFE: {{spouseName}}",
-                                                           "style": "details-body"
                                                       }
+                                                      
                                                   ] 
                                               }
                                           ],
-                                          [ 
-                                            {
-                                                 "columns": [
-                                                  {
-                                                    "text": " ",
-                                                    "width": "45%",
-                                                     "style": "details-body"
-                                                },
-                                                {
-                                                    "text": " ",
-                                                    "width": "10%"
-                                                    
-                                                },
-                                                    {
-                                                        "text": "आधार  नंबर  / HUSBAND/WIFE  AADHAAR NO: {{spouceAadharNo}}",
-                                                        "width": "45%",
-                                                         "style": "details-body"
-                                                    }
-                                                     
-                                                ] 
-                                            }
-                                        ],
-                                             [ 
+                                            [ 
                                                 {
                                                      "columns": [
                                                          
                                                         {
-                                                            "text": "{{mother_name_label_multiLang}} / NAME OF MOTHER: {{motherName}}",
+                                                            "text": "Address of the deceased at the time of death: {{address}}",
                                                             "width": "45%",
                                                              "style": "details-body"
                                                         },
@@ -344,7 +267,7 @@
                                                             
                                                         },
                                                         {
-                                                            "text": "{{father_name_label_multiLang}} / NAME OF FATHER: {{fatherName}}",
+                                                            "text": "{{registration_date_label}}: {{registration_date}}",
                                                              "style": "details-body"
                                                         }
                                                     ] 
@@ -355,7 +278,7 @@
                                                      "columns": [
                                                          
                                                         {
-                                                            "text": "{{mother_aadhar_label_multiLang}} / MOTHER AADHAR NO: {{motherUid}}",
+                                                            "text": "{{registration_label}}: {{registrationNo}}",
                                                             "width": "45%",
                                                              "style": "details-body"
                                                         },
@@ -365,7 +288,7 @@
                                                             
                                                         },
                                                         {
-                                                            "text": "{{father_aadhar_label_multiLang}} / FATHER AADHAR NO: {{fatherUid}}",
+                                                            "text": " ",
                                                              "style": "details-body"
                                                         }
                                                     ] 
@@ -376,49 +299,7 @@
                                                      "columns": [
                                                          
                                                         {
-                                                            "text": "{{death_address_label_multiLang}} / ADDRESS OF DECEASED AT THE TIME OF DEATH: {{childAddress}}",
-                                                            "width": "45%",
-                                                             "style": "details-body"
-                                                        },
-                                                        {
-                                                            "text": " ",
-                                                            "width": "10%"
-                                                            
-                                                        },
-                                                        {
-                                                            "text": "{{death_perm_address_label_multiLang}} / PERMANENT ADDRESS OF DECEASED: {{parentsAddress}}",
-                                                             "style": "details-body"
-                                                        }
-                                                    ] 
-                                                }
-                                            ],
-                                            [ 
-                                                {
-                                                     "columns": [
-                                                         
-                                                        {
-                                                            "text": "{{registration_label_multiLang}} / REGISTRATION NO: {{registrationNo}}",
-                                                            "width": "45%",
-                                                             "style": "details-body"
-                                                        },
-                                                        {
-                                                            "text": " ",
-                                                            "width": "10%"
-                                                            
-                                                        },
-                                                        {
-                                                            "text": "{{registration_date_label_multiLang}} / DATE OF REGISTRATION: {{registration_date}}",
-                                                             "style": "details-body"
-                                                        }
-                                                    ] 
-                                                }
-                                            ],
-                                            [ 
-                                                {
-                                                     "columns": [
-                                                         
-                                                        {
-                                                            "text": "{{remarks_label_multiLang}} / REMARKS(IF ANY): {{remarks}}",
+                                                            "text": "{{remarks_label}}: {{remarks}}",
                                                             "width": "45%",
                                                              "style": "details-body"
                                                         },
@@ -439,7 +320,7 @@
                                                      "columns": [
                                                          
                                                         {
-                                                            "text": "{{issue_date_label_multiLang}} / DATE OF ISSUE: {{issueDate}}",
+                                                            "text": "{{issue_date_label}}: {{issueDate}}",
                                                             "width": "45%",
                                                              "style": "details-body"
                                                         },
@@ -449,7 +330,7 @@
                                                             
                                                         },
                                                         {
-                                                            "text": "{{issuing_authority_label_multiLang}} / ISSUING AUTHORITY: {{issuing_authority_multiLang}} / {{issuing_authority}}",
+                                                            "text": " ",
                                                              "style": "details-body"
                                                         }
                                                     ] 
@@ -489,7 +370,7 @@
               "body": [
                 [
                   {
-                    "text": "THIS IS A COMPUTER GENERATED CERTIFICATE.",
+                    "text": "{{instruction1_label}}",
                     "width": 50,
                     "height": 61.25,
                     "style": "instruction-body"
@@ -509,7 +390,7 @@
               "body": [
                 [
                   {
-                    "text": "THE GOVT. OF INDIA VIDE CIRCULAR NO. 1/12/2014-VS(CRS) DATED 27-JULY-2015  HAS APPROVED THIS CERTIFICATE AS A VALID LEGAL DOCUMENT FOR ALL OFFICIAL PURPOSES",
+                    "text": "{{instruction2_label}}",
                     "width": 50,
                     "height": 61.25,
                     "style": "instruction-body"
@@ -547,30 +428,6 @@
             0,
             0
           ]
-         },
-         "appendix-header-serialNo": {
-          "color": "#000000",
-                     "bold": false,
-                     "fontSize": 8,
-                     "fontWeight": 400,
-                     "margin": [
-                      0,
-                      -5,
-                      0,
-                      0
-                  ]
-         },
-         "appendix-header-formNo": {
-          "color": "#000000",
-                     "bold": false,
-                     "fontSize": 8,
-                     "fontWeight": 400,
-                     "margin": [
-                      20,
-                      -5,
-                      0,
-                      0
-                  ]
          },
          "instruction-body": {
          "color": "#000000",
@@ -676,7 +533,7 @@
                     ]
         },
         "appendix-header-body": {
-         "color": "#696969",
+         "color": "#800000",
                     "bold": true,
                     "fontSize": 9,
                     "fontWeight": 400,

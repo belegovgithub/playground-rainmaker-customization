@@ -1,5 +1,5 @@
 {
-    "key": "bd-uttarakhand-death",
+    "key": "bd-madhyapradesh-death",
     "config": {
       "defaultStyle": {
         "font": "Cambay"
@@ -61,70 +61,70 @@
                                   
                               },
                               {
-                                  "stack": [
-                                        {
-                                          "text": "उत्तराखंड सरकार",
-                                          "style": "appendix-header-body"
-                                          
-                                      },   
-                                      {
-                                          "text": "GOVERNMENT OF UTTARAKHAND",
-                                          "style": "appendix-header-body" ,
-                                          "margin": [
-                                            0,
-                                            0,
-                                            0,
-                                            5
-                                        ]   
-                                      },  
-                                      {
-                                          "text": "चिकित्सा स्वस्थ्य एवं परिवार कल्याण विभाग",
-                                            "style": "appendix-header-body"   
-                                      },
-                                      {
-                                        "text": "DEPARTMENT OF MEDICAL HEALTH AND FAMILY WELFARE",
-                                          "style": "appendix-header-body" 
-                                           
-                                      },
-                                      {
-                                          "text": "{{cb_label_name_multiLang}} {{cb-name-multilang}}",
-                                          "style": "appendix-header-body"
-                                           
-                                      },
-                                      {
-                                        "text": "CANTONMENT BOARD {{cb-name}}",
-                                        "style": "appendix-header-body" 
-                                    }
-                                       
-                                  ]   
-                              },
-                              {
                                 "stack": [
-                                    {
-                                                "text": "प्रपत्र-5",
-                                                "style": "appendix-header-formNo" 
+                                  {
+                                    "text": "मध्य प्रदेश सर्कार",
+                                    "style": "appendix-header-body"
+                                    
+                                },   
+                                {
+                                    "text": "GOVERNMENT OF MADHYA PRADESH",
+                                    "style": "appendix-header-body" ,
+                                    "margin": [
+                                      0,
+                                      0,
+                                      0,
+                                      5
+                                  ]   
+                                },  
+                                {
+                                    "text": "योजना, आर्थिक और सांख्यिकी विभाग",
+                                      "style": "appendix-header-body"   
+                                },
+                                {
+                                  "text": "DEPARTMENT OF PLANNING, ECONOMICS & STATISTICS",
+                                    "style": "appendix-header-body" 
+                                     
+                                },
+                                {
+                                    "text": "{{cb_label_name_multiLang}} {{cb-name-multilang}}",
+                                    "style": "appendix-header-body"
+                                     
+                                },
+                                {
+                                  "text": "CANTONMENT BOARD {{cb-name}}",
+                                  "style": "appendix-header-body" 
+                              }
+                                 
+                             ]   
+                            },
+                            {
+                              "stack": [
+                                  {
+                                              "text": "प्रपत्र-5",
+                                              "style": "appendix-header-formNo" 
+                                             
                                                
-                                                 
-                                    },
-                                     {
-                                                "text": "FORM-5",
-                                                "style": "appendix-header-formNo" 
+                                  },
+                                   {
+                                              "text": "FORM-5",
+                                              "style": "appendix-header-formNo" 
+                                             
                                                
-                                                 
-                                    },
-                                    {
-                                      "image": "{{form5}}",
-                                      "width": 65,
-                                      "height": 60.25,
-                                      "margin": [
-                                       10,
-                                       0,
-                                       0,
-                                       0
-                                     ]
-                                     }
-                                    ]
-                                    }
+                                  },
+                                  {
+                                    "image": "{{form5}}",
+                                    "width": 65,
+                                    "height": 60.25,
+                                    "margin": [
+                                     10,
+                                     0,
+                                     0,
+                                     0
+                                   ]
+                                   }
+                                  ]
+                                  }
                           ]
                         ]
                     },
@@ -173,31 +173,31 @@
                             "*"
                         ],
                         "body": [
-                                              [ 
-                                                {
-                                                    "columns": [
-                                                        
-                                                        {
-                                                            "text": "(जन्म मृत्यु रजिस्ट्रीकरण अधिनियम,1969 की धारा 12/17 तथा उत्तराखंड जन्म मृत्यु रजिस्ट्रीकरण, 2003 के  नियम 8/13 के अंतर्गत, जारी किया गया)",
-                                                            "style": "rule-header_multiLang"
-                                                        }
-                                                    ] 
-                                                }
-                                            ],
-                                            [ 
-                                                {
-                                                     "columns": [
-                                                         
-                                                        {
-                                                            "text": "(ISSUED  UNDER SECTION  12/17 OF THE REGISTRATION OF BIRTHS & DEATHS ACT, 1969  AND RULE 8/13  OF THE UTTARAKHAND REGISTRATION OF BIRTHS & DEATHS RULES 2003)",
-                                                             "style": "rule-header"
-                                                        }
-                                                    ] 
-                                                }
-                                            ]
-                                             
-                             
+                          [ 
+                            {
+                                "columns": [
+                                    
+                                    {
+                                        "text": "(जन्म मृत्यु रजिस्ट्रीकरण अधिनियम,1969 की धारा 12/17 तथा मध्य प्रदेश जन्म मृत्यु रजिस्ट्रीकरण, 1999  के  नियम 8/13 के अंतर्गत, जारी किया गया)",
+                                        "style": "rule-header_multiLang"
+                                    }
+                                ] 
+                            }
+                        ],
+                        [ 
+                            {
+                                 "columns": [
+                                     
+                                    {
+                                        "text": "(ISSUED  UNDER SECTION  12/17 OF THE REGISTRATION OF BIRTHS & DEATHS ACT, 1969  AND RULE 8/13  OF THE MADHYA PRADESH REGISTRATION OF BIRTHS & DEATHS RULES 1999)",
+                                         "style": "rule-header"
+                                    }
+                                ] 
+                            }
                         ]
+                         
+         
+    ]
                     },
                     "layout": "noBorders"
                 },
@@ -213,7 +213,7 @@
                                 "columns": [
                                     
                                     {
-                                        "text": "यह प्रमाणित किया जाता है निम्नलिखित सूचना मृत्यु के मूल अभिलेख से ली गई है जो की छावनी परिषद {{cb-name-multilang}} तहसील {{cb-name-multilang}} जिला अल्मोड़ा राज्य/संघ प्रदेश उत्तराखंड, भारत के रजिस्टर मे उलिखित है ।",
+                                        "text": "यह प्रमाणित किया जाता है निम्नलिखित सूचना मृत्यु के मूल अभिलेख से ली गई है जो की छावनी परिषद {{cb-name-multilang}} तहसील {{cb-name-multilang}} जिला जबलपुर राज्य/संघ प्रदेश मध्य प्रदेश, भारत के रजिस्टर मे उलिखित है ।",
                                         "style": "rule-body_multiLang"
                                     }
                                 ] 
@@ -224,7 +224,7 @@
                                  "columns": [
                                      
                                     {
-                                        "text": "THIS  IS TO CERTIFY THAT THE  FOLLOWING  INFORMATION  HAS BEEN  TAKEN FROM  THE  ORIGINAL RECORD OF BIRTH WHICH  IS THE  REGISTER  FOR CANTONMENT BOARD {{cb-name}} OF TAHSIL/BLOCK {{cb-name}} OF DISTRICT ALMORA OF STATE/UNION TERRITORY UTTARAKHAND, INDIA.",
+                                        "text": "THIS  IS TO CERTIFY THAT THE  FOLLOWING  INFORMATION  HAS BEEN  TAKEN FROM  THE  ORIGINAL RECORD OF BIRTH WHICH  IS THE  REGISTER  FOR CANTONMENT BOARD {{cb-name}} OF TAHSIL/BLOCK {{cb-name}} OF DISTRICT {{cb-name}} OF STATE/UNION TERRITORY MADHYA PRADESH, INDIA.",
                                          "style": "rule-body"
                                     }
                                 ] 
@@ -232,7 +232,7 @@
                         ]
                          
          
-                      ]
+                ]
                     },
                     "layout": "noBorders"
                 },
@@ -264,7 +264,19 @@
                                                     ] 
                                                 }
                                             ],
-      
+                                            [ 
+                                              {
+                                                   "columns": [
+                                                       
+                                                      {
+                                                          "text": "आधार  नंबर  / AADHAAR NO: {{aadharNo}}",
+                                                          "width": "45%",
+                                                           "style": "details-body"
+                                                      }
+                                                       
+                                                  ] 
+                                              }
+                                          ],
                                             [ 
                                                 {
                                                      "columns": [
@@ -489,7 +501,7 @@
               "body": [
                 [
                   {
-                    "text": "THIS IS A COMPUTER GENERATED CERTIFICATE.",
+                    "text": "\"THIS IS A COMPUTER GENERATED CERTIFICATE WHICH CONTAINS FACSIMILE SIGNATURE OF THE ISSUING AUTHORITY\"",
                     "width": 50,
                     "height": 61.25,
                     "style": "instruction-body"
@@ -509,7 +521,27 @@
               "body": [
                 [
                   {
-                    "text": "THE GOVT. OF INDIA VIDE CIRCULAR NO. 1/12/2014-VS(CRS) DATED 27-JULY-2015  HAS APPROVED THIS CERTIFICATE AS A VALID LEGAL DOCUMENT FOR ALL OFFICIAL PURPOSES",
+                    "text": "\"THE GOVT. OF INDIA VIDE CIRCULAR NO. 1/12/2014-VS(CRS) DATED 27-JULY-2015  HAS APPROVED THIS CERTIFICATE AS A VALID LEGAL DOCUMENT FOR ALL OFFICIAL PURPOSES\"",
+                    "width": 50,
+                    "height": 61.25,
+                    "style": "instruction-body"
+                  } 
+                   
+                ]
+              ]
+            },
+            "layout": "noBorders"
+          },
+          {
+            "style": "ws-head",
+            "table": {
+              "widths": [
+                "*"
+              ],
+              "body": [
+                [
+                  {
+                    "text": "* प्रत्येक जन्म एवं मृत्यु का पंजीकरण सुनिश्चित करें * / ENSURE REGISTRATION OF EVERY BIRTH AND DEATH",
                     "width": 50,
                     "height": 61.25,
                     "style": "instruction-body"

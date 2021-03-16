@@ -1,9 +1,9 @@
 {
-    "key": "bd-madhyapradesh-birth",
+    "key": "bd-delhi-death",
     "DataConfigs": {
       "serviceName": "rainmaker-common",
       "version": "1.0.0",
-      "baseKeyPath": "$.BirthCertificate.*",
+      "baseKeyPath": "$.DeathCertificate.*",
       "entityIdPath":"$.id",
       "isCommonTableBorderRequired": true,
       "mappings": [
@@ -19,7 +19,7 @@
                 },
                 {
                     "variable": "govtImage",
-                    "url": "https://raw.githubusercontent.com/belsoftware/webaccess/master/images/birth/madhyapradesh-govt.png",
+                    "url": "https://raw.githubusercontent.com/belsoftware/webaccess/master/images/birth/delhiGovt.png",
                     "type": "image"
                 },
                 {
@@ -40,9 +40,9 @@
                   }
                 },
                 {
-                  "variable": "dob", 
+                  "variable": "dod", 
                   "value": {
-                    "path": "$.dateofbirth"
+                    "path": "$.dateofdeath"
                   },
                   "type": "date"
                 },
@@ -80,15 +80,15 @@
                   "type":"setEmpty"
                 },
                 {
-                  "variable": "childAddress", 
+                  "variable": "placeOfDeath", 
                   "value": {
-                    "path": "$.birthPermaddr.fullAddress"
+                    "path": "$.deathPermaddr.placeOfDeath"
                   }
                 },
                 {
                   "variable": "parentsAddress", 
                   "value": {
-                    "path": "$.birthPresentaddr.fullAddress"
+                    "path": "$.deathPresentaddr.permanentAddress"
                   }
                 },
                 {
@@ -123,12 +123,6 @@
                     }
                   },
                   {
-                    "variable": "certificateType", 
-                    "value": {
-                      "path": "$.certificateType"
-                    }
-                  },
-                  {
                     "variable": "cantonment-board",
                     "value": {
                       "path": "PDF_STATIC_LABEL_CONSOLIDATED_TLCERTIFICATE_MUNICIPAL_CORPORATION"
@@ -153,9 +147,21 @@
                    }
                   },
                   {
+                    "variable": "form_5_label",
+                    "value": {
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_FORM_5"
+                    },
+                    "type": "label",
+                    "localisation":{
+                      "required":true,
+                      "prefix": null,
+                      "module":"rainmaker-pdf"
+                   }
+                  },
+                  {
                     "variable": "govt_label_multiLang",
                     "value": {
-                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_GOVT_UP_MULTILANG"
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_GOVT_DL_MULTILANG"
                     },
                     "type": "label",
                     "localisation":{
@@ -189,27 +195,15 @@
                    }
                   },
                   {
-                    "variable": "gram_panchayat_label",
+                    "variable": "cb_delhi_label_multiLang",
                     "value": {
-                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_GRAM_PANCHAYAT"
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_DL_CB"
                     },
                     "type": "label",
                     "localisation":{
                       "required":true,
                       "prefix": null,
                       "module":"rainmaker-pdf"
-                   }
-                  },
-                  {
-                    "variable": "cb_label_name_multiLang",
-                    "value": {
-                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_TLCERTIFICATE_MUNICIPAL_CORPORATION_HI"
-                    },
-                    "type": "label",
-                    "localisation":{
-                      "required":true,
-                      "prefix": null,
-                      "module":"rainmaker-pdf" 
                    }
                   },
                   {
@@ -239,7 +233,7 @@
                   {
                     "variable": "certificate_label_multiLang",
                     "value": {
-                      "path": "PDF_STATIC_LABEL_BD_HI_CERTIFICATE"
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_CERTIFICATE_BIRTH_MULTILANG"
                     },
                     "type": "label",
                     "localisation":{
@@ -249,9 +243,9 @@
                    }
                   },
                   {
-                    "variable": "certificate_label",
+                    "variable": "rule_label_multiLang",
                     "value": {
-                      "path": "PDF_STATIC_LABEL_BD_EN_CERTIFICATE"
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_CERTIFICATE_DL_RULE_MULTILANG"
                     },
                     "type": "label",
                     "localisation":{
@@ -739,30 +733,6 @@
                       "prefix": null,
                       "module":"rainmaker-pdf"
                    }
-                  },
-                  {
-                    "variable": "cb_letter_label_multilang",
-                    "value": {
-                      "path": "PDF_STATIC_LABEL_BD_HI_CB"
-                    },
-                    "type": "label",
-                    "localisation":{
-                      "required":true,
-                      "prefix": null,
-                      "module":"rainmaker-pdf"
-                   }
-                  },
-                  {
-                    "variable": "cb_letter_label",
-                    "value": {
-                      "path": "PDF_STATIC_LABEL_BD_EN_CB"
-                    },
-                    "type": "label",
-                    "localisation":{
-                      "required":true,
-                      "prefix": null,
-                      "module":"rainmaker-pdf"
-                   }
                   }
                   
               ]
@@ -787,18 +757,8 @@
                           "value":"$.MdmsRes.tenant.tenants[0].code",
                           "localisation":{
                             "required":true,
-                            "prefix": "PDF_STATIC_LABEL_BD_EN",
-                            "module":"rainmaker-pdf"
-                            }
-                        },
-                        {
-                          "variable": "cb-name-multilang",
-                          "value":"$.MdmsRes.tenant.tenants[0].code",
-                          "localisation":{
-                            "required":true,
-                            "prefix": "PDF_STATIC_LABEL_BD_HI",
-                            "module":"rainmaker-pdf"
-                            
+                            "prefix": "TENANT_TENANTS",
+                            "module":"rainmaker-common"
                             }
                         }
                       ]

@@ -1,5 +1,5 @@
 {
-    "key": "bd-madhyapradesh-birth",
+    "key": "bd-maharashtra-birth",
     "DataConfigs": {
       "serviceName": "rainmaker-common",
       "version": "1.0.0",
@@ -19,7 +19,7 @@
                 },
                 {
                     "variable": "govtImage",
-                    "url": "https://raw.githubusercontent.com/belsoftware/webaccess/master/images/birth/madhyapradesh-govt.png",
+                    "url": "https://raw.githubusercontent.com/belsoftware/webaccess/master/images/birth/maharashtraGovt.png",
                     "type": "image"
                 },
                 {
