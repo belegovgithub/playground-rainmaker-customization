@@ -85,7 +85,7 @@
               {
                 "columns": [
                   {
-                    "text": "This is to certify that the following information has been taken from the Original record of death which is the register for (Local Area) {{local_area}} of Tahsil Secunderabad Cantonment of District Hyderabad of State TELANGANA",
+                    "text": "This is to certify that the following information has been taken from the Original record of birth which is the register for Secunderabad Cantonment of District Hyderabad of State TELANGANA",
                     "style": "rule-header_multiLang"
                   }
                 ]
@@ -263,10 +263,22 @@
               {
                 "columns": [
                   {
+                    "text": " ",
+                    "width": "35%",
+                    "style": "details-body",
+                     "alignment":"center"
+                  },
+                  {
+                    "text": " ",
+                    "width": "35%",
+                    "style": "details-body",
+                     "alignment":"center"
+                  },
+                  {
                     "text": "Certified by",
                     "width": "35%",
                     "style": "details-body",
-                     "alignment":"center"
+                    "alignment":"center"
                   } 
                 ]
               }
@@ -275,7 +287,31 @@
               {
                 "columns": [
                   {
+                    "text": " ",
+                    "width": "35%",
+                    "style": "details-body",
+                     "alignment":"center"
+                  },
+                  {
+                    "text": " ",
+                    "width": "35%",
+                    "style": "details-body",
+                     "alignment":"center"
+                  },
+                  {
                     "text": "Registrar of Births and Deaths",
+                    "width": "35%",
+                    "style": "details-body",
+                    "alignment":"center"
+                  } 
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": "Date:{{date}}",
                     "width": "35%",
                     "style": "details-body",
                      "alignment":"center"
@@ -287,30 +323,47 @@
               {
                 "columns": [
                   {
-                    "text": "Registrar of Births and Deaths",
+                    "text": " ",
                     "width": "35%",
                     "style": "details-body",
                      "alignment":"center"
+                  },
+                  {
+                    "text": " ",
+                    "width": "35%",
+                    "style": "details-body",
+                     "alignment":"center"
+                  },
+                  {
+                    "text": "Name: Mohd. Afzal Mohiuddin",
+                    "width": "35%",
+                    "style": "details-body",
+                    "alignment":"center"
                   } 
                 ]
               }
             ],
-            
             [
               {
                 "columns": [
                   {
                     "text": " ",
-                    "width": "45%"
+                    "width": "35%",
+                    "style": "details-body",
+                     "alignment":"center"
                   },
                   {
                     "text": " ",
-                    "width": "10%"
+                    "width": "35%",
+                    "style": "details-body",
+                     "alignment":"center"
                   },
                   {
-                    "text": "रजिस्ट्रार (जन्म एवं मृत्यु)",
-                    "style": "signature-body"
-                  }
+                    "text": "Designation: Health Superintendent",
+                    "width": "35%",
+                    "style": "details-body",
+                    "alignment":"center"
+                  } 
                 ]
               }
             ],
@@ -319,19 +372,26 @@
                 "columns": [
                   {
                     "text": " ",
-                    "width": "45%"
+                    "width": "35%",
+                    "style": "details-body",
+                     "alignment":"center"
                   },
                   {
                     "text": " ",
-                    "width": "10%"
+                    "width": "35%",
+                    "style": "details-body",
+                     "alignment":"center"
                   },
                   {
-                    "text": "CANTONMENT BOARD {{cb-name}}",
-                    "style": "signature-body"
-                  }
+                    "text": "Secunderabad Cantonment Board.",
+                    "width": "35%",
+                    "style": "details-body",
+                    "alignment":"center"
+                  } 
                 ]
               }
-            ]
+            ] 
+             
           ]
         },
         "layout": "noBorders"

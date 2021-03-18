@@ -62,7 +62,7 @@
                   {
                     "text": "GOVERNMENT OF MAHARASHTRA",
                     "style": "appendix-header-body",
-                    "margin": [0, 0, 0, 5]
+                    "margin": [0, 0, 0, 0]
                   },
                   {
                     "text": "आरोग्य विभाग",
@@ -70,7 +70,8 @@
                   },
                   {
                     "text": "DEPARTMENT OF HEALTH",
-                    "style": "appendix-header-body"
+                    "style": "appendix-header-body",
+                    "margin": [0, 0, 0, 2]
                   },
                   {
                     "text": "{{cb_label_name_multiLang}} {{cb-name-multilang}}",
@@ -203,12 +204,12 @@
                 "columns": [
                   {
                     "text": "मृताचे नाव / NAME OF DECEASED: {{name}}",
-                    "width": "45%",
+                   "width": "49%",
                     "style": "details-body"
                   },
                   {
                     "text": " ",
-                    "width": "10%"
+                    "width": "1%"
                   },
                   {
                     "text": "लिंग / SEX: {{gender}}",
@@ -222,12 +223,12 @@
                 "columns": [
                   {
                     "text": "मृत्यू दिनांक / DATE OF DEATH: {{dod}}",
-                    "width": "45%",
+                   "width": "49%",
                     "style": "details-body"
                   },
                   {
                     "text": " ",
-                    "width": "10%"
+                    "width": "1%"
                   },
                   {
                     "text": "मृत्यू ठिकाण / PLACE OF DEATH: {{placeOfDeath}}",
@@ -241,12 +242,12 @@
                 "columns": [
                   {
                     "text": "मृत व्यक्तिचे  वय  / AGE OF DECEASED: {{age}}",
-                    "width": "45%",
+                    "width": "49%",
                     "style": "details-body"
                   },
                   {
                     "text": " ",
-                    "width": "10%"
+                    "width": "1%"
                   },
                   {
                     "text": "पती / पत्नी माहिती नाव / NAME OF HUSBAND / WIFE: {{spouseName}}",
@@ -260,12 +261,12 @@
                 "columns": [
                   {
                     "text": "आईचे पूर्ण नाव / NAME OF MOTHER: {{motherName}}",
-                    "width": "45%",
+                    "width": "49%",
                     "style": "details-body"
                   },
                   {
                     "text": " ",
-                    "width": "10%"
+                    "width": "1%"
                   },
                   {
                     "text": "वडिलांचे पूर्ण नाव / NAME OF FATHER: {{fatherName}}",
@@ -279,12 +280,12 @@
                 "columns": [
                   {
                     "text": "आधार क्रमांक / MOTHER'S AADHAAR NO: {{motherUid}}",
-                    "width": "45%",
+                    "width": "49%",
                     "style": "details-body"
                   },
                   {
                     "text": " ",
-                    "width": "10%"
+                    "width": "1%"
                   },
                   {
                     "text": "आधार क्रमांक / FATHER'S AADHAAR NO: {{fatherUid}}",
@@ -298,12 +299,12 @@
                 "columns": [
                   {
                     "text": "मयत व्यक्तीचा मृत्यूसमयीचा पत्ता/ ADDRESS OF THE DECEASED AT THE TIME OF DEATH: {{presentAdd}}",
-                    "width": "45%",
+                    "width": "49%",
                     "style": "details-body"
                   },
                   {
                     "text": " ",
-                    "width": "10%"
+                    "width": "1%"
                   },
                   {
                     "text": "मयत व्यक्तीचा कामयचा पत्ता / PERMANENT ADDRESS OF DECEASED : {{permanentAddress}}",
@@ -317,12 +318,12 @@
                 "columns": [
                   {
                     "text": "नोंदणी क्रमांक / REGISTRATION NUMBER: {{registrationNo}}",
-                    "width": "45%",
+                    "width": "49%",
                     "style": "details-body"
                   },
                   {
                     "text": " ",
-                    "width": "10%"
+                    "width": "1%"
                   },
                   {
                     "text": "नोंदणी दिनांक  / DATE OF REGISTRATION: {{registration_date}}",
@@ -336,17 +337,10 @@
                 "columns": [
                   {
                     "text": "  शेरा / REMARKS (IF ANY): {{remarks}}",
-                    "width": "45%",
-                    "style": "details-body"
-                  },
-                  {
-                    "text": " ",
-                    "width": "10%"
-                  },
-                  {
-                    "text": " ",
+                    "width": "49%",
                     "style": "details-body"
                   }
+                   
                 ]
               }
             ],
@@ -355,16 +349,17 @@
                 "columns": [
                   {
                     "text": "प्रमाणपत्र दिल्याचा दिनांक / DATE OF ISSUE: {{issueDate}}",
-                    "width": "45%",
+                    "width": "49%",
                     "style": "details-body"
                   },
                   {
                     "text": " ",
-                    "width": "10%"
+                    "width": "1%"
                   },
                   {
                     "text": "निर्गमित करणारे प्राधिकारी / ISSUING AUTHORITY :",
-                    "style": "details-body"
+                    "style": "details-body",
+                    "margin": [0, -15, 0, 0]
                   }
                 ]
               }
@@ -374,16 +369,16 @@
                 "columns": [
                   {
                     "text": " ",
-                    "width": "45%",
-                    "style": "details-body"
+                    "width": "49%"
                   },
                   {
                     "text": " ",
-                    "width": "10%"
+                    "width": "1%"
                   },
                   {
                     "text": "रजिस्ट्रार (जन्म व मृत्यु)",
-                    "style": "details-body"
+                    "style": "details-body",
+                    "margin": [0, -5, 0, 0]
                   }
                 ]
               }
@@ -393,16 +388,16 @@
                 "columns": [
                   {
                     "text": " ",
-                    "width": "45%",
-                    "style": "details-body"
+                    "width": "49%"
                   },
                   {
                     "text": " ",
-                    "width": "10%"
+                    "width": "1%"
                   },
                   {
                     "text": "{{cb_label_name_multiLang}} {{cb-name-multilang}}",
-                    "style": "details-body"
+                    "style": "details-body",
+                    "margin": [0, -10, 0, 0]
                   }
                 ]
               }
@@ -411,19 +406,19 @@
               {
                 "columns": [
                   {
-                    "variable": "updatedOn", 
-                    "value": {
-                      "path": "$.dateofissue"
-                    },
-                    "type": "date"
+                    "text": "UPDATED ON : {{updatedOn}}",
+                    "width": "49%",
+                    "style": "details-body",
+                    "margin": [0, -45, 0, 0]
                   },
                   {
                     "text": " ",
-                    "width": "10%"
+                    "width": "1%"
                   },
                   {
                     "text": "REGISTRAR (BIRTH & DEATH)",
-                    "style": "details-body"
+                    "style": "details-body",
+                    "margin": [0, -15, 0, 0]
                   }
                 ]
               }
@@ -433,16 +428,17 @@
                 "columns": [
                   {
                     "text": " ",
-                    "width": "45%",
+                    "width": "49%",
                     "style": "details-body"
                   },
                   {
                     "text": " ",
-                    "width": "10%"
+                    "width": "1%"
                   },
                   {
                     "text": "CANTONMENT BOARD {{cb-name}}",
-                    "style": "details-body"
+                    "style": "details-body",
+                    "margin": [0, -15, 0, 0]
                   }
                 ]
               }
@@ -547,23 +543,21 @@
       "qr-code": {
         "color": "#000000",
         "alignment": "left",
-        "margin": [0, -30, 0, 0]
+        "margin": [0, -70, 0, 0]
       },
       "title-header": {
-        "color": "#000000",
+        "color": "#004d00",
         "bold": true,
         "fontSize": 14,
-        "fontWeight": 400,
         "alignment": "center",
-        "margin": [0, 1, 0, 0]
+        "margin": [0, -1, 0, 0]
       },
       "title-header_multiLang": {
-        "color": "#000000",
+        "color": "#004d00",
         "bold": true,
         "fontSize": 15,
-        "fontWeight": 400,
         "alignment": "center",
-        "margin": [0, 3, 0, 0]
+        "margin": [0, 0, 0, -10]
       },
       "appendix-header-serialNo": {
         "color": "#000000",
@@ -580,42 +574,42 @@
         "margin": [20, -5, 0, 0]
       },
       "rule-header": {
-        "color": "#696969",
-        "bold": true,
+        "color": "#000000",
+        "bold": false,
         "fontSize": 10,
         "fontWeight": 400,
-        "margin": [0, 0, 0, 5]
+        "margin": [0, 0, 0, 3]
       },
       "rule-header_multiLang": {
-        "color": "#696969",
-        "bold": true,
+        "color": "#000000",
+        "bold": false,
         "fontSize": 11,
         "fontWeight": 400,
-        "margin": [0, 0, 0, 5]
+        "margin": [0, 0, 0, -1]
       },
       "rule-body": {
-        "color": "#696969",
-        "bold": true,
+        "color": "#000000",
+        "bold": false,
         "fontSize": 10,
         "fontWeight": 400,
         "margin": [0, 0, 0, 0]
       },
       "rule-body_multiLang": {
-        "color": "#696969",
-        "bold": true,
+        "color": "#000000",
+        "bold": false,
         "fontSize": 11,
         "fontWeight": 400,
         "margin": [0, 0, 0, 0]
       },
       "details-body": {
-        "color": "#696969",
-        "bold": true,
+        "color": "#000000",
+        "bold": false,
         "fontSize": 11,
         "fontWeight": 400,
         "margin": [0, 5, 0, 0]
       },
       "appendix-header-body": {
-        "color": "#696969",
+        "color": "#000099",
         "bold": true,
         "fontSize": 9,
         "fontWeight": 400,
