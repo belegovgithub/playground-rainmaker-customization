@@ -1,5 +1,5 @@
 {
-  "key": "bd-rajasthan-birth",
+  "key": "bd-telangana-birth",
   "config": {
     "defaultStyle": {
       "font": "Cambay"
@@ -32,73 +32,24 @@
       {
         "style": "ws-head",
         "table": {
-          "widths": ["20%", "60%", "20%"],
-          "body": [
-            [
-              {
-                "text":" "
-              },
-              {
-                "stack": [
-                  {
-                    "text": "प्रारूप संख्या 5",
-                    "style": "appendix-header-body"
-                  },
-                  {
-                    "text": "FORM NO. 5",
-                    "style": "appendix-header-body"
-                  },
-                  {
-                    "text": "राजस्थान सरकार",
-                    "style": "appendix-header-body"
-                  },
-                  {
-                    "text": "Government of Rajasthan",
-                    "style": "appendix-header-body",
-                    "margin": [0, 0, 0, 5]
-                  },
-                  {
-                    "text": "आर्थिक एवं सांख्यिकी निदेशालय",
-                    "style": "appendix-header-body"
-                  },
-                  {
-                    "text": "Directorate of Economics & Statistics",
-                    "style": "appendix-header-body"
-                  },
-                  {
-                    "text": "रजिस्ट्रार – {{cb_label_name_multiLang}} {{cb-name-multilang}}",
-                    "style": "appendix-header-body"
-                  },
-                  {
-                    "text": "Registrar – CANTONMENT BOARD {{cb-name}}",
-                    "style": "appendix-header-body"
-                  }
-                ]
-              },
-              {
-                "stack": [
-                  {
-                    "image": "{{form5}}",
-                    "width": 65,
-                    "height": 60.25,
-                    "margin": [10, -20, 0, 0]
-                  }
-                ]
-              }
-            ]
-          ]
-        },
-        "layout": "noBorders"
-      },
-      {
-        "style": "ws-head",
-        "table": {
           "widths": ["*"],
           "body": [
             [
               {
-                "text": "जन्म प्रमाण पत्र",
-                "style": "title-header_multiLang"
+                "stack": [
+                  {
+                    "text": "SECUNDERABAD CANTONMENT BOARD",
+                    "style": "appendix-header-body"
+                  },
+                  {
+                    "text": "FORM NO. 6",
+                    "style": "appendix-header-body"
+                  },
+                  {
+                    "text": "(See Rule 8)",
+                    "style": "appendix-header-body"
+                  }
+                ]
               }
             ]
           ]
@@ -113,58 +64,17 @@
             [
               {
                 "text": "BIRTH CERTIFICATE",
-                "style": "title-header"
-              }
-            ]
-          ]
-        },
-        "layout": "noBorders"
-      },
-      {
-        "style": "ws-head",
-        "table": {
-          "body": [
-            [
-              {
-                "columns": [
-                  {
-                    "text": "(जन्म और मृत्यु रजिस्ट्रीकरण अधिनियम, 1969 की धारा 12/17 और राजस्थान जन्म और मृत्यु रजिस्ट्रीकरण अधिनियम, 2000 के नियम 8/13 के अधीन जारी किया गया)",
-                    "style": "rule-header_multiLang"
-                  }
-                ]
-              }
-            ]
-          ]
-        },
-        "layout": "noBorders"
-      },
-      {
-        "style": "ws-head",
-        "table": {
-          "headerRows": 0,
-          "body": [
-            [
-              {
-                "columns": [
-                  {
-                    "text": "(Issued under Section 12/17 of the Registration of Births and Deaths Act, 1969 and Rule 8/13 of the Rajasthan Registration of Births and Deaths Rules, 2000)",
-                    "style": "rule-header_multiLang"
-                  }
-                ]
+                "style": "title-header_multiLang"
               }
             ],
             [
               {
-                "columns": [
-                  {
-                    "text": " "
-                  }
-                ]
+                "text": "(Issued Under Section 12/17)"
               }
             ]
           ]
         },
-        "layout": "lightHorizontalLines"
+        "layout": "noBorders"
       },
       {
         "style": "ws-head",
@@ -175,35 +85,8 @@
               {
                 "columns": [
                   {
-                    "text": [
-                      "यह प्रमाणित किया जाता है कि निम्नलिखित सूचना जन्म के मूल अभिलेख से ली गयी है जो कि (स्थानीय क्षेत्र / स्थानीय निकाय) ",
-                      {
-                        "text": "छावनी परिषद {{cb-name-multilang}}",
-                        "bold": true
-                      },
-                      "तहसील दीनापुर -कम-खगौल जिला  पटना राज्य /संघ प्रदेश  बिहार , भारत के रजिस्टर  में उल्लिखित है ।"
-                    ],
-                    "style": "rule-body_multiLang"
-                  }
-                ]
-              }
-            ],
-            [
-              {
-                "columns": [
-                  {
-                    "text": ["This is to certify that the following information has been taken from the original record of birth which is the register for (Local area / Local body) " ,
-                      {
-                      "text": "CHAVNI PARISHAD {{cb-name}}",
-                      "bold": true
-                    }, "of Tehsil / Block xxxx of District ",{
-                      "text": "AJMER",
-                      "bold": true
-                    }," of State / Union Territory",{
-                      "text": "Rajasthan, India",
-                      "bold": true
-                    }],
-                    "style": "rule-body"
+                    "text": "This is to certify that the following information has been taken from the Original record of death which is the register for (Local Area) {{local_area}} of Tahsil Secunderabad Cantonment of District Hyderabad of State TELANGANA",
+                    "style": "rule-header_multiLang"
                   }
                 ]
               }
@@ -221,18 +104,18 @@
               {
                 "columns": [
                   {
-                    "text": "नाम / NAME: {{name}}",
-                    "width": "45%",
+                    "text": "Name",
+                    "width": "30%",
                     "style": "details-body"
                   },
                   {
-                    "text": " ",
-                    "width": "10%"
+                    "text": ":",
+                    "width": "5%"
                   },
                   {
-                    "text": "लिंग / SEX: {{gender}}",
+                    "text": "{{name}}",
                     "style": "details-body"
-                  }
+                  } 
                 ]
               }
             ],
@@ -240,18 +123,19 @@
               {
                 "columns": [
                   {
-                    "text": "जन्म तिथि / DATE OF BIRTH : {{dob}}",
-                    "width": "45%",
+                    "text": "SEX",
+                    "width": "30%",
                     "style": "details-body"
                   },
                   {
-                    "text": " ",
-                    "width": "10%"
+                    "text": ":",
+                    "width": "5%"
                   },
                   {
-                    "text": "जन्म स्थान/ PLACE OF BIRTH: {{placeOfBirth}}",
+                    "text": "{{sex}}",
                     "style": "details-body"
-                  }
+                     
+                  } 
                 ]
               }
             ],
@@ -259,18 +143,19 @@
               {
                 "columns": [
                   {
-                    "text": "माता का नाम /NAME OF MOTHER : {{motherName}}",
-                    "width": "45%",
+                    "text": "Date of Birth",
+                    "width": "30%",
                     "style": "details-body"
                   },
                   {
-                    "text": " ",
-                    "width": "10%"
+                    "text": ":",
+                    "width": "5%"
                   },
                   {
-                    "text": "पिता का नाम / NAME OF FATHER: {{fatherName}}",
+                    "text": "{{dob}}",
                     "style": "details-body"
-                  }
+                     
+                  } 
                 ]
               }
             ],
@@ -278,18 +163,19 @@
               {
                 "columns": [
                   {
-                    "text": "आधार नंबर / MOTHER’S AADHAAR NO : {{motherUid}}",
-                    "width": "45%",
+                    "text": "Place of Birth",
+                    "width": "30%",
                     "style": "details-body"
                   },
                   {
-                    "text": " ",
-                    "width": "10%"
+                    "text": ":",
+                    "width": "5%"
                   },
                   {
-                    "text": "आधार नंबर / FATHER’S AADHAAR NO : {{fatherUid}}",
+                    "text": "{{placeOfBirth}}",
                     "style": "details-body"
-                  }
+                     
+                  } 
                 ]
               }
             ],
@@ -297,18 +183,19 @@
               {
                 "columns": [
                   {
-                    "text": "बच्चे के जन्म के समय माता-पिता का पता / ADDRESS OF PARENTS AT THE TIME OF BIRTH OF THE CHILD: {{childAddress}}",
-                    "width": "45%",
+                    "text": "Name of Father",
+                    "width": "30%",
                     "style": "details-body"
                   },
                   {
-                    "text": " ",
-                    "width": "10%"
+                    "text": ":",
+                    "width": "5%"
                   },
                   {
-                    "text": "माता-पिता के स्थायी पता/ PERMANENT ADDRESS OF PARENTS: {{parentsAddress}}",
+                    "text": "{{fatherName}}",
                     "style": "details-body"
-                  }
+                     
+                  } 
                 ]
               }
             ],
@@ -316,18 +203,19 @@
               {
                 "columns": [
                   {
-                    "text": "पंजीकरण संख्या / REGISTRATION NUMBER: {{registrationNo}}",
-                    "width": "45%",
+                    "text": "Name of Mother",
+                    "width": "30%",
                     "style": "details-body"
                   },
                   {
-                    "text": " ",
-                    "width": "10%"
+                    "text": ":",
+                    "width": "5%"
                   },
                   {
-                    "text": "पंजीकरण तारीख/ DATE OF REGISTRATION: {{registration_date}}",
+                    "text": "{{motherName}}",
                     "style": "details-body"
-                  }
+                     
+                  } 
                 ]
               }
             ],
@@ -335,18 +223,93 @@
               {
                 "columns": [
                   {
-                    "text": "टिप्पणी / REMARKS (IF ANY): {{remarks}}",
-                    "width": "45%",
+                    "text": "Registration No",
+                    "width": "30%",
+                    "style": "details-body"
+                  },
+                  {
+                    "text": ":",
+                    "width": "5%"
+                  },
+                  {
+                    "text": "{{registrationNo}}",
+                    "style": "details-body"
+                     
+                  } 
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": "Date of Registration",
+                    "width": "30%",
+                    "style": "details-body"
+                  },
+                  {
+                    "text": ":",
+                    "width": "5%"
+                  },
+                  {
+                    "text": "{{registration_date}}",
+                    "style": "details-body"
+                     
+                  } 
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": "Certified by",
+                    "width": "35%",
                     "style": "details-body",
-                    "margin": [0, -20, 0, 0]
+                     "alignment":"center"
+                  } 
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": "Registrar of Births and Deaths",
+                    "width": "35%",
+                    "style": "details-body",
+                     "alignment":"center"
+                  } 
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": "Registrar of Births and Deaths",
+                    "width": "35%",
+                    "style": "details-body",
+                     "alignment":"center"
+                  } 
+                ]
+              }
+            ],
+            
+            [
+              {
+                "columns": [
+                  {
+                    "text": " ",
+                    "width": "45%"
                   },
                   {
                     "text": " ",
                     "width": "10%"
                   },
                   {
-                    "text": " ",
-                    "style": "details-body"
+                    "text": "रजिस्ट्रार (जन्म एवं मृत्यु)",
+                    "style": "signature-body"
                   }
                 ]
               }
@@ -355,19 +318,16 @@
               {
                 "columns": [
                   {
-                    "text": "जारी करने की तिथि/ DATE OF ISSUE: {{issueDate}}",
-                    "width": "45%",
-                    "style": "details-body",
-                    "margin": [0, -20, 0, 0]
+                    "text": " ",
+                    "width": "45%"
                   },
                   {
                     "text": " ",
                     "width": "10%"
                   },
                   {
-                    "text": "जारी करने वाले प्राधिकारी के हस्ताक्षर/Signature of issuing authority:",
-                    "style": "details-body",
-                    "margin": [0, -20, 0, 0]
+                    "text": "CANTONMENT BOARD {{cb-name}}",
+                    "style": "signature-body"
                   }
                 ]
               }
@@ -400,40 +360,7 @@
           "body": [
             [
               {
-                "text": "“नोट: “बच्चे के जन्म के समय माता पिता का पता” एवं “माता पिता का स्थायी पता” के कॉलमों से संबन्धित सूचनायेँ 01/01/2007 से पूर्व लागू नहीं थी।.”",
-                "width": 50,
-                "height": 61.25,
-                "style": "instruction-body"
-              }
-            ],
-            [
-              {
-                "text": "“Note: Information in respect of the columns 'Present address of parents at the time of birth of the child' and 'Permanent address of parents' were not applicable before 01/01/2007”",
-                "width": 50,
-                "height": 61.25,
-                "style": "instruction-body"
-              }
-            ]
-          ]
-        },
-        "layout": "noBorders"
-      },
-      {
-        "style": "ws-head",
-        "table": {
-          "widths": ["*"],
-          "body": [
-            [
-              {
-                "text": "“राजस्थान सरकार के आर्थिक एवं सांख्यिकी विभाग के परिपत्र क्रमांक एफ़ 13/1/39/वीएस/डीईएस/2013/22519 दिनांक 02.06.2015 के द्वारा जन्म एवं मृत्यु प्रमाण पत्र जारी करने हेतु डिजिटल हस्ताक्षर के उपयोग को मान्यता प्रदान की गयी है।”",
-                "width": 50,
-                "height": 61.25,
-                "style": "instruction-body"
-              }
-            ],
-            [
-              {
-                "text": "“Use of Digital Signature for issuing birth and death certificate is recognized by Economics and Statistics Department, Government of Rajasthan vide circular number F 13/1/39/VS/DES/2013/22519 Dated 02.06.2015”",
+                "text": "“Note: This Certificate does not require any physical Signature.”",
                 "width": 50,
                 "height": 61.25,
                 "style": "instruction-body"
@@ -466,7 +393,7 @@
         "bold": false,
         "fontSize": 7,
         "fontWeight": 400,
-        "alignment": "left"
+        "alignment": "center"
       },
       "qr-code": {
         "color": "#000000",
@@ -506,7 +433,6 @@
       "rule-header": {
         "color": "#000000",
         "bold": false,
-        "alignment": "center",
         "fontSize": 10,
         "fontWeight": 400,
         "margin": [0, 0, 0, 5]
@@ -514,7 +440,6 @@
       "rule-header_multiLang": {
         "color": "#000000",
         "bold": false,
-        "alignment": "center",
         "fontSize": 11,
         "fontWeight": 400,
         "margin": [0, 0, 0, 5]
@@ -523,7 +448,6 @@
         "color": "#000000",
         "bold": false,
         "fontSize": 10,
-        "alignment": "left",
         "fontWeight": 400,
         "margin": [0, 0, 0, 0]
       },
@@ -531,9 +455,8 @@
         "color": "#000000",
         "bold": false,
         "fontSize": 11,
-        "alignment": "left",
         "fontWeight": 400,
-        "margin": [0, -10, 0, 0]
+        "margin": [0, 0, 0, 0]
       },
       "details-body": {
         "color": "#000000",

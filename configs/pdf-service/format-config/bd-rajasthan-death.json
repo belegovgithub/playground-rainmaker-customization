@@ -1,5 +1,5 @@
 {
-  "key": "bd-rajasthan-birth",
+  "key": "bd-rajasthan-death",
   "config": {
     "defaultStyle": {
       "font": "Cambay"
@@ -97,7 +97,7 @@
           "body": [
             [
               {
-                "text": "जन्म प्रमाण पत्र",
+                "text": "मृत्यु प्रमाण पत्र",
                 "style": "title-header_multiLang"
               }
             ]
@@ -112,7 +112,7 @@
           "body": [
             [
               {
-                "text": "BIRTH CERTIFICATE",
+                "text": "DEATH CERTIFICATE",
                 "style": "title-header"
               }
             ]
@@ -221,7 +221,7 @@
               {
                 "columns": [
                   {
-                    "text": "नाम / NAME: {{name}}",
+                    "text": "मृतक का नाम / NAME OF DECEASED: {{name}}",
                     "width": "45%",
                     "style": "details-body"
                   },
@@ -240,7 +240,7 @@
               {
                 "columns": [
                   {
-                    "text": "जन्म तिथि / DATE OF BIRTH : {{dob}}",
+                    "text": "मृतक का आधार नंबर/Deceased Aadhar No:: {{aadharNo}}",
                     "width": "45%",
                     "style": "details-body"
                   },
@@ -249,9 +249,21 @@
                     "width": "10%"
                   },
                   {
-                    "text": "जन्म स्थान/ PLACE OF BIRTH: {{placeOfBirth}}",
+                    "text": "मृत्यु का स्थान/ PLACE OF DEATH: {{placeOfBirth}}",
                     "style": "details-body"
                   }
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": "मृत्यु की तिथि / DATE OF DEATH  : {{dod}}",
+                    "width": "45%",
+                    "style": "details-body"
+                  }
+                   
                 ]
               }
             ],
@@ -296,8 +308,9 @@
             [
               {
                 "columns": [
+                  
                   {
-                    "text": "बच्चे के जन्म के समय माता-पिता का पता / ADDRESS OF PARENTS AT THE TIME OF BIRTH OF THE CHILD: {{childAddress}}",
+                    "text": "पति/पत्नी का नाम/Name of Husband/Wife : {{spouseName}}",
                     "width": "45%",
                     "style": "details-body"
                   },
@@ -306,7 +319,26 @@
                     "width": "10%"
                   },
                   {
-                    "text": "माता-पिता के स्थायी पता/ PERMANENT ADDRESS OF PARENTS: {{parentsAddress}}",
+                    "text": "पति/पत्नी का आधार नंबर/Husband/Wife Aadhar No : {{spouseAadhar}}",
+                    "style": "details-body"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": "मृत्यु के समय मृतक का पता / ADDRESS OF THE DECEASED AT THE TIME OF DEATH: {{presentAdd}}",
+                    "width": "45%",
+                    "style": "details-body"
+                  },
+                  {
+                    "text": " ",
+                    "width": "10%"
+                  },
+                  {
+                    "text": "मृतक का स्थायी पता/ PERMANENT ADDRESS OF DECEASED: {{permanentAddress}}",
                     "style": "details-body"
                   }
                 ]
@@ -337,8 +369,7 @@
                   {
                     "text": "टिप्पणी / REMARKS (IF ANY): {{remarks}}",
                     "width": "45%",
-                    "style": "details-body",
-                    "margin": [0, -20, 0, 0]
+                    "style": "details-body"
                   },
                   {
                     "text": " ",
@@ -357,21 +388,19 @@
                   {
                     "text": "जारी करने की तिथि/ DATE OF ISSUE: {{issueDate}}",
                     "width": "45%",
-                    "style": "details-body",
-                    "margin": [0, -20, 0, 0]
+                    "style": "details-body"
                   },
                   {
                     "text": " ",
                     "width": "10%"
                   },
                   {
-                    "text": "जारी करने वाले प्राधिकारी के हस्ताक्षर/Signature of issuing authority:",
-                    "style": "details-body",
-                    "margin": [0, -20, 0, 0]
+                    "text": "जारी करने वाले प्राधिकारी के हस्ताक्षर/Signature of issuing authority",
+                    "style": "details-body"
                   }
                 ]
               }
-            ]
+            ] 
           ]
         },
         "layout": "noBorders"
