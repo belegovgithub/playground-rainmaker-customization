@@ -961,7 +961,7 @@ ReportDefinitions:
     searchClause: AND ws.tenantId in ($multipleTenantId)
   query: SELECT distinct initcap(split_part(ws.tenantId,'.', 2)) as tenantId,pd.receiptnumber,service.connectiontype,ws.roadtype,ws.roadcuttingarea,message.message as status,to_char(To_timestamp(ws.lastmodifiedtime / 1000),'DD/MM/YYYY') as lastmodifiedtime,eg_user.name as name,eg_user.mobilenumber,applicationno,pgtxn.bank_transaction_no as banktxnNo,totalamount,To_char(To_timestamp(pd.manualreceiptdate/ 1000), 'DD/MM/YYYY') AS g8issuedate,pd.manualreceiptnumber as g8receiptno FROM eg_ws_connection ws   INNER JOIN egcl_bill bill ON bill.consumercode = ws.applicationno and bill.status !='Cancelled' JOIN egcl_billdetial as bild ON bild.billid = bill.id INNER JOIN(Select DISTINCT billdetailid,amount, taxheadcode,message.message as feeType from egcl_billaccountdetail bilaccd INNER JOIN message ON taxheadcode = message.code AND message.locale='en_IN')  as bilaccd ON bild.id = bilaccd .billdetailid LEFT OUTER JOIN egcl_paymentdetail as pd ON pd.billid =bill.id LEFT OUTER JOIN egcl_payment as pay ON pay.id = pd.paymentid and pay.paymentstatus != 'CANCELLED' LEFT OUTER Join eg_pg_transactions as pgtxn ON pay.transactionnumber = pgtxn.txn_id LEFT OUTER JOIN eg_pt_owner as owner ON owner.propertyid =property_id LEFT OUTER JOIN eg_user  ON uuid =owner.userid LEFT OUTER JOIN message ON substring(message.code,11) ='CONNECTION_ACTIVATED' AND message.locale = 'en_IN'  LEFT OUTER JOIN eg_ws_service as service ON service.connection_id=ws.id WHERE ws.tenantId in ($multipleTenantId) AND service.connectiontype is NOT NULL
   
-- reportName: CommandLevelStatus
+- reportName: CommandWaterLevelStatus
   reportLabel: report.state.level.status
   summary: Nummber of applications are there status state level
   version: 1.0.0
@@ -1049,103 +1049,7 @@ ReportDefinitions:
   query: SELECT initcap(split_part(tenantId, '.', 2)) as tenantId,count(*) as total,SUM(CASE applicationstatus when 'INITIATED' then 1 else 0 end) as initiated,SUM(CASE applicationstatus when 'PENDING_FOR_DOCUMENT_VERIFICATION' then 1 else 0 end) as docverification,SUM(CASE applicationstatus when 'PENDING_FOR_FIELD_INSPECTION' then 1 else 0 end) as fieldinspection,SUM(CASE applicationstatus when 'PENDING_FOR_CITIZEN_ACTION' then 1 else 0 end) as citizenactionreq,SUM(CASE applicationstatus when 'PENDING_APPROVAL_FOR_CONNECTION' then 1 else 0 end) as pendingapproval,SUM(CASE applicationstatus when 'PENDING_FOR_PAYMENT' then 1 else 0 end) as pendingpayment,SUM(CASE applicationstatus when 'PENDING_FOR_CONNECTION_ACTIVATION' then 1 else 0 end) as pendindgconnection,SUM(CASE applicationstatus when 'CONNECTION_ACTIVATED' then 1 else 0 end) as connectionactivation,SUM(CASE applicationstatus when 'APPROVED' then 1 else 0 end) as approved,SUM (CASE applicationstatus when 'REJECTED' then 1 else 0 end) as rejected FROM eg_ws_connection as ws WHERE ws.tenantid in ($multipleTenantId)
   groupby: GROUP BY tenantid
   orderby: ORDER BY tenantid
-- reportName: CBSewerageRegistryReport
-  summary: CB Level Water Registry Report
-  decryptionPathId: CBWaterRegistryReport
-  version: 1.0.0
-  moduleName: rainmaker-ws
-  additionalConfig:
-    print:
-      pdfPageSize: "A3"
-  sourceColumns:
-  - name: tenantId
-    label: WS_PROP_DETAIL_CITY
-    type: string
-    source: ws
-    total: false
-  - name: applicationno
-    label: WS_COMMON_APPLICATION_NO_LABEL
-    type: string
-    source: ws
-    total: false
-  - name: receiptnumber
-    label: report.tl.receiptnumber
-    type: string
-    source: ws
-    total: false 
-  - name: name
-    label: WS_OWN_DETAIL_NAME
-    type: string
-    source: ws
-    total: false
-  - name: mobilenumber
-    label: CORE_COMMON_MOBILE_NUMBER
-    type: string
-    source: ws
-    total: false
-  - name: status
-    label: WS_COMMON_TABLE_COL_APPLICATION_STATUS
-    type: string
-    source: ws
-    total: false
-  - name: connectiontype
-    label: WS_COMMON_TABLE_COL_CONNECTIONTYPE_LABEL
-    type: string
-    source: ws
-    total: false
-  - name: roadtype
-    label: WS_ADDN_DETAIL_ROAD_TYPE
-    type: string
-    source: ws
-    total: false
-  - name: roadcuttingarea
-    label: report.ws.roadcuttingarea
-    type: string
-    source: ws
-    total: false
-  - name: totalamount
-    label: WS_COMMON_TOTAL_AMT
-    type: string
-    source: ws
-    total: true
-  - name: banktxnNo
-    label: report.tl.banktxnNo
-    type: string
-    source: ws
-    total: false
-  - name: g8issuedate
-    label: report.tl.g8issuedate
-    type: string
-    source: ws
-    total: false
-  - name: g8receiptno
-    label: report.tl.g8receiptno
-    type: string
-    source: ws
-    total: false
-  searchParams:
-  - name: fromDate
-    label: WS_COMMON_FROM_DATE_LABEL
-    type: epoch
-    source: ws
-    isMandatory: false
-    searchClause: AND pd.receiptdate >= $fromDate
-  - name: toDate
-    label: WS_COMMON_TO_DATE_LABEL
-    type: epoch
-    source: ws
-    isMandatory: false
-    searchClause: AND pd.receiptdate <= $toDate
-  - name: ulb
-    label: WS_PROP_DETAIL_CITY
-    type: singlevaluelist
-    pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=tenant&masterName=tenants|$.MdmsRes.tenant.tenants.*.code|$.MdmsRes.tenant.tenants.*.name
-    source: ws
-    wrapper: true
-    isMandatory: false
-    searchClause: AND ws.tenantId = $ulb
-  query: SELECT distinct initcap(split_part(ws.tenantId,'.', 2)) as tenantId,pd.receiptnumber,service.connectiontype,ws.roadtype,ws.roadcuttingarea,message.message as status,to_char(To_timestamp(ws.lastmodifiedtime / 1000),'DD/MM/YYYY') as lastmodifiedtime,eg_user.name as name,eg_user.mobilenumber,applicationno,pgtxn.bank_transaction_no as banktxnNo,totalamount,To_char(To_timestamp(pd.manualreceiptdate/ 1000), 'DD/MM/YYYY') AS g8issuedate,pd.manualreceiptnumber as g8receiptno FROM eg_sw_connection ws   INNER JOIN egcl_bill bill ON bill.consumercode = ws.applicationno and bill.status !='Cancelled' JOIN egcl_billdetial as bild ON bild.billid = bill.id INNER JOIN(Select DISTINCT billdetailid,amount, taxheadcode,message.message as feeType from egcl_billaccountdetail bilaccd INNER JOIN message ON taxheadcode = message.code AND message.locale='en_IN')  as bilaccd ON bild.id = bilaccd .billdetailid LEFT OUTER JOIN egcl_paymentdetail as pd ON pd.billid =bill.id LEFT OUTER JOIN egcl_payment as pay ON pay.id = pd.paymentid and pay.paymentstatus != 'CANCELLED' LEFT OUTER Join eg_pg_transactions as pgtxn ON pay.transactionnumber = pgtxn.txn_id LEFT OUTER JOIN eg_pt_owner as owner ON owner.propertyid =property_id LEFT OUTER JOIN eg_user  ON uuid =owner.userid LEFT OUTER JOIN message ON substring(message.code,11) ='CONNECTION_ACTIVATED' AND message.locale = 'en_IN'  LEFT OUTER JOIN eg_sw_service as service ON service.connection_id=ws.id WHERE ws.tenantId != 'pb.testing' AND service.connectiontype is NOT NULL
- 
+
 - reportName: CommandSewerageRegistryReport
   summary: CB Level Water Registry Report
   decryptionPathId: CBWaterRegistryReport
