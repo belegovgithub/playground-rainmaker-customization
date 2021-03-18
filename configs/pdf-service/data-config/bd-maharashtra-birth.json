@@ -65,6 +65,13 @@
                     },
                     "type": "date"
                   },
+                  {
+                    "variable": "updatedOn", 
+                    "value": {
+                      "path": "$.dateofissue"
+                    },
+                    "type": "date"
+                  },
                 {
                   "variable": "fatherName", 
                   "value": {

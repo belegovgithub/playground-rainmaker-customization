@@ -458,7 +458,7 @@
                                                "columns": [
                                                    
                                                   {
-                                                      "text": " ",
+                                                      "text": "UPDATED ON : {{updatedOn}}",
                                                       "width": "45%",
                                                        "style": "details-body"
                                                   },

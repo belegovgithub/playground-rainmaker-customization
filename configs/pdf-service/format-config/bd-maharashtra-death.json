@@ -411,9 +411,11 @@
               {
                 "columns": [
                   {
-                    "text": " ",
-                    "width": "45%",
-                    "style": "details-body"
+                    "variable": "updatedOn", 
+                    "value": {
+                      "path": "$.dateofissue"
+                    },
+                    "type": "date"
                   },
                   {
                     "text": " ",

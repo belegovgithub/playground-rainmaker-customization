@@ -59,6 +59,13 @@
                   }
                 },
                 {
+                  "variable": "updatedOn", 
+                  "value": {
+                    "path": "$.dateofissue"
+                  },
+                  "type": "date"
+                },
+                {
                   "variable": "placeOfDeath", 
                   "value": {
                     "path": "$.placeofdeath"
