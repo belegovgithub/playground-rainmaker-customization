@@ -82,7 +82,7 @@
                 {
                   "variable": "placeOfDeath", 
                   "value": {
-                    "path": "$.deathPermaddr.placeofdeath"
+                    "path": "$.placeofdeath"
                   }
                 },
                 {
