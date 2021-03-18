@@ -4,11 +4,6 @@ ReportDefinitions:
   summary: Nummber of applications by there status
   version: 1.0.0
   moduleName: rainmaker-ws
-  externalService:
-  - entity: $.messages[*]
-    apiURL: http://egov-localization:8080/localization/messages/v1/_search?locale=en_IN&tenantId=pb&module=rainmaker-ws
-    keyOrder: code,message
-    tableName: tbl_localization
   sourceColumns:
   - name: status
     label: WS_COMMON_TABLE_COL_APPLICATION_STATUS
@@ -33,27 +28,51 @@ ReportDefinitions:
     source: ws
     isMandatory: false
     searchClause: AND ws.lastmodifiedtime <= $toDate
-  query: SELECT COUNT(applicationno) as total,message.message as status from eg_ws_connection ws LEFT OUTER JOIN message ON substring(message.code,11) = applicationstatus AND message.locale = 'en_IN'  WHERE ws.tenantId LIKE $tenantid 
+  query: SELECT COUNT(applicationno) as total,message.message as status from eg_ws_connection ws LEFT OUTER JOIN message ON message.code = CONCAT('WF_NEWWS1_',applicationstatus) AND message.locale = 'en_IN'  WHERE ws.tenantId LIKE $tenantid and applicationtype = 'NEW_WATER_CONNECTION'
   groupby: GROUP BY message.message
-  orderby: ORDER BY case message.message when 'Pending Application' then 1 when 'Pending Payment' then 2 when 'Pending Approval' then 3 when 'Approved' then 4 when 'Rejected' then 5 when 'Cancelled' then 6 else 7 end
+  orderby: ORDER BY case message.message when 'Initiated' then 1 when 'Pending For Document Verification' then 2 when 'Pending For Field Inspection' then 3 when 'Pending for Citizen Action' then 4 when 'Pending for Approval' then 5 when 'Pending for Payment' then 6 when 'Pending for Connection Activation' then 7 else 8 end
 
+- reportName: ModifyWaterConnectionApplicationStatusReport
+  summary: Nummber of applications by there status
+  version: 1.0.0
+  moduleName: rainmaker-ws
+  sourceColumns:
+  - name: status
+    label: WS_COMMON_TABLE_COL_APPLICATION_STATUS
+    type: string
+    source: ws
+    total: false
+  - name: total
+    label: WS_VIEW_BREAK_UP_TOTAL
+    type: string
+    source: ws
+    total: true
+  searchParams:
+  - name: fromDate
+    label: WS_COMMON_FROM_DATE_LABEL
+    type: epoch
+    source: ws
+    isMandatory: false
+    searchClause: AND ws.lastmodifiedtime >= $fromDate
+  - name: toDate
+    label: WS_COMMON_TO_DATE_LABEL
+    type: epoch
+    source: ws
+    isMandatory: false
+    searchClause: AND ws.lastmodifiedtime <= $toDate
+  query: SELECT COUNT(applicationno) as total,message.message as status from eg_ws_connection ws LEFT OUTER JOIN message ON message.code = CONCAT('WF_MODIFYWSCONNECTION_',applicationstatus) AND message.locale = 'en_IN'  WHERE ws.tenantId LIKE $tenantid and applicationtype = 'MODIFY_WATER_CONNECTION'
+  groupby: GROUP BY message.message
+  orderby: ORDER BY case message.message when 'Initiated' then 1 when 'Modify Water Pending for Approval' then 2 when 'Approved' then 3 when 'Rejected' then 4  else 5 end
 
 - reportName: WaterRegistryReport
   summary: Water Registry Report
   decryptionPathId: WaterRegistryReport
   version: 1.0.0
   moduleName: rainmaker-ws
-  externalService:
-  - entity: $.messages[*]
-    apiURL: http://egov-localization:8080/localization/messages/v1/_search?locale=en_IN&tenantId=pb&module=rainmaker-ws
-    keyOrder: code,message
-    tableName: tbl_localization
+  additionalConfig:
+    print:
+      pdfPageSize: "A3"
   sourceColumns:
-  - name: tenantId
-    label: WS_PROP_DETAIL_CITY
-    type: string
-    source: ws
-    total: false
   - name: applicationno
     label: WS_COMMON_APPLICATION_NO_LABEL
     type: string
@@ -76,11 +95,6 @@ ReportDefinitions:
     total: false
   - name: status
     label: WS_COMMON_TABLE_COL_APPLICATION_STATUS
-    type: string
-    source: ws
-    total: false
-  - name: lastmodifiedtime
-    label: report.ws.lastmodifiedtime
     type: string
     source: ws
     total: false
@@ -125,13 +139,107 @@ ReportDefinitions:
     type: epoch
     source: ws
     isMandatory: false
-    searchClause: AND ws.lastmodifiedtime >= $fromDate
+    searchClause: AND pd.receiptdate >= $fromDate
   - name: toDate
     label: WS_COMMON_TO_DATE_LABEL
     type: epoch
     source: ws
     isMandatory: false
-    searchClause: AND ws.lastmodifiedtime <= $toDate
+    searchClause: AND pd.receiptdate <= $toDate
+  query: SELECT distinct pd.receiptnumber,service.connectiontype,msgroad.message as roadtype,ws.roadcuttingarea,message.message as status,eg_user.name as name,eg_user.mobilenumber,applicationno,pgtxn.bank_transaction_no as banktxnNo,totalamount,To_char(To_timestamp(pd.manualreceiptdate/ 1000), 'DD/MM/YYYY') AS g8issuedate,pd.manualreceiptnumber as g8receiptno FROM eg_ws_connection ws   INNER JOIN egcl_bill bill ON bill.consumercode = ws.applicationno and bill.status !='Cancelled' JOIN egcl_billdetial as bild ON bild.billid = bill.id INNER JOIN(Select DISTINCT billdetailid,amount, taxheadcode,message.message as feeType from egcl_billaccountdetail bilaccd INNER JOIN message ON taxheadcode = message.code AND message.locale='en_IN')  as bilaccd ON bild.id = bilaccd .billdetailid LEFT OUTER JOIN egcl_paymentdetail as pd ON pd.billid =bill.id LEFT OUTER JOIN egcl_payment as pay ON pay.id = pd.paymentid and pay.paymentstatus != 'CANCELLED' LEFT OUTER Join eg_pg_transactions as pgtxn ON pay.transactionnumber = pgtxn.txn_id LEFT OUTER JOIN eg_pt_owner as owner ON owner.propertyid =property_id LEFT OUTER JOIN eg_user  ON uuid =owner.userid LEFT OUTER JOIN message ON substring(message.code,11) ='CONNECTION_ACTIVATED' AND message.locale = 'en_IN'  LEFT OUTER JOIN message as msgroad ON CONCAT('WS_ROADTYPE_',ws.roadtype) = msgroad.code AND msgroad.locale='en_IN' AND msgroad.module='rainmaker-ws' LEFT OUTER JOIN eg_ws_service as service ON service.connection_id=ws.id WHERE ws.tenantid like $tenantid AND service.connectiontype is NOT NULL
+
+- reportName: CBWaterRegistryReport
+  summary: CB Level Water Registry Report
+  decryptionPathId: CBWaterRegistryReport
+  version: 1.0.0
+  moduleName: rainmaker-ws
+  additionalConfig:
+    print:
+      pdfPageSize: "A3"
+  sourceColumns:
+  - name: tenantId
+    label: WS_PROP_DETAIL_CITY
+    type: string
+    source: ws
+    total: false
+  - name: applicationno
+    label: WS_COMMON_APPLICATION_NO_LABEL
+    type: string
+    source: ws
+    total: false
+  - name: receiptnumber
+    label: report.tl.receiptnumber
+    type: string
+    source: ws
+    total: false 
+  - name: name
+    label: WS_OWN_DETAIL_NAME
+    type: string
+    source: ws
+    total: false
+  - name: mobilenumber
+    label: CORE_COMMON_MOBILE_NUMBER
+    type: string
+    source: ws
+    total: false
+  - name: status
+    label: WS_COMMON_TABLE_COL_APPLICATION_STATUS
+    type: string
+    source: ws
+    total: false
+  # - name: lastmodifiedtime
+  #   label: report.ws.lastmodifiedtime
+  #   type: string
+  #   source: ws
+    # total: false
+  - name: connectiontype
+    label: WS_COMMON_TABLE_COL_CONNECTIONTYPE_LABEL
+    type: string
+    source: ws
+    total: false
+  - name: roadtype
+    label: WS_ADDN_DETAIL_ROAD_TYPE
+    type: string
+    source: ws
+    total: false
+  - name: roadcuttingarea
+    label: report.ws.roadcuttingarea
+    type: string
+    source: ws
+    total: false
+  - name: totalamount
+    label: WS_COMMON_TOTAL_AMT
+    type: string
+    source: ws
+    total: true
+  - name: banktxnNo
+    label: report.tl.banktxnNo
+    type: string
+    source: ws
+    total: false
+  - name: g8issuedate
+    label: report.tl.g8issuedate
+    type: string
+    source: ws
+    total: false
+  - name: g8receiptno
+    label: report.tl.g8receiptno
+    type: string
+    source: ws
+    total: false
+  searchParams:
+  - name: fromDate
+    label: WS_COMMON_FROM_DATE_LABEL
+    type: epoch
+    source: ws
+    isMandatory: false
+    searchClause: AND pd.receiptdate >= $fromDate
+  - name: toDate
+    label: WS_COMMON_TO_DATE_LABEL
+    type: epoch
+    source: ws
+    isMandatory: false
+    searchClause: AND pd.receiptdate <= $toDate
   - name: ulb
     label: WS_PROP_DETAIL_CITY
     type: singlevaluelist
@@ -142,7 +250,94 @@ ReportDefinitions:
     searchClause: AND ws.tenantId = $ulb
   query: SELECT distinct initcap(split_part(ws.tenantId,'.', 2)) as tenantId,pd.receiptnumber,service.connectiontype,ws.roadtype,ws.roadcuttingarea,message.message as status,to_char(To_timestamp(ws.lastmodifiedtime / 1000),'DD/MM/YYYY') as lastmodifiedtime,eg_user.name as name,eg_user.mobilenumber,applicationno,pgtxn.bank_transaction_no as banktxnNo,totalamount,To_char(To_timestamp(pd.manualreceiptdate/ 1000), 'DD/MM/YYYY') AS g8issuedate,pd.manualreceiptnumber as g8receiptno FROM eg_ws_connection ws   INNER JOIN egcl_bill bill ON bill.consumercode = ws.applicationno and bill.status !='Cancelled' JOIN egcl_billdetial as bild ON bild.billid = bill.id INNER JOIN(Select DISTINCT billdetailid,amount, taxheadcode,message.message as feeType from egcl_billaccountdetail bilaccd INNER JOIN message ON taxheadcode = message.code AND message.locale='en_IN')  as bilaccd ON bild.id = bilaccd .billdetailid LEFT OUTER JOIN egcl_paymentdetail as pd ON pd.billid =bill.id LEFT OUTER JOIN egcl_payment as pay ON pay.id = pd.paymentid and pay.paymentstatus != 'CANCELLED' LEFT OUTER Join eg_pg_transactions as pgtxn ON pay.transactionnumber = pgtxn.txn_id LEFT OUTER JOIN eg_pt_owner as owner ON owner.propertyid =property_id LEFT OUTER JOIN eg_user  ON uuid =owner.userid LEFT OUTER JOIN message ON substring(message.code,11) ='CONNECTION_ACTIVATED' AND message.locale = 'en_IN'  LEFT OUTER JOIN eg_ws_service as service ON service.connection_id=ws.id WHERE ws.tenantId != 'pb.testing' AND service.connectiontype is NOT NULL
   
-
+- reportName: CBLevelStatus
+  reportLabel: report.state.level.status
+  summary: Nummber of applications are there status state level
+  version: 1.0.0
+  moduleName: rainmaker-ws
+  sourceColumns:
+  - name: tenantId
+    label: WS_COMMON_TABLE_COL_TENANTID_LABEL
+    type: string
+    source: ws
+    total: false
+  - name: total
+    label: WS_VIEW_BREAK_UP_TOTAL
+    type: string
+    source: ws
+    total: true
+  - name: initiated
+    label: WF_EMPLOYEE_NEWWS1_INITIATED
+    type: number
+    source: ws
+    total: true
+  - name: docverification
+    label: WF_EMPLOYEE_NEWWS1_PENDING_FOR_DOCUMENT_VERIFICATION
+    type: number
+    source: ws
+    total: true
+  - name: fieldinspection
+    label: WF_EMPLOYEE_NEWWS1_PENDING_FOR_FIELD_INSPECTION
+    type: number
+    source: ws
+    total: true
+  - name: citizenactionreq
+    label: WF_EMPLOYEE_NEWWS1_PENDING_FOR_CITIZEN_ACTION
+    type: number
+    source: ws
+    total: true
+  - name: pendingapproval
+    label: WF_EMPLOYEE_NEWWS1_PENDING_APPROVAL_FOR_CONNECTION
+    type: number
+    source: ws
+    total: true
+  - name: pendingpayment
+    label: WF_EMPLOYEE_NEWWS1_PENDING_FOR_PAYMENT
+    type: number
+    source: ws
+    total: true
+  - name: pendindgconnection
+    label: WF_EMPLOYEE_NEWWS1_PENDING_FOR_CONNECTION_ACTIVATION
+    type: number
+    source: ws
+    total: true
+  - name: connectionactivation
+    label: WF_EMPLOYEE_NEWWS1_CONNECTION_ACTIVATED
+    type: number
+    source: ws
+    total: true
+  - name: approved
+    label: WF_MODIFYWSCONNECTION_APPROVED
+    type: number
+    source: ws
+  - name: rejected
+    label: WF_EMPLOYEE_NEWWS1_REJECTED
+    type: number
+    source: ws
+  searchParams:
+  - name: fromDate
+    label: WS_COMMON_FROM_DATE_LABEL
+    type: epoch
+    source: ws
+    isMandatory: false
+    searchClause: AND ws.lastmodifiedtime >= $fromDate
+  - name: toDate
+    label: WS_COMMON_TO_DATE_LABEL
+    type: epoch
+    source: ws
+    isMandatory: false
+    searchClause: AND ws.lastmodifiedtime <= $toDate
+  - name: ulb
+    label: WS_COMMON_TABLE_COL_TENANTID_LABEL
+    type: singlevaluelist
+    pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=tenant&masterName=tenants|$.MdmsRes.tenant.tenants.*.code|$.MdmsRes.tenant.tenants.*.name
+    source: ws
+    wrapper: true
+    isMandatory: false
+    searchClause: AND ws.tenantId = $ulb
+  query: SELECT initcap(split_part(tenantId, '.', 2)) as tenantId,count(*) as total,SUM(CASE applicationstatus when 'INITIATED' then 1 else 0 end) as initiated,SUM(CASE applicationstatus when 'PENDING_FOR_DOCUMENT_VERIFICATION' then 1 else 0 end) as docverification,SUM(CASE applicationstatus when 'PENDING_FOR_FIELD_INSPECTION' then 1 else 0 end) as fieldinspection,SUM(CASE applicationstatus when 'PENDING_FOR_CITIZEN_ACTION' then 1 else 0 end) as citizenactionreq,SUM(CASE applicationstatus when 'PENDING_APPROVAL_FOR_CONNECTION' then 1 else 0 end) as pendingapproval,SUM(CASE applicationstatus when 'PENDING_FOR_PAYMENT' then 1 else 0 end) as pendingpayment,SUM(CASE applicationstatus when 'PENDING_FOR_CONNECTION_ACTIVATION' then 1 else 0 end) as pendindgconnection,SUM(CASE applicationstatus when 'CONNECTION_ACTIVATED' then 1 else 0 end) as connectionactivation,SUM(CASE applicationstatus when 'APPROVED' then 1 else 0 end) as approved,SUM (CASE applicationstatus when 'REJECTED' then 1 else 0 end) as rejected FROM eg_ws_connection as ws WHERE ws.tenantid != 'pb.testing'
+  groupby: GROUP BY tenantid
+  orderby: ORDER BY tenantid
 
 - reportName: CollectionforWaterConnectionType 
   summary: Water Connection Type Report
@@ -254,3 +449,412 @@ ReportDefinitions:
   query: |
    SELECT COUNT(applicationno) as usagecategorycount,usagecategory,SUM(onl.totalamountpaid) as online,SUM(offl.totalamountpaid) as offline, COALESCE(SUM(onl.totalamountpaid),0) + COALESCE(SUM(offl.totalamountpaid),0) as totalCollection FROM eg_ws_connection as ws INNER JOIN eg_pt_property ON eg_pt_property.id =ws.property_id INNER JOIN egcl_bill bill ON bill.consumercode = ws.applicationno  and bill.status != 'Cancelled'LEFT OUTER JOIN egcl_paymentdetail as pd ON pd.billid = bill.id LEFT OUTER JOIN (SELECT * FROM egcl_payment WHERE paymentmode = 'ONLINE') AS onl ON onl.id = pd.paymentid LEFT OUTER JOIN (SELECT * FROM egcl_payment WHERE paymentmode != 'ONLINE' ) AS offl ON offl.id = pd.paymentid WHERE  ws.tenantId LIKE $tenantid  and usagecategory is NOT NULL
   groupby: group by usagecategory
+- reportName: WSAppplicationStatusRegistry
+  summary: WS Application Status Registry
+  decryptionPathId: WSAppplicationStatusRegistry
+  version: 1.0.0
+  moduleName: rainmaker-ws
+  sourceColumns:
+  - name: applicationno
+    label: WS_COMMON_APPLICATION_NO_LABEL
+    type: string
+    source: ws
+    total: false
+  - name: connectionno
+    label: WS_ACKNO_CONNECTION_NO_LABEL
+    type: string
+    source: ws
+    total: false
+  - name: applicationtype
+    label: WS_APPLICATION_TYPE_LABEL
+    type: string
+    source: ws
+    total: false
+  - name: name
+    label: WS_MYCONNECTIONS_OWNER_NAME
+    type: string
+    source: ws
+    total: false
+  - name: service.connectiontype
+    label: WS_SERV_DETAIL_CONN_TYPE
+    type: string
+    source: ws
+    total: false
+  - name: roadtype
+    label: WS_ROADTYPE
+    type: string
+    source: ws
+    total: false
+  - name: appstatus
+    label: WS_COMMON_TABLE_COL_APPLICATION_STATUS_LABEL
+    type: string
+    source: ws
+    total: false
+  - name: activationdate
+    label: WS_MODIFICATIONS_EFFECTIVE_DATE
+    type: string
+    source: ws
+    total: false
+  searchParams:
+  - name: fromDate
+    label: WS_COMMON_FROM_DATE_LABEL
+    type: epoch
+    source: ws
+    isMandatory: false
+    searchClause: AND ws.lastmodifiedtime >= $fromDate
+  - name: toDate
+    label: WS_COMMON_TO_DATE_LABEL
+    type: epoch
+    source: ws
+    isMandatory: false
+    searchClause: AND ws.lastmodifiedtime <= $toDate
+  # - name: status
+  #   label: WS_COMMON_TABLE_COL_APPLICATION_STATUS_LABEL
+  #   type: singlevaluelist
+  #   pattern: list://INITIATED:Initiated,PENDING_FOR_DOCUMENT_VERIFICATION:Pending For Document Verification,PENDING_FOR_FIELD_INSPECTION:Pending For Field Inspection,PENDING_FOR_CITIZEN_ACTION:Pending for Citizen Action,PENDING_APPROVAL_FOR_CONNECTION:Pending for Approval,PENDING_FOR_PAYMENT:Pending for Payment,PENDING_FOR_CONNECTION_ACTIVATION:Pending for Connection Activation,CONNECTION_ACTIVATED:Connection Activated,REJECTED:Rejected,APPROVED:Approved Modified Water Connection
+  #   source: ws
+  #   wrapper: true
+  #   isMandatory: false
+  #   searchClause: AND ws.applicationstatus = $status
+  query: select ws.applicationno,ws.connectionno,eg_user.name as name, msg.message as applicationType,ws.dateeffectivefrom,service.connectiontype, msgroad.message as roadtype ,CASE WHEN ws.applicationType = 'NEW_WATER_CONNECTION' then message.message else msgmodify.message END appstatus from eg_ws_connection ws LEFT OUTER JOIN eg_pt_owner as owner ON owner.propertyid =property_id  Left outer JOIN eg_ws_service as service ON service.connection_id=ws.id LEFT OUTER JOIN message ON CONCAT('WF_NEWWS1_',ws.applicationstatus) = message.code AND message.locale='en_IN' LEFT OUTER JOIN message  msgmodify ON CONCAT('WF_MODIFYWSCONNECTION_',ws.applicationstatus) = msgmodify.code AND msgmodify.locale='en_IN' LEFT OUTER JOIN message as msg ON CONCAT('WS_CONNECTION_TYPE_',ws.applicationtype) = msg.code AND msg.locale='en_IN' AND msg.module='rainmaker-ws' LEFT OUTER JOIN message as msgroad ON CONCAT('WS_ROADTYPE_',ws.roadtype) = msgroad.code AND msgroad.locale='en_IN' AND msgroad.module='rainmaker-ws' LEFT OUTER JOIN eg_user ON owner.userid=eg_user.uuid WHERE ws.tenantid like $tenantid AND service.connectiontype is NOT NULL
+  orderby: ORDER BY  ws.applicationno 
+
+- reportName: SewerageConnectionApplicationStatusReport
+  summary: Nummber of applications by there status
+  version: 1.0.0
+  moduleName: rainmaker-ws
+  sourceColumns:
+  - name: status
+    label: WS_COMMON_TABLE_COL_APPLICATION_STATUS
+    type: string
+    source: ws
+    total: false
+  - name: total
+    label: WS_VIEW_BREAK_UP_TOTAL
+    type: string
+    source: ws
+    total: true
+  searchParams:
+  - name: fromDate
+    label: WS_COMMON_FROM_DATE_LABEL
+    type: epoch
+    source: ws
+    isMandatory: false
+    searchClause: AND ws.lastmodifiedtime >= $fromDate
+  - name: toDate
+    label: WS_COMMON_TO_DATE_LABEL
+    type: epoch
+    source: ws
+    isMandatory: false
+    searchClause: AND ws.lastmodifiedtime <= $toDate
+  query: SELECT COUNT(applicationno) as total,message.message as status from eg_sw_connection ws LEFT OUTER JOIN message ON message.code = CONCAT('WF_NEWSW1_',applicationstatus) AND message.locale = 'en_IN'  WHERE ws.tenantId LIKE $tenantid and applicationtype = 'NEW_SEWERAGE_CONNECTION' 
+  groupby: GROUP BY message.message
+  orderby: ORDER BY case message.message when 'Initiated' then 1 when 'Pending For Document Verification' then 2 when 'Pending For Field Inspection' then 3 when 'Pending for Citizen Action' then 4 when 'Pending for Approval' then 5 when 'Pending for Payment' then 6 when 'Pending for Connection Activation' then 7 else 8 end
+
+
+- reportName: SewerageRegistryReport
+  summary: Sewerage Registry Report
+  decryptionPathId: SewerageRegistryReport
+  version: 1.0.0
+  moduleName: rainmaker-ws
+  additionalConfig:
+    print:
+      pdfPageSize: "A3"
+  sourceColumns:
+  - name: applicationno
+    label: WS_COMMON_APPLICATION_NO_LABEL
+    type: string
+    source: ws
+    total: false
+  - name: receiptnumber
+    label: report.tl.receiptnumber
+    type: string
+    source: ws
+    total: false 
+  - name: name
+    label: WS_OWN_DETAIL_NAME
+    type: string
+    source: ws
+    total: false
+  - name: mobilenumber
+    label: CORE_COMMON_MOBILE_NUMBER
+    type: string
+    source: ws
+    total: false
+  - name: status
+    label: WS_COMMON_TABLE_COL_APPLICATION_STATUS
+    type: string
+    source: ws
+    total: false
+  - name: connectiontype
+    label: WS_COMMON_TABLE_COL_CONNECTIONTYPE_LABEL
+    type: string
+    source: ws
+    total: false
+  - name: roadtype
+    label: WS_ADDN_DETAIL_ROAD_TYPE
+    type: string
+    source: ws
+    total: false
+  - name: roadcuttingarea
+    label: report.ws.roadcuttingarea
+    type: string
+    source: ws
+    total: false
+  - name: totalamount
+    label: WS_COMMON_TOTAL_AMT
+    type: string
+    source: ws
+    total: true
+  - name: banktxnNo
+    label: report.tl.banktxnNo
+    type: string
+    source: ws
+    total: false
+  - name: executiondate
+    label: WS_SERV_DETAIL_CONN_EXECUTION_DATE
+    type: string
+    source: ws
+    total: false
+  - name: g8issuedate
+    label: report.tl.g8issuedate
+    type: string
+    source: ws
+    total: false
+  - name: g8receiptno
+    label: report.tl.g8receiptno
+    type: string
+    source: ws
+    total: false
+  searchParams:
+  - name: fromDate
+    label: WS_COMMON_FROM_DATE_LABEL
+    type: epoch
+    source: ws
+    isMandatory: false
+    searchClause: AND pd.receiptdate >= $fromDate
+  - name: toDate
+    label: WS_COMMON_TO_DATE_LABEL
+    type: epoch
+    source: ws
+    isMandatory: false
+    searchClause: AND pd.receiptdate <= $toDate
+  query: SELECT distinct pd.receiptnumber,To_char(To_timestamp(service.connectionexecutiondate/ 1000), 'DD/MM/YYYY') as executiondate,service.connectiontype,msgroad.message as roadtype,ws.roadcuttingarea,message.message as status,eg_user.name as name,eg_user.mobilenumber,applicationno,pgtxn.bank_transaction_no as banktxnNo,totalamount,To_char(To_timestamp(pd.manualreceiptdate/ 1000), 'DD/MM/YYYY') AS g8issuedate,pd.manualreceiptnumber as g8receiptno FROM eg_sw_connection ws   INNER JOIN egcl_bill bill ON bill.consumercode = ws.applicationno and bill.status !='Cancelled' JOIN egcl_billdetial as bild ON bild.billid = bill.id INNER JOIN(Select DISTINCT billdetailid,amount, taxheadcode,message.message as feeType from egcl_billaccountdetail bilaccd INNER JOIN message ON taxheadcode = message.code AND message.locale='en_IN')  as bilaccd ON bild.id = bilaccd .billdetailid LEFT OUTER JOIN egcl_paymentdetail as pd ON pd.billid =bill.id LEFT OUTER JOIN egcl_payment as pay ON pay.id = pd.paymentid and pay.paymentstatus != 'CANCELLED' LEFT OUTER Join eg_pg_transactions as pgtxn ON pay.transactionnumber = pgtxn.txn_id LEFT OUTER JOIN eg_pt_owner as owner ON owner.propertyid =property_id LEFT OUTER JOIN eg_user  ON uuid =owner.userid LEFT OUTER JOIN message ON substring(message.code,11) ='CONNECTION_ACTIVATED' AND message.locale = 'en_IN'  LEFT OUTER JOIN message as msgroad ON CONCAT('WS_ROADTYPE_',ws.roadtype) = msgroad.code AND msgroad.locale='en_IN' AND msgroad.module='rainmaker-ws' LEFT OUTER JOIN eg_sw_service as service ON service.connection_id=ws.id WHERE ws.tenantid like $tenantid AND service.connectiontype is NOT NULL
+
+- reportName: CBSewerageRegistryReport
+  summary: CB Level Water Registry Report
+  decryptionPathId: CBWaterRegistryReport
+  version: 1.0.0
+  moduleName: rainmaker-ws
+  additionalConfig:
+    print:
+      pdfPageSize: "A3"
+  sourceColumns:
+  - name: tenantId
+    label: WS_PROP_DETAIL_CITY
+    type: string
+    source: ws
+    total: false
+  - name: applicationno
+    label: WS_COMMON_APPLICATION_NO_LABEL
+    type: string
+    source: ws
+    total: false
+  - name: receiptnumber
+    label: report.tl.receiptnumber
+    type: string
+    source: ws
+    total: false 
+  - name: name
+    label: WS_OWN_DETAIL_NAME
+    type: string
+    source: ws
+    total: false
+  - name: mobilenumber
+    label: CORE_COMMON_MOBILE_NUMBER
+    type: string
+    source: ws
+    total: false
+  - name: status
+    label: WS_COMMON_TABLE_COL_APPLICATION_STATUS
+    type: string
+    source: ws
+    total: false
+  - name: connectiontype
+    label: WS_COMMON_TABLE_COL_CONNECTIONTYPE_LABEL
+    type: string
+    source: ws
+    total: false
+  - name: roadtype
+    label: WS_ADDN_DETAIL_ROAD_TYPE
+    type: string
+    source: ws
+    total: false
+  - name: roadcuttingarea
+    label: report.ws.roadcuttingarea
+    type: string
+    source: ws
+    total: false
+  - name: totalamount
+    label: WS_COMMON_TOTAL_AMT
+    type: string
+    source: ws
+    total: true
+  - name: banktxnNo
+    label: report.tl.banktxnNo
+    type: string
+    source: ws
+    total: false
+  - name: g8issuedate
+    label: report.tl.g8issuedate
+    type: string
+    source: ws
+    total: false
+  - name: g8receiptno
+    label: report.tl.g8receiptno
+    type: string
+    source: ws
+    total: false
+  searchParams:
+  - name: fromDate
+    label: WS_COMMON_FROM_DATE_LABEL
+    type: epoch
+    source: ws
+    isMandatory: false
+    searchClause: AND pd.receiptdate >= $fromDate
+  - name: toDate
+    label: WS_COMMON_TO_DATE_LABEL
+    type: epoch
+    source: ws
+    isMandatory: false
+    searchClause: AND pd.receiptdate <= $toDate
+  - name: ulb
+    label: WS_PROP_DETAIL_CITY
+    type: singlevaluelist
+    pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=tenant&masterName=tenants|$.MdmsRes.tenant.tenants.*.code|$.MdmsRes.tenant.tenants.*.name
+    source: ws
+    wrapper: true
+    isMandatory: false
+    searchClause: AND ws.tenantId = $ulb
+  query: SELECT distinct initcap(split_part(ws.tenantId,'.', 2)) as tenantId,pd.receiptnumber,service.connectiontype,ws.roadtype,ws.roadcuttingarea,message.message as status,to_char(To_timestamp(ws.lastmodifiedtime / 1000),'DD/MM/YYYY') as lastmodifiedtime,eg_user.name as name,eg_user.mobilenumber,applicationno,pgtxn.bank_transaction_no as banktxnNo,totalamount,To_char(To_timestamp(pd.manualreceiptdate/ 1000), 'DD/MM/YYYY') AS g8issuedate,pd.manualreceiptnumber as g8receiptno FROM eg_sw_connection ws   INNER JOIN egcl_bill bill ON bill.consumercode = ws.applicationno and bill.status !='Cancelled' JOIN egcl_billdetial as bild ON bild.billid = bill.id INNER JOIN(Select DISTINCT billdetailid,amount, taxheadcode,message.message as feeType from egcl_billaccountdetail bilaccd INNER JOIN message ON taxheadcode = message.code AND message.locale='en_IN')  as bilaccd ON bild.id = bilaccd .billdetailid LEFT OUTER JOIN egcl_paymentdetail as pd ON pd.billid =bill.id LEFT OUTER JOIN egcl_payment as pay ON pay.id = pd.paymentid and pay.paymentstatus != 'CANCELLED' LEFT OUTER Join eg_pg_transactions as pgtxn ON pay.transactionnumber = pgtxn.txn_id LEFT OUTER JOIN eg_pt_owner as owner ON owner.propertyid =property_id LEFT OUTER JOIN eg_user  ON uuid =owner.userid LEFT OUTER JOIN message ON substring(message.code,11) ='CONNECTION_ACTIVATED' AND message.locale = 'en_IN'  LEFT OUTER JOIN eg_sw_service as service ON service.connection_id=ws.id WHERE ws.tenantId != 'pb.testing' AND service.connectiontype is NOT NULL
+  
+- reportName: CBSWLevelStatus
+  reportLabel: report.state.level.status
+  summary: Nummber of applications are there status state level
+  version: 1.0.0
+  moduleName: rainmaker-ws
+  sourceColumns:
+  - name: tenantId
+    label: WS_COMMON_TABLE_COL_TENANTID_LABEL
+    type: string
+    source: ws
+    total: false
+  - name: total
+    label: WS_VIEW_BREAK_UP_TOTAL
+    type: string
+    source: ws
+    total: true
+  - name: initiated
+    label: WF_EMPLOYEE_NEWWS1_INITIATED
+    type: number
+    source: ws
+    total: true
+  - name: docverification
+    label: WF_EMPLOYEE_NEWWS1_PENDING_FOR_DOCUMENT_VERIFICATION
+    type: number
+    source: ws
+    total: true
+  - name: fieldinspection
+    label: WF_EMPLOYEE_NEWWS1_PENDING_FOR_FIELD_INSPECTION
+    type: number
+    source: ws
+    total: true
+  - name: citizenactionreq
+    label: WF_EMPLOYEE_NEWWS1_PENDING_FOR_CITIZEN_ACTION
+    type: number
+    source: ws
+    total: true
+  - name: pendingapproval
+    label: WF_EMPLOYEE_NEWWS1_PENDING_APPROVAL_FOR_CONNECTION
+    type: number
+    source: ws
+    total: true
+  - name: pendingpayment
+    label: WF_EMPLOYEE_NEWWS1_PENDING_FOR_PAYMENT
+    type: number
+    source: ws
+    total: true
+  - name: pendindgconnection
+    label: WF_EMPLOYEE_NEWWS1_PENDING_FOR_CONNECTION_ACTIVATION
+    type: number
+    source: ws
+    total: true
+  - name: connectionactivation
+    label: WF_EMPLOYEE_NEWWS1_CONNECTION_ACTIVATED
+    type: number
+    source: ws
+    total: true
+  - name: approved
+    label: WF_MODIFYWSCONNECTION_APPROVED
+    type: number
+    source: ws
+  - name: rejected
+    label: WF_EMPLOYEE_NEWWS1_REJECTED
+    type: number
+    source: ws
+  searchParams:
+  - name: fromDate
+    label: WS_COMMON_FROM_DATE_LABEL
+    type: epoch
+    source: ws
+    isMandatory: false
+    searchClause: AND ws.lastmodifiedtime >= $fromDate
+  - name: toDate
+    label: WS_COMMON_TO_DATE_LABEL
+    type: epoch
+    source: ws
+    isMandatory: false
+    searchClause: AND ws.lastmodifiedtime <= $toDate
+  - name: ulb
+    label: WS_COMMON_TABLE_COL_TENANTID_LABEL
+    type: singlevaluelist
+    pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=tenant&masterName=tenants|$.MdmsRes.tenant.tenants.*.code|$.MdmsRes.tenant.tenants.*.name
+    source: ws
+    wrapper: true
+    isMandatory: false
+    searchClause: AND ws.tenantId = $ulb
+  query: SELECT initcap(split_part(tenantId, '.', 2)) as tenantId,count(*) as total,SUM(CASE applicationstatus when 'INITIATED' then 1 else 0 end) as initiated,SUM(CASE applicationstatus when 'PENDING_FOR_DOCUMENT_VERIFICATION' then 1 else 0 end) as docverification,SUM(CASE applicationstatus when 'PENDING_FOR_FIELD_INSPECTION' then 1 else 0 end) as fieldinspection,SUM(CASE applicationstatus when 'PENDING_FOR_CITIZEN_ACTION' then 1 else 0 end) as citizenactionreq,SUM(CASE applicationstatus when 'PENDING_APPROVAL_FOR_CONNECTION' then 1 else 0 end) as pendingapproval,SUM(CASE applicationstatus when 'PENDING_FOR_PAYMENT' then 1 else 0 end) as pendingpayment,SUM(CASE applicationstatus when 'PENDING_FOR_CONNECTION_ACTIVATION' then 1 else 0 end) as pendindgconnection,SUM(CASE applicationstatus when 'CONNECTION_ACTIVATED' then 1 else 0 end) as connectionactivation,SUM(CASE applicationstatus when 'APPROVED' then 1 else 0 end) as approved,SUM (CASE applicationstatus when 'REJECTED' then 1 else 0 end) as rejected FROM eg_sw_connection as ws WHERE ws.tenantid != 'pb.testing'
+  groupby: GROUP BY tenantid
+  orderby: ORDER BY tenantid
+
+- reportName: ModifySewerageConnectionApplicationStatusReport
+  summary: Nummber of applications by there status
+  version: 1.0.0
+  moduleName: rainmaker-ws
+  sourceColumns:
+  - name: status
+    label: WS_COMMON_TABLE_COL_APPLICATION_STATUS
+    type: string
+    source: ws
+    total: false
+  - name: total
+    label: WS_VIEW_BREAK_UP_TOTAL
+    type: string
+    source: ws
+    total: true
+  searchParams:
+  - name: fromDate
+    label: WS_COMMON_FROM_DATE_LABEL
+    type: epoch
+    source: ws
+    isMandatory: false
+    searchClause: AND ws.lastmodifiedtime >= $fromDate
+  - name: toDate
+    label: WS_COMMON_TO_DATE_LABEL
+    type: epoch
+    source: ws
+    isMandatory: false
+    searchClause: AND ws.lastmodifiedtime <= $toDate
+  query: SELECT COUNT(applicationno) as total,message.message as status from eg_sw_connection ws LEFT OUTER JOIN message ON message.code = CONCAT('WF_MODIFYSWCONNECTION_',applicationstatus) AND message.locale = 'en_IN'  WHERE ws.tenantId LIKE $tenantid and applicationtype = 'MODIFY_SEWERAGE_CONNECTION'
+  groupby: GROUP BY message.message
+  orderby: ORDER BY case message.message when 'Initiated' then 1 when 'Modify Water Pending for Approval' then 2 when 'Approved' then 3 when 'Rejected' then 4  else 5 end
