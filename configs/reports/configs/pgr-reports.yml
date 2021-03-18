@@ -1601,7 +1601,6 @@ ReportDefinitions:
   query: |
     select 
     initcap(split_part(tenantid, '.', 2)) as tenantid,
-    deptmap_def.name as department,
     SUM(CASE WHEN status ='open' THEN 1 ELSE 0 END) as open,
     SUM(CASE WHEN status ='assigned' THEN 1 ELSE 0 END) as assigned,
     SUM(CASE WHEN status in ('closed', 'resolved') THEN 1 ELSE 0 END) as closed,
@@ -1664,7 +1663,6 @@ ReportDefinitions:
   query: |
     select 
     initcap(split_part(tenantid, '.', 2)) as tenantid,
-    deptmap_def.name as department,
     SUM(CASE WHEN status ='open' THEN 1 ELSE 0 END) as open,
     SUM(CASE WHEN status ='assigned' THEN 1 ELSE 0 END) as assigned,
     SUM(CASE WHEN status in ('closed', 'resolved') THEN 1 ELSE 0 END) as closed,
@@ -1735,7 +1733,6 @@ ReportDefinitions:
   query: |
     select 
     initcap(split_part(tenantid, '.', 2)) as tenantid,
-    deptmap_def.name as department,
     SUM(CASE WHEN status ='open' THEN 1 ELSE 0 END) as open,
     SUM(CASE WHEN status ='assigned' THEN 1 ELSE 0 END) as assigned,
     SUM(CASE WHEN status in ('closed', 'resolved') THEN 1 ELSE 0 END) as closed,
