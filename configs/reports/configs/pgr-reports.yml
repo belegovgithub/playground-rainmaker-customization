@@ -1083,11 +1083,6 @@ ReportDefinitions:
     type: string
     source: eg_pgr_service
     total: false
-  - name: locality
-    label: reports.rainmaker-pgr.locality
-    type: string
-    source: eg_pgr_service
-    total: false
   - name: landmark
     label: reports.rainmaker-pgr.landmark
     type: string
