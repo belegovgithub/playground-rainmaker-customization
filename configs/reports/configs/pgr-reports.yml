@@ -1547,7 +1547,7 @@ ReportDefinitions:
     AND eg_pgr_service.status IN ('open','assigned','reassigrequested','rejected','closed','resolved')
   orderby: ORDER BY eg_pgr_service.tenantid,servicerequestid, epa."when" desc
 
-- reportName: DGDELevelComplaintStausReport
+- reportName: DGDELevelComplaintStatusReport
   summary: Fetches complaint stats for a ULB
   version: 1.0.0
   moduleName: rainmaker-pgr
@@ -1623,7 +1623,7 @@ ReportDefinitions:
   groupby: GROUP BY tenantid
   orderby: ORDER BY tenantid
 
-- reportName: ComplaintStausReport
+- reportName: ComplaintStatusReport
   summary: Fetches complaint stats for a ULB
   version: 1.0.0
   moduleName: rainmaker-pgr
@@ -1699,7 +1699,7 @@ ReportDefinitions:
   groupby: GROUP BY tenantid
   orderby: ORDER BY tenantid
 
-- reportName: CommandLevelComplaintStausReport
+- reportName: CommandLevelComplaintStatusReport
   summary: Fetches complaint stats for a Cmd
   version: 1.0.0
   moduleName: rainmaker-pgr
