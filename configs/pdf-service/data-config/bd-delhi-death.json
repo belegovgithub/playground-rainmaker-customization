@@ -68,27 +68,39 @@
                 {
                   "variable": "fatherName", 
                   "value": {
-                    "path": "$.birthFatherInfo.firstname"
+                    "path": "$.deathFatherInfo.fullName"
                   },
                   "type":"setEmpty"
                 },
                 {
                   "variable": "motherName", 
                   "value": {
-                    "path": "$.birthMotherInfo.firstname"
+                    "path": "$.deathMotherInfo.fullName"
                   },
                   "type":"setEmpty"
                 },
                 {
                   "variable": "placeOfDeath", 
                   "value": {
-                    "path": "$.deathPermaddr.placeOfDeath"
+                    "path": "$.deathPermaddr.placeofdeath"
                   }
                 },
                 {
-                  "variable": "parentsAddress", 
+                  "variable": "nameOfSpouse", 
                   "value": {
-                    "path": "$.deathPresentaddr.permanentAddress"
+                    "path": "$.deathSpouseInfo.fullName"
+                  }
+                },
+                {
+                  "variable": "permanentAddress", 
+                  "value": {
+                    "path": "$.deathPermaddr.fullAddress"
+                  }
+                },
+                {
+                  "variable": "presentAddress", 
+                  "value": {
+                    "path": "$.deathPresentaddr.fullAddress"
                   }
                 },
                 {
