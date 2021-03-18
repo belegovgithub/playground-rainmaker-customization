@@ -1,5 +1,5 @@
 {
-    "key": "bd-madhyapradesh-death",
+    "key": "bd-bihar-death",
     "config": {
       "defaultStyle": {
         "font": "Cambay"
@@ -61,70 +61,70 @@
                                   
                               },
                               {
-                                "stack": [
+                                  "stack": [
+                                    {
+                                      "text": "बहार सरकार",
+                                      "style": "appendix-header-body"
+                                      
+                                  },   
                                   {
-                                    "text": "मध्य प्रदेश सर्कार",
-                                    "style": "appendix-header-body"
-                                    
-                                },   
-                                {
-                                    "text": "GOVERNMENT OF MADHYA PRADESH",
-                                    "style": "appendix-header-body" ,
-                                    "margin": [
-                                      0,
-                                      0,
-                                      0,
-                                      5
-                                  ]   
-                                },  
-                                {
-                                    "text": "योजना, आर्थिक और सांख्यिकी विभाग",
-                                      "style": "appendix-header-body"   
-                                },
-                                {
-                                  "text": "DEPARTMENT OF PLANNING, ECONOMICS & STATISTICS",
+                                      "text": "GOVERNMENT OF BIHAR",
+                                      "style": "appendix-header-body" ,
+                                      "margin": [
+                                        0,
+                                        0,
+                                        0,
+                                        5
+                                    ]   
+                                  },  
+                                  {
+                                      "text": "योजना और वकास वभाग",
+                                        "style": "appendix-header-body"   
+                                  },
+                                  {
+                                    "text": "DEPARTMENT OF PLANNING AND DEVELOPMENT",
+                                      "style": "appendix-header-body" 
+                                       
+                                  },
+                                  {
+                                      "text": "{{cb_label_name_multiLang}} {{cb-name-multilang}}",
+                                      "style": "appendix-header-body"
+                                       
+                                  },
+                                  {
+                                    "text": "CANTONMENT BOARD {{cb-name}}",
                                     "style": "appendix-header-body" 
-                                     
-                                },
-                                {
-                                    "text": "{{cb_label_name_multiLang}} {{cb-name-multilang}}",
-                                    "style": "appendix-header-body"
-                                     
-                                },
-                                {
-                                  "text": "CANTONMENT BOARD {{cb-name}}",
-                                  "style": "appendix-header-body" 
-                              }
-                                 
-                             ]   
-                            },
-                            {
-                              "stack": [
-                                  {
-                                              "text": "प्रपत्र-5",
-                                              "style": "appendix-header-formNo" 
-                                             
+                                }
+                                   
+                               ]   
+                              },
+                              {
+                                "stack": [
+                                    {
+                                                "text": "प्रपत्र-5",
+                                                "style": "appendix-header-formNo" 
                                                
-                                  },
-                                   {
-                                              "text": "FORM-5",
-                                              "style": "appendix-header-formNo" 
-                                             
+                                                 
+                                    },
+                                     {
+                                                "text": "FORM-5",
+                                                "style": "appendix-header-formNo" 
                                                
-                                  },
-                                  {
-                                    "image": "{{form5}}",
-                                    "width": 65,
-                                    "height": 60.25,
-                                    "margin": [
-                                     10,
-                                     0,
-                                     0,
-                                     0
-                                   ]
-                                   }
-                                  ]
-                                  }
+                                                 
+                                    },
+                                    {
+                                      "image": "{{form5}}",
+                                      "width": 65,
+                                      "height": 60.25,
+                                      "margin": [
+                                       10,
+                                       0,
+                                       0,
+                                       0
+                                     ]
+                                     }
+                                    ]
+                                    }
                           ]
                         ]
                     },
@@ -139,7 +139,7 @@
                 "body": [
                   [
                     {
-                      "text": "मृत्यु प्रमाण पत्र",
+                      "text": "मृत्यु प्रमाण-पत्र",
                       "style": "title-header_multiLang"
                     } 
                       
@@ -166,76 +166,76 @@
             },
             "layout": "noBorders"
           },
-                {
-                     "style": "ws-head",
-                    "table": {
-                        "widths": [
-                            "*"
-                        ],
-                        "body": [
-                          [ 
-                            {
-                                "columns": [
+          {
+            "style": "ws-head",
+           "table": {
+               "widths": [
+                   "*"
+               ],
+               "body": [
+                                     [ 
+                                       {
+                                           "columns": [
+                                               
+                                               {
+                                                   "text": "(जन्म मृत्यु रजिस्त्रिकरण  अधिनियम, 1969 की धारा 12 / 17 तथा बिहार जन्म मृत्यु रजिस्त्रिकरण नियम, 1999 के नियम 8/13 के अंतर्गत जारी किया गया )",
+                                                   "style": "rule-header_multiLang"
+                                               }
+                                           ] 
+                                       }
+                                   ],
+                                   [ 
+                                       {
+                                            "columns": [
+                                                
+                                               {
+                                                   "text": "(ISSUED UNDER SECTION 12/17 OF THE REGISTRATION OF BIRTHS & DEATHS ACT, 1969 AND RULE 8/13 OF THE BIHAR REGISTRATION OF BIRTHS & DEATHS RULES 1999.)",
+                                                    "style": "rule-header"
+                                               }
+                                           ] 
+                                       }
+                                   ]
                                     
-                                    {
-                                        "text": "(जन्म मृत्यु रजिस्ट्रीकरण अधिनियम,1969 की धारा 12/17 तथा मध्य प्रदेश जन्म मृत्यु रजिस्ट्रीकरण, 1999  के  नियम 8/13 के अंतर्गत, जारी किया गया)",
-                                        "style": "rule-header_multiLang"
-                                    }
-                                ] 
-                            }
-                        ],
-                        [ 
-                            {
-                                 "columns": [
-                                     
-                                    {
-                                        "text": "(ISSUED  UNDER SECTION  12/17 OF THE REGISTRATION OF BIRTHS & DEATHS ACT, 1969  AND RULE 8/13  OF THE MADHYA PRADESH REGISTRATION OF BIRTHS & DEATHS RULES 1999)",
-                                         "style": "rule-header"
-                                    }
-                                ] 
-                            }
-                        ]
-                         
-         
-    ]
-                    },
-                    "layout": "noBorders"
-                },
-                 {
-                     "style": "ws-head",
-                    "table": {
-                        "widths": [
-                            "*"
-                        ],
-                        "body": [
-                          [ 
-                            {
-                                "columns": [
+                    
+               ]
+           },
+           "layout": "noBorders"
+       },
+        {
+            "style": "ws-head",
+           "table": {
+               "widths": [
+                   "*"
+               ],
+               "body": [
+                                     [ 
+                                       {
+                                           "columns": [
+                                               
+                                               {
+                                                   "text": "यह प्रमाणित किया जाता है निम्न्लिखित सुचना मृत्यु  क़े मूल अभिलेख से ली गई है जो कि  छावनी परिषद {{cb-name-multilang}} तहसील दीनापुर -कम-खगौल जिला पटना राज्य /संघ प्रदेश बिहार,भारत के रजिस्टर में उल्लिखित है ।",
+                                                   "style": "rule-body_multiLang"
+                                               }
+                                           ] 
+                                       }
+                                   ],
+                                   [ 
+                                       {
+                                            "columns": [
+                                                
+                                               {
+                                                   "text": "THIS IS TO CERTIFY THAT THE FOLLOWING INFORMATION HAS BEEN TAKEN FROM THE ORIGINAL RECORD OF DEATH WHICH IS THE REGISTER FOR CANTONMENT BOARD {{cb-name}} CANTONMENT OF TAHSIL/BLOCK DINAPUR-CUM-KHAGAUL OF DISTRICT PATNA OF STATE/UNION TERRITORY BIHAR, INDIA.",
+                                                    "style": "rule-body"
+                                               }
+                                           ] 
+                                       }
+                                   ]
                                     
-                                    {
-                                        "text": "यह प्रमाणित किया जाता है निम्नलिखित सूचना मृत्यु के मूल अभिलेख से ली गई है जो की छावनी परिषद {{cb-name-multilang}} तहसील {{cb-name-multilang}} जिला जबलपुर राज्य/संघ प्रदेश मध्य प्रदेश, भारत के रजिस्टर मे उलिखित है ।",
-                                        "style": "rule-body_multiLang"
-                                    }
-                                ] 
-                            }
-                        ],
-                        [ 
-                            {
-                                 "columns": [
-                                     
-                                    {
-                                        "text": "THIS  IS TO CERTIFY THAT THE  FOLLOWING  INFORMATION  HAS BEEN  TAKEN FROM  THE  ORIGINAL RECORD OF BIRTH WHICH  IS THE  REGISTER  FOR CANTONMENT BOARD {{cb-name}} OF TAHSIL/BLOCK {{cb-name}} OF DISTRICT {{cb-name}} OF STATE/UNION TERRITORY MADHYA PRADESH, INDIA.",
-                                         "style": "rule-body"
-                                    }
-                                ] 
-                            }
-                        ]
-                         
-         
-                ]
-                    },
-                    "layout": "noBorders"
-                },
+                    
+               ]
+           },
+           "layout": "noBorders"
+       },
                  {
                      "style": "ws-head",
                     "table": {
@@ -248,7 +248,7 @@
                                                      "columns": [
                                                          
                                                         {
-                                                            "text": "{{name_label_multiLang}} / NAME OF DECEASED: {{name}}",
+                                                            "text": "मृतक का नाम / NAME OF DECEASED: {{name}}",
                                                             "width": "45%",
                                                              "style": "details-body"
                                                         },
@@ -258,12 +258,12 @@
                                                             
                                                         },
                                                         {
-                                                            "text": "{{gender_label_multiLang}} / SEX : {{gender}}",
+                                                            "text": "लिंग / SEX: {{gender}}",
                                                              "style": "details-body"
                                                         }
                                                     ] 
                                                 }
-                                            ],
+                                            ], 
                                             [ 
                                               {
                                                    "columns": [
@@ -282,7 +282,7 @@
                                                      "columns": [
                                                          
                                                         {
-                                                            "text": "{{dod_label_multiLang}} / DATE OF DEATH: {{dob}}",
+                                                            "text": "मृत्यु की तिथि / DATE OF DEATH  : {{dod}}",
                                                             "width": "45%",
                                                              "style": "details-body"
                                                         },
@@ -292,7 +292,7 @@
                                                             
                                                         },
                                                         {
-                                                            "text": "{{pod_label_multiLang}} / PLACE OF DEATH: {{placeOfDeath}}",
+                                                            "text": "मृत्यु का स्थान/ PLACE OF DEATH: {{placeOfBirth}}",
                                                              "style": "details-body"
                                                         }
                                                     ] 
@@ -303,7 +303,50 @@
                                                    "columns": [
                                                        
                                                       {
-                                                          "text": "मृतक की उम्र /AGE OF DECEASED : {{age}}",
+                                                          "text": "मृतक की उम्र / AGE OF DECEASED: {{age}}",
+                                                          "width": "45%",
+                                                           "style": "details-body"
+                                                      },
+                                                      {
+                                                        "text": " ",
+                                                        "width": "10%"
+                                                        
+                                                    },
+                                                    {
+                                                        "text": "पति / पत्नी  का नाम / NAME OF HUSBAND / WIFE: {{spouseName}}",
+                                                         "style": "details-body"
+                                                    }
+                                                       
+                                                  ] 
+                                              }
+                                          ],
+                                             [ 
+                                                {
+                                                     "columns": [
+                                                         
+                                                        {
+                                                            "text": "माता का नाम /NAME OF MOTHER : {{motherName}}",
+                                                            "width": "45%",
+                                                             "style": "details-body"
+                                                        },
+                                                        {
+                                                            "text": " ",
+                                                            "width": "10%"
+                                                            
+                                                        },
+                                                        {
+                                                            "text": "पिता का नाम / NAME OF FATHER: {{fatherName}}",
+                                                             "style": "details-body"
+                                                        }
+                                                    ] 
+                                                }
+                                            ],
+                                            [ 
+                                              {
+                                                   "columns": [
+                                                       
+                                                      {
+                                                          "text": "आधार नंबर / MOTHER’S AADHAAR NO : {{motherUid}}",
                                                           "width": "45%",
                                                            "style": "details-body"
                                                       },
@@ -313,40 +356,18 @@
                                                           
                                                       },
                                                       {
-                                                          "text": "पति / पत्नी का नाम/ NAME OF HUSBAND/WIFE: {{spouseName}}",
+                                                          "text": "आधार नंबर / FATHER’S AADHAAR NO : {{fatherUid}}",
                                                            "style": "details-body"
                                                       }
                                                   ] 
                                               }
                                           ],
-                                          [ 
-                                            {
-                                                 "columns": [
-                                                  {
-                                                    "text": " ",
-                                                    "width": "45%",
-                                                     "style": "details-body"
-                                                },
-                                                {
-                                                    "text": " ",
-                                                    "width": "10%"
-                                                    
-                                                },
-                                                    {
-                                                        "text": "आधार  नंबर  / HUSBAND/WIFE  AADHAAR NO: {{spouceAadharNo}}",
-                                                        "width": "45%",
-                                                         "style": "details-body"
-                                                    }
-                                                     
-                                                ] 
-                                            }
-                                        ],
-                                             [ 
+                                            [ 
                                                 {
                                                      "columns": [
                                                          
                                                         {
-                                                            "text": "{{mother_name_label_multiLang}} / NAME OF MOTHER: {{motherName}}",
+                                                            "text": "मृत्यु के समय मृतक का पता / ADDRESS OF THE DECEASED AT THE TIME OF DEATH: {{childAddress}}",
                                                             "width": "45%",
                                                              "style": "details-body"
                                                         },
@@ -356,7 +377,7 @@
                                                             
                                                         },
                                                         {
-                                                            "text": "{{father_name_label_multiLang}} / NAME OF FATHER: {{fatherName}}",
+                                                            "text": "मृतक का स्थायी पता/ PERMANENT ADDRESS OF DECEASED: {{parentsAddress}}",
                                                              "style": "details-body"
                                                         }
                                                     ] 
@@ -367,7 +388,7 @@
                                                      "columns": [
                                                          
                                                         {
-                                                            "text": "{{mother_aadhar_label_multiLang}} / MOTHER AADHAR NO: {{motherUid}}",
+                                                            "text": "पंजीकरण संख्या / REGISTRATION NUMBER: {{registrationNo}}",
                                                             "width": "45%",
                                                              "style": "details-body"
                                                         },
@@ -377,7 +398,7 @@
                                                             
                                                         },
                                                         {
-                                                            "text": "{{father_aadhar_label_multiLang}} / FATHER AADHAR NO: {{fatherUid}}",
+                                                            "text": "पंजीकरण तारीख/ DATE OF REGISTRATION: {{registration_date}}",
                                                              "style": "details-body"
                                                         }
                                                     ] 
@@ -388,49 +409,7 @@
                                                      "columns": [
                                                          
                                                         {
-                                                            "text": "{{death_address_label_multiLang}} / ADDRESS OF DECEASED AT THE TIME OF DEATH: {{childAddress}}",
-                                                            "width": "45%",
-                                                             "style": "details-body"
-                                                        },
-                                                        {
-                                                            "text": " ",
-                                                            "width": "10%"
-                                                            
-                                                        },
-                                                        {
-                                                            "text": "{{death_perm_address_label_multiLang}} / PERMANENT ADDRESS OF DECEASED: {{parentsAddress}}",
-                                                             "style": "details-body"
-                                                        }
-                                                    ] 
-                                                }
-                                            ],
-                                            [ 
-                                                {
-                                                     "columns": [
-                                                         
-                                                        {
-                                                            "text": "{{registration_label_multiLang}} / REGISTRATION NO: {{registrationNo}}",
-                                                            "width": "45%",
-                                                             "style": "details-body"
-                                                        },
-                                                        {
-                                                            "text": " ",
-                                                            "width": "10%"
-                                                            
-                                                        },
-                                                        {
-                                                            "text": "{{registration_date_label_multiLang}} / DATE OF REGISTRATION: {{registration_date}}",
-                                                             "style": "details-body"
-                                                        }
-                                                    ] 
-                                                }
-                                            ],
-                                            [ 
-                                                {
-                                                     "columns": [
-                                                         
-                                                        {
-                                                            "text": "{{remarks_label_multiLang}} / REMARKS(IF ANY): {{remarks}}",
+                                                            "text": "टिप्पणी / REMARKS (IF ANY): {{remarks}}",
                                                             "width": "45%",
                                                              "style": "details-body"
                                                         },
@@ -451,7 +430,7 @@
                                                      "columns": [
                                                          
                                                         {
-                                                            "text": "{{issue_date_label_multiLang}} / DATE OF ISSUE: {{issueDate}}",
+                                                            "text": "जारी करने की तिथि/ DATE OF ISSUE: {{issueDate}}",
                                                             "width": "45%",
                                                              "style": "details-body"
                                                         },
@@ -461,12 +440,33 @@
                                                             
                                                         },
                                                         {
-                                                            "text": "{{issuing_authority_label_multiLang}} / ISSUING AUTHORITY: {{issuing_authority_multiLang}} / {{issuing_authority}}",
+                                                            "text": "जारी करने वाला प्राधिकारी/ ISSUING AUTHORITY :",
                                                              "style": "details-body"
                                                         }
                                                     ] 
                                                 }
-                                            ]
+                                            ],
+                                            [ 
+                                              {
+                                                   "columns": [
+                                                       
+                                                      {
+                                                          "text": "UPDATED ON :",
+                                                          "width": "45%",
+                                                           "style": "details-body"
+                                                      },
+                                                      {
+                                                          "text": " ",
+                                                          "width": "10%"
+                                                          
+                                                      },
+                                                      {
+                                                          "text": " "
+                                                          
+                                                      }
+                                                  ] 
+                                              }
+                                          ]
                              
                         ]
                     },
@@ -501,7 +501,7 @@
               "body": [
                 [
                   {
-                    "text": "THIS IS A COMPUTER GENERATED CERTIFICATE WHICH CONTAINS FACSIMILE SIGNATURE OF THE ISSUING AUTHORITY",
+                    "text": "“THIS IS A COMPUTER GENERATED CERTIFICATE.”",
                     "width": 50,
                     "height": 61.25,
                     "style": "instruction-body"
@@ -521,7 +521,7 @@
               "body": [
                 [
                   {
-                    "text": "THE GOVT. OF INDIA VIDE CIRCULAR NO. 1/12/2014-VS(CRS) DATED 27-JULY-2015  HAS APPROVED THIS CERTIFICATE AS A VALID LEGAL DOCUMENT FOR ALL OFFICIAL PURPOSES",
+                    "text": "“THE GOVT. OF INDIA VIDE CIRCULAR NO. 1/12/2014-VS(CRS) DATED 27-JULY-2015 HAS APPROVED THIS CERTIFICATE AS A VALID LEGAL DOCUMENT FOR ALL OFFICIAL PURPOSES”",
                     "width": 50,
                     "height": 61.25,
                     "style": "instruction-body"
@@ -541,7 +541,7 @@
               "body": [
                 [
                   {
-                    "text": "* प्रत्येक जन्म एवं मृत्यु का पंजीकरण सुनिश्चित करें * / ENSURE REGISTRATION OF EVERY BIRTH AND DEATH",
+                    "text": "“प्रत्येक जन्म एवं मृयु का पंजीकरण सुनिस्चित करें / ENSURE REGISTRATION OF EVERY BIRTH AND DEATH ”",
                     "width": 50,
                     "height": 61.25,
                     "style": "instruction-body"
@@ -552,6 +552,7 @@
             },
             "layout": "noBorders"
           }
+          
        ],
        "styles": {
         "pdf-header": {
@@ -579,30 +580,6 @@
             0,
             0
           ]
-         },
-         "appendix-header-serialNo": {
-          "color": "#000000",
-                     "bold": false,
-                     "fontSize": 8,
-                     "fontWeight": 400,
-                     "margin": [
-                      0,
-                      -5,
-                      0,
-                      0
-                  ]
-         },
-         "appendix-header-formNo": {
-          "color": "#000000",
-                     "bold": false,
-                     "fontSize": 8,
-                     "fontWeight": 400,
-                     "margin": [
-                      20,
-                      -5,
-                      0,
-                      0
-                  ]
          },
          "instruction-body": {
          "color": "#000000",
@@ -646,6 +623,30 @@
                          0,
                          0
                      ]
+         },
+         "appendix-header-serialNo": {
+          "color": "#000000",
+                     "bold": false,
+                     "fontSize": 8,
+                     "fontWeight": 400,
+                     "margin": [
+                      0,
+                      -5,
+                      0,
+                      0
+                  ]
+         },
+         "appendix-header-formNo": {
+          "color": "#000000",
+                     "bold": false,
+                     "fontSize": 8,
+                     "fontWeight": 400,
+                     "margin": [
+                      20,
+                      -5,
+                      0,
+                      0
+                  ]
          },
         "rule-header": {
          "color": "#696969",
