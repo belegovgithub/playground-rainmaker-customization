@@ -20,8 +20,8 @@
             [
               {
                 "image": "{{emblemImage}}",
-                "width": 35,
-                "height": 45,
+                "width": 85,
+                "height": 85,
                 "style": "appendix-header-emblem"
               }
             ]
@@ -39,15 +39,19 @@
                 "stack": [
                   {
                     "text": "SECUNDERABAD CANTONMENT BOARD",
-                    "style": "appendix-header-body"
+                    "style": "appendix-header-body",
+                    "fontSize": 18
+                  
                   },
                   {
-                    "text": "FORM NO. 6",
-                    "style": "appendix-header-body"
+                    "text": "FORM NO. 5",
+                    "style": "appendix-header-body",
+                    "fontSize": 16
                   },
                   {
                     "text": "(See Rule 8)",
-                    "style": "appendix-header-body"
+                    "style": "appendix-header-body",
+                    "fontSize": 10
                   }
                 ]
               }
@@ -64,12 +68,17 @@
             [
               {
                 "text": "BIRTH CERTIFICATE",
-                "style": "title-header_multiLang"
+                "style": "title-header_multiLang",
+                "bold": true,
+                "fontSize": 16.5
               }
             ],
             [
               {
-                "text": "(Issued Under Section 12/17)"
+                "text": "(Issued Under Section 12/17)",
+                "alignment":"center",
+                "bold": true,
+                "fontSize": 11
               }
             ]
           ]
@@ -85,8 +94,10 @@
               {
                 "columns": [
                   {
-                    "text": "This is to certify that the following information has been taken from the Original record of birth which is the register for Secunderabad Cantonment of District Hyderabad of State TELANGANA",
-                    "style": "rule-header_multiLang"
+                    "text": "This is to certify that the following information has been taken from the Original record of death which is the register for Secunderabad Cantonment of District Hyderabad of State TELANGANA.",
+                    "style": "rule-header_multiLang",
+                    "bold": true,
+                    "fontSize": 14
                   }
                 ]
               }
@@ -105,7 +116,7 @@
                 "columns": [
                   {
                     "text": "Name",
-                    "width": "30%",
+                    "width": "35%",
                     "style": "details-body"
                   },
                   {
@@ -114,7 +125,7 @@
                   },
                   {
                     "text": "{{name}}",
-                    "style": "details-body"
+                    "style": "details-body-val"
                   } 
                 ]
               }
@@ -124,16 +135,16 @@
                 "columns": [
                   {
                     "text": "SEX",
-                    "width": "30%",
+                    "width": "35%",
                     "style": "details-body"
                   },
                   {
-                    "text": ":",
+                    "text": " : ",
                     "width": "5%"
                   },
                   {
-                    "text": "{{sex}}",
-                    "style": "details-body"
+                    "text": "{{gender}}",
+                    "style": "details-body-val"
                      
                   } 
                 ]
@@ -144,7 +155,7 @@
                 "columns": [
                   {
                     "text": "Date of Birth",
-                    "width": "30%",
+                    "width": "35%",
                     "style": "details-body"
                   },
                   {
@@ -153,7 +164,7 @@
                   },
                   {
                     "text": "{{dob}}",
-                    "style": "details-body"
+                    "style": "details-body-val"
                      
                   } 
                 ]
@@ -164,7 +175,7 @@
                 "columns": [
                   {
                     "text": "Place of Birth",
-                    "width": "30%",
+                    "width": "35%",
                     "style": "details-body"
                   },
                   {
@@ -173,7 +184,7 @@
                   },
                   {
                     "text": "{{placeOfBirth}}",
-                    "style": "details-body"
+                    "style": "details-body-val"
                      
                   } 
                 ]
@@ -184,7 +195,7 @@
                 "columns": [
                   {
                     "text": "Name of Father",
-                    "width": "30%",
+                    "width": "35%",
                     "style": "details-body"
                   },
                   {
@@ -193,7 +204,7 @@
                   },
                   {
                     "text": "{{fatherName}}",
-                    "style": "details-body"
+                    "style": "details-body-val"
                      
                   } 
                 ]
@@ -204,7 +215,7 @@
                 "columns": [
                   {
                     "text": "Name of Mother",
-                    "width": "30%",
+                    "width": "35%",
                     "style": "details-body"
                   },
                   {
@@ -213,7 +224,7 @@
                   },
                   {
                     "text": "{{motherName}}",
-                    "style": "details-body"
+                    "style": "details-body-val"
                      
                   } 
                 ]
@@ -224,7 +235,7 @@
                 "columns": [
                   {
                     "text": "Registration No",
-                    "width": "30%",
+                    "width": "35%",
                     "style": "details-body"
                   },
                   {
@@ -233,7 +244,7 @@
                   },
                   {
                     "text": "{{registrationNo}}",
-                    "style": "details-body"
+                    "style": "details-body-val"
                      
                   } 
                 ]
@@ -244,7 +255,7 @@
                 "columns": [
                   {
                     "text": "Date of Registration",
-                    "width": "30%",
+                    "width": "35%",
                     "style": "details-body"
                   },
                   {
@@ -253,145 +264,11 @@
                   },
                   {
                     "text": "{{registration_date}}",
-                    "style": "details-body"
-                     
+                    "style": "details-body-val"   
                   } 
                 ]
               }
-            ],
-            [
-              {
-                "columns": [
-                  {
-                    "text": " ",
-                    "width": "35%",
-                    "style": "details-body",
-                     "alignment":"center"
-                  },
-                  {
-                    "text": " ",
-                    "width": "35%",
-                    "style": "details-body",
-                     "alignment":"center"
-                  },
-                  {
-                    "text": "Certified by",
-                    "width": "35%",
-                    "style": "details-body",
-                    "alignment":"center"
-                  } 
-                ]
-              }
-            ],
-            [
-              {
-                "columns": [
-                  {
-                    "text": " ",
-                    "width": "35%",
-                    "style": "details-body",
-                     "alignment":"center"
-                  },
-                  {
-                    "text": " ",
-                    "width": "35%",
-                    "style": "details-body",
-                     "alignment":"center"
-                  },
-                  {
-                    "text": "Registrar of Births and Deaths",
-                    "width": "35%",
-                    "style": "details-body",
-                    "alignment":"center"
-                  } 
-                ]
-              }
-            ],
-            [
-              {
-                "columns": [
-                  {
-                    "text": "Date:{{date}}",
-                    "width": "35%",
-                    "style": "details-body",
-                     "alignment":"center"
-                  } 
-                ]
-              }
-            ],
-            [
-              {
-                "columns": [
-                  {
-                    "text": " ",
-                    "width": "35%",
-                    "style": "details-body",
-                     "alignment":"center"
-                  },
-                  {
-                    "text": " ",
-                    "width": "35%",
-                    "style": "details-body",
-                     "alignment":"center"
-                  },
-                  {
-                    "text": "Name: Mohd. Afzal Mohiuddin",
-                    "width": "35%",
-                    "style": "details-body",
-                    "alignment":"center"
-                  } 
-                ]
-              }
-            ],
-            [
-              {
-                "columns": [
-                  {
-                    "text": " ",
-                    "width": "35%",
-                    "style": "details-body",
-                     "alignment":"center"
-                  },
-                  {
-                    "text": " ",
-                    "width": "35%",
-                    "style": "details-body",
-                     "alignment":"center"
-                  },
-                  {
-                    "text": "Designation: Health Superintendent",
-                    "width": "35%",
-                    "style": "details-body",
-                    "alignment":"center"
-                  } 
-                ]
-              }
-            ],
-            [
-              {
-                "columns": [
-                  {
-                    "text": " ",
-                    "width": "35%",
-                    "style": "details-body",
-                     "alignment":"center"
-                  },
-                  {
-                    "text": " ",
-                    "width": "35%",
-                    "style": "details-body",
-                     "alignment":"center"
-                  },
-                  {
-                    "text": "Secunderabad Cantonment Board.",
-                    "width": "35%",
-                    "style": "details-body",
-                    "alignment":"center"
-                  } 
-                ]
-              }
-            ] 
-             
+            ]   
           ]
         },
         "layout": "noBorders"
@@ -403,15 +280,120 @@
           "body": [
             [
               {
-                "image": "{{qr_code_image}}",
-                "width": 70,
-                "height": 70,
-                "style": "qr-code"
+                "columns": [
+                  {
+                    "text": " ",
+                    "width": "35%"
+                    
+                  },
+                  {
+                    "text": " ",
+                    "width": "5%"
+                  },
+                  {
+                    "text": "Certified by",
+                    "style": "details-body-credentials",
+                    "margin":[0,0,0,0] 
+                  } 
+                ]
               }
-            ]
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": " ",
+                    "width": "35%"
+                    
+                  },
+                  {
+                    "text": " ",
+                    "width": "5%"
+                  },
+                  {
+                    "text": "Registrar of Births and Deaths",
+                    "style": "details-body-credentials"
+                  } 
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": "Date:{{dateofissue}}",
+                    "width": "35%",
+                    "style": "details-body"
+                     
+                  }
+                   
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": " ",
+                    "width": "35%"
+                  },
+                  {
+                    "text": " ",
+                    "width": "10%"
+                  },
+                  {
+                    "text": "Name: Mohd. Afzal Mohiuddin",
+                    "style": "details-body-credentials"
+                    
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "image": "{{qr_code_image}}",
+                    "width": 70,
+                    "height": 70,
+                    "style": "qr-code"
+                    
+                  },
+                  {
+                    "text": " ",
+                    "width": "10%"
+                  },
+                  {
+                    "text": "Designation: Health Superintendent",
+                    "style": "details-body-credentials",
+                    "width": "95%"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": " ",
+                    "width": "35%"
+                  },
+                  {
+                    "text": " ",
+                    "width": "10%"
+                  },
+                  {
+                    "text": "{{cb-name}} CANTONMENT BOARD",
+                    "style": "details-body-credentials"
+                    
+                  }
+                ]
+              }
+            ] 
           ]
         },
-        "layout": "noBorders"
+        "layout": "noBorders",
+        "margin":[0,85,0,0] 
       },
       {
         "style": "ws-head",
@@ -502,6 +484,7 @@
         "bold": false,
         "fontSize": 11,
         "fontWeight": 400,
+        "alignment":"center",
         "margin": [0, 0, 0, 5]
       },
       "rule-body": {
@@ -518,10 +501,25 @@
         "fontWeight": 400,
         "margin": [0, 0, 0, 0]
       },
+      "details-body-credentials": {
+        "color": "#000000",
+        "bold": true,
+        "fontSize": 13,
+        "alignment":"center"
+        
+      },
       "details-body": {
         "color": "#000000",
-        "bold": false,
-        "fontSize": 11,
+        "bold": true,
+        "fontSize": 13,
+        "fontWeight": 400,
+        "margin": [0, 3, 0, 0]
+      },
+      "details-body-val": {
+        "color": "#000000",
+        "bold": true,
+        "fontSize": 13,
+        "alignment":"center",
         "fontWeight": 400,
         "margin": [0, 3, 0, 0]
       },

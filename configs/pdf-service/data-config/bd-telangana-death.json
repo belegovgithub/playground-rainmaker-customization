@@ -3,7 +3,7 @@
   "DataConfigs": {
     "serviceName": "rainmaker-common",
     "version": "1.0.0",
-    "baseKeyPath": "$.BirthCertificate.*",
+    "baseKeyPath": "$.DeathCertificate.*",
     "entityIdPath": "$.id",
     "isCommonTableBorderRequired": true,
     "mappings": [
@@ -16,7 +16,7 @@
                 "variable": "emblemImage",
                 "url": "https://raw.githubusercontent.com/belsoftware/webaccess/master/images/birth/secundrabad.png",
                 "type": "image"
-              },  
+              },
               {
                 "variable": "name",
                 "value": {
@@ -30,9 +30,9 @@
                 }
               },
               {
-                "variable": "dob",
+                "variable": "dod",
                 "value": {
-                  "path": "$.dateofbirth"
+                  "path": "$.dateofdeath"
                 },
                 "type": "date"
               },
@@ -43,9 +43,46 @@
                 }
               },
               {
+                "variable": "age",
+                "value": {
+                  "path": "$.age"
+                }
+              },
+              {
+                "variable": "dateofissue",
+                "value": {
+                  "path": "$.dateofissue"
+                },
+                "type": "date"
+              },
+              {
+                "variable": "placeOfDeath",
+                "value": {
+                  "path": "$.placeofdeath"
+                }
+              },
+              {
                 "variable": "registrationNo",
                 "value": {
                   "path": "$.registrationno"
+                }
+              },
+              {
+                "variable": "spouseName",
+                "value": {
+                  "path": "$.deathSpouseInfo.fullName"
+                }
+              },
+              {
+                "variable": "presentAdd",
+                "value": {
+                  "path": "$.deathPermaddr.fullAddress"
+                }
+              },
+              {
+                "variable": "permanentAddress",
+                "value": {
+                  "path": "$.deathPresentaddr.fullAddress"
                 }
               },
               {
@@ -58,14 +95,14 @@
               {
                 "variable": "fatherName",
                 "value": {
-                  "path": "$.birthFatherInfo.firstname"
+                  "path": "$.deathFatherInfo.firstname"
                 },
                 "type": "setEmpty"
               },
               {
                 "variable": "motherName",
                 "value": {
-                  "path": "$.birthMotherInfo.firstname"
+                  "path": "$.deathMotherInfo.firstname"
                 },
                 "type": "setEmpty"
               },
