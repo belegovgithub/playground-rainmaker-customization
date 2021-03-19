@@ -150,7 +150,7 @@
               {
                 "columns": [
                   {
-                    "text": "Date of Death: {{dod}}",
+                    "text": "DATE OF DEATH: {{dod}}",
                     "width": "45%",
                     "style": "details-body"
                   },
@@ -207,7 +207,7 @@
               {
                 "columns": [
                   {
-                    "text": "Name of Husband/Wife : {{nameOfSpouse}}",
+                    "text": "NAME OF HUSBAND/WIFE : {{nameOfSpouse}}",
                     "width": "45%",
                     "style": "details-body"
                   }
@@ -403,7 +403,7 @@
         "bold": true,
         "fontSize": 11,
         "fontWeight": 400,
-        "margin": [0, 0, 0, 5]
+        "margin": [0, 0, 0, 0]
       },
       "rule-body": {
         "color": "#696969",
