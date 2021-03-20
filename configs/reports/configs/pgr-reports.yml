@@ -1515,7 +1515,7 @@ ReportDefinitions:
     source: lrms
     wrapper: true
     isMandatory: false
-    searchClause: AND tenantid in ($command)
+    searchClause: AND eg_pgr_service.tenantid in ($command)
   query: |
     SELECT initcap(split_part(eg_pgr_service.tenantid,'.', 2)) as tenantId,
     (SELECT name from eg_user eas where eas.id::varchar in (select assignee from eg_pgr_action epa1 where epa1.businesskey = eg_pgr_service.servicerequestid and epa1.action in ('assign','reassign','reject','resolve') and "when" = (select max("when") from eg_pgr_action epa where epa.businesskey = eg_pgr_service.servicerequestid and action in ('assign','reassign','resolve','reject') group by epa.businesskey) and epa1.businesskey = eg_pgr_service.servicerequestid)) as lastassignedto,

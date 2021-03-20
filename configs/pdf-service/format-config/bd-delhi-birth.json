@@ -1,691 +1,521 @@
 {
-    "key": "bd-delhi-birth",
-    "config": {
-      "defaultStyle": {
-        "font": "Cambay"
-       },
-       "watermark": { "text": "BEL UAT BEL UAT", "color": "gery", "opacity": 0.1, "bold": true, "italics": false },
-       "content": [
-        {
-            "style": "ws-head",
-            "table": {
-              "widths": [
-                "*"
-              ],
-              "body": [
-                [
+  "key": "bd-delhi-birth",
+  "config": {
+    "defaultStyle": {
+      "font": "Cambay"
+    },
+    "watermark": {
+      "text": "BEL UAT BEL UAT",
+      "color": "gery",
+      "opacity": 0.1,
+      "bold": true,
+      "italics": false
+    },
+    "content": [
+      {
+        "style": "ws-head",
+        "table": {
+          "widths": ["*"],
+          "body": [
+            [
+              {
+                "image": "{{emblemImage}}",
+                "width": 35,
+                "height": 45,
+                "style": "appendix-header-emblem"
+              }
+            ]
+          ]
+        },
+        "layout": "noBorders"
+      },
+      {
+        "style": "ws-head",
+        "table": {
+          "widths": ["20%", "60%", "20%"],
+          "body": [
+            [
+              {
+                "image": "{{govtImage}}",
+                "width": 70,
+                "height": 70.25,
+                "margin": [0, -10, 0, 0]
+              },
+              {
+                "stack": [
                   {
-                    "image": "{{emblemImage}}",
-                    "width": 35,
-                    "height": 45,
-                    "style": "appendix-header-emblem"
-                  } 
-                   
-                ]
-              ]
-            },
-            "layout": "noBorders"
-          },
-            {
-                    "style": "ws-head",
-                    "table": {
-                        "widths": [
-                            "20%",
-                            "60%",
-                            "20%"
-                        ],
-                        "body": [
-                            [
-                                 {
-                                 "image": "{{govtImage}}",
-                                 "width": 70,
-                                 "height": 70.25,
-                                    "margin": [
-                                      0,
-                                      -10,
-                                      0,
-                                      0
-                                    ]
-                                },
-                                {
-                                    "stack": [
-                                      {
-                                        "text": "{{form_5_label}}",
-                                        "style": "appendix-header-body"
-                                        
-                                        }, 
-                                          {
-                                            "text": "{{govt_label_multiLang}}",
-                                            "style": "appendix-header-body"
-                                            
-                                        },   
-                                        {
-                                            "text": "Government of National Capital Territory of Delhi",
-                                            "style": "appendix-header-body" ,
-                                            "margin": [
-                                              0,
-                                              0,
-                                              0,
-                                              5
-                                          ]   
-                                        },  
-                                        {
-                                            "text": "{{cb_delhi_label_multiLang}}",
-                                            "style": "appendix-header-body"
-                                             
-                                        },
-                                        {
-                                          "text": "DELHI CANTONMENT BOARD",
-                                          "style": "appendix-header-body" 
-                                        },
-                                        {
-                                          "text": "{{certificate_label_multiLang}}",
-                                          "style": "title-header_multiLang"
-                                        },
-                                        {
-                                          "text": "BIRTH CERTIFICATE",
-                                          "style": "title-header"
-                                        },
-                                        {
-                                          "text": "{{rule_label_multiLang}}",
-                                          "style": "appendix-header-body"
-                                      },
-                                      {
-                                        "text": "(Issued under section 12/17 of the Registrations of Births and Deaths Act,1969 and Rule 8/13 of the Delhi Registrations of Births and Deaths Rules,1999)",
-                                        "style": "appendix-header-body" 
-                                      } 
-                                         
-                                    ]   
-                                },
-                                {
-                                 "image": "{{form5}}",
-                                 "width": 65,
-                                 "height": 60.25,
-                                 "margin": [
-                                  0,
-                                  -10,
-                                  0,
-                                  0
-                                ]
-                                }
-                            ]
-                        ]
-                    },
-                    "layout": "noBorders"
-                },
-                {
-                     "style": "ws-head",
-                    "table": {
-                        "widths": [
-                            "*"
-                        ],
-                        "body": [
-                                              [ 
-                                                {
-                                                    "columns": [
-                                                        
-                                                        {
-                                                            "text": "{{rule1_label_multiLang}}",
-                                                            "style": "rule-header_multiLang"
-                                                        }
-                                                    ] 
-                                                }
-                                            ],
-                                            [ 
-                                                {
-                                                     "columns": [
-                                                         
-                                                        {
-                                                            "text": "This is to certify that the following information has been taken from the original record of birth which is the register the Delhi Cantonment Board of District South-West of National Capital Territory of Delhi.",
-                                                             "style": "rule-header"
-                                                        }
-                                                    ] 
-                                                }
-                                            ]
-                                             
-                             
-                        ]
-                    },
-                    "layout": "noBorders"
-                },
-                 {
-                     "style": "ws-head",
-                    "table": {
-                        "widths": [
-                            "*"
-                        ],
-                        "body": [
-                                            [ 
-                                                {
-                                                     "columns": [
-                                                         
-                                                        {
-                                                            "text": "{{name_label}}: {{name}}",
-                                                            "width": "45%",
-                                                             "style": "details-body"
-                                                        },
-                                                        {
-                                                            "text": " ",
-                                                            "width": "10%"
-                                                            
-                                                        },
-                                                        {
-                                                            "text": "{{gender_label}} : {{gender}}",
-                                                             "style": "details-body"
-                                                        }
-                                                    ] 
-                                                }
-                                            ],
-                                            [ 
-                                                {
-                                                     "columns": [
-                                                         
-                                                        {
-                                                            "text": "{{dob_label}}: {{dob}}",
-                                                            "width": "45%",
-                                                             "style": "details-body"
-                                                        },
-                                                        {
-                                                            "text": " ",
-                                                            "width": "10%"
-                                                            
-                                                        },
-                                                        {
-                                                            "text": " ",
-                                                             "style": "details-body"
-                                                        }
-                                                    ] 
-                                                }
-                                            ],
-                                             [ 
-                                                {
-                                                     "columns": [
-                                                         
-                                                        {
-                                                            "text": "{{mother_name_label}}: {{motherName}}",
-                                                            "width": "45%",
-                                                             "style": "details-body"
-                                                        },
-                                                        {
-                                                            "text": " ",
-                                                            "width": "10%"
-                                                            
-                                                        },
-                                                        {
-                                                            "text": "{{pob_label}}: {{placeOfBirth}}",
-                                                             "style": "details-body"
-                                                        }
-                                                    ] 
-                                                }
-                                            ],
-                                            [ 
-                                                {
-                                                     "columns": [
-                                                         
-                                                        {
-                                                            "text": "{{father_name_label}}: {{fatherName}}",
-                                                            "width": "45%",
-                                                             "style": "details-body"
-                                                        },
-                                                        {
-                                                            "text": " ",
-                                                            "width": "10%"
-                                                            
-                                                        },
-                                                        {
-                                                            "text": "{{parent_address_label}}: {{parentsAddress}}",
-                                                             "style": "details-body"
-                                                        }
-                                                    ] 
-                                                }
-                                            ],
-                                            [ 
-                                                {
-                                                     "columns": [
-                                                         
-                                                        {
-                                                            "text": "{{child_address_label}}: {{childAddress}}",
-                                                            "width": "45%",
-                                                             "style": "details-body"
-                                                        },
-                                                        {
-                                                            "text": " ",
-                                                            "width": "10%"
-                                                            
-                                                        },
-                                                        {
-                                                            "text": "{{registration_date_label}}: {{registration_date}}",
-                                                             "style": "details-body"
-                                                        }
-                                                    ] 
-                                                }
-                                            ],
-                                            [ 
-                                                {
-                                                     "columns": [
-                                                         
-                                                        {
-                                                            "text": "{{registration_label}}: {{registrationNo}}",
-                                                            "width": "45%",
-                                                             "style": "details-body"
-                                                        },
-                                                        {
-                                                            "text": " ",
-                                                            "width": "10%"
-                                                            
-                                                        },
-                                                        {
-                                                            "text": " ",
-                                                             "style": "details-body"
-                                                        }
-                                                    ] 
-                                                }
-                                            ],
-                                            [ 
-                                                {
-                                                     "columns": [
-                                                         
-                                                        {
-                                                            "text": "{{remarks_label}}: {{remarks}}",
-                                                            "width": "45%",
-                                                             "style": "details-body"
-                                                        },
-                                                        {
-                                                            "text": " ",
-                                                            "width": "10%"
-                                                            
-                                                        },
-                                                        {
-                                                            "text": " ",
-                                                             "style": "details-body"
-                                                        }
-                                                    ] 
-                                                }
-                                            ],
-                                             [ 
-                                                {
-                                                     "columns": [
-                                                         
-                                                        {
-                                                            "text": "{{issue_date_label}}: {{issueDate}}",
-                                                            "width": "45%",
-                                                             "style": "details-body"
-                                                        },
-                                                        {
-                                                            "text": " ",
-                                                            "width": "10%"
-                                                            
-                                                        },
-                                                        {
-                                                            "text": " ",
-                                                             "style": "details-body"
-                                                        }
-                                                    ] 
-                                                }
-                                            ]
-                             
-                        ]
-                    },
-                    "layout": "noBorders"
-                },
-                {
-            "style": "ws-head",
-            "table": {
-              "widths": [
-                "*"
-              ],
-              "body": [
-                [
+                    "text": "{{form_5_label}}",
+                    "style": "appendix-header-body"
+                  },
                   {
-                    "image": "{{qr_code_image}}",
-                    "width": 70,
-                    "height": 70,
-                    "style": "qr-code"
-                  } 
-                   
-                ]
-              ]
-            },
-            "layout": "noBorders"
-          },
-          {
-            "style": "ws-head",
-            "table": {
-              "widths": [
-                "*"
-              ],
-              "body": [
-                [
+                    "text": "{{govt_label_multiLang}}",
+                    "style": "appendix-header-body"
+                  },
                   {
-                    "text": "{{instruction1_label}}",
-                    "width": 50,
-                    "height": 61.25,
-                    "style": "instruction-body"
-                  } 
-                   
-                ]
-              ]
-            },
-            "layout": "noBorders"
-          },
-          {
-            "style": "ws-head",
-            "table": {
-              "widths": [
-                "*"
-              ],
-              "body": [
-                [
+                    "text": "Government of National Capital Territory of Delhi",
+                    "style": "appendix-header-body",
+                    "margin": [0, 0, 0, 5]
+                  },
                   {
-                    "text": "{{instruction2_label}}",
-                    "width": 50,
-                    "height": 61.25,
-                    "style": "instruction-body"
-                  } 
-                   
+                    "text": "{{cb_delhi_label_multiLang}}",
+                    "style": "appendix-header-body"
+                  },
+                  {
+                    "text": "DELHI CANTONMENT BOARD",
+                    "style": "appendix-header-body"
+                  },
+                  {
+                    "text": "{{certificate_label_multiLang}}",
+                    "style": "title-header_multiLang"
+                  },
+                  {
+                    "text": "BIRTH CERTIFICATE",
+                    "style": "title-header"
+                  },
+                  {
+                    "text": "{{rule_label_multiLang}}",
+                    "style": "appendix-header-body"
+                  },
+                  {
+                    "text": "(Issue under section 12/17 of the Registration of Births and Deaths Act, 1969 and Rule 8/13 of the Delhi Registration of Births and Deaths Rule, 1999)",
+                    "style": "appendix-header-body"
+                  }
                 ]
-              ]
-            },
-            "layout": "noBorders"
-          }
-       ],
-       "styles": {
-        "pdf-header": {
-          "fillColor": "#F2F2F2",
-          "margin": [
-            -70,
-            -41,
-            -81,
-            10
+              },
+              {
+                "image": "{{form5}}",
+                "width": 65,
+                "height": 60.25,
+                "margin": [0, -10, 0, 0]
+              }
+            ]
           ]
         },
-         "appendix-header": {
-         "color": "#000000",
-                    "bold": true,
-                    "fontSize": 9,
-                    "fontWeight": 400,
-                    "alignment": "center"
-        },
-        "appendix-header-emblem": {
-          "color": "#000000",           
-          "alignment": "center",
-          "margin": [
-            0,
-          -30,
-            0,
-            0
-          ]
-         },
-         "instruction-body": {
-         "color": "#000000",
-                    "bold": false,
-                    "fontSize": 7,
-                    "fontWeight": 400,
-                    "alignment": "center"
-        },
-         "qr-code": {
-         "color": "#000000",
-                    "alignment": "left",
-                    "margin": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ]
-        },
-         "title-header": {
-         "color": "#000000",
-                    "bold": true,
-                    "fontSize": 14,
-                    "fontWeight": 400,
-                    "alignment": "center",
-                     "margin": [
-                        0,
-                        1,
-                        0,
-                        0
-                    ]
-        },
-        "title-header_multiLang": {
-          "color": "#000000",
-                     "bold": true,
-                     "fontSize": 15,
-                     "fontWeight": 400,
-                     "alignment": "center",
-                      "margin": [
-                         0,
-                         3,
-                         0,
-                         0
-                     ]
-         },
-        "rule-header": {
-         "color": "#696969",
-                    "bold": true,
-                    "fontSize": 10,
-                    "fontWeight": 400,
-                     "margin": [
-                        0,
-                        0,
-                        0,
-                        5
-                    ]
-        },
-        "rule-header_multiLang": {
-          "color": "#696969",
-                     "bold": true,
-                     "fontSize": 11,
-                     "fontWeight": 400,
-                      "margin": [
-                         0,
-                         0,
-                         0,
-                         5
-                     ]
-         },
-        "rule-body": {
-         "color": "#696969",
-                    "bold": true,
-                    "fontSize": 10,
-                    "fontWeight": 400,
-                     "margin": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ]
-        },
-        "rule-body_multiLang": {
-          "color": "#696969",
-                     "bold": true,
-                     "fontSize": 11,
-                     "fontWeight": 400,
-                      "margin": [
-                         0,
-                         0,
-                         0,
-                         0
-                     ]
-         },
-        "details-body": {
-         "color": "#696969",
-                    "bold": true,
-                    "fontSize": 11,
-                    "fontWeight": 400,
-                     "margin": [
-                        0,
-                        5,
-                        0,
-                        0
-                    ]
-        },
-        "appendix-header-body": {
-         "color": "#800000",
-                    "bold": true,
-                    "fontSize": 9,
-                    "fontWeight": 400,
-                    "alignment": "center"
-        },
-        "receipt-value-down-sub": {
-                    "color": "#000000",
-                    "bold": false,
-                    "fontSize": 11,
-                    "fontWeight": 400,
-                    "alignment": "left",
-                    "margin": [
-                        0,
-                        0,
-                        0,
-                        5
-                    ]
-                },
-            "receipt-value-down-rec": {
-                    "color": "#000000",
-                    "bold": false,
-                    "fontSize": 13,
-                    "fontWeight": 400,
-                    "alignment": "left",
-                    "margin": [
-                        0,
-                        0,
-                        0,
-                        0
-                    ]
-                },
-        "receipt-value-down": {
-                    "color": "#000000",
-                    "bold": false,
-                    "fontSize": 13,
-                    "fontWeight": 400,
-                    "alignment": "left",
-                    "margin": [
-                        -8,
-                        0,
-                        0,
-                        5
-                    ]
-                },
-        "pdf-application-no-value": {
-          "fontSize": 12,
-          "font": "Roboto",
-          "italics": true,
-          "margin": [
-            -18,
-            8,
-            0,
-            0
-          ],
-          "color": "#484848"
-        },
-        "pdf-header-text": {
-          "color": "#484848",
-          "fontSize": 20,
-          "bold": true,
-          "letterSpacing": 0.74,
-          "margin": [
-            0,
-            0,
-            0,
-            5
+        "layout": "noBorders"
+      },
+      {
+        "style": "ws-head",
+        "table": {
+          "widths": ["*"],
+          "body": [
+            [
+              {
+                "columns": [
+                  {
+                    "text": "{{rule1_label_multiLang}}",
+                    "style": "rule-header_multiLang"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": "This is to certify that the following information has been taken from the original record of birth which is the register the Delhi Cantonment Board of District South-West of National Capital Territory of Delhi.",
+                    "style": "rule-header"
+                  }
+                ]
+              }
+            ]
           ]
         },
-        "pdf-header-sub-text": {
-          "color": "#484848",
-          "fontSize": 15,
-          "letterSpacing": 0.6
-        },
-        "pdf-application-no": {
-          "fontSize": 12,
-          "bold": true,
-          "margin": [
-            -18,
-            8,
-            0,
-            0
-          ],
-          "color": "#484848"
-        },
-        "pdf-card-title": {
-          "fontSize": 11,
-          "bold": true,
-          "margin": [
-            -18,
-            16,
-            8,
-            8
-          ],
-          "color": "#484848",
-          "fontWeight": 500
-        },
-        "pdf-card-no-title": {
-          "fontSize": 11,
-          "bold": true,
-          "color": "#484848",
-          "fontWeight": 500
-        },
-        "pdf-table-card-white": {
-          "fillColor": "white",
-          "fontSize": 7,
-          "color": "#484848",
-          "margin": [
-            -20,
-            -2,
-            -8,
-            -8
+        "layout": "noBorders"
+      },
+      {
+        "style": "ws-head",
+        "table": {
+          "widths": ["*"],
+          "body": [
+            [
+              {
+                "columns": [
+                  {
+                    "text": "{{name_label}}: {{name}}",
+                    "width": "45%",
+                    "style": "details-body"
+                  },
+                  {
+                    "text": " ",
+                    "width": "10%"
+                  },
+                  {
+                    "text": "{{gender_label}} : {{gender}}",
+                    "style": "details-body"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": "{{dob_label}}: {{dob}}",
+                    "width": "45%",
+                    "style": "details-body"
+                  },
+                  {
+                    "text": " ",
+                    "width": "10%"
+                  },
+                  {
+                    "text": " ",
+                    "style": "details-body"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": "{{mother_name_label}}: {{motherName}}",
+                    "width": "45%",
+                    "style": "details-body"
+                  },
+                  {
+                    "text": " ",
+                    "width": "10%"
+                  },
+                  {
+                    "text": "{{pob_label}}: {{placeOfBirth}}",
+                    "style": "details-body"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": "{{father_name_label}}: {{fatherName}}",
+                    "width": "45%",
+                    "style": "details-body"
+                  },
+                  {
+                    "text": " ",
+                    "width": "10%"
+                  },
+                  {
+                    "text": "{{parent_address_label}}: {{parentsAddress}}",
+                    "style": "details-body"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": "{{child_address_label}}: {{childAddress}}",
+                    "width": "45%",
+                    "style": "details-body"
+                  },
+                  {
+                    "text": " ",
+                    "width": "10%"
+                  },
+                  {
+                    "text": "{{registration_date_label}}: {{registration_date}}",
+                    "style": "details-body"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": "{{registration_label}}: {{registrationNo}}",
+                    "width": "45%",
+                    "style": "details-body"
+                  },
+                  {
+                    "text": " ",
+                    "width": "10%"
+                  },
+                  {
+                    "text": " ",
+                    "style": "details-body"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": "{{remarks_label}}: {{remarks}}",
+                    "width": "45%",
+                    "style": "details-body"
+                  },
+                  {
+                    "text": " ",
+                    "width": "10%"
+                  },
+                  {
+                    "text": " ",
+                    "style": "details-body"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": "{{issue_date_label}}: {{issueDate}}",
+                    "width": "45%",
+                    "style": "details-body"
+                  },
+                  {
+                    "text": " ",
+                    "width": "10%"
+                  },
+                  {
+                    "text": " ",
+                    "style": "details-body"
+                  }
+                ]
+              }
+            ]
           ]
         },
-        "pdf-table-card": {
-          "fillColor": "#F2F2F2",
-          "fontSize": 7,
-          "color": "#484848",
-          "margin": [
-            -20,
-            -2,
-            -8,
-            -8
+        "layout": "noBorders"
+      },
+      {
+        "style": "ws-head",
+        "table": {
+          "widths": ["*"],
+          "body": [
+            [
+              {
+                "image": "{{qr_code_image}}",
+                "width": 70,
+                "height": 70,
+                "style": "qr-code"
+              }
+            ]
           ]
         },
-        "pdf-card-key": {
-          "color": "rgba(0, 0, 0, 0.54)",
-          "fontSize": 8,
-          "margin": [
-            0,
-            1,
-            0,
-            0
+        "layout": "noBorders"
+      },
+      {
+        "style": "ws-head",
+        "table": {
+          "widths": ["*"],
+          "body": [
+            [
+              {
+                "text": "{{instruction1_label}}",
+                "width": 50,
+                "height": 61.25,
+                "style": "instruction-body"
+              }
+            ]
           ]
         },
-        "pdf-card-sub-header": {
-          "color": "rgba(0, 0, 0, 0.94)",
-          "fontSize": 9,
-          "bold": true,
-          "margin": [
-            0,
-            3,
-            0,
-            0
+        "layout": "noBorders"
+      },
+      {
+        "style": "ws-head",
+        "table": {
+          "widths": ["*"],
+          "body": [
+            [
+              {
+                "text": "{{instruction2_label}}",
+                "width": 50,
+                "height": 61.25,
+                "style": "instruction-body"
+              }
+            ]
           ]
         },
-        "pdf-card-value": {
-          "fontSize": 10,
-          "color": "rgba(0, 0, 0, 0.87)",
-          "margin": [
-            0,
-            0,
-            0,
-            1
-          ]
-        },
-        "pdf-head-qr-code": {
-          "fillColor": "#F2F2F2",
-          "margin": [
-            -70,
-            -41,
-            -81,
-            0
-          ]
-        }
+        "layout": "noBorders"
       }
-      
+    ],
+    "styles": {
+      "pdf-header": {
+        "fillColor": "#F2F2F2",
+        "margin": [-70, -41, -81, 10]
+      },
+      "appendix-header": {
+        "color": "#000000",
+        "bold": true,
+        "fontSize": 9,
+        "fontWeight": 400,
+        "alignment": "center"
+      },
+      "appendix-header-emblem": {
+        "color": "#000000",
+        "alignment": "center",
+        "margin": [0, -30, 0, 0]
+      },
+      "instruction-body": {
+        "color": "#000000",
+        "bold": false,
+        "fontSize": 7,
+        "fontWeight": 400,
+        "alignment": "center"
+      },
+      "qr-code": {
+        "color": "#000000",
+        "alignment": "left",
+        "margin": [0, 0, 0, 0]
+      },
+      "title-header": {
+        "color": "#000000",
+        "bold": true,
+        "fontSize": 14,
+        "fontWeight": 400,
+        "alignment": "center",
+        "margin": [0, 1, 0, 0]
+      },
+      "title-header_multiLang": {
+        "color": "#000000",
+        "bold": true,
+        "fontSize": 15,
+        "fontWeight": 400,
+        "alignment": "center",
+        "margin": [0, 3, 0, 0]
+      },
+      "rule-header": {
+        "color": "#696969",
+        "bold": true,
+        "fontSize": 10,
+        "fontWeight": 400,
+        "margin": [0, 0, 0, 5]
+      },
+      "rule-header_multiLang": {
+        "color": "#696969",
+        "bold": true,
+        "fontSize": 11,
+        "fontWeight": 400,
+        "margin": [0, 0, 0, 0]
+      },
+      "rule-body": {
+        "color": "#696969",
+        "bold": true,
+        "fontSize": 10,
+        "fontWeight": 400,
+        "margin": [0, 0, 0, 0]
+      },
+      "rule-body_multiLang": {
+        "color": "#696969",
+        "bold": true,
+        "fontSize": 11,
+        "fontWeight": 400,
+        "margin": [0, 0, 0, 0]
+      },
+      "details-body": {
+        "color": "#696969",
+        "bold": true,
+        "fontSize": 11,
+        "fontWeight": 400,
+        "margin": [0, 5, 0, 0]
+      },
+      "appendix-header-body": {
+        "color": "#800000",
+        "bold": true,
+        "fontSize": 9,
+        "fontWeight": 400,
+        "alignment": "center"
+      },
+      "receipt-value-down-sub": {
+        "color": "#000000",
+        "bold": false,
+        "fontSize": 11,
+        "fontWeight": 400,
+        "alignment": "left",
+        "margin": [0, 0, 0, 5]
+      },
+      "receipt-value-down-rec": {
+        "color": "#000000",
+        "bold": false,
+        "fontSize": 13,
+        "fontWeight": 400,
+        "alignment": "left",
+        "margin": [0, 0, 0, 0]
+      },
+      "receipt-value-down": {
+        "color": "#000000",
+        "bold": false,
+        "fontSize": 13,
+        "fontWeight": 400,
+        "alignment": "left",
+        "margin": [-8, 0, 0, 5]
+      },
+      "pdf-application-no-value": {
+        "fontSize": 12,
+        "font": "Roboto",
+        "italics": true,
+        "margin": [-18, 8, 0, 0],
+        "color": "#484848"
+      },
+      "pdf-header-text": {
+        "color": "#484848",
+        "fontSize": 20,
+        "bold": true,
+        "letterSpacing": 0.74,
+        "margin": [0, 0, 0, 5]
+      },
+      "pdf-header-sub-text": {
+        "color": "#484848",
+        "fontSize": 15,
+        "letterSpacing": 0.6
+      },
+      "pdf-application-no": {
+        "fontSize": 12,
+        "bold": true,
+        "margin": [-18, 8, 0, 0],
+        "color": "#484848"
+      },
+      "pdf-card-title": {
+        "fontSize": 11,
+        "bold": true,
+        "margin": [-18, 16, 8, 8],
+        "color": "#484848",
+        "fontWeight": 500
+      },
+      "pdf-card-no-title": {
+        "fontSize": 11,
+        "bold": true,
+        "color": "#484848",
+        "fontWeight": 500
+      },
+      "pdf-table-card-white": {
+        "fillColor": "white",
+        "fontSize": 7,
+        "color": "#484848",
+        "margin": [-20, -2, -8, -8]
+      },
+      "pdf-table-card": {
+        "fillColor": "#F2F2F2",
+        "fontSize": 7,
+        "color": "#484848",
+        "margin": [-20, -2, -8, -8]
+      },
+      "pdf-card-key": {
+        "color": "rgba(0, 0, 0, 0.54)",
+        "fontSize": 8,
+        "margin": [0, 1, 0, 0]
+      },
+      "pdf-card-sub-header": {
+        "color": "rgba(0, 0, 0, 0.94)",
+        "fontSize": 9,
+        "bold": true,
+        "margin": [0, 3, 0, 0]
+      },
+      "pdf-card-value": {
+        "fontSize": 10,
+        "color": "rgba(0, 0, 0, 0.87)",
+        "margin": [0, 0, 0, 1]
+      },
+      "pdf-head-qr-code": {
+        "fillColor": "#F2F2F2",
+        "margin": [-70, -41, -81, 0]
       }
+    }
   }
+}
