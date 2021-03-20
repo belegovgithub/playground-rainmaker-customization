@@ -1,0 +1,747 @@
+{
+  "key": "bd-jammukashmir-death",
+  "config": {
+    "defaultStyle": {
+      "font": "Cambay"
+    },
+    "watermark": {
+      "text": "BEL UAT BEL UAT",
+      "color": "gery",
+      "opacity": 0.1,
+      "bold": true,
+      "italics": false
+    },
+    "content": [
+      {
+        
+          "style": "ws-head",
+          "table": {
+            "widths": [
+              "*"
+            ],
+            "body": [
+              [
+                {
+                  "columns": [
+                    {
+                      "text": "Regd No: ________",
+                      "width": "85%",
+                      "style": "details-body"
+                    },
+                    {
+                      "text": "FORM-6",
+                      "width": "15%",
+                      "style": "appendix-header-formNo"
+                    }
+
+                    
+                  ]
+                }
+              ]
+             
+            ]
+          },
+          "layout": "noBorders"
+        
+      },
+      {
+        "style": "ws-head",
+        "table": {
+          "widths": [
+            "45%",
+            "40%",
+            "10%"
+          ],
+          "body": [
+            [
+              {
+                "image": "{{govtImage}}",
+                "width": 70,
+                "height": 70.25,
+                "margin": [
+                  0,
+                  -5,
+                  0,
+                  0
+                ]
+              },
+              {
+                "image": "{{emblemImage}}",
+                "width": 70,
+                "height": 70.25,
+                "margin": [
+                  0,
+                  -10,
+                  0,
+                  0
+                ]
+              },
+         
+              {
+                "image": "{{form5}}",
+                "width": 65,
+                "height": 60.25,
+                "margin": [
+                  0,
+                  -10,
+                  0,
+                  0
+                ]
+              }
+            ]
+          ]
+        },
+        "layout": "noBorders"
+      },
+    
+      {
+        "style": "ws-head",
+        "table": {
+          "widths": [
+            "*"
+          ],
+          "body": [
+            [
+              {
+                "text": "OFFICE OF THE REGISTRAR BIRTHS & DEATHS",
+                "style": "title-header_multiLang"
+              }
+            ],
+            [
+              {
+                "text":"BADAMIBAGH CANTONMENT BOARD, SRINAGAR, J&K, 190004",
+                "style": "rule-header_multiLang"
+              }
+             
+            ]
+          ]
+        },
+        "layout": "noBorders"
+      },
+      {
+        "style": "ws-head",
+        "table": {
+          "widths": [
+            "*"
+          ],
+          "body": [
+            [
+              {
+                "text": "DEATH CERTIFICATE",
+                "style": "title-header"
+              }
+            ]
+          ]
+        },
+        "layout": "noBorders"
+      },
+      {
+        "style": "ws-head",
+        "table": {
+          "widths": [
+            "*"
+          ],
+          "body": [
+            [
+              {
+                "columns": [
+                  {
+                    "text": "Issued under section 12/17 of the Registration of Births and Deaths Act, 1969 and Rules 8/13 of the Jammu and Kashmir Registration of Birth and Deaths, 2000",
+                    "style": "instruction-body"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": "This is to certify that the following information has been taken from the original record of Birth which is the register for (Local Area/ Local Body)",
+                    "style": "instruction-body"
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        "layout": "noBorders"
+      },
+      {
+        "style": "ws-head",
+        "table": {
+          "widths": [
+            "*"
+          ],
+          "body": [
+            [
+              {
+                "columns": [
+                  {
+                    "text": "Badamibagh Cantonment Board of Tehsil/ Block Srinagar",
+                    "style": "instruction-body"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": "of District Srinagar and of State Jammu and Kashmir",
+                    "style": "instruction-body"
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        "layout": "noBorders"
+      },
+      {
+        "style": "ws-head",
+        "table": {
+          "widths": [
+            "*"
+          ],
+          "body": [
+            [
+              {
+                "columns": [
+                  {
+                    "text": "1. Name of Deceased: {{name}}",
+                    "width": "45%",
+                    "style": "details-body"
+                  },
+                  {
+                    "text": " ",
+                    "width": "10%"
+                  },
+                  {
+                    "text": "2. Sex: {{gender}}",
+                    "style": "details-body"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": "3. Date of Death: {{dob}}",
+                    "width": "45%",
+                    "style": "details-body"
+                  },
+                  {
+                    "text": " ",
+                    "width": "10%"
+                  },
+                  {
+                    "text": "4. Place of Death: {{placeOfDeath}}",
+                    "style": "details-body"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": "5. Name of Mother: {{motherName}}",
+                    
+                    "style": "details-body"
+                  }
+                  
+                  
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": "6. Name of Father/ Husband: {{fatherName}}",
+                    "style": "details-body"
+                  }
+                  
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": "7. Address of the deceased at the time of death: {{childAddress}}",
+                   
+                    "style": "details-body"
+                  }
+                  
+                  
+                ]
+              }
+            ],
+            [
+              {
+                "columns":[
+                  {
+                    "text": "8.Permanent Address of the deceased: {{parentsAddress}}",
+                    "style": "details-body"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": "9. Remarks (if any): {{remarks}}",
+                    "width": "45%",
+                    "style": "details-body"
+                  }
+                  
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": "10.Registration No: {{registrationNo}}",
+                    "width": "45%",
+                    "style": "details-body"
+                  }
+                  
+                 
+                ]
+              }
+            ],
+          
+            [
+              {
+                "columns": [
+                  {
+                    "text": "11.Date of Registration: {{registration_date}}",
+                    "style": "details-body"
+                  },
+                  {
+                    "text": " ",
+                    "width": "10%"
+                  },
+                  {
+                    "text": "12.Date of Issue: {{issueDate}}",
+                    "width": "45%",
+                    "style": "details-body"
+                  }
+                  
+                  
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": " ",
+                    "width": "40%"
+                    
+                  },
+                  {
+                    "text": " ",
+                    "width": "10%"
+                  },
+                  {
+                    "text": "Signature of Issuing Authority",
+                    "width": "50%",
+                    "style": "details-body"
+                  }
+                  
+                  
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": " ",
+                    "width": "40%"
+                    
+                  },
+                  {
+                    "text": " ",
+                    "width": "10%"
+                  },
+                  {
+                    "text": "Registrar Birth & Death, Cantt Board, Sgr",
+                    "width": "50%",
+                    "style": "details-body"
+                  }
+                  
+                  
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": " "
+                    
+                    
+                  }
+                ]
+              }
+
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": " "
+                    
+                    
+                  }
+                ]
+              }
+
+            ],
+          
+            [
+              {
+                "columns": [
+                  {
+                    "text": "Ensure Registration of every Birth and Death",
+                    "style": "appendix-header"
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        "layout": "noBorders"
+      }
+     
+    ],
+    "styles": {
+      "pdf-header": {
+        "fillColor": "#F2F2F2",
+        "margin": [
+          -70,
+          -41,
+          -81,
+          10
+        ]
+      },
+      "appendix-header": {
+        "color": "#000000",
+        "bold": true,
+        "fontSize": 9,
+        "fontWeight": 400,
+        "alignment": "center"
+      },
+      "appendix-header-emblem": {
+        "color": "#000000",
+        "alignment": "center",
+        "margin": [
+          0,
+          -30,
+          0,
+          0
+        ]
+      },
+      "instruction-body": {
+        "color": "#000000",
+        "bold": false,
+        "fontSize": 7,
+        "fontWeight": 400,
+        "alignment": "center"
+      },
+      "qr-code": {
+        "color": "#000000",
+        "alignment": "left",
+        "margin": [
+          0,
+          -30,
+          0,
+          0
+        ]
+      },
+      "title-header": {
+        "color": "#000000",
+        "bold": true,
+        "fontSize": 14,
+        "fontWeight": 400,
+        "alignment": "center",
+        "margin": [
+          0,
+          1,
+          0,
+          0
+        ]
+      },
+      "title-header_multiLang": {
+        "color": "#800000",
+        "bold": true,
+        "fontSize": 15,
+        "fontWeight": 400,
+        "alignment": "center",
+        "margin": [
+          0,
+          3,
+          0,
+          0
+        ]
+      },
+      "appendix-header-serialNo": {
+        "color": "#000000",
+        "bold": false,
+        "fontSize": 8,
+        "fontWeight": 400,
+        "margin": [
+          0,
+          -5,
+          0,
+          0
+        ]
+      },
+      "appendix-header-formNo": {
+        "color": "#000000",
+        "bold": false,
+        "fontSize": 8,
+        "fontWeight": 400,
+        "margin": [
+          20,
+          -5,
+          0,
+          0
+        ]
+      },
+      "rule-header": {
+        "color": "#696969",
+        "bold": true,
+        "fontSize": 10,
+        "fontWeight": 400,
+        "margin": [
+          0,
+          0,
+          0,
+          5
+        ]
+      },
+      "rule-header_multiLang": {
+        "color": "#DC143C",
+        "bold": true,
+        "fontSize": 11,
+        "fontWeight": 400,
+        "alignment": "center",
+        "margin": [
+          0,
+          0,
+          0,
+          5
+        ]
+      },
+      "rule-body": {
+        "color": "#696969",
+        "bold": true,
+        "fontSize": 10,
+        "fontWeight": 400,
+        "margin": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "rule-body_multiLang": {
+        "color": "#696969",
+        "bold": true,
+        "fontSize": 11,
+        "fontWeight": 400,
+        "margin": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "details-body": {
+        "color": "#696969",
+        "bold": true,
+        "fontSize": 11,
+        "fontWeight": 400,
+        "margin": [
+          0,
+          5,
+          0,
+          0
+        ]
+      },
+      "appendix-header-body": {
+        "color": "#696969",
+        "bold": true,
+        "fontSize": 9,
+        "fontWeight": 400,
+        "alignment": "center"
+      },
+      "receipt-value-down-sub": {
+        "color": "#000000",
+        "bold": false,
+        "fontSize": 11,
+        "fontWeight": 400,
+        "alignment": "left",
+        "margin": [
+          0,
+          0,
+          0,
+          5
+        ]
+      },
+      "receipt-value-down-rec": {
+        "color": "#000000",
+        "bold": false,
+        "fontSize": 13,
+        "fontWeight": 400,
+        "alignment": "left",
+        "margin": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "receipt-value-down": {
+        "color": "#000000",
+        "bold": false,
+        "fontSize": 13,
+        "fontWeight": 400,
+        "alignment": "left",
+        "margin": [
+          -8,
+          0,
+          0,
+          5
+        ]
+      },
+      "pdf-application-no-value": {
+        "fontSize": 12,
+        "font": "Roboto",
+        "italics": true,
+        "margin": [
+          -18,
+          8,
+          0,
+          0
+        ],
+        "color": "#484848"
+      },
+      "pdf-header-text": {
+        "color": "#484848",
+        "fontSize": 20,
+        "bold": true,
+        "letterSpacing": 0.74,
+        "margin": [
+          0,
+          0,
+          0,
+          5
+        ]
+      },
+      "pdf-header-sub-text": {
+        "color": "#484848",
+        "fontSize": 15,
+        "letterSpacing": 0.6
+      },
+      "pdf-application-no": {
+        "fontSize": 12,
+        "bold": true,
+        "margin": [
+          -18,
+          8,
+          0,
+          0
+        ],
+        "color": "#484848"
+      },
+      "pdf-card-title": {
+        "fontSize": 11,
+        "bold": true,
+        "margin": [
+          -18,
+          16,
+          8,
+          8
+        ],
+        "color": "#484848",
+        "fontWeight": 500
+      },
+      "pdf-card-no-title": {
+        "fontSize": 11,
+        "bold": true,
+        "color": "#484848",
+        "fontWeight": 500
+      },
+      "pdf-table-card-white": {
+        "fillColor": "white",
+        "fontSize": 7,
+        "color": "#484848",
+        "margin": [
+          -20,
+          -2,
+          -8,
+          -8
+        ]
+      },
+      "pdf-table-card": {
+        "fillColor": "#F2F2F2",
+        "fontSize": 7,
+        "color": "#484848",
+        "margin": [
+          -20,
+          -2,
+          -8,
+          -8
+        ]
+      },
+      "pdf-card-key": {
+        "color": "rgba(0, 0, 0, 0.54)",
+        "fontSize": 8,
+        "margin": [
+          0,
+          1,
+          0,
+          0
+        ]
+      },
+      "pdf-card-sub-header": {
+        "color": "rgba(0, 0, 0, 0.94)",
+        "fontSize": 9,
+        "bold": true,
+        "margin": [
+          0,
+          3,
+          0,
+          0
+        ]
+      },
+      "pdf-card-value": {
+        "fontSize": 10,
+        "color": "rgba(0, 0, 0, 0.87)",
+        "margin": [
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      "pdf-head-qr-code": {
+        "fillColor": "#F2F2F2",
+        "margin": [
+          -70,
+          -41,
+          -81,
+          0
+        ]
+      }
+    }
+  }
+}
