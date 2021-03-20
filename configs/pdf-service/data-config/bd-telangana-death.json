@@ -1,5 +1,5 @@
 {
-  "key": "bd-maharashtra-death",
+  "key": "bd-telangana-death",
   "DataConfigs": {
     "serviceName": "rainmaker-common",
     "version": "1.0.0",
@@ -14,17 +14,7 @@
             "direct": [
               {
                 "variable": "emblemImage",
-                "url": "https://raw.githubusercontent.com/belsoftware/webaccess/master/images/birth/emblem.png",
-                "type": "image"
-              },
-              {
-                "variable": "govtImage",
-                "url": "https://raw.githubusercontent.com/belsoftware/webaccess/master/images/birth/maharashtraGovt.png",
-                "type": "image"
-              },
-              {
-                "variable": "form5",
-                "url": "https://raw.githubusercontent.com/belsoftware/webaccess/master/images/birth/form5.png",
+                "url": "https://raw.githubusercontent.com/belsoftware/webaccess/master/images/birth/secundrabad.png",
                 "type": "image"
               },
               {
@@ -59,7 +49,7 @@
                 }
               },
               {
-                "variable": "updatedOn",
+                "variable": "dateofissue",
                 "value": {
                   "path": "$.dateofissue"
                 },

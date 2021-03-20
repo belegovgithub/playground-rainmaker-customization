@@ -1,9 +1,9 @@
 {
-    "key": "bd-maharashtra-birth",
+    "key": "bd-haryana-death",
     "DataConfigs": {
       "serviceName": "rainmaker-common",
       "version": "1.0.0",
-      "baseKeyPath": "$.BirthCertificate.*",
+      "baseKeyPath": "$.DeathCertificate.*",
       "entityIdPath":"$.id",
       "isCommonTableBorderRequired": true,
       "mappings": [
@@ -19,7 +19,7 @@
                 },
                 {
                     "variable": "govtImage",
-                    "url": "https://raw.githubusercontent.com/belsoftware/webaccess/master/images/birth/maharashtraGovt.png",
+                    "url": "https://raw.githubusercontent.com/belsoftware/webaccess/master/images/birth/haryanaGovt.png",
                     "type": "image"
                 },
                 {
@@ -40,9 +40,9 @@
                   }
                 },
                 {
-                  "variable": "dob", 
+                  "variable": "dod", 
                   "value": {
-                    "path": "$.dateofbirth"
+                    "path": "$.dateofdeath"
                   },
                   "type": "date"
                 },
@@ -53,9 +53,39 @@
                   }
                 },
                 {
+                  "variable": "age", 
+                  "value": {
+                    "path": "$.age"
+                  }
+                },
+                {
+                  "variable": "placeOfDeath", 
+                  "value": {
+                    "path": "$.placeofdeath"
+                  }
+                },
+                {
                   "variable": "registrationNo", 
                   "value": {
                     "path": "$.registrationno"
+                  }
+                },
+                {
+                  "variable": "spouseName", 
+                  "value": {
+                    "path": "$.deathSpouseInfo.fullName"
+                  }
+                },
+                {
+                  "variable": "presentAdd", 
+                  "value": {
+                    "path": "$.deathPermaddr.fullAddress"
+                  }
+                },
+                {
+                  "variable": "permanentAddress", 
+                  "value": {
+                    "path": "$.deathPresentaddr.fullAddress"
                   }
                 },
                 {
@@ -65,24 +95,17 @@
                     },
                     "type": "date"
                   },
-                  {
-                    "variable": "updatedOn", 
-                    "value": {
-                      "path": "$.dateofissue"
-                    },
-                    "type": "date"
-                  },
                 {
                   "variable": "fatherName", 
                   "value": {
-                    "path": "$.birthFatherInfo.firstname"
+                    "path": "$.deathFatherInfo.firstname"
                   },
                   "type":"setEmpty"
                 },
                 {
                   "variable": "motherName", 
                   "value": {
-                    "path": "$.birthMotherInfo.firstname"
+                    "path": "$.deathMotherInfo.firstname"
                   },
                   "type":"setEmpty"
                 },

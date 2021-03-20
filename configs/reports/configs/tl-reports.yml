@@ -1355,13 +1355,13 @@ ReportDefinitions:
     isMandatory: false
     searchClause: AND tl.lastmodifiedtime <= $toDate
   - name: command
-    label: reports.uc.command
+    label: report.tl.tenantId
     type: singlevaluelist
     pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=tenant&masterName=CBcommandMapping&filter=%5B?(@.tenant=='$tenantid')%5D|$.MdmsRes.tenant.CBcommandMapping.*.code|$.MdmsRes.tenant.CBcommandMapping.*.name
     source: uc
     wrapper: true
     isMandatory: false
-    searchClause: AND tl.tenantId in ($command)  
+    searchClause: AND tl.tenantId in ($command)
   query: SELECT initcap(split_part(tenantId, '.', 2)) as tenantId,count(*) as total,SUM(CASE status when 'INITIATED' then 1 else 0 end) as initiated,SUM(CASE status when 'PENDINGAPPLFEE' then 1 else 0 end) as pendingApplicationfee,SUM(CASE status when 'APPLIED' then 1 else 0 end) as applied,SUM(CASE status when 'FIELDINSPECTION' then 1 else 0 end) as fieldInspection,SUM(CASE status when 'CITIZENACTIONREQUIRED' then 1 else 0 end) as citizenactionreq,SUM(CASE status when 'PENDINGAPPROVAL' then 1 else 0 end) as pendingapproval,SUM(CASE status when 'APPROVED' then 1 else 0 end) as approved,SUM(CASE status when 'PENDINGPAYMENT' then 1 else 0 end) as pendingpayment,SUM(CASE status when 'EXPIRED' then 1 else 0 end) as expired,SUM(CASE status when 'CANCELLED' then 1 else 0 end) as cancelled,SUM (CASE status when 'REJECTED' then 1 else 0 end) as rejected FROM eg_tl_tradelicense as tl WHERE tl.tenantid in ($multipleTenantId)
   groupby: GROUP BY tenantid
   orderby: ORDER BY tenantid
@@ -1416,7 +1416,7 @@ ReportDefinitions:
     isMandatory: false
     searchClause: AND pd.receiptdate <= $toDate
   - name: command
-    label: reports.uc.command
+    label: report.tl.tenantId
     type: singlevaluelist
     pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=tenant&masterName=CBcommandMapping&filter=%5B?(@.tenant=='$tenantid')%5D|$.MdmsRes.tenant.CBcommandMapping.*.code|$.MdmsRes.tenant.CBcommandMapping.*.name
     source: uc
@@ -1557,7 +1557,7 @@ ReportDefinitions:
     isMandatory: false
     searchClause: AND pd.receiptdate <= $toDate
   - name: command
-    label: reports.uc.command
+    label: report.tl.tenantId
     type: singlevaluelist
     pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=tenant&masterName=CBcommandMapping&filter=%5B?(@.tenant=='$tenantid')%5D|$.MdmsRes.tenant.CBcommandMapping.*.code|$.MdmsRes.tenant.CBcommandMapping.*.name
     source: uc
@@ -1650,7 +1650,7 @@ ReportDefinitions:
     isMandatory: false
     searchClause: AND tl.lastmodifiedtime <= $toDate
   - name: command
-    label: reports.uc.command
+    label: report.tl.tenantId
     type: singlevaluelist
     pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=tenant&masterName=CBcommandMapping&filter=%5B?(@.tenant=='$tenantid')%5D|$.MdmsRes.tenant.CBcommandMapping.*.code|$.MdmsRes.tenant.CBcommandMapping.*.name
     source: uc
@@ -1665,7 +1665,7 @@ ReportDefinitions:
     wrapper: true
     isMandatory: false
     searchClause: AND tl.status = $status
-  query: SELECT initcap(split_part(tl.tenantId,'.', 2)) as tenantId,applicationnumber,licensenumber,to_char(To_timestamp(issueddate / 1000), 'DD/MM/YYYY') as formattedIssuedDate,to_char(To_timestamp(validto / 1000), 'DD/MM/YYYY') as formattedExpiredDate,message.message as appstatus,tl.tradeName,tradeTypeName,tlown.name,tlown.mobilenumber,status,wf_process.wfComment as comments FROM eg_tl_tradelicense tl LEFT OUTER JOIN message ON split_part(message.code,'_',2) = status AND message.locale = 'en_IN' AND message.module = 'rainmaker-tl' INNER JOIN eg_tl_tradelicensedetail tld ON tld.tradelicenseid = tl.id INNER JOIN (SELECT tradelicensedetailid,array_to_string(array_agg(message.message),'; ') as tradeTypeName FROM eg_tl_tradeunit INNER JOIN message ON replace(substring(code, '_[A-Z]*_(.*)'),'_','.') = tradeType AND message.locale = 'en_IN' GROUP BY 1) tlunit ON tlunit.tradelicensedetailid = tld.id INNER JOIN (SELECT tradelicensedetailid, array_to_string(array_agg(name),', ') as name, array_to_string(array_agg(mobilenumber),', ') as mobilenumber FROM eg_tl_owner tlowner INNER JOIN eg_user tluser ON tluser.uuid = tlowner.id group by tradelicensedetailid) tlown ON tlown.tradelicensedetailid = tld.id INNER JOIN (SELECT businessid,comment as wfComment,lastmodifiedtime FROM eg_wf_processinstance_v2  ) wf_process on businessid=applicationnumber and wf_process.lastmodifiedtime = (select max("lastmodifiedtime") FROM public.eg_wf_processinstance_v2  where businessid=applicationnumber) Where in ($multipleTenantId)
+  query: SELECT initcap(split_part(tl.tenantId,'.', 2)) as tenantId,applicationnumber,licensenumber,to_char(To_timestamp(issueddate / 1000), 'DD/MM/YYYY') as formattedIssuedDate,to_char(To_timestamp(validto / 1000), 'DD/MM/YYYY') as formattedExpiredDate,message.message as appstatus,tl.tradeName,tradeTypeName,tlown.name,tlown.mobilenumber,status,wf_process.wfComment as comments FROM eg_tl_tradelicense tl LEFT OUTER JOIN message ON split_part(message.code,'_',2) = status AND message.locale = 'en_IN' AND message.module = 'rainmaker-tl' INNER JOIN eg_tl_tradelicensedetail tld ON tld.tradelicenseid = tl.id INNER JOIN (SELECT tradelicensedetailid,array_to_string(array_agg(message.message),'; ') as tradeTypeName FROM eg_tl_tradeunit INNER JOIN message ON replace(substring(code, '_[A-Z]*_(.*)'),'_','.') = tradeType AND message.locale = 'en_IN' GROUP BY 1) tlunit ON tlunit.tradelicensedetailid = tld.id INNER JOIN (SELECT tradelicensedetailid, array_to_string(array_agg(name),', ') as name, array_to_string(array_agg(mobilenumber),', ') as mobilenumber FROM eg_tl_owner tlowner INNER JOIN eg_user tluser ON tluser.uuid = tlowner.id group by tradelicensedetailid) tlown ON tlown.tradelicensedetailid = tld.id INNER JOIN (SELECT businessid,comment as wfComment,lastmodifiedtime FROM eg_wf_processinstance_v2  ) wf_process on businessid=applicationnumber and wf_process.lastmodifiedtime = (select max("lastmodifiedtime") FROM public.eg_wf_processinstance_v2  where businessid=applicationnumber) Where tl.tenantId in ($multipleTenantId)
   orderby: ORDER BY  tl.applicationnumber,tl.tenantId
 
 - reportName: CommandLevelTradeLicensePendingForRenewalReport
@@ -1728,7 +1728,7 @@ ReportDefinitions:
     isMandatory: false
     searchClause: AND issueddate <= $toDate
   - name: command
-    label: reports.uc.command
+    label: report.tl.tenantId
     type: singlevaluelist
     pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=tenant&masterName=CBcommandMapping&filter=%5B?(@.tenant=='$tenantid')%5D|$.MdmsRes.tenant.CBcommandMapping.*.code|$.MdmsRes.tenant.CBcommandMapping.*.name
     source: uc
@@ -1744,5 +1744,5 @@ ReportDefinitions:
     isMandatory: false
     searchClause: AND validto = $financialyear::BIGINT
   query: |
-    SELECT initcap(split_part(tl.tenantId,'.', 2)) as tenantId,licensenumber,issueddate,validto,to_char(To_timestamp(issueddate / 1000), 'DD/MM/YYYY') as formattedIssuedDate,to_char(To_timestamp(validto / 1000), 'DD/MM/YYYY') as formattedExpiredDate,tl.tradeName,tradeTypeName,tlown.name,tlown.mobilenumber FROM eg_tl_tradelicense tl INNER JOIN eg_tl_tradelicensedetail tld ON tld.tradelicenseid = tl.id INNER JOIN (SELECT tradelicensedetailid,array_to_string(array_agg(message.message),'; ') as tradeTypeName FROM eg_tl_tradeunit INNER JOIN message ON replace(substring(code, '_[A-Z]*_(.*)'),'_','.') = tradeType AND message.locale = 'en_IN' GROUP BY 1) tlunit ON tlunit.tradelicensedetailid = tld.id INNER JOIN (SELECT tradelicensedetailid, array_to_string(array_agg(name),', ') as name, array_to_string(array_agg(mobilenumber),', ') as mobilenumber FROM eg_tl_owner tlowner INNER JOIN eg_user tluser ON tluser.uuid = tlowner.id group by tradelicensedetailid) tlown ON tlown.tradelicensedetailid = tld.id WHERE status = 'APPROVED' AND in ($multipleTenantId)
+    SELECT initcap(split_part(tl.tenantId,'.', 2)) as tenantId,licensenumber,issueddate,validto,to_char(To_timestamp(issueddate / 1000), 'DD/MM/YYYY') as formattedIssuedDate,to_char(To_timestamp(validto / 1000), 'DD/MM/YYYY') as formattedExpiredDate,tl.tradeName,tradeTypeName,tlown.name,tlown.mobilenumber FROM eg_tl_tradelicense tl INNER JOIN eg_tl_tradelicensedetail tld ON tld.tradelicenseid = tl.id INNER JOIN (SELECT tradelicensedetailid,array_to_string(array_agg(message.message),'; ') as tradeTypeName FROM eg_tl_tradeunit INNER JOIN message ON replace(substring(code, '_[A-Z]*_(.*)'),'_','.') = tradeType AND message.locale = 'en_IN' GROUP BY 1) tlunit ON tlunit.tradelicensedetailid = tld.id INNER JOIN (SELECT tradelicensedetailid, array_to_string(array_agg(name),', ') as name, array_to_string(array_agg(mobilenumber),', ') as mobilenumber FROM eg_tl_owner tlowner INNER JOIN eg_user tluser ON tluser.uuid = tlowner.id group by tradelicensedetailid) tlown ON tlown.tradelicensedetailid = tld.id WHERE status = 'APPROVED' AND tl.tenantId in ($multipleTenantId)
   orderby: ORDER BY tl.issueddate

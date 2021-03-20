@@ -1,9 +1,9 @@
 {
-  "key": "bd-maharashtra-death",
+  "key": "bd-telangana-birth",
   "DataConfigs": {
     "serviceName": "rainmaker-common",
     "version": "1.0.0",
-    "baseKeyPath": "$.DeathCertificate.*",
+    "baseKeyPath": "$.BirthCertificate.*",
     "entityIdPath": "$.id",
     "isCommonTableBorderRequired": true,
     "mappings": [
@@ -14,12 +14,12 @@
             "direct": [
               {
                 "variable": "emblemImage",
-                "url": "https://raw.githubusercontent.com/belsoftware/webaccess/master/images/birth/emblem.png",
+                "url": "https://raw.githubusercontent.com/belsoftware/webaccess/master/images/birth/secundrabad.png",
                 "type": "image"
               },
               {
                 "variable": "govtImage",
-                "url": "https://raw.githubusercontent.com/belsoftware/webaccess/master/images/birth/maharashtraGovt.png",
+                "url": "https://raw.githubusercontent.com/belsoftware/webaccess/master/images/birth/biharGovt.png",
                 "type": "image"
               },
               {
@@ -40,9 +40,9 @@
                 }
               },
               {
-                "variable": "dod",
+                "variable": "dob",
                 "value": {
-                  "path": "$.dateofdeath"
+                  "path": "$.dateofbirth"
                 },
                 "type": "date"
               },
@@ -53,46 +53,9 @@
                 }
               },
               {
-                "variable": "age",
-                "value": {
-                  "path": "$.age"
-                }
-              },
-              {
-                "variable": "updatedOn",
-                "value": {
-                  "path": "$.dateofissue"
-                },
-                "type": "date"
-              },
-              {
-                "variable": "placeOfDeath",
-                "value": {
-                  "path": "$.placeofdeath"
-                }
-              },
-              {
                 "variable": "registrationNo",
                 "value": {
                   "path": "$.registrationno"
-                }
-              },
-              {
-                "variable": "spouseName",
-                "value": {
-                  "path": "$.deathSpouseInfo.fullName"
-                }
-              },
-              {
-                "variable": "presentAdd",
-                "value": {
-                  "path": "$.deathPermaddr.fullAddress"
-                }
-              },
-              {
-                "variable": "permanentAddress",
-                "value": {
-                  "path": "$.deathPresentaddr.fullAddress"
                 }
               },
               {
@@ -105,14 +68,14 @@
               {
                 "variable": "fatherName",
                 "value": {
-                  "path": "$.deathFatherInfo.firstname"
+                  "path": "$.birthFatherInfo.firstname"
                 },
                 "type": "setEmpty"
               },
               {
                 "variable": "motherName",
                 "value": {
-                  "path": "$.deathMotherInfo.firstname"
+                  "path": "$.birthMotherInfo.firstname"
                 },
                 "type": "setEmpty"
               },

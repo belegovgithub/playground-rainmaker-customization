@@ -293,14 +293,6 @@ ReportDefinitions:
         wrapper: true
         isMandatory: false
         searchClause: AND eg_user.id = $name::INTEGER
-      - name: command
-        label: reports.uc.command
-        type: singlevaluelist
-        pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=tenant&masterName=CBcommandMapping&filter=%5B?(@.tenant=='$tenantid')%5D|$.MdmsRes.tenant.CBcommandMapping.*.code|$.MdmsRes.tenant.CBcommandMapping.*.name
-        source: uc
-        wrapper: true
-        isMandatory: false
-        searchClause: AND rh.tenantid in ($command)
     query: |
              WITH receipt_breakup AS (
              SELECT 
@@ -1146,7 +1138,7 @@ ReportDefinitions:
         isMandatory: false
         searchClause: AND eg_user.id = $name::INTEGER
       - name: command
-        label: reports.uc.command
+        label: reports.uc.ulb
         type: singlevaluelist
         pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=tenant&masterName=CBcommandMapping&filter=%5B?(@.tenant=='$tenantid')%5D|$.MdmsRes.tenant.CBcommandMapping.*.code|$.MdmsRes.tenant.CBcommandMapping.*.name
         source: uc
@@ -1229,7 +1221,7 @@ ReportDefinitions:
         isMandatory: false
         searchClause: AND pd.receiptdate <= $toDate
       - name: command
-        label: reports.uc.command
+        label: reports.uc.ulb
         type: singlevaluelist
         pattern:  http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=tenant&masterName=CBcommandMapping&filter=%5B?(@.tenant=='$tenantid')%5D|$.MdmsRes.tenant.CBcommandMapping.*.code|$.MdmsRes.tenant.CBcommandMapping.*.name
         source: uc
@@ -1315,7 +1307,7 @@ ReportDefinitions:
         isMandatory: false
         searchClause: AND challan.businessservice = $businessservice
       - name: command
-        label: reports.uc.command
+        label: reports.uc.ulb
         type: singlevaluelist
         pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=tenant&masterName=CBcommandMapping&filter=%5B?(@.tenant=='$tenantid')%5D|$.MdmsRes.tenant.CBcommandMapping.*.code|$.MdmsRes.tenant.CBcommandMapping.*.name
         source: uc

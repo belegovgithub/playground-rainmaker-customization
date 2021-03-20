@@ -147,7 +147,8 @@
               {
                 "columns": [
                   {
-                    "text": "(Issued under Section 12/17 of the Registration of Births and Deaths Act, 1969 and Rule 8/13 of the Rajasthan Registration of Births and Deaths Rules, 2000)"
+                    "text": "(Issued under Section 12/17 of the Registration of Births and Deaths Act, 1969 and Rule 8/13 of the Rajasthan Registration of Births and Deaths Rules, 2000)",
+                    "style": "rule-header_multiLang"
                   }
                 ]
               }
@@ -191,7 +192,17 @@
               {
                 "columns": [
                   {
-                    "text": "THIS IS TO CERTIFY THAT THE FOLLOWING INFORMATION HAS BEEN TAKEN FROM THE ORIGINAL RECORD OF BIRTH WHICH IS THE REGISTER FOR CANTONMENT BOARD {{cb-name}} CANTONMENT OF TAHSIL/BLOCK DINAPUR-CUM-KHAGAUL OF DISTRICT PATNA OF STATE/UNION TERRITORY BIHAR, INDIA.",
+                    "text": ["This is to certify that the following information has been taken from the original record of birth which is the register for (Local area / Local body) " ,
+                      {
+                      "text": "CHAVNI PARISHAD {{cb-name}}",
+                      "bold": true
+                    }, "of Tehsil / Block xxxx of District ",{
+                      "text": "AJMER",
+                      "bold": true
+                    }," of State / Union Territory",{
+                      "text": "Rajasthan, India",
+                      "bold": true
+                    }],
                     "style": "rule-body"
                   }
                 ]
@@ -354,7 +365,7 @@
                     "width": "10%"
                   },
                   {
-                    "text": "जारी करने वाला प्राधिकारी/ ISSUING AUTHORITY :",
+                    "text": "जारी करने वाले प्राधिकारी के हस्ताक्षर/Signature of issuing authority:",
                     "style": "details-body",
                     "margin": [0, -20, 0, 0]
                   }
@@ -389,7 +400,15 @@
           "body": [
             [
               {
-                "text": "“THIS IS A COMPUTER GENERATED CERTIFICATE.”",
+                "text": "“नोट: “बच्चे के जन्म के समय माता पिता का पता” एवं “माता पिता का स्थायी पता” के कॉलमों से संबन्धित सूचनायेँ 01/01/2007 से पूर्व लागू नहीं थी।.”",
+                "width": 50,
+                "height": 61.25,
+                "style": "instruction-body"
+              }
+            ],
+            [
+              {
+                "text": "“Note: Information in respect of the columns 'Present address of parents at the time of birth of the child' and 'Permanent address of parents' were not applicable before 01/01/2007”",
                 "width": 50,
                 "height": 61.25,
                 "style": "instruction-body"
@@ -406,24 +425,15 @@
           "body": [
             [
               {
-                "text": "“THE GOVT. OF INDIA VIDE CIRCULAR NO. 1/12/2014-VS(CRS) DATED 27-JULY-2015 HAS APPROVED THIS CERTIFICATE AS A VALID LEGAL DOCUMENT FOR ALL OFFICIAL PURPOSES”",
+                "text": "“राजस्थान सरकार के आर्थिक एवं सांख्यिकी विभाग के परिपत्र क्रमांक एफ़ 13/1/39/वीएस/डीईएस/2013/22519 दिनांक 02.06.2015 के द्वारा जन्म एवं मृत्यु प्रमाण पत्र जारी करने हेतु डिजिटल हस्ताक्षर के उपयोग को मान्यता प्रदान की गयी है।”",
                 "width": 50,
                 "height": 61.25,
                 "style": "instruction-body"
               }
-            ]
-          ]
-        },
-        "layout": "noBorders"
-      },
-      {
-        "style": "ws-head",
-        "table": {
-          "widths": ["*"],
-          "body": [
+            ],
             [
               {
-                "text": "“प्रत्येक जन्म एवं मृयु का पंजीकरण सुनिस्चित करें / ENSURE REGISTRATION OF EVERY BIRTH AND DEATH ”",
+                "text": "“Use of Digital Signature for issuing birth and death certificate is recognized by Economics and Statistics Department, Government of Rajasthan vide circular number F 13/1/39/VS/DES/2013/22519 Dated 02.06.2015”",
                 "width": 50,
                 "height": 61.25,
                 "style": "instruction-body"
@@ -456,7 +466,7 @@
         "bold": false,
         "fontSize": 7,
         "fontWeight": 400,
-        "alignment": "center"
+        "alignment": "left"
       },
       "qr-code": {
         "color": "#000000",
@@ -496,6 +506,7 @@
       "rule-header": {
         "color": "#000000",
         "bold": false,
+        "alignment": "center",
         "fontSize": 10,
         "fontWeight": 400,
         "margin": [0, 0, 0, 5]
@@ -512,7 +523,7 @@
         "color": "#000000",
         "bold": false,
         "fontSize": 10,
-        "alignment": "center",
+        "alignment": "left",
         "fontWeight": 400,
         "margin": [0, 0, 0, 0]
       },
@@ -520,8 +531,9 @@
         "color": "#000000",
         "bold": false,
         "fontSize": 11,
+        "alignment": "left",
         "fontWeight": 400,
-        "margin": [0, 0, 0, 0]
+        "margin": [0, -10, 0, 0]
       },
       "details-body": {
         "color": "#000000",

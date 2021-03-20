@@ -1,5 +1,5 @@
 {
-  "key": "bd-delhi-death",
+  "key": "bd-telangana-birth",
   "config": {
     "defaultStyle": {
       "font": "Cambay"
@@ -20,8 +20,8 @@
             [
               {
                 "image": "{{emblemImage}}",
-                "width": 35,
-                "height": 45,
+                "width": 85,
+                "height": 85,
                 "style": "appendix-header-emblem"
               }
             ]
@@ -32,88 +32,26 @@
       {
         "style": "ws-head",
         "table": {
-          "widths": ["20%", "60%", "20%"],
+          "widths": ["*"],
           "body": [
             [
-              {
-                "image": "{{govtImage}}",
-                "width": 70,
-                "height": 70.25,
-                "margin": [0, -10, 0, 0]
-              },
               {
                 "stack": [
                   {
-                    "text": "Form No. 6",
-                    "style": "appendix-header-body"
-                  },
-                  {
-                    "text": "{{govt_label_multiLang}}",
-                    "style": "appendix-header-body"
-                  },
-                  {
-                    "text": "Government of National Capital Territory of Delhi",
+                    "text": "SECUNDERABAD CANTONMENT BOARD",
                     "style": "appendix-header-body",
-                    "margin": [0, 0, 0, 5]
+                    "fontSize": 18
+                  
                   },
                   {
-                    "text": "{{cb_delhi_label_multiLang}}",
-                    "style": "appendix-header-body"
+                    "text": "FORM NO. 5",
+                    "style": "appendix-header-body",
+                    "fontSize": 16
                   },
                   {
-                    "text": "DELHI CANTONMENT BOARD",
-                    "style": "appendix-header-body"
-                  },
-                  {
-                    "text": "मृत्यु-प्रमाण पत्र",
-                    "style": "title-header_multiLang"
-                  },
-                  {
-                    "text": "DEATH CERTIFICATE",
-                    "style": "title-header"
-                  },
-                  {
-                    "text": "{{rule_label_multiLang}}",
-                    "style": "appendix-header-body"
-                  },
-                  {
-                    "text": "(Issue under section 12/17 of the Registration of Births and Deaths Act, 1969 and Rule 8/13 of the Delhi Registration of Births and Deaths Rule, 1999)",
-                    "style": "appendix-header-body"
-                  }
-                ]
-              },
-              {
-                "image": "{{form5}}",
-                "width": 65,
-                "height": 60.25,
-                "margin": [0, -10, 0, 0]
-              }
-            ]
-          ]
-        },
-        "layout": "noBorders"
-      },
-      {
-        "style": "ws-head",
-        "table": {
-          "widths": ["*"],
-          "body": [
-            [
-              {
-                "columns": [
-                  {
-                    "text": "यह प्रमाणित किया जाता है कि निम्नलिखित सूचना मृत्यु के मूल लेख से लिया गया है जो कि (स्थानीय क्षेत्र) दिल्ली छावनी परिषद् जिला दक्षिण-पश्चिम राज्य रास्ट्रीय राजधानी क्षेत्र दिल्ली के रजिस्टर में उल्लिखित है |",
-                    "style": "rule-header_multiLang"
-                  }
-                ]
-              }
-            ],
-            [
-              {
-                "columns": [
-                  {
-                    "text": "This is to certify that the following information has been taken from the original record of death which is the register the Delhi Cantonment Board of District South-West of National Capital Territory of Delhi.",
-                    "style": "rule-header"
+                    "text": "(See Rule 8)",
+                    "style": "appendix-header-body",
+                    "fontSize": 10
                   }
                 ]
               }
@@ -129,163 +67,37 @@
           "body": [
             [
               {
-                "columns": [
-                  {
-                    "text": "{{name_label}}: {{name}}",
-                    "width": "45%",
-                    "style": "details-body"
-                  },
-                  {
-                    "text": " ",
-                    "width": "10%"
-                  },
-                  {
-                    "text": "{{gender_label}} : {{gender}}",
-                    "style": "details-body"
-                  }
-                ]
+                "text": "BIRTH CERTIFICATE",
+                "style": "title-header_multiLang",
+                "bold": true,
+                "fontSize": 16.5
               }
             ],
             [
               {
-                "columns": [
-                  {
-                    "text": "DATE OF DEATH: {{dod}}",
-                    "width": "45%",
-                    "style": "details-body"
-                  },
-                  {
-                    "text": " ",
-                    "width": "10%"
-                  },
-                  {
-                    "text": " ",
-                    "style": "details-body"
-                  }
-                ]
+                "text": "(Issued Under Section 12/17)",
+                "alignment":"center",
+                "bold": true,
+                "fontSize": 11
               }
-            ],
+            ]
+          ]
+        },
+        "layout": "noBorders"
+      },
+      {
+        "style": "ws-head",
+        "table": {
+          "widths": ["*"],
+          "body": [
             [
               {
                 "columns": [
                   {
-                    "text": "{{mother_name_label}}: {{motherName}}",
-                    "width": "45%",
-                    "style": "details-body"
-                  },
-                  {
-                    "text": " ",
-                    "width": "10%"
-                  },
-                  {
-                    "text": "PLACE OF DEATH: {{placeOfDeath}}",
-                    "style": "details-body"
-                  }
-                ]
-              }
-            ],
-            [
-              {
-                "columns": [
-                  {
-                    "text": "{{father_name_label}}: {{fatherName}}",
-                    "width": "45%",
-                    "style": "details-body"
-                  },
-                  {
-                    "text": " ",
-                    "width": "10%"
-                  },
-                  {
-                    "text": "PERMANENT ADDRESS OF DECEASED: {{permanentAddress}}",
-                    "style": "details-body"
-                  }
-                ]
-              }
-            ],
-            [
-              {
-                "columns": [
-                  {
-                    "text": "NAME OF HUSBAND/WIFE : {{nameOfSpouse}}",
-                    "width": "45%",
-                    "style": "details-body"
-                  }
-                ]
-              }
-            ],
-            [
-              {
-                "columns": [
-                  {
-                    "text": "ADDRESS OF THE DECEASED AT THE TIME OF DEATH: {{presentAddress}}",
-                    "width": "45%",
-                    "style": "details-body"
-                  },
-                  {
-                    "text": " ",
-                    "width": "10%"
-                  },
-                  {
-                    "text": "{{registration_date_label}}: {{registration_date}}",
-                    "style": "details-body"
-                  }
-                ]
-              }
-            ],
-            [
-              {
-                "columns": [
-                  {
-                    "text": "{{registration_label}}: {{registrationNo}}",
-                    "width": "45%",
-                    "style": "details-body"
-                  },
-                  {
-                    "text": " ",
-                    "width": "10%"
-                  },
-                  {
-                    "text": " ",
-                    "style": "details-body"
-                  }
-                ]
-              }
-            ],
-            [
-              {
-                "columns": [
-                  {
-                    "text": "{{remarks_label}}: {{remarks}}",
-                    "width": "45%",
-                    "style": "details-body"
-                  },
-                  {
-                    "text": " ",
-                    "width": "10%"
-                  },
-                  {
-                    "text": " ",
-                    "style": "details-body"
-                  }
-                ]
-              }
-            ],
-            [
-              {
-                "columns": [
-                  {
-                    "text": "{{issue_date_label}}: {{issueDate}}",
-                    "width": "45%",
-                    "style": "details-body"
-                  },
-                  {
-                    "text": " ",
-                    "width": "10%"
-                  },
-                  {
-                    "text": " ",
-                    "style": "details-body"
+                    "text": "This is to certify that the following information has been taken from the Original record of death which is the register for Secunderabad Cantonment of District Hyderabad of State TELANGANA.",
+                    "style": "rule-header_multiLang",
+                    "bold": true,
+                    "fontSize": 14
                   }
                 ]
               }
@@ -301,12 +113,162 @@
           "body": [
             [
               {
-                "image": "{{qr_code_image}}",
-                "width": 70,
-                "height": 70,
-                "style": "qr-code"
+                "columns": [
+                  {
+                    "text": "Name",
+                    "width": "35%",
+                    "style": "details-body"
+                  },
+                  {
+                    "text": ":",
+                    "width": "5%"
+                  },
+                  {
+                    "text": "{{name}}",
+                    "style": "details-body-val"
+                  } 
+                ]
               }
-            ]
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": "SEX",
+                    "width": "35%",
+                    "style": "details-body"
+                  },
+                  {
+                    "text": " : ",
+                    "width": "5%"
+                  },
+                  {
+                    "text": "{{gender}}",
+                    "style": "details-body-val"
+                     
+                  } 
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": "Date of Birth",
+                    "width": "35%",
+                    "style": "details-body"
+                  },
+                  {
+                    "text": ":",
+                    "width": "5%"
+                  },
+                  {
+                    "text": "{{dob}}",
+                    "style": "details-body-val"
+                     
+                  } 
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": "Place of Birth",
+                    "width": "35%",
+                    "style": "details-body"
+                  },
+                  {
+                    "text": ":",
+                    "width": "5%"
+                  },
+                  {
+                    "text": "{{placeOfBirth}}",
+                    "style": "details-body-val"
+                     
+                  } 
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": "Name of Father",
+                    "width": "35%",
+                    "style": "details-body"
+                  },
+                  {
+                    "text": ":",
+                    "width": "5%"
+                  },
+                  {
+                    "text": "{{fatherName}}",
+                    "style": "details-body-val"
+                     
+                  } 
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": "Name of Mother",
+                    "width": "35%",
+                    "style": "details-body"
+                  },
+                  {
+                    "text": ":",
+                    "width": "5%"
+                  },
+                  {
+                    "text": "{{motherName}}",
+                    "style": "details-body-val"
+                     
+                  } 
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": "Registration No",
+                    "width": "35%",
+                    "style": "details-body"
+                  },
+                  {
+                    "text": ":",
+                    "width": "5%"
+                  },
+                  {
+                    "text": "{{registrationNo}}",
+                    "style": "details-body-val"
+                     
+                  } 
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": "Date of Registration",
+                    "width": "35%",
+                    "style": "details-body"
+                  },
+                  {
+                    "text": ":",
+                    "width": "5%"
+                  },
+                  {
+                    "text": "{{registration_date}}",
+                    "style": "details-body-val"   
+                  } 
+                ]
+              }
+            ]   
           ]
         },
         "layout": "noBorders"
@@ -318,15 +280,120 @@
           "body": [
             [
               {
-                "text": "{{instruction1_label}}",
-                "width": 50,
-                "height": 61.25,
-                "style": "instruction-body"
+                "columns": [
+                  {
+                    "text": " ",
+                    "width": "35%"
+                    
+                  },
+                  {
+                    "text": " ",
+                    "width": "5%"
+                  },
+                  {
+                    "text": "Certified by",
+                    "style": "details-body-credentials",
+                    "margin":[0,0,0,0] 
+                  } 
+                ]
               }
-            ]
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": " ",
+                    "width": "35%"
+                    
+                  },
+                  {
+                    "text": " ",
+                    "width": "5%"
+                  },
+                  {
+                    "text": "Registrar of Births and Deaths",
+                    "style": "details-body-credentials"
+                  } 
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": "Date:{{dateofissue}}",
+                    "width": "35%",
+                    "style": "details-body"
+                     
+                  }
+                   
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": " ",
+                    "width": "35%"
+                  },
+                  {
+                    "text": " ",
+                    "width": "10%"
+                  },
+                  {
+                    "text": "Name: Mohd. Afzal Mohiuddin",
+                    "style": "details-body-credentials"
+                    
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "image": "{{qr_code_image}}",
+                    "width": 70,
+                    "height": 70,
+                    "style": "qr-code"
+                    
+                  },
+                  {
+                    "text": " ",
+                    "width": "10%"
+                  },
+                  {
+                    "text": "Designation: Health Superintendent",
+                    "style": "details-body-credentials",
+                    "width": "95%"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": " ",
+                    "width": "35%"
+                  },
+                  {
+                    "text": " ",
+                    "width": "10%"
+                  },
+                  {
+                    "text": "{{cb-name}} CANTONMENT BOARD",
+                    "style": "details-body-credentials"
+                    
+                  }
+                ]
+              }
+            ] 
           ]
         },
-        "layout": "noBorders"
+        "layout": "noBorders",
+        "margin":[0,85,0,0] 
       },
       {
         "style": "ws-head",
@@ -335,7 +402,7 @@
           "body": [
             [
               {
-                "text": "{{instruction2_label}}",
+                "text": "“Note: This Certificate does not require any physical Signature.”",
                 "width": 50,
                 "height": 61.25,
                 "style": "instruction-body"
@@ -373,7 +440,7 @@
       "qr-code": {
         "color": "#000000",
         "alignment": "left",
-        "margin": [0, 0, 0, 0]
+        "margin": [0, -30, 0, 0]
       },
       "title-header": {
         "color": "#000000",
@@ -391,43 +458,80 @@
         "alignment": "center",
         "margin": [0, 3, 0, 0]
       },
+      "appendix-header-serialNo": {
+        "color": "#000000",
+        "bold": false,
+        "fontSize": 8,
+        "fontWeight": 400,
+        "margin": [0, -5, 0, 0]
+      },
+      "appendix-header-formNo": {
+        "color": "#000000",
+        "bold": false,
+        "fontSize": 8,
+        "fontWeight": 400,
+        "margin": [20, -5, 0, 0]
+      },
       "rule-header": {
-        "color": "#696969",
-        "bold": true,
+        "color": "#000000",
+        "bold": false,
         "fontSize": 10,
         "fontWeight": 400,
         "margin": [0, 0, 0, 5]
       },
       "rule-header_multiLang": {
-        "color": "#696969",
-        "bold": true,
+        "color": "#000000",
+        "bold": false,
         "fontSize": 11,
         "fontWeight": 400,
-        "margin": [0, 0, 0, 0]
+        "alignment":"center",
+        "margin": [0, 0, 0, 5]
       },
       "rule-body": {
-        "color": "#696969",
-        "bold": true,
+        "color": "#000000",
+        "bold": false,
         "fontSize": 10,
         "fontWeight": 400,
         "margin": [0, 0, 0, 0]
       },
       "rule-body_multiLang": {
-        "color": "#696969",
-        "bold": true,
+        "color": "#000000",
+        "bold": false,
         "fontSize": 11,
         "fontWeight": 400,
         "margin": [0, 0, 0, 0]
       },
-      "details-body": {
-        "color": "#696969",
+      "details-body-credentials": {
+        "color": "#000000",
         "bold": true,
+        "fontSize": 13,
+        "alignment":"center"
+        
+      },
+      "details-body": {
+        "color": "#000000",
+        "bold": true,
+        "fontSize": 13,
+        "fontWeight": 400,
+        "margin": [0, 3, 0, 0]
+      },
+      "details-body-val": {
+        "color": "#000000",
+        "bold": true,
+        "fontSize": 13,
+        "alignment":"center",
+        "fontWeight": 400,
+        "margin": [0, 3, 0, 0]
+      },
+      "signature-body": {
+        "color": "#000000",
+        "bold": false,
         "fontSize": 11,
         "fontWeight": 400,
-        "margin": [0, 5, 0, 0]
+        "margin": [0, -15, 0, 0]
       },
       "appendix-header-body": {
-        "color": "#800000",
+        "color": "#000000",
         "bold": true,
         "fontSize": 9,
         "fontWeight": 400,

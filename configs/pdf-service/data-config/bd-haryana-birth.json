@@ -1,5 +1,5 @@
 {
-    "key": "bd-maharashtra-birth",
+    "key": "bd-haryana-birth",
     "DataConfigs": {
       "serviceName": "rainmaker-common",
       "version": "1.0.0",
@@ -19,7 +19,7 @@
                 },
                 {
                     "variable": "govtImage",
-                    "url": "https://raw.githubusercontent.com/belsoftware/webaccess/master/images/birth/maharashtraGovt.png",
+                    "url": "https://raw.githubusercontent.com/belsoftware/webaccess/master/images/birth/haryanaGovt.png",
                     "type": "image"
                 },
                 {
@@ -62,13 +62,6 @@
                     "variable": "registration_date", 
                     "value": {
                       "path": "$.dateofreport"
-                    },
-                    "type": "date"
-                  },
-                  {
-                    "variable": "updatedOn", 
-                    "value": {
-                      "path": "$.dateofissue"
                     },
                     "type": "date"
                   },
@@ -800,7 +793,7 @@
                         },
                         {
                           "variable": "cb-name-multilang",
-                          "value":"$.MdmsRes.tenant.tenants[0].code",
+                          "value":"$.MdmsRes.tenant.tenants[0].city.districtName",
                           "localisation":{
                             "required":true,
                             "prefix": "PDF_STATIC_LABEL_BD_HI",
