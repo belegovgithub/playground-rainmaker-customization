@@ -997,6 +997,11 @@ ReportDefinitions:
       print:
         pdfPageSize: "A2"
     sourceColumns:
+      - name: ulb
+        label: reports.uc.ulb
+        type: string
+        source: uc
+        total: false
       - name: challanno
         label: reports.uc.challanno
         type: string
@@ -1226,11 +1231,11 @@ ReportDefinitions:
       - name: command
         label: reports.uc.command
         type: singlevaluelist
-        pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=tenant&masterName=CBcommandMapping&filter=%5B?(@.tenant=='$tenantid')%5D|$.MdmsRes.tenant.CBcommandMapping.*.code|$.MdmsRes.tenant.CBcommandMapping.*.name
+        pattern:  http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=tenant&masterName=CBcommandMapping&filter=%5B?(@.tenant=='$tenantid')%5D|$.MdmsRes.tenant.CBcommandMapping.*.code|$.MdmsRes.tenant.CBcommandMapping.*.name
         source: uc
         wrapper: true
         isMandatory: false
-        searchClause: AND rh.tenantid in ($command)
+        searchClause: AND rd.tenantid in ($command)
     query: |
         -- Use CTE to force query plan, compute & use CTE later
           SELECT 
@@ -1253,6 +1258,11 @@ ReportDefinitions:
     version: 1.0.0
     moduleName: rainmaker-uc
     sourceColumns:
+      - name: ulb
+        label: reports.uc.ulb
+        type: string
+        source: uc
+        total: false
       - name: challanno
         label: reports.uc.challanno
         type: string
@@ -1311,7 +1321,7 @@ ReportDefinitions:
         source: uc
         wrapper: true
         isMandatory: false
-        searchClause: AND rh.tenantid in ($command)
+        searchClause: AND challan.tenantid in ($command)
       - name: status
         label: reports.uc.appstatus
         type: singlevaluelist

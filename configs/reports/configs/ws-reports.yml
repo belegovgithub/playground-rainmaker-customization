@@ -866,7 +866,7 @@ ReportDefinitions:
   moduleName: rainmaker-ws
   additionalConfig:
     print:
-      pdfPageSize: "A3"
+    pdfPageSize: "A3"
   sourceColumns:
   - name: tenantId
     label: WS_PROP_DETAIL_CITY
@@ -954,11 +954,11 @@ ReportDefinitions:
   - name: ulb
     label: WS_PROP_DETAIL_CITY
     type: singlevaluelist
-    pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=tenant&masterName=tenants|$.MdmsRes.tenant.tenants.*.code|$.MdmsRes.tenant.tenants.*.name
+    pattern:  http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=tenant&masterName=CBcommandMapping&filter=%5B?(@.tenant=='$tenantid')%5D|$.MdmsRes.tenant.CBcommandMapping.*.code|$.MdmsRes.tenant.CBcommandMapping.*.name
     source: ws
     wrapper: true
     isMandatory: false
-    searchClause: AND ws.tenantId in ($multipleTenantId)
+    searchClause: AND ws.tenantId = $ulb
   query: SELECT distinct initcap(split_part(ws.tenantId,'.', 2)) as tenantId,pd.receiptnumber,service.connectiontype,ws.roadtype,ws.roadcuttingarea,message.message as status,to_char(To_timestamp(ws.lastmodifiedtime / 1000),'DD/MM/YYYY') as lastmodifiedtime,eg_user.name as name,eg_user.mobilenumber,applicationno,pgtxn.bank_transaction_no as banktxnNo,totalamount,To_char(To_timestamp(pd.manualreceiptdate/ 1000), 'DD/MM/YYYY') AS g8issuedate,pd.manualreceiptnumber as g8receiptno FROM eg_ws_connection ws   INNER JOIN egcl_bill bill ON bill.consumercode = ws.applicationno and bill.status !='Cancelled' JOIN egcl_billdetial as bild ON bild.billid = bill.id INNER JOIN(Select DISTINCT billdetailid,amount, taxheadcode,message.message as feeType from egcl_billaccountdetail bilaccd INNER JOIN message ON taxheadcode = message.code AND message.locale='en_IN')  as bilaccd ON bild.id = bilaccd .billdetailid LEFT OUTER JOIN egcl_paymentdetail as pd ON pd.billid =bill.id LEFT OUTER JOIN egcl_payment as pay ON pay.id = pd.paymentid and pay.paymentstatus != 'CANCELLED' LEFT OUTER Join eg_pg_transactions as pgtxn ON pay.transactionnumber = pgtxn.txn_id LEFT OUTER JOIN eg_pt_owner as owner ON owner.propertyid =property_id LEFT OUTER JOIN eg_user  ON uuid =owner.userid LEFT OUTER JOIN message ON substring(message.code,11) ='CONNECTION_ACTIVATED' AND message.locale = 'en_IN'  LEFT OUTER JOIN eg_ws_service as service ON service.connection_id=ws.id WHERE ws.tenantId in ($multipleTenantId) AND service.connectiontype is NOT NULL
   
 - reportName: CommandWaterLevelStatus
@@ -1041,11 +1041,11 @@ ReportDefinitions:
   - name: ulb
     label: WS_COMMON_TABLE_COL_TENANTID_LABEL
     type: singlevaluelist
-    pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=tenant&masterName=tenants|$.MdmsRes.tenant.tenants.*.code|$.MdmsRes.tenant.tenants.*.name
+    pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=tenant&masterName=CBcommandMapping&filter=%5B?(@.tenant=='$tenantid')%5D|$.MdmsRes.tenant.CBcommandMapping.*.code|$.MdmsRes.tenant.CBcommandMapping.*.name
     source: ws
     wrapper: true
     isMandatory: false
-    searchClause: AND ws.tenantId in ($multipleTenantId)
+    searchClause: AND ws.tenantId = $ulb
   query: SELECT initcap(split_part(tenantId, '.', 2)) as tenantId,count(*) as total,SUM(CASE applicationstatus when 'INITIATED' then 1 else 0 end) as initiated,SUM(CASE applicationstatus when 'PENDING_FOR_DOCUMENT_VERIFICATION' then 1 else 0 end) as docverification,SUM(CASE applicationstatus when 'PENDING_FOR_FIELD_INSPECTION' then 1 else 0 end) as fieldinspection,SUM(CASE applicationstatus when 'PENDING_FOR_CITIZEN_ACTION' then 1 else 0 end) as citizenactionreq,SUM(CASE applicationstatus when 'PENDING_APPROVAL_FOR_CONNECTION' then 1 else 0 end) as pendingapproval,SUM(CASE applicationstatus when 'PENDING_FOR_PAYMENT' then 1 else 0 end) as pendingpayment,SUM(CASE applicationstatus when 'PENDING_FOR_CONNECTION_ACTIVATION' then 1 else 0 end) as pendindgconnection,SUM(CASE applicationstatus when 'CONNECTION_ACTIVATED' then 1 else 0 end) as connectionactivation,SUM(CASE applicationstatus when 'APPROVED' then 1 else 0 end) as approved,SUM (CASE applicationstatus when 'REJECTED' then 1 else 0 end) as rejected FROM eg_ws_connection as ws WHERE ws.tenantid in ($multipleTenantId)
   groupby: GROUP BY tenantid
   orderby: ORDER BY tenantid
@@ -1140,11 +1140,11 @@ ReportDefinitions:
   - name: ulb
     label: WS_PROP_DETAIL_CITY
     type: singlevaluelist
-    pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=tenant&masterName=tenants|$.MdmsRes.tenant.tenants.*.code|$.MdmsRes.tenant.tenants.*.name
+    pattern:  http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=tenant&masterName=CBcommandMapping&filter=%5B?(@.tenant=='$tenantid')%5D|$.MdmsRes.tenant.CBcommandMapping.*.code|$.MdmsRes.tenant.CBcommandMapping.*.name
     source: ws
     wrapper: true
     isMandatory: false
-    searchClause: AND ws.tenantId in ($multipleTenantId)
+    searchClause: AND ws.tenantId = $ulb
   query: SELECT distinct initcap(split_part(ws.tenantId,'.', 2)) as tenantId,pd.receiptnumber,service.connectiontype,ws.roadtype,ws.roadcuttingarea,message.message as status,to_char(To_timestamp(ws.lastmodifiedtime / 1000),'DD/MM/YYYY') as lastmodifiedtime,eg_user.name as name,eg_user.mobilenumber,applicationno,pgtxn.bank_transaction_no as banktxnNo,totalamount,To_char(To_timestamp(pd.manualreceiptdate/ 1000), 'DD/MM/YYYY') AS g8issuedate,pd.manualreceiptnumber as g8receiptno FROM eg_sw_connection ws   INNER JOIN egcl_bill bill ON bill.consumercode = ws.applicationno and bill.status !='Cancelled' JOIN egcl_billdetial as bild ON bild.billid = bill.id INNER JOIN(Select DISTINCT billdetailid,amount, taxheadcode,message.message as feeType from egcl_billaccountdetail bilaccd INNER JOIN message ON taxheadcode = message.code AND message.locale='en_IN')  as bilaccd ON bild.id = bilaccd .billdetailid LEFT OUTER JOIN egcl_paymentdetail as pd ON pd.billid =bill.id LEFT OUTER JOIN egcl_payment as pay ON pay.id = pd.paymentid and pay.paymentstatus != 'CANCELLED' LEFT OUTER Join eg_pg_transactions as pgtxn ON pay.transactionnumber = pgtxn.txn_id LEFT OUTER JOIN eg_pt_owner as owner ON owner.propertyid =property_id LEFT OUTER JOIN eg_user  ON uuid =owner.userid LEFT OUTER JOIN message ON substring(message.code,11) ='CONNECTION_ACTIVATED' AND message.locale = 'en_IN'  LEFT OUTER JOIN eg_sw_service as service ON service.connection_id=ws.id WHERE ws.tenantId in ($multipleTenantId) AND service.connectiontype is NOT NULL
   
 - reportName: CommandSWLevelStatus
@@ -1227,11 +1227,11 @@ ReportDefinitions:
   - name: ulb
     label: WS_COMMON_TABLE_COL_TENANTID_LABEL
     type: singlevaluelist
-    pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=tenant&masterName=tenants|$.MdmsRes.tenant.tenants.*.code|$.MdmsRes.tenant.tenants.*.name
+    pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=tenant&masterName=CBcommandMapping&filter=%5B?(@.tenant=='$tenantid')%5D|$.MdmsRes.tenant.CBcommandMapping.*.code|$.MdmsRes.tenant.CBcommandMapping.*.name
     source: ws
     wrapper: true
     isMandatory: false
-    searchClause: AND ws.tenantId in ($multipleTenantId)
+    searchClause: AND ws.tenantId = $ulb
   query: SELECT initcap(split_part(tenantId, '.', 2)) as tenantId,count(*) as total,SUM(CASE applicationstatus when 'INITIATED' then 1 else 0 end) as initiated,SUM(CASE applicationstatus when 'PENDING_FOR_DOCUMENT_VERIFICATION' then 1 else 0 end) as docverification,SUM(CASE applicationstatus when 'PENDING_FOR_FIELD_INSPECTION' then 1 else 0 end) as fieldinspection,SUM(CASE applicationstatus when 'PENDING_FOR_CITIZEN_ACTION' then 1 else 0 end) as citizenactionreq,SUM(CASE applicationstatus when 'PENDING_APPROVAL_FOR_CONNECTION' then 1 else 0 end) as pendingapproval,SUM(CASE applicationstatus when 'PENDING_FOR_PAYMENT' then 1 else 0 end) as pendingpayment,SUM(CASE applicationstatus when 'PENDING_FOR_CONNECTION_ACTIVATION' then 1 else 0 end) as pendindgconnection,SUM(CASE applicationstatus when 'CONNECTION_ACTIVATED' then 1 else 0 end) as connectionactivation,SUM(CASE applicationstatus when 'APPROVED' then 1 else 0 end) as approved,SUM (CASE applicationstatus when 'REJECTED' then 1 else 0 end) as rejected FROM eg_sw_connection as ws WHERE ws.tenantid in ($multipleTenantId)
   groupby: GROUP BY tenantid
   orderby: ORDER BY tenantid
