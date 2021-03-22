@@ -1,5 +1,5 @@
 {
-  "key": "bd-haryana-birth",
+  "key": "bd-jharkhand-birth",
   "config": {
     "defaultStyle": {
       "font": "Cambay"
@@ -53,7 +53,7 @@
                   },
                   {
                     "image": "{{govtImage}}",
-                    "width": 85,
+                    "width": 70,
                     "height": 70.25,
                     "margin": [
                       -10,
@@ -67,11 +67,11 @@
               {
                 "stack": [
                   {
-                    "text": "हरियाणा सरकार ",
+                    "text": "झारखंड सरकार",
                     "style": "appendix-header-body"
                   },
                   {
-                    "text": "GOVERNMENT OF HARYANA",
+                    "text": "GOVERNMENT OF JHARKHAND",
                     "style": "appendix-header-body",
                     "margin": [
                       0,
@@ -81,21 +81,22 @@
                     ]
                   },
                   {
-                    "text": "स्वास्थ सेवाएं विभाग",
+                    "text": "योजना एवं विकास विभाग ",
                     "style": "appendix-header-body"
                   },
                   {
-                    "text": "DEPARTMENT OF HEALTH SERVICES",
+                    "text": "(सांख्यिकी एवं मूल्यांकन निदेशालय)",
                     "style": "appendix-header-body"
                   },
                   {
-                    "text": "कांटोनमेंट बोर्ड अंबाला कैंटोनमेंट",
+                    "text": "DEPARTMENT OF PLANNING AND DEVELOPMENT",
                     "style": "appendix-header-body"
                   },
                   {
-                    "text": "CANTONMENT BOARD AMBALA CANTT.",
+                    "text": "(DIRECTORATE OF STATICSTICS AND EVALUATION)",
                     "style": "appendix-header-body"
                   }
+                  
                 ]
               },
               {
@@ -171,7 +172,7 @@
               {
                 "columns": [
                   {
-                    "text": "(जन्म मृत्यु रजिस्ट्रीकरण अधिनियम,1969 की धारा 12/17 तथा हरियाणा जन्म मृत्यु रजिस्ट्रीकरण नियम, 2002  के  नियम 8/13 के अंतर्गत, जारी किया गया)",
+                    "text": "(जन्म मृत्यु रजिस्ट्रीकरण अधिनियम,1969 की धारा 12/17 तथा झारखंड जन्म मृत्यु रजिस्ट्रीकरण, 1999  के  नियम 8/13 के अंतर्गत, जारी किया गया)",
                     "style": "rule-header_multiLang"
                   }
                 ]
@@ -181,7 +182,7 @@
               {
                 "columns": [
                   {
-                    "text": "(ISSUED  UNDER SECTION  12/17 OF THE REGISTRATION OF BIRTHS & DEATHS ACT, 1969  AND RULE 8/13  OF THE HARYANA REGISTRATION OF BIRTHS & DEATHS RULES 2002)",
+                    "text": "(ISSUED  UNDER SECTION  12/17 OF THE REGISTRATION OF BIRTHS & DEATHS ACT, 1969  AND RULE 8/13  OF THE JHARKHAND REGISTRATION OF BIRTHS & DEATHS RULES 2009)",
                     "style": "rule-header"
                   }
                 ]
@@ -202,7 +203,7 @@
               {
                 "columns": [
                   {
-                    "text": "यह प्रमाणित किया जाता है निम्नलिखित सुचना जन्म के मूल अभिलेख से ली गई है जो कि कांटोनमेंट बोर्ड अंबाला कैंटोनमेंट तहसील अम्बाला जिला अंबाला राज्य/संघ प्रदेश हरियाणा,भारत के रजिस्टर में उल्लिखित है ।",
+                    "text": "यह प्रमाणित किया जाता है निम्नलिखित सूचना जन्म के मूल अभिलेख से ली गई है जो की (स्थानीय क्षेत्र) छावनी परिषद रामगढ तहसील/प्रखण्ड रामगढ  जिला रामगढ  राज्य झारखंड  के रजिस्टर रजिस्टर में उलिखित है ।",
                     "style": "rule-body_multiLang"
                   }
                 ]
@@ -212,7 +213,7 @@
               {
                 "columns": [
                   {
-                    "text": "THIS  IS TO CERTIFY THAT THE  FOLLOWING  INFORMATION  HAS BEEN  TAKEN FROM  THE  ORIGINAL RECORD OF BIRTH WHICH  IS THE  REGISTER  FOR CANTONMENT BOARD AMBALA CANTT. OF TAHSIL/BLOCK AMBALA OF DISTRICT AMBALA OF STATE/UNION TERRITORY HARYANA, INDIA.",
+                    "text": "THIS IS TO CERTIFY THAT THE FOLLOWING INFORMATION HAS BEEN TAKEN FROM THE ORIGINAL RECORD OF BIRTH WHICH IS THE REGISTER FOR CANTONMENT BOARD RAMGARH OF TAHSIL/BLOCK RAMGARH OF DISTRICT RAMGARH OF STATE/UNION TERRITORY JHARKHAND, INDIA.",
                     "style": "rule-body"
                   }
                 ]
@@ -233,29 +234,20 @@
               {
                 "columns": [
                   {
-                    "text": "{{name_label_multiLang}} / {{name_label}}: {{name}}",
+                    "text": "{{name_label_multiLang}} /Name",
                     "width": "45%",
                     "style": "details-body"
                   },
                   {
                     "text": " ",
-                    "width": "10%"
+                    "width": "10%",
+                    "style": "details-body"
                   },
                   {
-                    "text": "{{gender_label_multiLang}} / {{gender_label}} : {{gender}}",
+                    "text": "{{gender_label_multiLang}} / Sex: {{gender}}",
                     "style": "details-body"
-                  }
-                ]
-              }
-            ],
-            [
-             
-              {
-                "columns": [
-                  {
-                    "text": " ई-आईडी नंबर / EID NO: {{eidNo}}",
-                    "style": "details-body"
-                  }
+                  } 
+                  
                 ]
               }
             ],
@@ -263,24 +255,27 @@
               {
                 "columns": [
                   {
-                    "text": "{{dob_label_multiLang}} / {{dob_label}}: {{dob}}",
+                    "text": "{{dob_label_multiLang}} /Date of Birth: {{dob}}",
                     "width": "45%",
                     "style": "details-body"
-                  },
+                  },  
                   {
                     "text": " ",
-                    "width": "10%"
-                  },
+                    "width": "10%",
+                    "style": "details-body"
+                  },                  
                   {
-                    "text": "{{pob_label_multiLang}} / {{pob_label}}: {{placeOfBirth}}",
+                    "text": "{{pob_label_multiLang}} / Place of Birth: {{placeOfBirth}}",
                     "style": "details-body"
                   }
+                  
                 ]
               }
             ],
             [
               {
                 "columns": [
+                  
                   {
                     "text": "{{mother_name_label_multiLang}} / {{mother_name_label}}: {{motherName}}",
                     "width": "45%",
@@ -294,14 +289,16 @@
                     "text": "{{father_name_label_multiLang}} / {{father_name_label}}: {{fatherName}}",
                     "style": "details-body"
                   }
+                  
                 ]
               }
             ],
             [
               {
                 "columns": [
+                  
                   {
-                    "text": "आधार नंबर/ MOTHER'S AADHAR NO: {{motherUid}}",
+                    "text": "आधार नंबर/ MOTHER’S AADHAR NO: {{motherUid}}",
                     "width": "45%",
                     "style": "details-body"
                   },
@@ -310,7 +307,7 @@
                     "width": "10%"
                   },
                   {
-                    "text": "आधार नंबर/ FATHER'S AADHAR NO: {{fatherUid}}",
+                    "text": "आधार नंबर/ FATHER’S AADHAR NO: {{fatherUid}}",
                     "style": "details-body"
                   }
                 ]
@@ -319,8 +316,9 @@
             [
               {
                 "columns": [
+                  
                   {
-                    "text": "बच्चे के जन्म के समय माता-पिता का   पता    / ADDRESS OF PARENTS AT THE TIME OF BIRTH OF THE CHILD: {{childAddress}}",
+                    "text": "बच्चे के जन्म के समय माता-पिता का पता/ ADDRESS OF PARENTS AT THE TIME OF BIRTH OF THE CHILD: {{childAddress}}",
                     "width": "45%",
                     "style": "details-body"
                   },
@@ -329,7 +327,7 @@
                     "width": "10%"
                   },
                   {
-                    "text": "माता-पिता के स्थायी  पता/ PERMANENT  ADDRESS OF PARENTS: {{parentsAddress}}",
+                    "text": "माता-पिता के स्थायी पता/ PERMANENT  ADDRESS OF PARENTS: {{parentsAddress}}",
                     "style": "details-body"
                   }
                 ]
@@ -359,7 +357,15 @@
                 "columns": [
                   {
                     "text": "{{remarks_label_multiLang}} / {{remarks_label}}: {{remarks}}",
-                    "width": "100%",
+                    "width": "45%",
+                    "style": "details-body"
+                  },
+                  {
+                    "text": " ",
+                    "width": "10%"
+                  },
+                  {
+                    "text": " ",
                     "style": "details-body"
                   }
                 ]
@@ -378,7 +384,7 @@
                     "width": "10%"
                   },
                   {
-                    "text": "{{issuing_authority_label_multiLang}} / {{issuing_authority_label}}:",
+                    "text": "{{issuing_authority_label_multiLang}} / {{issuing_authority_label}}: {{issuing_authority_multiLang}} / {{issuing_authority}}",
                     "style": "details-body"
                   }
                 ]
@@ -397,7 +403,7 @@
                     "width": "10%"
                   },
                   {
-                    "text": "{{issuing_authority_multiLang}} / {{issuing_authority}}",
+                    "text": "छावनी बोड/ रामगढ़ छावनी",
                     "style": "details-body"
                   }
                 ]
@@ -416,12 +422,13 @@
                     "width": "10%"
                   },
                   {
-                    "text": "कांटोनमेंट बोर्ड अंबाला कैंटोनमेंट / CANTONMENT BOARD AMBALA CANTT.",
+                    "text": "CANTONMENT BOARD RAMGARH",
                     "style": "details-body"
                   }
                 ]
               }
             ]
+            
           ]
         },
         "layout": "noBorders"
@@ -434,15 +441,34 @@
           ],
           "body": [
             [
-           
-            
               {
                 "image": "{{qr_code_image}}",
                 "width": 70,
                 "height": 70,
                 "style": "qr-code"
               }
-            ]
+            ],
+            
+              [
+                {
+                  "columns": [
+                    {
+                      "text": "UPDATED ON :{{updatedOn}}",
+                      "width": "45%",
+                      "style": "details-body"
+                    },
+                    {
+                      "text": " ",
+                      "width": "10%"
+                    },
+                    {
+                      "text": " ",
+                      "style": "details-body"
+                    }
+                  ]
+                }
+              ]
+            
           ]
         },
         "layout": "noBorders"
@@ -456,7 +482,7 @@
           "body": [
             [
               {
-                "text": "THIS IS A COMPUTER GENERATED CERTIFICATE WHICH CONTAINS FACSIMLE SIGNATURE OF THE ISSUING AUTHORITY.",
+                "text": "THIS IS A COMPUTER GENERATED CERTIFICATE WHICH CONTAINS FACSIMILE SIGNATURE OF THE ISSUING AUTHORITY",
                 "width": 50,
                 "height": 61.25,
                 "style": "instruction-body"
@@ -494,10 +520,10 @@
           "body": [
             [
               {
-                "text": "*प्रत्येक जन्म एवं  मृत्यु का पंजीकरण सुनिश्चित करें/ ENSURE REGISTRATION OF EVERY BIRTH AND DEATH",
+                "text": "जन्म  एवं मृतु का पंजीकरण सुनिश्चित करें/ENSURE REGISTRATION OF EVERY BIRTH AND DEATH",
                 "width": 50,
                 "height": 61.25,
-                "style": "rule-body"
+                "style": "instruction-body"
               }
             ]
           ]
