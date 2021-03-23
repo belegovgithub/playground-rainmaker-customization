@@ -1,9 +1,9 @@
 {
-    "key": "bd-jharkhand-death",
+    "key": "bd-kerala-birth",
     "DataConfigs": {
       "serviceName": "rainmaker-common",
       "version": "1.0.0",
-      "baseKeyPath": "$.DeathCertificate.*",
+      "baseKeyPath": "$.BirthCertificate.*",
       "entityIdPath":"$.id",
       "isCommonTableBorderRequired": true,
       "mappings": [
@@ -19,7 +19,7 @@
                 },
                 {
                     "variable": "govtImage",
-                    "url": "https://raw.githubusercontent.com/belsoftware/webaccess/master/images/birth/jharkhandGovt_new.png",
+                    "url": "https://raw.githubusercontent.com/belsoftware/webaccess/master/images/birth/jammuKashmirGovt.png",
                     "type": "image"
                 },
                 {
@@ -58,6 +58,13 @@
                     "path": "$.registrationno"
                   }
                 },
+                {
+                  "variable": "remarks", 
+                  "value": {
+                    "path": "$.remarks"
+                  }
+                },
+                
                 {
                     "variable": "registration_date", 
                     "value": {
