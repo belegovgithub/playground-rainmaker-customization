@@ -442,7 +442,20 @@
                 "height": 70,
                 "style": "qr-code"
               }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": "UPDATED ON: ",
+                    "width": "45%",
+                    "style": "details-body"
+                  }
+                ]
+              }
             ]
+            
+
           ]
         },
         "layout": "noBorders"
