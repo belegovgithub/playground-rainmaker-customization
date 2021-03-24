@@ -1,0 +1,508 @@
+{
+  "key": "bd-gujarat-birth",
+  "config": {
+    "defaultStyle": {
+      "font": "gujarati"
+    },
+    "watermark": {
+      "text": "BEL UAT BEL UAT",
+      "color": "gery",
+      "opacity": 0.1,
+      "bold": true,
+      "italics": false
+    },
+    "content": [
+      {
+        "style": "ws-head",
+        "table": {
+          "widths": ["*"],
+          "body": [
+            [
+              {
+                "image": "{{emblemImage}}",
+                "width": 35,
+                "height": 45,
+                "style": "appendix-header-emblem"
+              }
+            ]
+          ]
+        },
+        "layout": "noBorders"
+      },
+      {
+        "style": "ws-head",
+        "table": {
+          "widths": ["20%", "60%", "20%"],
+          "body": [
+            [
+              {
+                "text":" "
+              },
+              {
+                "stack": [
+                  {
+                    "text": "ગુજરાત સરકાર",
+                    "style": "appendix-header-body"
+                  },
+                  {
+                    "text": "GOVERNMENT OF GUJARAT",
+                    "style": "appendix-header-body",
+                    "margin": [0, 0, 0, 5]
+                  },
+                  {
+                    "text": "આરોગ્ય અને પરિવાર કલ્યાણ વિભાગ",
+                    "style": "appendix-header-body"
+                  },
+                  {
+                    "text": "DEPARTMENT OF HELATH AND FAMILY WELFARE",
+                    "style": "appendix-header-body",
+                    "margin": [0, 0, 0, 5]
+                  }
+                   
+                ]
+              },
+              {
+                "stack": [
+                  {
+                    "text": "ફોર્મ—૫  FORM-5",
+                    "style": "appendix-header-formNo"
+                  },
+                  {
+                    "image": "{{form5}}",
+                    "width": 65,
+                    "height": 60.25,
+                    "margin": [10, -20, 0, 0]
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        "layout": "noBorders"
+      },
+      {
+        "style": "ws-head",
+        "table": {
+          "widths": ["*"],
+          "body": [
+            [
+              {
+                  "stack": [
+                  {
+                    "text": "BIRTH CERTIFICATE",
+                    "style": "title-header_multiLang"
+                  },
+                  {
+                    "text": "(જન્મ અને મરણ નોંધણી અધિનિયમ, ૧૯૬૯ની કલમ 1૨/૧૭ અને ગુજરાત જન્મ-મરણ નોંધણી નિયમો, ૨૦૧૮ના નિયમ-૮ મુજબ)"   
+                  },
+                  {
+                    "text": "(Issued under Section 12/17 of the Registration of Births and Deaths Act, 1969 and Rule 8 of the Gujarat Registration of Births and Deaths Rules, 2018)"   
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        "layout": "noBorders"
+      },
+      {
+        "style": "ws-head",
+        "table": {
+          "body": [
+            [
+              {
+                "columns": [
+                  {
+                    "text": "આથી પ્રમાણીત કરવામાં આવે છે કે, નીચેની માહિતી જન્મનાં મૂળ રેકર્ડમાંથી લેવામાં આવી છે.જે ભારતનાં ગુજરાત  રાજ્યનાં અમદાવાદ જીલ્લાના અમદાવાદ સીટી(પશ્ચિમ) તાલુકાના Ahmedabad Cantonment(CB)  ગ્રામ્ય/શહેરનાં રજીસ્ટરમાં છે.",
+                    "style": "rule-header_multiLang"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": "This is to certify that the following information has been taken from the original record of birth which is in the register for Village/City   Ahmedabad Cantonment(CB) of Taluka Ahmedabad City (West) of District Ahmedabad of Gujarat State, India.",
+                    "style": "rule-header_multiLang"
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        "layout": "noBorders"
+      },
+      {
+        "style": "ws-head",
+        "table": {
+          "widths": ["*"],
+          "body": [
+            [
+              {
+                "columns": [
+                  {
+                    "text": "નામ/Name : {{name}}",
+                    "width": "45%",
+                    "style": "details-body"
+                  },
+                  {
+                    "text": " ",
+                    "width": "10%"
+                  },
+                  {
+                    "text": "જાતિ / Sex : {{gender}}",
+                    "style": "details-body"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": "જન્મ તારીખ / Date of Birth : {{dob}}",
+                    "width": "45%",
+                    "style": "details-body"
+                  },
+                  {
+                    "text": " ",
+                    "width": "10%"
+                  },
+                  {
+                    "text": "જન્મ સ્થળ / Place of Birth : {{placeOfBirth}}",
+                    "style": "details-body"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": "માતાનું નામ / Name of Mother : {{motherName}}",
+                    "width": "45%",
+                    "style": "details-body"
+                  },
+                  {
+                    "text": " ",
+                    "width": "10%"
+                  },
+                  {
+                    "text": "પિતાનું નામ / Name of Father : {{fatherName}}",
+                    "style": "details-body"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": "બાળકનાં જન્મ સમયે માતા-પિતાનું સરનામું / Address of parents at the time of Birth of child : {{childAddress}}",
+                    "width": "45%",
+                    "style": "details-body"
+                  },
+                  {
+                    "text": " ",
+                    "width": "10%"
+                  },
+                  {
+                    "text": "માતા-પિતાનું કાયમી સરનામું / Permanent Address of Parents : {{parentsAddress}}",
+                    "style": "details-body"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": "નોધણી ક્રમાંક / Registration No: {{registrationNo}}",
+                    "width": "45%",
+                    "style": "details-body"
+                  },
+                  {
+                    "text": " ",
+                    "width": "10%"
+                  },
+                  {
+                    "text": "નોધણીની તારીખ / Registration Date : {{registration_date}}",
+                    "style": "details-body"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": "રીમાર્કસ(વિશેષ નોંધ) / Remarks (if any) : {{remarks}}",
+                    "width": "45%",
+                    "style": "details-body",
+                    "margin": [0, -20, 0, 0]
+                  },
+                  {
+                    "text": " ",
+                    "width": "10%"
+                  },
+                  {
+                    "text": "પ્રમાણપત્ર નંબર/Certificate No : {{registrationNo}}",
+                    "style": "details-body"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": "પ્રમાણપત્ર કાઢી આપ્યાની તારીખ / Date of issue : {{issueDate}}",
+                    "width": "45%",
+                    "style": "details-body",
+                    "margin": [0, -20, 0, 0]
+                  },
+                  {
+                    "text": " ",
+                    "width": "10%"
+                  },
+                  {
+                    "text": "પ્રમાણપત્ર આપનાર સત્તાધિકારીની સહી/Signature of Issuing  Authority",
+                    "style": "details-body",
+                    "margin": [0, -20, 0, 0]
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        "layout": "noBorders"
+      },
+      {
+        "style": "ws-head",
+        "table": {
+          "widths": ["*"],
+          "body": [
+            [
+              {
+                "image": "{{qr_code_image}}",
+                "width": 70,
+                "height": 70,
+                "style": "qr-code"
+              }
+            ]
+          ]
+        },
+        "layout": "noBorders"
+      }
+       
+    ],
+    "styles": {
+      "pdf-header": {
+        "fillColor": "#F2F2F2",
+        "margin": [-70, -41, -81, 10]
+      },
+      "appendix-header": {
+        "color": "#000000",
+        "bold": true,
+        "fontSize": 9,
+        "fontWeight": 400,
+        "alignment": "center"
+      },
+      "appendix-header-emblem": {
+        "color": "#000000",
+        "alignment": "center",
+        "margin": [0, -30, 0, 0]
+      },
+      "instruction-body": {
+        "color": "#000000",
+        "bold": false,
+        "fontSize": 7,
+        "fontWeight": 400,
+        "alignment": "left"
+      },
+      "qr-code": {
+        "color": "#000000",
+        "alignment": "left",
+        "margin": [0, -30, 0, 0]
+      },
+      "title-header": {
+        "color": "#000000",
+        "bold": true,
+        "fontSize": 14,
+        "fontWeight": 400,
+        "alignment": "center",
+        "margin": [0, 1, 0, 0]
+      },
+      "title-header_multiLang": {
+        "color": "#000000",
+        "bold": true,
+        "fontSize": 15,
+        "fontWeight": 400,
+        "alignment": "center",
+        "margin": [0, 3, 0, 0]
+      },
+      "appendix-header-serialNo": {
+        "color": "#000000",
+        "bold": false,
+        "fontSize": 8,
+        "fontWeight": 400,
+        "margin": [0, -5, 0, 0]
+      },
+      "appendix-header-formNo": {
+        "color": "#000000",
+        "bold": false,
+        "fontSize": 8,
+        "fontWeight": 400,
+        "margin": [20, -5, 0, 0]
+      },
+      "rule-header": {
+        "color": "#000000",
+        "bold": false,
+        "alignment": "center",
+        "fontSize": 10,
+        "fontWeight": 400,
+        "margin": [0, 0, 0, 5]
+      },
+      "rule-header_multiLang": {
+        "color": "#000000",
+        "bold": false,
+        "alignment": "center",
+        "fontSize": 11,
+        "fontWeight": 400,
+        "margin": [0, 0, 0, 5]
+      },
+      "rule-body": {
+        "color": "#000000",
+        "bold": false,
+        "fontSize": 10,
+        "alignment": "left",
+        "fontWeight": 400,
+        "margin": [0, 0, 0, 0]
+      },
+      "rule-body_multiLang": {
+        "color": "#000000",
+        "bold": false,
+        "fontSize": 11,
+        "alignment": "left",
+        "fontWeight": 400,
+        "margin": [0, -10, 0, 0]
+      },
+      "details-body": {
+        "color": "#000000",
+        "bold": false,
+        "fontSize": 11,
+        "fontWeight": 400,
+        "margin": [0, 3, 0, 0]
+      },
+      "signature-body": {
+        "color": "#000000",
+        "bold": false,
+        "fontSize": 11,
+        "fontWeight": 400,
+        "margin": [0, -15, 0, 0]
+      },
+      "appendix-header-body": {
+        "color": "#000000",
+        "bold": true,
+        "fontSize": 9,
+        "fontWeight": 400,
+        "alignment": "center"
+      },
+      "receipt-value-down-sub": {
+        "color": "#000000",
+        "bold": false,
+        "fontSize": 11,
+        "fontWeight": 400,
+        "alignment": "left",
+        "margin": [0, 0, 0, 5]
+      },
+      "receipt-value-down-rec": {
+        "color": "#000000",
+        "bold": false,
+        "fontSize": 13,
+        "fontWeight": 400,
+        "alignment": "left",
+        "margin": [0, 0, 0, 0]
+      },
+      "receipt-value-down": {
+        "color": "#000000",
+        "bold": false,
+        "fontSize": 13,
+        "fontWeight": 400,
+        "alignment": "left",
+        "margin": [-8, 0, 0, 5]
+      },
+      "pdf-application-no-value": {
+        "fontSize": 12,
+        "font": "Roboto",
+        "italics": true,
+        "margin": [-18, 8, 0, 0],
+        "color": "#484848"
+      },
+      "pdf-header-text": {
+        "color": "#484848",
+        "fontSize": 20,
+        "bold": true,
+        "letterSpacing": 0.74,
+        "margin": [0, 0, 0, 5]
+      },
+      "pdf-header-sub-text": {
+        "color": "#484848",
+        "fontSize": 15,
+        "letterSpacing": 0.6
+      },
+      "pdf-application-no": {
+        "fontSize": 12,
+        "bold": true,
+        "margin": [-18, 8, 0, 0],
+        "color": "#484848"
+      },
+      "pdf-card-title": {
+        "fontSize": 11,
+        "bold": true,
+        "margin": [-18, 16, 8, 8],
+        "color": "#484848",
+        "fontWeight": 500
+      },
+      "pdf-card-no-title": {
+        "fontSize": 11,
+        "bold": true,
+        "color": "#484848",
+        "fontWeight": 500
+      },
+      "pdf-table-card-white": {
+        "fillColor": "white",
+        "fontSize": 7,
+        "color": "#484848",
+        "margin": [-20, -2, -8, -8]
+      },
+      "pdf-table-card": {
+        "fillColor": "#F2F2F2",
+        "fontSize": 7,
+        "color": "#484848",
+        "margin": [-20, -2, -8, -8]
+      },
+      "pdf-card-key": {
+        "color": "rgba(0, 0, 0, 0.54)",
+        "fontSize": 8,
+        "margin": [0, 1, 0, 0]
+      },
+      "pdf-card-sub-header": {
+        "color": "rgba(0, 0, 0, 0.94)",
+        "fontSize": 9,
+        "bold": true,
+        "margin": [0, 3, 0, 0]
+      },
+      "pdf-card-value": {
+        "fontSize": 10,
+        "color": "rgba(0, 0, 0, 0.87)",
+        "margin": [0, 0, 0, 1]
+      },
+      "pdf-head-qr-code": {
+        "fillColor": "#F2F2F2",
+        "margin": [-70, -41, -81, 0]
+      }
+    }
+  }
+}
