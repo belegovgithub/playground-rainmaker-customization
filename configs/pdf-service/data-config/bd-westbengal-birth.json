@@ -71,14 +71,14 @@
                 {
                   "variable": "fatherName", 
                   "value": {
-                    "path": "$.birthFatherInfo.firstname"
+                    "path": "$.birthFatherInfo.fullName"
                   },
                   "type":"setEmpty"
                 },
                 {
                   "variable": "motherName", 
                   "value": {
-                    "path": "$.birthMotherInfo.firstname"
+                    "path": "$.birthMotherInfo.fullName"
                   },
                   "type":"setEmpty"
                 },
@@ -95,17 +95,23 @@
                   }
                 },
                 {
-                    "variable": "fatherUid", 
-                    "value": {
-                      "path": "$.fatherUid"
-                    }
-                  },
-                  {
-                    "variable": "nationality", 
-                    "value": {
-                      "path": "$.firstname"
-                    }
-                  },
+                  "variable": "fatherUid", 
+                  "value": {
+                    "path": "$.birthFatherInfo.aadharno"
+                  }
+                },
+                {
+                  "variable": "motherUid", 
+                  "value": {
+                    "path": "$.birthMotherInfo.aadharno"
+                  }
+                },
+                {
+                  "variable": "remarks", 
+                  "value": {
+                    "path": "$.remarks"
+                  }
+                },
                   {
                     "variable": "motherUid", 
                     "value": {
@@ -787,7 +793,7 @@
             {
                 "externalAPI": [     
                   { 
-                      "path": "http://localhost:8085/egov-mdms-service/v1/_get",
+                      "path": "http://egov-mdms-service:8080/egov-mdms-service/v1/_get",
                       "queryParam": "moduleName=tenant&masterName=tenants&tenantId=pb&filter=%5B?(@.code=='{$.tenantId}')%5D",
                       "apiRequest": null,
                       "responseMapping":[

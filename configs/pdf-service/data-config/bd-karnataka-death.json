@@ -105,14 +105,14 @@
               {
                 "variable": "fatherName",
                 "value": {
-                  "path": "$.deathFatherInfo.firstname"
+                  "path": "$.deathFatherInfo.fullName"
                 },
                 "type": "setEmpty"
               },
               {
                 "variable": "motherName",
                 "value": {
-                  "path": "$.deathMotherInfo.firstname"
+                  "path": "$.deathMotherInfo.fullName"
                 },
                 "type": "setEmpty"
               },
@@ -129,15 +129,21 @@
                 }
               },
               {
-                "variable": "fatherUid",
+                "variable": "fatherUid", 
                 "value": {
-                  "path": "$.fatherUid"
+                  "path": "$.deathFatherInfo.aadharno"
                 }
               },
               {
-                "variable": "motherUid",
+                "variable": "motherUid", 
                 "value": {
-                  "path": "$.motherUid"
+                  "path": "$.deathMotherInfo.aadharno"
+                }
+              },
+              {
+                "variable": "remarks", 
+                "value": {
+                  "path": "$.remarks"
                 }
               },
               {

@@ -20,7 +20,7 @@
             [
               {
                 "image": "{{emblemImage}}",
-                "width": 35,
+                "width": 55,
                 "height": 45,
                 "style": "appendix-header-emblem"
               }
@@ -32,7 +32,7 @@
       {
         "style": "ws-head",
         "table": {
-          "widths": ["20%", "60%", "20%"],
+          "widths": ["15%", "70%", "15%"],
           "body": [
             [
               {
@@ -131,7 +131,7 @@
               {
                 "columns": [
                   {
-                    "text": "{{name_label}}: {{name}}",
+                    "text": [{"text":"NAME:", "bold":true},"{{name}}"],
                     "width": "45%",
                     "style": "details-body"
                   },
@@ -140,7 +140,7 @@
                     "width": "10%"
                   },
                   {
-                    "text": "{{gender_label}} : {{gender}}",
+                    "text": [{"text":"{{gender_label}}:", "bold":true},"{{gender}}"],
                     "style": "details-body"
                   }
                 ]
@@ -150,83 +150,7 @@
               {
                 "columns": [
                   {
-                    "text": "{{dob_label}}: {{dob}}",
-                    "width": "45%",
-                    "style": "details-body"
-                  },
-                  {
-                    "text": " ",
-                    "width": "10%"
-                  },
-                  {
-                    "text": " ",
-                    "style": "details-body"
-                  }
-                ]
-              }
-            ],
-            [
-              {
-                "columns": [
-                  {
-                    "text": "{{mother_name_label}}: {{motherName}}",
-                    "width": "45%",
-                    "style": "details-body"
-                  },
-                  {
-                    "text": " ",
-                    "width": "10%"
-                  },
-                  {
-                    "text": "{{pob_label}}: {{placeOfBirth}}",
-                    "style": "details-body"
-                  }
-                ]
-              }
-            ],
-            [
-              {
-                "columns": [
-                  {
-                    "text": "{{father_name_label}}: {{fatherName}}",
-                    "width": "45%",
-                    "style": "details-body"
-                  },
-                  {
-                    "text": " ",
-                    "width": "10%"
-                  },
-                  {
-                    "text": "{{parent_address_label}}: {{parentsAddress}}",
-                    "style": "details-body"
-                  }
-                ]
-              }
-            ],
-            [
-              {
-                "columns": [
-                  {
-                    "text": "{{child_address_label}}: {{childAddress}}",
-                    "width": "45%",
-                    "style": "details-body"
-                  },
-                  {
-                    "text": " ",
-                    "width": "10%"
-                  },
-                  {
-                    "text": "{{registration_date_label}}: {{registration_date}}",
-                    "style": "details-body"
-                  }
-                ]
-              }
-            ],
-            [
-              {
-                "columns": [
-                  {
-                    "text": "{{registration_label}}: {{registrationNo}}",
+                    "text": [{"text":"{{dob_label}}:", "bold":true},"{{dob}}"],
                     "width": "45%",
                     "style": "details-body"
                   },
@@ -245,7 +169,8 @@
               {
                 "columns": [
                   {
-                    "text": "{{remarks_label}}: {{remarks}}",
+                    "text": [{"text":"{{mother_name_label}}:", "bold":true},"{{motherName}}"],
+                   
                     "width": "45%",
                     "style": "details-body"
                   },
@@ -254,7 +179,8 @@
                     "width": "10%"
                   },
                   {
-                    "text": " ",
+                    "text": [{"text":"{{pob_label}}:", "bold":true},"{{placeOfBirth}}"],
+                   
                     "style": "details-body"
                   }
                 ]
@@ -264,9 +190,66 @@
               {
                 "columns": [
                   {
-                    "text": "{{issue_date_label}}: {{issueDate}}",
+                    "text": [{"text":"{{father_name_label}}:", "bold":true},"{{fatherName}}"],
                     "width": "45%",
                     "style": "details-body"
+                  },
+                  {
+                    "text": " ",
+                    "width": "10%"
+                  },
+                  {
+                    "text": [{"text":"{{parent_address_label}}:", "bold":true},"{{parentsAddress}}"],
+                    
+                    "style": "details-body"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": [{"text":"{{child_address_label}}:", "bold":true},"{{childAddress}}"],
+                    
+                    "width": "45%",
+                    "style": "details-body"
+                  },
+                  {
+                    "text": " ",
+                    "width": "10%"
+                  },
+                  {
+                    "text": [{"text":"{{registration_date_label}}:", "bold":true},"{{registration_date}}"],
+                   
+                    "style": "details-body"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    
+                      "stack": [  
+                        {
+                          "text": [{"text":"{{registration_label}}:", "bold":true},"{{registrationNo}}"],
+                          "width": "45%",
+                          "style": "details-body"
+                        },
+                        {
+                          "text": [{"text":"{{remarks_label}}:", "bold":true},"{{remarks}}"],
+                          "width": "45%",
+                          "style": "details-body"
+                        },
+                        {
+                          "text": [{"text":"{{issue_date_label}}:", "bold":true},"{{issueDate}}"],
+                          "width": "45%",
+                          "style": "details-body"
+                        }
+                      ]
+                    
                   },
                   {
                     "text": " ",
@@ -279,6 +262,7 @@
                 ]
               }
             ]
+            
           ]
         },
         "layout": "noBorders"
@@ -307,10 +291,11 @@
           "body": [
             [
               {
-                "text": "{{instruction1_label}}",
-                "width": 50,
-                "height": 61.25,
-                "style": "instruction-body"
+                "text": [{"text":"Note:", "bold":true},"This Certificate is computer generated and does not require any Seal/Signature in original. The authenticity of this certificate can be verified by scanning QR Code"],
+                "style": "instruction-body",
+                "alignment": "left",
+                "margin": [0, 10, 0, 5],
+                "fontSize": 10
               }
             ]
           ]
@@ -324,10 +309,11 @@
           "body": [
             [
               {
-                "text": "{{instruction2_label}}",
-                "width": 50,
-                "height": 61.25,
-                "style": "instruction-body"
+                "text": "“प्रत्येक जन्म एवं मृत्यु का पंजीकरण सुनिश्चित करें/ ENSURE REGISTRATION OF EVERY BIRTH AND DEATH”",
+                "style": "instruction-body",
+                "alignment": "center",
+                "fontSize": 9,
+                "bold":true
               }
             ]
           ]
@@ -354,10 +340,8 @@
       },
       "instruction-body": {
         "color": "#000000",
-        "bold": false,
-        "fontSize": 7,
-        "fontWeight": 400,
-        "alignment": "center"
+        "bold": false
+         
       },
       "qr-code": {
         "color": "#000000",
@@ -381,18 +365,18 @@
         "margin": [0, 3, 0, 0]
       },
       "rule-header": {
-        "color": "#696969",
+        "color": "#000000",
         "bold": true,
         "fontSize": 10,
         "fontWeight": 400,
-        "margin": [0, 0, 0, 5]
+        "margin": [0, 5, 0, 5]
       },
       "rule-header_multiLang": {
-        "color": "#696969",
+        "color": "#000000",
         "bold": true,
         "fontSize": 11,
         "fontWeight": 400,
-        "margin": [0, 0, 0, 0]
+        "margin": [0, 5, 0, 0]
       },
       "rule-body": {
         "color": "#696969",
@@ -409,14 +393,14 @@
         "margin": [0, 0, 0, 0]
       },
       "details-body": {
-        "color": "#696969",
-        "bold": true,
+        "color": "#000000",
+        "bold": false,
         "fontSize": 11,
         "fontWeight": 400,
-        "margin": [0, 5, 0, 0]
+        "margin": [0, 4, 0, 0]
       },
       "appendix-header-body": {
-        "color": "#800000",
+        "color": "#000000",
         "bold": true,
         "fontSize": 9,
         "fontWeight": 400,

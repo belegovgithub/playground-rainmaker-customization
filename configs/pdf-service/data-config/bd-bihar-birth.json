@@ -68,14 +68,14 @@
                 {
                   "variable": "fatherName", 
                   "value": {
-                    "path": "$.birthFatherInfo.firstname"
+                    "path": "$.birthFatherInfo.fullName"
                   },
                   "type":"setEmpty"
                 },
                 {
                   "variable": "motherName", 
                   "value": {
-                    "path": "$.birthMotherInfo.firstname"
+                    "path": "$.birthMotherInfo.fullName"
                   },
                   "type":"setEmpty"
                 },
@@ -94,13 +94,19 @@
                 {
                     "variable": "fatherUid", 
                     "value": {
-                      "path": "$.fatherUid"
+                      "path": "$.birthFatherInfo.aadharno"
                     }
                   },
                   {
                     "variable": "motherUid", 
                     "value": {
-                      "path": "$.motherUid"
+                      "path": "$.birthMotherInfo.aadharno"
+                    }
+                  },
+                  {
+                    "variable": "remarks", 
+                    "value": {
+                      "path": "$.remarks"
                     }
                   },
                   {

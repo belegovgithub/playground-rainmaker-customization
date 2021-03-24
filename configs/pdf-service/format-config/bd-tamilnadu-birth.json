@@ -57,11 +57,11 @@
                     "margin": [0, 0, 0, 5]
                   },
                   {
-                    "text": "கண்டோன்மெண்ட்புனிததோமையார்மலை",
+                    "text": "கண்டோன்மெண்ட் {{cb_name}}",
                     "style": "appendix-header-body"
                   },
                   {
-                    "text": "CANTONMENTBOARD ST.THOMAS MOUNT CUM PALLAVARAM",
+                    "text": "CANTONMENT BOARD {{cb_name}}",
                     "style": "appendix-header-body"
                   }
                 ]
@@ -161,7 +161,7 @@
               {
                 "columns": [
                   {
-                    "text": "THIS IS TO CERTIFY THAT THE FOLLOWING INFORMATION HAS BEEN TAKEN FROM THE ORIGINAL RECORD OF BIRTH WHICH IS THE REGISTER FOR CANTONMENT BOARD ST THOMAS MOUNT OF PALLAVARAM TALUK OF KANCHEEPURAM DISTRICT OF TAMILNADU STATE, INDIA",
+                    "text": "THIS IS TO CERTIFY THAT THE FOLLOWING INFORMATION HAS BEEN TAKEN FROM THE ORIGINAL RECORD OF BIRTH WHICH IS THE REGISTER FOR CANTONMENT BOARD {{cb_name}} TALUK OF KANCHEEPURAM DISTRICT OF TAMILNADU STATE, INDIA",
                     "style": "rule-body"
                   }
                 ]

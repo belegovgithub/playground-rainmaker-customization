@@ -100,14 +100,14 @@
               {
                 "variable": "fatherName",
                 "value": {
-                  "path": "$.deathFatherInfo.firstname"
+                  "path": "$.deathFatherInfo.fullName"
                 },
                 "type": "setEmpty"
               },
               {
                 "variable": "motherName",
                 "value": {
-                  "path": "$.deathMotherInfo.firstname"
+                  "path": "$.deathMotherInfo.fullName"
                 },
                 "type": "setEmpty"
               },
@@ -124,15 +124,21 @@
                 }
               },
               {
-                "variable": "fatherUid",
+                "variable": "fatherUid", 
                 "value": {
-                  "path": "$.fatherUid"
+                  "path": "$.deathFatherInfo.aadharno"
                 }
               },
               {
-                "variable": "motherUid",
+                "variable": "motherUid", 
                 "value": {
-                  "path": "$.motherUid"
+                  "path": "$.deathMotherInfo.aadharno"
+                }
+              },
+              {
+                "variable": "remarks", 
+                "value": {
+                  "path": "$.remarks"
                 }
               },
               {
@@ -818,7 +824,7 @@
                     "value": "$.MdmsRes.tenant.tenants[0].code",
                     "localisation": {
                       "required": true,
-                      "prefix": "PDF_STATIC_LABEL_BD_EN",
+                      "prefix": "PDF_STATIC_LABEL_BD_CB_EN",
                       "module": "rainmaker-pdf"
                     }
                   },
@@ -827,7 +833,43 @@
                     "value": "$.MdmsRes.tenant.tenants[0].code",
                     "localisation": {
                       "required": true,
-                      "prefix": "PDF_STATIC_LABEL_BD_HI",
+                      "prefix": "PDF_STATIC_LABEL_BD_CB_HI",
+                      "module": "rainmaker-pdf"
+                    }
+                  },
+                  {
+                    "variable": "block-name",
+                    "value": "$.MdmsRes.tenant.tenants[0].code",
+                    "localisation": {
+                      "required": true,
+                      "prefix": "PDF_STATIC_LABEL_BD_BL_EN",
+                      "module": "rainmaker-pdf"
+                    }
+                  },
+                  {
+                    "variable": "block-name-multilang",
+                    "value": "$.MdmsRes.tenant.tenants[0].code",
+                    "localisation": {
+                      "required": true,
+                      "prefix": "PDF_STATIC_LABEL_BD_BL_HI",
+                      "module": "rainmaker-pdf"
+                    }
+                  },
+                  {
+                    "variable": "district-name",
+                    "value": "$.MdmsRes.tenant.tenants[0].code",
+                    "localisation": {
+                      "required": true,
+                      "prefix": "PDF_STATIC_LABEL_BD_DIST_EN",
+                      "module": "rainmaker-pdf"
+                    }
+                  },
+                  {
+                    "variable": "district-name-multilang",
+                    "value": "$.MdmsRes.tenant.tenants[0].code",
+                    "localisation": {
+                      "required": true,
+                      "prefix": "PDF_STATIC_LABEL_BD_DIST_HI",
                       "module": "rainmaker-pdf"
                     }
                   }

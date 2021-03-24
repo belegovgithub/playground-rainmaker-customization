@@ -1,5 +1,5 @@
 {
-  "key": "bd-tamilnadu-birth",
+  "key": "bd-punjab-birth",
   "config": {
     "defaultStyle": {
       "font": "Cambay"
@@ -15,28 +15,15 @@
       {
         "style": "ws-head",
         "table": {
-          "widths": ["*"],
-          "body": [
-            [
-              {
-                "image": "{{emblemImage}}",
-                "width": 35,
-                "height": 45,
-                "style": "appendix-header-emblem"
-              }
-            ]
-          ]
-        },
-        "layout": "noBorders"
-      },
-      {
-        "style": "ws-head",
-        "table": {
           "widths": ["20%", "60%", "20%"],
           "body": [
             [
               {
                 "stack": [
+                  {
+                    "text": "ਫਾਰਮ/Form-5",
+                    "style": "appendix-header-serialNo"
+                  }, 
                   {
                     "image": "{{govtImage}}",
                     "width": 70,
@@ -48,41 +35,34 @@
               {
                 "stack": [
                   {
-                    "text": "महाराष्ट्र शासन",
+                    "text": "ਪੰਜਾਬ ਸਰਕਾਰ / Government of Punjab",
                     "style": "appendix-header-body"
                   },
                   {
-                    "text": "GOVERNMENT OF MAHARASHTRA",
+                    "text": "ਸਿਹਤ ਅਤੇ ਪਰਿਵਾਰ ਭਲਾਈ ਵਿਭਾਗ",
                     "style": "appendix-header-body",
                     "margin": [0, 0, 0, 0]
                   },
                   {
-                    "text": "आरोग्य विभाग",
+                    "text": "Health & Family Welfare Department",
                     "style": "appendix-header-body"
                   },
                   {
-                    "text": "DEPARTMENT OF HEALTH",
+                    "text": "ਚੀਫ ਰਿਜਸਟਰਾਰ, ਜਨਮ ਅਤੇ ਮੌਤ, ਪੰਜਾਬ",
                     "style": "appendix-header-body",
                     "margin": [0, 0, 0, 2]
                   },
                   {
-                    "text": "{{cb_label_name_multiLang}} {{cb-name-multilang}}",
-                    "style": "appendix-header-body"
-                  },
-                  {
-                    "text": "CANTONMENT BOARD {{cb-name}}",
-                    "style": "appendix-header-body"
-                  }
+                    "text": "Chief Registrar Births & Deaths,Punjab",
+                    "style": "appendix-header-body",
+                    "margin": [0, 0, 0, 2]
+                  } 
                 ]
               },
               {
                 "stack": [
                   {
-                    "text": "प्रपत्र-5",
-                    "style": "appendix-header-formNo"
-                  },
-                  {
-                    "text": "FORM-5",
+                    "text": "ਨੰ ./No.",
                     "style": "appendix-header-formNo"
                   },
                   {
@@ -105,23 +85,8 @@
           "body": [
             [
               {
-                "text": "जन्म प्रमाणपत्र",
+                "text": "ਜਨਮ ਸਰਟੀਿਫਕੇਟ / Birth Certificate",
                 "style": "title-header_multiLang"
-              }
-            ]
-          ]
-        },
-        "layout": "noBorders"
-      },
-      {
-        "style": "ws-head",
-        "table": {
-          "widths": ["*"],
-          "body": [
-            [
-              {
-                "text": "BIRTH CERTIFICATE",
-                "style": "title-header"
               }
             ]
           ]
@@ -137,7 +102,7 @@
               {
                 "columns": [
                   {
-                    "text": "जन्म व मृत्यु नोंदणी अधिनियम, 1969 च्या कलम 12/17 आणि महाराष्ट्र जन्म आणि मृत्यु नोंदणी नियम , 2000 चे नियम 8/13 अन्वये देण्यात आले आहे",
+                    "text": "ਇਹ ਤਸਦੀਕ ਕੀਤਾ ਜਾਂਦਾ ਹੈ ਕਿ ਹੇਠ ਿਲਖੀ ਸੂਚਨਾ ਅਸਲ ਜਨਮ ਿਰਕਾਰਡ ਿਵੱਚ ਲਈ ਗਈ ਹੈ ਿਜਹੜੀ ਿਕ ਲੋ ਕਲ ਰਿਜਸਟਰਾਰ, ਜਨਮ ਤੇ ਮੌਤ , ਨਗਰ ਿਨਗਮ / ਕ ਸਲ / ਗ˛ਾਮ ਪੰਚਾਇਤ ",
                     "style": "rule-header_multiLang"
                   }
                 ]

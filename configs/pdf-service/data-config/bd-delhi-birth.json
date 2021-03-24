@@ -14,7 +14,7 @@
               "direct": [
                 {
                     "variable": "emblemImage",
-                    "url": "https://raw.githubusercontent.com/belsoftware/webaccess/master/images/birth/emblem.png",
+                    "url": "https://raw.githubusercontent.com/belsoftware/webaccess/master/images/birth/emblemInd.png",
                     "type": "image"
                 },
                 {
@@ -59,6 +59,12 @@
                   }
                 },
                 {
+                  "variable": "remarks", 
+                  "value": {
+                    "path": "$.remarks"
+                  }
+                },
+                {
                     "variable": "registration_date", 
                     "value": {
                       "path": "$.dateofreport"
@@ -68,14 +74,14 @@
                 {
                   "variable": "fatherName", 
                   "value": {
-                    "path": "$.birthFatherInfo.firstname"
+                    "path": "$.birthFatherInfo.fullName"
                   },
                   "type":"setEmpty"
                 },
                 {
                   "variable": "motherName", 
                   "value": {
-                    "path": "$.birthMotherInfo.firstname"
+                    "path": "$.birthMotherInfo.fullName"
                   },
                   "type":"setEmpty"
                 },
@@ -92,17 +98,23 @@
                   }
                 },
                 {
-                    "variable": "fatherUid", 
-                    "value": {
-                      "path": "$.fatherUid"
-                    }
-                  },
-                  {
-                    "variable": "motherUid", 
-                    "value": {
-                      "path": "$.motherUid"
-                    }
-                  },
+                  "variable": "fatherUid", 
+                  "value": {
+                    "path": "$.birthFatherInfo.aadharno"
+                  }
+                },
+                {
+                  "variable": "motherUid", 
+                  "value": {
+                    "path": "$.birthMotherInfo.aadharno"
+                  }
+                },
+                {
+                  "variable": "remarks", 
+                  "value": {
+                    "path": "$.remarks"
+                  }
+                },
                   {
                     "variable": "placeOfBirth", 
                     "value": {
@@ -689,7 +701,7 @@
                   {
                     "variable": "instruction2_label",
                     "value": {
-                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_INSTRUCTION_2"
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_INSTRUCTION_2" 
                     },
                     "type": "label",
                     "localisation":{

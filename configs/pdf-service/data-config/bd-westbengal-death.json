@@ -114,7 +114,7 @@
               {
                 "variable": "motherName",
                 "value": {
-                  "path": "$.deathMotherInfo.firstname"
+                  "path": "$.deathMotherInfo.fullName"
                 },
                 "type": "setEmpty"
               },
@@ -131,15 +131,21 @@
                 }
               },
               {
-                "variable": "fatherUid",
+                "variable": "fatherUid", 
                 "value": {
-                  "path": "$.fatherUid"
+                  "path": "$.deathFatherInfo.aadharno"
                 }
               },
               {
-                "variable": "motherUid",
+                "variable": "motherUid", 
                 "value": {
-                  "path": "$.motherUid"
+                  "path": "$.deathMotherInfo.aadharno"
+                }
+              },
+              {
+                "variable": "remarks", 
+                "value": {
+                  "path": "$.remarks"
                 }
               },
               {
@@ -816,7 +822,7 @@
           {
             "externalAPI": [
               {
-                "path": "http://localhost:8085/egov-mdms-service/v1/_get",
+                "path": "http://egov-mdms-service:8080/egov-mdms-service/v1/_get",
                 "queryParam": "moduleName=tenant&masterName=tenants&tenantId=pb&filter=%5B?(@.code=='{$.tenantId}')%5D",
                 "apiRequest": null,
                 "responseMapping": [

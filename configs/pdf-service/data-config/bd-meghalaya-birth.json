@@ -1,9 +1,9 @@
 {
-    "key": "bd-uttarpradesh-death",
+    "key": "bd-meghalaya-birth",
     "DataConfigs": {
       "serviceName": "rainmaker-common",
       "version": "1.0.0",
-      "baseKeyPath": "$.DeathCertificate.*",
+      "baseKeyPath": "$.BirthCertificate.*",
       "entityIdPath":"$.id",
       "isCommonTableBorderRequired": true,
       "mappings": [
@@ -19,7 +19,7 @@
                 },
                 {
                     "variable": "govtImage",
-                    "url": "https://raw.githubusercontent.com/belsoftware/webaccess/master/images/birth/upGovt.png",
+                    "url": "https://raw.githubusercontent.com/belsoftware/webaccess/master/images/birth/maharashtraGovt.png",
                     "type": "image"
                 },
                 {
@@ -34,9 +34,15 @@
                   }
                 },
                 {
+                  "variable": "embeddedUrl", 
+                  "value": {
+                    "path": "$.embeddedUrl"
+                  }
+                },
+                {
                   "variable": "dob", 
                   "value": {
-                    "path": "$.dateofdeath"
+                    "path": "$.dateofbirth"
                   },
                   "type": "date"
                 },
@@ -59,42 +65,49 @@
                     },
                     "type": "date"
                   },
+                  {
+                    "variable": "updatedOn", 
+                    "value": {
+                      "path": "$.dateofissue"
+                    },
+                    "type": "date"
+                  },
                 {
                   "variable": "fatherName", 
                   "value": {
-                    "path": "$.deathFatherInfo.fullName"
+                    "path": "$.birthFatherInfo.fullName"
                   },
                   "type":"setEmpty"
                 },
                 {
                   "variable": "motherName", 
                   "value": {
-                    "path": "$.deathFatherInfo.fullName"
+                    "path": "$.birthMotherInfo.fullName"
                   },
                   "type":"setEmpty"
                 },
                 {
                   "variable": "childAddress", 
                   "value": {
-                    "path": "$.deathPresentaddr.fullAddress"
+                    "path": "$.birthPermaddr.fullAddress"
                   }
                 },
                 {
                   "variable": "parentsAddress", 
                   "value": {
-                    "path": "$.deathPermaddr.fullAddress"
+                    "path": "$.birthPresentaddr.fullAddress"
                   }
                 },
                 {
                   "variable": "fatherUid", 
                   "value": {
-                    "path": "$.deathFatherInfo.aadharno"
+                    "path": "$.birthFatherInfo.aadharno"
                   }
                 },
                 {
                   "variable": "motherUid", 
                   "value": {
-                    "path": "$.deathMotherInfo.aadharno"
+                    "path": "$.birthMotherInfo.aadharno"
                   }
                 },
                 {
@@ -104,15 +117,9 @@
                   }
                 },
                   {
-                    "variable": "placeOfDeath", 
+                    "variable": "placeOfBirth", 
                     "value": {
-                      "path": "$.placeOfDeath"
-                    }
-                  },
-                  {
-                    "variable": "aadharno", 
-                    "value": {
-                      "path": "$.aadharno"
+                      "path": "$.placeOfBirth"
                     }
                   },
                   {
@@ -126,6 +133,12 @@
                     "variable": "placeOfBirth", 
                     "value": {
                       "path": "$.hospitalname"
+                    }
+                  },
+                  {
+                    "variable": "certificateType", 
+                    "value": {
+                      "path": "$.certificateType"
                     }
                   },
                   {
@@ -201,6 +214,18 @@
                    }
                   },
                   {
+                    "variable": "cb_label_name_multiLang",
+                    "value": {
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_TLCERTIFICATE_MUNICIPAL_CORPORATION_HI"
+                    },
+                    "type": "label",
+                    "localisation":{
+                      "required":true,
+                      "prefix": null,
+                      "module":"rainmaker-pdf" 
+                   }
+                  },
+                  {
                     "variable": "gram_panchayat_label_multiLang",
                     "value": {
                       "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_GRAM_PANCHAYAT_MULTILANG"
@@ -227,7 +252,19 @@
                   {
                     "variable": "certificate_label_multiLang",
                     "value": {
-                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_CERTIFICATE_BIRTH_MULTILANG"
+                      "path": "PDF_STATIC_LABEL_BD_HI_CERTIFICATE"
+                    },
+                    "type": "label",
+                    "localisation":{
+                      "required":true,
+                      "prefix": null,
+                      "module":"rainmaker-pdf"
+                   }
+                  },
+                  {
+                    "variable": "certificate_label",
+                    "value": {
+                      "path": "PDF_STATIC_LABEL_BD_EN_CERTIFICATE"
                     },
                     "type": "label",
                     "localisation":{
@@ -299,7 +336,7 @@
                   {
                     "variable": "name_label_multiLang",
                     "value": {
-                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_DEATHCERIFICATE_NAME_MULTILANG"
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_NAME_MULTILANG"
                     },
                     "type": "label",
                     "localisation":{
@@ -333,18 +370,6 @@
                    }
                   },
                   {
-                    "variable": "aadhar_label_multiLang",
-                    "value": {
-                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_DEATHCERIFICATE_AADHAR_MULTILANG"
-                    },
-                    "type": "label",
-                    "localisation":{
-                      "required":true,
-                      "prefix": null,
-                      "module":"rainmaker-pdf"
-                   }
-                  },
-                  {
                     "variable": "dob_label",
                     "value": {
                       "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_DOB"
@@ -357,9 +382,9 @@
                    }
                   },
                   {
-                    "variable": "dod_label_multiLang",
+                    "variable": "dob_label_multiLang",
                     "value": {
-                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_DEATHCERIFICATE_DOD_MULTILANG"
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_DOB_MULTILANG"
                     },
                     "type": "label",
                     "localisation":{
@@ -381,9 +406,9 @@
                    }
                   },
                   {
-                    "variable": "pod_label_multiLang",
+                    "variable": "pob_label_multiLang",
                     "value": {
-                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_DEATHCERIFICATE_POD_MULTILANG"
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_POB_MULTILANG"
                     },
                     "type": "label",
                     "localisation":{
@@ -453,9 +478,9 @@
                    }
                   },
                   {
-                    "variable": "mother_aadhar_label_multiLang",
+                    "variable": "mother_uid_label_multiLang",
                     "value": {
-                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_DEATHCERIFICATE_AADHAR_MULTILANG"
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_MOTHER_UID_MULTILANG"
                     },
                     "type": "label",
                     "localisation":{
@@ -477,9 +502,9 @@
                    }
                   },
                   {
-                    "variable": "father_aadhar_label_multiLang",
+                    "variable": "father_uid_label_multiLang",
                     "value": {
-                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_DEATHCERIFICATE_AADHAR_MULTILANG"
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_FATHER_UID_MULTILANG"
                     },
                     "type": "label",
                     "localisation":{
@@ -501,9 +526,9 @@
                    }
                   },
                   {
-                    "variable": "death_address_label_multiLang",
+                    "variable": "child_address_label_multiLang",
                     "value": {
-                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_DEATHCERIFICATE_ADDRESS_OF_DEATH_MULTILANG"
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_ADDRESS_OF_CHILD_BIRTH_MULTILANG"
                     },
                     "type": "label",
                     "localisation":{
@@ -525,9 +550,9 @@
                    }
                   },
                   {
-                    "variable": "death_perm_address_label_multiLang",
+                    "variable": "parent_address_label_multiLang",
                     "value": {
-                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_DEATHCERIFICATE_PERMENENT_ADDRESS_OF_DECEASED_MULTILANG"
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_PERMENENT_ADDRESS_OF_PARENT_MULTILANG"
                     },
                     "type": "label",
                     "localisation":{
@@ -729,15 +754,15 @@
                    }
                   },
                   {
-                    "variable": "cb_label_name_multiLang",
+                    "variable": "cb_letter_label_multilang",
                     "value": {
-                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_TLCERTIFICATE_MUNICIPAL_CORPORATION_HI"
+                      "path": "PDF_STATIC_LABEL_BD_HI_CB"
                     },
                     "type": "label",
                     "localisation":{
                       "required":true,
                       "prefix": null,
-                      "module":"rainmaker-pdf" 
+                      "module":"rainmaker-pdf"
                    }
                   },
                   {
@@ -782,6 +807,16 @@
                         {
                           "variable": "cb-name-multilang",
                           "value":"$.MdmsRes.tenant.tenants[0].code",
+                          "localisation":{
+                            "required":true,
+                            "prefix": "PDF_STATIC_LABEL_BD_HI",
+                            "module":"rainmaker-pdf"
+                            
+                            }
+                        },
+                        {
+                          "variable": "dist-name",
+                          "value":"$.MdmsRes.tenant.tenants[0].city.districtName",
                           "localisation":{
                             "required":true,
                             "prefix": "PDF_STATIC_LABEL_BD_HI",

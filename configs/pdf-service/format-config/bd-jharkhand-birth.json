@@ -93,7 +93,7 @@
                     "style": "appendix-header-body"
                   },
                   {
-                    "text": "(DIRECTORATE OF STATICSTICS AND EVALUATION)",
+                    "text": "(DIRECTORATE OF STATISTICS AND EVALUATION)",
                     "style": "appendix-header-body"
                   }
                   
@@ -172,7 +172,7 @@
               {
                 "columns": [
                   {
-                    "text": "(जन्म मृत्यु रजिस्ट्रीकरण अधिनियम,1969 की धारा 12/17 तथा झारखंड जन्म मृत्यु रजिस्ट्रीकरण, 1999  के  नियम 8/13 के अंतर्गत, जारी किया गया)",
+                    "text": "(जन्म मृत्यु रजिस्ट्रीकरण अधिनियम,1969 की धारा 12/17 तथा झारखंड जन्म मृत्यु रजिस्ट्रीकरण, 2009  के  नियम 8/13 के अंतर्गत, जारी किया गया)",
                     "style": "rule-header_multiLang"
                   }
                 ]
@@ -203,7 +203,7 @@
               {
                 "columns": [
                   {
-                    "text": "यह प्रमाणित किया जाता है निम्नलिखित सूचना जन्म के मूल अभिलेख से ली गई है जो की (स्थानीय क्षेत्र) छावनी परिषद रामगढ तहसील/प्रखण्ड रामगढ  जिला रामगढ  राज्य झारखंड  के रजिस्टर रजिस्टर में उलिखित है ।",
+                    "text": "यह प्रमाणित किया जाता है कि निम्नांकित सूचना जन्म के मूल अभिलेख से ली गई है जो कि (स्थानीय क्षेत्र) छावनी परिषद रामगढ तहसील/प्रखण्ड रामगढ जिला रामगढ राज्य झारखंड के रजिस्टर में उल्लिखित है ।",
                     "style": "rule-body_multiLang"
                   }
                 ]
@@ -337,7 +337,7 @@
               {
                 "columns": [
                   {
-                    "text": "{{registration_label_multiLang}} / {{registration_label}}: {{registrationNo}}",
+                    "text": "{{registration_label_multiLang}}/{{registration_label}}: {{registrationNo}}",
                     "width": "45%",
                     "style": "details-body"
                   },
@@ -346,7 +346,7 @@
                     "width": "10%"
                   },
                   {
-                    "text": "{{registration_date_label_multiLang}} / {{registration_date_label}}: {{registration_date}}",
+                    "text": "पंजीकरण दिनांक/ {{registration_date_label}}: {{registration_date}}",
                     "style": "details-body"
                   }
                 ]
