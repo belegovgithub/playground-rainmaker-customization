@@ -580,6 +580,14 @@
                   "headers": []
                 },
                 {
+                  "id": "boardApproved",
+                  "name": "DSS_BOARD_APPROVED",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
                   "id": "licenseIssued",
                   "name": "DSS_TL_LICENSE_ISSUED",
                   "code": "",
@@ -778,6 +786,14 @@
                 {
                   "id": "totalApplication",
                   "name": "DSS_TOTAL_APPLICATION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "boardApproved",
+                  "name": "DSS_BOARD_APPROVED",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
@@ -5140,6 +5156,14 @@
                 {
                   "id": "totalApplication",
                   "name": "DSS_TOTAL_APPLICATION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "boardApproved",
+                  "name": "DSS_BOARD_APPROVED",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
