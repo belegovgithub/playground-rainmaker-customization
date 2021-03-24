@@ -3682,9 +3682,9 @@
      {
        "module": "TL",
        "indexName": "tlindex-v1",
-       "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tradelicense.tenantId.keyword\":\"pb.testing\"}}],\"must\":[{\"term\":{\"Data.tradelicense.status.keyword\":\"PENDINGPAYMENT\"}}]}},\"aggs\":{\"License Issued\":{\"value_count\":{\"field\":\"Data.tradelicense.applicationNumber.keyword\"}}}}}}",
+       "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tradelicense.tenantId.keyword\":\"pb.testing\"}}],\"must\":[{\"term\":{\"Data.tradelicense.status.keyword\":\"PENDINGPAYMENT\"}}]}},\"aggs\":{\"License Issued99\":{\"value_count\":{\"field\":\"Data.tradelicense.applicationNumber.keyword\"}}}}}}",
        "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\",    \"district\" : \"Data.tenantData.city.districtCode\",  \"tenantId\" : \"Data.tradelicense.tenantId\"  ,  \"businessService\" : \"dataObject.Bill.billDetails.businessServices\"  }",
-       "dateRefField": "Data.tradelicense.issuedDate"
+       "dateRefField": "Data.tradelicense.applicationDate"
      }
    ],
    "chartType": "metric",
@@ -3693,7 +3693,7 @@
    "documentType": "_doc",
    "drillChart": "none",
    "aggregationPaths": [
-     "License Issued"
+     "License Issued99"
    ],
    "insight": {
      "chartResponseMap" : "licenseIssued",
