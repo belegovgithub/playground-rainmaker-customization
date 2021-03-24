@@ -808,6 +808,14 @@
                   "headers": []
                 },
                 {
+                  "id": "totalApplicationInitiated",
+                  "name": "DSS_TOTAL_APPLICATION_INCL_INIT",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
                   "id": "activeUlbs",
                   "name": "DSS_PT_TOTAL_ACTIVE_ULBS",
                   "code": "",
