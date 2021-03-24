@@ -3611,7 +3611,38 @@
    "_comment": ""
  },
 
-
+ "_comment": "TL NON-COLLECTION CHARTS",
+ "boardApproved": {
+   "chartName": "DSS_BOARD_APPROVED",
+   "queries": [
+     {
+       "module": "TL",
+       "indexName": "tlindex-v1",
+       "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tradelicense.tenantId.keyword\":\"pb.testing\"}}],\"must\":[{\"term\":{\"Data.tradelicense.status.keyword\":\"PENDINGPAYMENT\"}}]}},\"aggs\":{\"License Issued99\":{\"value_count\":{\"field\":\"Data.tradelicense.applicationNumber.keyword\"}}}}}}",
+       "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\",    \"district\" : \"Data.tenantData.city.districtCode\",  \"tenantId\" : \"Data.tradelicense.tenantId\"  ,  \"businessService\" : \"dataObject.Bill.billDetails.businessServices\"  }",
+       "dateRefField": "Data.tradelicense.applicationDate"
+     }
+   ],
+   "chartType": "metric",
+   "valueType": "number",
+   "action": "",
+   "documentType": "_doc",
+   "drillChart": "none",
+   "aggregationPaths": [
+     "License Issued99"
+   ],
+   "insight": {
+     "chartResponseMap" : "licenseIssued",
+     "action" : "differenceOfNumbers",
+     "upwardIndicator" : "positive",
+     "downwardIndicator" : "negative",
+     "textMessage" : "$indicator$value% than last $insightInterval",
+     "colorCode" : "#228B22",
+     "insightInterval" : "month"
+   },
+   "_comment": " licenseIssued is the Chart ID"
+ },
+ 
  "_comment": "TL NON-COLLECTION CHARTS",
  "licenseIssued": {
    "chartName": "DSS_TL_LICENSE_ISSUED",
