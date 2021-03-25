@@ -2097,8 +2097,7 @@
      {
        "module": "TL",
        "indexName": "tlindex-v1",
-       "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tradelicense.tenantId.keyword\":\"pb.testing\"}}],\"must\":[{\"term\":{\"Data.tradelicense.status.keyword\":\"APPROVED\"}}]}},\"aggs\":{\"averageProcessingTime\":{\"avg\":{\"script\":{\"lang\":\"painless\",\"source\":\"long d1 = doc['Data.tradelicense.applicationDate'].value;long d2 = doc['Data.tradelicense.issuedDate'].value;double differenceInMillis = (double)d1-d2;return Math.abs(differenceInMillis\/86400000);\"}}}}}}}",
-       "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\", \r\n  \"district\" : \"Data.tenantData.city.districtCode\", \r\n\"tenantId\" : \"Data.tradelicense.tenantId.keyword\" \r\n}", 
+       "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tradelicense.tenantId.keyword\":\"pb.testing\"}}],\"must\":[{\"terms\":{\"Data.tradelicense.status.keyword\":[\"APPROVED\",\"REJECTED\",\"PENDINGPAYMENT\"]}}]}},\"aggs\":{\"averageProcessingTime\":{\"avg\":{\"script\":{\"lang\":\"painless\",\"source\":\"long d1 =  params._source.Data.tradelicense.applicationDate;if(doc['Data.tradelicense.status.keyword'].value == 'APPROVED'){long d2= params._source.Data.history[1].auditDetails.createdTime;return Math.abs((double)(d2-d1)\/86400000);} else if(doc['Data.tradelicense.status.keyword'].value == 'PENDINGPAYMENT' || doc['Data.tradelicense.status.keyword'].value == 'REJECTED' ){long d2 = params._source.Data.history[0].auditDetails.createdTime;return Math.abs((double)(d2-d1)\/86400000);}\"}}}}}}}", 
        "dateRefField": "Data.tradelicense.applicationDate"
      },
      {
