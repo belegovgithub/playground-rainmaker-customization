@@ -580,8 +580,24 @@
                   "headers": []
                 },
                 {
-                  "id": "boardApproved",
-                  "name": "DSS_BOARD_APPROVED",
+                  "id": "boardProcessing",
+                  "name": "DSS_BOARD_PROCESSING",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "citizenPending",
+                  "name": "DSS_CITIZEN_ACTION_PENDING",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "boardProcessed",
+                  "name": "DSS_BOARD_PROCESSED",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
@@ -792,8 +808,24 @@
                   "headers": []
                 },
                 {
-                  "id": "boardApproved",
-                  "name": "DSS_BOARD_APPROVED",
+                  "id": "boardProcessing",
+                  "name": "DSS_BOARD_PROCESSING",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "citizenPending",
+                  "name": "DSS_CITIZEN_ACTION_PENDING",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "boardProcessed",
+                  "name": "DSS_BOARD_PROCESSED",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
@@ -4733,8 +4765,24 @@
                   "headers": []
                 },
                 {
-                  "id": "boardApproved",
-                  "name": "DSS_BOARD_APPROVED",
+                  "id": "boardProcessing",
+                  "name": "DSS_BOARD_PROCESSING",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "citizenPending",
+                  "name": "DSS_CITIZEN_ACTION_PENDING",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "boardProcessed",
+                  "name": "DSS_BOARD_PROCESSED",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
