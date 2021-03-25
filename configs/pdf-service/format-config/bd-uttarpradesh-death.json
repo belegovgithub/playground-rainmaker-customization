@@ -63,7 +63,7 @@
                               {
                                   "stack": [
                                         {
-                                          "text": "{{govt_label_multiLang}}",
+                                          "text": "उत्तर प्रदेश सरकार",
                                           "style": "appendix-header-body"
                                           
                                       },   
@@ -178,7 +178,7 @@
                                                     "columns": [
                                                         
                                                         {
-                                                            "text": "{{rule1_label_multiLang}}",
+                                                            "text": "(जन्म मृत्यु रजिस्ट्रीकरण अधिनियम, 1969 की धारा 12/ 17 तथा उत्तर प्रदेश जन्म मृत्यु रजिस्ट्रीकरण नियम, 2002 के नियम 8/13 के अंतर्गत जारी किया गया)",
                                                             "style": "rule-header_multiLang"
                                                         }
                                                     ] 
@@ -189,7 +189,7 @@
                                                      "columns": [
                                                          
                                                         {
-                                                            "text": "{{rule1_label}}",
+                                                            "text": "(ISSUED UNDER SECTION 12/17 OF THE REGISTRATION OF BIRTHS & DEATHS ACT, 1969 AND RULE 8/13 OF THE UTTAR PRADESH REGISTRATION OF BIRTHS & DEATHS RULES 2002)",
                                                              "style": "rule-header"
                                                         }
                                                     ] 
@@ -324,7 +324,7 @@
                                                      "columns": [
                                                          
                                                         {
-                                                            "text": "{{mother_aadhar_label_multiLang}} / MOTHER AADHAR NO: {{motherUid}}",
+                                                            "text": "{{mother_aadhar_label_multiLang}} / MOTHER'S AADHAR NO: {{motherUid}}",
                                                             "width": "45%",
                                                              "style": "details-body"
                                                         },
@@ -334,7 +334,7 @@
                                                             
                                                         },
                                                         {
-                                                            "text": "{{father_aadhar_label_multiLang}} / FATHER AADHAR NO: {{fatherUid}}",
+                                                            "text": "{{father_aadhar_label_multiLang}} / FATHER'S AADHAR NO: {{fatherUid}}",
                                                              "style": "details-body"
                                                         }
                                                     ] 
@@ -376,7 +376,7 @@
                                                             
                                                         },
                                                         {
-                                                            "text": "{{registration_date_label_multiLang}} / DATE OF REGISTRATION: {{registration_date}}",
+                                                            "text": "पंजीकरण तारीख / DATE OF REGISTRATION: {{registration_date}}",
                                                              "style": "details-body"
                                                         }
                                                     ] 
@@ -387,7 +387,7 @@
                                                      "columns": [
                                                          
                                                         {
-                                                            "text": "{{remarks_label_multiLang}} / REMARKS(IF ANY): {{remarks}}",
+                                                            "text": "टिप्पणी / REMARKS(IF ANY): {{remarks}}",
                                                             "width": "45%",
                                                              "style": "details-body"
                                                         },

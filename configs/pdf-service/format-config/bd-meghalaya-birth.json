@@ -126,7 +126,7 @@
               {
                 "columns": [
                   {
-                    "text": ["This is to certify that the following information has been taken from the original record of birth which is the register for (local area/local body) CANTONMENT BOARD {{cb-name}} of tahsil/block {{cb-name}} of District {{dist-name}} of the State of Meghalaya"],
+                    "text": ["This is to certify that the following information has been taken from the original record of birth which is the register for (local area/local body) CANTONMENT BOARD {{cb-name}} of tahsil/block {{cb-name}} of District {{cb-name}} of the State of Meghalaya"],
                     "style": "rule-body_multiLang"
                   }
                 ]

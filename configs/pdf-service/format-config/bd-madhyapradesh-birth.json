@@ -213,7 +213,7 @@
                                            "columns": [
                                                
                                                {
-                                                   "text": "यह प्रमाणित किया जाता है निम्नलिखित सूचना जन्म के मूल अभिलेख से ली गई है जो की छावनी परिषद {{cb-name-multilang}} तहसील {{cb-name-multilang}} जिला जबलपुर राज्य/संघ प्रदेश मध्य प्रदेश, भारत के रजिस्टर मे उलिखित है ।",
+                                                   "text": "यह प्रमाणित किया जाता है निम्नलिखित सूचना जन्म के मूल अभिलेख से ली गई है जो की छावनी परिषद {{cb-name-multilang}} तहसील {{block-name-multilang}} जिला {{dist-name-multilang}} राज्य/संघ प्रदेश मध्य प्रदेश, भारत के रजिस्टर मे उलिखित है ।",
                                                    "style": "rule-body_multiLang"
                                                }
                                            ] 
@@ -224,7 +224,7 @@
                                             "columns": [
                                                 
                                                {
-                                                   "text": "THIS  IS TO CERTIFY THAT THE  FOLLOWING  INFORMATION  HAS BEEN  TAKEN FROM  THE  ORIGINAL RECORD OF BIRTH WHICH  IS THE  REGISTER  FOR CANTONMENT BOARD {{cb-name}} OF TAHSIL/BLOCK {{cb-name}} OF DISTRICT {{cb-name}} OF STATE/UNION TERRITORY MADHYA PRADESH, INDIA.",
+                                                   "text": "THIS  IS TO CERTIFY THAT THE  FOLLOWING  INFORMATION  HAS BEEN  TAKEN FROM  THE  ORIGINAL RECORD OF BIRTH WHICH  IS THE  REGISTER  FOR CANTONMENT BOARD {{cb-name}} OF TAHSIL/BLOCK {{block-name}} OF DISTRICT {{dist-name}} OF STATE/UNION TERRITORY MADHYA PRADESH, INDIA.",
                                                     "style": "rule-body"
                                                }
                                            ] 

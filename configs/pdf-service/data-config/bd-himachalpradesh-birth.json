@@ -44,7 +44,7 @@
                   "value": {
                     "path": "$.dateofbirth"
                   },
-                  "type": "date"
+                  "type": "dateToWord"
                 },
                 {
                   "variable": "gender", 
@@ -793,7 +793,7 @@
                           "value":"$.MdmsRes.tenant.tenants[0].code",
                           "localisation":{
                             "required":true,
-                            "prefix": "PDF_STATIC_LABEL_BD_EN",
+                            "prefix": "PDF_STATIC_LABEL_BD_CB_EN",
                             "module":"rainmaker-pdf"
                             }
                         },
@@ -802,7 +802,49 @@
                           "value":"$.MdmsRes.tenant.tenants[0].code",
                           "localisation":{
                             "required":true,
-                            "prefix": "PDF_STATIC_LABEL_BD_HI",
+                            "prefix": "PDF_STATIC_LABEL_BD_CB_HI",
+                            "module":"rainmaker-pdf"
+                            
+                            }
+                        },
+
+
+                        {
+                          "variable": "dist-name",
+                          "value":"$.MdmsRes.tenant.tenants[0].city.districtName",
+                          "localisation":{
+                            "required":true,
+                            "prefix": "PDF_STATIC_LABEL_BD_DIST_EN",
+                            "module":"rainmaker-pdf"
+                            }
+                        },                        
+                        {
+                          "variable": "dist-name-multilang",
+                          "value":"$.MdmsRes.tenant.tenants[0].city.districtName",
+                          "localisation":{
+                            "required":true,
+                            "prefix": "PDF_STATIC_LABEL_BD_DIST_HI",
+                            "module":"rainmaker-pdf"
+                            
+                            }
+                        },
+
+
+                        {
+                          "variable": "block-name",
+                          "value":"$.MdmsRes.tenant.tenants[0].city.blockName",
+                          "localisation":{
+                            "required":true,
+                            "prefix": "PDF_STATIC_LABEL_BD_BL_EN",
+                            "module":"rainmaker-pdf"
+                            }
+                        },                        
+                        {
+                          "variable": "block-name-multilang",
+                          "value":"$.MdmsRes.tenant.tenants[0].city.blockName",
+                          "localisation":{
+                            "required":true,
+                            "prefix": "PDF_STATIC_LABEL_BD_BL_HI",
                             "module":"rainmaker-pdf"
                             
                             }

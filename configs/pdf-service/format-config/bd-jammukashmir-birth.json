@@ -81,7 +81,7 @@
             ],
             [
               {
-                "text": "{{cb_name}} CANTONMENT BOARD, SRINAGAR, J&K, 190004",
+                "text":"{{cb-name}} CANTONMENT BOARD, {{dist-name}}, J&K, 190004",
                 "style": "rule-header_multiLang"
               }
             ]
@@ -142,7 +142,7 @@
               {
                 "columns": [
                   {
-                    "text": "{{cb_name}} Cantonment Board of Tehsil/ Block Srinagar",
+                    "text": "{{cb-name}} Cantonment Board of Tehsil/ Block {{block-name}}",
                     "style": "instruction-body"
                   }
                 ]
@@ -152,7 +152,7 @@
               {
                 "columns": [
                   {
-                    "text": "of District Srinagar and of State Jammu and Kashmir",
+                    "text": "of District {{dist-name}} and of State Jammu and Kashmir",
                     "style": "instruction-body"
                   }
                 ]

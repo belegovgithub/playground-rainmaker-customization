@@ -174,7 +174,7 @@
               {
                 "columns": [
                   {
-                    "text": "प्रमाणित करण्यात येत आहे की, खालील माहिती जन्माच्या मूळ अभिलेखाच्या नोंदवहीतून घेण्यात आली आहे, जी की,{{cb-name-multilang}} छावनी परिषद, तालुका पुणे शहर, जिल्हा पुणे , महाराष्ट्र राज्य/केंद्रशासित प्रदेश,  भारत च्या नोंदवहीत उल्लेख आहे.",
+                    "text": "प्रमाणित करण्यात येत आहे की, खालील माहिती जन्माच्या मूळ अभिलेखाच्या नोंदवहीतून घेण्यात आली आहे, जी की,{{cb-name-multilang}} छावनी परिषद, तालुका {{block-name-multilang}}, जिल्हा {{dist-name-multilang}} , महाराष्ट्र राज्य/केंद्रशासित प्रदेश,  भारत च्या नोंदवहीत उल्लेख आहे.",
                     "style": "rule-body_multiLang"
                   }
                 ]
@@ -184,7 +184,7 @@
               {
                 "columns": [
                   {
-                    "text": "THIS IS TO CERTIFY THAT THE FOLLOWING INFORMATION HAS BEEN TAKEN FROM THE ORIGINAL RECORD OF BIRTH WHICH IS THE REGISTER FOR CANTONMENT BOARD {{cb-name}} OF TAHSIL/BLOCK PUNE CITY OF DISTRICT PUNE OF STATE/UNION TERRITORY MAHARASHTRA, INDIA.",
+                    "text": "THIS IS TO CERTIFY THAT THE FOLLOWING INFORMATION HAS BEEN TAKEN FROM THE ORIGINAL RECORD OF BIRTH WHICH IS THE REGISTER FOR CANTONMENT BOARD {{cb-name}} OF TAHSIL/BLOCK {{block-name}} OF DISTRICT {{dist-name}} OF STATE/UNION TERRITORY MAHARASHTRA, INDIA.",
                     "style": "rule-body"
                   }
                 ]

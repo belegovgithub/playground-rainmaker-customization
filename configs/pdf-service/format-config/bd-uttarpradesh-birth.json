@@ -63,7 +63,7 @@
                               {
                                   "stack": [
                                         {
-                                          "text": "{{govt_label_multiLang}}",
+                                          "text": "उत्तर प्रदेश सरकार",
                                           "style": "appendix-header-body"
                                           
                                       },   
@@ -178,7 +178,7 @@
                                                     "columns": [
                                                         
                                                         {
-                                                            "text": "{{rule1_label_multiLang}}",
+                                                            "text": "(जन्म मृत्यु रजिस्ट्रीकरण अधिनियम, 1969 की धारा 12/17 तथा उत्तर प्रदेश जन्म मृत्यु रजिस्ट्रीकरण नियम, 2002 के नियम 8/13 के अंतर्गत जारी किया गया)",
                                                             "style": "rule-header_multiLang"
                                                         }
                                                     ] 
@@ -189,7 +189,7 @@
                                                      "columns": [
                                                          
                                                         {
-                                                            "text": "{{rule1_label}}",
+                                                            "text": "(ISSUED UNDER SECTION 12/17 OF THE REGISTRATION OF BIRTHS & DEATHS ACT, 1969 AND RULE 8/13 OF THE UTTAR PRADESH REGISTRATION OF BIRTHS & DEATHS RULES 2002)",
                                                              "style": "rule-header"
                                                         }
                                                     ] 
@@ -332,7 +332,7 @@
                                                      "columns": [
                                                          
                                                         {
-                                                            "text": "{{child_address_label_multiLang}} / {{child_address_label}}: {{childAddress}}",
+                                                            "text": "बच्चे के जन्म के समय माता–पिता का पता / {{child_address_label}}: {{childAddress}}",
                                                             "width": "45%",
                                                              "style": "details-body"
                                                         },
@@ -342,7 +342,7 @@
                                                             
                                                         },
                                                         {
-                                                            "text": "{{parent_address_label_multiLang}} / {{parent_address_label}}: {{parentsAddress}}",
+                                                            "text": "माता-पिता का स्थाई पता / {{parent_address_label}}: {{parentsAddress}}",
                                                              "style": "details-body"
                                                         }
                                                     ] 
@@ -363,7 +363,7 @@
                                                             
                                                         },
                                                         {
-                                                            "text": "{{registration_date_label_multiLang}} / {{registration_date_label}}: {{registration_date}}",
+                                                            "text": "पंजीकरण तारीख / {{registration_date_label}}: {{registration_date}}",
                                                              "style": "details-body"
                                                         }
                                                     ] 
@@ -374,7 +374,7 @@
                                                      "columns": [
                                                          
                                                         {
-                                                            "text": "{{remarks_label_multiLang}} / {{remarks_label}}: {{remarks}}",
+                                                            "text": "टिप्पणी/ {{remarks_label}}: {{remarks}}",
                                                             "width": "45%",
                                                              "style": "details-body"
                                                         },

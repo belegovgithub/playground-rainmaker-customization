@@ -181,7 +181,7 @@
                         "text": "छावनी परिषद {{cb-name-multilang}}",
                         "bold": true
                       },
-                      "तहसील दीनापुर -कम-खगौल जिला  पटना राज्य /संघ प्रदेश  बिहार , भारत के रजिस्टर  में उल्लिखित है ।"
+                      "तहसील {{block-name-multilang}} जिला {{dist-name-multilang}} राज्य /संघ प्रदेश  बिहार , भारत के रजिस्टर  में उल्लिखित है ।"
                     ],
                     "style": "rule-body_multiLang"
                   }
@@ -196,8 +196,8 @@
                       {
                       "text": "CHAVNI PARISHAD {{cb-name}}",
                       "bold": true
-                    }, "of Tehsil / Block xxxx of District ",{
-                      "text": "AJMER",
+                    }, "of Tehsil / Block {{block-name}} of District ",{
+                      "text": "{{dist-name}}",
                       "bold": true
                     }," of State / Union Territory",{
                       "text": "Rajasthan, India",

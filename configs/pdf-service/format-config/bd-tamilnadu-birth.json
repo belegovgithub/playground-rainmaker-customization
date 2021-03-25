@@ -189,7 +189,7 @@
                     "width": "1%"
                   },
                   {
-                    "text": "SEX / பாலினம் : {{gender}}/{{gender_multiLang}}",
+                    "text": "SEX / பாலினம் : {{gender}}",
                     "style": "details-body"
                   }
                 ]
