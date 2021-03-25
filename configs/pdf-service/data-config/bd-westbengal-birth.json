@@ -125,6 +125,12 @@
                     }
                   },
                   {
+                    "variable": "nationality", 
+                    "value": {
+                      "path": "$.nationality"
+                    }
+                  },
+                  {
                     "variable": "issueDate", 
                     "value": {
                       "path": "$.dateofissue"

@@ -30,12 +30,6 @@
                 }
               },
               {
-                "variable": "nationality",
-                "value": {
-                  "path": "$.fullName"
-                }
-              },
-              {
                 "variable": "embeddedUrl",
                 "value": {
                   "path": "$.embeddedUrl"
@@ -128,6 +122,12 @@
                 "variable": "parentsAddress",
                 "value": {
                   "path": "$.birthPresentaddr.fullAddress"
+                }
+              },
+              {
+                "variable": "nationality", 
+                "value": {
+                  "path": "$.nationality"
                 }
               },
               {
