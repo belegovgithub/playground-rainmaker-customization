@@ -115,6 +115,28 @@
                       "path": "$.placeOfBirth"
                     }
                   },
+              
+                  {
+                    "variable": "dod",
+                    "value": {
+                      "path": "$.dateofdeath"
+                    },
+                    "type": "date"
+                  },
+
+                  {
+                    "variable": "fatherName",
+                    "value": {
+                      "path": "$.deathFatherInfo.fullName"
+                    }
+                   
+                  },
+                  {
+                    "variable": "placeOfDeath", 
+                    "value": {
+                      "path": "$.placeofdeath"
+                    }
+                  },
                   {
                     "variable": "issueDate", 
                     "value": {

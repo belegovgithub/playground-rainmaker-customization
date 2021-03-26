@@ -219,7 +219,7 @@
               {
                 "columns": [
                   {
-                    "text": "Date of Death/मृत्यु तारीख: {{dob}}",
+                    "text": "Date of Death/मृत्यु तारीख: {{dod}}",
                     "width": "45%",
                     "style": "details-body"
                   }                        
