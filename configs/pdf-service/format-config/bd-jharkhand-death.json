@@ -135,7 +135,7 @@
           "body": [
             [
               {
-                "text": "मृत्यु प्रमाण पत्र",
+                "text": "मृत्यु प्रमाण-पत्र",
                 "style": "title-header_multiLang"
               }
             ]
@@ -310,7 +310,7 @@
                     "width": "10%"
                   },
                   {
-                    "text": "आधार  नंबर/ FATHER AADHAR NO: {{fatherUid}}",
+                    "text": "आधार  नंबर/ FATHER'S AADHAR NO: {{fatherUid}}",
                     "style": "details-body"
                   }
                 ]
@@ -321,7 +321,7 @@
               {
                 "columns": [
                   {
-                    "text": "आधार नंबर / MOTHER AADHAR NO: {{motherUid}}",
+                    "text": "आधार नंबर / MOTHER'S AADHAR NO: {{motherUid}}",
                     "width": "45%",
                     "style": "details-body"
                   }
@@ -342,7 +342,7 @@
                     "width": "10%"
                   },
                   {
-                    "text": "मृतक का स्थायी पता / PERMANENT ADDRESS OF DECEASED: {{deathPermaddr}}",
+                    "text": "मृतक का स्थायी पता / PERMANENT ADDRESS OF THE DECEASED: {{deathPermaddr}}",
                     "style": "details-body"
                   }
                 ]
@@ -352,7 +352,7 @@
               {
                 "columns": [
                   {
-                    "text": "{{registration_label_multiLang}} / REGISTRATION NO: {{registrationNo}}",
+                    "text": "{{registration_label_multiLang}} / REGISTRATION NUMBER: {{registrationNo}}",
                     "width": "45%",
                     "style": "details-body"
                   },

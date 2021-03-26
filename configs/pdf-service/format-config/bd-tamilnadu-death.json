@@ -57,11 +57,11 @@
                     "margin": [0, 0, 0, 5]
                   },
                   {
-                    "text": "கண்டோன்மெண்ட்புனிததோமையார்மலை-பல்லாவரம் ",
+                    "text": "கன்டான்மென்ட் போர்டு {{cb-name-multilang}}",
                     "style": "appendix-header-body"
                   },
                   {
-                    "text": "CANTONMENTBOARD ST.THOMAS MOUNT CUM PALLAVARAM",
+                    "text": "CANTONMENTBOARD {{cb-name}}",
                     "style": "appendix-header-body"
                   }
                 ]
@@ -151,7 +151,7 @@
               {
                 "columns": [
                   {
-                    "text": "கீழ்கண்ட தகவல் இந்தியா, தமிழ்நாடு மாநிலம், செங்கல்பட்டு மாவட்டம், பல்லவாரம் வட்டம்.கண்டோன்மெண்ட் புனித தோமையார் மலை சேர்ந்த அசல் இறப்பு பதிவேட்டிலிருந்து எடுக்கபட்டவை என சான்று அளிக்கபடுகிறது.",
+                    "text": "கீழ்கண்ட தகவல் இந்தியா, தமிழ்நாடு மாநிலம், {{dist-name-multilang}} மாவட்டம், {{block-name-multilang}} வட்டம். {{cb-name-multilang}} கன்டான்மென்ட் போர்டு சேர்ந்த அசல் இறப்பு பதிவேட்டிலிருந்து எடுக்கபட்டவை என சான்று அளிக்கபடுகிறது.",
                     "style": "rule-body_multiLang"
                   }
                 ]
@@ -161,7 +161,7 @@
               {
                 "columns": [
                   {
-                    "text": "THIS IS TO CERTIFY THAT THE FOLLOWING INFORMATION HAS BEEN TAKEN FROM THE ORIGINAL RECORD OF DEATH WHICH IS THE REGISTER FOR CANTONMENT BOARD ST THOMAS MOUNT OF PALLAVARAM TALUK OF CHENGALPATTU DISTRICT OF TAMILNADU STATE, INDIA",
+                    "text": "THIS IS TO CERTIFY THAT THE FOLLOWING INFORMATION HAS BEEN TAKEN FROM THE ORIGINAL RECORD OF DEATH WHICH IS THE REGISTER FOR CANTONMENT BOARD {{cb-name}} OF {{block-name}} TALUK OF {{dist-name} DISTRICT OF TAMILNADU STATE, INDIA",
                     "style": "rule-body"
                   }
                 ]
@@ -380,10 +380,10 @@
                         "text": "பதிவாளர் பிறப்பு மற்றும் இறப்பு "
                       },    
                       {
-                        "text": "CANTONMENT BOARD ST THOMAS MOUNT"
+                        "text": "CANTONMENT BOARD {{cb-name}}"
                       },
                       {
-                        "text": "கண்டோன்மெண்ட் புனித தோமையார் மலை"
+                        "text": "கன்டான்மென்ட் போர்டு {{cb-name-multilang}}"
                       }
                     ] 
                   }  

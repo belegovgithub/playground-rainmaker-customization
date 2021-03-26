@@ -57,7 +57,7 @@
                     "margin": [0, 0, 0, 5]
                   },
                   {
-                    "text": "கண்டோன்மெண்ட் {{cb_name}}",
+                    "text": "கண்டோன்மெண்ட் {{cb_name_multilang}}",
                     "style": "appendix-header-body"
                   },
                   {
@@ -151,7 +151,7 @@
               {
                 "columns": [
                   {
-                    "text": "காஞ்சீபுரம் மாவட்டத்தின் பல்லவரம் தாலுகாவின் கண்டோன்மெண்ட்போர்டு பதிவு செய்த பதிவுதாரரின் பிறப்புக்கான அசல் பதிவிலிருந்து பின்வரும் தகவல்கள் எடுக்கப்பட்டுள்ளன என்பதை உறுதிப்படுத்த இது உள்ளது.",
+                    "text": "{{dist-name-multilang}} மாவட்டத்தின் {{block-name-multilang}} தாலுகாவின் {{cb-name-multilang}}கண்டோன்மெண்ட்போர்டு பதிவு செய்த பதிவுதாரரின் பிறப்புக்கான அசல் பதிவிலிருந்து பின்வரும் தகவல்கள் எடுக்கப்பட்டுள்ளன என்பதை உறுதிப்படுத்த இது உள்ளது.",
                     "style": "rule-body_multiLang"
                   }
                 ]
@@ -161,7 +161,7 @@
               {
                 "columns": [
                   {
-                    "text": "THIS IS TO CERTIFY THAT THE FOLLOWING INFORMATION HAS BEEN TAKEN FROM THE ORIGINAL RECORD OF BIRTH WHICH IS THE REGISTER FOR CANTONMENT BOARD {{cb_name}} TALUK OF KANCHEEPURAM DISTRICT OF TAMILNADU STATE, INDIA",
+                    "text": "THIS IS TO CERTIFY THAT THE FOLLOWING INFORMATION HAS BEEN TAKEN FROM THE ORIGINAL RECORD OF BIRTH WHICH IS THE REGISTER FOR CANTONMENT BOARD {{cb-name}} TALUK OF {{block-name}} DISTRICT OF {{dist-name}} STATE, INDIA",
                     "style": "rule-body"
                   }
                 ]
@@ -341,10 +341,10 @@
                         "text": "பதிவாளர் பிறப்பு மற்றும் இறப்பு "
                       },    
                       {
-                        "text": "CANTONMENT BOARD ST THOMAS MOUNT"
+                        "text": "CANTONMENT BOARD {{cb-name}}"
                       },
                       {
-                        "text": "கண்டோன்மெண்ட் புனித தோமையார் மலை"
+                        "text": "கன்டான்மென்ட் போர்டு {{cb-name-multilang}}"
                       }
                     ] 
                   }  
