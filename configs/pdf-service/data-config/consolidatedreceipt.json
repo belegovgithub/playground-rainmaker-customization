@@ -554,7 +554,7 @@
             {
               "externalAPI": [     
                 { 
-                    "path": "http://localhost:8085/egov-mdms-service/v1/_get",
+                    "path": "http://localhost:8080/egov-mdms-service/v1/_get",
                     "queryParam": "moduleName=tenant&masterName=tenants&tenantId=pb&filter=%5B?(@.code=='{$.tenantId}')%5D",
                     "apiRequest": null,
                     "responseMapping":[
@@ -570,7 +570,7 @@
                     ]
                 },
                 { 
-                  "path": "http://localhost:8085/egov-mdms-service/v1/_get",
+                  "path": "http://localhost:8080/egov-mdms-service/v1/_get",
                   "queryParam": "moduleName=common-masters&masterName=uiCommonPay&tenantId=pb&filter=%5B?(@.code=='{$.paymentDetails[0].businessService}')%5D",
                   "apiRequest": null,
                   "responseMapping":[
@@ -586,7 +586,7 @@
                   ]
               },
                 { 
-                  "path": "http://localhost:8085/egov-mdms-service/v1/_get",
+                  "path": "http://localhost:8080/egov-mdms-service/v1/_get",
                   "queryParam": "moduleName=tenant&masterName=footer&tenantId=pb&filter=%5B?(@.code=='{$.tenantId}' %26%26 @.service=='{$.paymentDetails[0].businessService}')%5D",
                   "apiRequest": null,
                   "responseMapping":[
@@ -613,7 +613,7 @@
                   ]
               },
               {
-                "path": "http://localhost:8064/pg-service/transaction/v1/_search",
+                "path": "http://localhost:8080/pg-service/transaction/v1/_search",
                 "queryParam": "txnId=$.instrumentNumber",
                 "apiRequest": null,
                 "responseMapping":[
