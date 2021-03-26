@@ -44,7 +44,7 @@
                   "value": {
                     "path": "$.dateofbirth"
                   },
-                  "type": "date"
+                  "type": "dateToWord"
                 },
                 {
                   "variable": "gender", 

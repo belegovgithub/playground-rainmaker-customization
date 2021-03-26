@@ -38,7 +38,7 @@
                   "value": {
                     "path": "$.dateofdeath"
                   },
-                  "type": "date"
+                  "type": "dateToWord"
                 },
                 {
                   "variable": "gender", 
