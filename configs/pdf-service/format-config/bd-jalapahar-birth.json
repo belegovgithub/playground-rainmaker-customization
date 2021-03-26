@@ -219,7 +219,7 @@
               {
                 "columns": [
                   {
-                    "text": "Date of Birth/{{dob_label_multiLang}}: {{dob}}",
+                    "text": "Date of Birth/जन्म तारीख: {{dob}}",
                     "width": "45%",
                     "style": "details-body"
                   }                        
@@ -243,7 +243,7 @@
               {
                 "columns": [
                   {
-                    "text": "{{father_name_label}}/{{father_name_label_multiLang}}: {{fatherName}}",
+                    "text": "Name of Father/पिताको नाम: {{fatherName}}",
                     "style": "details-body",
                     "width": "45%"
                   },
@@ -252,7 +252,7 @@
                     "width": "10%"
                   }, 
                   {
-                    "text": "{{registration_label}}/(पंजीकरण संख्या): {{registrationNo}}",
+                    "text": "Registration No/(पंजीकरण संख्या): {{registrationNo}}",
                     "style": "details-body"
                   }                                               
                 ]
@@ -263,7 +263,7 @@
               {
                 "columns": [
                   {
-                    "text": "{{mother_name_label_multiLang}} / {{mother_name_label}}: {{motherName}}",
+                    "text": "Name of Mother/माताको नाम: {{motherName}}",
                     "width": "45%",
                     "style": "details-body"
                   },
@@ -272,7 +272,7 @@
                     "width": "10%"
                   },                 
                   {
-                    "text": "{{registration_date_label}}/पंजीकरण को तारीख: {{registration_date}}",
+                    "text": "Date of Registration/पंजीकरण को तारीख: {{registration_date}}",
                     "style": "details-body"
                   }
                 ]

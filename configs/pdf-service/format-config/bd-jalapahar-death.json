@@ -240,7 +240,7 @@
                     "width": "10%"
                   }, 
                   {
-                    "text": "{{registration_label}}/(पंजीकरण संख्या): {{registrationNo}}",
+                    "text": "Registration No/(पंजीकरण संख्या): {{registrationNo}}",
                     "style": "details-body"
                   }  
           
@@ -261,7 +261,7 @@
                     "width": "10%"
                   },                
                   {
-                    "text": "{{registration_date_label}}/पंजीकरण को तारीख: {{registration_date}}",
+                    "text": "Date of Registration/पंजीकरण को तारीख: {{registration_date}}",
                     "style": "details-body"
                   }                                             
                 ]
