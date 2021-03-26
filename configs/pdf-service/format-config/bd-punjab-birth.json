@@ -2,7 +2,7 @@
   "key": "bd-punjab-birth",
   "config": {
     "defaultStyle": {
-      "font": "Cambay"
+      "font": "punjabi"
     },
     "watermark": {
       "text": "BEL UAT BEL UAT",
@@ -102,7 +102,7 @@
               {
                 "columns": [
                   {
-                    "text": "ਇਹ ਤਸਦੀਕ ਕੀਤਾ ਜਾਂਦਾ ਹੈ ਕਿ ਹੇਠ ਿਲਖੀ ਸੂਚਨਾ ਅਸਲ ਜਨਮ ਿਰਕਾਰਡ ਿਵੱਚ ਲਈ ਗਈ ਹੈ ਿਜਹੜੀ ਿਕ ਲੋ ਕਲ ਰਿਜਸਟਰਾਰ, ਜਨਮ ਤੇ ਮੌਤ , ਨਗਰ ਿਨਗਮ / ਕ ਸਲ / ਗ˛ਾਮ ਪੰਚਾਇਤ ",
+                    "text": ["ਇਹ ਤਸਦੀਕ ਕੀਤਾ ਜਾਂਦਾ ਹੈ ਕਿ ਹੇਠ ਿਲਖੀ ਸੂਚਨਾ ਅਸਲ ਜਨਮ ਿਰਕਾਰਡ ਿਵੱਚ ਲਈ ਗਈ ਹੈ ਿਜਹੜੀ ਿਕ ਲੋ ਕਲ ਰਿਜਸਟਰਾਰ, ਜਨਮ ਤੇ ਮੌਤ , ਨਗਰ ਿਨਗਮ / ਕ ਸਲ / ਗ੍ਰਾਮ ਪੰਚਾਇਤ {{cb-name-multilang}} ਬਲਾਕ/ ਪੁਿਲਸ ਚੌਕੀ {{block-name-multilang}} ਤਿਹਸੀਲ {{dist-name-multilang}} ਡਿਸਟ੍ਰਿਕਟ {{dist-name-multilang}} ਪੰਜਾਬ, ਸਾਲ  ਦੇ ਰਿਜਸਟਰ ਿਵੱਚ ਦਰਜ ਹੈ |"],
                     "style": "rule-header_multiLang"
                   }
                 ]
@@ -112,7 +112,7 @@
               {
                 "columns": [
                   {
-                    "text": "(ISSUED UNDER SECTION 12/17 OF THE REGISTRATION OF BIRTHS & DEATHS ACT, 1969 AND RULE 8/13 OF THE MAHARASHTRA REGISTRATION OF BIRTHS & DEATHS RULES 2000.)",
+                    "text": ["This is to certify that the following information has been taken from the original birth record which is registered in the birth register of Local Registrar, Birth & Deaths, Muncipal Corporation/Council/Gram Panchayat {{cb-name}} Cantonment Board, Block/ Police Station {{block-name}} Tehsil {{dist-name}} District {{dist-name}} of Punjab State of the Year"],
                     "style": "rule-header"
                   }
                 ]
@@ -131,36 +131,53 @@
               {
                 "columns": [
                   {
-                    "text": "प्रमाणित करण्यात येत आहे की, खालील माहिती जन्माच्या मूळ अभिलेखाच्या नोंदवहीतून घेण्यात आली आहे, जी की,{{cb-name-multilang}} छावनी परिषद, तालुका पुणे शहर, जिल्हा पुणे , महाराष्ट्र राज्य/केंद्रशासित प्रदेश,  भारत च्या नोंदवहीत उल्लेख आहे.",
-                    "style": "rule-body_multiLang"
+                    "text": "ਸੈਕਸ/ Sex: {{gender}}",
+                    "style": "details-body"
+                  },
+                  {
+                    "text": " ",
+                    "width": "1%"
+                  },
+                  {
+                    "text": "ਨਾਮ/ Name: {{name}}",
+                    "width": "49%",
+                    "style": "details-body"
                   }
                 ]
               }
             ],
             [
               {
-                "columns": [
+                "stack": [
                   {
-                    "text": "THIS IS TO CERTIFY THAT THE FOLLOWING INFORMATION HAS BEEN TAKEN FROM THE ORIGINAL RECORD OF BIRTH WHICH IS THE REGISTER FOR CANTONMENT BOARD {{cb-name}} OF TAHSIL/BLOCK PUNE CITY OF DISTRICT PUNE OF STATE/UNION TERRITORY MAHARASHTRA, INDIA.",
-                    "style": "rule-body"
+                    "text": "ਪਿਤਾ ਦਾ ਨਾਮ/ Father's Name: {{fatherName}}",
+                    "style": "details-body"
+                  },
+                  {
+                    "text": "ਦਾਦਾ ਜੀ ਦਾ ਨਾਮ/ Grand Father's Name:{{grandFatherName}}",
+                    "style":"details-body"
+                  },
+                  {
+                    "text": "ਮਾਤਾ ਦਾ ਨਾਮ / Mother's Name: {{motherName}}",
+                    "style": "details-body"
+                  },
+                  {
+                    "text": "ਜਨਮ ਿਮਤੀ / Date of Birth : {{dob}}",
+                    "style": "details-body"
+                  },
+                  {
+                    "text": "ਜਨਮ ਅਸਥਾਨ / Place of Birth : {{placeOfBirth}}",
+                    "style": "details-body"
                   }
-                ]
-              }
-            ]
-          ]
-        },
-        "layout": "noBorders"
-      },
-      {
-        "style": "ws-head",
-        "table": {
-          "widths": ["*"],
-          "body": [
+                ] 
+              } 
+            ],
+             
             [
               {
                 "columns": [
                   {
-                    "text": "नाव / NAME: {{name}}",
+                    "text": "ਰਿਜਸਟਰੇਸ਼ਨ ਦੀ ਿਮਤੀ / Date of Registration: {{registration_date}}",
                     "width": "49%",
                     "style": "details-body"
                   },
@@ -169,7 +186,7 @@
                     "width": "1%"
                   },
                   {
-                    "text": "लिंग / SEX: {{gender}}",
+                    "text": "ਰਿਜਸਟਰੇਸ਼ਨ ਨੰ ਬਰ / Registration No: {{registrationNo}}",
                     "style": "details-body"
                   }
                 ]
@@ -179,7 +196,7 @@
               {
                 "columns": [
                   {
-                    "text": "जन्म तारीख / DATE OF BIRTH: {{dob}}",
+                    "text": "ਬੱਚੇ ਦੇ ਜਨਮ ਦੇ ਸਮ ਮਾਤਾ-ਿਪਤਾ ਦਾ ਪਤਾ / Address of Parents at the time of birth of child: {{childAddress}}",
                     "width": "49%",
                     "style": "details-body"
                   },
@@ -188,7 +205,7 @@
                     "width": "1%"
                   },
                   {
-                    "text": "जन्म ठिकाण/ PLACE OF BIRTH: {{placeOfBirth}}",
+                    "text": "ਮਾਿਪਆਂ ਦਾ ਪੱਕਾ ਪਤਾ / Permanent Address of Parents : {{premanentAddress}}",
                     "style": "details-body"
                   }
                 ]
@@ -198,83 +215,7 @@
               {
                 "columns": [
                   {
-                    "text": "आईचे पूर्ण नाव / NAME OF MOTHER: {{motherName}}",
-                    "width": "49%",
-                    "style": "details-body"
-                  },
-                  {
-                    "text": " ",
-                    "width": "1%"
-                  },
-                  {
-                    "text": "वडिलांचे पूर्ण नाव / NAME OF FATHER: {{fatherName}}",
-                    "style": "details-body"
-                  }
-                ]
-              }
-            ],
-            [
-              {
-                "columns": [
-                  {
-                    "text": "आधार क्रमांक / MOTHER'S AADHAAR NO: {{motherUid}}",
-                    "width": "49%",
-                    "style": "details-body"
-                  },
-                  {
-                    "text": " ",
-                    "width": "1%"
-                  },
-                  {
-                    "text": "आधार क्रमांक / FATHER'S AADHAAR NO: {{fatherUid}}",
-                    "style": "details-body"
-                  }
-                ]
-              }
-            ],
-            [
-              {
-                "columns": [
-                  {
-                    "text": "बाळाच्या जन्माच्यावेळी आई-वडिलांचा पत्ता / ADDRESS OF PARENTS AT THE TIME OF BIRTH OF THE CHILD: {{childAddress}}",
-                    "width": "49%",
-                    "style": "details-body"
-                  },
-                  {
-                    "text": " ",
-                    "width": "1%"
-                  },
-                  {
-                    "text": "आई-वडिलांचा कायमचा पत्ता/ PERMANENT ADDRESS OF PARENTS: {{parentsAddress}}",
-                    "style": "details-body"
-                  }
-                ]
-              }
-            ],
-            [
-              {
-                "columns": [
-                  {
-                    "text": "नोंदणी क्रमांक / REGISTRATION NUMBER: {{registrationNo}}",
-                    "width": "49%",
-                    "style": "details-body"
-                  },
-                  {
-                    "text": " ",
-                    "width": "1%"
-                  },
-                  {
-                    "text": "नोंदणी दिनांक  / DATE OF REGISTRATION: {{registration_date}}",
-                    "style": "details-body"
-                  }
-                ]
-              }
-            ],
-            [
-              {
-                "columns": [
-                  {
-                    "text": "  शेरा / REMARKS (IF ANY): {{remarks}}",
+                    "text": "ਟਿੱਪਣੀਆਂ (ਜੇ ਕੋਈ ਹੈ ) / Remarks (if any): {{remarks}}",
                     "width": "49%",
                     "style": "details-body"
                   }
@@ -285,19 +226,11 @@
               {
                 "columns": [
                   {
-                    "text": "प्रमाणपत्र दिल्याचा दिनांक / DATE OF ISSUE: {{issueDate}}",
+                    "text": "ਜਾਰੀ ਕਰਨ ਦੀ ਿਮਤੀ / Date of Issue: {{issueDate}}",
                     "width": "49%",
                     "style": "details-body"
-                  },
-                  {
-                    "text": " ",
-                    "width": "1%"
-                  },
-                  {
-                    "text": "निर्गमित करणारे प्राधिकारी / ISSUING AUTHORITY :",
-                    "style": "details-body",
-                    "margin": [0, -15, 0, 0]
                   }
+                   
                 ]
               }
             ],
@@ -305,81 +238,40 @@
               {
                 "columns": [
                   {
-                    "text": " ",
-                    "width": "49%"
+                    "stack": [
+                      {
+                        "text": "ਸਰਟੀਿਫਕੇਟ ਿਤਆਰ ਕਰਨ ਵਾਲੇ ਦਾ ਨਾਮ ਅਤੇ ਅਹਦਾ",
+                         "fontSize": 9 
+                      },
+                      {
+                        "text": "Name & Designation of Official who prepared certificate",
+                         "fontSize": 9
+                      } 
+                    ] 
                   },
                   {
                     "text": " ",
                     "width": "1%"
                   },
                   {
-                    "text": "रजिस्ट्रार (जन्म व मृत्यु)",
-                    "style": "details-body",
-                    "margin": [0, -5, 0, 0]
+                    "stack": [
+                      {
+                        "text": "ਜਾਰੀ ਕਰਨ ਵਾਲੇ ਅਿਧਕਾਰੀ ਦੇ ਹਸਤਾਖਰ, ਨਾਮ ਅਤੇ ਪਤਾ",
+                         "fontSize": 9 
+                      },
+                      {
+                        "text": "Signature ,Name & address of issuing Authority",
+                         "fontSize": 9
+                      },    
+                      {
+                        "text": "CANTONMENT BOARD {{cb-name}}",
+                         "fontSize": 9
+                      } 
+                    ] 
                   }
                 ]
               }
-            ],
-            [
-              {
-                "columns": [
-                  {
-                    "text": " ",
-                    "width": "49%"
-                  },
-                  {
-                    "text": " ",
-                    "width": "1%"
-                  },
-                  {
-                    "text": "{{cb_label_name_multiLang}} {{cb-name-multilang}}",
-                    "style": "details-body",
-                    "margin": [0, -10, 0, 0]
-                  }
-                ]
-              }
-            ],
-            [
-              {
-                "columns": [
-                  {
-                    "text": "UPDATED ON : {{updatedOn}}",
-                    "width": "49%",
-                    "style": "details-body",
-                    "margin": [0, -45, 0, 0]
-                  },
-                  {
-                    "text": " ",
-                    "width": "1%"
-                  },
-                  {
-                    "text": "REGISTRAR (BIRTH & DEATH)",
-                    "style": "details-body",
-                    "margin": [0, -15, 0, 0]
-                  }
-                ]
-              }
-            ],
-            [
-              {
-                "columns": [
-                  {
-                    "text": " ",
-                    "width": "49%",
-                    "style": "details-body"
-                  },
-                  {
-                    "text": " ",
-                    "width": "1%"
-                  },
-                  {
-                    "text": "CANTONMENT BOARD {{cb-name}}",
-                    "style": "details-body",
-                    "margin": [0, -15, 0, 0]
-                  }
-                ]
-              }
-            ]
+            ] 
           ]
         },
         "layout": "noBorders"
@@ -408,45 +300,29 @@
           "body": [
             [
               {
-                "text": "THIS IS A COMPUTER GENERATED CERTIFICATE WHICH CONTAINS FACSIMILE SIGNATURE OF THE ISSUING AUTHORITY",
-                "width": 50,
-                "height": 61.25,
-                "style": "instruction-body"
-              }
-            ]
-          ]
-        },
-        "layout": "noBorders"
-      },
-      {
-        "style": "ws-head",
-        "table": {
-          "widths": ["*"],
-          "body": [
-            [
-              {
-                "text": "THE GOVT. OF INDIA VIDE CIRCULAR NO. 1/12/2014-VS(CRS) DATED 27-JULY-2015  HAS APPROVED THIS CERTIFICATE AS A VALID LEGAL DOCUMENT FOR ALL OFFICIAL PURPOSES",
-                "width": 50,
-                "height": 61.25,
-                "style": "instruction-body"
-              }
-            ]
-          ]
-        },
-        "layout": "noBorders"
-      },
-      {
-        "style": "ws-head",
-        "table": {
-          "widths": ["*"],
-          "body": [
-            [
-              {
-                "text": " प्रत्येक जन्म आणि मृत्यूची घटना नोंदल्याची खात्री करा / ENSURE REGISTRATION OF EVERY BIRTH AND DEATH ",
-                "width": 50,
-                "height": 61.25,
-                "style": "instruction-body"
-              }
+                "stack": [
+                  {
+                    "text": "ਜਨਮ ਅਤੇ ਮੌਤ ਰਿਜਸਟਰੇਸ਼ਨ ਐਕਟ, 1969 ਦੇ ਧਾਰਾ 12/17 ਅਤੇ ਪੰਜਾਬ ਜਨਮ ਅਤੇ ਮੌਤ ਰਿਜਸਟਰੇਸ਼ਨ ਿਨਯਮ, 2004 ਦੇ ਿਨਯਮ 8/13 ਦੇ ਅਧੀਨ ਜਾਰੀ ਕੀਤਾ ",
+                    "style": "instruction-body"
+                  },
+                  {
+                    "text": "ਹਰ ਜਨਮ ਅਤੇ ਮੌਤ ਦੀ ਰਜਿਸਟ੍ਰੇਸ਼ਨ ਨੂੰ ਯਕੀਨੀ ਬਣਾਉਣਾ /Ensure registration of every birth and death",
+                    "style": "instruction-body"
+                  },    
+                  {
+                    "text": "Issued u/s 12/17 of the Registration of Birth & Death Act,1969 & Rules 8/13 the Punjab Registration of Births & Deaths rules 2004",
+                    "style": "instruction-body"
+                  },
+                  {
+                    "text": "21 ਿਦਨਾਂ ਦੇ ਅੰਦਰ ਜਨਮ / ਮੌਤ ਦੀ ਘਟਨਾ ਦੀ ਰਿਜਸਟਰੀ ਕਰਾਏ ਅਤੇ ਸਰਟੀਿਫਕੇਟ ਦੀ ਮੁਫਤ ਕਾਪੀ ਪ˛ਾਪਤ ਕਰੋ",
+                    "style": "instruction-body"
+                  },
+                  {
+                    "text": "Registered the Births / Deaths event within 21 Days and get a free copy of certificate",
+                    "style": "instruction-body"
+                  }
+                ] 
+              } 
             ]
           ]
         },
@@ -480,7 +356,7 @@
       "qr-code": {
         "color": "#000000",
         "alignment": "left",
-        "margin": [0, -70, 0, 0]
+        "margin": [0, 0, 0, 0]
       },
       "title-header": {
         "color": "#004d00",
@@ -494,7 +370,7 @@
         "bold": true,
         "fontSize": 15,
         "alignment": "center",
-        "margin": [0, 0, 0, -10]
+        "margin": [0, 0, 0, 0]
       },
       "appendix-header-serialNo": {
         "color": "#000000",
@@ -546,7 +422,7 @@
         "margin": [0, 5, 0, 0]
       },
       "appendix-header-body": {
-        "color": "#000099",
+        "color": "#004d00",
         "bold": true,
         "fontSize": 9,
         "fontWeight": 400,
