@@ -57,11 +57,11 @@
                     "margin": [0, 0, 0, 5]
                   },
                   {
-                    "text": "கண்டோன்மெண்ட் {{cb_name_multilang}}",
+                    "text": "கண்டோன்மெண்ட்போர்டு {{cb-name-multilang}}",
                     "style": "appendix-header-body"
                   },
                   {
-                    "text": "CANTONMENT BOARD {{cb_name}}",
+                    "text": "CANTONMENT BOARD {{cb-name}}",
                     "style": "appendix-header-body"
                   }
                 ]
@@ -92,12 +92,18 @@
       {
         "style": "ws-head",
         "table": {
+          "widths": ["*"],
           "headerRows": 0,
           "body": [
             [
               {
-                "text": "பிறப்புசான்றிதழ்/ BIRTH CERTIFICATE",
-                "style": "title-header_multiLang"
+                "columns": [
+                  {
+                    "text": "பிறப்புசான்றிதழ்/ BIRTH CERTIFICATE",
+                    "style":"title-header"
+                     
+                  }
+                ]
               }
             ],
             [
@@ -335,16 +341,20 @@
                   {
                     "stack": [
                       {
-                        "text": "Registrar of Birth & Death" 
+                        "text": "Registrar of Birth & Death", 
+                        "fontSize": 9
                       },
                       {
-                        "text": "பதிவாளர் பிறப்பு மற்றும் இறப்பு "
+                        "text": "பதிவாளர் பிறப்பு மற்றும் இறப்பு ", 
+                        "fontSize": 9
                       },    
                       {
-                        "text": "CANTONMENT BOARD {{cb-name}}"
+                        "text": "CANTONMENT BOARD {{cb-name}}", 
+                        "fontSize": 9
                       },
                       {
-                        "text": "கன்டான்மென்ட் போர்டு {{cb-name-multilang}}"
+                        "text": "கன்டான்மென்ட் போர்டு {{cb-name-multilang}}", 
+                        "fontSize": 9
                       }
                     ] 
                   }  
@@ -437,7 +447,7 @@
       "title-header": {
         "color": "#004d00",
         "bold": true,
-        "fontSize": 14,
+        "fontSize": 16,
         "alignment": "center",
         "margin": [0, -1, 0, 0]
       },
@@ -467,14 +477,14 @@
         "bold": false,
         "fontSize": 10,
         "fontWeight": 400,
-        "margin": [0, 0, 0, 3]
+        "margin": [0, 0, 0, 0]
       },
       "rule-header_multiLang": {
         "color": "#000000",
         "bold": false,
-        "fontSize": 11,
+        "fontSize": 10,
         "fontWeight": 400,
-        "margin": [0, 0, 0, -1]
+        "margin": [0, 0, 0, 0]
       },
       "rule-body": {
         "color": "#000000",
@@ -486,16 +496,16 @@
       "rule-body_multiLang": {
         "color": "#000000",
         "bold": false,
-        "fontSize": 11,
+        "fontSize": 10,
         "fontWeight": 400,
-        "margin": [0, 0, 0, 0]
+        "margin": [0, 3, 0, 0]
       },
       "details-body": {
         "color": "#000000",
         "bold": false,
-        "fontSize": 11,
+        "fontSize": 9,
         "fontWeight": 400,
-        "margin": [0, 5, 0, 0]
+        "margin": [0, 4, 0, 0]
       },
       "appendix-header-body": {
         "color": "#000099",

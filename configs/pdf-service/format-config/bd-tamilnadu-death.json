@@ -92,12 +92,18 @@
       {
         "style": "ws-head",
         "table": {
+          "widths": ["*"],
           "headerRows": 0,
           "body": [
             [
               {
-                "text": "இறப்பு சான்றிதழ் / DEATH CERTIFICATE",
-                "style": "title-header_multiLang"
+                "columns": [
+                  {
+                    "text": "இறப்பு சான்றிதழ் / DEATH CERTIFICATE",
+                    "style":"title-header"
+                     
+                  }
+                ]
               }
             ],
             [
@@ -152,7 +158,7 @@
                 "columns": [
                   {
                     "text": "கீழ்கண்ட தகவல் இந்தியா, தமிழ்நாடு மாநிலம், {{dist-name-multilang}} மாவட்டம், {{block-name-multilang}} வட்டம். {{cb-name-multilang}} கன்டான்மென்ட் போர்டு சேர்ந்த அசல் இறப்பு பதிவேட்டிலிருந்து எடுக்கபட்டவை என சான்று அளிக்கபடுகிறது.",
-                    "style": "rule-body_multiLang"
+                    "style": "rule-body"
                   }
                 ]
               }
@@ -161,8 +167,8 @@
               {
                 "columns": [
                   {
-                    "text": "THIS IS TO CERTIFY THAT THE FOLLOWING INFORMATION HAS BEEN TAKEN FROM THE ORIGINAL RECORD OF DEATH WHICH IS THE REGISTER FOR CANTONMENT BOARD {{cb-name}} OF {{block-name}} TALUK OF {{dist-name} DISTRICT OF TAMILNADU STATE, INDIA",
-                    "style": "rule-body"
+                    "text": "THIS IS TO CERTIFY THAT THE FOLLOWING INFORMATION HAS BEEN TAKEN FROM THE ORIGINAL RECORD OF DEATH WHICH IS THE REGISTER FOR CANTONMENT BOARD {{cb-name}} OF {{block-name}} TALUK OF {{dist-name}} DISTRICT OF TAMIL NADU STATE, INDIA",
+                    "style": "rule-header"
                   }
                 ]
               }
@@ -374,16 +380,20 @@
                   {
                     "stack": [
                       {
-                        "text": "REGISTRAR (BIRTH & DEATH)" 
+                        "text": "REGISTRAR (BIRTH & DEATH)",
+                         "fontSize": 9 
                       },
                       {
-                        "text": "பதிவாளர் பிறப்பு மற்றும் இறப்பு "
+                        "text": "பதிவாளர் பிறப்பு மற்றும் இறப்பு ",
+                         "fontSize": 9
                       },    
                       {
-                        "text": "CANTONMENT BOARD {{cb-name}}"
+                        "text": "CANTONMENT BOARD {{cb-name}}",
+                         "fontSize": 9
                       },
                       {
-                        "text": "கன்டான்மென்ட் போர்டு {{cb-name-multilang}}"
+                        "text": "கன்டான்மென்ட் போர்டு {{cb-name-multilang}}",
+                         "fontSize": 9
                       }
                     ] 
                   }  
@@ -441,8 +451,7 @@
           ]
         },
         "layout": "noBorders"
-      }
-       
+      }  
     ],
     "styles": {
       "pdf-header": {
@@ -476,7 +485,7 @@
       "title-header": {
         "color": "#004d00",
         "bold": true,
-        "fontSize": 14,
+        "fontSize": 16,
         "alignment": "center",
         "margin": [0, -1, 0, 0]
       },
@@ -506,14 +515,14 @@
         "bold": false,
         "fontSize": 10,
         "fontWeight": 400,
-        "margin": [0, 0, 0, 3]
+        "margin": [0, 0, 0, 0]
       },
       "rule-header_multiLang": {
         "color": "#000000",
         "bold": false,
-        "fontSize": 11,
+        "fontSize": 10,
         "fontWeight": 400,
-        "margin": [0, 0, 0, -1]
+        "margin": [0, 0, 0, 0]
       },
       "rule-body": {
         "color": "#000000",
@@ -525,16 +534,16 @@
       "rule-body_multiLang": {
         "color": "#000000",
         "bold": false,
-        "fontSize": 11,
+        "fontSize": 10,
         "fontWeight": 400,
-        "margin": [0, 0, 0, 0]
+        "margin": [0, 3, 0, 0]
       },
       "details-body": {
         "color": "#000000",
         "bold": false,
-        "fontSize": 11,
+        "fontSize": 9,
         "fontWeight": 400,
-        "margin": [0, 5, 0, 0]
+        "margin": [0, 4, 0, 0]
       },
       "appendix-header-body": {
         "color": "#000099",
