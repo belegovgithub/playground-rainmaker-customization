@@ -1,5 +1,5 @@
 {
-  "key": "bd-punjab-birth",
+  "key": "bd-punjab-death",
   "config": {
     "defaultStyle": {
       "font": "punjabi"
@@ -21,7 +21,7 @@
               {
                 "stack": [
                   {
-                    "text": "ਫਾਰਮ/Form-5",
+                    "text": "ਫਾਰਮ/Form-6",
                     "style": "appendix-header-serialNo"
                   }, 
                   {
@@ -85,7 +85,7 @@
           "body": [
             [
               {
-                "text": "ਜਨਮ ਸਰਟੀਿਫਕੇਟ / Birth Certificate",
+                "text": "ਮੌਤ ਸਰਟੀਫਿਕੇਟ / Death Certificate",
                 "style": "title-header_multiLang"
               }
             ]
@@ -102,7 +102,7 @@
               {
                 "columns": [
                   {
-                    "text": ["ਇਹ ਤਸਦੀਕ ਕੀਤਾ ਜਾਂਦਾ ਹੈ ਕਿ ਹੇਠ ਲਿਖੀ ਸੂਚਨਾ ਅਸਲ ਜਨਮ ਰਿਕਾਰਡ ਤੋਂ ਲਈ ਗਈ ਹੈਜੋ ਸਥਾਨਕ ਲੋ ਕਲ ਰਿਜਸਟਰਾਰ, ਜਨਮ ਤੇ ਮੌਤ , ਮੁਨਸਿਪਲ ਕਾਰਪੋਰੇਸ਼ਨ / ਕ ਸਲ / ਗ੍ਰਾਮ ਪੰਚਾਇਤ {{cb-name-multilang}} ਬਲਾਕ/ ਪੁਿਲਸ ਚੌਕੀ {{block-name-multilang}} ਤਿਹਸੀਲ {{dist-name-multilang}} ਡਿਸਟ੍ਰਿਕਟ {{dist-name-multilang}} ਪੰਜਾਬ, ਸਾਲ  ਦੇ ਸਥਾਨਕ ਰਜਿਸਟਰਾਰ |"],
+                    "text": ["ਇਹ ਤਸਦੀਕ ਕੀਤਾ ਜਾਂਦਾ ਹੈ ਕਿ ਹੇਠ ਲਿਖੀ ਸੂਚਨਾ ਅਸਲ ਮੌਤ ਰਿਕਾਰਡ ਵਿਚੋਂ ਲਈ ਗਈ ਹੈ ਜਿਹੜੀ ਕਿ ਲੋਕਲ ਰਜਿਸਟਰਾਰ, ਜਨਮ ਤੇ ਮੌਤ, ਨਗਰ ਨਿਗਮ/ਕੌਂਸਲ/ਗ੍ਰਾਮ ਪੰਚਾਇਤ {{cb-name-multilang}} ਬਲਾਕ/ ਪੁਲਿਸ ਥਾਣਾ  {{block-name-multilang}} ਤਹਿਸੀਲ  {{dist-name-multilang}} ਜ਼ਿਲ੍ਹਾ  {{dist-name-multilang}} ਪੰਜਾਬ, ਸਾਲ ਦੇ ਰਜਿਸਟਰ ਵਿਚ ਦਰਜ ਹੈ|"],
                     "style": "rule-header_multiLang"
                   }
                 ]
@@ -139,7 +139,7 @@
                     "width": "1%"
                   },
                   {
-                    "text": "ਨਾਮ/ Name: {{name}}",
+                    "text": "ਮ੍ਰਿਤਕ ਦਾ ਨਾਮ/ Name of Deceased: {{name}}",
                     "width": "49%",
                     "style": "details-body"
                   }
@@ -150,43 +150,36 @@
               {
                 "stack": [
                   {
-                    "text": "ਪਿਤਾ ਦਾ ਨਾਮ/ Father's Name: {{fatherName}}",
+                    "text": "ਪਿਤਾ/ਪਤੀ ਦਾ ਨਾਮ/Father’s /Husband’s Name: {{fatherName}}",
                     "style": "details-body"
                   },
                   {
-                    "text": "ਦਾਦਾ ਜੀ ਦਾ ਨਾਮ/ Grand Father's Name:{{grandFatherName}}",
-                    "style":"details-body"
-                  },
-                  {
-                    "text": "ਮਾਤਾ ਦਾ ਨਾਮ / Mother's Name: {{motherName}}",
+                    "text": "ਮ੍ਰਿਤਕ ਦੀ ਮਾਤਾ ਦਾ ਨਾਮ/Name of Deceased’s Mother: {{motherName}}",
                     "style": "details-body"
                   },
                   {
-                    "text": "ਜਨਮ ਤਾਰੀਖ/ Date of Birth : {{dob}}",
-                    "style": "details-body"
-                  },
-                  {
-                    "text": "ਜਨਮ ਅਸਥਾਨ / Place of Birth : {{placeOfBirth}}",
+                    "text": "ਮੌਤ ਅਸਥਾਨ/ Place of Death: {{placeOfDeath}}",
                     "style": "details-body"
                   }
+                   
                 ] 
               } 
-            ],
-             
+            ], 
             [
               {
                 "columns": [
                   {
-                    "text": "ਰਜਿਸਟਰੀ ਕਰਨ ਦੀ ਮਿਤੀ/ Date of Registration: {{registration_date}}",
-                    "width": "49%",
-                    "style": "details-body"
+                    "text": "ਮੌਤ ਦੀ ਮਿਤੀ/ Date of Death : {{dod}}",
+                    "style": "details-body",
+                    "width": "49%"
                   },
+                   
                   {
                     "text": " ",
                     "width": "1%"
                   },
                   {
-                    "text": "ਰਿਜਸਟਰੇਸ਼ਨ ਨੰ ਬਰ / Registration No: {{registrationNo}}",
+                    "text": "ਰੇਜਿਸਟ੍ਰੇਸ਼ਨ ਦੀ ਮਿਤੀ/ Date of Registration : {{registration-date}}",
                     "style": "details-body"
                   }
                 ]
@@ -196,7 +189,18 @@
               {
                 "columns": [
                   {
-                    "text": "ਬੱਚੇ ਦੇ ਜਨਮ ਦੇ ਸਮ ਮਾਤਾ-ਿਪਤਾ ਦਾ ਪਤਾ / Address of Parents at the time of birth of child: {{childAddress}}",
+                    "text": "ਰੇਜਿਸਟ੍ਰੇਸ਼ਨ ਨੰਬਰ/ Registration No : {{registrationNo}}",
+                    "style": "details-body",
+                    "width": "49%"
+                  } 
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": "ਮ੍ਰਿਤਕ ਦਾ ਮੌਤ ਸਮੇਂ ਪਤਾ / Address of deceased at the time of death: {{presentAddress}}",
                     "width": "49%",
                     "style": "details-body"
                   },
@@ -205,7 +209,7 @@
                     "width": "1%"
                   },
                   {
-                    "text": "ਮਾਿਪਆਂ ਦਾ ਪੱਕਾ ਪਤਾ / Permanent Address of Parents : {{premanentAddress}}",
+                    "text": "ਮ੍ਰਿਤਕ ਦਾ ਪੱਕਾ ਪਤਾ / Permanent address of the deceased : {{premanentAddress}}",
                     "style": "details-body"
                   }
                 ]
