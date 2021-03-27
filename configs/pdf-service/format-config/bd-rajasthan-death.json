@@ -54,8 +54,7 @@
                   },
                   {
                     "text": "Government of Rajasthan",
-                    "style": "appendix-header-body",
-                    "margin": [0, 0, 0, 5]
+                    "style": "appendix-header-body" 
                   },
                   {
                     "text": "आर्थिक एवं सांख्यिकी निदेशालय",
@@ -141,7 +140,6 @@
       {
         "style": "ws-head",
         "table": {
-          "headerRows": 0,
           "body": [
             [
               {
@@ -152,19 +150,24 @@
                   }
                 ]
               }
-            ],
-            [
-              {
-                "columns": [
-                  {
-                    "text": " "
-                  }
-                ]
-              }
-            ]
+            ] 
           ]
         },
-        "layout": "lightHorizontalLines"
+        "layout": "noBorders"
+      },
+      {
+        "canvas": [
+            {
+                  "lineColor": "gray",
+                  "type": "line",
+                  "x1": 0,
+                  "y1": 0,
+                  "x2": 515,
+                  "y2": 0,
+                  "lineWidth": 1
+              }
+             
+        ]
       },
       {
         "style": "ws-head",
@@ -222,12 +225,12 @@
                 "columns": [
                   {
                     "text": "मृतक का नाम / NAME OF DECEASED: {{name}}",
-                    "width": "45%",
+                    "width": "49%",
                     "style": "details-body"
                   },
                   {
                     "text": " ",
-                    "width": "10%"
+                    "width": "1%"
                   },
                   {
                     "text": "लिंग / SEX: {{gender}}",
@@ -241,12 +244,12 @@
                 "columns": [
                   {
                     "text": "मृतक का आधार नंबर/Deceased Aadhar No:: {{aadharNo}}",
-                    "width": "45%",
+                    "width": "49%",
                     "style": "details-body"
                   },
                   {
                     "text": " ",
-                    "width": "10%"
+                    "width": "1%"
                   },
                   {
                     "text": "मृत्यु का स्थान/ PLACE OF DEATH: {{placeOfBirth}}",
@@ -258,11 +261,39 @@
             [
               {
                 "columns": [
+                   
                   {
-                    "text": "मृत्यु की तिथि / DATE OF DEATH  : {{dod}}",
-                    "width": "45%",
-                    "style": "details-body"
-                  }
+                    "stack": [
+                      {
+                        "text": "मृत्यु की तिथि / DATE OF DEATH  : {{dod}}",
+                        "style": "details-body"
+                      },
+                      {
+                        "text": "माता का नाम /NAME OF MOTHER : {{motherName}}",
+                        "style": "details-body"
+                      },
+                      {
+                        "text": "आधार नंबर / MOTHER’S AADHAAR NO : {{motherUid}}",
+                        "style": "details-body"
+                      },
+                      {
+                        "text": "पिता का नाम / NAME OF FATHER: {{fatherName}}",
+                        "style": "details-body"
+                      },
+                      {
+                        "text": "आधार नंबर / FATHER’S AADHAAR NO : {{fatherUid}}",
+                        "style": "details-body"
+                      },
+                      {
+                        "text": "पति/पत्नी का नाम/Name of Husband/Wife : {{spouseName}}",
+                        "style": "details-body"
+                      },
+                      {
+                        "text": "पति/पत्नी का आधार नंबर/Husband/Wife Aadhar No : {{spouseAadhar}}",
+                        "style": "details-body"
+                      }    
+                    ]
+                  } 
                    
                 ]
               }
@@ -271,71 +302,13 @@
               {
                 "columns": [
                   {
-                    "text": "माता का नाम /NAME OF MOTHER : {{motherName}}",
-                    "width": "45%",
-                    "style": "details-body"
-                  },
-                  {
-                    "text": " ",
-                    "width": "10%"
-                  },
-                  {
-                    "text": "पिता का नाम / NAME OF FATHER: {{fatherName}}",
-                    "style": "details-body"
-                  }
-                ]
-              }
-            ],
-            [
-              {
-                "columns": [
-                  {
-                    "text": "आधार नंबर / MOTHER’S AADHAAR NO : {{motherUid}}",
-                    "width": "45%",
-                    "style": "details-body"
-                  },
-                  {
-                    "text": " ",
-                    "width": "10%"
-                  },
-                  {
-                    "text": "आधार नंबर / FATHER’S AADHAAR NO : {{fatherUid}}",
-                    "style": "details-body"
-                  }
-                ]
-              }
-            ],
-            [
-              {
-                "columns": [
-                  
-                  {
-                    "text": "पति/पत्नी का नाम/Name of Husband/Wife : {{spouseName}}",
-                    "width": "45%",
-                    "style": "details-body"
-                  },
-                  {
-                    "text": " ",
-                    "width": "10%"
-                  },
-                  {
-                    "text": "पति/पत्नी का आधार नंबर/Husband/Wife Aadhar No : {{spouseAadhar}}",
-                    "style": "details-body"
-                  }
-                ]
-              }
-            ],
-            [
-              {
-                "columns": [
-                  {
                     "text": "मृत्यु के समय मृतक का पता / ADDRESS OF THE DECEASED AT THE TIME OF DEATH: {{presentAdd}}",
-                    "width": "45%",
+                    "width": "49%",
                     "style": "details-body"
                   },
                   {
                     "text": " ",
-                    "width": "10%"
+                    "width": "1%"
                   },
                   {
                     "text": "मृतक का स्थायी पता/ PERMANENT ADDRESS OF DECEASED: {{permanentAddress}}",
@@ -348,59 +321,44 @@
               {
                 "columns": [
                   {
-                    "text": "पंजीकरण संख्या / REGISTRATION NUMBER: {{registrationNo}}",
-                    "width": "45%",
-                    "style": "details-body"
+                    "stack": [
+                      {
+                        "text": "पंजीकरण संख्या / REGISTRATION NUMBER: {{registrationNo}}",
+                        "style": "details-body"
+                      },
+                      {
+                        "text": "टिप्पणी / REMARKS (IF ANY): {{remarks}}",
+                        "style": "details-body"
+                      },
+                      {
+                        "text": "जारी करने की तिथि/ DATE OF ISSUE: {{issueDate}}",
+                        "style": "details-body"
+                      } 
+                    ]
                   },
                   {
                     "text": " ",
-                    "width": "10%"
+                    "width": "1%"
                   },
                   {
-                    "text": "पंजीकरण तारीख/ DATE OF REGISTRATION: {{registration_date}}",
-                    "style": "details-body"
-                  }
+                    "stack": [ 
+                      {
+                        "text": "पंजीकरण तारीख/ DATE OF REGISTRATION: {{registration_date}}",
+                        "style": "details-body",
+                        "width": "49%"
+                      },
+                      {
+                        "text": "जारी करने वाले प्राधिकारी के हस्ताक्षर/Signature of issuing authority:",
+                        "style": "details-body"
+                        
+                      }
+                    ]
+                 }
                 ]
               }
-            ],
-            [
-              {
-                "columns": [
-                  {
-                    "text": "टिप्पणी / REMARKS (IF ANY): {{remarks}}",
-                    "width": "45%",
-                    "style": "details-body"
-                  },
-                  {
-                    "text": " ",
-                    "width": "10%"
-                  },
-                  {
-                    "text": " ",
-                    "style": "details-body"
-                  }
-                ]
-              }
-            ],
-            [
-              {
-                "columns": [
-                  {
-                    "text": "जारी करने की तिथि/ DATE OF ISSUE: {{issueDate}}",
-                    "width": "45%",
-                    "style": "details-body"
-                  },
-                  {
-                    "text": " ",
-                    "width": "10%"
-                  },
-                  {
-                    "text": "जारी करने वाले प्राधिकारी के हस्ताक्षर/Signature of issuing authority",
-                    "style": "details-body"
-                  }
-                ]
-              }
-            ] 
+            ]
+            
+            
           ]
         },
         "layout": "noBorders"
@@ -500,23 +458,23 @@
       "qr-code": {
         "color": "#000000",
         "alignment": "left",
-        "margin": [0, -30, 0, 0]
+        "margin": [0, -10, 0, 0]
       },
       "title-header": {
         "color": "#000000",
         "bold": true,
-        "fontSize": 14,
+        "fontSize": 12,
         "fontWeight": 400,
         "alignment": "center",
-        "margin": [0, 1, 0, 0]
+        "margin": [0, -5, 0, 0]
       },
       "title-header_multiLang": {
         "color": "#000000",
         "bold": true,
-        "fontSize": 15,
+        "fontSize": 12,
         "fontWeight": 400,
         "alignment": "center",
-        "margin": [0, 3, 0, 0]
+        "margin": [0, -5, 0, 0]
       },
       "appendix-header-serialNo": {
         "color": "#000000",
@@ -538,7 +496,7 @@
         "alignment": "center",
         "fontSize": 10,
         "fontWeight": 400,
-        "margin": [0, 0, 0, 5]
+        "margin": [0, 0, 0, 0]
       },
       "rule-header_multiLang": {
         "color": "#000000",
@@ -546,7 +504,7 @@
         "alignment": "center",
         "fontSize": 11,
         "fontWeight": 400,
-        "margin": [0, 0, 0, 5]
+        "margin": [0, 0, 0, 0]
       },
       "rule-body": {
         "color": "#000000",
@@ -562,7 +520,7 @@
         "fontSize": 11,
         "alignment": "left",
         "fontWeight": 400,
-        "margin": [0, -10, 0, 0]
+        "margin": [0, 0, 0, 0]
       },
       "details-body": {
         "color": "#000000",
@@ -581,9 +539,10 @@
       "appendix-header-body": {
         "color": "#000000",
         "bold": true,
-        "fontSize": 9,
+        "fontSize": 11,
         "fontWeight": 400,
-        "alignment": "center"
+        "alignment": "center",
+        "margin": [0, -3, 0, 0]
       },
       "receipt-value-down-sub": {
         "color": "#000000",

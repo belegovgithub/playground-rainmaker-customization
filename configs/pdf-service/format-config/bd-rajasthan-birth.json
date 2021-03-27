@@ -54,8 +54,7 @@
                   },
                   {
                     "text": "Government of Rajasthan",
-                    "style": "appendix-header-body",
-                    "margin": [0, 0, 0, 5]
+                    "style": "appendix-header-body" 
                   },
                   {
                     "text": "आर्थिक एवं सांख्यिकी निदेशालय",
@@ -141,7 +140,6 @@
       {
         "style": "ws-head",
         "table": {
-          "headerRows": 0,
           "body": [
             [
               {
@@ -152,19 +150,24 @@
                   }
                 ]
               }
-            ],
-            [
-              {
-                "columns": [
-                  {
-                    "text": " "
-                  }
-                ]
-              }
-            ]
+            ] 
           ]
         },
-        "layout": "lightHorizontalLines"
+        "layout": "noBorders"
+      },
+      {
+        "canvas": [
+            {
+                  "lineColor": "gray",
+                  "type": "line",
+                  "x1": 0,
+                  "y1": 0,
+                  "x2": 515,
+                  "y2": 0,
+                  "lineWidth": 1
+              }
+             
+        ]
       },
       {
         "style": "ws-head",
@@ -222,12 +225,12 @@
                 "columns": [
                   {
                     "text": "नाम / NAME: {{name}}",
-                    "width": "45%",
+                    "width": "49%",
                     "style": "details-body"
                   },
                   {
                     "text": " ",
-                    "width": "10%"
+                    "width": "1%"
                   },
                   {
                     "text": "लिंग / SEX: {{gender}}",
@@ -241,12 +244,12 @@
                 "columns": [
                   {
                     "text": "जन्म तिथि / DATE OF BIRTH : {{dob}}",
-                    "width": "45%",
+                    "width": "49%",
                     "style": "details-body"
                   },
                   {
                     "text": " ",
-                    "width": "10%"
+                    "width": "1%"
                   },
                   {
                     "text": "जन्म स्थान/ PLACE OF BIRTH: {{placeOfBirth}}",
@@ -259,37 +262,26 @@
               {
                 "columns": [
                   {
-                    "text": "माता का नाम /NAME OF MOTHER : {{motherName}}",
-                    "width": "45%",
-                    "style": "details-body"
-                  },
-                  {
-                    "text": " ",
-                    "width": "10%"
-                  },
-                  {
-                    "text": "पिता का नाम / NAME OF FATHER: {{fatherName}}",
-                    "style": "details-body"
+                    "stack": [
+                      {
+                        "text": "माता का नाम /NAME OF MOTHER : {{motherName}}",
+                        "style": "details-body"
+                      },
+                      {
+                        "text": "आधार नंबर / MOTHER’S AADHAAR NO : {{motherUid}}",
+                        "style": "details-body"
+                      },
+                      {
+                        "text": "पिता का नाम / NAME OF FATHER: {{fatherName}}",
+                        "style": "details-body"
+                      },
+                      {
+                        "text": "आधार नंबर / FATHER’S AADHAAR NO : {{fatherUid}}",
+                        "style": "details-body"
+                      }  
+                    ]
                   }
-                ]
-              }
-            ],
-            [
-              {
-                "columns": [
-                  {
-                    "text": "आधार नंबर / MOTHER’S AADHAAR NO : {{motherUid}}",
-                    "width": "45%",
-                    "style": "details-body"
-                  },
-                  {
-                    "text": " ",
-                    "width": "10%"
-                  },
-                  {
-                    "text": "आधार नंबर / FATHER’S AADHAAR NO : {{fatherUid}}",
-                    "style": "details-body"
-                  }
+                   
                 ]
               }
             ],
@@ -298,12 +290,12 @@
                 "columns": [
                   {
                     "text": "बच्चे के जन्म के समय माता-पिता का पता / ADDRESS OF PARENTS AT THE TIME OF BIRTH OF THE CHILD: {{childAddress}}",
-                    "width": "45%",
+                    "width": "49%",
                     "style": "details-body"
                   },
                   {
                     "text": " ",
-                    "width": "10%"
+                    "width": "1%"
                   },
                   {
                     "text": "माता-पिता के स्थायी पता/ PERMANENT ADDRESS OF PARENTS: {{parentsAddress}}",
@@ -316,62 +308,42 @@
               {
                 "columns": [
                   {
-                    "text": "पंजीकरण संख्या / REGISTRATION NUMBER: {{registrationNo}}",
-                    "width": "45%",
-                    "style": "details-body"
+                    "stack": [
+                      {
+                        "text": "पंजीकरण संख्या / REGISTRATION NUMBER: {{registrationNo}}",
+                        "style": "details-body"
+                      },
+                      {
+                        "text": "टिप्पणी / REMARKS (IF ANY): {{remarks}}",
+                        "style": "details-body"
+                      },
+                      {
+                        "text": "जारी करने की तिथि/ DATE OF ISSUE: {{issueDate}}",
+                        "style": "details-body"
+                      } 
+                    ]
                   },
                   {
                     "text": " ",
-                    "width": "10%"
+                    "width": "1%"
                   },
                   {
-                    "text": "पंजीकरण तारीख/ DATE OF REGISTRATION: {{registration_date}}",
-                    "style": "details-body"
-                  }
+                    "stack": [ 
+                      {
+                        "text": "पंजीकरण तारीख/ DATE OF REGISTRATION: {{registration_date}}",
+                        "style": "details-body",
+                        "width": "49%"
+                      },
+                      {
+                        "text": "जारी करने वाले प्राधिकारी के हस्ताक्षर/Signature of issuing authority:",
+                        "style": "details-body"
+                        
+                      }
+                    ]
+                 }
                 ]
               }
-            ],
-            [
-              {
-                "columns": [
-                  {
-                    "text": "टिप्पणी / REMARKS (IF ANY): {{remarks}}",
-                    "width": "45%",
-                    "style": "details-body",
-                    "margin": [0, -20, 0, 0]
-                  },
-                  {
-                    "text": " ",
-                    "width": "10%"
-                  },
-                  {
-                    "text": " ",
-                    "style": "details-body"
-                  }
-                ]
-              }
-            ],
-            [
-              {
-                "columns": [
-                  {
-                    "text": "जारी करने की तिथि/ DATE OF ISSUE: {{issueDate}}",
-                    "width": "45%",
-                    "style": "details-body",
-                    "margin": [0, -20, 0, 0]
-                  },
-                  {
-                    "text": " ",
-                    "width": "10%"
-                  },
-                  {
-                    "text": "जारी करने वाले प्राधिकारी के हस्ताक्षर/Signature of issuing authority:",
-                    "style": "details-body",
-                    "margin": [0, -20, 0, 0]
-                  }
-                ]
-              }
-            ]
+            ]  
           ]
         },
         "layout": "noBorders"
@@ -471,23 +443,23 @@
       "qr-code": {
         "color": "#000000",
         "alignment": "left",
-        "margin": [0, -30, 0, 0]
+        "margin": [0, -10, 0, 0]
       },
       "title-header": {
         "color": "#000000",
         "bold": true,
-        "fontSize": 14,
+        "fontSize": 12,
         "fontWeight": 400,
         "alignment": "center",
-        "margin": [0, 1, 0, 0]
+        "margin": [0, -5, 0, 0]
       },
       "title-header_multiLang": {
         "color": "#000000",
         "bold": true,
-        "fontSize": 15,
+        "fontSize": 12,
         "fontWeight": 400,
         "alignment": "center",
-        "margin": [0, 3, 0, 0]
+        "margin": [0, -5, 0, 0]
       },
       "appendix-header-serialNo": {
         "color": "#000000",
@@ -509,7 +481,7 @@
         "alignment": "center",
         "fontSize": 10,
         "fontWeight": 400,
-        "margin": [0, 0, 0, 5]
+        "margin": [0, 0, 0, 0]
       },
       "rule-header_multiLang": {
         "color": "#000000",
@@ -517,7 +489,7 @@
         "alignment": "center",
         "fontSize": 11,
         "fontWeight": 400,
-        "margin": [0, 0, 0, 5]
+        "margin": [0, 0, 0, 0]
       },
       "rule-body": {
         "color": "#000000",
@@ -533,7 +505,7 @@
         "fontSize": 11,
         "alignment": "left",
         "fontWeight": 400,
-        "margin": [0, -10, 0, 0]
+        "margin": [0, 0, 0, 0]
       },
       "details-body": {
         "color": "#000000",
@@ -552,9 +524,10 @@
       "appendix-header-body": {
         "color": "#000000",
         "bold": true,
-        "fontSize": 9,
+        "fontSize": 11,
         "fontWeight": 400,
-        "alignment": "center"
+        "alignment": "center",
+        "margin": [0, -3, 0, 0]
       },
       "receipt-value-down-sub": {
         "color": "#000000",
