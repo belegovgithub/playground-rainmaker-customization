@@ -53,10 +53,10 @@
                   },
                   {
                     "image": "{{govtImage}}",
-                    "width": 85,
-                    "height": 70.25,
+                    "width": 95,
+                    "height": 80.25,
                     "margin": [
-                      -10,
+                      -20,
                       0,
                       0,
                       0
@@ -77,7 +77,7 @@
                       0,
                       0,
                       0,
-                      5
+                      1
                     ]
                   },
                   {
@@ -113,7 +113,7 @@
                     "width": 65,
                     "height": 60.25,
                     "margin": [
-                      10,
+                      0,
                       0,
                       0,
                       0
@@ -234,12 +234,12 @@
                 "columns": [
                   {
                     "text": "{{name_label_multiLang}} / {{name_label}}: {{name}}",
-                    "width": "45%",
+                    "width": "49%",
                     "style": "details-body"
                   },
                   {
                     "text": " ",
-                    "width": "10%"
+                    "width": "1%"
                   },
                   {
                     "text": "{{gender_label_multiLang}} / {{gender_label}} : {{gender}}",
@@ -264,12 +264,12 @@
                 "columns": [
                   {
                     "text": "{{dob_label_multiLang}} / {{dob_label}}: {{dob}}",
-                    "width": "45%",
+                    "width": "49%",
                     "style": "details-body"
                   },
                   {
                     "text": " ",
-                    "width": "10%"
+                    "width": "1%"
                   },
                   {
                     "text": "{{pob_label_multiLang}} / {{pob_label}}: {{placeOfBirth}}",
@@ -283,12 +283,12 @@
                 "columns": [
                   {
                     "text": "{{mother_name_label_multiLang}} / {{mother_name_label}}: {{motherName}}",
-                    "width": "45%",
+                    "width": "49%",
                     "style": "details-body"
                   },
                   {
                     "text": " ",
-                    "width": "10%"
+                    "width": "1%"
                   },
                   {
                     "text": "{{father_name_label_multiLang}} / {{father_name_label}}: {{fatherName}}",
@@ -302,12 +302,12 @@
                 "columns": [
                   {
                     "text": "आधार नंबर/ MOTHER'S AADHAR NO: {{motherUid}}",
-                    "width": "45%",
+                    "width": "49%",
                     "style": "details-body"
                   },
                   {
                     "text": " ",
-                    "width": "10%"
+                    "width": "1%"
                   },
                   {
                     "text": "आधार नंबर/ FATHER'S AADHAR NO: {{fatherUid}}",
@@ -321,12 +321,12 @@
                 "columns": [
                   {
                     "text": "बच्चे के जन्म के समय माता-पिता का   पता    / ADDRESS OF PARENTS AT THE TIME OF BIRTH OF THE CHILD: {{childAddress}}",
-                    "width": "45%",
+                    "width": "49%",
                     "style": "details-body"
                   },
                   {
                     "text": " ",
-                    "width": "10%"
+                    "width": "1%"
                   },
                   {
                     "text": "माता-पिता के स्थायी  पता/ PERMANENT  ADDRESS OF PARENTS: {{parentsAddress}}",
@@ -340,12 +340,12 @@
                 "columns": [
                   {
                     "text": "{{registration_label_multiLang}} / {{registration_label}}: {{registrationNo}}",
-                    "width": "45%",
+                    "width": "49%",
                     "style": "details-body"
                   },
                   {
                     "text": " ",
-                    "width": "10%"
+                    "width": "1%"
                   },
                   {
                     "text": "{{registration_date_label_multiLang}} / {{registration_date_label}}: {{registration_date}}",
@@ -370,58 +370,34 @@
                 "columns": [
                   {
                     "text": "{{issue_date_label_multiLang}} / {{issue_date_label}}: {{issueDate}}",
-                    "width": "45%",
+                    "width": "49%",
                     "style": "details-body"
                   },
                   {
                     "text": " ",
-                    "width": "10%"
+                    "width": "1%"
                   },
                   {
-                    "text": "{{issuing_authority_label_multiLang}} / {{issuing_authority_label}}:",
-                    "style": "details-body"
-                  }
-                ]
-              }
-            ],
-            [
-              {
-                "columns": [
-                  {
-                    "text": " ",
-                    "width": "45%",
-                    "style": "details-body"
-                  },
-                  {
-                    "text": " ",
-                    "width": "10%"
-                  },
-                  {
-                    "text": "{{issuing_authority_multiLang}} / {{issuing_authority}}",
-                    "style": "details-body"
-                  }
-                ]
-              }
-            ],
-            [
-              {
-                "columns": [
-                  {
-                    "text": " ",
-                    "width": "45%",
-                    "style": "details-body"
-                  },
-                  {
-                    "text": " ",
-                    "width": "10%"
-                  },
-                  {
-                    "text": "कांटोनमेंट बोर्ड अंबाला कैंटोनमेंट / CANTONMENT BOARD AMBALA CANTT.",
-                    "style": "details-body"
+                    "stack": [
+                      {
+                        "text": "{{issuing_authority_label_multiLang}} / {{issuing_authority_label}}:",
+                        "style": "details-body"
+                      },
+                      {
+                        "text": "{{issuing_authority_multiLang}} / {{issuing_authority}}",
+                        "style": "details-body"
+                      },
+                      {
+                        "text": "कांटोनमेंट बोर्ड अंबाला कैंटोनमेंट / CANTONMENT BOARD AMBALA CANTT.",
+                        "style": "details-body"
+                      } 
+                    ]
                   }
                 ]
               }
             ]
+            
+            
           ]
         },
         "layout": "noBorders"
@@ -448,7 +424,7 @@
                 "columns": [
                   {
                     "text": "UPDATED ON: ",
-                    "width": "45%",
+                    "width": "49%",
                     "style": "details-body"
                   }
                 ]
@@ -557,7 +533,7 @@
         "alignment": "left",
         "margin": [
           0,
-          -30,
+          -65,
           0,
           0
         ]
@@ -570,7 +546,7 @@
         "alignment": "center",
         "margin": [
           0,
-          1,
+          0,
           0,
           0
         ]
@@ -583,7 +559,7 @@
         "alignment": "center",
         "margin": [
           0,
-          3,
+          0,
           0,
           0
         ]
@@ -621,7 +597,7 @@
           0,
           0,
           0,
-          5
+          1
         ]
       },
       "rule-header_multiLang": {
@@ -633,7 +609,7 @@
           0,
           0,
           0,
-          5
+          0
         ]
       },
       "rule-body": {
@@ -661,13 +637,13 @@
         ]
       },
       "details-body": {
-        "color": "#696969",
-        "bold": true,
+        "color": "#000000",
+        "bold": false,
         "fontSize": 11,
         "fontWeight": 400,
         "margin": [
           0,
-          5,
+          1,
           0,
           0
         ]

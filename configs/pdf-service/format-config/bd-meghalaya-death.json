@@ -81,7 +81,8 @@
               }
             ]
           ]
-        } 
+        }, 
+        "layout": "noBorders"
       },
       {
         "style": "ws-head",
@@ -96,7 +97,8 @@
               }
             ]
           ]
-        } 
+        }, 
+        "layout": "noBorders" 
       },
       {
         "style": "ws-head",
@@ -126,7 +128,7 @@
               {
                 "columns": [
                   {
-                    "text": ["This is to certify that the following information has been taken from the original record of birth which is the register for (local area/local body) CANTONMENT BOARD {{cb-name}} of tahsil/block {{cb-name}} of District {{cb-name}} of the State of Meghalaya"],
+                    "text": ["This is to certify that the following information has been taken from the original record of birth which is the register for (local area/local body) CANTONMENT BOARD {{cb-name}} of tahsil/block {{block-name}} of District {{dist-name}}  of the State of Meghalaya"],
                     "style": "rule-body_multiLang"
                   }
                 ]
@@ -366,7 +368,7 @@
       "qr-code": {
         "color": "#000000",
         "alignment": "left",
-        "margin": [0, -70, 0, 0]
+        "margin": [0, 0, 0, 0]
       },
       "title-header": {
         "color": "#004d00",

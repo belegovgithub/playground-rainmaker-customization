@@ -53,10 +53,10 @@
                   },
                   {
                     "image": "{{govtImage}}",
-                    "width": 70,
-                    "height": 70.25,
+                    "width": 95,
+                    "height": 80.25,
                     "margin": [
-                      -10,
+                      -20,
                       0,
                       0,
                       0
@@ -77,7 +77,7 @@
                       0,
                       0,
                       0,
-                      5
+                      1
                     ]
                   },
                   {
@@ -113,7 +113,7 @@
                     "width": 65,
                     "height": 60.25,
                     "margin": [
-                      10,
+                      0,
                       0,
                       0,
                       0
@@ -234,12 +234,12 @@
                 "columns": [
                   {
                     "text": "{{name_label_multiLang}} / NAME OF DECEASED: {{name}}",
-                    "width": "45%",
+                    "width": "49%",
                     "style": "details-body"
                   },
                   {
                     "text": " ",
-                    "width": "10%"
+                    "width": "1%"
                   },
                   {
                     "text": "{{gender_label_multiLang}} / SEX : {{gender}}",
@@ -253,7 +253,7 @@
                 "columns": [
                   {
                     "text": "आधार  नंबर  / AADHAAR NO: {{aadharNo}}",
-                    "width": "45%",
+                    "width": "49%",
                     "style": "details-body"
                   }
                 ]
@@ -264,12 +264,12 @@
                 "columns": [
                   {
                     "text": "मृत्यु की तिथि  / DATE OF DEATH: {{dob}}",
-                    "width": "45%",
+                    "width": "49%",
                     "style": "details-body"
                   },
                   {
                     "text": " ",
-                    "width": "10%"
+                    "width": "1%"
                   },
                   {
                     "text": "मृत्यु का स्थान / PLACE OF DEATH: {{placeOfDeath}}",
@@ -283,12 +283,12 @@
                 "columns": [
                   {
                     "text": "मृतक की उम्र /AGE OF DECEASED : {{age}}",
-                    "width": "45%",
+                    "width": "49%",
                     "style": "details-body"
                   },
                   {
                     "text": " ",
-                    "width": "10%"
+                    "width": "1%"
                   },
                   {
                     "text": "पति / पत्नी का नाम/ NAME OF HUSBAND/WIFE: {{spouseName}}",
@@ -303,16 +303,16 @@
                 "columns": [
                   {
                     "text": " ",
-                    "width": "45%",
+                    "width": "49%",
                     "style": "details-body"
                   },
                   {
                     "text": " ",
-                    "width": "10%"
+                    "width": "1%"
                   },
                   {
                     "text": "आधार  नंबर  / HUSBAND/WIFE  AADHAAR NO: {{spouceAadharNo}}",
-                    "width": "45%",
+                    "width": "49%",
                     "style": "details-body"
                   }
                 ]
@@ -323,12 +323,12 @@
                 "columns": [
                   {
                     "text": "{{mother_name_label_multiLang}} / NAME OF MOTHER: {{motherName}}",
-                    "width": "45%",
+                    "width": "49%",
                     "style": "details-body"
                   },
                   {
                     "text": " ",
-                    "width": "10%"
+                    "width": "1%"
                   },
                   {
                     "text": "{{father_name_label_multiLang}} / NAME OF FATHER: {{fatherName}}",
@@ -342,12 +342,12 @@
                 "columns": [
                   {
                     "text": "आधार नंबर  / MOTHER AADHAR NO: {{motherUid}}",
-                    "width": "45%",
+                    "width": "49%",
                     "style": "details-body"
                   },
                   {
                     "text": " ",
-                    "width": "10%"
+                    "width": "1%"
                   },
                   {
                     "text": "आधार नंबर  / FATHER AADHAR NO: {{fatherUid}}",
@@ -361,12 +361,12 @@
                 "columns": [
                   {
                     "text": "मृत्यु के समय मृतक का पता / ADDRESS OF DECEASED AT THE TIME OF DEATH: {{childAddress}}",
-                    "width": "45%",
+                    "width": "49%",
                     "style": "details-body"
                   },
                   {
                     "text": " ",
-                    "width": "10%"
+                    "width": "1%"
                   },
                   {
                     "text": "मृतक का स्थायी पता / PERMANENT ADDRESS OF DECEASED: {{parentsAddress}}",
@@ -380,12 +380,12 @@
                 "columns": [
                   {
                     "text": "{{registration_label_multiLang}} / REGISTRATION NO: {{registrationNo}}",
-                    "width": "45%",
+                    "width": "49%",
                     "style": "details-body"
                   },
                   {
                     "text": " ",
-                    "width": "10%"
+                    "width": "1%"
                   },
                   {
                     "text": "{{registration_date_label_multiLang}} / DATE OF REGISTRATION: {{registration_date}}",
@@ -399,126 +399,12 @@
                 "columns": [
                   {
                     "text": "{{remarks_label_multiLang}} / REMARKS(IF ANY): {{remarks}}",
-                    "width": "45%",
+                    "width": "49%",
                     "style": "details-body"
                   },
                   {
                     "text": " ",
-                    "width": "10%"
-                  },
-                  {
-                    "text": " ",
-                    "style": "details-body"
-                  }
-                ]
-              }
-            ],
-            [
-              {
-                "columns": [
-                  {
-                    "text": "{{issue_date_label_multiLang}} / DATE OF ISSUE: {{issueDate}}",
-                    "width": "45%",
-                    "style": "details-body"
-                  },
-                  {
-                    "text": " ",
-                    "width": "10%"
-                  },
-                  {
-                    "text": "{{issuing_authority_label_multiLang}} / ISSUING AUTHORITY: ",
-                    "style": "details-body"
-                  }
-                ]
-              }
-            ],
-            [
-              {
-                "columns": [
-                  {
-                    "text": " ",
-                    "width": "45%",
-                    "style": "details-body"
-                  },
-                  {
-                    "text": " ",
-                    "width": "10%"
-                  },
-                  {
-                    "text": "{{issuing_authority_multiLang}} ",
-                    "style": "details-body"
-                  }
-                ]
-              }
-            ],
-            [
-              {
-                "columns": [
-                  {
-                    "text": " ",
-                    "width": "45%",
-                    "style": "details-body"
-                  },
-                  {
-                    "text": " ",
-                    "width": "10%"
-                  },
-                  {
-                    "text": "{{issuing_authority}}",
-                    "style": "details-body"
-                  }
-                ]
-              }
-            ],
-            [
-              {
-                "columns": [
-                  {
-                    "text": " ",
-                    "width": "45%",
-                    "style": "details-body"
-                  },
-                  {
-                    "text": " ",
-                    "width": "10%"
-                  },
-                  {
-                    "text": "कांटोनमेंट बोर्ड अंबाला कैंटोनमेंट",
-                    "style": "details-body"
-                  }
-                ]
-              }
-            ],
-            [
-              {
-                "columns": [
-                  {
-                    "text": " ",
-                    "width": "45%",
-                    "style": "details-body"
-                  },
-                  {
-                    "text": " ",
-                    "width": "10%"
-                  },
-                  {
-                    "text": "CANTONMENT BOARD AMBALA CANTT.",
-                    "style": "details-body"
-                  }
-                ]
-              }
-            ],
-            [
-              {
-                "columns": [
-                  {
-                    "text": "UPDATED ON :{{updatedOn}}",
-                    "width": "45%",
-                    "style": "details-body"
-                  },
-                  {
-                    "text": " ",
-                    "width": "10%"
+                    "width": "1%"
                   },
                   {
                     "text": " ",
@@ -531,21 +417,50 @@
               {
                 "columns": [
                   {
-                    "text": " ",
-                    "width": "45%",
-                    "style": "details-body"
+                    "stack": [  
+                      {
+                        "text": "{{issue_date_label_multiLang}} / DATE OF ISSUE: {{issueDate}}",
+                        "width": "49%",
+                        "style": "details-body"
+                      },
+                      {
+                        "text": "UPDATED ON :{{updatedOn}}",
+                        "width": "49%",
+                        "style": "details-body"
+                      }
+                    ]
                   },
                   {
                     "text": " ",
-                    "width": "10%"
-                  },
+                    "width": "1%"
+                  }, 
                   {
-                    "text": " ",
-                    "style": "details-body"
+                    "stack": [
+                      {
+                        "text": "{{issuing_authority_label_multiLang}} / ISSUING AUTHORITY: ",
+                        "style": "details-body"
+                      },
+                      {
+                        "text": "{{issuing_authority_multiLang}} ",
+                        "style": "details-body"
+                      },
+                      {
+                        "text": "{{issuing_authority}}",
+                        "style": "details-body"
+                      },
+                      {
+                        "text": "कांटोनमेंट बोर्ड अंबाला कैंटोनमेंट",
+                        "style": "details-body"
+                      },
+                      {
+                        "text": "CANTONMENT BOARD AMBALA CANTT.",
+                        "style": "details-body"
+                      }   
+                    ]
                   }
                 ]
               }
-            ]
+            ] 
           ]
         },
         "layout": "noBorders"
@@ -691,7 +606,7 @@
         "alignment": "left",
         "margin": [
           0,
-          -30,
+          -65,
           0,
           0
         ]
@@ -704,7 +619,7 @@
         "alignment": "center",
         "margin": [
           0,
-          1,
+          0,
           0,
           0
         ]
@@ -731,7 +646,7 @@
           0,
           0,
           0,
-          5
+          1
         ]
       },
       "rule-header_multiLang": {
@@ -743,7 +658,7 @@
           0,
           0,
           0,
-          5
+          0
         ]
       },
       "rule-body": {
@@ -771,13 +686,13 @@
         ]
       },
       "details-body": {
-        "color": "#696969",
-        "bold": true,
+        "color": "#000000",
+        "bold": false,
         "fontSize": 11,
         "fontWeight": 400,
         "margin": [
           0,
-          5,
+          1,
           0,
           0
         ]

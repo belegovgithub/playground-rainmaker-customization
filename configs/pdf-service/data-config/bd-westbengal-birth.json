@@ -128,7 +128,8 @@
                     "variable": "nationality", 
                     "value": {
                       "path": "$.nationality"
-                    }
+                    },
+                    "type":"setEmpty"
                   },
                   {
                     "variable": "issueDate", 

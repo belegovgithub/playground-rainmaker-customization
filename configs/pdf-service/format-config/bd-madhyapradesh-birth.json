@@ -63,7 +63,7 @@
                               {
                                   "stack": [
                                     {
-                                      "text": "मध्य प्रदेश सर्कार",
+                                      "text": "मध्य प्रदेश सरकार",
                                       "style": "appendix-header-body"
                                       
                                   },   
@@ -249,12 +249,12 @@
                                                          
                                                         {
                                                             "text": "{{name_label_multiLang}} / {{name_label}}: {{name}}",
-                                                            "width": "45%",
+                                                            "width": "49%",
                                                              "style": "details-body"
                                                         },
                                                         {
                                                             "text": " ",
-                                                            "width": "10%"
+                                                            "width": "1%"
                                                             
                                                         },
                                                         {
@@ -270,12 +270,12 @@
                                                          
                                                         {
                                                             "text": "{{dob_label_multiLang}} / {{dob_label}}: {{dob}}",
-                                                            "width": "45%",
+                                                            "width": "49%",
                                                              "style": "details-body"
                                                         },
                                                         {
                                                             "text": " ",
-                                                            "width": "10%"
+                                                            "width": "1%"
                                                             
                                                         },
                                                         {
@@ -291,12 +291,12 @@
                                                          
                                                         {
                                                             "text": "{{mother_name_label_multiLang}} / {{mother_name_label}}: {{motherName}}",
-                                                            "width": "45%",
+                                                            "width": "49%",
                                                              "style": "details-body"
                                                         },
                                                         {
                                                             "text": " ",
-                                                            "width": "10%"
+                                                            "width": "1%"
                                                             
                                                         },
                                                         {
@@ -311,17 +311,17 @@
                                                    "columns": [
                                                        
                                                       {
-                                                          "text": "{{mother_aadhar_label_multiLang}} / MOTHER AADHAR NO: {{motherUid}}",
-                                                          "width": "45%",
+                                                          "text": "आधार  नंबर / MOTHER AADHAR NO: {{motherUid}}",
+                                                          "width": "49%",
                                                            "style": "details-body"
                                                       },
                                                       {
                                                           "text": " ",
-                                                          "width": "10%"
+                                                          "width": "1%"
                                                           
                                                       },
                                                       {
-                                                          "text": "{{father_aadhar_label_multiLang}} / FATHER AADHAR NO: {{fatherUid}}",
+                                                          "text": "आधार  नंबर / FATHER AADHAR NO: {{fatherUid}}",
                                                            "style": "details-body"
                                                       }
                                                   ] 
@@ -333,12 +333,12 @@
                                                          
                                                         {
                                                             "text": "बच्चे के जन्म के समय माता-पिता का   पता    / ADDRESS OF PARENTS AT THE TIME OF BIRTH OF THE CHILD: {{childAddress}}",
-                                                            "width": "45%",
+                                                            "width": "49%",
                                                              "style": "details-body"
                                                         },
                                                         {
                                                             "text": " ",
-                                                            "width": "10%"
+                                                            "width": "1%"
                                                             
                                                         },
                                                         {
@@ -354,12 +354,12 @@
                                                          
                                                         {
                                                             "text": "{{registration_label_multiLang}} / {{registration_label}}: {{registrationNo}}",
-                                                            "width": "45%",
+                                                            "width": "49%",
                                                              "style": "details-body"
                                                         },
                                                         {
                                                             "text": " ",
-                                                            "width": "10%"
+                                                            "width": "1%"
                                                             
                                                         },
                                                         {
@@ -375,12 +375,12 @@
                                                          
                                                         {
                                                             "text": "{{remarks_label_multiLang}} / {{remarks_label}}: {{remarks}}",
-                                                            "width": "45%",
+                                                            "width": "49%",
                                                              "style": "details-body"
                                                         },
                                                         {
                                                             "text": " ",
-                                                            "width": "10%"
+                                                            "width": "1%"
                                                             
                                                         },
                                                         {
@@ -396,12 +396,12 @@
                                                          
                                                         {
                                                             "text": "{{issue_date_label_multiLang}} / {{issue_date_label}}: {{issueDate}}",
-                                                            "width": "45%",
+                                                            "width": "49%",
                                                              "style": "details-body"
                                                         },
                                                         {
                                                             "text": " ",
-                                                            "width": "10%"
+                                                            "width": "1%"
                                                             
                                                         },
                                                         {
@@ -516,7 +516,7 @@
                     "alignment": "left",
                     "margin": [
                         0,
-                        -30,
+                        -20,
                         0,
                         0
                     ]
@@ -529,7 +529,7 @@
                     "alignment": "center",
                      "margin": [
                         0,
-                        1,
+                        0,
                         0,
                         0
                     ]
@@ -542,7 +542,7 @@
                      "alignment": "center",
                       "margin": [
                          0,
-                         3,
+                         2,
                          0,
                          0
                      ]
@@ -580,7 +580,7 @@
                         0,
                         0,
                         0,
-                        5
+                        4
                     ]
         },
         "rule-header_multiLang": {
@@ -592,7 +592,7 @@
                          0,
                          0,
                          0,
-                         5
+                         4
                      ]
          },
         "rule-body": {
@@ -626,7 +626,7 @@
                     "fontWeight": 400,
                      "margin": [
                         0,
-                        5,
+                        4,
                         0,
                         0
                     ]

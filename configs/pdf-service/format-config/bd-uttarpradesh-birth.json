@@ -203,7 +203,7 @@
                 "columns": [
                   {
                     "text": "{{name_label_multiLang}} / {{name_label}}: {{name}}",
-                    "width": "45%",
+                    "width": "49%",
                     "style": "details-body"
                   },
                   {
@@ -222,7 +222,7 @@
                 "columns": [
                   {
                     "text": "{{dob_label_multiLang}} / {{dob_label}}: {{dob}}",
-                    "width": "45%",
+                    "width": "49%",
                     "style": "details-body"
                   },
                   {
@@ -241,7 +241,7 @@
                 "columns": [
                   {
                     "text": "{{mother_name_label_multiLang}} / {{mother_name_label}}: {{motherName}}",
-                    "width": "45%",
+                    "width": "49%",
                     "style": "details-body"
                   },
                   {
@@ -260,7 +260,7 @@
                 "columns": [
                   {
                     "text": "{{mother_uid_label_multiLang}} / {{mother_uid_label}}: {{motherUid}}",
-                    "width": "45%",
+                    "width": "49%",
                     "style": "details-body"
                   },
                   {
@@ -279,7 +279,7 @@
                 "columns": [
                   {
                     "text": "बच्चे के जन्म के समय माता–पिता का पता / {{child_address_label}}: {{childAddress}}",
-                    "width": "45%",
+                    "width": "49%",
                     "style": "details-body"
                   },
                   {
@@ -298,7 +298,7 @@
                 "columns": [
                   {
                     "text": "{{registration_label_multiLang}} / {{registration_label}}: {{registrationNo}}",
-                    "width": "45%",
+                    "width": "49%",
                     "style": "details-body"
                   },
                   {
@@ -317,7 +317,7 @@
                 "columns": [
                   {
                     "text": "टिप्पणी/ {{remarks_label}}: {{remarks}}",
-                    "width": "45%",
+                    "width": "49%",
                     "style": "details-body"
                   },
                   {
@@ -336,7 +336,7 @@
                 "columns": [
                   {
                     "text": "{{issue_date_label_multiLang}} / {{issue_date_label}}: {{issueDate}}",
-                    "width": "45%",
+                    "width": "49%",
                     "style": "details-body"
                   },
                   {
@@ -441,7 +441,7 @@
         "fontSize": 14,
         "fontWeight": 400,
         "alignment": "center",
-        "margin": [0, 1, 0, 0]
+        "margin": [0, 0, 0, 0]
       },
       "title-header_multiLang": {
         "color": "#000000",
@@ -449,7 +449,7 @@
         "fontSize": 15,
         "fontWeight": 400,
         "alignment": "center",
-        "margin": [0, 3, 0, 0]
+        "margin": [0, 2, 0, 0]
       },
       "rule-header": {
         "color": "#696969",
@@ -498,7 +498,7 @@
         "bold": true,
         "fontSize": 11,
         "fontWeight": 400,
-        "margin": [0, 5, 0, 0]
+        "margin": [0, 4, 0, 0]
       },
       "appendix-header-body": {
         "color": "#696969",

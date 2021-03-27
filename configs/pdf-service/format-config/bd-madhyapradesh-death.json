@@ -63,7 +63,7 @@
                               {
                                 "stack": [
                                   {
-                                    "text": "मध्य प्रदेश सर्कार",
+                                    "text": "मध्य प्रदेश सरकार",
                                     "style": "appendix-header-body"
                                     
                                 },   
@@ -213,7 +213,7 @@
                                 "columns": [
                                     
                                     {
-                                        "text": "यह प्रमाणित किया जाता है निम्नलिखित सूचना मृत्यु के मूल अभिलेख से ली गई है जो की छावनी परिषद {{cb-name-multilang}} तहसील {{block-name-multilang}} जिला {{dist-name-multilang}} राज्य/संघ प्रदेश मध्य प्रदेश, भारत के रजिस्टर मे उलिखित है ।",
+                                        "text": "यह प्रमाणित किया जाता है निम्नलिखित सूचना मृत्यु के मूल अभिलेख से ली गई है जो की छावनी परिषद {{cb-name-multilang}} तहसील {{block-name-multilang}} जिला {{dist-name-multilang}} राज्य/संघ प्रदेश मध्य प्रदेश, भारत के रजिस्टर मे उल्लेखित है ।",
                                         "style": "rule-body_multiLang"
                                     }
                                 ] 
@@ -249,12 +249,12 @@
                                                          
                                                         {
                                                             "text": "{{name_label_multiLang}} / NAME OF DECEASED: {{name}}",
-                                                            "width": "45%",
+                                                            "width": "49%",
                                                              "style": "details-body"
                                                         },
                                                         {
                                                             "text": " ",
-                                                            "width": "10%"
+                                                            "width": "1%"
                                                             
                                                         },
                                                         {
@@ -270,7 +270,7 @@
                                                        
                                                       {
                                                           "text": "आधार  नंबर  / AADHAAR NO: {{aadharNo}}",
-                                                          "width": "45%",
+                                                          "width": "49%",
                                                            "style": "details-body"
                                                       }
                                                        
@@ -283,12 +283,12 @@
                                                          
                                                         {
                                                             "text": "{{dod_label_multiLang}} / DATE OF DEATH: {{dob}}",
-                                                            "width": "45%",
+                                                            "width": "49%",
                                                              "style": "details-body"
                                                         },
                                                         {
                                                             "text": " ",
-                                                            "width": "10%"
+                                                            "width": "1%"
                                                             
                                                         },
                                                         {
@@ -304,12 +304,12 @@
                                                        
                                                       {
                                                           "text": "मृतक की उम्र /AGE OF DECEASED : {{age}}",
-                                                          "width": "45%",
+                                                          "width": "49%",
                                                            "style": "details-body"
                                                       },
                                                       {
                                                           "text": " ",
-                                                          "width": "10%"
+                                                          "width": "1%"
                                                           
                                                       },
                                                       {
@@ -324,17 +324,17 @@
                                                  "columns": [
                                                   {
                                                     "text": " ",
-                                                    "width": "45%",
+                                                    "width": "49%",
                                                      "style": "details-body"
                                                 },
                                                 {
                                                     "text": " ",
-                                                    "width": "10%"
+                                                    "width": "1%"
                                                     
                                                 },
                                                     {
                                                         "text": "आधार  नंबर  / HUSBAND/WIFE  AADHAAR NO: {{spouceAadharNo}}",
-                                                        "width": "45%",
+                                                        "width": "49%",
                                                          "style": "details-body"
                                                     }
                                                      
@@ -347,12 +347,12 @@
                                                          
                                                         {
                                                             "text": "{{mother_name_label_multiLang}} / NAME OF MOTHER: {{motherName}}",
-                                                            "width": "45%",
+                                                            "width": "49%",
                                                              "style": "details-body"
                                                         },
                                                         {
                                                             "text": " ",
-                                                            "width": "10%"
+                                                            "width": "1%"
                                                             
                                                         },
                                                         {
@@ -367,17 +367,17 @@
                                                      "columns": [
                                                          
                                                         {
-                                                            "text": "{{mother_aadhar_label_multiLang}} / MOTHER AADHAR NO: {{motherUid}}",
-                                                            "width": "45%",
+                                                            "text": "आधार  नंबर / MOTHER AADHAR NO: {{motherUid}}",
+                                                            "width": "49%",
                                                              "style": "details-body"
                                                         },
                                                         {
                                                             "text": " ",
-                                                            "width": "10%"
+                                                            "width": "1%"
                                                             
                                                         },
                                                         {
-                                                            "text": "{{father_aadhar_label_multiLang}} / FATHER AADHAR NO: {{fatherUid}}",
+                                                            "text": "आधार  नंबर / FATHER AADHAR NO: {{fatherUid}}",
                                                              "style": "details-body"
                                                         }
                                                     ] 
@@ -389,12 +389,12 @@
                                                          
                                                         {
                                                             "text": "{{death_address_label_multiLang}} / ADDRESS OF DECEASED AT THE TIME OF DEATH: {{childAddress}}",
-                                                            "width": "45%",
+                                                            "width": "49%",
                                                              "style": "details-body"
                                                         },
                                                         {
                                                             "text": " ",
-                                                            "width": "10%"
+                                                            "width": "1%"
                                                             
                                                         },
                                                         {
@@ -410,12 +410,12 @@
                                                          
                                                         {
                                                             "text": "{{registration_label_multiLang}} / REGISTRATION NO: {{registrationNo}}",
-                                                            "width": "45%",
+                                                            "width": "49%",
                                                              "style": "details-body"
                                                         },
                                                         {
                                                             "text": " ",
-                                                            "width": "10%"
+                                                            "width": "1%"
                                                             
                                                         },
                                                         {
@@ -431,12 +431,12 @@
                                                          
                                                         {
                                                             "text": "{{remarks_label_multiLang}} / REMARKS(IF ANY): {{remarks}}",
-                                                            "width": "45%",
+                                                            "width": "49%",
                                                              "style": "details-body"
                                                         },
                                                         {
                                                             "text": " ",
-                                                            "width": "10%"
+                                                            "width": "1%"
                                                             
                                                         },
                                                         {
@@ -452,12 +452,12 @@
                                                          
                                                         {
                                                             "text": "{{issue_date_label_multiLang}} / DATE OF ISSUE: {{issueDate}}",
-                                                            "width": "45%",
+                                                            "width": "49%",
                                                              "style": "details-body"
                                                         },
                                                         {
                                                             "text": " ",
-                                                            "width": "10%"
+                                                            "width": "1%"
                                                             
                                                         },
                                                         {
@@ -616,7 +616,7 @@
                     "alignment": "left",
                     "margin": [
                         0,
-                        -30,
+                        -20,
                         0,
                         0
                     ]
@@ -656,7 +656,7 @@
                         0,
                         0,
                         0,
-                        5
+                        4
                     ]
         },
         "rule-header_multiLang": {
@@ -668,7 +668,7 @@
                          0,
                          0,
                          0,
-                         5
+                         4
                      ]
          },
         "rule-body": {
@@ -702,7 +702,7 @@
                     "fontWeight": 400,
                      "margin": [
                         0,
-                        5,
+                        4,
                         0,
                         0
                     ]

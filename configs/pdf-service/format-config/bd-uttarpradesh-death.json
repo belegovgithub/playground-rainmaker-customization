@@ -203,12 +203,12 @@
                 "columns": [
                   {
                     "text": "{{name_label_multiLang}} / NAME OF DECEASED: {{name}}",
-                    "width": "45%",
+                    "width": "49%",
                     "style": "details-body"
                   },
                   {
                     "text": " ",
-                    "width": "10%"
+                    "width": "1%"
                   },
                   {
                     "text": "{{gender_label_multiLang}} / SEX : {{gender}}",
@@ -222,7 +222,7 @@
                 "columns": [
                   {
                     "text": "{{aadhar_label_multiLang}} / AADHAR NUMBER: {{aadharno}}",
-                    "width": "45%",
+                    "width": "49%",
                     "style": "details-body"
                   }
                 ]
@@ -233,12 +233,12 @@
                 "columns": [
                   {
                     "text": "{{dod_label_multiLang}} / DATE OF DEATH: {{dob}}",
-                    "width": "45%",
+                    "width": "49%",
                     "style": "details-body"
                   },
                   {
                     "text": " ",
-                    "width": "10%"
+                    "width": "1%"
                   },
                   {
                     "text": "{{pod_label_multiLang}} / PLACE OF DEATH: {{placeOfDeath}}",
@@ -252,12 +252,12 @@
                 "columns": [
                   {
                     "text": "{{mother_name_label_multiLang}} / NAME OF MOTHER: {{motherName}}",
-                    "width": "45%",
+                    "width": "49%",
                     "style": "details-body"
                   },
                   {
                     "text": " ",
-                    "width": "10%"
+                    "width": "1%"
                   },
                   {
                     "text": "{{father_name_label_multiLang}} / NAME OF FATHER: {{fatherName}}",
@@ -271,12 +271,12 @@
                 "columns": [
                   {
                     "text": "{{mother_aadhar_label_multiLang}} / MOTHER'S AADHAR NO: {{motherUid}}",
-                    "width": "45%",
+                    "width": "49%",
                     "style": "details-body"
                   },
                   {
                     "text": " ",
-                    "width": "10%"
+                    "width": "1%"
                   },
                   {
                     "text": "{{father_aadhar_label_multiLang}} / FATHER'S AADHAR NO: {{fatherUid}}",
@@ -290,12 +290,12 @@
                 "columns": [
                   {
                     "text": "{{death_address_label_multiLang}} / ADDRESS OF DECEASED AT THE TIME OF BIRTH: {{childAddress}}",
-                    "width": "45%",
+                    "width": "49%",
                     "style": "details-body"
                   },
                   {
                     "text": " ",
-                    "width": "10%"
+                    "width": "1%"
                   },
                   {
                     "text": "{{death_perm_address_label_multiLang}} / PERMANENT ADDRESS OF DECEASED: {{parentsAddress}}",
@@ -309,12 +309,12 @@
                 "columns": [
                   {
                     "text": "{{registration_label_multiLang}} / REGISTRATION NO: {{registrationNo}}",
-                    "width": "45%",
+                    "width": "49%",
                     "style": "details-body"
                   },
                   {
                     "text": " ",
-                    "width": "10%"
+                    "width": "1%"
                   },
                   {
                     "text": "पंजीकरण तारीख / DATE OF REGISTRATION: {{registration_date}}",
@@ -328,12 +328,12 @@
                 "columns": [
                   {
                     "text": "टिप्पणी / REMARKS(IF ANY): {{remarks}}",
-                    "width": "45%",
+                    "width": "49%",
                     "style": "details-body"
                   },
                   {
                     "text": " ",
-                    "width": "10%"
+                    "width": "1%"
                   },
                   {
                     "text": " ",
@@ -347,12 +347,12 @@
                 "columns": [
                   {
                     "text": "{{issue_date_label_multiLang}} / DATE OF ISSUE: {{issueDate}}",
-                    "width": "45%",
+                    "width": "49%",
                     "style": "details-body"
                   },
                   {
                     "text": " ",
-                    "width": "10%"
+                    "width": "1%"
                   },
                   {
                     "text": "{{issuing_authority_label_multiLang}} / ISSUING AUTHORITY: {{issuing_authority_multiLang}} / {{issuing_authority}}",
@@ -460,21 +460,21 @@
         "fontSize": 15,
         "fontWeight": 400,
         "alignment": "center",
-        "margin": [0, 3, 0, 0]
+        "margin": [0, 2, 0, 0]
       },
       "rule-header": {
         "color": "#696969",
         "bold": true,
         "fontSize": 10,
         "fontWeight": 400,
-        "margin": [0, 0, 0, 5]
+        "margin": [0, 0, 0, 4]
       },
       "rule-header_multiLang": {
         "color": "#696969",
         "bold": true,
         "fontSize": 11,
         "fontWeight": 400,
-        "margin": [0, 0, 0, 5]
+        "margin": [0, 0, 0,4]
       },
       "rule-body": {
         "color": "#696969",
@@ -495,7 +495,7 @@
         "bold": true,
         "fontSize": 11,
         "fontWeight": 400,
-        "margin": [0, 5, 0, 0]
+        "margin": [0, 4, 0, 0]
       },
       "appendix-header-body": {
         "color": "#696969",
