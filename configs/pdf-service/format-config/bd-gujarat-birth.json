@@ -124,7 +124,7 @@
                 "columns": [
                   {
                     "text": "This is to certify that the following information has been taken from the original record of birth which is in the register for Village/City   Ahmedabad Cantonment(CB) of Taluka Ahmedabad City (West) of District Ahmedabad of Gujarat State, India.",
-                    "style": "rule-header_multiLang"
+                    "style": "rule-header"
                   }
                 ]
               }
@@ -260,7 +260,7 @@
                     "text": "પ્રમાણપત્ર કાઢી આપ્યાની તારીખ / Date of issue : {{issueDate}}",
                     "width": "45%",
                     "style": "details-body",
-                    "margin": [0, -20, 0, 0]
+                    "margin": [0, 0 , 0, 0]
                   },
                   {
                     "text": " ",
@@ -269,7 +269,7 @@
                   {
                     "text": "પ્રમાણપત્ર આપનાર સત્તાધિકારીની સહી/Signature of Issuing  Authority",
                     "style": "details-body",
-                    "margin": [0, -20, 0, 0]
+                    "margin": [0, 0, 0, 0]
                   }
                 ]
               }
@@ -324,7 +324,7 @@
       "qr-code": {
         "color": "#000000",
         "alignment": "left",
-        "margin": [0, -30, 0, 0]
+        "margin": [0, 0, 0, 0]
       },
       "title-header": {
         "color": "#000000",
@@ -370,7 +370,7 @@
         "alignment": "center",
         "fontSize": 11,
         "fontWeight": 400,
-        "margin": [0, 0, 0, 5]
+        "margin": [0, 10, 0, 5]
       },
       "rule-body": {
         "color": "#000000",
