@@ -129,6 +129,12 @@
                     }
                   },
                   {
+                    "variable": "embeddedUrl", 
+                    "value": {
+                      "path": "$.embeddedUrl"
+                    }
+                  },
+                  {
                     "variable": "cantonment-board",
                     "value": {
                       "path": "PDF_STATIC_LABEL_CONSOLIDATED_TLCERTIFICATE_MUNICIPAL_CORPORATION"
@@ -756,12 +762,12 @@
               ]
             },
             {
-                "qrcodeConfig": [
-                  {
-                      "variable": "qr_code_image",
-                      "value":"{{embeddedUrl}}"
-                  }
-                ]
+              "qrcodeConfig": [
+                {
+                    "variable": "qr_code_image",
+                    "value":"{{embeddedUrl}}"
+                }
+              ]
             },
             {
                 "externalAPI": [     
