@@ -311,7 +311,7 @@
                                                    "columns": [
                                                        
                                                       {
-                                                          "text": "आधार  नंबर / MOTHER AADHAR NO: {{motherUid}}",
+                                                          "text": "माता आधार नंबर / MOTHER AADHAR NO: {{motherUid}}",
                                                           "width": "49%",
                                                            "style": "details-body"
                                                       },
@@ -321,7 +321,7 @@
                                                           
                                                       },
                                                       {
-                                                          "text": "आधार  नंबर / FATHER AADHAR NO: {{fatherUid}}",
+                                                          "text": "पिता आधार नंबर / FATHER AADHAR NO: {{fatherUid}}",
                                                            "style": "details-body"
                                                       }
                                                   ] 
