@@ -84,7 +84,7 @@
                 }
               },
               {
-                "variable": "presentAdd",
+                "variable": "presentAddress",
                 "value": {
                   "path": "$.deathPermaddr.fullAddress"
                 }

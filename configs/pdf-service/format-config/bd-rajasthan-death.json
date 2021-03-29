@@ -36,7 +36,7 @@
           "body": [
             [
               {
-                "text":" "
+                "text": " "
               },
               {
                 "stack": [
@@ -54,7 +54,7 @@
                   },
                   {
                     "text": "Government of Rajasthan",
-                    "style": "appendix-header-body" 
+                    "style": "appendix-header-body"
                   },
                   {
                     "text": "आर्थिक एवं सांख्यिकी निदेशालय",
@@ -150,23 +150,22 @@
                   }
                 ]
               }
-            ] 
+            ]
           ]
         },
         "layout": "noBorders"
       },
       {
         "canvas": [
-            {
-                  "lineColor": "gray",
-                  "type": "line",
-                  "x1": 0,
-                  "y1": 0,
-                  "x2": 515,
-                  "y2": 0,
-                  "lineWidth": 1
-              }
-             
+          {
+            "lineColor": "gray",
+            "type": "line",
+            "x1": 0,
+            "y1": 0,
+            "x2": 515,
+            "y2": 0,
+            "lineWidth": 1
+          }
         ]
       },
       {
@@ -195,17 +194,23 @@
               {
                 "columns": [
                   {
-                    "text": ["This is to certify that the following information has been taken from the original record of birth which is the register for (Local area / Local body) " ,
+                    "text": [
+                      "This is to certify that the following information has been taken from the original record of birth which is the register for (Local area / Local body) ",
                       {
-                      "text": "CHAVNI PARISHAD {{cb-name}}",
-                      "bold": true
-                    }, "of Tehsil / Block {{block-name}} of District ",{
-                      "text": "{{dist-name}}",
-                      "bold": true
-                    }," of State / Union Territory",{
-                      "text": "Rajasthan, India",
-                      "bold": true
-                    }],
+                        "text": "CHAVNI PARISHAD {{cb-name}}",
+                        "bold": true
+                      },
+                      "of Tehsil / Block {{block-name}} of District ",
+                      {
+                        "text": "{{dist-name}}",
+                        "bold": true
+                      },
+                      " of State / Union Territory",
+                      {
+                        "text": "Rajasthan, India",
+                        "bold": true
+                      }
+                    ],
                     "style": "rule-body"
                   }
                 ]
@@ -252,7 +257,7 @@
                     "width": "1%"
                   },
                   {
-                    "text": "मृत्यु का स्थान/ PLACE OF DEATH: {{placeOfBirth}}",
+                    "text": "मृत्यु का स्थान/ PLACE OF DEATH: {{placeOfDeath}}",
                     "style": "details-body"
                   }
                 ]
@@ -261,7 +266,6 @@
             [
               {
                 "columns": [
-                   
                   {
                     "stack": [
                       {
@@ -291,10 +295,9 @@
                       {
                         "text": "पति/पत्नी का आधार नंबर/Husband/Wife Aadhar No : {{spouseAadhar}}",
                         "style": "details-body"
-                      }    
+                      }
                     ]
-                  } 
-                   
+                  }
                 ]
               }
             ],
@@ -333,7 +336,7 @@
                       {
                         "text": "जारी करने की तिथि/ DATE OF ISSUE: {{issueDate}}",
                         "style": "details-body"
-                      } 
+                      }
                     ]
                   },
                   {
@@ -341,7 +344,7 @@
                     "width": "1%"
                   },
                   {
-                    "stack": [ 
+                    "stack": [
                       {
                         "text": "पंजीकरण तारीख/ DATE OF REGISTRATION: {{registration_date}}",
                         "style": "details-body",
@@ -350,15 +353,12 @@
                       {
                         "text": "जारी करने वाले प्राधिकारी के हस्ताक्षर/Signature of issuing authority:",
                         "style": "details-body"
-                        
                       }
                     ]
-                 }
+                  }
                 ]
               }
             ]
-            
-            
           ]
         },
         "layout": "noBorders"
@@ -496,7 +496,7 @@
         "alignment": "center",
         "fontSize": 10,
         "fontWeight": 400,
-        "margin": [0, 0, 0, 0]
+        "margin": [0, -10, 0, 0]
       },
       "rule-header_multiLang": {
         "color": "#000000",
@@ -504,7 +504,7 @@
         "alignment": "center",
         "fontSize": 11,
         "fontWeight": 400,
-        "margin": [0, 0, 0, 0]
+        "margin": [0, -2, 0, 0]
       },
       "rule-body": {
         "color": "#000000",
@@ -527,7 +527,7 @@
         "bold": false,
         "fontSize": 11,
         "fontWeight": 400,
-        "margin": [0, 3, 0, 0]
+        "margin": [0, 1, 0, 0]
       },
       "signature-body": {
         "color": "#000000",

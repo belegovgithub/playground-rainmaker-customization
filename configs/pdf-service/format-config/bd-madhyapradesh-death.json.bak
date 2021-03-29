@@ -1,5 +1,5 @@
 {
-  "key": "bd-rajasthan-birth",
+  "key": "bd-madhyapradesh-death",
   "config": {
     "defaultStyle": {
       "font": "Cambay"
@@ -36,40 +36,57 @@
           "body": [
             [
               {
-                "text": " "
+                "stack": [
+                  {
+                    "text": "सं. 1",
+                    "style": "appendix-header-serialNo"
+                  },
+                  {
+                    "text": "No .1",
+                    "style": "appendix-header-serialNo"
+                  },
+                  {
+                    "image": "{{govtImage}}",
+                    "width": 80,
+                    "height": 70.25,
+                    "margin": [-10, 0, 0, 0]
+                  }
+                ]
               },
               {
                 "stack": [
                   {
-                    "text": "प्रारूप संख्या 5",
+                    "text": "मध्य प्रदेश सरकार",
                     "style": "appendix-header-body"
                   },
                   {
-                    "text": "FORM NO. 5",
+                    "text": "GOVERNMENT OF MADHYA PRADESH",
+                    "style": "appendix-header-body",
+                    "margin": [0, 0, 0, 5]
+                  },
+                  {
+                    "text": "मध्य प्रदेश सरकार",
                     "style": "appendix-header-body"
                   },
                   {
-                    "text": "राजस्थान सरकार",
+                    "text": "GOVERNMENT OF MADHYA PRADESH",
+                    "style": "appendix-header-body",
+                    "margin": [0, 0, 0, 5]
+                  },
+                  {
+                    "text": "योजना, आर्थिक और सांख्यिकी विभाग",
                     "style": "appendix-header-body"
                   },
                   {
-                    "text": "Government of Rajasthan",
+                    "text": "DEPARTMENT OF PLANNING, ECONOMICS & STATISTICS",
                     "style": "appendix-header-body"
                   },
                   {
-                    "text": "आर्थिक एवं सांख्यिकी निदेशालय",
+                    "text": "{{cb_label_name_multiLang}} {{cb-name-multilang}}",
                     "style": "appendix-header-body"
                   },
                   {
-                    "text": "Directorate of Economics & Statistics",
-                    "style": "appendix-header-body"
-                  },
-                  {
-                    "text": "रजिस्ट्रार – {{cb_label_name_multiLang}} {{cb-name-multilang}}",
-                    "style": "appendix-header-body"
-                  },
-                  {
-                    "text": "Registrar – CANTONMENT BOARD {{cb-name}}",
+                    "text": "CANTONMENT BOARD {{cb-name}}",
                     "style": "appendix-header-body"
                   }
                 ]
@@ -77,10 +94,18 @@
               {
                 "stack": [
                   {
+                    "text": "प्रपत्र-5",
+                    "style": "appendix-header-formNo"
+                  },
+                  {
+                    "text": "FORM-5",
+                    "style": "appendix-header-formNo"
+                  },
+                  {
                     "image": "{{form5}}",
                     "width": 65,
                     "height": 60.25,
-                    "margin": [10, -20, 0, 0]
+                    "margin": [10, 0, 0, 0]
                   }
                 ]
               }
@@ -96,7 +121,7 @@
           "body": [
             [
               {
-                "text": "जन्म प्रमाण पत्र",
+                "text": "मृत्यु प्रमाण पत्र",
                 "style": "title-header_multiLang"
               }
             ]
@@ -111,7 +136,7 @@
           "body": [
             [
               {
-                "text": "BIRTH CERTIFICATE",
+                "text": "DEATH CERTIFICATE",
                 "style": "title-header"
               }
             ]
@@ -122,13 +147,24 @@
       {
         "style": "ws-head",
         "table": {
+          "widths": ["*"],
           "body": [
             [
               {
                 "columns": [
                   {
-                    "text": "(जन्म और मृत्यु रजिस्ट्रीकरण अधिनियम, 1969 की धारा 12/17 और राजस्थान जन्म और मृत्यु रजिस्ट्रीकरण अधिनियम, 2000 के नियम 8/13 के अधीन जारी किया गया)",
+                    "text": "(जन्म मृत्यु रजिस्ट्रीकरण अधिनियम,1969 की धारा 12/17 तथा मध्य प्रदेश जन्म मृत्यु रजिस्ट्रीकरण, 1999  के  नियम 8/13 के अंतर्गत, जारी किया गया)",
                     "style": "rule-header_multiLang"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": "(ISSUED  UNDER SECTION  12/17 OF THE REGISTRATION OF BIRTHS & DEATHS ACT, 1969  AND RULE 8/13  OF THE MADHYA PRADESH REGISTRATION OF BIRTHS & DEATHS RULES 1999)",
+                    "style": "rule-header"
                   }
                 ]
               }
@@ -136,37 +172,6 @@
           ]
         },
         "layout": "noBorders"
-      },
-      {
-        "style": "ws-head",
-        "table": {
-          "body": [
-            [
-              {
-                "columns": [
-                  {
-                    "text": "(Issued under Section 12/17 of the Registration of Births and Deaths Act, 1969 and Rule 8/13 of the Rajasthan Registration of Births and Deaths Rules, 2000)",
-                    "style": "rule-header_multiLang"
-                  }
-                ]
-              }
-            ]
-          ]
-        },
-        "layout": "noBorders"
-      },
-      {
-        "canvas": [
-          {
-            "lineColor": "gray",
-            "type": "line",
-            "x1": 0,
-            "y1": 0,
-            "x2": 515,
-            "y2": 0,
-            "lineWidth": 1
-          }
-        ]
       },
       {
         "style": "ws-head",
@@ -177,14 +182,7 @@
               {
                 "columns": [
                   {
-                    "text": [
-                      "यह प्रमाणित किया जाता है कि निम्नलिखित सूचना जन्म के मूल अभिलेख से ली गयी है जो कि (स्थानीय क्षेत्र / स्थानीय निकाय) ",
-                      {
-                        "text": "छावनी परिषद {{cb-name-multilang}}",
-                        "bold": true
-                      },
-                      "तहसील {{block-name-multilang}} जिला {{dist-name-multilang}} राज्य /संघ प्रदेश राजस्थान, भारत के रजिस्टर  में उल्लिखित है ।"
-                    ],
+                    "text": "यह प्रमाणित किया जाता है निम्नलिखित सूचना मृत्यु के मूल अभिलेख से ली गई है जो की छावनी परिषद {{cb-name-multilang}} तहसील {{block-name-multilang}} जिला {{dist-name-multilang}} राज्य/संघ प्रदेश मध्य प्रदेश, भारत के रजिस्टर मे उल्लेखित है ।",
                     "style": "rule-body_multiLang"
                   }
                 ]
@@ -194,23 +192,7 @@
               {
                 "columns": [
                   {
-                    "text": [
-                      "This is to certify that the following information has been taken from the original record of birth which is the register for (Local area / Local body) ",
-                      {
-                        "text": "CHAVNI PARISHAD {{cb-name}}",
-                        "bold": true
-                      },
-                      "of Tehsil / Block {{block-name}} of District ",
-                      {
-                        "text": "{{dist-name}}",
-                        "bold": true
-                      },
-                      " of State / Union Territory",
-                      {
-                        "text": "Rajasthan, India",
-                        "bold": true
-                      }
-                    ],
+                    "text": "THIS  IS TO CERTIFY THAT THE  FOLLOWING  INFORMATION  HAS BEEN  TAKEN FROM  THE  ORIGINAL RECORD OF BIRTH WHICH  IS THE  REGISTER  FOR CANTONMENT BOARD {{cb-name}} OF TAHSIL/BLOCK {{block-name}} OF DISTRICT {{dist-name}} OF STATE/UNION TERRITORY MADHYA PRADESH, INDIA.",
                     "style": "rule-body"
                   }
                 ]
@@ -229,7 +211,7 @@
               {
                 "columns": [
                   {
-                    "text": "नाम / NAME: {{name}}",
+                    "text": "{{name_label_multiLang}} / NAME OF DECEASED: {{name}}",
                     "width": "49%",
                     "style": "details-body"
                   },
@@ -238,7 +220,7 @@
                     "width": "1%"
                   },
                   {
-                    "text": "लिंग / SEX: {{gender}}",
+                    "text": "{{gender_label_multiLang}} / SEX : {{gender}}",
                     "style": "details-body"
                   }
                 ]
@@ -248,7 +230,18 @@
               {
                 "columns": [
                   {
-                    "text": "जन्म तिथि / DATE OF BIRTH : {{dob}}",
+                    "text": "आधार  नंबर  / AADHAAR NO: {{aadharNo}}",
+                    "width": "49%",
+                    "style": "details-body"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": "{{dod_label_multiLang}} / DATE OF DEATH: {{dob}}",
                     "width": "49%",
                     "style": "details-body"
                   },
@@ -257,7 +250,7 @@
                     "width": "1%"
                   },
                   {
-                    "text": "जन्म स्थान/ PLACE OF BIRTH: {{placeOfBirth}}",
+                    "text": "{{pod_label_multiLang}} / PLACE OF DEATH: {{placeOfDeath}}",
                     "style": "details-body"
                   }
                 ]
@@ -267,33 +260,7 @@
               {
                 "columns": [
                   {
-                    "stack": [
-                      {
-                        "text": "माता का नाम /NAME OF MOTHER : {{motherName}}",
-                        "style": "details-body"
-                      },
-                      {
-                        "text": "आधार नंबर / MOTHER’S AADHAAR NO : {{motherUid}}",
-                        "style": "details-body"
-                      },
-                      {
-                        "text": "पिता का नाम / NAME OF FATHER: {{fatherName}}",
-                        "style": "details-body"
-                      },
-                      {
-                        "text": "आधार नंबर / FATHER’S AADHAAR NO : {{fatherUid}}",
-                        "style": "details-body"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            [
-              {
-                "columns": [
-                  {
-                    "text": "बच्चे के जन्म के समय माता-पिता का पता / ADDRESS OF PARENTS AT THE TIME OF BIRTH OF THE CHILD: {{childAddress}}",
+                    "text": "मृतक की उम्र /AGE OF DECEASED : {{age}}",
                     "width": "49%",
                     "style": "details-body"
                   },
@@ -302,7 +269,7 @@
                     "width": "1%"
                   },
                   {
-                    "text": "माता-पिता के स्थायी पता/ PERMANENT ADDRESS OF PARENTS: {{parentsAddress}}",
+                    "text": "पति / पत्नी का नाम/ NAME OF HUSBAND/WIFE: {{spouseName}}",
                     "style": "details-body"
                   }
                 ]
@@ -312,37 +279,132 @@
               {
                 "columns": [
                   {
-                    "stack": [
-                      {
-                        "text": "पंजीकरण संख्या / REGISTRATION NUMBER: {{registrationNo}}",
-                        "style": "details-body"
-                      },
-                      {
-                        "text": "टिप्पणी / REMARKS (IF ANY): {{remarks}}",
-                        "style": "details-body"
-                      },
-                      {
-                        "text": "जारी करने की तिथि/ DATE OF ISSUE: {{issueDate}}",
-                        "style": "details-body"
-                      }
-                    ]
+                    "text": " ",
+                    "width": "49%",
+                    "style": "details-body"
                   },
                   {
                     "text": " ",
                     "width": "1%"
                   },
                   {
-                    "stack": [
-                      {
-                        "text": "पंजीकरण तारीख/ DATE OF REGISTRATION: {{registration_date}}",
-                        "style": "details-body",
-                        "width": "49%"
-                      },
-                      {
-                        "text": "जारी करने वाले प्राधिकारी के हस्ताक्षर/Signature of issuing authority:",
-                        "style": "details-body"
-                      }
-                    ]
+                    "text": "आधार  नंबर  / HUSBAND/WIFE  AADHAAR NO: {{spouceAadharNo}}",
+                    "width": "49%",
+                    "style": "details-body"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": "{{mother_name_label_multiLang}} / NAME OF MOTHER: {{motherName}}",
+                    "width": "49%",
+                    "style": "details-body"
+                  },
+                  {
+                    "text": " ",
+                    "width": "1%"
+                  },
+                  {
+                    "text": "{{father_name_label_multiLang}} / NAME OF FATHER: {{fatherName}}",
+                    "style": "details-body"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": "माता आधार नंबर / MOTHER AADHAR NO: {{motherUid}}",
+                    "width": "49%",
+                    "style": "details-body"
+                  },
+                  {
+                    "text": " ",
+                    "width": "1%"
+                  },
+                  {
+                    "text": "पिता आधार नंबर / FATHER AADHAR NO: {{fatherUid}}",
+                    "style": "details-body"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": "{{death_address_label_multiLang}} / ADDRESS OF DECEASED AT THE TIME OF DEATH: {{childAddress}}",
+                    "width": "49%",
+                    "style": "details-body"
+                  },
+                  {
+                    "text": " ",
+                    "width": "1%"
+                  },
+                  {
+                    "text": "{{death_perm_address_label_multiLang}} / PERMANENT ADDRESS OF DECEASED: {{parentsAddress}}",
+                    "style": "details-body"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": "{{registration_label_multiLang}} / REGISTRATION NO: {{registrationNo}}",
+                    "width": "49%",
+                    "style": "details-body"
+                  },
+                  {
+                    "text": " ",
+                    "width": "1%"
+                  },
+                  {
+                    "text": "{{registration_date_label_multiLang}} / DATE OF REGISTRATION: {{registration_date}}",
+                    "style": "details-body"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": "{{remarks_label_multiLang}} / REMARKS(IF ANY): {{remarks}}",
+                    "width": "49%",
+                    "style": "details-body"
+                  },
+                  {
+                    "text": " ",
+                    "width": "1%"
+                  },
+                  {
+                    "text": " ",
+                    "style": "details-body"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": "{{issue_date_label_multiLang}} / DATE OF ISSUE: {{issueDate}}",
+                    "width": "49%",
+                    "style": "details-body"
+                  },
+                  {
+                    "text": " ",
+                    "width": "1%"
+                  },
+                  {
+                    "text": "{{issuing_authority_label_multiLang}} / ISSUING AUTHORITY: {{issuing_authority_multiLang}} / {{issuing_authority}}",
+                    "style": "details-body"
                   }
                 ]
               }
@@ -375,15 +437,7 @@
           "body": [
             [
               {
-                "text": "“नोट: “बच्चे के जन्म के समय माता पिता का पता” एवं “माता पिता का स्थायी पता” के कॉलमों से संबन्धित सूचनायेँ 01/01/2007 से पूर्व लागू नहीं थी।.”",
-                "width": 50,
-                "height": 61.25,
-                "style": "instruction-body"
-              }
-            ],
-            [
-              {
-                "text": "“Note: Information in respect of the columns 'Present address of parents at the time of birth of the child' and 'Permanent address of parents' were not applicable before 01/01/2007”",
+                "text": "THIS IS A COMPUTER GENERATED CERTIFICATE WHICH CONTAINS FACSIMILE SIGNATURE OF THE ISSUING AUTHORITY",
                 "width": 50,
                 "height": 61.25,
                 "style": "instruction-body"
@@ -400,15 +454,24 @@
           "body": [
             [
               {
-                "text": "“राजस्थान सरकार के आर्थिक एवं सांख्यिकी विभाग के परिपत्र क्रमांक एफ़ 13/1/39/वीएस/डीईएस/2013/22519 दिनांक 02.06.2015 के द्वारा जन्म एवं मृत्यु प्रमाण पत्र जारी करने हेतु डिजिटल हस्ताक्षर के उपयोग को मान्यता प्रदान की गयी है।”",
+                "text": "THE GOVT. OF INDIA VIDE CIRCULAR NO. 1/12/2014-VS(CRS) DATED 27-JULY-2015  HAS APPROVED THIS CERTIFICATE AS A VALID LEGAL DOCUMENT FOR ALL OFFICIAL PURPOSES",
                 "width": 50,
                 "height": 61.25,
                 "style": "instruction-body"
               }
-            ],
+            ]
+          ]
+        },
+        "layout": "noBorders"
+      },
+      {
+        "style": "ws-head",
+        "table": {
+          "widths": ["*"],
+          "body": [
             [
               {
-                "text": "“Use of Digital Signature for issuing birth and death certificate is recognized by Economics and Statistics Department, Government of Rajasthan vide circular number F 13/1/39/VS/DES/2013/22519 Dated 02.06.2015”",
+                "text": "* प्रत्येक जन्म एवं मृत्यु का पंजीकरण सुनिश्चित करें * / ENSURE REGISTRATION OF EVERY BIRTH AND DEATH",
                 "width": 50,
                 "height": 61.25,
                 "style": "instruction-body"
@@ -436,34 +499,6 @@
         "alignment": "center",
         "margin": [0, -30, 0, 0]
       },
-      "instruction-body": {
-        "color": "#000000",
-        "bold": false,
-        "fontSize": 7,
-        "fontWeight": 400,
-        "alignment": "left"
-      },
-      "qr-code": {
-        "color": "#000000",
-        "alignment": "left",
-        "margin": [0, -10, 0, 0]
-      },
-      "title-header": {
-        "color": "#000000",
-        "bold": true,
-        "fontSize": 12,
-        "fontWeight": 400,
-        "alignment": "center",
-        "margin": [0, -5, 0, 0]
-      },
-      "title-header_multiLang": {
-        "color": "#000000",
-        "bold": true,
-        "fontSize": 12,
-        "fontWeight": 400,
-        "alignment": "center",
-        "margin": [0, -5, 0, 0]
-      },
       "appendix-header-serialNo": {
         "color": "#000000",
         "bold": false,
@@ -478,59 +513,75 @@
         "fontWeight": 400,
         "margin": [20, -5, 0, 0]
       },
-      "rule-header": {
+      "instruction-body": {
         "color": "#000000",
         "bold": false,
+        "fontSize": 7,
+        "fontWeight": 400,
+        "alignment": "center"
+      },
+      "qr-code": {
+        "color": "#000000",
+        "alignment": "left",
+        "margin": [0, -20, 0, 0]
+      },
+      "title-header": {
+        "color": "#000000",
+        "bold": true,
+        "fontSize": 14,
+        "fontWeight": 400,
         "alignment": "center",
+        "margin": [0, 1, 0, 0]
+      },
+      "title-header_multiLang": {
+        "color": "#000000",
+        "bold": true,
+        "fontSize": 15,
+        "fontWeight": 400,
+        "alignment": "center",
+        "margin": [0, 3, 0, 0]
+      },
+      "rule-header": {
+        "color": "#696969",
+        "bold": true,
         "fontSize": 10,
         "fontWeight": 400,
-        "margin": [0, -10, 0, 0]
+        "margin": [0, 0, 0, 4]
       },
       "rule-header_multiLang": {
-        "color": "#000000",
-        "bold": false,
-        "alignment": "center",
+        "color": "#696969",
+        "bold": true,
         "fontSize": 11,
         "fontWeight": 400,
-        "margin": [0, -2, 0, 0]
+        "margin": [0, 0, 0, 4]
       },
       "rule-body": {
-        "color": "#000000",
-        "bold": false,
+        "color": "#696969",
+        "bold": true,
         "fontSize": 10,
-        "alignment": "left",
         "fontWeight": 400,
         "margin": [0, 0, 0, 0]
       },
       "rule-body_multiLang": {
-        "color": "#000000",
-        "bold": false,
+        "color": "#696969",
+        "bold": true,
         "fontSize": 11,
-        "alignment": "left",
         "fontWeight": 400,
         "margin": [0, 0, 0, 0]
       },
       "details-body": {
-        "color": "#000000",
-        "bold": false,
-        "fontSize": 11,
-        "fontWeight": 400,
-        "margin": [0, 1, 0, 0]
-      },
-      "signature-body": {
-        "color": "#000000",
-        "bold": false,
-        "fontSize": 11,
-        "fontWeight": 400,
-        "margin": [0, -15, 0, 0]
-      },
-      "appendix-header-body": {
-        "color": "#000000",
+        "color": "#696969",
         "bold": true,
         "fontSize": 11,
         "fontWeight": 400,
-        "alignment": "center",
-        "margin": [0, -3, 0, 0]
+        "margin": [0, 4, 0, 0]
+      },
+      "appendix-header-body": {
+        "color": "#696969",
+        "bold": true,
+        "fontSize": 9,
+        "fontWeight": 400,
+        "alignment": "center"
       },
       "receipt-value-down-sub": {
         "color": "#000000",

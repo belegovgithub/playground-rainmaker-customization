@@ -75,7 +75,7 @@
                 {
                   "variable": "motherName", 
                   "value": {
-                    "path": "$.deathFatherInfo.fullName"
+                    "path": "$.deathMotherInfo.fullName"
                   },
                   "type":"setEmpty"
                 },
@@ -132,6 +132,30 @@
                     "variable": "placeOfBirth", 
                     "value": {
                       "path": "$.hospitalname"
+                    }
+                  },
+                  {
+                    "variable": "age", 
+                    "value": {
+                      "path": "$.age"
+                    }
+                  },
+                  {
+                    "variable": "spouseName", 
+                    "value": {
+                      "path": "$.deathSpouseInfo.fullName"
+                    }
+                  },
+                  {
+                    "variable": "spouseAadharNo", 
+                    "value": {
+                      "path": "$.deathSpouseInfo.aadharno"
+                    }
+                  },
+                  {
+                    "variable": "spouseName", 
+                    "value": {
+                      "path": "$.deathSpouseInfo.fullName"
                     }
                   },
                   {

@@ -39,9 +39,9 @@
                 "stack": [ 
                   {
                     "image": "{{govtImage}}",
-                    "width": 70,
-                    "height": 70.25,
-                    "margin": [-10, 0, 0, 0]
+                    "width": 55,
+                    "height": 55.25,
+                    "margin": [0, -10, 0, 0]
                   }
                 ]
               },
@@ -53,22 +53,22 @@
                   },
                   {
                     "text": "Chief Registrar of Births and Deaths",
-                    "style": "appendix-header-body",
-                    "margin": [0, 0, 0, 0]
+                    "style": "appendix-header-body"
+                     
                   } 
                 ]
               },
               {
                 "stack": [ 
                   {
-                    "text": "FORM-5",
+                    "text": "FORM-6",
                     "style": "appendix-header-formNo"
                   },
                   {
                     "image": "{{form5}}",
-                    "width": 65,
-                    "height": 60.25,
-                    "margin": [10, 0, 0, 0]
+                    "width": 45,
+                    "height": 45.25,
+                    "margin": [50, -10, 0, 0]
                   }
                 ]
               }
@@ -80,16 +80,36 @@
       {
         "style": "ws-head",
         "table": {
-          "widths": ["*"],
+          "widths": ["*","*",150,"*","*"],
           "body": [
             [
               {
+                "text": " ",
+                "border": [false, false, false, false]
+              },
+              {
+                "text": " ",
+                "border": [false, false, false, false]
+              },
+              {
                 "text": "DEATH CERTIFICATE",
+                "border": [false, false, false, false],
                 "style": "title-header"
+              },
+              {
+                "text": " ",
+                "border": [false, false, false, false]
+              },
+              {
+                "text": " ",
+                "border": [false, false, false, false]
               }
             ]
           ]
-        } 
+        },
+        "layout": {
+       
+        }
       },
       {
         "style": "ws-head",
@@ -208,7 +228,7 @@
                         "text": "ಮರಣದ ದಿನಾಂಕ:"  
                       },
                       {
-                        "text": "Date of Death: {{dob}}"  
+                        "text": "Date of Death: {{dod}}"  
                       }
                     ],
                     "width": "45%",
@@ -225,7 +245,7 @@
                         "text": "ಮರಣದ ಸ್ಥಳ:"  
                       },
                       {
-                        "text": "Place of Death :{{placeOfBirth}}"  
+                        "text": "Place of Death :{{placeOfDeath}}"  
                       }
                     ],
                     "width": "45%",
@@ -328,7 +348,7 @@
                         "text": "ಮೃತರ ಖಾಯ೦ ವಿಳಾಸ:"  
                       },
                       {
-                        "text": "Permanent address of the deceased:{{parentsAddress}}"  
+                        "text": "Permanent address of the deceased:{{permanentAddress}}"  
                       }
                     ],
                     "width": "45%",
@@ -490,7 +510,7 @@
                   },
                   {
                     "text": " ",
-                    "width": "1%"
+                    "width": "20%"
                   },
                   {
                     "stack": [
@@ -542,24 +562,7 @@
           ]
         },
         "layout": "noBorders"
-      },
-      {
-        "style": "ws-head",
-        "table": {
-          "widths": ["*"],
-          "body": [
-            [
-              {
-                "text": " प्रत्येक जन्म आणि मृत्यूची घटना नोंदल्याची खात्री करा / ENSURE REGISTRATION OF EVERY BIRTH AND DEATH ",
-                "width": 50,
-                "height": 61.25,
-                "style": "instruction-body"
-              }
-            ]
-          ]
-        },
-        "layout": "noBorders"
-      }
+      } 
     ],
     "styles": {
       "pdf-header": {
@@ -588,12 +591,12 @@
       "qr-code": {
         "color": "#000000",
         "alignment": "left",
-        "margin": [0, -70, 0, 0]
+        "margin": [0, -40, 0, 0]
       },
       "title-header": {
-        "color": "#004d00",
+        "color": "#000000",
         "bold": true,
-        "fontSize": 14,
+        "fontSize": 18,
         "alignment": "center",
         "margin": [0, -1, 0, 0]
       },
@@ -623,28 +626,32 @@
         "bold": false,
         "fontSize": 10,
         "fontWeight": 400,
-        "margin": [0, 0, 0, 3]
+        "margin": [0, -2, 0, 3],
+        "alignment": "center"
       },
       "rule-header_multiLang": {
         "color": "#000000",
         "bold": false,
         "fontSize": 11,
         "fontWeight": 400,
-        "margin": [0, 0, 0, -1]
+        "margin": [0, 0, 0, -1],
+        "alignment": "center"
       },
       "rule-body": {
         "color": "#000000",
         "bold": false,
-        "fontSize": 10,
+        "fontSize": 11,
         "fontWeight": 400,
-        "margin": [0, 0, 0, 0]
+        "alignment": "center",
+        "margin": [0, 0, 0, 2]
       },
       "rule-body_multiLang": {
         "color": "#000000",
         "bold": false,
         "fontSize": 11,
         "fontWeight": 400,
-        "margin": [0, 0, 0, 0]
+        "alignment": "center",
+        "margin": [0, 0, 0, 2]
       },
       "details-body": {
         "color": "#000000",
@@ -654,9 +661,9 @@
         "margin": [0, 5, 0, 0]
       },
       "appendix-header-body": {
-        "color": "#000099",
+        "color": "#000000",
         "bold": true,
-        "fontSize": 9,
+        "fontSize": 16,
         "fontWeight": 400,
         "alignment": "center"
       },

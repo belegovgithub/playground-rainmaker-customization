@@ -1,5 +1,5 @@
 {
-  "key": "bd-karnataka-birth",
+  "key": "bd-karnataka-death",
   "config": {
     "defaultStyle": {
       "font": "kannada"
@@ -68,7 +68,7 @@
                     "image": "{{form5}}",
                     "width": 45,
                     "height": 45.25,
-                    "margin": [50, -10, 0, 0]
+                    "margin": [0, -10, 0, 0]
                   }
                 ]
               }
@@ -92,24 +92,13 @@
                 "border": [false, false, false, false]
               },
               {
-                "text": "BIRTH CERTIFICATE",
+                "text": "DEATH CERTIFICATE",
                 "border": [false, false, false, false],
                 "style": "title-header"
-              },
-              {
-                "text": " ",
-                "border": [false, false, false, false]
-              },
-              {
-                "text": " ",
-                "border": [false, false, false, false]
               }
             ]
           ]
-        },
-        "layout": {
-       
-        }
+        } 
       },
       {
         "style": "ws-head",
@@ -225,10 +214,10 @@
                   {
                     "stack": [
                       {
-                        "text": "ಜನನವಾದ ತಾರೀಖು:"  
+                        "text": "ಮರಣದ ದಿನಾಂಕ:"  
                       },
                       {
-                        "text": "Date of Birth: {{dob}}"  
+                        "text": "Date of Death: {{dob}}"  
                       }
                     ],
                     "width": "45%",
@@ -242,10 +231,10 @@
                   {
                     "stack": [
                       {
-                        "text": "ಜನನವಾದ ಸ್ಥಳ:"  
+                        "text": "ಮರಣದ ಸ್ಥಳ:"  
                       },
                       {
-                        "text": "Place of Birth :{{placeOfBirth}}"  
+                        "text": "Place of Death :{{placeOfBirth}}"  
                       }
                     ],
                     "width": "45%",
@@ -305,15 +294,21 @@
                   {
                     "stack": [
                       {
-                        "text": "ಮಗುವಿನ ಜನನದ ಸಮಯದಲ್ಲಿ ತಂದೆತಾಯಿಯರ ವಿಳಾಸ:"  
+                        "text": "ಗಂಡ / ಹೆಂಡತಿಯ ಹೆಸರು:"  
                       },
                       {
-                        "text": "Address of the parents at the time of birth of child: {{childAddress}}"  
+                        "text": "Name of the Husband/wife: {{spouseName}}"  
                       }
                     ],
                     "width": "45%",
                     "style": "details-body" 
-                  },  
+                  }  
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
                   {
                     "text": "8)",
                     "width": "5%",
@@ -322,10 +317,27 @@
                   {
                     "stack": [
                       {
-                        "text": "ತಂದೆತಾಯಿಯರ ಖಾಯ೦ ವಿಳಾಸ:"  
+                        "text": "ಮರಣ ಸಮಯದಲ್ಲಿ ಮೃತರ ವಿಳಾಸ:"  
                       },
                       {
-                        "text": "Permanent address of parents:{{parentsAddress}}"  
+                        "text": "Address of deceased at the time of death: {{presentAddress}}"  
+                      }
+                    ],
+                    "width": "45%",
+                    "style": "details-body" 
+                  },  
+                  {
+                    "text": "9)",
+                    "width": "5%",
+                    "style": "details-body"
+                  }, 
+                  {
+                    "stack": [
+                      {
+                        "text": "ಮೃತರ ಖಾಯ೦ ವಿಳಾಸ:"  
+                      },
+                      {
+                        "text": "Permanent address of the deceased:{{parentsAddress}}"  
                       }
                     ],
                     "width": "45%",
@@ -338,7 +350,7 @@
               {
                 "columns": [
                   {
-                    "text": "9)",
+                    "text": "10)",
                     "width": "5%",
                     "style": "details-body"
                   }, 
@@ -355,7 +367,7 @@
                     "style": "details-body" 
                   },  
                   {
-                    "text": "10)",
+                    "text": "11)",
                     "width": "5%",
                     "style": "details-body"
                   }, 
@@ -378,7 +390,7 @@
               {
                 "columns": [
                   {
-                    "text": "11)",
+                    "text": "12)",
                     "width": "5%",
                     "style": "details-body"
                   }, 
@@ -394,71 +406,31 @@
                     "width": "45%",
                     "style": "details-body" 
                   },  
-                  {
-                    "text": "12)",
-                    "width": "5%",
-                    "style": "details-body"
-                  }, 
-                  {
-                    "stack": [
-                      {
-                        "text": "ಅನುಮೋದನೆಯ ದಿನಾಂಕ:"  
-                      },
-                      {
-                        "text": "Date of Approval:{{issueDate}}"  
-                      }
-                    ],
-                    "width": "45%",
-                    "style": "details-body" 
-                  }
-                ]
-              }
-            ],
-            [
-              {
-                "columns": [
-                  {
-                    "text": "11)",
-                    "width": "5%",
-                    "style": "details-body"
-                  }, 
-                  {
-                    "stack": [
-                      {
-                        "text": "ಷರಾ (ಯಾವುದಾದರೂ ಇದ್ದಲ್ಲಿ):"  
-                      },
-                      {
-                        "text": "Remarks (if any): {{remarks}}"  
-                      }
-                    ],
-                    "width": "45%",
-                    "style": "details-body" 
-                  },  
-                  {
-                    "text": "12)",
-                    "width": "5%",
-                    "style": "details-body"
-                  }, 
-                  {
-                    "stack": [
-                      {
-                        "text": "ಅನುಮೋದನೆಯ ದಿನಾಂಕ:"  
-                      },
-                      {
-                        "text": "Date of Approval:{{issueDate}}"  
-                      }
-                    ],
-                    "width": "45%",
-                    "style": "details-body" 
-                  }
-                ]
-              }
-            ],
-            [
-              {
-                "columns": [
                   {
                     "text": "13)",
+                    "width": "5%",
+                    "style": "details-body"
+                  }, 
+                  {
+                    "stack": [
+                      {
+                        "text": "ಅನುಮೋದನೆಯ ದಿನಾಂಕ:"  
+                      },
+                      {
+                        "text": "Date of Approval:{{issueDate}}"  
+                      }
+                    ],
+                    "width": "45%",
+                    "style": "details-body" 
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": "14)",
                     "width": "5%",
                     "style": "details-body"
                   }, 
@@ -475,7 +447,7 @@
                     "style": "details-body" 
                   },  
                   {
-                    "text": "14)",
+                    "text": "15)",
                     "width": "5%",
                     "style": "details-body"
                   }, 
@@ -498,10 +470,23 @@
               {
                 "columns": [
                   {
-                    "text": "ವಿತರಣಾ ತಾರೀಖು / DATE OF ISSUE: {{issueDate}}",
-                    "width": "49%",
+                    "text": "13)",
+                    "width": "5%",
                     "style": "details-body"
+                  }, 
+                  {
+                    "stack": [
+                      {
+                        "text": "ವಿತರಣಾ ತಾರೀಖು"  
+                      },
+                      {
+                        "text": "Date of Issue: {{remarks}}"  
+                      }
+                    ],
+                    "width": "45%",
+                    "style": "details-body" 
                   } 
+                   
                 ]
               }
             ],
@@ -514,7 +499,7 @@
                   },
                   {
                     "text": " ",
-                    "width": "20%"
+                    "width": "1%"
                   },
                   {
                     "stack": [
@@ -566,7 +551,24 @@
           ]
         },
         "layout": "noBorders"
-      } 
+      },
+      {
+        "style": "ws-head",
+        "table": {
+          "widths": ["*"],
+          "body": [
+            [
+              {
+                "text": " प्रत्येक जन्म आणि मृत्यूची घटना नोंदल्याची खात्री करा / ENSURE REGISTRATION OF EVERY BIRTH AND DEATH ",
+                "width": 50,
+                "height": 61.25,
+                "style": "instruction-body"
+              }
+            ]
+          ]
+        },
+        "layout": "noBorders"
+      }
     ],
     "styles": {
       "pdf-header": {
@@ -595,12 +597,12 @@
       "qr-code": {
         "color": "#000000",
         "alignment": "left",
-        "margin": [0, -40, 0, 0]
+        "margin": [0, -70, 0, 0]
       },
       "title-header": {
-        "color": "#000000",
+        "color": "#004d00",
         "bold": true,
-        "fontSize": 18,
+        "fontSize": 14,
         "alignment": "center",
         "margin": [0, -1, 0, 0]
       },
@@ -630,32 +632,28 @@
         "bold": false,
         "fontSize": 10,
         "fontWeight": 400,
-        "margin": [0, -2, 0, 3],
-        "alignment": "center"
+        "margin": [0, 0, 0, 3]
       },
       "rule-header_multiLang": {
         "color": "#000000",
         "bold": false,
         "fontSize": 11,
         "fontWeight": 400,
-        "margin": [0, 0, 0, -1],
-        "alignment": "center"
+        "margin": [0, 0, 0, -1]
       },
       "rule-body": {
         "color": "#000000",
         "bold": false,
-        "fontSize": 11,
+        "fontSize": 10,
         "fontWeight": 400,
-        "alignment": "center",
-        "margin": [0, 0, 0, 2]
+        "margin": [0, 0, 0, 0]
       },
       "rule-body_multiLang": {
         "color": "#000000",
         "bold": false,
         "fontSize": 11,
         "fontWeight": 400,
-        "alignment": "center",
-        "margin": [0, 0, 0, 2]
+        "margin": [0, 0, 0, 0]
       },
       "details-body": {
         "color": "#000000",
@@ -665,9 +663,9 @@
         "margin": [0, 5, 0, 0]
       },
       "appendix-header-body": {
-        "color": "#000000",
+        "color": "#000099",
         "bold": true,
-        "fontSize": 16,
+        "fontSize": 9,
         "fontWeight": 400,
         "alignment": "center"
       },

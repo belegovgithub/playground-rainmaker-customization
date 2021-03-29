@@ -61,7 +61,7 @@
                 {
                     "variable": "registration_date", 
                     "value": {
-                      "path": "$.dateofreport"
+                      "path": "$.dateofissue"
                     },
                     "type": "date"
                   },

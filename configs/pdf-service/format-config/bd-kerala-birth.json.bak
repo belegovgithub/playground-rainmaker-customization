@@ -482,8 +482,15 @@
                             "width": "45%",
                             "style": "details-body",
                             "margin": [0, -10, 0, 0]
-                          } 
-                           
+                          },
+                          {
+                            "text": " ",
+                            "width": "10%"
+                          },
+                          {
+                            "text": " ",
+                            "style": "details-body"
+                          }
                         ]
                       }
                     ]
@@ -497,43 +504,71 @@
               {
                 "columns": [
                   {
-                    "stack": [
-                        {
-                        "text": "Ensure Registration of every Birth and Death",
-                        "style": "comment-body",
-                        "bold": true,
-                        "margin": [0,-20,0,0]
-                        },
-                        {
-                          "text": "ഓരോ ജനനവും മരണവും രജിസ്റ്റര്‍ ചെയ്തുവെന്നു ഉറപ്പുവരുത്തുക",
-                          "style": "comment-body",
-                          "bold": true
-                        },
-                        {
-                          "text": "This certify is computer generated and does not require any Seal/Signature in original",
-                          "style": "disclaimer"
-                         
-                        },
-                        {
-                          "text": "The Govt. vide G.O.(Ms) No.202/2012/LSGD/ dated 25/07/2012 has approved this certificate as a valid document for all official purposes",
-                          "style": "disclaimer"
-                          
-                        },
-                        {
-                          "text": "Authenticity of this certificate can be verified at www.cr.lsgkerala.gov.in The Key Number is unique to each event.",
-                          "style": "disclaimer"
-                         
-                        },
-                        {
-                          "text": "Certificate printed before the last updated is invalid",
-                          "style": "disclaimer_red"
-                         
-                        }
-                  ]
+                    "text": "Ensure Registration of every Birth and Death",
+                    "style": "instruction-body",
+                    "bold": true,
+                    "margin": [0, -30, 0, 0]
                   }
                 ]
               }
-            ] 
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": "ഓരോ ജനനവും മരണവും രജിസ്റ്റര്‍ ചെയ്തുവെന്നു ഉറപ്പുവരുത്തുക",
+                    "style": "instruction-body",
+                    "bold": true,
+                    "margin": [0, -20, 0, 0]
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": "This certify is computer generated and does not require any Seal/Signature in original",
+                    "style": "disclaimer",
+                    "margin": [0, -10, 0, 0]
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": "The Govt. vide G.O.(Ms) No.202/2012/LSGD/ dated 25/07/2012 has approved this certificate as a valid document for all official purposes",
+                    "style": "disclaimer",
+                    "margin": [0, -5, 0, 0]
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": "Authenticity of this certificate can be verified at www.cr.lsgkerala.gov.in The Key Number is unique to each event.",
+                    "style": "disclaimer",
+                    "margin": [0, -5, 0, 0]
+                  }
+                ]
+              }
+            ],
+
+            [
+              {
+                "columns": [
+                  {
+                    "text": "Certificate printed before the last updated is invalid",
+                    "style": "disclaimer_red",
+                    "margin": [0, -3, 0, 0]
+                  }
+                ]
+              }
+            ]
           ]
         },
         "layout": "noBorders"
@@ -573,21 +608,7 @@
       "instruction-body": {
         "color": "#000000",
         "bold": false,
-        "fontSize": 9,
-        "fontWeight": 400,
-        "alignment": "left"
-      },
-      "comment-body": {
-        "color": "#000000",
-        "bold": false,
-        "fontSize": 9,
-        "fontWeight": 400,
-        "alignment": "center"
-      },
-      "header-body": {
-        "color": "#000000",
-        "bold": false,
-        "fontSize": 8,
+        "fontSize": 7,
         "fontWeight": 400,
         "alignment": "center"
       },
@@ -603,13 +624,6 @@
         "fontWeight": 400,
         "alignment": "center",
         "margin": [0, 1, 0, 0]
-      },
-      "issue-header": {
-        "color": "#000000",
-        "bold": false,
-        "fontSize": 7,
-        "fontWeight": 400,
-        "alignment": "center"
       },
       "title-header_multiLang": {
         "color": "#800000",
@@ -629,9 +643,9 @@
       "appendix-header-formNo": {
         "color": "#000000",
         "bold": false,
-        "fontSize": 9,
+        "fontSize": 8,
         "fontWeight": 400,
-        "alignment": "center"
+        "margin": [20, -5, 0, 0]
       },
       "rule-header": {
         "color": "#696969",
@@ -663,16 +677,16 @@
         "margin": [0, 0, 0, 0]
       },
       "details-body": {
-        "color": "#000000",
-        "bold": false,
-        "fontSize": 10,
+        "color": "#696969",
+        "bold": true,
+        "fontSize": 11,
         "fontWeight": 400,
-        "margin": [0, 0, 0, 0]
+        "margin": [0, 5, 0, 0]
       },
       "appendix-header-body": {
-        "color": "#000000",
+        "color": "#696969",
         "bold": true,
-        "fontSize": 12,
+        "fontSize": 9,
         "fontWeight": 400,
         "alignment": "center"
       },
