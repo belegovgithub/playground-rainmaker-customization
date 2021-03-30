@@ -63,7 +63,7 @@
                               {
                                   "stack": [
                                     {
-                                      "text": "बहार सरकार",
+                                      "text": "बिहार सरकार",
                                       "style": "appendix-header-body"
                                       
                                   },   
@@ -78,7 +78,7 @@
                                     ]   
                                   },  
                                   {
-                                      "text": "योजना और वकास वभाग",
+                                      "text": "योजना और विकास विभाग",
                                         "style": "appendix-header-body"   
                                   },
                                   {
@@ -541,7 +541,7 @@
               "body": [
                 [
                   {
-                    "text": "“प्रत्येक जन्म एवं मृयु का पंजीकरण सुनिस्चित करें / ENSURE REGISTRATION OF EVERY BIRTH AND DEATH ”",
+                    "text": "“प्रत्येक जन्म एवं मृत्यु का पंजीकरण सुनिस्चित करें / ENSURE REGISTRATION OF EVERY BIRTH AND DEATH ”",
                     "width": 50,
                     "height": 61.25,
                     "style": "instruction-body"
