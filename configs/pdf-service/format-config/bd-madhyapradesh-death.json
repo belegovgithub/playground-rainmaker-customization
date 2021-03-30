@@ -328,7 +328,7 @@
               {
                 "columns": [
                   {
-                    "text": "{{death_address_label_multiLang}} / ADDRESS OF DECEASED AT THE TIME OF DEATH: {{childAddress}}",
+                    "text": "{{death_address_label_multiLang}} / ADDRESS OF DECEASED AT THE TIME OF DEATH: {{presentAddress}}",
                     "width": "49%",
                     "style": "details-body"
                   },
@@ -337,7 +337,7 @@
                     "width": "1%"
                   },
                   {
-                    "text": "{{death_perm_address_label_multiLang}} / PERMANENT ADDRESS OF DECEASED: {{parentsAddress}}",
+                    "text": "{{death_perm_address_label_multiLang}} / PERMANENT ADDRESS OF DECEASED: {{permanentAddress}}",
                     "style": "details-body"
                   }
                 ]

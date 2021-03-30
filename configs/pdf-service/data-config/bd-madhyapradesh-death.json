@@ -71,28 +71,28 @@
                 {
                   "variable": "fatherName", 
                   "value": {
-                    "path": "$.birthFatherInfo.fullName"
+                    "path": "$.deathFatherInfo.fullName"
                   },
                   "type":"setEmpty"
                 },
                 {
                   "variable": "motherName", 
                   "value": {
-                    "path": "$.birthMotherInfo.fullName"
+                    "path": "$.deathMotherInfo.fullName"
                   },
                   "type":"setEmpty"
                 },
                 {
-                  "variable": "childAddress", 
+                  "variable": "presentAddress", 
                   "value": {
-                    "path": "$.birthPermaddr.fullAddress"
+                    "path": "$.deathPresentaddr.fullAddress"
                   },
                   "type":"setEmpty"
                 },
                 {
-                  "variable": "parentsAddress", 
+                  "variable": "permanentAddress", 
                   "value": {
-                    "path": "$.birthPresentaddr.fullAddress"
+                    "path": "$.deathPermaddr.fullAddress"
                   },
                   "type":"setEmpty"
                 },
@@ -118,9 +118,9 @@
                   "type":"setEmpty"
                 },
                   {
-                    "variable": "placeOfBirth", 
+                    "variable": "placeOfDeath", 
                     "value": {
-                      "path": "$.placeOfBirth"
+                      "path": "$.placeofdeath"
                     },
                     "type":"setEmpty"
                   },
