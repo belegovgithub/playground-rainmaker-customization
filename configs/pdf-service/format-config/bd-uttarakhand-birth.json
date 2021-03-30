@@ -47,8 +47,8 @@
                   },
                   {
                     "image": "{{govtImage}}",
-                    "width": 70,
-                    "height": 70.25,
+                    "width": 50,
+                    "height": 50.25,
                     "margin": [-10, 0, 0, 0]
                   }
                 ]
@@ -62,7 +62,7 @@
                   {
                     "text": "GOVERNMENT OF UTTARAKHAND",
                     "style": "appendix-header-body",
-                    "margin": [0, 0, 0, 5]
+                    "margin": [0, 0, 0, 0]
                   },
                   {
                     "text": "चिकित्सा स्वस्थ्य एवं परिवार कल्याण विभाग",
@@ -94,8 +94,8 @@
                   },
                   {
                     "image": "{{form5}}",
-                    "width": 65,
-                    "height": 60.25,
+                    "width": 50,
+                    "height": 50.25,
                     "margin": [10, 0, 0, 0]
                   }
                 ]
@@ -461,32 +461,32 @@
         "margin": [0, -20, 0, 0]
       },
       "title-header": {
-        "color": "#000000",
+        "color": "#0c5e4b",
         "bold": true,
-        "fontSize": 14,
+        "fontSize": 10,
         "fontWeight": 400,
         "alignment": "center",
-        "margin": [0, 1, 0, 0]
+        "margin": [0, 0, 0, 0]
       },
       "title-header_multiLang": {
-        "color": "#000000",
+        "color": "#0c5e4b",
         "bold": true,
-        "fontSize": 15,
+        "fontSize": 10,
         "fontWeight": 400,
         "alignment": "center",
-        "margin": [0, 3, 0, 0]
+        "margin": [0, 0, 0, 0]
       },
       "rule-header": {
         "color": "#000000",
         "bold": false,
-        "fontSize": 10,
+        "fontSize": 9,
         "fontWeight": 400,
-        "margin": [0, 0, 0, 2]
+        "margin": [0, 0, 0, 1]
       },
       "rule-header_multiLang": {
         "color": "#000000",
         "bold": false,
-        "fontSize": 11,
+        "fontSize": 9,
         "fontWeight": 400,
         "margin": [0, 0, 0, 0]
       },
@@ -500,21 +500,21 @@
       "rule-body_multiLang": {
         "color": "#000000",
         "bold": false,
-        "fontSize": 11,
+        "fontSize": 10,
         "fontWeight": 400,
         "margin": [0, 0, 0, 0]
       },
       "details-body": {
         "color": "#000000",
         "bold": false,
-        "fontSize": 11,
+        "fontSize": 10,
         "fontWeight": 400,
         "margin": [0, 2, 0, 0]
       },
       "appendix-header-body": {
-        "color": "#696969",
+        "color": "#000080",
         "bold": true,
-        "fontSize": 9,
+        "fontSize": 8,
         "fontWeight": 400,
         "alignment": "center"
       },

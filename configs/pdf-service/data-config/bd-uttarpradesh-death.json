@@ -80,7 +80,7 @@
                   "type":"setEmpty"
                 },
                 {
-                  "variable": "childAddress", 
+                  "variable": "presentAddress", 
                   "value": {
                     "path": "$.deathPresentaddr.fullAddress"
                   }

@@ -82,13 +82,13 @@
               {
                 "variable": "childAddress",
                 "value": {
-                  "path": "$.birthPermaddr.fullAddress"
+                  "path": "$.birthPresentaddr.fullAddress"
                 }
               },
               {
                 "variable": "parentsAddress",
                 "value": {
-                  "path": "$.birthPresentaddr.fullAddress"
+                  "path": "$.birthPermaddr.fullAddress"
                 }
               },
               {
