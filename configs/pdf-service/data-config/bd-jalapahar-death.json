@@ -132,15 +132,6 @@
                     },
                     "type": "date"
                   },
-
-                  {
-                    "variable": "fatherName",
-                    "value": {
-                      "path": "$.deathFatherInfo.fullName"
-                    },
-                    "type":"setEmpty"
-                   
-                  },
                   {
                     "variable": "placeOfDeath", 
                     "value": {

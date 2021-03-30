@@ -88,6 +88,10 @@
             [
               {
                   "stack": [
+                    {
+                      "text": "જન્મ પ્રમાણપત્ર",
+                      "style": "title-header_multiLang"
+                    },
                   {
                     "text": "BIRTH CERTIFICATE",
                     "style": "title-header_multiLang"

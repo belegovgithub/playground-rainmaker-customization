@@ -88,6 +88,10 @@
             [
               {
                   "stack": [
+                    {
+                      "text": "મૃત્યુનું પ્રમાણપત્ર",
+                      "style": "title-header_multiLang"
+                    },
                   {
                     "text": "DEATH CERTIFICATE",
                     "style": "title-header_multiLang"

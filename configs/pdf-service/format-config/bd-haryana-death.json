@@ -171,7 +171,7 @@
               {
                 "columns": [
                   {
-                    "text": "(जन्म मृत्यु रजिस्ट्रीकरण अधिनियम,1969 की धारा 12/17 तथा मध्य प्रदेश जन्म मृत्यु रजिस्ट्रीकरण, 1999  के  नियम 8/13 के अंतर्गत, जारी किया गया)",
+                    "text": "(जन्म मृत्यु रजिस्ट्रीकरण अधिनियम , 1969 की धारा 12 / 17 तथा हरियाणा जन्म मृत्यु रजिस्ट्रीकरण नियम, 2002 के नियम 8/13 के अंतर्गत जारी किया गया )",
                     "style": "rule-header_multiLang"
                   }
                 ]
@@ -181,7 +181,7 @@
               {
                 "columns": [
                   {
-                    "text": "(ISSUED  UNDER SECTION  12/17 OF THE REGISTRATION OF BIRTHS & DEATHS ACT, 1969  AND RULE 8/13  OF THE MADHYA PRADESH REGISTRATION OF BIRTHS & DEATHS RULES 1999)",
+                    "text": "(ISSUED UNDER SECTION 12/17 OF THE REGISTRATION OF BIRTHS & DEATHS ACT, 1969 AND RULE 8/13 OF THE HARYANA REGISTRATION OF BIRTHS & DEATHS RULES 2002.)",
                     "style": "rule-header"
                   }
                 ]
@@ -263,7 +263,7 @@
               {
                 "columns": [
                   {
-                    "text": "मृत्यु की तिथि  / DATE OF DEATH: {{dob}}",
+                    "text": "मृत्यु की तिथि  / DATE OF DEATH: {{dod}}",
                     "width": "49%",
                     "style": "details-body"
                   },
@@ -360,7 +360,7 @@
               {
                 "columns": [
                   {
-                    "text": "मृत्यु के समय मृतक का पता / ADDRESS OF DECEASED AT THE TIME OF DEATH: {{childAddress}}",
+                    "text": "मृत्यु के समय मृतक का पता / ADDRESS OF DECEASED AT THE TIME OF DEATH: {{presentAdd}}",
                     "width": "49%",
                     "style": "details-body"
                   },
@@ -369,7 +369,7 @@
                     "width": "1%"
                   },
                   {
-                    "text": "मृतक का स्थायी पता / PERMANENT ADDRESS OF DECEASED: {{parentsAddress}}",
+                    "text": "मृतक का स्थायी पता / PERMANENT ADDRESS OF DECEASED: {{permanentAddress}}",
                     "style": "details-body"
                   }
                 ]
