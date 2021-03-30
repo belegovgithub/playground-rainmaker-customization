@@ -73,7 +73,7 @@
                     "style": "appendix-header-body"
                   },
                   {
-                    "text": "{{cb_label_name_multiLang}} {{cb-name-multilang}} {{cb_letter_label_multilang}}",
+                    "text": " कैंटॉन्मेंट बोर्ड  {{cb-name-multilang}} {{cb_letter_label_multilang}}",
                     "style": "appendix-header-body"
                   },
                   {
