@@ -205,7 +205,7 @@
                     "width": "1%"
                   },
                   {
-                    "text": "ਮਾਿਪਆਂ ਦਾ ਪੱਕਾ ਪਤਾ / Permanent Address of Parents : {{premanentAddress}}",
+                    "text": "ਮਾਿਪਆਂ ਦਾ ਪੱਕਾ ਪਤਾ / Permanent Address of Parents : {{parentsAddress}}",
                     "style": "details-body"
                   }
                 ]
