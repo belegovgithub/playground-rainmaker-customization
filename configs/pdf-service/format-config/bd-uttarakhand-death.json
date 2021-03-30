@@ -86,11 +86,11 @@
               {
                 "stack": [
                   {
-                    "text": "प्रपत्र-5",
+                    "text": "प्रपत्र-6",
                     "style": "appendix-header-formNo"
                   },
                   {
-                    "text": "FORM-5",
+                    "text": "FORM-6",
                     "style": "appendix-header-formNo"
                   },
                   {
@@ -145,7 +145,7 @@
               {
                 "columns": [
                   {
-                    "text": "(जन्म मृत्यु रजिस्ट्रीकरण अधिनियम,1969 की धारा 12/17 तथा उत्तराखंड जन्म मृत्यु रजिस्ट्रीकरण, 2003 के  नियम 8/13 के अंतर्गत, जारी किया गया)",
+                    "text": "(जन्म मृत्यु रजिस्ट्रीकरण अधिनियम,1969 की धारा 12/17 तथा उत्तराखंड जन्म मृत्यु रजिस्ट्रीकरण नियम, 2003 के  नियम 8/13 के अंतर्गत, जारी किया गया)",
                     "style": "rule-header_multiLang"
                   }
                 ]
@@ -174,7 +174,7 @@
               {
                 "columns": [
                   {
-                    "text": "यह प्रमाणित किया जाता है निम्नलिखित सूचना मृत्यु के मूल अभिलेख से ली गई है जो की छावनी परिषद {{cb-name-multilang}} तहसील {{block-name-multilang}} जिला {{dist-name-multilang}} राज्य/संघ प्रदेश उत्तराखंड, भारत के रजिस्टर मे उलिखित है ।",
+                    "text": "यह प्रमाणित किया जाता है निम्नलिखित सूचना मृत्यु के मूल अभिलेख से ली गई है जो की छावनी परिषद {{cb-name-multilang}} तहसील {{block-name-multilang}} जिला {{dist-name-multilang}} राज्य/संघ प्रदेश उत्तराखंड, भारत के रजिस्टर मे उल्लेखित है ।",
                     "style": "rule-body_multiLang"
                   }
                 ]
@@ -300,7 +300,7 @@
               {
                 "columns": [
                   {
-                    "text": "{{mother_aadhar_label_multiLang}} / MOTHER AADHAR NO: {{motherUid}}",
+                    "text": "{{mother_aadhar_label_multiLang}} / MOTHER'S AADHAR NO: {{motherUid}}",
                     "width": "59%",
                     "style": "details-body"
                   },
@@ -309,7 +309,7 @@
                     "width": "1%"
                   },
                   {
-                    "text": "{{father_aadhar_label_multiLang}} / FATHER AADHAR NO: {{fatherUid}}",
+                    "text": "{{father_aadhar_label_multiLang}} / FATHER'S AADHAR NO: {{fatherUid}}",
                     "style": "details-body"
                   }
                 ]
@@ -402,10 +402,18 @@
           "body": [
             [
               {
-                "image": "{{qr_code_image}}",
-                "width": 70,
-                "height": 70,
-                "style": "qr-code"
+                "stack": [
+                  {
+                    "text": "UPDATED ON :{{issueDate}}",
+                    "style": "details-body"
+                  },
+                  {
+                    "image": "{{qr_code_image}}",
+                    "width": 70,
+                    "height": 70,
+                    "style": "qr-code"
+                  }
+                ]
               }
             ]
           ]

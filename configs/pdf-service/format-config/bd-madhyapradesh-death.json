@@ -183,7 +183,7 @@
               {
                 "columns": [
                   {
-                    "text": "THIS  IS TO CERTIFY THAT THE  FOLLOWING  INFORMATION  HAS BEEN  TAKEN FROM  THE  ORIGINAL RECORD OF BIRTH WHICH  IS THE  REGISTER  FOR CANTONMENT BOARD {{cb-name}} OF TAHSIL/BLOCK {{block-name}} OF DISTRICT {{dist-name}} OF STATE/UNION TERRITORY MADHYA PRADESH, INDIA.",
+                    "text": "THIS  IS TO CERTIFY THAT THE  FOLLOWING  INFORMATION  HAS BEEN  TAKEN FROM  THE  ORIGINAL RECORD OF DEATH WHICH  IS THE  REGISTER  FOR CANTONMENT BOARD {{cb-name}} OF TAHSIL/BLOCK {{block-name}} OF DISTRICT {{dist-name}} OF STATE/UNION TERRITORY MADHYA PRADESH, INDIA.",
                     "style": "rule-body"
                   }
                 ]
@@ -232,7 +232,7 @@
               {
                 "columns": [
                   {
-                    "text": "{{dod_label_multiLang}} / DATE OF DEATH: {{dob}}",
+                    "text": "{{dod_label_multiLang}} / DATE OF DEATH: {{dod}}",
                     "width": "49%",
                     "style": "details-body"
                   },
@@ -421,24 +421,25 @@
           "body": [
             [
               {
-                "image": "{{qr_code_image}}",
-                "width": 70,
-                "height": 70,
-                "style": "qr-code"
-              }
-            ],
-            [
-              {
                 "columns": [
                   {
-                    "text": "UPDATED ON :{{updatedOn}}",
+                    "text": "UPDATED ON :{{issueDate}}",
                     "width": "45%",
                     "style": "details-body",
                     "margin": [0, -10, 0, 0]
                   }
                 ]
               }
+            ],
+            [
+              {
+                "image": "{{qr_code_image}}",
+                "width": 70,
+                "height": 70,
+                "style": "qr-code"
+              }
             ]
+            
           ]
         },
         "layout": "noBorders"

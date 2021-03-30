@@ -232,7 +232,7 @@
               {
                 "columns": [
                   {
-                    "text": "मृत्यु की तिथि / DATE OF DEATH: {{dateofdeath}}",
+                    "text": "मृत्यु की तिथि / DATE OF DEATH: {{dod}}",
                     "width": "49%",
                     "style": "details-body"
                   },

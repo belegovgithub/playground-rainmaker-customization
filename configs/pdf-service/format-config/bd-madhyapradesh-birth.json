@@ -350,10 +350,12 @@
                         "style": "details-body"
                       },
                       {
-                        "text": "{{cb_label_name_multiLang}} {{cb-name-multilang}}"
+                        "text": "{{cb_label_name_multiLang}} {{cb-name-multilang}}",
+                        "style": "details-body"
                       },
                       {
-                        "text": "CANTONMENT BOARD {{cb-name}}"
+                        "text": "CANTONMENT BOARD {{cb-name}}",
+                        "style": "details-body"
                       }
                     ]
                   }
@@ -371,24 +373,25 @@
           "body": [
             [
               {
+                "columns": [
+                  {
+                    "text": "UPDATED ON :{{issueDate}}",
+                    "width": "45%",
+                    "style": "details-body",
+                    "margin": [0, 0, 0, 0]
+                  }
+                ]
+              }
+            ],
+            [
+              {
                 "image": "{{qr_code_image}}",
                 "width": 70,
                 "height": 70,
                 "style": "qr-code"
               }
-            ],
-            [
-              {
-                "columns": [
-                  {
-                    "text": "UPDATED ON :{{updatedOn}}",
-                    "width": "45%",
-                    "style": "details-body",
-                    "margin": [0, -10, 0, 0]
-                  }
-                ]
-              }
             ]
+             
           ]
         },
         "layout": "noBorders"

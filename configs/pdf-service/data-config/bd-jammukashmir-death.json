@@ -31,32 +31,28 @@
                   "variable": "name", 
                   "value": {
                     "path": "$.fullName"
-                  }
+                  },
+                  "type":"setEmpty"
                 },
                 {
                   "variable": "embeddedUrl", 
                   "value": {
                     "path": "$.embeddedUrl"
                   }
-                },
-                {
-                  "variable": "dob", 
-                  "value": {
-                    "path": "$.dateofbirth"
-                  },
-                  "type": "date"
-                },
+                },     
                 {
                   "variable": "gender", 
                   "value": {
                     "path": "$.genderStr"
-                  }
+                  },
+                  "type":"setEmpty"
                 },
                 {
                   "variable": "registrationNo", 
                   "value": {
                     "path": "$.registrationno"
-                  }
+                  },
+                  "type":"setEmpty"
                 },
                 {
                     "variable": "registration_date", 
@@ -83,37 +79,43 @@
                   "variable": "childAddress", 
                   "value": {
                     "path": "$.birthPermaddr.fullAddress"
-                  }
+                  },
+                  "type":"setEmpty"
                 },
                 {
                   "variable": "parentsAddress", 
                   "value": {
                     "path": "$.birthPresentaddr.fullAddress"
-                  }
+                  },
+                  "type":"setEmpty"
                 },
                 {
                   "variable": "fatherUid", 
                   "value": {
                     "path": "$.deathFatherInfo.aadharno"
-                  }
+                  },
+                  "type":"setEmpty"
                 },
                 {
                   "variable": "motherUid", 
                   "value": {
                     "path": "$.deathMotherInfo.aadharno"
-                  }
+                  },
+                  "type":"setEmpty"
                 },
                 {
                   "variable": "remarks", 
                   "value": {
                     "path": "$.remarks"
-                  }
+                  },
+                  "type":"setEmpty"
                 },
                   {
                     "variable": "placeOfBirth", 
                     "value": {
                       "path": "$.placeOfBirth"
-                    }
+                    },
+                    "type":"setEmpty"
                   },
                   {
                     "variable": "issueDate", 
@@ -126,13 +128,15 @@
                     "variable": "placeOfBirth", 
                     "value": {
                       "path": "$.hospitalname"
-                    }
+                    },
+                    "type":"setEmpty"
                   },
                   {
                     "variable": "certificateType", 
                     "value": {
                       "path": "$.certificateType"
-                    }
+                    },
+                    "type":"setEmpty"
                   },
                   {
                     "variable": "cantonment-board",

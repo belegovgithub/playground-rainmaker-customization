@@ -72,7 +72,7 @@
                 {
                   "variable": "motherName", 
                   "value": {
-                    "path": "$.deathFatherInfo.fullName"
+                    "path": "$.deathMotherInfo.fullName"
                   },
                   "type":"setEmpty"
                 },
