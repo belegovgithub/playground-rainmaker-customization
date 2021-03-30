@@ -521,20 +521,6 @@
         "alignment": "center",
         "margin": [0, 2, 0, 0]
       },
-      "appendix-header-serialNo": {
-        "color": "#000000",
-        "bold": false,
-        "fontSize": 8,
-        "fontWeight": 400,
-        "margin": [0, -5, 0, 0]
-      },
-      "appendix-header-formNo": {
-        "color": "#000000",
-        "bold": false,
-        "fontSize": 8,
-        "fontWeight": 400,
-        "margin": [20, -5, 0, 0]
-      },
       "rule-header": {
         "color": "#696969",
         "bold": true,
