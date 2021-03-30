@@ -47,8 +47,8 @@
                   },
                   {
                     "image": "{{govtImage}}",
-                    "width": 70,
-                    "height": 70.25,
+                    "width": 50,
+                    "height": 50.25,
                     "margin": [-10, 0, 0, 0]
                   }
                 ]
@@ -62,7 +62,7 @@
                   {
                     "text": "GOVERNMENT OF UTTARAKHAND",
                     "style": "appendix-header-body",
-                    "margin": [0, 0, 0, 5]
+                    "margin": [0, 0, 0, 0]
                   },
                   {
                     "text": "चिकित्सा स्वस्थ्य एवं परिवार कल्याण विभाग",
@@ -94,8 +94,8 @@
                   },
                   {
                     "image": "{{form5}}",
-                    "width": 65,
-                    "height": 60.25,
+                    "width": 50,
+                    "height": 50.25,
                     "margin": [10, 0, 0, 0]
                   }
                 ]
@@ -203,7 +203,7 @@
                 "columns": [
                   {
                     "text": "{{name_label_multiLang}} / NAME OF DECEASED: {{name}}",
-                    "width": "49%",
+                    "width": "59%",
                     "style": "details-body"
                   },
                   {
@@ -223,7 +223,7 @@
                 "columns": [
                   {
                     "text": "{{dod_label_multiLang}} / DATE OF DEATH: {{dob}}",
-                    "width": "49%",
+                    "width": "59%",
                     "style": "details-body"
                   },
                   {
@@ -242,7 +242,7 @@
                 "columns": [
                   {
                     "text": "मृतक की उम्र /AGE OF DECEASED : {{age}}",
-                    "width": "49%",
+                    "width": "59%",
                     "style": "details-body"
                   },
                   {
@@ -261,7 +261,7 @@
                 "columns": [
                   {
                     "text": " ",
-                    "width": "49%",
+                    "width": "59%",
                     "style": "details-body"
                   },
                   {
@@ -270,7 +270,7 @@
                   },
                   {
                     "text": "आधार  नंबर  / HUSBAND/WIFE  AADHAAR NO: {{spouceAadharNo}}",
-                    "width": "49%",
+                    "width": "59%",
                     "style": "details-body"
                   }
                 ]
@@ -281,7 +281,7 @@
                 "columns": [
                   {
                     "text": "{{mother_name_label_multiLang}} / NAME OF MOTHER: {{motherName}}",
-                    "width": "49%",
+                    "width": "59%",
                     "style": "details-body"
                   },
                   {
@@ -300,7 +300,7 @@
                 "columns": [
                   {
                     "text": "{{mother_aadhar_label_multiLang}} / MOTHER AADHAR NO: {{motherUid}}",
-                    "width": "49%",
+                    "width": "59%",
                     "style": "details-body"
                   },
                   {
@@ -319,7 +319,7 @@
                 "columns": [
                   {
                     "text": "{{death_address_label_multiLang}} / ADDRESS OF DECEASED AT THE TIME OF DEATH: {{childAddress}}",
-                    "width": "49%",
+                    "width": "59%",
                     "style": "details-body"
                   },
                   {
@@ -338,7 +338,7 @@
                 "columns": [
                   {
                     "text": "{{registration_label_multiLang}} / REGISTRATION NO: {{registrationNo}}",
-                    "width": "49%",
+                    "width": "59%",
                     "style": "details-body"
                   },
                   {
@@ -357,7 +357,7 @@
                 "columns": [
                   {
                     "text": "{{remarks_label_multiLang}} / REMARKS(IF ANY): {{remarks}}",
-                    "width": "49%",
+                    "width": "59%",
                     "style": "details-body"
                   },
                   {
@@ -376,7 +376,7 @@
                 "columns": [
                   {
                     "text": "{{issue_date_label_multiLang}} / DATE OF ISSUE: {{issueDate}}",
-                    "width": "49%",
+                    "width": "59%",
                     "style": "details-body"
                   },
                   {
@@ -384,7 +384,7 @@
                     "width": "1%"
                   },
                   {
-                    "text": "{{issuing_authority_label_multiLang}} / ISSUING AUTHORITY: {{issuing_authority_multiLang}} / {{issuing_authority}}",
+                    "text": "{{issuing_authority_label_multiLang}} / ISSUING AUTHORITY:",
                     "style": "details-body"
                   }
                 ]
@@ -487,63 +487,63 @@
       "qr-code": {
         "color": "#000000",
         "alignment": "left",
-        "margin": [0, -20, 0, 0]
+        "margin": [0, 0, 0, 0]
       },
       "title-header": {
-        "color": "#000000",
+        "color": "#0c5e4b",
         "bold": true,
-        "fontSize": 14,
+        "fontSize": 10,
         "fontWeight": 400,
         "alignment": "center",
-        "margin": [0, 1, 0, 0]
+        "margin": [0, -10, 0, 0]
       },
       "title-header_multiLang": {
-        "color": "#000000",
+        "color": "#0c5e4b",
         "bold": true,
-        "fontSize": 15,
+        "fontSize": 10,
         "fontWeight": 400,
         "alignment": "center",
-        "margin": [0, 3, 0, 0]
+        "margin": [0, 0, 0, 0]
       },
       "rule-header": {
         "color": "#000000",
         "bold": false,
-        "fontSize": 10,
+        "fontSize": 8,
         "fontWeight": 400,
-        "margin": [0, 0, 0, 2]
+        "margin": [0, 0, 0, 1]
       },
       "rule-header_multiLang": {
         "color": "#000000",
         "bold": false,
-        "fontSize": 11,
+        "fontSize": 9,
         "fontWeight": 400,
         "margin": [0, 0, 0, 0]
       },
       "rule-body": {
         "color": "#000000",
         "bold": false,
-        "fontSize": 10,
+        "fontSize": 8,
         "fontWeight": 400,
         "margin": [0, 0, 0, 0]
       },
       "rule-body_multiLang": {
         "color": "#000000",
         "bold": false,
-        "fontSize": 11,
+        "fontSize": 9,
         "fontWeight": 400,
         "margin": [0, 0, 0, 0]
       },
       "details-body": {
         "color": "#000000",
         "bold": false,
-        "fontSize": 11,
+        "fontSize": 8,
         "fontWeight": 400,
         "margin": [0, 2, 0, 0]
       },
       "appendix-header-body": {
-        "color": "#696969",
+        "color": "#000080",
         "bold": true,
-        "fontSize": 9,
+        "fontSize": 8,
         "fontWeight": 400,
         "alignment": "center"
       },

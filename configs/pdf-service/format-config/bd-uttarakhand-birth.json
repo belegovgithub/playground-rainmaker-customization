@@ -203,7 +203,7 @@
                 "columns": [
                   {
                     "text": "{{name_label_multiLang}} / {{name_label}}: {{name}}",
-                    "width": "49%",
+                    "width": "59%",
                     "style": "details-body"
                   },
                   {
@@ -222,7 +222,7 @@
                 "columns": [
                   {
                     "text": "आधार  नंबर  / AADHAAR NO: {{aadharNo}}",
-                    "width": "49%",
+                    "width": "59%",
                     "style": "details-body"
                   }
                 ]
@@ -233,7 +233,7 @@
                 "columns": [
                   {
                     "text": "{{dob_label_multiLang}} / {{dob_label}}: {{dob}}",
-                    "width": "49%",
+                    "width": "59%",
                     "style": "details-body"
                   },
                   {
@@ -252,7 +252,7 @@
                 "columns": [
                   {
                     "text": "{{mother_name_label_multiLang}} / {{mother_name_label}}: {{motherName}}",
-                    "width": "49%",
+                    "width": "59%",
                     "style": "details-body"
                   },
                   {
@@ -270,8 +270,8 @@
               {
                 "columns": [
                   {
-                    "text": "{{mother_aadhar_label_multiLang}} / MOTHER AADHAR NO: {{motherUid}}",
-                    "width": "49%",
+                    "text": "आधार  नंबर  / MOTHER AADHAR NO: {{motherUid}}",
+                    "width": "59%",
                     "style": "details-body"
                   },
                   {
@@ -279,7 +279,7 @@
                     "width": "1%"
                   },
                   {
-                    "text": "{{father_aadhar_label_multiLang}} / FATHER AADHAR NO: {{fatherUid}}",
+                    "text": "आधार  नंबर  / FATHER AADHAR NO: {{fatherUid}}",
                     "style": "details-body"
                   }
                 ]
@@ -290,7 +290,7 @@
                 "columns": [
                   {
                     "text": "बच्चे के जन्म के समय माता-पिता का   पता    / ADDRESS OF PARENTS AT THE TIME OF BIRTH OF THE CHILD: {{childAddress}}",
-                    "width": "49%",
+                    "width": "59%",
                     "style": "details-body"
                   },
                   {
@@ -309,7 +309,7 @@
                 "columns": [
                   {
                     "text": "{{registration_label_multiLang}} / {{registration_label}}: {{registrationNo}}",
-                    "width": "49%",
+                    "width": "59%",
                     "style": "details-body"
                   },
                   {
@@ -328,7 +328,7 @@
                 "columns": [
                   {
                     "text": "{{remarks_label_multiLang}} / {{remarks_label}}: {{remarks}}",
-                    "width": "49%",
+                    "width": "59%",
                     "style": "details-body"
                   },
                   {
@@ -347,7 +347,7 @@
                 "columns": [
                   {
                     "text": "{{issue_date_label_multiLang}} / {{issue_date_label}}: {{issueDate}}",
-                    "width": "49%",
+                    "width": "59%",
                     "style": "details-body"
                   },
                   {
@@ -355,7 +355,7 @@
                     "width": "1%"
                   },
                   {
-                    "text": "{{issuing_authority_label_multiLang}} / {{issuing_authority_label}}: {{issuing_authority_multiLang}} / {{issuing_authority}}",
+                    "text": "{{issuing_authority_label_multiLang}} / {{issuing_authority_label}}",
                     "style": "details-body"
                   }
                 ]
@@ -372,10 +372,18 @@
           "body": [
             [
               {
-                "image": "{{qr_code_image}}",
-                "width": 70,
-                "height": 70,
-                "style": "qr-code"
+                "stack": [
+                  {
+                    "text": "UPDATED ON :{{issueDate}}",
+                    "style": "details-body"
+                  },
+                  {
+                    "image": "{{qr_code_image}}",
+                    "width": 70,
+                    "height": 70,
+                    "style": "qr-code"
+                  }
+                ]
               }
             ]
           ]
@@ -458,7 +466,7 @@
       "qr-code": {
         "color": "#000000",
         "alignment": "left",
-        "margin": [0, -20, 0, 0]
+        "margin": [0, 0, 0, 0]
       },
       "title-header": {
         "color": "#0c5e4b",
@@ -466,7 +474,7 @@
         "fontSize": 10,
         "fontWeight": 400,
         "alignment": "center",
-        "margin": [0, 0, 0, 0]
+        "margin": [0, -10, 0, 0]
       },
       "title-header_multiLang": {
         "color": "#0c5e4b",
@@ -479,7 +487,7 @@
       "rule-header": {
         "color": "#000000",
         "bold": false,
-        "fontSize": 9,
+        "fontSize": 8,
         "fontWeight": 400,
         "margin": [0, 0, 0, 1]
       },
@@ -493,21 +501,21 @@
       "rule-body": {
         "color": "#000000",
         "bold": false,
-        "fontSize": 10,
+        "fontSize": 8,
         "fontWeight": 400,
         "margin": [0, 0, 0, 0]
       },
       "rule-body_multiLang": {
         "color": "#000000",
         "bold": false,
-        "fontSize": 10,
+        "fontSize": 9,
         "fontWeight": 400,
         "margin": [0, 0, 0, 0]
       },
       "details-body": {
         "color": "#000000",
         "bold": false,
-        "fontSize": 10,
+        "fontSize": 8,
         "fontWeight": 400,
         "margin": [0, 2, 0, 0]
       },
