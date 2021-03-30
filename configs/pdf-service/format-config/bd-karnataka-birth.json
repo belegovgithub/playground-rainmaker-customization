@@ -418,46 +418,6 @@
               {
                 "columns": [
                   {
-                    "text": "11)",
-                    "width": "5%",
-                    "style": "details-body"
-                  }, 
-                  {
-                    "stack": [
-                      {
-                        "text": "ಷರಾ (ಯಾವುದಾದರೂ ಇದ್ದಲ್ಲಿ):"  
-                      },
-                      {
-                        "text": "Remarks (if any): {{remarks}}"  
-                      }
-                    ],
-                    "width": "45%",
-                    "style": "details-body" 
-                  },  
-                  {
-                    "text": "12)",
-                    "width": "5%",
-                    "style": "details-body"
-                  }, 
-                  {
-                    "stack": [
-                      {
-                        "text": "ಅನುಮೋದನೆಯ ದಿನಾಂಕ:"  
-                      },
-                      {
-                        "text": "Date of Approval:{{issueDate}}"  
-                      }
-                    ],
-                    "width": "45%",
-                    "style": "details-body" 
-                  }
-                ]
-              }
-            ],
-            [
-              {
-                "columns": [
-                  {
                     "text": "13)",
                     "width": "5%",
                     "style": "details-body"

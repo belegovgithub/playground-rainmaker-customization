@@ -451,7 +451,7 @@
                         "text": "ಪ್ರಮಾಣ ಪತ್ರ  ಕೊಡುವ ಪ್ರಾಧಿಕಾರಿಯ  ಸಹಿ:"  
                       },
                       {
-                        "text": "Signature of Issuing Authority: {{remarks}}"  
+                        "text": "Signature of Issuing Authority"  
                       }
                     ],
                     "width": "45%",
@@ -468,7 +468,7 @@
                         "text": "ಪ್ರಮಾಣ ಪತ್ರ  ಕೊಡುವ ಪ್ರಾಧಿಕಾರಿಯ ವಿಳಾಸ:"  
                       },
                       {
-                        "text": "Address of the issuing authority :{{issueDate}}"  
+                        "text": "Address of the issuing authority: "  
                       }
                     ],
                     "width": "45%",
@@ -479,19 +479,14 @@
             ],
             [
               {
-                "columns": [
-                  {
-                    "text": "13)",
-                    "width": "5%",
-                    "style": "details-body"
-                  }, 
+                "columns": [ 
                   {
                     "stack": [
                       {
                         "text": "ವಿತರಣಾ ತಾರೀಖು"  
                       },
                       {
-                        "text": "Date of Issue: {{remarks}}"  
+                        "text": "Date of Issue: {{updatedOn}}"  
                       }
                     ],
                     "width": "45%",
