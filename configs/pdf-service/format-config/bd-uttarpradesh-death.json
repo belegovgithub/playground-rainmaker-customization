@@ -322,7 +322,7 @@
               {
                 "columns": [
                   {
-                    "text": "{{death_address_label_multiLang}} / ADDRESS OF DECEASED AT THE TIME OF BIRTH: {{presentAddress}}",
+                    "text": "{{death_address_label_multiLang}} / ADDRESS OF DECEASED AT THE TIME OF DEATH: {{presentAddress}}",
                     "width": "49%",
                     "style": "details-body"
                   },
