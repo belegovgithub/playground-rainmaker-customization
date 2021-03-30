@@ -74,7 +74,8 @@
                   },
                   {
                     "text": "{{cb_label_name_multiLang}} {{cb-name-multilang}}",
-                    "style": "appendix-header-body"
+                    "style": "appendix-header-body",
+                    "margin": [0, 1, 0, -2]
                   },
                   {
                     "text": "CANTONMENT BOARD {{cb-name}}",
