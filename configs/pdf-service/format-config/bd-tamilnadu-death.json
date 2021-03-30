@@ -157,7 +157,7 @@
               {
                 "columns": [
                   {
-                    "text": "கீழ்கண்ட தகவல் இந்தியா, தமிழ்நாடு மாநிலம், {{dist-name-multilang}} மாவட்டம், {{block-name-multilang}} வட்டம். {{cb-name-multilang}} கன்டான்மென்ட் போர்டு சேர்ந்த அசல் இறப்பு பதிவேட்டிலிருந்து எடுக்கபட்டவை என சான்று அளிக்கபடுகிறது.",
+                    "text": "கீழ்கண்ட தகவல் இந்தியா, தமிழ்நாடு மாநிலம், {{dist-name-multilang}} மாவட்டம், {{block-name-multilang}} வட்டம். கன்டான்மென்ட் போர்டு சேர்ந்த அசல் இறப்பு பதிவேட்டிலிருந்து எடுக்கபட்டவை என சான்று அளிக்கபடுகிறது.",
                     "style": "rule-body"
                   }
                 ]
@@ -220,7 +220,7 @@
                         "style": "details-body"
                       },
                       {
-                        "text": "PLACE OF BIRTH / பிறந்த இடம் : {{placeOfDeath}}",
+                        "text": "PLACE OF DEATH / இறந்த இடம் : {{placeOfDeath}}",
                         "style": "details-body"
                       } 
                     ] 
@@ -301,7 +301,7 @@
               {
                 "columns": [
                   {
-                    "text": "ADDRESS OF THE DECEASED AT THE TIME OF DEATH / இறப்பின் போது முகவரி இறந்தவரின் முகவரி : {{presentAddress}}",
+                    "text": "ADDRESS OF THE DECEASED AT THE TIME OF DEATH / இறப்பின் போது முகவரி இறந்தவரின் முகவரி  : {{presentAddress}}",
                     "width": "49%",
                     "style": "details-body"
                   },
@@ -339,7 +339,7 @@
               {
                 "columns": [
                   {
-                    "text": "REMARKS (IFANY) / குறிப்பு: {{remarks}}",
+                    "text": "REMARKS (IF ANY) / குறிப்பு: {{remarks}}",
                     "width": "49%",
                     "style": "details-body"
                   }

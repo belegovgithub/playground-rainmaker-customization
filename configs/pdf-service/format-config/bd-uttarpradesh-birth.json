@@ -259,7 +259,7 @@
               {
                 "columns": [
                   {
-                    "text": "{{mother_uid_label_multiLang}} / {{mother_uid_label}}: {{motherUid}}",
+                    "text": "आधार नंबर / MOTHER’S AADHAAR NO : {{motherUid}}",
                     "width": "49%",
                     "style": "details-body"
                   },
@@ -268,7 +268,7 @@
                     "width": "1%"
                   },
                   {
-                    "text": "{{father_uid_label_multiLang}} / {{father_uid_label}}: {{fatherUid}}",
+                    "text": "आधार नंबर / FATHER’S AADHAAR NO : {{fatherUid}}",
                     "style": "details-body"
                   }
                 ]
@@ -335,16 +335,25 @@
               {
                 "columns": [
                   {
-                    "text": "{{issue_date_label_multiLang}} / {{issue_date_label}}: {{issueDate}}",
-                    "width": "49%",
-                    "style": "details-body"
+                    "stack": [
+                    {
+                      "text": "{{issue_date_label_multiLang}} / {{issue_date_label}}: {{issueDate}}",
+                      "width": "49%",
+                      "style": "details-body"
+                    },
+                    {
+                      "text": "UPDATED ON : {{issueDate}}",
+                      "width": "49%",
+                      "style": "details-body"
+                    }
+                  ]
                   },
                   {
                     "text": " ",
                     "width": "1%"
                   },
                   {
-                    "text": "{{issuing_authority_label_multiLang}} / {{issuing_authority_label}}: {{issuing_authority_multiLang}} / {{issuing_authority}}",
+                    "text": "{{issuing_authority_label_multiLang}} / {{issuing_authority_label}}",
                     "style": "details-body"
                   }
                 ]
@@ -378,33 +387,27 @@
           "body": [
             [
               {
-                "text": "{{instruction1_label}}",
-                "width": 50,
-                "height": 61.25,
-                "style": "instruction-body"
-              }
-            ]
-          ]
-        },
-        "layout": "noBorders"
-      },
-      {
-        "style": "ws-head",
-        "table": {
-          "widths": ["*"],
-          "body": [
-            [
-              {
-                "text": "{{instruction2_label}}",
-                "width": 50,
-                "height": 61.25,
-                "style": "instruction-body"
-              }
+                "stack": [
+                {
+                  "text": "THIS IA A COMPUTER GENRATED CERTIFICATE WHICH CONTAINS FACSIMILE SIGNATURE OF THE ISSUING AUTHORITY",
+                  "style": "instruction-body"
+                },
+                {
+                  "text": "“THE GOVT. OF INDIA VIDE CIRCULAR NO. 1/12/2014-VS(CRS)DATED- 27-JULY-2015 HAS APPROVED THIS CERTIFICATE AS A VALID LEGAL DOCUMENT FOR ALL OFFICIAL PURPOSES",
+                  "style": "instruction-body"
+                },
+                {
+                  "text": "प्रतेयक जन्म एवम मृत्यु का पंजीकरण सुनिश्चित करे” / ENSURE REGISTRATION OF EVERY BIRTH AND DEATH",
+                  "style": "instruction-body"
+                }
+              ]
+            }
             ]
           ]
         },
         "layout": "noBorders"
       }
+     
     ],
     "styles": {
       "pdf-header": {
