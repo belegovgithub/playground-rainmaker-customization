@@ -2118,14 +2118,14 @@
      {
        "module": "WS",
        "indexName": "water-services",
-       "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"pb.testing\"}}],\"must\":[{\"term\":{\"Data.applicationStatus.keyword\":\"CONNECTION_ACTIVATED\"}}]}},\"aggs\":{\"averageProcessingTime\":{\"avg\":{\"script\":{\"lang\":\"painless\",\"source\":\"long d1 =  doc['Data.additionalDetails.appCreatedDate'].value ; long d2 = params._source.Data.history[1].auditDetails.createdTime;double differenceInMillis = (double)d1-d2;return Math.abs(differenceInMillis\/86400000);\"}}}}}}}",
+       "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"pb.testing\"}}],\"must\":[{\"term\":{\"Data.applicationStatus.keyword\":\"CONNECTION_ACTIVATED\"}}]}},\"aggs\":{\"averageProcessingTime\":{\"avg\":{\"script\":{\"lang\":\"painless\",\"source\":\"long d1 =  doc['Data.additionalDetails.appCreatedDate'].value ; long d2 = params._source.Data.history[0].auditDetails.createdTime;double differenceInMillis = (double)d1-d2;return Math.abs(differenceInMillis\/86400000);\"}}}}}}}",
        "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\", \r\n  \"district\" : \"Data.tenantData.city.districtCode\", \r\n\"tenantId\" : \"Data.tenantId.keyword\" \r\n}", 
        "dateRefField": "Data.additionalDetails.appCreatedDate"
      },
     {
      "module": "SW",
      "indexName": "sewerage-services",
-     "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"pb.testing\"}}],\"must\":[{\"term\":{\"Data.applicationStatus.keyword\":\"CONNECTION_ACTIVATED\"}}]}},\"aggs\":{\"averageProcessingTime\":{\"avg\":{\"script\":{\"lang\":\"painless\",\"source\":\"long d1 =  doc['Data.additionalDetails.appCreatedDate'].value ; long d2 = params._source.Data.history[1].auditDetails.createdTime;double differenceInMillis = (double)d1-d2;return Math.abs(differenceInMillis\/86400000);\"}}}}}}}",
+     "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"pb.testing\"}}],\"must\":[{\"term\":{\"Data.applicationStatus.keyword\":\"CONNECTION_ACTIVATED\"}}]}},\"aggs\":{\"averageProcessingTime\":{\"avg\":{\"script\":{\"lang\":\"painless\",\"source\":\"long d1 =  doc['Data.additionalDetails.appCreatedDate'].value ; long d2 = params._source.Data.history[0].auditDetails.createdTime;double differenceInMillis = (double)d1-d2;return Math.abs(differenceInMillis\/86400000);\"}}}}}}}",
      "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\", \r\n  \"district\" : \"Data.tenantData.city.districtCode\", \r\n\"tenantId\" : \"Data.tenantId.keyword\" \r\n}", 
      "dateRefField": "Data.additionalDetails.appCreatedDate"
    }
