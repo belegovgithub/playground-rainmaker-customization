@@ -41,9 +41,9 @@
                   }
                 },
                 {
-                  "variable": "dob", 
+                  "variable": "dod", 
                   "value": {
-                    "path": "$.dateofbirth"
+                    "path": "$.dateofdeath"
                   },
                   "type": "date"
                 },
@@ -123,14 +123,6 @@
                       "path": "$.placeOfBirth"
                     },
                     "type":"setEmpty"
-                  },
-              
-                  {
-                    "variable": "dod",
-                    "value": {
-                      "path": "$.dateofdeath"
-                    },
-                    "type": "date"
                   },
                   {
                     "variable": "placeOfDeath", 

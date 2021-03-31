@@ -190,7 +190,7 @@
               {
                 "columns": [
                   {
-                    "text": "3. Date of Death: {{dob}}",
+                    "text": "3. Date of Death: {{dod}}",
                     "width": "45%",
                     "style": "details-body"
                   },

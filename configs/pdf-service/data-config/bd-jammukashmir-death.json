@@ -39,6 +39,12 @@
                   "value": {
                     "path": "$.embeddedUrl"
                   }
+                }, 
+                {
+                  "variable": "dod", 
+                  "value": {
+                    "path": "$.dateofdeath"
+                  }
                 },     
                 {
                   "variable": "gender", 
