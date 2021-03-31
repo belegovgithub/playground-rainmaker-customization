@@ -55,9 +55,30 @@
                   "type":"setEmpty"
                 },
                 {
+                  "variable": "spouseName", 
+                  "value": {
+                    "path": "$.deathSpouseInfo.fullName"
+                  },
+                  "type":"setEmpty"
+                },
+                {
+                  "variable": "spouceAadharNo", 
+                  "value": {
+                    "path": "$.deathSpouseInfo.aadharno"
+                  },
+                  "type":"setEmpty"
+                },
+                {
                   "variable": "registrationNo", 
                   "value": {
                     "path": "$.registrationno"
+                  },
+                  "type":"setEmpty"
+                },
+                {
+                  "variable": "age", 
+                  "value": {
+                    "path": "$.age"
                   },
                   "type":"setEmpty"
                 },
@@ -79,6 +100,13 @@
                   "variable": "motherName", 
                   "value": {
                     "path": "$.deathMotherInfo.fullName"
+                  },
+                  "type":"setEmpty"
+                },
+                {
+                  "variable": "aadharno", 
+                  "value": {
+                    "path": "$.aadharno"
                   },
                   "type":"setEmpty"
                 },
