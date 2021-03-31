@@ -103,6 +103,20 @@
                     },
                     "type": "date"
                   },
+                  {
+                    "variable": "aadharNo", 
+                    "value": {
+                      "path": "$.aadharno"
+                    },
+                    "type": "setEmpty"
+                  },
+                  {
+                    "variable": "spouseAadharNo", 
+                    "value": {
+                      "path": "$.deathSpouseInfo.aadharno"
+                    },
+                    "type": "setEmpty"
+                  },
                 {
                   "variable": "fatherName", 
                   "value": {
