@@ -375,7 +375,7 @@
               {
                 "stack": [
                   {
-                    "text": "UPDATED ON :{{issueDate}}",
+                    "text": "UPDATED ON :{{issueDateTime}}",
                     "style": "details-body"
                   },
                   {

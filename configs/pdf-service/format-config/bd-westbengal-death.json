@@ -73,9 +73,7 @@
       {
         "style": "ws-head",
         "table": {
-          "widths": [
-            "*"
-          ],
+          "widths": ["*"],
           "body": [
             [
               {
@@ -83,8 +81,7 @@
                 "width": 150,
                 "height": 120,
                 "style": "appendix-header-emblem"
-              } 
-               
+              }
             ]
           ]
         },
@@ -107,7 +104,7 @@
                     "text": "(মৃত্যু প্রমান পত্র)",
                     "style": "title-header",
                     "decoration": "underline"
-                  }  
+                  }
                 ]
               }
             ]
@@ -158,7 +155,7 @@
                   }
                 ]
               }
-            ]   
+            ]
           ]
         },
         "layout": "noBorders"
@@ -174,10 +171,10 @@
                   {
                     "text": "ইহা নিশ্চিতভাবে জ্ঞাত করা হইেতেছ যে নিম্নবর্ণিত বিববরণী মূল নথি হইতে লওয়া হয়িয়াছে, উক্ত  নথি পঃবঃ রাজ্যের North 24 Parganas জেলার Barrackpore থানার ব্লকের অন্তর্গত Cantonment Board Barrackpore (স্থানীয় এলাকা) মৃত্যু রেজিস্টারে লিপিবধ্য আছে।",
                     "style": "rule-body"
-                  } 
+                  }
                 ]
               }
-            ]   
+            ]
           ]
         },
         "layout": "noBorders"
@@ -194,14 +191,14 @@
                     "stack": [
                       {
                         "text": "Name of the Deceased",
-                        "alignment":"left"   
+                        "alignment": "left"
                       },
                       {
                         "text": "(নাম )",
-                        "alignment":"left"   
-                      }    
+                        "alignment": "left"
+                      }
                     ],
-                    "width": "20%"     
+                    "width": "20%"
                   },
                   {
                     "text": "{{name}}",
@@ -212,20 +209,20 @@
                     "stack": [
                       {
                         "text": "Nationality",
-                        "alignment":"left"   
+                        "alignment": "left"
                       },
                       {
                         "text": "(জাতি)",
-                        "alignment":"left"   
-                      }    
+                        "alignment": "left"
+                      }
                     ],
-                    "width": "20%"    
+                    "width": "20%"
                   },
                   {
                     "text": "{{nationality}}",
                     "width": "30%",
                     "style": "details-body"
-                  }  
+                  }
                 ]
               }
             ],
@@ -236,14 +233,14 @@
                     "stack": [
                       {
                         "text": "Date of Registration",
-                        "alignment":"left"   
+                        "alignment": "left"
                       },
                       {
                         "text": "(পঞ্জিকরন তারিখ )",
-                        "alignment":"left"   
-                      }    
+                        "alignment": "left"
+                      }
                     ],
-                    "width": "30%"    
+                    "width": "30%"
                   },
                   {
                     "text": "{{dateofissue}}",
@@ -254,38 +251,38 @@
                     "stack": [
                       {
                         "text": "Sex",
-                        "alignment":"left"   
+                        "alignment": "left"
                       },
                       {
                         "text": "(লিঙ্গ)",
-                        "alignment":"left"   
-                      }    
+                        "alignment": "left"
+                      }
                     ],
-                    "width": "10%"  
+                    "width": "10%"
                   },
                   {
                     "text": "{{gender}}",
                     "width": "10%",
                     "style": "details-body"
-                  }, 
+                  },
                   {
                     "stack": [
                       {
                         "text": "Age",
-                        "alignment":"left"   
+                        "alignment": "left"
                       },
                       {
                         "text": "(বয়স)",
-                        "alignment":"left"   
-                      }    
+                        "alignment": "left"
+                      }
                     ],
-                    "width": "10%"    
+                    "width": "10%"
                   },
                   {
-                    "text": "{{age}}",
+                    "text": "{{age}} Yrs",
                     "width": "10%",
                     "style": "details-body"
-                  } 
+                  }
                 ]
               }
             ],
@@ -296,20 +293,20 @@
                     "stack": [
                       {
                         "text": "Permanent address",
-                        "alignment":"left"   
+                        "alignment": "left"
                       },
                       {
                         "text": "( স্থায়ী ঠিকানা)",
-                        "alignment":"left"   
-                      }    
+                        "alignment": "left"
+                      }
                     ],
-                    "width": "20%"     
+                    "width": "20%"
                   },
                   {
                     "text": "{{permanentAddress}}",
                     "width": "80%",
                     "style": "details-body"
-                  } 
+                  }
                 ]
               }
             ],
@@ -320,38 +317,38 @@
                     "stack": [
                       {
                         "text": "Date of Death",
-                        "alignment":"left"   
+                        "alignment": "left"
                       },
                       {
                         "text": "(মৃত্যুর তারিখ)",
-                        "alignment":"left"   
-                      }    
+                        "alignment": "left"
+                      }
                     ],
-                    "width": "20%"  
+                    "width": "20%"
                   },
                   {
                     "text": "{{dod}}",
                     "width": "30%",
                     "style": "details-body"
-                  }, 
+                  },
                   {
                     "stack": [
                       {
                         "text": "Registration No",
-                        "alignment":"left"   
+                        "alignment": "left"
                       },
                       {
                         "text": "(পঞ্জিকরন নং)",
-                        "alignment":"left"   
-                      }    
+                        "alignment": "left"
+                      }
                     ],
-                    "width": "20%"    
+                    "width": "20%"
                   },
                   {
                     "text": "{{registrationNo}}",
                     "width": "30%",
                     "style": "details-body"
-                  } 
+                  }
                 ]
               }
             ],
@@ -362,67 +359,64 @@
                     "stack": [
                       {
                         "text": "Name of Father/Husband",
-                        "alignment":"left"   
+                        "alignment": "left"
                       },
                       {
                         "text": "(পিতার / স্বামীর নাম )",
-                        "alignment":"left"   
-                      }    
+                        "alignment": "left"
+                      }
                     ],
-                    "width": "20%"  
+                    "width": "20%"
                   },
                   {
                     "text": "{{fathername}}",
                     "width": "30%",
                     "style": "details-body"
-                  }, 
+                  },
                   {
                     "stack": [
                       {
                         "text": "Place of Death",
-                        "alignment":"left"   
+                        "alignment": "left"
                       },
                       {
                         "text": "(মৃত্যুবরণ এর স্থান )",
-                        "alignment":"left"   
-                      }    
+                        "alignment": "left"
+                      }
                     ],
-                    "width": "20%"    
+                    "width": "20%"
                   },
                   {
                     "text": "{{placeOfDeath}}",
                     "width": "30%",
                     "style": "details-body"
-                  } 
+                  }
                 ]
               }
-            ],     
+            ],
             [
               {
                 "columns": [
                   {
-                    "image": "{{qr_code_image}}",
-                    "width": 70,
-                    "height": 70,
-                    "style": "qr-code"
+                    "text": " ",
+                    "width": "70%"
                   },
                   {
-                    "text":" ",
-                    "width": "30%"
-                    
-                  },
-                  {
-                    "stack": [ 
+                    "stack": [
                       {
-                        "text": "Registrar of Birth & Death" 
+                        "image": "{{qr_code_image}}",
+                        "width": 70,
+                        "height": 70,
+                        "style": "qr-code"
+                      },
+                      {
+                        "text": "Registrar of Birth & Death"
                       },
                       {
                         "text": "Cantonment Board, Barrackpore"
-                      }  
-                    ],
-                    "width": "50%"    
+                      }
+                    ] 
                   }
-                    
                 ]
               }
             ]
@@ -437,23 +431,26 @@
           "body": [
             [
               {
-                "columns": [ 
+                "columns": [
                   {
                     "stack": [
                       {
-                        "text": "Note : In the case of death, no disclosure shall be made of particulars regarding the cause of death as entered in the register" 
+                        "text": "Note : In the case of death, no disclosure shall be made of particulars regarding the cause of death as entered in the register",
+                        "fontSize": 9
                       },
                       {
-                        "text": "See proviso to Section 17(1) of the Registration of Births and Deaths Act, 1969"
+                        "text": "See proviso to Section 17(1) of the Registration of Births and Deaths Act, 1969",
+                        "fontSize": 9
                       },
                       {
-                        "text": "(মৃত্যু রেজিস্টারে লিখিত মৃত্যুর কারণটিf প্রকাশ করা যাইবে না। ১৯৬৯ সনের জন্ম-মৃত্যু পঞ্জিকরন আইনের ১৭(১) ধারা দেখুন)"
-                      }    
-                    ] 
-                  } 
+                        "text": "(মৃত্যু রেজিস্টারে লিখিত মৃত্যুর কারণটিf প্রকাশ করা যাইবে না। ১৯৬৯ সনের জন্ম-মৃত্যু পঞ্জিকরন আইনের ১৭(১) ধারা দেখুন)",
+                        "fontSize": 9
+                      }
+                    ]
+                  }
                 ]
               }
-            ]   
+            ]
           ]
         },
         "layout": "noBorders"
@@ -523,7 +520,7 @@
         "bold": false,
         "fontSize": 10,
         "fontWeight": 400,
-        "alignment":"center",
+        "alignment": "center",
         "margin": [0, -30, 0, 5]
       },
       "rule-header_multiLang": {
@@ -531,7 +528,7 @@
         "bold": false,
         "fontSize": 11,
         "fontWeight": 400,
-        "alignment":"center",
+        "alignment": "center",
         "margin": [0, -40, 0, 5]
       },
       "rule-body": {
@@ -539,7 +536,7 @@
         "bold": false,
         "fontSize": 10,
         "fontWeight": 400,
-        "alignment":"center",
+        "alignment": "center",
         "margin": [0, 0, 0, 0]
       },
       "rule-body_multiLang": {

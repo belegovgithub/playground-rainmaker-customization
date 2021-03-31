@@ -86,9 +86,7 @@
       {
         "style": "ws-head",
         "table": {
-          "widths": [
-            "*"
-          ],
+          "widths": ["*"],
           "body": [
             [
               {
@@ -96,8 +94,7 @@
                 "width": 150,
                 "height": 120,
                 "style": "appendix-header-emblem"
-              } 
-               
+              }
             ]
           ]
         },
@@ -106,52 +103,42 @@
       {
         "style": "ws-head",
         "table": {
-            "widths": [
-                "45%",
-                "10%",
-                "45%"
-            ],
-            "body": [
-              [
-                {
-                  "stack": [
-                    {
-                      "text": "GOVERNMENT OF WEST BENGAL",
-                      "alignment":"center"   
-                    },
-                    {
-                      "text": "( পশ্চিমবঙ্গ সরকার )",
-                      "alignment":"center"   
-                    }    
-                  ]    
+          "widths": ["45%", "10%", "45%"],
+          "body": [
+            [
+              {
+                "stack": [
+                  {
+                    "text": "GOVERNMENT OF WEST BENGAL",
+                    "alignment": "center"
                   },
                   {
-                    "text":" "
-                  },
-                  {
-                      "stack": [
-                        {
-                          "text": "DEPARTMENT OF HEALTH & FAMILY WELFARE",    
-                          "alignment":"center"
-                      },   
-                      {
-                          "text": "(পশ্চিমবঙ্গ সরকার স্বাস্থ্য ও পরিবার কল্যাণ দপ্তর)",
-                          "alignment":"center" 
-                      }    
-                   ]   
+                    "text": "( পশ্চিমবঙ্গ সরকার )",
+                    "alignment": "center"
                   }
-                   
-              ]
+                ]
+              },
+              {
+                "text": " "
+              },
+              {
+                "stack": [
+                  {
+                    "text": "DEPARTMENT OF HEALTH & FAMILY WELFARE",
+                    "alignment": "center"
+                  },
+                  {
+                    "text": "(পশ্চিমবঙ্গ সরকার স্বাস্থ্য ও পরিবার কল্যাণ দপ্তর)",
+                    "alignment": "center"
+                  }
+                ]
+              }
             ]
+          ]
         },
         "layout": "noBorders",
-        "margin": [
-          0,
-          -10,
-          0,
-          0
-      ]   
-    },
+        "margin": [0, -10, 0, 0]
+      },
       {
         "style": "ws-head",
         "table": {
@@ -187,7 +174,7 @@
               {
                 "columns": [
                   {
-                    "text": "(১৯৬৯ সনের জন্ম-মৃত্যু পঞ্জিকরন আইেনর ১২/১৭ ধারা অনুযায়ী প্রদত্ত হইল)",
+                    "text": "(১৯৬৯ সনের জন্ম-মৃত্যু পঞ্জিকরন আইনের ১২/১৭ ধারা অনুযায়ী প্রদত্ত হইল)",
                     "style": "rule-body"
                   }
                 ]
@@ -211,7 +198,7 @@
                   }
                 ]
               }
-            ]   
+            ]
           ]
         },
         "layout": "noBorders"
@@ -228,20 +215,20 @@
                     "stack": [
                       {
                         "text": "Name",
-                        "alignment":"left"   
+                        "alignment": "left"
                       },
                       {
                         "text": "(নাম )",
-                        "alignment":"left"   
-                      }    
+                        "alignment": "left"
+                      }
                     ],
-                    "width": "20%"     
+                    "width": "20%"
                   },
                   {
                     "text": "{{name}}",
                     "width": "80%",
                     "style": "details-body"
-                  } 
+                  }
                 ]
               }
             ],
@@ -252,38 +239,38 @@
                     "stack": [
                       {
                         "text": "Sex",
-                        "alignment":"left"   
+                        "alignment": "left"
                       },
                       {
                         "text": "(লিঙ্গ)",
-                        "alignment":"left"   
-                      }    
+                        "alignment": "left"
+                      }
                     ],
-                    "width": "20%"  
+                    "width": "20%"
                   },
                   {
                     "text": "{{gender}}",
                     "width": "30%",
                     "style": "details-body"
-                  }, 
+                  },
                   {
                     "stack": [
                       {
                         "text": "Nationality",
-                        "alignment":"left"   
+                        "alignment": "left"
                       },
                       {
                         "text": "(জাতি)",
-                        "alignment":"left"   
-                      }    
+                        "alignment": "left"
+                      }
                     ],
-                    "width": "20%"    
+                    "width": "20%"
                   },
                   {
                     "text": "{{nationality}}",
                     "width": "30%",
                     "style": "details-body"
-                  } 
+                  }
                 ]
               }
             ],
@@ -294,20 +281,20 @@
                     "stack": [
                       {
                         "text": "Address",
-                        "alignment":"left"   
+                        "alignment": "left"
                       },
                       {
                         "text": "(স্থায়ী ঠিকানা)",
-                        "alignment":"left"   
-                      }    
+                        "alignment": "left"
+                      }
                     ],
-                    "width": "20%"     
+                    "width": "20%"
                   },
                   {
                     "text": "{{childAddress}}",
                     "width": "80%",
                     "style": "details-body"
-                  } 
+                  }
                 ]
               }
             ],
@@ -318,38 +305,38 @@
                     "stack": [
                       {
                         "text": "Date of Birth ",
-                        "alignment":"left"   
+                        "alignment": "left"
                       },
                       {
                         "text": "(জন্ম  তারিখ)",
-                        "alignment":"left"   
-                      }    
+                        "alignment": "left"
+                      }
                     ],
-                    "width": "20%"  
+                    "width": "20%"
                   },
                   {
                     "text": "{{dob}}",
                     "width": "30%",
                     "style": "details-body"
-                  }, 
+                  },
                   {
                     "stack": [
                       {
                         "text": "Registration No",
-                        "alignment":"left"   
+                        "alignment": "left"
                       },
                       {
                         "text": "(পঞ্জিকরন নং)",
-                        "alignment":"left"   
-                      }    
+                        "alignment": "left"
+                      }
                     ],
-                    "width": "30%"    
+                    "width": "30%"
                   },
                   {
                     "text": "{{registrationNo}}",
                     "width": "20%",
                     "style": "details-body"
-                  } 
+                  }
                 ]
               }
             ],
@@ -360,38 +347,38 @@
                     "stack": [
                       {
                         "text": "Place of Birth",
-                        "alignment":"left"   
+                        "alignment": "left"
                       },
                       {
                         "text": "(জন্মস্থান )",
-                        "alignment":"left"   
-                      }    
+                        "alignment": "left"
+                      }
                     ],
-                    "width": "20%"  
+                    "width": "20%"
                   },
                   {
                     "text": "{{placeOfBirth}}",
                     "width": "30%",
                     "style": "details-body"
-                  }, 
+                  },
                   {
                     "stack": [
                       {
                         "text": "Date of Registration",
-                        "alignment":"left"   
+                        "alignment": "left"
                       },
                       {
                         "text": "(পঞ্জিকরন তারিখ)",
-                        "alignment":"left"   
-                      }    
+                        "alignment": "left"
+                      }
                     ],
-                    "width": "30%"    
+                    "width": "30%"
                   },
                   {
                     "text": "{{registration_date}}",
                     "width": "20%",
                     "style": "details-body"
-                  } 
+                  }
                 ]
               }
             ],
@@ -402,20 +389,20 @@
                     "stack": [
                       {
                         "text": "Name of Father",
-                        "alignment":"left"   
+                        "alignment": "left"
                       },
                       {
                         "text": "(পিতার নাম)",
-                        "alignment":"left"   
-                      }    
+                        "alignment": "left"
+                      }
                     ],
-                    "width": "20%"  
+                    "width": "20%"
                   },
                   {
                     "text": "{{fatherName}}",
                     "width": "30%",
                     "style": "details-body"
-                  } 
+                  }
                 ]
               }
             ],
@@ -426,20 +413,20 @@
                     "stack": [
                       {
                         "text": "Name of Mother ",
-                        "alignment":"left"   
+                        "alignment": "left"
                       },
                       {
                         "text": "(মাতার নাম)",
-                        "alignment":"left"   
-                      }    
+                        "alignment": "left"
+                      }
                     ],
-                    "width": "20%"  
+                    "width": "20%"
                   },
                   {
                     "text": "{{motherName}}",
                     "width": "30%",
                     "style": "details-body"
-                  }   
+                  }
                 ]
               }
             ]
@@ -454,10 +441,19 @@
           "body": [
             [
               {
-                "image": "{{qr_code_image}}",
-                "width": 70,
-                "height": 70,
-                "style": "qr-code"
+                "columns": [
+                  {
+                    "text": " ",
+                    "width": "70%",
+                    "style": "details-body"
+                  },
+                  {
+                    "image": "{{qr_code_image}}",
+                    "width": 70,
+                    "height": 70,
+                    "style": "qr-code"
+                  }
+                ]
               }
             ]
           ]
@@ -474,28 +470,27 @@
                 "columns": [
                   {
                     "text": "Date :{{updatedOn}}",
-                    "width": "50%",
+                    "width": "70%",
                     "style": "details-body"
-                  }, 
+                  },
                   {
                     "stack": [
                       {
-                        "text": "Registrar of Birth & Death" 
+                        "text": "Registrar of Birth & Death"
                       },
                       {
                         "text": "Cantonment Board, Barrackpore"
-                      }    
-                    ] 
-                  } 
+                      }
+                    ]
+                  }
                 ]
               }
-            ]   
+            ]
           ]
         },
         "layout": "noBorders",
-        "margin":[0,0,0,0]
+        "margin": [0, 0, 0, 0]
       }
-      
     ],
     "styles": {
       "pdf-header": {
@@ -561,7 +556,7 @@
         "bold": false,
         "fontSize": 10,
         "fontWeight": 400,
-        "alignment":"center",
+        "alignment": "center",
         "margin": [0, -30, 0, 5]
       },
       "rule-header_multiLang": {
@@ -569,7 +564,7 @@
         "bold": false,
         "fontSize": 11,
         "fontWeight": 400,
-        "alignment":"center",
+        "alignment": "center",
         "margin": [0, -40, 0, 5]
       },
       "rule-body": {
@@ -577,7 +572,7 @@
         "bold": false,
         "fontSize": 10,
         "fontWeight": 400,
-        "alignment":"center",
+        "alignment": "center",
         "margin": [0, 0, 0, 0]
       },
       "rule-body_multiLang": {
