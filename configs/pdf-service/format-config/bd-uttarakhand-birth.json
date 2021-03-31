@@ -390,40 +390,12 @@
           ]
         },
         "layout": "noBorders"
-      },
+      }
+    ],
+    "footer": [
       {
-        "style": "ws-head",
-        "table": {
-          "widths": ["*"],
-          "body": [
-            [
-              {
-                "text": "THIS IS A COMPUTER GENERATED CERTIFICATE.",
-                "width": 50,
-                "height": 61.25,
-                "style": "instruction-body"
-              }
-            ]
-          ]
-        },
-        "layout": "noBorders"
-      },
-      {
-        "style": "ws-head",
-        "table": {
-          "widths": ["*"],
-          "body": [
-            [
-              {
-                "text": "THE GOVT. OF INDIA VIDE CIRCULAR NO. 1/12/2014-VS(CRS) DATED 27-JULY-2015  HAS APPROVED THIS CERTIFICATE AS A VALID LEGAL DOCUMENT FOR ALL OFFICIAL PURPOSES",
-                "width": 50,
-                "height": 61.25,
-                "style": "instruction-body"
-              }
-            ]
-          ]
-        },
-        "layout": "noBorders"
+        "text": "THIS IS A COMPUTER GENERATED CERTIFICATE WHICH CONTAINS FACSIMILE SIGNATURE OF THE ISSUING AUTHORITY\nTHE GOVT. OF INDIA VIDE CIRCULAR NO. 1/12/2014-VS(CRS) DATED 27-JULY-2015  HAS APPROVED THIS CERTIFICATE AS A VALID LEGAL DOCUMENT FOR ALL OFFICIAL PURPOSES\nप्रत्येक जन्म आणि मृत्यूची घटना नोंदल्याची खात्री करा / ENSURE REGISTRATION OF EVERY BIRTH AND DEATH",
+        "style": "instruction-body" 
       }
     ],
     "styles": {
