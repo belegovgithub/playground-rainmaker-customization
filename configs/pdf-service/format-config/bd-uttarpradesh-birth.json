@@ -73,7 +73,7 @@
                     "style": "appendix-header-body"
                   },
                   {
-                    "text": " कैंटॉन्मेंट बोर्ड  {{cb-name-multilang}} {{cb_letter_label_multilang}}",
+                    "text": " कैंटोनमेंट बोर्ड  {{cb-name-multilang}} {{cb_letter_label_multilang}}",
                     "style": "appendix-header-body"
                   },
                   {
@@ -336,17 +336,17 @@
                 "columns": [
                   {
                     "stack": [
-                    {
-                      "text": "{{issue_date_label_multiLang}} / {{issue_date_label}}: {{issueDate}}",
-                      "width": "49%",
-                      "style": "details-body"
-                    },
-                    {
-                      "text": "UPDATED ON : {{issueDate}}",
-                      "width": "49%",
-                      "style": "details-body"
-                    }
-                  ]
+                      {
+                        "text": "{{issue_date_label_multiLang}} / {{issue_date_label}}: {{issueDate}}",
+                        "width": "49%",
+                        "style": "details-body"
+                      },
+                      {
+                        "text": "UPDATED ON : {{issueDate}}",
+                        "width": "49%",
+                        "style": "details-body"
+                      }
+                    ]
                   },
                   {
                     "text": " ",
@@ -388,26 +388,25 @@
             [
               {
                 "stack": [
-                {
-                  "text": "THIS IA A COMPUTER GENRATED CERTIFICATE WHICH CONTAINS FACSIMILE SIGNATURE OF THE ISSUING AUTHORITY",
-                  "style": "instruction-body"
-                },
-                {
-                  "text": "“THE GOVT. OF INDIA VIDE CIRCULAR NO. 1/12/2014-VS(CRS)DATED- 27-JULY-2015 HAS APPROVED THIS CERTIFICATE AS A VALID LEGAL DOCUMENT FOR ALL OFFICIAL PURPOSES",
-                  "style": "instruction-body"
-                },
-                {
-                  "text": "प्रतेयक जन्म एवम मृत्यु का पंजीकरण सुनिश्चित करे” / ENSURE REGISTRATION OF EVERY BIRTH AND DEATH",
-                  "style": "instruction-body"
-                }
-              ]
-            }
+                  {
+                    "text": "THIS IA A COMPUTER GENRATED CERTIFICATE WHICH CONTAINS FACSIMILE SIGNATURE OF THE ISSUING AUTHORITY",
+                    "style": "instruction-body"
+                  },
+                  {
+                    "text": "“THE GOVT. OF INDIA VIDE CIRCULAR NO. 1/12/2014-VS(CRS)DATED- 27-JULY-2015 HAS APPROVED THIS CERTIFICATE AS A VALID LEGAL DOCUMENT FOR ALL OFFICIAL PURPOSES",
+                    "style": "instruction-body"
+                  },
+                  {
+                    "text": "प्रतेयक जन्म एवम मृत्यु का पंजीकरण सुनिश्चित करे” / ENSURE REGISTRATION OF EVERY BIRTH AND DEATH",
+                    "style": "instruction-body"
+                  }
+                ]
+              }
             ]
           ]
         },
         "layout": "noBorders"
       }
-     
     ],
     "styles": {
       "pdf-header": {
