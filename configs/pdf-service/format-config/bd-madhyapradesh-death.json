@@ -173,7 +173,7 @@
               {
                 "columns": [
                   {
-                    "text": "यह प्रमाणित किया जाता है निम्नलिखित सूचना मृत्यु के मूल अभिलेख से ली गई है जो किकि छावनी परिषद {{cb-name-multilang}} तहसील {{block-name-multilang}} जिला {{dist-name-multilang}} राज्य/संघ प्रदेश मध्य प्रदेश, भारत के रजिस्टर मे उल्लेखित है ।",
+                    "text": "यह प्रमाणित किया जाता है निम्नलिखित सूचना मृत्यु के मूल अभिलेख से ली गई है जो किकि छावनी परिषद {{cb-name-multilang}} तहसील {{block-name-multilang}} जिला {{dist-name-multilang}} राज्य/संघ प्रदेश मध्य प्रदेश, भारत के रजिस्टर मे उल्लिखित  है ।",
                     "style": "rule-body_multiLang"
                   }
                 ]
@@ -202,7 +202,7 @@
               {
                 "columns": [
                   {
-                    "text": "{{name_label_multiLang}} / NAME OF DECEASED: {{name}}",
+                    "text": "मृतक का नाम / NAME OF DECEASED: {{name}}",
                     "width": "49%",
                     "style": "details-body"
                   },
@@ -232,7 +232,7 @@
               {
                 "columns": [
                   {
-                    "text": "{{dod_label_multiLang}} / DATE OF DEATH: {{dod}}",
+                    "text": "मृत्यु की तिथि / DATE OF DEATH: {{dod}}",
                     "width": "49%",
                     "style": "details-body"
                   },
@@ -241,7 +241,7 @@
                     "width": "1%"
                   },
                   {
-                    "text": "{{pod_label_multiLang}} / PLACE OF DEATH: {{placeOfDeath}}",
+                    "text": "मृत्यु का स्थान / PLACE OF DEATH: {{placeOfDeath}}",
                     "style": "details-body"
                   }
                 ]
@@ -328,7 +328,7 @@
               {
                 "columns": [
                   {
-                    "text": "{{death_address_label_multiLang}} / ADDRESS OF DECEASED AT THE TIME OF DEATH: {{presentAddress}}",
+                    "text": "मृत्यु के समय मृतक का पता / ADDRESS OF DECEASED AT THE TIME OF DEATH: {{presentAddress}}",
                     "width": "49%",
                     "style": "details-body"
                   },
@@ -337,7 +337,7 @@
                     "width": "1%"
                   },
                   {
-                    "text": "{{death_perm_address_label_multiLang}} / PERMANENT ADDRESS OF DECEASED: {{permanentAddress}}",
+                    "text": "मृतक का स्थायी पता / PERMANENT ADDRESS OF DECEASED: {{permanentAddress}}",
                     "style": "details-body"
                   }
                 ]
@@ -394,19 +394,30 @@
                     "width": "1%"
                   },
                   {
-                    "stack": [
-                      {
-                        "text": "{{issuing_authority_label_multiLang}} / {{issuing_authority_label}}",
-                        "style": "details-body"
-                      },
-                      {
-                        "text": "{{cb_label_name_multiLang}} {{cb-name-multilang}}"
-                      },
-                      {
-                        "text": "CANTONMENT BOARD {{cb-name}}"
-                      }
-                    ]
-                  }
+                    "stack":[
+                    {
+                      "text": "{{issuing_authority_label_multiLang}} / {{issuing_authority_label}}",
+                      "style": "details-body"
+                    },
+                    {
+                      "text": "रजिस्ट्रार (जन्म एवं मृत्यु)",
+                      "style": "details-body"  
+                    },
+                    {
+                      "text": "REGISTRAR (BIRTH & DEATH)",
+                      "style": "details-body"
+                      
+                    },
+                    {
+                      "text": "{{cb_label_name_multiLang}} {{cb-name-multilang}}",
+                      "style": "details-body"
+                    },
+                    {
+                      "text": "CANTONMENT BOARD {{cb-name}}",
+                      "style": "details-body"
+                    }
+                  ]
+                } 
                 ]
               }
             ]
@@ -443,24 +454,13 @@
           ]
         },
         "layout": "noBorders"
-      },
+      }  
+    ],
+    "footer": [
       {
-        "style": "ws-head",
-        "table": {
-          "widths": ["*"],
-          "body": [
-            [
-              {
-                "text": "THIS IS A COMPUTER GENERATED CERTIFICATE.",
-                "width": 50,
-                "height": 61.25,
-                "style": "instruction-body"
-              }
-            ]
-          ]
-        },
-        "layout": "noBorders"
-      } 
+        "text": "THIS IS A COMPUTER GENERATED CERTIFICATE.",
+        "style": "instruction-body" 
+      }
     ],
     "styles": {
       "pdf-header": {

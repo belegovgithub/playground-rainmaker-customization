@@ -344,21 +344,30 @@
                     "width": "1%"
                   },
                   {
-                    "stack": [
-                      {
-                        "text": "{{issuing_authority_label_multiLang}} / {{issuing_authority_label}}",
-                        "style": "details-body"
-                      },
-                      {
-                        "text": "{{cb_label_name_multiLang}} {{cb-name-multilang}}",
-                        "style": "details-body"
-                      },
-                      {
-                        "text": "CANTONMENT BOARD {{cb-name}}",
-                        "style": "details-body"
-                      }
-                    ]
-                  }
+                    "stack":[
+                    {
+                      "text": "{{issuing_authority_label_multiLang}} / {{issuing_authority_label}}",
+                      "style": "details-body"
+                    },
+                    {
+                      "text": "रजिस्ट्रार (जन्म एवं मृत्यु)",
+                      "style": "details-body"  
+                    },
+                    {
+                      "text": "REGISTRAR (BIRTH & DEATH)",
+                      "style": "details-body"
+                      
+                    },
+                    {
+                      "text": "{{cb_label_name_multiLang}} {{cb-name-multilang}}",
+                      "style": "details-body"
+                    },
+                    {
+                      "text": "CANTONMENT BOARD {{cb-name}}",
+                      "style": "details-body"
+                    }
+                  ]
+                } 
                 ]
               }
             ]
@@ -395,25 +404,13 @@
           ]
         },
         "layout": "noBorders"
-      },
-      {
-        "style": "ws-head",
-        "table": {
-          "widths": ["*"],
-          "body": [
-            [
-              {
-                "text": "THIS IS A COMPUTER GENERATED CERTIFICATE.",
-                "width": 50,
-                "height": 61.25,
-                "style": "instruction-body"
-              }
-            ]
-          ]
-        },
-        "layout": "noBorders"
       } 
-     
+    ],
+    "footer": [
+      {
+        "text": "THIS IS A COMPUTER GENERATED CERTIFICATE.",
+        "style": "instruction-body" 
+      }
     ],
     "styles": {
       "pdf-header": {
