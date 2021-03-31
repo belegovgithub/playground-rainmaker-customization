@@ -81,7 +81,7 @@
             ],
             [
               {
-                "text":"{{cb-name}} CANTONMENT BOARD, {{dist-name}}, J&K, 190004",
+                "text":"{{cb-name}} CANTONMENT BOARD, {{dist-name}}, J&K",
                 "style": "rule-header_multiLang"
               }
             ]
@@ -320,7 +320,7 @@
                     "width": "10%"
                   },
                   {
-                    "text": "Registrar Birth & Death, Cantt Board, Sgr",
+                    "text": "Registrar Birth & Death, {{cb-name}} CANTONMENT BOARD",
                     "width": "50%",
                     "style": "details-body"
                   }
