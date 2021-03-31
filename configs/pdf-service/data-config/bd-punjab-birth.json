@@ -45,7 +45,7 @@
                   "value": {
                     "path": "$.dateofbirth"
                   },
-                  "type": "date"
+                  "type": "dateOrEmpty"
                 },
                 {
                   "variable": "grandFatherName", 
@@ -74,14 +74,14 @@
                     "value": {
                       "path": "$.dateofreport"
                     },
-                    "type": "date"
+                    "type": "dateOrEmpty"
                   },
                   {
                     "variable": "updatedOn", 
                     "value": {
                       "path": "$.dateofissue"
                     },
-                    "type": "date"
+                    "type": "dateOrEmpty"
                   },
                 {
                   "variable": "fatherName", 
@@ -144,7 +144,7 @@
                     "value": {
                       "path": "$.dateofissue"
                     },
-                    "type": "date"
+                    "type": "dateOrEmpty"
                   },
                   {
                     "variable": "placeOfBirth", 

@@ -101,7 +101,7 @@
                     "value": {
                       "path": "$.dateofreport"
                     },
-                    "type": "date"
+                    "type": "dateOrEmpty"
                   },
                   {
                     "variable": "aadharNo", 
@@ -178,7 +178,7 @@
                     "value": {
                       "path": "$.dateofissue"
                     },
-                    "type": "date"
+                    "type": "dateOrEmpty"
                   },
                   {
                     "variable": "placeOfBirth", 

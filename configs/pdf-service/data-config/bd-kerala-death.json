@@ -67,7 +67,7 @@
                 "value": {
                   "path": "$.dateofissue"
                 },
-                "type": "date"
+                "type": "dateOrEmpty"
               },
               {
                 "variable": "placeOfDeath",
@@ -109,7 +109,7 @@
                 "value": {
                   "path": "$.dateofreport"
                 },
-                "type": "date"
+                "type": "dateOrEmpty"
               },
               {
                 "variable": "fatherName",
@@ -172,7 +172,7 @@
                 "value": {
                   "path": "$.dateofissue"
                 },
-                "type": "date"
+                "type": "dateOrEmpty"
               },
               {
                 "variable": "placeOfBirth",

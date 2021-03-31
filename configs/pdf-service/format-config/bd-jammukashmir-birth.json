@@ -45,21 +45,21 @@
             [
               {
                 "image": "{{govtImage}}",
-                "width": 70,
-                "height": 70.25,
+                "width": 50,
+                "height": 50.25,
                 "margin": [0, -5, 0, 0]
               },
               {
                 "image": "{{emblemImage}}",
-                "width": 70,
-                "height": 70.25,
+                "width": 50,
+                "height": 50.25,
                 "margin": [0, -10, 0, 0]
               },
 
               {
                 "image": "{{form5}}",
-                "width": 65,
-                "height": 60.25,
+                "width": 50,
+                "height": 50.25,
                 "margin": [0, -10, 0, 0]
               }
             ]
@@ -81,7 +81,7 @@
             ],
             [
               {
-                "text":"{{cb-name}} CANTONMENT BOARD, {{dist-name}}, J&K 180003",
+                "text": "{{cb-name}} CANTONMENT BOARD, {{dist-name}}, J&K 180003",
                 "style": "rule-header_multiLang"
               }
             ]
@@ -294,7 +294,7 @@
                 "columns": [
                   {
                     "text": " ",
-                    "width": "40%"
+                    "width": "45%"
                   },
                   {
                     "text": " ",
@@ -302,7 +302,7 @@
                   },
                   {
                     "text": "Signature of Issuing Authority",
-                    "width": "50%",
+                   
                     "style": "details-body"
                   }
                 ]
@@ -313,7 +313,7 @@
                 "columns": [
                   {
                     "text": " ",
-                    "width": "40%"
+                    "width": "45%"
                   },
                   {
                     "text": " ",
@@ -321,28 +321,8 @@
                   },
                   {
                     "text": "Registrar Birth & Death,{{cb-name}} CANTONMENT BOARD",
-                    "width": "50%",
+                    
                     "style": "details-body"
-                  }
-                ]
-              }
-            ],
-            [
-              {
-                "columns": [
-                  {
-                    "text": " "
-                  }
-                ]
-              }
-            ],
-
-            [
-              {
-                "columns": [
-                  {
-                    "text": "Ensure Registration of every Birth and Death",
-                    "style": "appendix-header"
                   }
                 ]
               }
@@ -350,6 +330,12 @@
           ]
         },
         "layout": "noBorders"
+      }
+    ],
+    "footer": [
+      {
+        "text": "Ensure Registration of every Birth and Death",
+        "style": "instruction-body" 
       }
     ],
     "styles": {
@@ -372,7 +358,7 @@
       "instruction-body": {
         "color": "#000000",
         "bold": false,
-        "fontSize": 7,
+        "fontSize": 9,
         "fontWeight": 400,
         "alignment": "center"
       },
@@ -441,11 +427,11 @@
         "margin": [0, 0, 0, 0]
       },
       "details-body": {
-        "color": "#696969",
+        "color": "#000000",
         "bold": true,
         "fontSize": 11,
         "fontWeight": 400,
-        "margin": [0, 5, 0, 0]
+        "margin": [0, 2, 0, 0]
       },
       "appendix-header-body": {
         "color": "#696969",
