@@ -404,10 +404,6 @@
               {
                 "stack": [
                   {
-                    "text": "UPDATED ON :{{issueDate}}",
-                    "style": "details-body"
-                  },
-                  {
                     "image": "{{qr_code_image}}",
                     "width": 70,
                     "height": 70,
