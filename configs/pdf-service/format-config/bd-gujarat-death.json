@@ -1,6 +1,7 @@
 {
   "key": "bd-gujarat-death",
   "config": {
+    
     "defaultStyle": {
       "font": "gujarati"
     },
@@ -20,8 +21,8 @@
             [
               {
                 "image": "{{emblemImage}}",
-                "width": 35,
-                "height": 45,
+                "width": 55,
+                "height": 55,
                 "style": "appendix-header-emblem"
               }
             ]
@@ -41,19 +42,23 @@
               {
                 "stack": [
                   {
+                    "fontSize": 9.5,
                     "text": "ગુજરાત સરકાર",
                     "style": "appendix-header-body"
                   },
                   {
+                    "fontSize": 9.5,
                     "text": "GOVERNMENT OF GUJARAT",
                     "style": "appendix-header-body",
                     "margin": [0, 0, 0, 5]
                   },
                   {
+                    "fontSize": 9.5,
                     "text": "આરોગ્ય અને પરિવાર કલ્યાણ વિભાગ",
                     "style": "appendix-header-body"
                   },
                   {
+                    "fontSize": 10.5,
                     "text": "DEPARTMENT OF HELATH AND FAMILY WELFARE",
                     "style": "appendix-header-body",
                     "margin": [0, 0, 0, 5]
@@ -65,13 +70,15 @@
                 "stack": [
                   {
                     "text": "ફોર્મ-૬ FORM-6",
-                    "style": "appendix-header-formNo"
+                    "style": "appendix-header-formNo",
+                    "margin": [0, 0, 0, 20]
                   },
                   {
                     "image": "{{form5}}",
                     "width": 65,
                     "height": 60.25,
-                    "margin": [10, -20, 0, 0]
+                    "margin": [10, -20, 0, 10]
+                    
                   }
                 ]
               }
@@ -97,9 +104,11 @@
                     "style": "title-header_multiLang"
                   },
                   {
+                    "style": "title-data",
                     "text": "(જન્મ અને મરણ નોંધણી અધિનિયમ, ૧૯૬૯ની કલમ 1૨/૧૭ અને ગુજરાત જન્મ-મરણ નોંધણી નિયમો, ૨૦૧૮ના નિયમ-૮ મુજબ)"   
                   },
                   {
+                    "style": "title-data",
                     "text": "(Issued under Section 12/17 of the Registration of Births and Deaths Act, 1969 and Rule 8 of the Gujarat Registration of Births and Deaths Rules, 2018){{cb-name-multilang}}"   
                   }
                 ]
@@ -128,7 +137,7 @@
                 "columns": [
                   {
                     "text": "This is to certify that the following information has been taken from the original record of death which is in the register for Village/City   Ahmedabad Cantonment(CB) of Taluka Ahmedabad City (West) of District Ahmedabad of Gujarat State, India.",
-                    "style": "rule-header_multiLang"
+                    "style": "rule-header"
                   }
                 ]
               }
@@ -147,12 +156,12 @@
                 "columns": [
                   {
                     "text": "નામ/Name : {{name}}",
-                    "width": "45%",
+                    "width": "49%",
                     "style": "details-body"
                   },
                   {
                     "text": " ",
-                    "width": "10%"
+                    "width": "1%"
                   },
                   {
                     "text": "જાતિ / Sex : {{gender}}",
@@ -166,12 +175,12 @@
                 "columns": [
                   {
                     "text": "મરણ  તારીખ / Date of Death  : {{dod}}",
-                    "width": "45%",
+                    "width": "49%",
                     "style": "details-body"
                   },
                   {
                     "text": " ",
-                    "width": "10%"
+                    "width": "1%"
                   },
                   {
                     "text": "મરણ સ્થળ / Place of Death  : {{placeOfDeath}}",
@@ -185,15 +194,15 @@
                 "columns": [
                   {
                     "text": "માતાનું નામ / Name of Mother : {{motherName}}",
-                    "width": "45%",
+                    "width": "49%",
                     "style": "details-body"
                   },
                   {
                     "text": " ",
-                    "width": "10%"
+                    "width": "1%"
                   },
                   {
-                    "text": "પિતાનું નામ / Name of Father : {{fatherName}}",
+                    "text": "પિતાનું પતિનું નામ/Name of Father or Husband: {{fatherName}}",
                     "style": "details-body"
                   }
                 ]
@@ -204,15 +213,15 @@
                 "columns": [
                   {
                     "text": "મરનારના મૃત્યુ સમયનું સરનામું / Address of deceased at the time of Death  : {{presentAddress}}",
-                    "width": "45%",
+                    "width": "49%",
                     "style": "details-body"
                   },
                   {
                     "text": " ",
-                    "width": "10%"
+                    "width": "1%"
                   },
                   {
-                    "text": "મરનારનું કાયમી સરનામું / Permanent Address of Deceased  : {{parentsAddress}}",
+                    "text": "મરનારનું કાયમી સરનામું / Permanent Address of Deceased  : {{permanentAddress}}",
                     "style": "details-body"
                   }
                 ]
@@ -223,12 +232,12 @@
                 "columns": [
                   {
                     "text": "નોધણી ક્રમાંક / Registration No: {{registrationNo}}",
-                    "width": "45%",
+                    "width": "49%",
                     "style": "details-body"
                   },
                   {
                     "text": " ",
-                    "width": "10%"
+                    "width": "1%"
                   },
                   {
                     "text": "નોધણીની તારીખ / Registration Date : {{registration_date}}",
@@ -242,13 +251,13 @@
                 "columns": [
                   {
                     "text": "રીમાર્કસ(વિશેષ નોંધ) / Remarks (if any) : {{remarks}}",
-                    "width": "45%",
-                    "style": "details-body",
-                    "margin": [0, -20, 0, 0]
+                    "width": "49%",
+                    "style": "details-body"
+                  
                   },
                   {
                     "text": " ",
-                    "width": "10%"
+                    "width": "1%"
                   },
                   {
                     "text": "પ્રમાણપત્ર નંબર/Certificate No : {{registrationNo}}",
@@ -262,13 +271,13 @@
                 "columns": [
                   {
                     "text": "પ્રમાણપત્ર કાઢી આપ્યાની તારીખ / Date of issue : {{issueDate}}",
-                    "width": "45%",
+                    "width": "49%",
                     "style": "details-body"
                     
                   },
                   {
                     "text": " ",
-                    "width": "10%"
+                    "width": "1%"
                   },
                   {
                     "text": "પ્રમાણપત્ર આપનાર સત્તાધિકારીની સહી/Signature of Issuing  Authority",
@@ -328,23 +337,31 @@
       "qr-code": {
         "color": "#000000",
         "alignment": "left",
-        "margin": [0, -0, 0, 0]
+        "margin": [0, 0, 0, 0]
       },
       "title-header": {
-        "color": "#000000",
+        "color": "#F64255",
         "bold": true,
-        "fontSize": 14,
+        "fontSize": 18,
         "fontWeight": 400,
         "alignment": "center",
-        "margin": [0, 1, 0, 0]
+        "margin": [0, -10, 0, 0]
       },
       "title-header_multiLang": {
-        "color": "#000000",
+        "color": "#F64255",
         "bold": true,
-        "fontSize": 15,
+        "fontSize": 18,
         "fontWeight": 400,
         "alignment": "center",
-        "margin": [0, 3, 0, 0]
+        "margin": [0, -1, 0, 0]
+      },
+      "title-data": {
+        "color": "#F64255",
+        "bold": true,
+        "fontSize": 8.5,
+        "fontWeight": 400,
+        "alignment": "center",
+        "margin": [0, -1, 0, 0]
       },
       "appendix-header-serialNo": {
         "color": "#000000",
@@ -354,7 +371,7 @@
         "margin": [0, -5, 0, 0]
       },
       "appendix-header-formNo": {
-        "color": "#000000",
+        "color": "#F64255",
         "bold": false,
         "fontSize": 8,
         "fontWeight": 400,
@@ -363,18 +380,18 @@
       "rule-header": {
         "color": "#000000",
         "bold": false,
-        "alignment": "center",
-        "fontSize": 10,
+        "alignment": "left",
+        "fontSize": 9,
         "fontWeight": 400,
-        "margin": [0, 0, 0, 5]
+        "margin": [0, 0, 0, 10]
       },
       "rule-header_multiLang": {
         "color": "#000000",
         "bold": false,
-        "alignment": "center",
-        "fontSize": 11,
+        "alignment": "left",
+        "fontSize": 9,
         "fontWeight": 400,
-        "margin": [0, 0, 0, 5]
+        "margin": [0,0,0,0]
       },
       "rule-body": {
         "color": "#000000",
@@ -395,9 +412,9 @@
       "details-body": {
         "color": "#000000",
         "bold": false,
-        "fontSize": 11,
+        "fontSize": 9,
         "fontWeight": 400,
-        "margin": [0, 3, 0, 0]
+        "margin": [0, 0, 0, 0]
       },
       "signature-body": {
         "color": "#000000",
@@ -407,9 +424,8 @@
         "margin": [0, -15, 0, 0]
       },
       "appendix-header-body": {
-        "color": "#000000",
+        "color": "#F64255",
         "bold": true,
-        "fontSize": 9,
         "fontWeight": 400,
         "alignment": "center"
       },
@@ -510,3 +526,4 @@
     }
   }
 }
+
