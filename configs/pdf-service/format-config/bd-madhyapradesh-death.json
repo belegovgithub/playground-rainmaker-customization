@@ -73,12 +73,12 @@
                     "style": "appendix-header-body"
                   },
                   {
-                    "text": "{{cb_label_name_multiLang}} {{cb-name-multilang}}",
+                    "text": "{{cb_label_name_multiLang}} {{cb-name-multilang}} कैन्ट",
                     "style": "appendix-header-body",
                     "margin": [0, 1, 0, -2]
                   },
                   {
-                    "text": "CANTONMENT BOARD {{cb-name}}",
+                    "text": "CANTONMENT BOARD {{cb-name}} CANTT",
                     "style": "appendix-header-body"
                   }
                 ]
@@ -145,7 +145,7 @@
               {
                 "columns": [
                   {
-                    "text": "(जन्म मृत्यु रजिस्ट्रीकरण अधिनियम,1969 की धारा 12/17 तथा मध्य प्रदेश जन्म मृत्यु रजिस्ट्रीकरण, 1999  के  नियम 8/13 के अंतर्गत, जारी किया गया)",
+                    "text": "(जन्म मृत्यु रजिस्ट्रीकरण अधिनियम,1969 की धारा 12/17 तथा मध्य प्रदेश जन्म मृत्यु रजिस्ट्रीकरण नियम, 1999  के  नियम 8/13 के अंतर्गत, जारी किया गया)",
                     "style": "rule-header_multiLang"
                   }
                 ]
@@ -174,7 +174,7 @@
               {
                 "columns": [
                   {
-                    "text": "यह प्रमाणित किया जाता है निम्नलिखित सूचना मृत्यु के मूल अभिलेख से ली गई है जो कि छावनी परिषद {{cb-name-multilang}} तहसील {{block-name-multilang}} जिला {{dist-name-multilang}} राज्य/संघ प्रदेश मध्य प्रदेश, भारत के रजिस्टर मे उल्लिखित है ।",
+                    "text": "यह प्रमाणित किया जाता है निम्नलिखित सूचना मृत्यु के मूल अभिलेख से ली गई है जो कि छावनी परिषद {{cb-name-multilang}} कैन्ट तहसील {{block-name-multilang}} जिला {{dist-name-multilang}} राज्य/संघ प्रदेश मध्य प्रदेश, भारत के रजिस्टर मे उल्लिखित है ।",
                     "style": "rule-body_multiLang"
                   }
                 ]
@@ -184,7 +184,7 @@
               {
                 "columns": [
                   {
-                    "text": "THIS  IS TO CERTIFY THAT THE  FOLLOWING  INFORMATION  HAS BEEN  TAKEN FROM  THE  ORIGINAL RECORD OF DEATH WHICH  IS THE  REGISTER  FOR CANTONMENT BOARD {{cb-name}} OF TAHSIL/BLOCK {{block-name}} OF DISTRICT {{dist-name}} OF STATE/UNION TERRITORY MADHYA PRADESH, INDIA.",
+                    "text": "THIS  IS TO CERTIFY THAT THE  FOLLOWING  INFORMATION  HAS BEEN  TAKEN FROM  THE  ORIGINAL RECORD OF DEATH WHICH  IS THE  REGISTER  FOR CANTONMENT BOARD {{cb-name}} CANTT OF TAHSIL/BLOCK {{block-name}} OF DISTRICT {{dist-name}} OF STATE/UNION TERRITORY MADHYA PRADESH, INDIA.",
                     "style": "rule-body"
                   }
                 ]
@@ -310,7 +310,7 @@
               {
                 "columns": [
                   {
-                    "text": "माता आधार नंबर / MOTHER AADHAR NO: {{motherUid}}",
+                    "text": "आधार नंबर / MOTHER'S AADHAR NO: {{motherUid}}",
                     "width": "59%",
                     "style": "details-body"
                   },
@@ -319,7 +319,7 @@
                     "width": "1%"
                   },
                   {
-                    "text": "पिता आधार नंबर / FATHER AADHAR NO: {{fatherUid}}",
+                    "text": "आधार नंबर / FATHER'S AADHAR NO: {{fatherUid}}",
                     "style": "details-body"
                   }
                 ]
@@ -410,11 +410,11 @@
                       
                     },
                     {
-                      "text": "{{cb_label_name_multiLang}} {{cb-name-multilang}}",
+                      "text": "{{cb_label_name_multiLang}} {{cb-name-multilang}} कैन्ट",
                       "style": "details-body"
                     },
                     {
-                      "text": "CANTONMENT BOARD {{cb-name}}",
+                      "text": "CANTONMENT BOARD {{cb-name}} CANTT",
                       "style": "details-body"
                     }
                   ]
@@ -459,7 +459,7 @@
     ],
     "footer": [
       {
-        "text": "THIS IS A COMPUTER GENERATED CERTIFICATE.",
+        "text": "“THIS IS A COMPUTER GENERATED CERTIFICATE WHICH CONTAINS FACSIMILE SIGNATURE OF THE ISSUING AUTHORITY.”\n“THE GOVT. OF INDIA VIDE CIRCULAR NO. 1/12/2014-VS(CRS) DATED 27-JULY-2015 HAS APPROVED THIS CERTIFICATE AS A VALID LEGAL DOCUMENT FOR ALL OFFICIAL PURPOSES”\n“प्रत्‍येक जन्‍म एवं मृत्‍यु का पंजीकरण सुनिश्‍चित करें”/“ENSURE REGISTRATION OF EVERY BIRTH AND DEATH”",
         "style": "instruction-body" 
       }
     ],

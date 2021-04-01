@@ -65,11 +65,11 @@
                     "style": "appendix-header-body"
                   },
                   {
-                    "text": "रजिस्ट्रार – {{cb_label_name_multiLang}},{{cb-name-multilang}},{{dist-name-multilang}}",
+                    "text": "रजिस्ट्रार – {{cb_label_name_multiLang}},{{cb-name-multilang}}, अजमेर",
                     "style": "appendix-header-body"
                   },
                   {
-                    "text": "Registrar – CANTONMENT BOARD,{{cb-name}},{{dist-name}}",
+                    "text": "Registrar – CANTONMENT BOARD,{{cb-name}}, AJMER",
                     "style": "appendix-header-body"
                   }
                 ]
@@ -183,7 +183,7 @@
                         "text": "छावनी परिषद, {{cb-name-multilang}} ",
                         "bold": true
                       },
-                      "तहसील/खण्ड {{block-name-multilang}} जिला {{dist-name-multilang}} राज्य/संघ राज्य",{"text": "राजस्थान, भारत","bold":true}," का रजिस्टर है।"
+                      "तहसील/खण्ड {{block-name-multilang}} जिला {{dist-name-multilang}} राज्य/संघ राज्य ",{"text": "राजस्थान, भारत","bold":true}," का रजिस्टर है।"
                     ],
                     "style": "rule-body_multiLang"
                   }
@@ -197,7 +197,7 @@
                     "text": [
                       "This is to certify that the following information has been taken from the original record of birth which is the register for (Local area / Local body) ",
                       {
-                        "text": "CHAVNI PARISHAD, {{cb-name}} ",
+                        "text": "CANTONMENT BOARD, {{cb-name}} ",
                         "bold": true
                       },
                       "of Tehsil/Block {{block-name}} of District ",

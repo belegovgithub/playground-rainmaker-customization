@@ -41,11 +41,11 @@
               {
                 "stack": [
                   {
-                    "text": "प्रारूप संख्या 5",
+                    "text": "प्रारूप संख्या 6",
                     "style": "appendix-header-body"
                   },
                   {
-                    "text": "FORM NO. 5",
+                    "text": "FORM NO. 6",
                     "style": "appendix-header-body"
                   },
                   {
@@ -65,11 +65,11 @@
                     "style": "appendix-header-body"
                   },
                   {
-                    "text": "रजिस्ट्रार – {{cb_label_name_multiLang}},{{cb-name-multilang}},{{cb-name-multilang}}",
+                    "text": "रजिस्ट्रार – {{cb_label_name_multiLang}},{{cb-name-multilang}}, अजमेर",
                     "style": "appendix-header-body"
                   },
                   {
-                    "text": "Registrar – CHAVNI PARISHAD,{{cb-name}},{{cb-name}}",
+                    "text": "Registrar – CANTONMENT BOARD,{{cb-name}}, AJMER",
                     "style": "appendix-header-body"
                   }
                 ]
@@ -146,7 +146,7 @@
                 "columns": [
                   {
                     "text": "(Issued under Section 12/17 of the Registration of Births and Deaths Act, 1969 and Rule 8/13 of the Rajasthan Registration of Births and Deaths Rules, 2000)",
-                    "style": "rule-header_multiLang"
+                    "style": "rule-header"
                   }
                 ]
               }
@@ -183,7 +183,7 @@
                         "text": "छावनी परिषद, {{cb-name-multilang}} ",
                         "bold": true
                       },
-                      "तहसील/खण्ड {{block-name-multilang}} जिला {{dist-name-multilang}} राज्य /संघ प्रदेश राजस्थान, भारत का रजिस्टर है ।"
+                      "तहसील/खण्ड {{block-name-multilang}} जिला {{dist-name-multilang}} राज्य/संघ राज्य ",{"text": "राजस्थान, भारत","bold":true}," का रजिस्टर है।"
                     ],
                     "style": "rule-body_multiLang"
                   }
@@ -197,10 +197,10 @@
                     "text": [
                       "This is to certify that the following information has been taken from the original record of death which is the register for (Local area / Local body) ",
                       {
-                        "text": "CHAVNI PARISHAD, {{cb-name}} ",
+                        "text": "CANTONMENT BOARD, {{cb-name}} ",
                         "bold": true
                       },
-                      "of Tehsil / Block {{block-name}} of District ",
+                      "of Tehsil/Block {{block-name}} of District ",
                       {
                         "text": "{{dist-name}}",
                         "bold": true
@@ -229,7 +229,7 @@
               {
                 "columns": [
                   {
-                    "text": "मृतक का नाम / NAME OF DECEASED: {{name}}",
+                    "text": "नाम/Name: {{name}}",
                     "width": "49%",
                     "style": "details-body"
                   },
@@ -238,7 +238,7 @@
                     "width": "1%"
                   },
                   {
-                    "text": "लिंग / SEX: {{gender}}",
+                    "text": "लिंग/Sex: {{gender}}",
                     "style": "details-body"
                   }
                 ]
@@ -257,7 +257,7 @@
                     "width": "1%"
                   },
                   {
-                    "text": "मृत्यु का स्थान/ PLACE OF DEATH: {{placeOfDeath}}",
+                    "text": "मृत्यु का स्थान/Place of Death: {{placeOfDeath}}",
                     "style": "details-body"
                   }
                 ]
@@ -269,31 +269,31 @@
                   {
                     "stack": [
                       {
-                        "text": "मृत्यु की तिथि / DATE OF DEATH  : {{dod}}",
+                        "text": "मृत्यु की तिथि /Date of Death: {{dod}}",
                         "style": "details-body"
                       },
                       {
-                        "text": "माता का नाम /NAME OF MOTHER : {{motherName}}",
+                        "text": "माता का नाम /Name of Mother: {{motherName}}",
                         "style": "details-body"
                       },
                       {
-                        "text": "माता का आधार नंबर / MOTHER’S AADHAAR NO : {{motherUid}}",
+                        "text": "माता का आधार नंबर /Mother Aadhar No: {{motherUid}}",
                         "style": "details-body"
                       },
                       {
-                        "text": "पिता का नाम / NAME OF FATHER: {{fatherName}}",
+                        "text": "पिता का नाम /Name  of Father: {{fatherName}}",
                         "style": "details-body"
                       },
                       {
-                        "text": "पिता का आधार नंबर / FATHER’S AADHAAR NO : {{fatherUid}}",
+                        "text": "पिता का आधार नंबर /Father Aadhar No: {{fatherUid}}",
                         "style": "details-body"
                       },
                       {
-                        "text": "पति/पत्नी का नाम/Name of Husband/Wife : {{spouseName}}",
+                        "text": "पति/पत्नी का नाम/Name of Husband/Wife: {{spouseName}}",
                         "style": "details-body"
                       },
                       {
-                        "text": "पति/पत्नी का आधार नंबर/Husband/Wife Aadhar No : {{spouseAadhar}}",
+                        "text": "पति/पत्नी का आधार नंबर/Husband/Wife Aadhar No: {{spouseAadhar}}",
                         "style": "details-body"
                       }
                     ]
@@ -305,7 +305,7 @@
               {
                 "columns": [
                   {
-                    "text": "मृत्यु के समय मृतक का पता / ADDRESS OF THE DECEASED AT THE TIME OF DEATH: {{presentAdd}}",
+                    "text": "मृत्यु के समय मृतक का पता / Address of Deceased at the time of death: {{presentAdd}}",
                     "width": "49%",
                     "style": "details-body"
                   },
@@ -314,7 +314,7 @@
                     "width": "1%"
                   },
                   {
-                    "text": "मृतक का स्थायी पता/ PERMANENT ADDRESS OF DECEASED: {{permanentAddress}}",
+                    "text": "मृतक का स्थायी पता/Permanent Address of the deceased: {{permanentAddress}}",
                     "style": "details-body"
                   }
                 ]
@@ -326,15 +326,11 @@
                   {
                     "stack": [
                       {
-                        "text": "रजिस्ट्रीकरण संख्या/ REGISTRATION NUMBER: {{registrationNo}}",
+                        "text": "रजिस्ट्रीकरण संख्या/Registration No: {{registrationNo}}",
                         "style": "details-body"
                       },
                       {
-                        "text": "टिप्पणी / REMARKS (IF ANY): {{remarks}}",
-                        "style": "details-body"
-                      },
-                      {
-                        "text": "जारी करने कि तारीख/ DATE OF ISSUE: {{issueDate}}",
+                        "text": "टिप्पणी /Remarks if any: {{remarks}}",
                         "style": "details-body"
                       }
                     ]
@@ -346,15 +342,39 @@
                   {
                     "stack": [
                       {
-                        "text": "रजिस्ट्रीकरण की तारीख/ DATE OF REGISTRATION: {{registration_date}}",
+                        "text": "रजिस्ट्रीकरण की तारीख/Date of Registration: {{registration_date}}",
                         "style": "details-body",
                         "width": "49%"
-                      },
+                      } 
+                    ]
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "stack": [ 
                       {
-                        "text": "जारी करने वाले प्राधिकारी के हस्ताक्षर/Signature of issuing authority:",
+                        "text": "जारी करने कि तारीख/Date of Issue: {{issueDate}}",
                         "style": "details-body"
                       }
                     ]
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                     "text":" ",
+                     "width": "40%"
+                  },
+                  {
+                    "text": "जारी करने वाले प्राधिकारी के हस्ताक्षर/Signature of issuing authority",
+                    "style": "details-body"
                   }
                 ]
               }
@@ -379,56 +399,13 @@
           ]
         },
         "layout": "noBorders"
-      },
+      }
+      
+    ],
+    "footer": [
       {
-        "style": "ws-head",
-        "table": {
-          "widths": ["*"],
-          "body": [
-            [
-              {
-                "text": "“नोट: “बच्चे के जन्म के समय माता पिता का पता” एवं “माता पिता का स्थायी पता” के कॉलमों से संबन्धित सूचनायेँ 01/01/2007 से पूर्व लागू नहीं थी।.”",
-                "width": 50,
-                "height": 61.25,
-                "style": "instruction-body"
-              }
-            ],
-            [
-              {
-                "text": "“Note: Information in respect of the columns 'Present address of parents at the time of birth of the child' and 'Permanent address of parents' were not applicable before 01/01/2007”",
-                "width": 50,
-                "height": 61.25,
-                "style": "instruction-body"
-              }
-            ]
-          ]
-        },
-        "layout": "noBorders"
-      },
-      {
-        "style": "ws-head",
-        "table": {
-          "widths": ["*"],
-          "body": [
-            [
-              {
-                "text": "“राजस्थान सरकार के आर्थिक एवं सांख्यिकी विभाग के परिपत्र क्रमांक एफ़ 13/1/39/वीएस/डीईएस/2013/22519 दिनांक 02.06.2015 के द्वारा जन्म एवं मृत्यु प्रमाण पत्र जारी करने हेतु डिजिटल हस्ताक्षर के उपयोग को मान्यता प्रदान की गयी है।”",
-                "width": 50,
-                "height": 61.25,
-                "style": "instruction-body"
-              }
-            ],
-            [
-              {
-                "text": "“Use of Digital Signature for issuing birth and death certificate is recognized by Economics and Statistics Department, Government of Rajasthan vide circular number F 13/1/39/VS/DES/2013/22519 Dated 02.06.2015”",
-                "width": 50,
-                "height": 61.25,
-                "style": "instruction-body"
-              }
-            ]
-          ]
-        },
-        "layout": "noBorders"
+        "text": "“राजस्थान सरकार के आर्थिक एवं सांख्यिकी विभाग के परिपत्र क्रमांक एफ़ 13/1/39/वीएस/डीईएस/2013/22519 दिनांक 02.06.2015 के द्वारा जन्म एवं मृत्यु प्रमाण पत्र जारी करने हेतु डिजिटल हस्ताक्षर के उपयोग को मान्यता प्रदान की गयी है।”\n“Use of Digital Signature for issuing birth and death certificate is recognized by Economics and Statistics Department, Government of Rajasthan vide circular number F 13/1/39/VS/DES/2013/22519 Dated 02.06.2015.”",
+        "style": "instruction-body" 
       }
     ],
     "styles": {
@@ -451,14 +428,15 @@
       "instruction-body": {
         "color": "#000000",
         "bold": false,
-        "fontSize": 7,
+        "fontSize": 8,
         "fontWeight": 400,
-        "alignment": "left"
+        "alignment": "left",
+        "margin": [5, -30, 0, 0]
       },
       "qr-code": {
         "color": "#000000",
         "alignment": "left",
-        "margin": [0, -10, 0, 0]
+        "margin": [0, -30, 0, 0]
       },
       "title-header": {
         "color": "#000000",
@@ -494,9 +472,9 @@
         "color": "#000000",
         "bold": false,
         "alignment": "center",
-        "fontSize": 10,
+        "fontSize": 11,
         "fontWeight": 400,
-        "margin": [0, -10, 0, 0]
+        "margin": [0, -5, 0, 0]
       },
       "rule-header_multiLang": {
         "color": "#000000",
