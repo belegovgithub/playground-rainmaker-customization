@@ -105,12 +105,12 @@
                                          
                                     },
                                     {
-                                        "text": "{{name}}",
+                                        "text": "{{name_applicant}}",
                                         "style": "receipt-value-down-rec"
                                          
                                     },
                                     {
-                                        "text": "{{houseNo}}, {{address}}",
+                                        "text": "{{correspondence_address_applicant}}",
                                         "style": "receipt-value-down-rec"
                                          
                                     },{
