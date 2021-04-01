@@ -53,15 +53,29 @@
                   "value": {
                     "path": "$.registrationno"
                   },
-                  "type":"setEmpty"
+                  "type":"dateOrEmpty"
                 },
                 {
                     "variable": "registration_date", 
                     "value": {
                       "path": "$.dateofreport"
                     },
-                    "type": "dateOrEmpty"
+                    "type": "setEmpty"
                   },
+                  {
+                    "variable": "age", 
+                    "value": {
+                      "path": "$.age"
+                    },
+                    "type": "setEmpty"
+                  },
+                  {
+                    "variable": "spouseName", 
+                    "value": {
+                      "path": "$.deathSpouseInfo.fullName"
+                    },
+                    "type": "setEmpty"
+                  },    
                 {
                   "variable": "fatherName", 
                   "value": {
@@ -119,9 +133,9 @@
                     "type":"setEmpty"
                   },
                   {
-                    "variable": "aadharno", 
+                    "variable": "spouceAadharNo", 
                     "value": {
-                      "path": "$.aadharno"
+                      "path": "$.deathSpouseInfo.aadharno"
                     },
                     "type":"setEmpty"
                   },
