@@ -203,7 +203,7 @@
               {
                 "columns": [
                   {
-                    "text": "{{name_label_multiLang}} / NAME OF DECEASED: {{name}}",
+                    "text": "मृतक का नाम / NAME OF DECEASED: {{name}}",
                     "width": "59%",
                     "style": "details-body"
                   },

@@ -39,6 +39,12 @@
                                 }
                             },
                             {
+                                "variable": "name_applicant",
+                                "value": {
+                                    "path": "$.connectionHolders[0].name"
+                                }
+                            },
+                            {
                                 "variable": "guardianName",
                                 "value": {
                                     "path": "$.property.owners[0].fatherOrHusbandName"
@@ -60,6 +66,12 @@
                                 "variable": "mobileNumber",
                                 "value": {
                                     "path": "$.property.owners[0].mobileNumber"
+                                }
+                            },
+                            {
+                                "variable": "correspondence_address_applicant",
+                                "value": {
+                                    "path": "$.connectionHolders[0].correspondenceAddress"
                                 }
                             },
                             {
