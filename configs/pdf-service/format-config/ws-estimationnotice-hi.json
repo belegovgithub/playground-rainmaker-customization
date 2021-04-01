@@ -241,7 +241,7 @@
                                                 
                                             },
                                             {
-                                                "text": "{{applStatement1}} {{houseNo}}, {{address}},{{logo_header}} {{cantt_board}} {{applStatement2}} {{name}}   {{applStatement3}} {{applStatement4}} {{finYear}},{{applStatement4_1}} {{houseNo}} {{address}} ,{{logo_header}} {{cantt_board}} {{applStatement5}} {{applStatement6}}",
+                                                "text": "{{applStatement1}} {{houseNo}}, {{address}},{{logo_header}} {{cantt_board}} {{applStatement2}} {{name_applicant}}   {{applStatement3}} {{applStatement4}} {{finYear}},{{applStatement4_1}} {{houseNo}} {{address}} ,{{logo_header}} {{cantt_board}} {{applStatement5}} {{applStatement6}}",
                                                 "style": "receipt-value-down"
                                             }
                                         ]
