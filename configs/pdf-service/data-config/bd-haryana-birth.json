@@ -121,7 +121,7 @@
                   {
                     "variable": "placeOfBirth", 
                     "value": {
-                      "path": "$.placeOfBirth"
+                      "path": "$.placeofbirth"
                     },
                     "type":"setEmpty"
                   },
@@ -140,13 +140,7 @@
                     "type": "date",
                     "format":"DD/MM/YYYY HH:mm:ss"
                   },
-                  {
-                    "variable": "placeOfBirth", 
-                    "value": {
-                      "path": "$.hospitalname"
-                    },
-                    "type":"setEmpty"
-                  },
+                 
                   {
                     "variable": "certificateType", 
                     "value": {

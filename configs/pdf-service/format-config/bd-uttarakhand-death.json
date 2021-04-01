@@ -300,7 +300,7 @@
               {
                 "columns": [
                   {
-                    "text": "{{mother_aadhar_label_multiLang}} / MOTHER'S AADHAR NO: {{motherUid}}",
+                    "text": "{{mother_aadhar_label_multiLang}} / MOTHER'S AADHAAR NO: {{motherUid}}",
                     "width": "59%",
                     "style": "details-body"
                   },
@@ -309,7 +309,7 @@
                     "width": "1%"
                   },
                   {
-                    "text": "{{father_aadhar_label_multiLang}} / FATHER'S AADHAR NO: {{fatherUid}}",
+                    "text": "{{father_aadhar_label_multiLang}} / FATHER'S AADHAAR NO: {{fatherUid}}",
                     "style": "details-body"
                   }
                 ]
@@ -404,10 +404,6 @@
               {
                 "stack": [
                   {
-                    "text": "UPDATED ON :{{issueDate}}",
-                    "style": "details-body"
-                  },
-                  {
                     "image": "{{qr_code_image}}",
                     "width": 70,
                     "height": 70,
@@ -423,7 +419,7 @@
     ],
     "footer": [
       {
-        "text": "THIS IS A COMPUTER GENERATED CERTIFICATE WHICH CONTAINS FACSIMILE SIGNATURE OF THE ISSUING AUTHORITY\nTHE GOVT. OF INDIA VIDE CIRCULAR NO. 1/12/2014-VS(CRS) DATED 27-JULY-2015  HAS APPROVED THIS CERTIFICATE AS A VALID LEGAL DOCUMENT FOR ALL OFFICIAL PURPOSES\nप्रत्येक जन्म आणि मृत्यूची घटना नोंदल्याची खात्री करा / ENSURE REGISTRATION OF EVERY BIRTH AND DEATH",
+        "text": "THIS IS A COMPUTER GENERATED CERTIFICATE WHICH CONTAINS FACSIMILE SIGNATURE OF THE ISSUING AUTHORITY\nTHE GOVT. OF INDIA VIDE CIRCULAR NO. 1/12/2014-VS(CRS) DATED 27-JULY-2015  HAS APPROVED THIS CERTIFICATE AS A VALID LEGAL DOCUMENT FOR ALL OFFICIAL PURPOSES\nप्रत्येक जन्म एवं मृत्यु का पंजीकरण सुनिश्चित करे / ENSURE REGISTRATION OF EVERY BIRTH AND DEATH",
         "style": "instruction-body" 
       }
     ],

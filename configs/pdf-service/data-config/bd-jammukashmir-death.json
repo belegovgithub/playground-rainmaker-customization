@@ -45,7 +45,7 @@
                   "value": {
                     "path": "$.dateofdeath"
                   },
-                   "type": "date"
+                   "type": "dateOrEmpty"
                 },     
                 
                 {
@@ -74,7 +74,7 @@
                     "value": {
                       "path": "$.dateofreport"
                     },
-                    "type": "date"
+                    "type": "dateOrEmpty"
                   },
                 {
                   "variable": "fatherName", 
@@ -128,7 +128,7 @@
                   {
                     "variable": "placeOfBirth", 
                     "value": {
-                      "path": "$.placeOfBirth"
+                      "path": "$.placeofbirth"
                     },
                     "type":"setEmpty"
                   },
@@ -139,13 +139,7 @@
                     },
                     "type": "dateOrEmpty"
                   },
-                  {
-                    "variable": "placeOfBirth", 
-                    "value": {
-                      "path": "$.hospitalname"
-                    },
-                    "type":"setEmpty"
-                  },
+                 
                   {
                     "variable": "certificateType", 
                     "value": {

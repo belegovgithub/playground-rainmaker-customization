@@ -127,7 +127,7 @@
                   {
                     "variable": "placeOfBirth", 
                     "value": {
-                      "path": "$.placeOfBirth"
+                      "path": "$.placeofbirth"
                     },
                     "type":"setEmpty"
                   },
@@ -138,13 +138,7 @@
                     },
                     "type": "dateOrEmpty"
                   },
-                  {
-                    "variable": "placeOfBirth", 
-                    "value": {
-                      "path": "$.hospitalname"
-                    },
-                    "type":"setEmpty"
-                  },
+                
                   {
                     "variable": "cantonment-board",
                     "value": {

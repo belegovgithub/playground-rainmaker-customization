@@ -121,7 +121,7 @@
                   {
                     "variable": "placeOfDeath", 
                     "value": {
-                      "path": "$.placeOfDeath"
+                      "path": "$.placeofdeath"
                     },
                     "type":"setEmpty"
                   },
@@ -139,13 +139,7 @@
                     },
                     "type": "dateOrEmpty"
                   },
-                  {
-                    "variable": "placeOfBirth", 
-                    "value": {
-                      "path": "$.hospitalname"
-                    },
-                    "type":"setEmpty"
-                  },
+               
                   {
                     "variable": "age", 
                     "value": {

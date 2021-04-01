@@ -162,7 +162,7 @@
               {
                 "variable": "placeOfBirth",
                 "value": {
-                  "path": "$.placeOfBirth"
+                  "path": "$.placeofbirth"
                 },
                 "type":"setEmpty"
               },

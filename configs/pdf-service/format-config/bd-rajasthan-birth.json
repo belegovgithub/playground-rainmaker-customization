@@ -65,11 +65,11 @@
                     "style": "appendix-header-body"
                   },
                   {
-                    "text": "रजिस्ट्रार – {{cb_label_name_multiLang}} {{cb-name-multilang}}",
+                    "text": "रजिस्ट्रार – {{cb_label_name_multiLang}},{{cb-name-multilang}},{{cb-name-multilang}}",
                     "style": "appendix-header-body"
                   },
                   {
-                    "text": "Registrar – CANTONMENT BOARD {{cb-name}}",
+                    "text": "Registrar – CHAVNI PARISHAD,{{cb-name}},{{cb-name}}",
                     "style": "appendix-header-body"
                   }
                 ]
@@ -127,7 +127,7 @@
               {
                 "columns": [
                   {
-                    "text": "(जन्म और मृत्यु रजिस्ट्रीकरण अधिनियम, 1969 की धारा 12/17 और राजस्थान जन्म और मृत्यु रजिस्ट्रीकरण अधिनियम, 2000 के नियम 8/13 के अधीन जारी किया गया)",
+                    "text": "(जन्म और मृत्यु रजिस्ट्रीकरण अधिनियम, 1969 की धारा 12/17 और राजस्थान जन्म और मृत्यु रजिस्ट्रीकरण नियम, 2000 के नियम 8/13 के अधीन जारी किया गया)",
                     "style": "rule-header_multiLang"
                   }
                 ]
@@ -180,10 +180,10 @@
                     "text": [
                       "यह प्रमाणित किया जाता है कि निम्नलिखित सूचना जन्म के मूल अभिलेख से ली गयी है जो कि (स्थानीय क्षेत्र / स्थानीय निकाय) ",
                       {
-                        "text": "छावनी परिषद {{cb-name-multilang}}",
+                        "text": "छावनी परिषद, {{cb-name-multilang}} ",
                         "bold": true
                       },
-                      "तहसील {{block-name-multilang}} जिला {{dist-name-multilang}} राज्य /संघ प्रदेश राजस्थान, भारत के रजिस्टर  में उल्लिखित है ।"
+                      "तहसील/खण्ड {{block-name-multilang}} जिला {{dist-name-multilang}} राज्य/संघ राज्य राजस्थान, भारत का रजिस्टर है।"
                     ],
                     "style": "rule-body_multiLang"
                   }
@@ -197,17 +197,17 @@
                     "text": [
                       "This is to certify that the following information has been taken from the original record of birth which is the register for (Local area / Local body) ",
                       {
-                        "text": "CHAVNI PARISHAD {{cb-name}}",
+                        "text": "CHAVNI PARISHAD, {{cb-name}} ",
                         "bold": true
                       },
-                      "of Tehsil / Block {{block-name}} of District ",
+                      "of Tehsil/Block {{block-name}} of District ",
                       {
                         "text": "{{dist-name}}",
                         "bold": true
                       },
                       " of State / Union Territory",
                       {
-                        "text": "Rajasthan, India",
+                        "text": " Rajasthan, India",
                         "bold": true
                       }
                     ],
@@ -273,7 +273,7 @@
                         "style": "details-body"
                       },
                       {
-                        "text": "आधार नंबर / MOTHER’S AADHAAR NO : {{motherUid}}",
+                        "text": "माता का आधार नंबर / MOTHER’S AADHAAR NO : {{motherUid}}",
                         "style": "details-body"
                       },
                       {
@@ -281,7 +281,7 @@
                         "style": "details-body"
                       },
                       {
-                        "text": "आधार नंबर / FATHER’S AADHAAR NO : {{fatherUid}}",
+                        "text": "पिता का आधार नंबर / FATHER’S AADHAAR NO : {{fatherUid}}",
                         "style": "details-body"
                       }
                     ]
@@ -314,7 +314,7 @@
                   {
                     "stack": [
                       {
-                        "text": "पंजीकरण संख्या / REGISTRATION NUMBER: {{registrationNo}}",
+                        "text": "रजिस्ट्रीकरण संख्या/REGISTRATION NUMBER: {{registrationNo}}",
                         "style": "details-body"
                       },
                       {
@@ -322,7 +322,7 @@
                         "style": "details-body"
                       },
                       {
-                        "text": "जारी करने की तिथि/ DATE OF ISSUE: {{issueDate}}",
+                        "text": "जारी करने कि तारीख/ DATE OF ISSUE: {{issueDate}}",
                         "style": "details-body"
                       }
                     ]
@@ -334,7 +334,7 @@
                   {
                     "stack": [
                       {
-                        "text": "पंजीकरण तारीख/ DATE OF REGISTRATION: {{registration_date}}",
+                        "text": "रजिस्ट्रीकरण की तारीख/ DATE OF REGISTRATION: {{registration_date}}",
                         "style": "details-body",
                         "width": "49%"
                       },
