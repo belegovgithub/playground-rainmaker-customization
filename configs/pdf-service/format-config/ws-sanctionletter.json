@@ -144,7 +144,7 @@
                                                             
                                                         },
                                                         {
-                                                            "text": "{{statement_1}} {{water_conn}} {{to_smt}} {{name}} {{statement_2}} {{doorNo}} {{locality}},{{logo_header}} {{cantt_board}}",
+                                                            "text": "{{statement_1}} {{water_conn}} {{to_smt}} {{name_applicant}} {{statement_2}} {{doorNo}} {{locality}},{{logo_header}} {{cantt_board}}",
                                                             "width": "90%",
                                                             "bold": true
                                                              

@@ -144,7 +144,7 @@
                                                             
                                                         },
                                                         {
-                                                            "text": "{{name}} {{statement_1}} {{logo_header}} {{cantt_board}} {{statement_2}} {{doorNo}} {{locality}},{{statement_2_1}}",
+                                                            "text": "{{name_applicant}} {{statement_1}} {{logo_header}} {{cantt_board}} {{statement_2}} {{doorNo}} {{locality}},{{statement_2_1}}",
                                                             "width": "90%",
                                                             "bold": true
                                                              
