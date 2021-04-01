@@ -218,6 +218,25 @@
                 ]
               }
             ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": "आधार  नंबर / AADHAAR NO: {{deceasedAadharno}}",
+                    "width": "59%",
+                    "style": "details-body"
+                  },
+                  {
+                    "text": " ",
+                    "width": "1%"
+                  },
+                  {
+                    "text": " ",
+                    "style": "details-body"
+                  }
+                ]
+              }
+            ],
 
             [
               {
@@ -242,7 +261,7 @@
               {
                 "columns": [
                   {
-                    "text": "मृतक की उम्र /AGE OF DECEASED : {{age}}",
+                    "text": "मृतक की उम्र /AGE OF DECEASED : {{age}} Years",
                     "width": "59%",
                     "style": "details-body"
                   },
@@ -319,7 +338,7 @@
               {
                 "columns": [
                   {
-                    "text": "{{death_address_label_multiLang}} / ADDRESS OF DECEASED AT THE TIME OF DEATH: {{childAddress}}",
+                    "text": "{{death_address_label_multiLang}} / ADDRESS OF THE DECEASED AT THE TIME OF DEATH: {{childAddress}}",
                     "width": "59%",
                     "style": "details-body"
                   },

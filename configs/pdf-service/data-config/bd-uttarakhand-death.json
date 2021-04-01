@@ -128,7 +128,22 @@
                   {
                     "variable": "placeOfDeath", 
                     "value": {
-                      "path": "$.placeOfDeath"
+                      "path": "$.placeofdeath"
+                    },
+                    "type":"setEmpty"
+                  },
+                  {
+                    "variable": "dod", 
+                    "value": {
+                      "path": "$.dateofdeath"
+                    },
+                    "type": "dateToWord"
+                  },
+                 
+                  {
+                    "variable": "deceasedAadharno", 
+                    "value": {
+                      "path": "$.aadharno"
                     },
                     "type":"setEmpty"
                   },
