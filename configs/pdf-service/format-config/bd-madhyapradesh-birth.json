@@ -349,25 +349,44 @@
                     {
                       "text": "{{issuing_authority_label_multiLang}} / {{issuing_authority_label}}",
                       "style": "details-body"
-                    },
-                    {
-                      "text": "रजिस्ट्रार (जन्म एवं मृत्यु)",
-                      "style": "details-body"  
-                    },
-                    {
-                      "text": "REGISTRAR (BIRTH & DEATH)",
-                      "style": "details-body"
-                      
-                    },
-                    {
-                      "text": "{{cb_label_name_multiLang}} {{cb-name-multilang}} कैन्ट",
-                      "style": "details-body"
-                    },
-                    {
-                      "text": "CANTONMENT BOARD {{cb-name}} CANTT",
-                      "style": "details-body"
-                    }
+                    } 
                   ]
+                } 
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": " ",
+                    "width": "59%",
+                    "style": "details-body"
+                  },
+                  {
+                    "text": " ",
+                    "width": "1%"
+                  },
+                  {
+                    "stack":[
+                      {
+                        "text": "रजिस्ट्रार (जन्म एवं मृत्यु)",
+                        "style": "details-body"  
+                      },
+                      {
+                        "text": "REGISTRAR (BIRTH & DEATH)",
+                        "style": "details-body"
+                        
+                      },
+                      {
+                        "text": "{{cb_label_name_multiLang}} {{cb-name-multilang}} कैन्ट",
+                        "style": "details-body"
+                      },
+                      {
+                        "text": "CANTONMENT BOARD {{cb-name}} CANTT",
+                        "style": "details-body"
+                      }
+                  ],"alignment":"center"
                 } 
                 ]
               }
