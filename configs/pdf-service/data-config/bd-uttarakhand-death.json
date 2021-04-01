@@ -60,7 +60,7 @@
                     "value": {
                       "path": "$.dateofreport"
                     },
-                    "type": "setEmpty"
+                    "type": "dateOrEmpty"
                   },
                   {
                     "variable": "age", 
