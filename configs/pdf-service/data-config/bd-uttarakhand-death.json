@@ -146,13 +146,7 @@
                     },
                     "type": "dateOrEmpty"
                   },
-                  {
-                    "variable": "placeOfBirth", 
-                    "value": {
-                      "path": "$.hospitalname"
-                    },
-                    "type":"setEmpty"
-                  },
+                  
                   {
                     "variable": "embeddedUrl", 
                     "value": {

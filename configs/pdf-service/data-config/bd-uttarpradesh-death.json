@@ -139,13 +139,7 @@
                     },
                     "type": "dateOrEmpty"
                   },
-                  {
-                    "variable": "placeOfBirth", 
-                    "value": {
-                      "path": "$.hospitalname"
-                    },
-                    "type":"setEmpty"
-                  },
+               
                   {
                     "variable": "age", 
                     "value": {
