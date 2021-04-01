@@ -35,11 +35,11 @@
                   "type":"setEmpty"
                 },
                 {
-                  "variable": "dob", 
+                  "variable": "dod", 
                   "value": {
                     "path": "$.dateofdeath"
                   },
-                  "type": "dateOrEmpty"
+                  "type": "dateToWord"
                 },
                 {
                   "variable": "gender", 
