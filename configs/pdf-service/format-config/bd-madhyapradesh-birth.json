@@ -383,18 +383,6 @@
           "body": [
             [
               {
-                "columns": [
-                  {
-                    "text": "UPDATED ON :{{issueDate}}",
-                    "width": "45%",
-                    "style": "details-body",
-                    "margin": [0, 0, 0, 0]
-                  }
-                ]
-              }
-            ],
-            [
-              {
                 "image": "{{qr_code_image}}",
                 "width": 70,
                 "height": 70,

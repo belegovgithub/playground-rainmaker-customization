@@ -394,10 +394,7 @@
             [
               {
                 "stack":[
-                  {
-                    "text": "UPDATED ON : {{updatedOn}}",
-                    "style": "details-body"  
-                  },
+                   
                   {
                     "image": "{{qr_code_image}}",
                     "width": 70,

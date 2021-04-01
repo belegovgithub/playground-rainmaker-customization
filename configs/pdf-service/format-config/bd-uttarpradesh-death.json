@@ -379,12 +379,7 @@
                         "text": "{{issue_date_label_multiLang}} / {{issue_date_label}}: {{issueDate}}",
                          
                         "style": "details-body"
-                      },
-                      {
-                        "text": "UPDATED ON : {{issueDate}}",
-                       
-                        "style": "details-body"
-                      }
+                      } 
                     ],
                     "width": "59%"
                   },
