@@ -145,7 +145,7 @@
                                                         
                                                     },
                                                     {
-                                                        "text": "{{address}},{{logo_header}} {{cantt_board}} {{grant_stmt_hi}} {{name}} {{grant_stmt2_hi}}",
+                                                        "text": "{{address}},{{logo_header}} {{cantt_board}} {{grant_stmt_hi}} {{name_applicant}} {{grant_stmt2_hi}}",
                                                         "width": "90%",
                                                         "bold": true,
                                                         "fontSize": 12
