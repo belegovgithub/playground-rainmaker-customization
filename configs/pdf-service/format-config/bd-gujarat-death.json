@@ -70,14 +70,14 @@
                 "stack": [
                   {
                     "text": "ફોર્મ-૬ FORM-6",
-                    "style": "appendix-header-formNo",
-                    "margin": [0, 0, 0, 20]
+                    "style": "appendix-header-formNo"
+                    
                   },
                   {
                     "image": "{{form5}}",
                     "width": 65,
                     "height": 60.25,
-                    "margin": [10, -20, 0, 10]
+                    "margin": [10, 0, 0, 0]
                     
                   }
                 ]
