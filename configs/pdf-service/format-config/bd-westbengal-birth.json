@@ -78,6 +78,16 @@
                   }
                 ]
               }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": "Cantonment Board, Barrackpore",
+                    "style": "rule-header"
+                  }
+                ]
+              }
             ]
           ]
         },
