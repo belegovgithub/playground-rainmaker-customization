@@ -222,17 +222,6 @@
               {
                 "columns": [
                   {
-                    "text": "आधार  नंबर  / AADHAAR NO: {{aadharNo}}",
-                    "width": "59%",
-                    "style": "details-body"
-                  }
-                ]
-              }
-            ],
-            [
-              {
-                "columns": [
-                  {
                     "text": "{{dob_label_multiLang}} / {{dob_label}}: {{dob}}",
                     "width": "59%",
                     "style": "details-body"

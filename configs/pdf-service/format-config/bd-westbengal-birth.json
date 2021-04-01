@@ -252,25 +252,7 @@
                     "text": "{{gender}}",
                     "width": "30%",
                     "style": "details-body"
-                  },
-                  {
-                    "stack": [
-                      {
-                        "text": "Nationality",
-                        "alignment": "left"
-                      },
-                      {
-                        "text": "(জাতি)",
-                        "alignment": "left"
-                      }
-                    ],
-                    "width": "20%"
-                  },
-                  {
-                    "text": "{{nationality}}",
-                    "width": "30%",
-                    "style": "details-body"
-                  }
+                  } 
                 ]
               }
             ],
