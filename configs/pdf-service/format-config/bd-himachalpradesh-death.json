@@ -184,7 +184,7 @@
               {
                 "columns": [
                   {
-                    "text": "THIS IS TO CERTIFY THAT THE FOLLOWING INFORMATION HAS BEEN TAKEN FROM THE ORIGINAL RECORD OF BIRTH WHICH IS THE REGISTER FOR CANTONMENT BOARD {{cb-name}} OF THESIL/BLOCK {{block-name}} OF DISTRICT {{dist-name}} OF STATE/UNION TERRITORY HIMACHAL PRADESH, INDIA.",
+                    "text": "THIS IS TO CERTIFY THAT THE FOLLOWING INFORMATION HAS BEEN TAKEN FROM THE ORIGINAL RECORD OF BIRTH WHICH IS THE REGISTER FOR CANTONMENT BOARD {{cb-name}} OF TEHSIL/BLOCK {{block-name}} OF DISTRICT {{dist-name}} OF STATE/UNION TERRITORY HIMACHAL PRADESH, INDIA.",
                     "style": "rule-body"
                   }
                 ]
