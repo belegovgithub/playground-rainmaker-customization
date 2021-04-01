@@ -45,8 +45,16 @@
                   "value": {
                     "path": "$.dateofdeath"
                   },
-                   "type": "dateOrEmpty"
+                   "type": "date"
                 },     
+                
+                {
+                  "variable": "placeOfDeath", 
+                  "value": {
+                    "path": "$.placeofdeath"
+                  },
+                   "type": "setEmpty"
+                },
                 {
                   "variable": "gender", 
                   "value": {
@@ -66,33 +74,33 @@
                     "value": {
                       "path": "$.dateofreport"
                     },
-                    "type": "dateOrEmpty"
+                    "type": "date"
                   },
                 {
                   "variable": "fatherName", 
                   "value": {
-                    "path": "$.birthFatherInfo.fullName"
+                    "path": "$.deathFatherInfo.fullName"
                   },
                   "type":"setEmpty"
                 },
                 {
                   "variable": "motherName", 
                   "value": {
-                    "path": "$.birthMotherInfo.fullName"
+                    "path": "$.deathMotherInfo.fullName"
                   },
                   "type":"setEmpty"
                 },
                 {
-                  "variable": "childAddress", 
+                  "variable": "permanentAddress", 
                   "value": {
-                    "path": "$.birthPermaddr.fullAddress"
+                    "path": "$.deathPermaddr.fullAddress"
                   },
                   "type":"setEmpty"
                 },
                 {
-                  "variable": "parentsAddress", 
+                  "variable": "presentAddress", 
                   "value": {
-                    "path": "$.birthPresentaddr.fullAddress"
+                    "path": "$.deathPresentaddr.fullAddress"
                   },
                   "type":"setEmpty"
                 },
