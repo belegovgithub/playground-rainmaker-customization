@@ -179,7 +179,7 @@
                     "width": "1%"
                   },
                   {
-                    "text": "ਰੇਜਿਸਟ੍ਰੇਸ਼ਨ ਦੀ ਮਿਤੀ/ Date of Registration : {{registration-date}}",
+                    "text": "ਰੇਜਿਸਟ੍ਰੇਸ਼ਨ ਦੀ ਮਿਤੀ/ Date of Registration : {{registration_date}}",
                     "style": "details-body"
                   }
                 ]
