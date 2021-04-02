@@ -273,7 +273,7 @@
                         "style": "details-body"
                       },
                       {
-                        "text": "माता का आधार नंबर / Mother's Aadhar No: {{motherUid}}",
+                        "text": "माता का आधार नंबर / Mother's Aadhaar No: {{motherUid}}",
                         "style": "details-body"
                       },
                       {
@@ -281,7 +281,7 @@
                         "style": "details-body"
                       },
                       {
-                        "text": "पिता का आधार नंबर /Father's Aadhar No: {{fatherUid}}",
+                        "text": "पिता का आधार नंबर /Father's Aadhaar No: {{fatherUid}}",
                         "style": "details-body"
                       }
                     ]

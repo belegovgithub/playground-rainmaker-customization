@@ -222,7 +222,7 @@
               {
                 "columns": [
                   {
-                    "text": "{{aadhar_label_multiLang}} / AADHAR NUMBER: {{aadharno}}",
+                    "text": "{{aadhar_label_multiLang}} / AADHAAR NUMBER: {{aadharno}}",
                     "width": "59%",
                     "style": "details-body"
                   },

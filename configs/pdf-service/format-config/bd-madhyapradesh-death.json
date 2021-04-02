@@ -310,7 +310,7 @@
               {
                 "columns": [
                   {
-                    "text": "आधार नंबर / MOTHER'S AADHAR NO: {{motherUid}}",
+                    "text": "आधार नंबर / MOTHER'S AADHAAR NO: {{motherUid}}",
                     "width": "59%",
                     "style": "details-body"
                   },
@@ -319,7 +319,7 @@
                     "width": "1%"
                   },
                   {
-                    "text": "आधार नंबर / FATHER'S AADHAR NO: {{fatherUid}}",
+                    "text": "आधार नंबर / FATHER'S AADHAAR NO: {{fatherUid}}",
                     "style": "details-body"
                   }
                 ]
