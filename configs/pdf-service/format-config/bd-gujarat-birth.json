@@ -257,7 +257,7 @@
                     "width": "1%"
                   },
                   {
-                    "text": "પ્રમાણપત્ર નંબર/Certificate No : {{registrationNo}}",
+                    "text": "પ્રમાણપત્ર નંબર/Certificate No : ",
                     "style": "details-body"
                   }
                 ]
