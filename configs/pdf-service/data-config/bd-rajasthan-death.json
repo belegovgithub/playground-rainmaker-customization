@@ -63,6 +63,13 @@
                   "type":"setEmpty"
                 },
                 {
+                  "variable": "aadharNo", 
+                  "value": {
+                    "path": "$.aadharno"
+                  },
+                  "type":"setEmpty"
+                },
+                {
                   "variable": "placeOfDeath", 
                   "value": {
                     "path": "$.placeofdeath"
