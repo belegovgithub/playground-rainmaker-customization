@@ -618,15 +618,8 @@
                   "chartType": "metric",
                   "filter": "",
                   "headers": []
-                },
-                {
-                  "id": "totalApplicationInitiated",
-                  "name": "DSS_TOTAL_APPLICATION_INCL_INIT",
-                  "code": "",
-                  "chartType": "metric",
-                  "filter": "",
-                  "headers": []
                 }
+                
               ]
             },
             {
@@ -1838,6 +1831,355 @@
       
       ]
     },
+    {
+      "name": "DSS_BIRTH",
+      "id": "citizen-home-birth",
+      "isActive": "",
+      "style": "linear",
+      "visualizations": [
+        
+      {
+          "row": 9,
+          "name": "DSS_SERVICE",
+          "vizArray": [
+            {
+              "id": 431,
+              "name": "DSS_CERT_DOWNLOAD_BY_TENANT",
+              "dimensions": {
+                "height": 350,
+                "width": 12
+              },
+              "vizType": "chart",
+              "label": "",
+              "noUnit": false,
+              "isCollapsible": true,
+              "charts": [
+                {
+                  "id": "xBirthDownloadStatusByTenant",
+                  "name": "DSS_CERT_DOWNLOAD_BY_TENANT",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "Boundary"
+                }
+              ]
+            }
+          ]
+        }
+      
+      ]
+    },
+    {
+      "name": "DSS_DEATH",
+      "id": "citizen-home-death",
+      "isActive": "",
+      "style": "linear",
+      "visualizations": [
+        
+      {
+          "row": 9,
+          "name": "DSS_SERVICE",
+          "vizArray": [
+            {
+              "id": 431,
+              "name": "DSS_CERT_DOWNLOAD_BY_TENANT",
+              "dimensions": {
+                "height": 350,
+                "width": 12
+              },
+              "vizType": "chart",
+              "label": "",
+              "noUnit": false,
+              "isCollapsible": true,
+              "charts": [
+                {
+                  "id": "xDeathDownloadStatusByTenant",
+                  "name": "DSS_CERT_DOWNLOAD_BY_TENANT",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "Boundary"
+                }
+              ]
+            }
+          ]
+        }
+      
+      ]
+    },
+    {
+      "name": "DSS_BIRTH",
+      "id": "birth",
+      "isActive": "",
+      "style": "linear",
+      "visualizations": [
+        
+      {
+          "row": 9,
+          "name": "DSS_SERVICE",
+          "vizArray": [
+            {
+              "id": 431,
+              "name": "DSS_CERT_DOWNLOAD_BY_TENANT",
+              "dimensions": {
+                "height": 350,
+                "width": 12
+              },
+              "vizType": "chart",
+              "label": "",
+              "noUnit": false,
+              "isCollapsible": true,
+              "charts": [
+                {
+                  "id": "xBirthDownloadStatusByTenant",
+                  "name": "DSS_CERT_DOWNLOAD_BY_TENANT",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "Boundary"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_REVENUE",
+          "vizArray": [
+          {
+              "id": 431,
+              "name": "DSS_CERT_COLLECTION_BY_TENANT",
+              "dimensions": {
+                "height": 350,
+                "width": 12
+              },
+              "vizType": "chart",
+              "label": "",
+              "noUnit": false,
+              "isCollapsible": true,
+              "charts": [
+                {
+                  "id": "xBirthCollectionByTenant",
+                  "name": "DSS_CERT_COLLECTION_BY_TENANT",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "Boundary"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DSS_DEATH",
+      "id": "death",
+      "isActive": "",
+      "style": "linear",
+      "visualizations": [
+        
+      {
+          "row": 9,
+          "name": "DSS_SERVICE",
+          "vizArray": [
+            {
+              "id": 431,
+              "name": "DSS_CERT_DOWNLOAD_BY_TENANT",
+              "dimensions": {
+                "height": 350,
+                "width": 12
+              },
+              "vizType": "chart",
+              "label": "",
+              "noUnit": false,
+              "isCollapsible": true,
+              "charts": [
+                {
+                  "id": "xDeathDownloadStatusByTenant",
+                  "name": "DSS_CERT_DOWNLOAD_BY_TENANT",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "Boundary"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_REVENUE",
+          "vizArray": [
+          {
+              "id": 431,
+              "name": "DSS_CERT_COLLECTION_BY_TENANT",
+              "dimensions": {
+                "height": 350,
+                "width": 12
+              },
+              "vizType": "chart",
+              "label": "",
+              "noUnit": false,
+              "isCollapsible": true,
+              "charts": [
+                {
+                  "id": "xDeathCollectionByTenant",
+                  "name": "DSS_CERT_COLLECTION_BY_TENANT",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "Boundary"
+                }
+              ]
+            }
+          ]
+        }
+      
+      ]
+    },
+    {
+      "name": "DSS_BIRTH",
+      "id": "ulb-birth",
+      "isActive": "",
+      "style": "linear",
+      "visualizations": [
+        
+      {
+          "row": 9,
+          "name": "DSS_SERVICE",
+          "vizArray": [
+            {
+              "id": 431,
+              "name": "DSS_CERT_DOWNLOAD_BY_TENANT",
+              "dimensions": {
+                "height": 350,
+                "width": 12
+              },
+              "vizType": "chart",
+              "label": "",
+              "noUnit": false,
+              "isCollapsible": true,
+              "charts": [
+                {
+                  "id": "xBirthDownloadStatusByTenant",
+                  "name": "DSS_CERT_DOWNLOAD_BY_TENANT",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "Boundary"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_REVENUE",
+          "vizArray": [
+          {
+              "id": 431,
+              "name": "DSS_CERT_COLLECTION_BY_TENANT",
+              "dimensions": {
+                "height": 350,
+                "width": 12
+              },
+              "vizType": "chart",
+              "label": "",
+              "noUnit": false,
+              "isCollapsible": true,
+              "charts": [
+                {
+                  "id": "xBirthCollectionByTenant",
+                  "name": "DSS_CERT_COLLECTION_BY_TENANT",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "Boundary"
+                }
+              ]
+            }
+          ]
+        }
+      
+      ]
+    },
+    {
+      "name": "DSS_DEATH",
+      "id": "ulb-death",
+      "isActive": "",
+      "style": "linear",
+      "visualizations": [
+        
+      {
+          "row": 9,
+          "name": "DSS_SERVICE",
+          "vizArray": [
+            {
+              "id": 431,
+              "name": "DSS_CERT_DOWNLOAD_BY_TENANT",
+              "dimensions": {
+                "height": 350,
+                "width": 12
+              },
+              "vizType": "chart",
+              "label": "",
+              "noUnit": false,
+              "isCollapsible": true,
+              "charts": [
+                {
+                  "id": "xDeathDownloadStatusByTenant",
+                  "name": "DSS_CERT_DOWNLOAD_BY_TENANT",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "Boundary"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_REVENUE",
+          "vizArray": [
+          {
+              "id": 431,
+              "name": "DSS_CERT_COLLECTION_BY_TENANT",
+              "dimensions": {
+                "height": 350,
+                "width": 12
+              },
+              "vizType": "chart",
+              "label": "",
+              "noUnit": false,
+              "isCollapsible": true,
+              "charts": [
+                {
+                  "id": "xDeathCollectionByTenant",
+                  "name": "DSS_CERT_COLLECTION_BY_TENANT",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "Boundary"
+                }
+              ]
+            }
+          ]
+        }
+      
+      ]
+    },
 
 {
       "name": "DSS_M_COLLECT_DASHBOARD",
@@ -2952,6 +3294,50 @@
                   "headers": []
                 }
               ]
+            },
+            {
+              "id": 150,
+              "name": "DSS_BIRTH",
+              "vizType": "module",
+              "moduleLevel": "BIRTH",
+              "ref": {
+                "url": "birth",
+                "logoUrl": "",
+                "type": "internal"
+              },
+              "label": "",
+              "charts": [
+                {
+                  "id": "totalApplication",
+                  "name": "DSS_TOTAL_CERT_DOWNLOAD",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 150,
+              "name": "DSS_DEATH",
+              "vizType": "module",
+              "moduleLevel": "DEATH",
+              "ref": {
+                "url": "death",
+                "logoUrl": "",
+                "type": "internal"
+              },
+              "label": "",
+              "charts": [
+                {
+                  "id": "totalApplication",
+                  "name": "DSS_TOTAL_CERT_DOWNLOAD",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
             }
           ]
         },
@@ -3312,6 +3698,50 @@
                 {
                   "id": "averageProcessingTime",
                   "name": "DSS_AVG_PROCESSING_TIME_LAMS",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 150,
+              "name": "DSS_BIRTH",
+              "vizType": "module",
+              "moduleLevel": "BIRTH",
+              "ref": {
+                "url": "citizen-home-birth",
+                "logoUrl": "",
+                "type": "internal"
+              },
+              "label": "",
+              "charts": [
+                {
+                  "id": "totalApplication",
+                  "name": "DSS_TOTAL_CERT_DOWNLOAD",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 150,
+              "name": "DSS_DEATH",
+              "vizType": "module",
+              "moduleLevel": "DEATH",
+              "ref": {
+                "url": "citizen-home-death",
+                "logoUrl": "",
+                "type": "internal"
+              },
+              "label": "",
+              "charts": [
+                {
+                  "id": "totalApplication",
+                  "name": "DSS_TOTAL_CERT_DOWNLOAD",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
@@ -5408,7 +5838,51 @@
                   "headers": []
                 }
               ]
-            }       
+            },
+            {
+              "id": 150,
+              "name": "DSS_BIRTH",
+              "vizType": "module",
+              "moduleLevel": "BIRTH",
+              "ref": {
+                "url": "ulb-birth",
+                "logoUrl": "",
+                "type": "internal"
+              },
+              "label": "",
+              "charts": [
+                {
+                  "id": "totalApplication",
+                  "name": "DSS_TOTAL_CERT_DOWNLOAD",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 150,
+              "name": "DSS_DEATH",
+              "vizType": "module",
+              "moduleLevel": "DEATH",
+              "ref": {
+                "url": "ulb-death",
+                "logoUrl": "",
+                "type": "internal"
+              },
+              "label": "",
+              "charts": [
+                {
+                  "id": "totalApplication",
+                  "name": "DSS_TOTAL_CERT_DOWNLOAD",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }      
           ]
         },
         {
