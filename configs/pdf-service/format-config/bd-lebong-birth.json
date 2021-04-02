@@ -214,7 +214,7 @@
               {
                 "columns": [
                   {
-                    "text": "Date of Birth/{{dob_label_multiLang}}: {{dob}}",
+                    "text": "Date of Birth/(जन्म तारीख): {{dob}}",
                     "width": "45%",
                     "style": "details-body"
                   }
@@ -225,7 +225,7 @@
               {
                 "columns": [
                   {
-                    "text": "Place of Birth/(जुन स्थान मा जन्म भएको छ): {{placeOfBirth}}",
+                    "text": "Place of Birth/(जन्म स्थान): {{placeOfBirth}}",
                     "style": "details-body"
                   }
                 ]
