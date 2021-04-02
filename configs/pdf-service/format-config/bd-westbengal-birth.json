@@ -84,7 +84,8 @@
                 "columns": [
                   {
                     "text": "Cantonment Board, Barrackpore",
-                    "style": "rule-header"
+                    "style": "rule-header",
+                    "margin": [0, -20, 0, 0]
                   }
                 ]
               }
@@ -101,8 +102,8 @@
             [
               {
                 "image": "{{govtImage}}",
-                "width": 150,
-                "height": 120,
+                "width": 100,
+                "height": 90,
                 "style": "appendix-header-emblem"
               }
             ]
@@ -499,7 +500,7 @@
       "appendix-header-emblem": {
         "color": "#000000",
         "alignment": "center",
-        "margin": [0, -20, 0, 0]
+        "margin": [0,  0, 0, 0]
       },
       "instruction-body": {
         "color": "#000000",
