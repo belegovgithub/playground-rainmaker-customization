@@ -248,7 +248,7 @@
               {
                 "columns": [
                   {
-                    "text": "मृतक का आधार नंबर/Deceased Aadhar No:: {{aadharNo}}",
+                    "text": "मृतक का आधार नंबर/Deceased Aadhaar No:: {{aadharNo}}",
                     "width": "49%",
                     "style": "details-body"
                   },
@@ -277,7 +277,7 @@
                         "style": "details-body"
                       },
                       {
-                        "text": "माता का आधार नंबर /Mother Aadhar No: {{motherUid}}",
+                        "text": "माता का आधार नंबर /Mother Aadhaar No: {{motherUid}}",
                         "style": "details-body"
                       },
                       {
@@ -285,7 +285,7 @@
                         "style": "details-body"
                       },
                       {
-                        "text": "पिता का आधार नंबर /Father Aadhar No: {{fatherUid}}",
+                        "text": "पिता का आधार नंबर /Father Aadhaar No: {{fatherUid}}",
                         "style": "details-body"
                       },
                       {
@@ -293,7 +293,7 @@
                         "style": "details-body"
                       },
                       {
-                        "text": "पति/पत्नी का आधार नंबर/Husband/Wife Aadhar No: {{spouseAadhar}}",
+                        "text": "पति/पत्नी का आधार नंबर/Husband/Wife Aadhaar No: {{spouseAadhar}}",
                         "style": "details-body"
                       }
                     ]
