@@ -298,13 +298,6 @@
         "table": {
           "widths": ["*"],
           "body": [
-            [
-              {
-                "image": "{{logoImage}}",
-                "width": 70,
-                "height": 50
-              } 
-            ],
             [  
               {
                 "image": "{{qr_code_image}}",
