@@ -59,7 +59,7 @@
               {
                 "stack": [ 
                   {
-                    "text": "FORM-5",
+                    "text": "Form-5",
                     "style": "appendix-header-formNo"
                   } 
                 ]
@@ -299,6 +299,13 @@
           "widths": ["*"],
           "body": [
             [
+              {
+                "image": "{{logoImage}}",
+                "width": 70,
+                "height": 50
+              } 
+            ],
+            [  
               {
                 "image": "{{qr_code_image}}",
                 "width": 70,
