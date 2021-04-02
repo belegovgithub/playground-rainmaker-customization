@@ -73,7 +73,7 @@
                     "style": "appendix-header-body"
                   },
                   {
-                    "text": " कैंटोनमेंट बोर्ड {{cb-name-multilang}} (सी.बी)",
+                    "text": " छावनी परिषद{{cb-name-multilang}} (सी.बी)",
                      "style": "appendix-header-body",
                     "margin": [0, 1, 0, -2]
                   },
@@ -174,7 +174,7 @@
               {
                 "columns": [
                   {
-                    "text": "यह प्रमाणित किया जाता है निम्नलिखित सूचना मृत्यु के मूल अभिलेख से ली गई है जो कि कैंटोनमेंट बोर्ड {{cb-name-multilang}} (सी.बी) तहसील {{block-name-multilang}} जिला {{dist-name-multilang}} राज्य/संघ प्रदेश उत्तर प्रदेश, भारत के रजिस्टर में उल्लिखित हैl",
+                    "text": "यह प्रमाणित किया जाता है निम्नलिखित सूचना मृत्यु के मूल अभिलेख से ली गई है जो कि छावनी परिषद {{cb-name-multilang}} (सी.बी) तहसील {{block-name-multilang}} जिला {{dist-name-multilang}} राज्य/संघ प्रदेश उत्तर प्रदेश, भारत के रजिस्टर में उल्लिखित हैl",
                     "style": "rule-body_multiLang"
                   }
                 ]
@@ -260,7 +260,7 @@
               {
                 "columns": [
                   {
-                    "text": "मृतक की उम्र / AGE OF DECEASED: {{age}} YEARS",
+                    "text": "मृतक की उम्र / AGE OF DECEASED: {{age}}",
                     "width": "59%",
                     "style": "details-body"
                   },
