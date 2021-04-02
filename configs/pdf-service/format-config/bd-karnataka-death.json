@@ -62,13 +62,14 @@
                 "stack": [ 
                   {
                     "text": "FORM-6",
-                    "style": "appendix-header-formNo"
+                    "style": "appendix-header-formNo",
+                    "margin": [50, 0, 0, 0]
                   },
                   {
                     "image": "{{form5}}",
                     "width": 45,
-                    "height": 45.25,
-                    "margin": [50, -10, 0, 0]
+                    "height": 40.25,
+                    "margin": [50, 0, 0, 0]
                   }
                 ]
               }
@@ -149,7 +150,7 @@
               {
                 "columns": [
                   {
-                    "text": ["ಈ ಕೆಳಕಂಡ ವಿವರಣೆಯನ್ನು ಕರ್ನಾಟಕ ರಾಜ್ಯದ ಬೆಳಗಾವಿ ಜಿಲ್ಲೆಯ ಬೆಳಗಾವಿ ತಾಲೂಕಿನ",{ "text":"ಬೆಳಗಾವಿ ಕಂಟೋನ್ಮೆಂಟ್ ಬೋರ್ಡ್", "bold":true},"(ಗ್ರಾಮ/ಪಟ್ಟಣ)ದ ರಿಜಿಸ್ಟರಿನಲ್ಲಿರುವ ಜನನ ಸಂಬಂಧವಾದ ಮೂಲ ದಾಖಲೆಯಿಂದ ತೆಗೆದುಕೊಳ್ಳಲಾಗಿದೆಯೆಂದು ಪ್ರಮಾಣೀಕರಿಸಲಾಗಿದೆ"],
+                    "text": ["ಈ ಕೆಳಕಂಡ ವಿವರಣೆಯನ್ನು ಕರ್ನಾಟಕ ರಾಜ್ಯದ ಬೆಳಗಾವಿ ಜಿಲ್ಲೆಯ ಬೆಳಗಾವಿ ತಾಲೂಕಿನ ",{ "text":"ಬೆಳಗಾವಿ ಕಂಟೋನ್ಮೆಂಟ್ ಬೋರ್ಡ್", "bold":true},"(ಗ್ರಾಮ/ಪಟ್ಟಣ)ದ ರಿಜಿಸ್ಟರಿನಲ್ಲಿರುವ ಜನನ ಸಂಬಂಧವಾದ ಮೂಲ ದಾಖಲೆಯಿಂದ ತೆಗೆದುಕೊಳ್ಳಲಾಗಿದೆಯೆಂದು ಪ್ರಮಾಣೀಕರಿಸಲಾಗಿದೆ"],
                     "style": "rule-body_multiLang"
                   }
                 ]
@@ -159,7 +160,7 @@
               {
                 "columns": [
                   {
-                    "text": ["This is to certify that the following information has been taken from the original record of birth which is the register for",{ "text":"Belgaum Cantonment (CB) (village/town) of Belagavi", "bold":true}," taluk of Belagavi district of Karnataka State."],
+                    "text": ["This is to certify that the following information has been taken from the original record of birth which is the register for ",{ "text":"Belgaum Cantonment (CB) (village/town) of Belagavi", "bold":true}," taluk of Belagavi district of Karnataka State."],
                     "style": "rule-body"
                   }
                 ]
@@ -514,7 +515,13 @@
                       },    
                       {
                         "text": "CANTONMENT BOARD BELGAUM"
-                      }  
+                      },
+                      {
+                        "image": "{{logoImage}}",
+                        "width": 50,
+                        "height": 50,
+                        "alignment":"center"
+                      }   
                     ] 
                   }  
                 ]
@@ -540,24 +547,8 @@
           ]
         },
         "layout": "noBorders"
-      },
-      {
-        "style": "ws-head",
-        "table": {
-          "widths": ["*"],
-          "body": [
-            [
-              {
-                "text": "THIS IS A COMPUTER GENERATED CERTIFICATE WHICH CONTAINS FACSIMILE SIGNATURE OF THE ISSUING AUTHORITY",
-                "width": 50,
-                "height": 61.25,
-                "style": "instruction-body"
-              }
-            ]
-          ]
-        },
-        "layout": "noBorders"
-      } 
+      }
+       
     ],
     "styles": {
       "pdf-header": {
@@ -586,7 +577,7 @@
       "qr-code": {
         "color": "#000000",
         "alignment": "left",
-        "margin": [0, -40, 0, 0]
+        "margin": [0, -70, 0, 0]
       },
       "title-header": {
         "color": "#000000",

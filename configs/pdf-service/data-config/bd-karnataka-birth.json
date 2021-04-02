@@ -45,7 +45,7 @@
                   "value": {
                     "path": "$.dateofbirth"
                   },
-                  "type": "dateToWord"
+                  "type": "date"
                 },
                 {
                   "variable": "gender", 
@@ -818,6 +818,10 @@
                             "module":"rainmaker-pdf"
                             
                             }
+                        },{
+                          "variable": "logoImage",                        
+                          "value":"$.MdmsRes.tenant.tenants[0].logoIdPdf",
+                          "type":"image"      
                         }
                       ]
                   }
