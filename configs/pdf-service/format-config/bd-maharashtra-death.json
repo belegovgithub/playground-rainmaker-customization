@@ -251,8 +251,16 @@
                     "width": "1%"
                   },
                   {
-                    "text": "पती / पत्नी माहिती नाव / NAME OF HUSBAND / WIFE: {{spouseName}}",
-                    "style": "details-body"
+                    "stack":[
+                    {
+                      "text": "पती / पत्नी माहिती नाव / NAME OF HUSBAND / WIFE: {{spouseName}}",
+                      "style": "details-body"
+                    },
+                    {
+                      "text": "आधार क्रमांक / HUSBAND/WIFE AADHAAR NO: {{spouseAadhar}}",
+                      "style": "details-body"
+                    }
+                  ]
                   }
                 ]
               }

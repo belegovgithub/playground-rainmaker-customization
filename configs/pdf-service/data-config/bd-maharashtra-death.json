@@ -91,6 +91,13 @@
                 "type":"setEmpty"
               },
               {
+                "variable": "spouseAadhar",
+                "value": {
+                  "path": "$.deathSpouseInfo.aadharno"
+                },
+                "type":"setEmpty"
+              },
+              {
                 "variable": "presentAdd",
                 "value": {
                   "path": "$.deathPresentaddr.fullAddress"
