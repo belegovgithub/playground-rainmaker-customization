@@ -35,6 +35,13 @@
                   "type":"setEmpty"
                 },
                 {
+                  "variable": "age", 
+                  "value": {
+                    "path": "$.age"
+                  },
+                  "type":"setEmpty"
+                },
+                {
                   "variable": "embeddedUrl", 
                   "value": {
                     "path": "$.embeddedUrl"
@@ -71,28 +78,42 @@
                 {
                   "variable": "fatherName", 
                   "value": {
-                    "path": "$.birthFatherInfo.fullName"
+                    "path": "$.deathFatherInfo.fullName"
+                  },
+                  "type":"setEmpty"
+                },
+                {
+                  "variable": "aadharNo", 
+                  "value": {
+                    "path": "$.aadharno"
+                  },
+                  "type":"setEmpty"
+                },
+                {
+                  "variable": "placeOfDeath", 
+                  "value": {
+                    "path": "$.placeofdeath"
                   },
                   "type":"setEmpty"
                 },
                 {
                   "variable": "motherName", 
                   "value": {
-                    "path": "$.birthMotherInfo.fullName"
+                    "path": "$.deathMotherInfo.fullName"
                   },
                   "type":"setEmpty"
                 },
                 {
-                  "variable": "childAddress", 
+                  "variable": "deathPermaddr", 
                   "value": {
-                    "path": "$.birthPermaddr.fullAddress"
+                    "path": "$.deathPermaddr.fullAddress"
                   },
                   "type":"setEmpty"
                 },
                 {
-                  "variable": "parentsAddress", 
+                  "variable": "deathPresentaddr", 
                   "value": {
-                    "path": "$.birthPresentaddr.fullAddress"
+                    "path": "$.deathPresentaddr.fullAddress"
                   },
                   "type":"setEmpty"
                 },
