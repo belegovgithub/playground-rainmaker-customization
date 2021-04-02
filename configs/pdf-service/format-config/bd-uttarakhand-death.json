@@ -261,7 +261,7 @@
               {
                 "columns": [
                   {
-                    "text": "मृतक की उम्र /AGE OF DECEASED : {{age}} Years",
+                    "text": "मृतक की उम्र /AGE OF DECEASED : {{age}} ",
                     "width": "59%",
                     "style": "details-body"
                   },
