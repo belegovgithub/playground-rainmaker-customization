@@ -321,7 +321,7 @@
               {
                 "columns": [
                   {
-                    "text": "Date:{{dateofissue}}",
+                    "text": "Date: {{dateofissue}}",
                     "width": "35%",
                     "style": "details-body"
                      
