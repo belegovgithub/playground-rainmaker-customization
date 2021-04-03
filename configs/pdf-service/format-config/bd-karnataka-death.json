@@ -644,7 +644,7 @@
         "bold": false,
         "fontSize": 11,
         "fontWeight": 400,
-        "margin": [0, 5, 0, 0]
+        "margin": [0, 0, 0, 0]
       },
       "appendix-header-body": {
         "color": "#000000",

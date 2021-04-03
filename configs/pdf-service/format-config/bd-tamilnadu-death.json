@@ -57,11 +57,11 @@
                     "margin": [0, 0, 0, 5]
                   },
                   {
-                    "text": "கன்டான்மென்ட் போர்டு {{cb-name-multilang}}",
+                    "text": "கண்டான்மெண்ட் கழகம் {{cb-name-multilang-2}}",
                     "style": "appendix-header-body"
                   },
                   {
-                    "text": "CANTONMENTBOARD {{cb-name}}",
+                    "text": "CANTONMENTBOARD {{cb-name-2}}",
                     "style": "appendix-header-body"
                   }
                 ]
@@ -157,7 +157,7 @@
               {
                 "columns": [
                   {
-                    "text": "கீழ்கண்ட தகவல் இந்தியா, தமிழ்நாடு மாநிலம், {{dist-name-multilang}} மாவட்டம், {{block-name-multilang}} வட்டம். கன்டான்மென்ட் போர்டு சேர்ந்த அசல் இறப்பு பதிவேட்டிலிருந்து எடுக்கபட்டவை என சான்று அளிக்கபடுகிறது.",
+                    "text": "கீழ்கண்ட தகவல் இந்தியா, தமிழ்நாடு மாநிலம், {{dist-name-multilang}} மாவட்டம், {{block-name-multilang}} வட்டம். கண்டோன்மெண்ட்  {{cb-name-multilang}}யை சேர்ந்த அசல் இறப்பு பதிவேட்டிலிருந்து எடுக்கபட்டவை என சான்று அளிக்கபடுகிறது.",
                     "style": "rule-body"
                   }
                 ]
@@ -167,7 +167,7 @@
               {
                 "columns": [
                   {
-                    "text": "THIS IS TO CERTIFY THAT THE FOLLOWING INFORMATION HAS BEEN TAKEN FROM THE ORIGINAL RECORD OF DEATH WHICH IS THE REGISTER FOR CANTONMENT BOARD {{cb-name}} OF {{block-name}} TALUK OF {{dist-name}} DISTRICT OF TAMIL NADU STATE, INDIA",
+                    "text": "THIS IS TO CERTIFY THAT THE FOLLOWING INFORMATION HAS BEEN TAKEN FROM THE ORIGINAL RECORD OF DEATH WHICH IS THE REGISTER FOR CANTONMENT BOARD {{cb-name}} OF {{block-name}} TALUK OF {{dist-name}} DISTRICT OF TAMIL NADU STATE, INDIA.",
                     "style": "rule-header"
                   }
                 ]
@@ -186,7 +186,7 @@
               {
                 "columns": [
                   {
-                    "text": "NAME OF DECEASED/ / இறந்தவரின் பெயர் : {{name}}",
+                    "text": "NAME OF DECEASED/ / இறந்தவர் பெயர் : {{name}}",
                     "width": "49%",
                     "style": "details-body"
                   },
@@ -195,40 +195,52 @@
                     "width": "1%"
                   },
                   {
-                    "text": "SEX / பாலினம் : {{gender}}/{{gender_multiLang}}",
+                    "text": "SEX / பாலினம் : {{gender}}/{{gender_multilang}}",
                     "style": "details-body"
                   }
                 ]
               }
             ],
-            [
+                      
+			[
+        {
+        
+          "columns": [
+            {
+              "stack": [
+               
               {
-                "columns": [
-                  {
-                    "text": "DATE OF DEATH/ / இறந்த தேதி  : {{dod}}",
-                    "width": "49%",
-                    "style": "details-body"
-                  },
-                  {
-                    "text": " ",
-                    "width": "1%"
-                  },
-                  {
-                    "stack": [
-                      {
-                        "text": "UID NUMBER OF  DECEASED / இறந்தவர் ஆதார் எண் : {{aadharNo}}" ,
-                        "style": "details-body"
-                      },
-                      {
-                        "text": "PLACE OF DEATH / இறந்த இடம் : {{placeOfDeath}}",
-                        "style": "details-body"
-                      } 
-                    ] 
-                  }  
-                  
-                ]
-              }
-            ],
+                "text": "DATE OF DEATH/ / இறந்த தேதி  : {{dod}}",                     
+                "style": "details-body"
+              },
+              {
+                "text": "{{dateToWordFormat}}",
+                "width": "100%",
+                "style": "details-body"
+              }                              
+
+              ],
+              "width": "49%" 
+            },
+            {
+              "text": " ",
+              "width": "1%"
+            },
+            {
+              "stack": [
+                {
+                  "text": "UID NUMBER OF  DECEASED / இறந்தவர் ஆதார் எண் : {{aadharNo}}" ,
+                  "style": "details-body"
+                },
+                {
+                  "text": "PLACE OF DEATH / இறந்த இடம் : {{placeOfDeath}}",
+                  "style": "details-body"
+                } 
+              ] 
+            }  
+          ]
+        }
+      ],
             [
               {
                 "columns": [
@@ -244,7 +256,7 @@
               {
                 "columns": [
                   {
-                    "text": "NAME OF MOTHER / தாயார் பெயர்: {{motherName}}",
+                    "text": "NAME OF MOTHER / தாயின் பெயர்: {{motherName}}",
                     "width": "49%",
                     "style": "details-body"
                   },
@@ -253,7 +265,7 @@
                     "width": "1%"
                   },
                   {
-                    "text": "NAME OF FATHER / தந்தையார் பெயர் : {{fatherName}}",
+                    "text": "NAME OF FATHER / தந்தையின்  பெயர் : {{fatherName}}",
                     "style": "details-body"
                   }
                 ]
@@ -263,7 +275,7 @@
               {
                 "columns": [
                   {
-                    "text": "MOTHER'S UID NUMBER / தாயார் ஆதார்  எண் : {{motherUid}}",
+                    "text": "MOTHER'S UID NUMBER / தாயின் ஆதார்  எண் : {{motherUid}}",
                     "width": "49%",
                     "style": "details-body"
                   },
@@ -272,7 +284,7 @@
                     "width": "1%"
                   },
                   {
-                    "text": "FATHER'S UID NUMBER / தந்தையார் ஆதார்  எண் : {{fatherUid}}",
+                    "text": "FATHER'S UID NUMBER / தந்தையின் ஆதார்  எண் : {{fatherUid}}",
                     "style": "details-body"
                   }
                 ]
@@ -291,7 +303,7 @@
                     "width": "1%"
                   },
                   {
-                    "text": "HUSBAND / WIFE UID NO / கணவர் / மனைவி ஆதார் எண் : {{spouceUid}}",
+                    "text": "HUSBAND / WIFE UID NUMBER / கணவர் / மனைவி ஆதார் எண் : {{spouceUid}}",
                     "style": "details-body"
                   }
                 ]
@@ -301,7 +313,7 @@
               {
                 "columns": [
                   {
-                    "text": "ADDRESS OF THE DECEASED AT THE TIME OF DEATH / இறப்பின் போது முகவரி இறந்தவரின் முகவரி  : {{presentAddress}}",
+                    "text": "ADDRESS OF THE DECEASED AT THE TIME OF DEATH / இறப்பின் போது இறந்தவரின் முகவரி  : {{presentAddress}}",
                     "width": "49%",
                     "style": "details-body"
                   },
@@ -381,19 +393,23 @@
                     "stack": [
                       {
                         "text": "REGISTRAR (BIRTH & DEATH)",
-                         "fontSize": 9 
+                         "fontSize": 9,
+                          "alignment": "center" 
                       },
                       {
                         "text": "பதிவாளர் பிறப்பு மற்றும் இறப்பு ",
-                         "fontSize": 9
+                         "fontSize": 9,
+                          "alignment": "center"
                       },    
                       {
-                        "text": "CANTONMENT BOARD {{cb-name}}",
-                         "fontSize": 9
+                        "text": "CANTONMENT BOARD {{cb-name-2}}",
+                         "fontSize": 9,
+                          "alignment": "center"
                       },
                       {
-                        "text": "கன்டான்மென்ட் போர்டு {{cb-name-multilang}}",
-                         "fontSize": 9
+                        "text": "கன்டான்மென்ட் போர்டு {{cb-name-multilang-2}}",
+                         "fontSize": 9,
+                          "alignment": "center"
                       }
                     ] 
                   }  
@@ -420,38 +436,14 @@
           ]
         },
         "layout": "noBorders"
-      },
+      }
+        
+    ],
+    "footer": [
       {
-        "style": "ws-head",
-        "table": {
-          "widths": ["*"],
-          "body": [
-            [
-              {
-                "stack": [
-                  {
-                    "text": "THIS IS A COMPUTER GENERATED CERTIFICATE",
-                    "style": "instruction-body" 
-                  },
-                  {
-                    "text": " THE GOVT.OF INDIA VIDE CIRCULAR NO.1/12/2014-VS(CRS) DATED 27-JULY-2015 HAS APPROVED THIS CERTIFICATE AS A VALID LEGAL DOCUMENT FOR ALL OFFICIAL PURPOSES",
-                    "style": "instruction-body" 
-                  },
-                  {
-                    "text": " THE REGISTRATION NUMBER IS UNIQUE TO EACH EVENT.",
-                    "style": "instruction-body" 
-                  },
-                  {
-                    "text": "“பிறப்பு மற்றும் இறப்பு பதிவு செய்வதை உறுதி செய்வீர் / ENSURE REGISTRATION OF EVERY BIRTH AND DEATH",
-                    "style": "instruction-body" 
-                  }
-                ] 
-              } 
-            ]
-          ]
-        },
-        "layout": "noBorders"
-      }  
+      "text": "“THIS IS A COMPUTER GENERATED CERTIFICATE”\n“THE GOVT.OF INDIA VIDE CIRCULAR NO.1/12/2014-VS(CRS) DATED 27-JULY-2015 HAS APPROVED THIS CERTIFICATE AS A VALID LEGAL DOCUMENT FOR ALL OFFICIAL PURPOSES”\n“THE REGISTRATION NUMBER IS UNIQUE TO EACH EVENT.”\n“இது கணினி மூலம் பதிவேற்றம் செய்யப்பட்ட சான்றிதழ்”\n“இந்திய அரசு சுற்றறிக்கை எண் 1 / 12/2014-VS (CRS) தேதியிட்ட 27-ஜூலை -2015  மூலம் அங்கீகரித்த இந்த சான்றிதழ் அனைத்து உத்தியோகப்பூர்வ நோக்கங்களுக்கும் சட்ட ஆவணமாக இந்த சான்றிதழ் செல்லுபடியாகும்”\n“இந்த பதிவு எண் ஒவ்வொரு நிகழ்விற்கும் தனித்துவமானது”\n“பிறப்பு மற்றும் இறப்பு பதிவு செய்வதை உறுதி செய்வீர் / ENSURE REGISTRATION OF EVERY BIRTH AND DEATH”",
+        "style": "instruction-body" 
+      }
     ],
     "styles": {
       "pdf-header": {
@@ -475,7 +467,8 @@
         "bold": false,
         "fontSize": 7,
         "fontWeight": 400,
-        "alignment": "center"
+        "alignment": "center",
+        "margin": [0, -40, 0, 0]
       },
       "qr-code": {
         "color": "#000000",
@@ -515,21 +508,21 @@
         "bold": false,
         "fontSize": 10,
         "fontWeight": 400,
-        "margin": [0, 0, 0, 0]
+        "margin": [0, -5, 0, 0]
       },
       "rule-header_multiLang": {
         "color": "#000000",
         "bold": false,
         "fontSize": 10,
         "fontWeight": 400,
-        "margin": [0, 0, 0, 0]
+        "margin": [0, -10, 0, 0]
       },
       "rule-body": {
         "color": "#000000",
         "bold": false,
         "fontSize": 10,
         "fontWeight": 400,
-        "margin": [0, 0, 0, 0]
+        "margin": [0, -5, 0, 0]
       },
       "rule-body_multiLang": {
         "color": "#000000",
@@ -543,7 +536,7 @@
         "bold": false,
         "fontSize": 9,
         "fontWeight": 400,
-        "margin": [0, 4, 0, 0]
+        "margin": [0,0, 0, 0]
       },
       "appendix-header-body": {
         "color": "#000099",

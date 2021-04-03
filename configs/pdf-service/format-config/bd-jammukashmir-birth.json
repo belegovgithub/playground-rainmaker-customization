@@ -21,11 +21,6 @@
               {
                 "columns": [
                   {
-                    "text": "Regd No: ________",
-                    "width": "85%",
-                    "style": "details-body"
-                  },
-                  {
                     "text": "Form No: 5",
                     "width": "15%",
                     "style": "appendix-header-formNo"

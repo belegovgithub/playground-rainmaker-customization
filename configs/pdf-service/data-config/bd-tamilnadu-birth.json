@@ -46,7 +46,15 @@
                   "value": {
                     "path": "$.dateofbirth"
                   },
-                  "type": "dateToWord"
+                  "type": "date"                  
+                },
+                {
+                  "variable": "dateToWordFormat", 
+                  "value": {
+                    "path": "$.dateofbirth"
+                  },
+                  "type": "dateToWord",
+                  "isUpperCaseRequired":true
                 },
                 {
                   "variable": "gender", 
@@ -55,6 +63,19 @@
                   },
                   "type":"setEmpty"
                 },
+                {
+                  "variable": "gender_multilang",
+                  "value": {
+                    "path": "$.genderStr"
+                  },
+                  "localisation":{
+                    "required":true,
+                    "prefix": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE",
+                    "module": "rainmaker-pdf",
+                    "prefixCbName":true
+                 }
+                 
+              },
                 {
                   "variable": "registrationNo", 
                   "value": {
@@ -820,6 +841,24 @@
                           "localisation": {
                             "required": true,
                             "prefix": "PDF_STATIC_LABEL_BD_CB_HI",
+                            "module": "rainmaker-pdf"
+                          }
+                        },
+                        {
+                          "variable": "cb-name-2",
+                          "value": "$.MdmsRes.tenant.tenants[0].code",
+                          "localisation": {
+                            "required": true,
+                            "prefix": "PDF_STATIC_LABEL_BD_CB_EN_EX",
+                            "module": "rainmaker-pdf"
+                          }
+                        },
+                        {
+                          "variable": "cb-name-multilang-2",
+                          "value": "$.MdmsRes.tenant.tenants[0].code",
+                          "localisation": {
+                            "required": true,
+                            "prefix": "PDF_STATIC_LABEL_BD_CB_HI_EX",
                             "module": "rainmaker-pdf"
                           }
                         },

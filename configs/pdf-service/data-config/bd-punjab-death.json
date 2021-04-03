@@ -91,16 +91,16 @@
                 "type":"setEmpty"
               },
               {
-                "variable": "presentAdd",
+                "variable": "presentAddress",
                 "value": {
                   "path": "$.deathPresentaddr.fullAddress"
                 },
                 "type":"setEmpty"
               },
               {
-                "variable": "permanentAddress",
+                "variable": "premanentAddress",
                 "value": {
-                  "path": "$.deathPresentaddr.fullAddress"
+                  "path": "$.deathPermaddr.fullAddress"
                 },
                 "type":"setEmpty"
               },

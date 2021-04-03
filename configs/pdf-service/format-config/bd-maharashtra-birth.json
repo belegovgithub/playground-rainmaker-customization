@@ -356,6 +356,10 @@
                       "text": "{{cb_label_name_multiLang}} {{cb-name-multilang}}",
                       "style": "details-body"
                       
+                    },
+                    {
+                      "text": "CANTONMENT BOARD {{cb-name}}",
+                       "fontSize": 9
                     }
                   ]
                 }

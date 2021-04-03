@@ -158,18 +158,11 @@
                 "type":"setEmpty"
               },
               {
-                "variable": "issueDate",
+                "variable": "dateofissue",
                 "value": {
                   "path": "$.dateofissue"
                 },
                 "type": "dateOrEmpty"
-              },
-              {
-                "variable": "placeOfBirth",
-                "value": {
-                  "path": "$.hospitalname"
-                },
-                "type":"setEmpty"
               },
               {
                 "variable": "certificateType",

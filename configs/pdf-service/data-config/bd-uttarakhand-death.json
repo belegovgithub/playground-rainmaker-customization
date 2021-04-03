@@ -32,21 +32,17 @@
                   "value": {
                     "path": "$.fullName"
                   },
-                  "type":"setEmpty"
+                  "type":"setEmpty",
+                  "isUpperCaseRequired": true
                 },
-                {
-                  "variable": "dod", 
-                  "value": {
-                    "path": "$.dateofdeath"
-                  },
-                  "type": "dateToWord"
-                },
+               
                 {
                   "variable": "gender", 
                   "value": {
                     "path": "$.genderStr"
                   },
-                  "type":"setEmpty"
+                  "type":"setEmpty",
+                  "isUpperCaseRequired": true
                 },
                 {
                   "variable": "registrationNo", 
@@ -74,85 +70,105 @@
                     "value": {
                       "path": "$.deathSpouseInfo.fullName"
                     },
-                    "type": "setEmpty"
+                    "type": "setEmpty",
+                    "isUpperCaseRequired": true
                   },    
                 {
                   "variable": "fatherName", 
                   "value": {
                     "path": "$.deathFatherInfo.fullName"
                   },
-                  "type":"setEmpty"
+                  "type":"setEmpty",
+                  "isUpperCaseRequired": true
                 },
                 {
                   "variable": "motherName", 
                   "value": {
                     "path": "$.deathMotherInfo.fullName"
                   },
-                  "type":"setEmpty"
+                  "type":"setEmpty",
+                  "isUpperCaseRequired": true
                 },
                 {
                   "variable": "childAddress", 
                   "value": {
                     "path": "$.deathPresentaddr.fullAddress"
                   },
-                  "type":"setEmpty"
+                  "type":"setEmpty",
+                  "isUpperCaseRequired": true
                 },
                 {
                   "variable": "parentsAddress", 
                   "value": {
                     "path": "$.deathPermaddr.fullAddress"
                   },
-                  "type":"setEmpty"
+                  "type":"setEmpty",
+                  "isUpperCaseRequired": true
                 },
                 {
                   "variable": "fatherUid", 
                   "value": {
                     "path": "$.deathFatherInfo.aadharno"
                   },
-                  "type":"setEmpty"
+                  "type":"setEmpty",
+                  "isUpperCaseRequired": true
                 },
                 {
                   "variable": "motherUid", 
                   "value": {
                     "path": "$.deathMotherInfo.aadharno"
                   },
-                  "type":"setEmpty"
+                  "type":"setEmpty",
+                  "isUpperCaseRequired": true
                 },
                 {
                   "variable": "remarks", 
                   "value": {
                     "path": "$.remarks"
                   },
-                  "type":"setEmpty"
+                  "type":"setEmpty",
+                  "isUpperCaseRequired": true
                 },
                   {
                     "variable": "placeOfDeath", 
                     "value": {
                       "path": "$.placeofdeath"
                     },
-                    "type":"setEmpty"
+                    "type":"setEmpty",
+                    "isUpperCaseRequired": true
                   },
                   {
                     "variable": "dod", 
                     "value": {
                       "path": "$.dateofdeath"
                     },
-                    "type": "dateToWord"
+                    "type": "date"
                   },
+                  {
+                    "variable": "dateToWordFormat", 
+                    "value": {
+                      "path": "$.dateofdeath"
+                    },
+                    "type": "dateToWord",
+                    "isUpperCaseRequired":true
+                  },
+          
                  
                   {
                     "variable": "deceasedAadharno", 
                     "value": {
                       "path": "$.aadharno"
                     },
-                    "type":"setEmpty"
+                    "type":"setEmpty",
+                    "isUpperCaseRequired": true
                   },
                   {
                     "variable": "spouceAadharNo", 
                     "value": {
                       "path": "$.deathSpouseInfo.aadharno"
                     },
-                    "type":"setEmpty"
+                    "type":"setEmpty",
+                    "isUpperCaseRequired": true
                   },
                   {
                     "variable": "issueDate", 

@@ -32,7 +32,8 @@
                   "value": {
                     "path": "$.fullName"
                   },
-                  "type":"setEmpty"
+                  "type":"setEmpty",
+                  "isUpperCaseRequired": true
                 },
                 {
                   "variable": "embeddedUrl", 
@@ -45,21 +46,32 @@
                   "value": {
                     "path": "$.dateofbirth"
                   },
-                  "type": "dateToWord"
+                  "type": "date"
+                  
+                },
+                {
+                  "variable": "dateToWordFormat", 
+                  "value": {
+                    "path": "$.dateofbirth"
+                  },
+                  "type": "dateToWord",
+                  "isUpperCaseRequired":true
                 },
                 {
                   "variable": "gender", 
                   "value": {
                     "path": "$.genderStr"
                   },
-                  "type":"setEmpty"
+                  "type":"setEmpty",
+                  "isUpperCaseRequired": true
                 },
                 {
                   "variable": "registrationNo", 
                   "value": {
                     "path": "$.registrationno"
                   },
-                  "type":"setEmpty"
+                  "type":"setEmpty",
+                  "isUpperCaseRequired": true
                 },
                 {
                     "variable": "registration_date", 
@@ -73,56 +85,64 @@
                   "value": {
                     "path": "$.birthFatherInfo.fullName"
                   },
-                  "type":"setEmpty"
+                  "type":"setEmpty",
+                  "isUpperCaseRequired": true
                 },
                 {
                   "variable": "motherName", 
                   "value": {
                     "path": "$.birthMotherInfo.fullName"
                   },
-                  "type":"setEmpty"
+                  "type":"setEmpty",
+                  "isUpperCaseRequired": true
                 },
                 {
                   "variable": "childAddress", 
                   "value": {
                     "path": "$.birthPresentaddr.fullAddress"
                   },
-                  "type":"setEmpty"
+                  "type":"setEmpty",
+                  "isUpperCaseRequired": true
                 },
                 {
                   "variable": "parentsAddress", 
                   "value": {
                     "path": "$.birthPermaddr.fullAddress"
                   },
-                  "type":"setEmpty"
+                  "type":"setEmpty",
+                  "isUpperCaseRequired": true
                 },
                 {
                   "variable": "fatherUid", 
                   "value": {
                     "path": "$.birthFatherInfo.aadharno"
                   },
-                  "type":"setEmpty"
+                  "type":"setEmpty",
+                  "isUpperCaseRequired": true
                 },
                 {
                   "variable": "motherUid", 
                   "value": {
                     "path": "$.birthMotherInfo.aadharno"
                   },
-                  "type":"setEmpty"
+                  "type":"setEmpty",
+                  "isUpperCaseRequired": true
                 },
                 {
                   "variable": "remarks", 
                   "value": {
                     "path": "$.remarks"
                   },
-                  "type":"setEmpty"
+                  "type":"setEmpty",
+                  "isUpperCaseRequired": true
                 },
                   {
                     "variable": "placeOfBirth", 
                     "value": {
                       "path": "$.placeofbirth"
                     },
-                    "type":"setEmpty"
+                    "type":"setEmpty",
+                    "isUpperCaseRequired": true
                   },
                   {
                     "variable": "issueDate", 
@@ -145,7 +165,8 @@
                     "value": {
                       "path": "$.certificateType"
                     },
-                    "type":"setEmpty"
+                    "type":"setEmpty",
+                    "isUpperCaseRequired": true
                   },
                   {
                     "variable": "cantonment-board",

@@ -145,7 +145,7 @@
               {
                 "columns": [
                   {
-                    "text": "(जन्म मृत्यु रजिस्ट्रीकरण अधिनियम,1969 की धारा 12/17 तथा उत्तराखंड जन्म जन्म रजिस्ट्रीकरण नियम, 2003 के  नियम 8/13 के अंतर्गत जारी किया गया)",
+                    "text": "(जन्म मृत्यु रजिस्ट्रीकरण अधिनियम,1969 की धारा 12/17 तथा उत्तराखंड जन्म मृत्यु रजिस्ट्रीकरण नियम, 2003 के  नियम 8/13 के अंतर्गत जारी किया गया)",
                     "style": "rule-header_multiLang"
                   }
                 ]
@@ -184,7 +184,7 @@
               {
                 "columns": [
                   {
-                    "text": "THIS  IS TO CERTIFY THAT THE  FOLLOWING  INFORMATION  HAS BEEN  TAKEN FROM  THE  ORIGINAL RECORD OF BIRTH WHICH  IS THE  REGISTER  FOR CANTONMENT BOARD {{cb-name}} OF TAHSIL/BLOCK {{block-name}} OF DISTRICT {{dist-name}} OF STATE/UNION TERRITORY UTTARAKHAND, INDIA.",
+                    "text": "THIS  IS TO CERTIFY THAT THE  FOLLOWING  INFORMATION  HAS BEEN  TAKEN FROM  THE  ORIGINAL RECORD OF BIRTH WHICH  IS THE  REGISTER  FOR CANTONMENT BOARD {{cb-name}} OF THESIL/BLOCK {{block-name}} OF DISTRICT {{dist-name}} OF STATE/UNION TERRITORY UTTARAKHAND, INDIA.",
                     "style": "rule-body"
                   }
                 ]
@@ -203,7 +203,7 @@
               {
                 "columns": [
                   {
-                    "text": "{{name_label_multiLang}} / {{name_label}}: {{name}}",
+                    "text": "{{name_label_multiLang}} / {{name_label}}:{{name}}",
                     "width": "59%",
                     "style": "details-body"
                   },
@@ -222,10 +222,20 @@
               {
                 "columns": [
                   {
-                    "text": "{{dob_label_multiLang}} / {{dob_label}}: {{dob}}",
-                    "width": "59%",
-                    "style": "details-body"
+                    "stack": [
+                      {
+                        "text": "{{dob_label_multiLang}} / {{dob_label}}: {{dob}}",
+                        "style": "details-body"
+                      },
+                      {
+                        "text": "{{dateToWordFormat}}",
+                        "width": "100%",
+                        "style": "details-body"
+                      }
+                    ],
+                    "width": "59%"
                   },
+
                   {
                     "text": " ",
                     "width": "1%"
@@ -345,8 +355,28 @@
                     "width": "1%"
                   },
                   {
-                    "text": "{{issuing_authority_label_multiLang}} / {{issuing_authority_label}}",
-                    "style": "details-body"
+                    "stack": [
+                      {
+                        "text": "{{issuing_authority_label_multiLang}} / {{issuing_authority_label}}",
+                        "style": "details-body"
+                      },
+                      {
+                        "text": "रजिस्ट्रार (जन्म एवं मृत्यु)",
+                        "style": "details-body"
+                      },
+                      {
+                        "text": "REGISTRAR (BIRTH & DEATH)",
+                        "style": "details-body"
+                      },
+                      {
+                        "text": "छावनी  परिषद {{cb-name-multilang}}",
+                        "style": "details-body"
+                      },
+                      {
+                        "text": "CANTONMENT BOARD {{cb-name}}",
+                        "style": "details-body"
+                      }
+                    ]
                   }
                 ]
               }
@@ -380,7 +410,7 @@
     "footer": [
       {
         "text": "THIS IS A COMPUTER GENERATED CERTIFICATE WHICH CONTAINS FACSIMILE SIGNATURE OF THE ISSUING AUTHORITY\nTHE GOVT. OF INDIA VIDE CIRCULAR NO. 1/12/2014-VS(CRS) DATED 27-JULY-2015  HAS APPROVED THIS CERTIFICATE AS A VALID LEGAL DOCUMENT FOR ALL OFFICIAL PURPOSES\nप्रत्येक जन्म एवं मृत्यु का पंजीकरण सुनिश्‍चित करें/ ENSURE REGISTRATION OF EVERY BIRTH AND DEATH",
-        "style": "instruction-body" 
+        "style": "instruction-body"
       }
     ],
     "styles": {

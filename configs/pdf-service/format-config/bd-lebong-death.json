@@ -12,46 +12,43 @@
       "italics": false
     },
     "content": [
-       {
+      {
         "style": "ws-head",
         "table": {
-          "widths": [
-            "20%",
-            "60%",
-            "20%"
-          ],
+          "widths": ["10%", "80%", "10%"],
           "body": [
             [
               {
                 "stack": [
-                    {
+                  {
                     "image": "{{govtImage}}",
                     "width": 70,
-                    "height": 70.25,
-                    "margin": [
-                      -10,
-                      0,
-                      0,
-                      0
-                    ]
+                    "height": 60.25,
+                    "margin": [-20, -20, 0, 0]
                   }
                 ]
               },
               {
                 "stack": [
                   {
-                    "text": "Form 6",
+                    "image": "{{emblemImage}}",
+                    "width": 90,
+                    "height": 60.25,
+                    "style": "appendix-header-body",
+                    "margin": [-20, -20, 0, 0]
+                  },
+                  {
+                    "text": "GOVERNMENT OF WEST BENGAL",
                     "style": "appendix-header-body"
                   },
                   {
-                    "text": "फॉर्म ६",
+                    "text": "Form 6",
                     "style": "appendix-header-body",
-                    "margin": [
-                      0,
-                      0,
-                      0,
-                      5
-                    ]
+                    "margin": [0, 5, 0, 0]
+                  },
+                  {
+                    "text": "फॉर्म ६",
+                    "style": "appendix-header-body"
                   },
                   {
                     "text": "(Sec Rule 9 of West Bengal Registration of Births and Deaths Rule, 2000)",
@@ -60,11 +57,28 @@
                   {
                     "text": "(पच्चिम बंगाल जन्म – मृत्यु पंजीकरण एन २००० न॰ ९ एन हेर्नुहोस)",
                     "style": "appendix-header-body"
-                  },
-                  {
-                    "text": "GOVERNMENT OF WEST BENGAL",
-                    "style": "appendix-header-body"
-                  },
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        "layout": "noBorders"
+      },
+      {
+        "style": "ws-head",
+        "table": {
+          "widths": ["*", "*", "50%"],
+          "body": [
+            [
+              {
+                "text": " "
+              },
+              {
+                "text": " "
+              },
+              {
+                "stack": [
                   {
                     "text": "DEPARTMENT OF HEALTH & FAMILY WELFARE",
                     "style": "appendix-header-body"
@@ -73,10 +87,8 @@
                     "text": "(स्वस्थय एव परिवार कल्याण कार्यालय)",
                     "style": "appendix-header-body"
                   }
-                  
                 ]
               }
-             
             ]
           ]
         },
@@ -85,14 +97,13 @@
       {
         "style": "ws-head",
         "table": {
-          "widths": [
-            "*"
-          ],
+          "widths": ["*"],
           "body": [
             [
               {
                 "text": "CERTIFICATE OF DEATH",
-                "style": "title-header_multiLang"
+               "style": "title-header_multiLang",
+                "decoration": "underline"
               }
             ]
           ]
@@ -102,20 +113,13 @@
       {
         "style": "ws-head",
         "table": {
-          "widths": [
-            "*"
-          ],
+          "widths": ["*"],
           "body": [
             [
               {
                 "text": "मत्यु प्रमाण पत्र",
                 "style": "title-header",
-                "margin": [
-                  0,
-                -10,
-                0,
-                0
-              ]
+                "margin": [0, -10, 0, 0]
               }
             ]
           ]
@@ -125,16 +129,14 @@
       {
         "style": "ws-head",
         "table": {
-          "widths": [
-            "*"
-          ],
+          "widths": ["*"],
           "body": [
             [
               {
                 "columns": [
                   {
                     "text": "(Issued under sec. 12/Sec 17 of the Registration of Births and Deaths Act, 1996)",
-                    "style": "rule-header_multiLang"
+                    "style": "rule-header"
                   }
                 ]
               }
@@ -144,7 +146,7 @@
                 "columns": [
                   {
                     "text": "१९६९ सालको जन्म-मृत्यु पंजीकरण एन १२/१७ धारा अनुसार प्रदान",
-                    "style": "rule-header"
+                    "style": "rule-header_multiLang"
                   }
                 ]
               }
@@ -156,9 +158,7 @@
       {
         "style": "ws-head",
         "table": {
-          "widths": [
-            "*"
-          ],
+          "widths": ["*"],
           "body": [
             [
               {
@@ -187,102 +187,178 @@
       {
         "style": "ws-head",
         "table": {
-          "widths": [
-            "*"
-          ],
+          "widths": ["*"],
           "body": [
             [
               {
                 "columns": [
                   {
-                    "text": "Name/नाम: {{name}}",
-                    "width": "45%",
-                    "style": "details-body"
-                  }            
-                                 
-                ]
-              }
-            ],
-            [
-              {
-                "columns": [
-                  {
-                    "text": "Sex/{{gender_label_multiLang}}: {{gender}}",
-                    "style": "details-body"
-                  }                                   
-                 
-                  
-                ]
-              }
-            ],
-            [
-              {
-                "columns": [
-                  {
-                    "text": "Date of Death/मृत्यु तारीख: {{dod}}",
-                    "width": "45%",
-                    "style": "details-body"
-                  }                        
-            
-                ]
-              }
-            ],
-            [
-              {
-                "columns": [
-                  {
-                    "text": "Place of Death/(जुन स्थान मा मृत्यु भएको छ): {{placeOfDeath}}",
-                    "style": "details-body",
-                    "width": "45%"
+                    "stack": [
+                      {
+                        "text": "Name",
+                        "alignment": "left"
+                      },
+                      {
+                        "text": "( नाम )",
+                        "alignment": "left"
+                      }
+                    ],
+                    "width": "20%"
                   },
                   {
+                    "text": "{{name}}",
+                    "width": "80%",
+                    "style": "details-body"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "stack": [
+                      {
+                        "text": "Sex",
+                        "alignment": "left"
+                      },
+                      {
+                        "text": "(स्त्री / पुरुष)",
+                        "alignment": "left"
+                      }
+                    ],
+                    "width": "20%"
+                  },
+                  {
+                    "text": "{{gender}}",
+                    "width": "30%",
+                    "style": "details-body"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "stack": [
+                      {
+                        "text": "Date of death:",
+                        "alignment": "left"
+                      },
+                      {
+                        "text": "(मृत्यु तारीख)",
+                        "alignment": "left"
+                      }
+                    ],
+                    "width": "20%"
+                  },
+                  {
+                    "text": "{{dod}}",
+                    "width": "80%",
+                    "style": "details-body"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "stack": [
+                      {
+                        "text": "Place of death:",
+                        "alignment": "left"
+                      },
+                      {
+                        "text": "(मृत्यु स्थान)",
+                        "alignment": "left"
+                      }
+                    ],
+                    "width": "20%"
+                  },
+                  {
+                    "text": "{{placeOfDeath}}",
+                    "width": "30%",
+                    "style": "details-body"
+                  },
+                  {
+                    "stack": [
+                      {
+                        "text": "Registration No",
+                        "alignment": "left"
+                      },
+                      {
+                        "text": "(पंजीकरण संख्या)",
+                        "alignment": "left"
+                      }
+                    ],
+                    "width": "30%"
+                  },
+                  {
+                    "text": "{{registrationNo}}",
+                    "width": "20%",
+                    "style": "details-body"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "stack": [
+                      {
+                        "text": "Name of Father / Husband: ",
+                        "alignment": "left"
+                      },
+                      {
+                        "text": "(पिता / पतिको नाम)",
+                        "alignment": "left"
+                      }
+                    ],
+                    "width": "20%"
+                  },
+                  {
+                    "text": "{{fatherName}} {{spouseName}}",
+                    "width": "30%",
+                    "style": "details-body"
+                  },
+                  {
+                    "stack": [
+                      {
+                        "text": "Date of Registration",
+                        "alignment": "left"
+                      },
+                      {
+                        "text": "(पंजीकरण को तारीख)",
+                        "alignment": "left"
+                      }
+                    ],
+                    "width": "30%"
+                  },
+                  {
+                    "text": "{{registration_date}}",
+                    "width": "20%",
+                    "style": "details-body"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                   
+                  {
                     "text": " ",
-                    "width": "10%"
+                    "width": "60%",
+                    "style": "details-body"
                   }, 
                   {
-                    "text": "{{registration_label}}/(पंजीकरण संख्या): {{registrationNo}}",
-                    "style": "details-body"
-                  }  
-          
-                  
-                ]
-              }
-            ],
-            [
-              {
-                "columns": [
-                  {
-                    "text": "Name of Father / Husband:/पिता/स्वामीको नाम: {{fatherName}}",
-                    "style": "details-body",
-                    "width": "45%"
-                  },
-                  {
-                    "text": " ",
-                    "width": "10%"
-                  },                
-                  {
-                    "text": "{{registration_date_label}}/पंजीकरण को तारीख: {{registration_date}}",
-                    "style": "details-body"
-                  }                                             
-                ]
-              }
-            ],        
-     
-            [
-              {
-                "columns": [
-                  {
-                    "text": "Date/तारीख: {{issueDate}}",
-                    "width": "45%",
-                    "style": "details-body"
-                  },
-                  {
-                    "text": " ",
-                    "width": "10%"
-                  },
-                  {
-                    "text": " ",
-                    "style": "details-body"
+                    "image": "{{qr_code_image}}",
+                    "width": 70,
+                    "height": 70,
+                    "style": "qr-code"
                   }
                 ]
               }
@@ -291,130 +367,67 @@
               {
                 "columns": [
                   {
-                    "text": " ",
-                    "width": "55%",
-                    "style": "details-body"
-                  },
-                  {
-                    "text": " ",
-                    "width": "10%"
-                  },
-                  {
-                    "text": " Signature of issuing authority",
-                    "style": "details-body"
-                  }
-                ]
-              }
-            ],
-            [
-              {
-                "columns": [
-                  {
-                    "text": " ",
-                    "width": "55%",
-                    "style": "details-body"
-                  },
-                  {
-                    "text": " ",
-                    "width": "10%"
-                  },
-                  {
-                    "text": " प्रदान गर्ने अधिकारीको हस्ताक्षर",
-                    "style": "details-body",
-                    "margin": [
-                      0,
-                      -5,
-                      0,
-                      0
-                    ]
-                  }
-                ]
-              }
-            ],
-            [
-              {
-                "columns": [
-                  {
-                    "text": " ",
-                    "width": "55%",
-                    "style": "details-body"
-                  },
-                  {
-                    "text": " ",
+                    "stack": [
+                      {
+                        "text": "Date:",
+                        "alignment": "left"
+                      },
+                      {
+                        "text": "(तारीख)",
+                        "alignment": "left"
+                      }
+                    ],
                     "width": "20%"
                   },
                   {
-                    "text": "Seal",
-                    "style": "details-body",
-                    "margin": [
-                      0,
-                      -10,
-                      0,
-                      0
-                    ]
-                  }
-                ]
-              }
-            ],
-            [
-              {
-                "columns": [
-                  {
-                    "text": " ",
-                    "width": "55%",
+                    "text": "{{issueDate}}",
+                    "width": "30%",
                     "style": "details-body"
                   },
                   {
                     "text": " ",
-                    "width": "20%"
+                    "width": "10%",
+                    "style": "details-body"
                   },
                   {
-                    "text": "शीलमोहर ",
-                    "style": "details-body",
-                    "margin": [
-                      0,
-                      -20,
-                      0,
-                      0
-                    ]
+                    "stack": [
+                      {
+                        "text": "Registrar of Birth & Death",
+                        "alignment": "left"
+                      },
+                      {
+                        "text": "जन्म अनि मृत्यु रजिस्ट्रार",
+                        "alignment": "left"
+                      },
+                      {
+                        "text": "Cantonment Board, Lebong",
+                        "alignment": "left"
+                      },
+                      {
+                        "text": "छावनी परिषद, लेबोंग",
+                        "alignment": "left"
+                      }
+                    ],
+                    "width": "30%"
                   }
                 ]
               }
             ]
-            
           ]
         },
         "layout": "noBorders"
-      },
+      }
+    ],
+    "footer": [
       {
-        "style": "ws-head",
-        "table": {
-          "widths": [
-            "*"
-          ],
-          "body": [
-            [
-              {
-                "image": "{{qr_code_image}}",
-                "width": 70,
-                "height": 70,
-                "style": "qr-code"
-              }
-            ] 
-          ]
-        },
-        "layout": "noBorders"
-      } 
+        "text": "Note : In the case of death, no disclosure shall be made of particulars regarding the cause of death as entered in the register.\nSee proviso to Section 17(1) of the Registration of Births and Deaths Act, 1969\nमृत्यु वहीमा वर्णित मृत्युको कारण उल्लेख गरिने छैन। १९६९ सालको जन्म-मृत्यु पंजीकरण एनको १७(१) धारा हेर्नुहोस।",
+        "style": "instruction-body" 
+      }
     ],
     "styles": {
       "pdf-header": {
         "fillColor": "#F2F2F2",
-        "margin": [
-          -70,
-          -41,
-          -81,
-          10
-        ]
+        "margin": [-70, -41, -81, 10]
       },
       "appendix-header": {
         "color": "#000000",
@@ -426,12 +439,7 @@
       "appendix-header-emblem": {
         "color": "#000000",
         "alignment": "center",
-        "margin": [
-          0,
-          -30,
-          0,
-          0
-        ]
+        "margin": [0, -30, 0, 0]
       },
       "instruction-body": {
         "color": "#000000",
@@ -443,12 +451,7 @@
       "qr-code": {
         "color": "#000000",
         "alignment": "left",
-        "margin": [
-          0,
-          -30,
-          0,
-          0
-        ]
+        "margin": [0, 0, 0, 0]
       },
       "title-header": {
         "color": "#000000",
@@ -456,114 +459,71 @@
         "fontSize": 14,
         "fontWeight": 400,
         "alignment": "center",
-        "margin": [
-          0,
-          1,
-          0,
-          0
-        ]
+        "margin": [0, 1, 0, 0]
       },
       "title-header_multiLang": {
         "color": "#000000",
         "bold": true,
-        "fontSize": 15,
+        "fontSize": 11,
         "fontWeight": 400,
         "alignment": "center",
-        "margin": [
-          0,
-          3,
-          0,
-          0
-        ]
+        "margin": [0, 3, 0, 0]
       },
       "appendix-header-serialNo": {
         "color": "#000000",
         "bold": false,
         "fontSize": 8,
         "fontWeight": 400,
-        "margin": [
-          0,
-          -5,
-          0,
-          0
-        ]
+        "margin": [0, -5, 0, 0]
       },
       "appendix-header-formNo": {
         "color": "#000000",
         "bold": false,
         "fontSize": 8,
         "fontWeight": 400,
-        "margin": [
-          20,
-          -5,
-          0,
-          0
-        ]
+        "margin": [20, -5, 0, 0]
       },
       "rule-header": {
         "color": "#000000",
-        "bold": true,
+        "bold": false,
         "fontSize": 10,
         "fontWeight": 400,
-        "margin": [
-          0,
-          0,
-          0,
-          5
-        ]
+        "alignment": "center",
+        "margin": [0, 0, 0, 0]
       },
       "rule-header_multiLang": {
         "color": "#000000",
-        "bold": true,
+        "bold": false,
         "fontSize": 11,
         "fontWeight": 400,
-        "margin": [
-          0,
-          0,
-          0,
-          5
-        ]
+        "alignment": "center",
+        "margin": [0, -5, 0, 0]
       },
       "rule-body": {
         "color": "#000000",
-        "bold": true,
+        "bold": false,
         "fontSize": 10,
         "fontWeight": 400,
-        "margin": [
-          0,
-          0,
-          0,
-          0
-        ]
+        "margin": [0, -5, 0, 0]
       },
       "rule-body_multiLang": {
         "color": "#000000",
-        "bold": true,
+        "bold": false,
         "fontSize": 11,
         "fontWeight": 400,
-        "margin": [
-          0,
-          0,
-          0,
-          0
-        ]
+        "margin": [0, 0, 0, 0]
       },
       "details-body": {
         "color": "#000000",
         "bold": false,
         "fontSize": 11,
         "fontWeight": 400,
-        "margin": [
-          0,
-          5,
-          0,
-          0
-        ]
+        "margin": [0, 5, 0, 0]
       },
       "appendix-header-body": {
         "color": "#000000",
-        "bold": true,
-        "fontSize": 9,
+        "bold": false,
+        "fontSize": 11,
         "fontWeight": 400,
         "alignment": "center"
       },
@@ -573,12 +533,7 @@
         "fontSize": 11,
         "fontWeight": 400,
         "alignment": "left",
-        "margin": [
-          0,
-          0,
-          0,
-          5
-        ]
+        "margin": [0, 0, 0, 5]
       },
       "receipt-value-down-rec": {
         "color": "#000000",
@@ -586,12 +541,7 @@
         "fontSize": 13,
         "fontWeight": 400,
         "alignment": "left",
-        "margin": [
-          0,
-          0,
-          0,
-          0
-        ]
+        "margin": [0, 0, 0, 0]
       },
       "receipt-value-down": {
         "color": "#000000",
@@ -599,23 +549,13 @@
         "fontSize": 13,
         "fontWeight": 400,
         "alignment": "left",
-        "margin": [
-          -8,
-          0,
-          0,
-          5
-        ]
+        "margin": [-8, 0, 0, 5]
       },
       "pdf-application-no-value": {
         "fontSize": 12,
         "font": "Roboto",
         "italics": true,
-        "margin": [
-          -18,
-          8,
-          0,
-          0
-        ],
+        "margin": [-18, 8, 0, 0],
         "color": "#484848"
       },
       "pdf-header-text": {
@@ -623,12 +563,7 @@
         "fontSize": 20,
         "bold": true,
         "letterSpacing": 0.74,
-        "margin": [
-          0,
-          0,
-          0,
-          5
-        ]
+        "margin": [0, 0, 0, 5]
       },
       "pdf-header-sub-text": {
         "color": "#484848",
@@ -638,23 +573,13 @@
       "pdf-application-no": {
         "fontSize": 12,
         "bold": true,
-        "margin": [
-          -18,
-          8,
-          0,
-          0
-        ],
+        "margin": [-18, 8, 0, 0],
         "color": "#484848"
       },
       "pdf-card-title": {
         "fontSize": 11,
         "bold": true,
-        "margin": [
-          -18,
-          16,
-          8,
-          8
-        ],
+        "margin": [-18, 16, 8, 8],
         "color": "#484848",
         "fontWeight": 500
       },
@@ -668,63 +593,33 @@
         "fillColor": "white",
         "fontSize": 7,
         "color": "#484848",
-        "margin": [
-          -20,
-          -2,
-          -8,
-          -8
-        ]
+        "margin": [-20, -2, -8, -8]
       },
       "pdf-table-card": {
         "fillColor": "#F2F2F2",
         "fontSize": 7,
         "color": "#484848",
-        "margin": [
-          -20,
-          -2,
-          -8,
-          -8
-        ]
+        "margin": [-20, -2, -8, -8]
       },
       "pdf-card-key": {
         "color": "rgba(0, 0, 0, 0.54)",
         "fontSize": 8,
-        "margin": [
-          0,
-          1,
-          0,
-          0
-        ]
+        "margin": [0, 1, 0, 0]
       },
       "pdf-card-sub-header": {
         "color": "rgba(0, 0, 0, 0.94)",
         "fontSize": 9,
         "bold": true,
-        "margin": [
-          0,
-          3,
-          0,
-          0
-        ]
+        "margin": [0, 3, 0, 0]
       },
       "pdf-card-value": {
         "fontSize": 10,
         "color": "rgba(0, 0, 0, 0.87)",
-        "margin": [
-          0,
-          0,
-          0,
-          1
-        ]
+        "margin": [0, 0, 0, 1]
       },
       "pdf-head-qr-code": {
         "fillColor": "#F2F2F2",
-        "margin": [
-          -70,
-          -41,
-          -81,
-          0
-        ]
+        "margin": [-70, -41, -81, 0]
       }
     }
   }

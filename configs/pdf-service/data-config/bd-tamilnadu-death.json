@@ -40,20 +40,41 @@
                   "path": "$.embeddedUrl"
                 }
               },
-              {
-                "variable": "dod",
+            	{
+                "variable": "dod", 
                 "value": {
                   "path": "$.dateofdeath"
                 },
-                "type": "dateToWord"
+                "type": "date"
               },
               {
-                "variable": "gender",
+                "variable": "dateToWordFormat", 
+                "value": {
+                  "path": "$.dateofdeath"
+                },
+                "type": "dateToWord",
+                "isUpperCaseRequired":true
+              },
+              {
+                "variable": "gender", 
                 "value": {
                   "path": "$.genderStr"
                 },
                 "type":"setEmpty"
               },
+              {
+                "variable": "gender_multilang",
+                "value": {
+                  "path": "$.genderStr"
+                },
+                "localisation":{
+                  "required":true,
+                  "prefix": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE",
+                  "module": "rainmaker-pdf",
+                  "prefixCbName":true
+               }
+               
+            },
               {
                 "variable": "age",
                 "value": {
@@ -67,6 +88,13 @@
                   "path": "$.dateofissue"
                 },
                 "type": "dateOrEmpty"
+              },
+              {
+                "variable": "aadharNo",
+                "value": {
+                  "path": "$.aadharno"
+                },
+                "type": "setEmpty"
               },
               {
                 "variable": "placeOfDeath",
@@ -165,6 +193,27 @@
                   "path": "$.placeofbirth"
                 },
                 "type":"setEmpty"
+              },
+              {
+                "variable": "spouceUid",
+                "value": {
+                  "path": "$.deathSpouseInfo.aadharno"
+                },
+                "type": "setEmpty"
+              },
+              {
+                "variable": "presentAddress",
+                "value": {
+                  "path": "$.deathPresentaddr.fullAddress"
+                },
+                "type": "setEmpty"
+              },
+              {
+                "variable": "premanentAddress",
+                "value": {
+                  "path": "$.deathPermaddr.fullAddress"
+                },
+                "type": "setEmpty"
               },
               {
                 "variable": "issueDate",
@@ -855,6 +904,24 @@
                     "localisation": {
                       "required": true,
                       "prefix": "PDF_STATIC_LABEL_BD_CB_HI",
+                      "module": "rainmaker-pdf"
+                    }
+                  },
+                  {
+                    "variable": "cb-name-2",
+                    "value": "$.MdmsRes.tenant.tenants[0].code",
+                    "localisation": {
+                      "required": true,
+                      "prefix": "PDF_STATIC_LABEL_BD_CB_EN_EX",
+                      "module": "rainmaker-pdf"
+                    }
+                  },
+                  {
+                    "variable": "cb-name-multilang-2",
+                    "value": "$.MdmsRes.tenant.tenants[0].code",
+                    "localisation": {
+                      "required": true,
+                      "prefix": "PDF_STATIC_LABEL_BD_CB_HI_EX",
                       "module": "rainmaker-pdf"
                     }
                   },

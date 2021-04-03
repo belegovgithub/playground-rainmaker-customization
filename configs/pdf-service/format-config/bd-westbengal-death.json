@@ -47,8 +47,13 @@
                     "style": "appendix-header-body"
                   },
                   {
+                    "text": "Name of the Organization issuing Certificate:",
+                    "style": "appendix-header-body"
+                  },
+                  {
                     "text": "Cantonment Board, Barrackpore",
                     "style": "appendix-header-body",
+                    "bold":true,
                     "margin": [0, 0, 0, 5]
                   }
                 ]
