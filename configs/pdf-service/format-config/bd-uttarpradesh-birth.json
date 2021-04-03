@@ -397,11 +397,11 @@
                         "style": "details-body"
                       },
                       {
-                        "text": "छावनी  परिषद {{cb-name-multilang}}",
+                        "text": "छावनी  परिषद {{cb-name-multilang}} (सी.बी)",
                         "style": "details-body"
                       },
                       {
-                        "text": "CANTONMENT BOARD {{cb-name}}",
+                        "text": "CANTONMENT BOARD {{cb-name}} (CB)",
                         "style": "details-body"
                       }
                     ]
