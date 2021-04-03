@@ -136,7 +136,7 @@
               {
                 "columns": [
                   {
-                    "text": "SEX",
+                    "text": "Sex",
                     "width": "35%",
                     "style": "details-body"
                   },
