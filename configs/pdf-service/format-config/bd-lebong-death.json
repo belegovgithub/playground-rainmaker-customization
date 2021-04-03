@@ -320,7 +320,7 @@
                     "width": "20%"
                   },
                   {
-                    "text": "{{fatherName}}{{spouseName}}",
+                    "text": "{{fatherName}} {{spouseName}}",
                     "width": "30%",
                     "style": "details-body"
                   },

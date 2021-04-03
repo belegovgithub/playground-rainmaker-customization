@@ -202,7 +202,7 @@
                     "width": "1%"
                   },
                   {
-                    "text": "પિતાનું પતિનું નામ/Name of Father or Husband: {{fatherName}}{{spouseName}}",
+                    "text": "પિતાનું પતિનું નામ/Name of Father or Husband: {{fatherName}} {{spouseName}}",
                     "style": "details-body"
                   }
                 ]
