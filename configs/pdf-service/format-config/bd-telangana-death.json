@@ -51,6 +51,7 @@
                   {
                     "text": "(See Rule 8)",
                     "style": "appendix-header-body",
+                    "margin":[0,-5,0,0],
                     "fontSize": 10
                   }
                 ]
@@ -78,7 +79,8 @@
                 "text": "(Issued Under Section 12/17)",
                 "alignment":"center",
                 "bold": true,
-                "fontSize": 11
+                "fontSize": 11,
+                "margin":[0,-5,0,0]
               }
             ]
           ]
@@ -97,7 +99,7 @@
                     "text": "This is to certify that the following information has been taken from the Original record of death which is the register for Secunderabad Cantonment of District Hyderabad of State TELANGANA.",
                     "style": "rule-header_multiLang",
                     "bold": true,
-                    "fontSize": 14
+                    "fontSize": 11
                   }
                 ]
               }
@@ -214,7 +216,7 @@
               {
                 "columns": [
                   {
-                    "text": "Mother’s Name",
+                    "text": "Name of Mother",
                     "width": "35%",
                     "style": "details-body"
                   },
@@ -282,9 +284,9 @@
               {
                 "columns": [
                   {
-                    "text": " ",
-                    "width": "35%"
-                    
+                    "text": "Date: {{dateofissue}}",
+                    "style": "details-body",
+                    "width": "35%" 
                   },
                   {
                     "text": " ",
@@ -311,41 +313,18 @@
                     "width": "5%"
                   },
                   {
-                    "text": "Registrar of Births and Deaths",
-                    "style": "details-body-credentials"
+                    "stack":[
+                      {
+                        "text": "Registrar of Births and Deaths",
+                        "style": "details-body-credentials"
+                      },
+                      {
+                        "text": "{{cb-name}} CANTONMENT BOARD",
+                        "style": "details-body-credentials"
+                        
+                      }
+                    ]
                   } 
-                ]
-              }
-            ],
-            [
-              {
-                "columns": [
-                  {
-                    "text": "Date: {{dateofissue}}",
-                    "width": "35%",
-                    "style": "details-body"
-                     
-                  }
-                   
-                ]
-              }
-            ],
-            [
-              {
-                "columns": [
-                  {
-                    "text": " ",
-                    "width": "35%"
-                  },
-                  {
-                    "text": " ",
-                    "width": "10%"
-                  },
-                  {
-                    "text": "Name: Mohd. Afzal Mohiuddin",
-                    "style": "details-body-val",
-                    "margin":[0,0,0,0] 
-                  }
                 ]
               }
             ],
@@ -358,59 +337,22 @@
                     "height": 70,
                     "style": "qr-code"
                     
-                  },
-                  {
-                    "text": " ",
-                    "width": "10%"
-                  },
-                  {
-                    "text": "Designation: Health Superintendent",
-                    "style": "details-body-credentials",
-                    "width": "95%"
                   }
+                   
                 ]
               }
-            ],
-            [
-              {
-                "columns": [
-                  {
-                    "text": " ",
-                    "width": "35%"
-                  },
-                  {
-                    "text": " ",
-                    "width": "10%"
-                  },
-                  {
-                    "text": "{{cb-name}} CANTONMENT BOARD",
-                    "style": "details-body-credentials"
-                    
-                  }
-                ]
-              }
-            ] 
+            ]
+           
           ]
         },
         "layout": "noBorders",
-        "margin":[0,85,0,0] 
-      },
+        "margin":[0,150,0,0] 
+      }
+    ],
+    "footer": [
       {
-        "style": "ws-head",
-        "table": {
-          "widths": ["*"],
-          "body": [
-            [
-              {
-                "text": "“Note: This Certificate does not require any physical Signature.”",
-                "width": 50,
-                "height": 61.25,
-                "style": "instruction-body"
-              }
-            ]
-          ]
-        },
-        "layout": "noBorders"
+        "text": "“Note: This Certificate does not require any physical Signature.”",
+        "style": "instruction-body" 
       }
     ],
     "styles": {
@@ -433,14 +375,14 @@
       "instruction-body": {
         "color": "#000000",
         "bold": false,
-        "fontSize": 7,
+        "fontSize": 9,
         "fontWeight": 400,
         "alignment": "center"
       },
       "qr-code": {
         "color": "#000000",
         "alignment": "left",
-        "margin": [0, -30, 0, 0]
+        "margin": [0, -50, 0, 0]
       },
       "title-header": {
         "color": "#000000",
@@ -513,7 +455,7 @@
         "bold": true,
         "fontSize": 13,
         "fontWeight": 400,
-        "margin": [0, 3, 0, 0]
+        "margin": [0, 1, 0, 0]
       },
       "details-body-val": {
         "color": "#000000",
