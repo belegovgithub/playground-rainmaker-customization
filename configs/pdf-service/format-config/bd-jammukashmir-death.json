@@ -19,12 +19,7 @@
           "body": [
             [
               {
-                "columns": [
-                  {
-                    "text": "Regd No: ________",
-                    "width": "85%",
-                    "style": "details-body"
-                  },
+                "columns": [ 
                   {
                     "text": "Form No: 6",
                     "width": "15%",
