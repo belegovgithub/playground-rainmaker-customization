@@ -46,8 +46,16 @@
                   "value": {
                     "path": "$.dateofbirth"
                   },
+                  "type": "date"
+                  
+                },
+                {
+                  "variable": "dateToWordFormat", 
+                  "value": {
+                    "path": "$.dateofbirth"
+                  },
                   "type": "dateToWord",
-                  "isUpperCaseRequired": true
+                  "isUpperCaseRequired":true
                 },
                 {
                   "variable": "gender", 

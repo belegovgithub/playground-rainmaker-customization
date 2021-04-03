@@ -200,15 +200,28 @@
                   }
                 ]
               }
-            ],
+            ],        
             [
               {
+              
                 "columns": [
                   {
-                    "text": "DATE OF BIRTH / பிறந்த தேதி : {{dob}}",
-                    "width": "49%",
-                    "style": "details-body"
+                    "stack": [
+                     
+                    {
+                      "text": "DATE OF BIRTH / பிறந்த தேதி : {{dob}}",                     
+                      "style": "details-body"
+                    },
+                    {
+                      "text": "{{dateToWordFormat}}",
+                      "width": "100%",
+                      "style": "details-body"
+                    }                              
+
+                    ],
+                    "width": "49%" 
                   },
+           
                   {
                     "text": " ",
                     "width": "1%"

@@ -240,18 +240,31 @@
 
             [
               {
+              
                 "columns": [
                   {
-                    "text": "{{dod_label_multiLang}} / DATE OF DEATH: {{dod}}",
-                    "width": "59%",
-                    "style": "details-body"
+                    "stack": [
+                     
+                    {
+                      "text": "मृत्यु की तिथि  / DATE OF DEATH: {{dod}}",                     
+                      "style": "details-body"
+                    },
+                    {
+                      "text": "{{dateToWordFormat}}",
+                      "width": "100%",
+                      "style": "details-body"
+                    }                              
+
+                    ],
+                    "width": "59%" 
                   },
+           
                   {
                     "text": " ",
                     "width": "1%"
                   },
                   {
-                    "text": "{{pod_label_multiLang}} / PLACE OF DEATH: {{placeOfDeath}}",
+                    "text": "मृत्यु का स्थान / PLACE OF DEATH: {{placeOfDeath}}",
                     "style": "details-body"
                   }
                 ]

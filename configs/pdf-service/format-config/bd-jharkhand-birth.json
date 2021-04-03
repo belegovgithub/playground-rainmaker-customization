@@ -221,19 +221,31 @@
             ],
             [
               {
+              
                 "columns": [
                   {
-                    "text": "{{dob_label_multiLang}} /Date of Birth: {{dob}}",
-                    "width": "59%",
-                    "style": "details-body"
+                    "stack": [
+                     
+                    {
+                      "text": "{{dob_label_multiLang}} / {{dob_label}}: {{dob}}",                     
+                      "style": "details-body"
+                    },
+                    {
+                      "text": "{{dateToWordFormat}}",
+                      "width": "100%",
+                      "style": "details-body"
+                    }                              
+
+                    ],
+                    "width": "59%" 
                   },
+           
                   {
                     "text": " ",
-                    "width": "1%",
-                    "style": "details-body"
+                    "width": "1%"
                   },
                   {
-                    "text": "{{pob_label_multiLang}} / Place of Birth: {{placeOfBirth}}",
+                    "text": "{{pob_label_multiLang}} / {{pob_label}}: {{placeOfBirth}}",
                     "style": "details-body"
                   }
                 ]

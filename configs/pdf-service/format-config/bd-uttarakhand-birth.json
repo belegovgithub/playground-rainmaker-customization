@@ -203,7 +203,7 @@
               {
                 "columns": [
                   {
-                    "text": "{{name_label_multiLang}} / {{name_label}}: {{name}}",
+                    "text": ["{{name_label_multiLang}} / {{name_label}}:",{"text" :"{{name}}","bold":true}],
                     "width": "59%",
                     "style": "details-body"
                   },
@@ -220,12 +220,25 @@
             ],
             [
               {
+              
                 "columns": [
                   {
-                    "text": "{{dob_label_multiLang}} / {{dob_label}}: {{dob}}",
-                    "width": "59%",
-                    "style": "details-body"
+                    "stack": [
+                     
+                    {
+                      "text": "{{dob_label_multiLang}} / {{dob_label}}: {{dob}}",                     
+                      "style": "details-body"
+                    },
+                    {
+                      "text": "{{dateToWordFormat}}",
+                      "width": "100%",
+                      "style": "details-body"
+                    }                              
+
+                    ],
+                    "width": "59%" 
                   },
+           
                   {
                     "text": " ",
                     "width": "1%"

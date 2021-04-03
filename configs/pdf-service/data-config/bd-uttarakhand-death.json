@@ -35,13 +35,7 @@
                   "type":"setEmpty",
                   "isUpperCaseRequired": true
                 },
-                {
-                  "variable": "dod", 
-                  "value": {
-                    "path": "$.dateofdeath"
-                  },
-                  "type": "dateToWord"
-                },
+               
                 {
                   "variable": "gender", 
                   "value": {
@@ -148,9 +142,17 @@
                     "value": {
                       "path": "$.dateofdeath"
                     },
-                    "type": "dateToWord",
-                    "isUpperCaseRequired": true
+                    "type": "date"
                   },
+                  {
+                    "variable": "dateToWordFormat", 
+                    "value": {
+                      "path": "$.dateofdeath"
+                    },
+                    "type": "dateToWord",
+                    "isUpperCaseRequired":true
+                  },
+          
                  
                   {
                     "variable": "deceasedAadharno", 

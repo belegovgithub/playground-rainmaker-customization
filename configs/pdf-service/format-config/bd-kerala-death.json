@@ -260,6 +260,26 @@
               {
                 "columns": [
                   {
+                    "text": " ",
+                    "width": "49%",
+                    "style": "details-body"
+                  },
+                  {
+                    "text": ":",
+                    "width": "1%",
+                    "style": "details-body"
+                  },
+                  {
+                    "text": "{{dateToWordFormat}}",
+                    "style": "details-body"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
                     "text": "മരണ സ്ഥലം /Place of Death",
                     "width": "49%",
                     "style": "details-body"

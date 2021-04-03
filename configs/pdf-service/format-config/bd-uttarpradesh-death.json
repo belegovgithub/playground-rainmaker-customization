@@ -237,14 +237,28 @@
                 ]
               }
             ],
+            
             [
               {
+              
                 "columns": [
                   {
-                    "text": "{{dod_label_multiLang}} / DATE OF DEATH: {{dob}}",
-                    "width": "59%",
-                    "style": "details-body"
+                    "stack": [
+                     
+                    {
+                      "text": "{{dod_label_multiLang}} / DATE OF DEATH: {{dod}}",                     
+                      "style": "details-body"
+                    },
+                    {
+                      "text": "{{dateToWordFormat}}",
+                      "width": "100%",
+                      "style": "details-body"
+                    }                              
+
+                    ],
+                    "width": "59%" 
                   },
+           
                   {
                     "text": " ",
                     "width": "1%"

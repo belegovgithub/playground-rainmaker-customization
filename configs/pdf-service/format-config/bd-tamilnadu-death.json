@@ -201,34 +201,47 @@
                 ]
               }
             ],
-            [
+                      
+			[
+        {
+        
+          "columns": [
+            {
+              "stack": [
+               
               {
-                "columns": [
-                  {
-                    "text": "DATE OF DEATH/ / இறந்த தேதி  : {{dod}}",
-                    "width": "49%",
-                    "style": "details-body"
-                  },
-                  {
-                    "text": " ",
-                    "width": "1%"
-                  },
-                  {
-                    "stack": [
-                      {
-                        "text": "UID NUMBER OF  DECEASED / இறந்தவர் ஆதார் எண் : {{aadharNo}}" ,
-                        "style": "details-body"
-                      },
-                      {
-                        "text": "PLACE OF DEATH / இறந்த இடம் : {{placeOfDeath}}",
-                        "style": "details-body"
-                      } 
-                    ] 
-                  }  
-                  
-                ]
-              }
-            ],
+                "text": "DATE OF DEATH/ / இறந்த தேதி  : {{dod}}",                     
+                "style": "details-body"
+              },
+              {
+                "text": "{{dateToWordFormat}}",
+                "width": "100%",
+                "style": "details-body"
+              }                              
+
+              ],
+              "width": "49%" 
+            },
+     
+            {
+              "text": " ",
+              "width": "1%"
+            },
+            {
+              "stack": [
+                {
+                  "text": "UID NUMBER OF  DECEASED / இறந்தவர் ஆதார் எண் : {{aadharNo}}" ,
+                  "style": "details-body"
+                },
+                {
+                  "text": "PLACE OF DEATH / இறந்த இடம் : {{placeOfDeath}}",
+                  "style": "details-body"
+                } 
+              ] 
+            }  
+          ]
+        }
+      ],
             [
               {
                 "columns": [

@@ -218,20 +218,33 @@
                 ]
               }
             ],
-            [
+         [
               {
+              
                 "columns": [
                   {
-                    "text": "जन्म तिथि / DATE OF BIRTH : {{dob}}",
-                    "width": "59%",
-                    "style": "details-body"
+                    "stack": [
+                     
+                    {
+                      "text": "जन्म तिथि / DATE OF BIRTH : {{dob}}",                     
+                      "style": "details-body"
+                    },
+                    {
+                      "text": "{{dateToWordFormat}}",
+                      "width": "100%",
+                      "style": "details-body"
+                    }                              
+
+                    ],
+                    "width": "59%" 
                   },
+           
                   {
                     "text": " ",
                     "width": "1%"
                   },
                   {
-                    "text": "जन्म स्थान/ PLACE OF BIRTH: {{placeOfBirth}}",
+                    "text": "{{pob_label_multiLang}} / {{pob_label}}: {{placeOfBirth}}",
                     "style": "details-body"
                   }
                 ]

@@ -40,12 +40,20 @@
                   "path": "$.embeddedUrl"
                 }
               },
-              {
-                "variable": "dod",
+            	{
+                "variable": "dod", 
                 "value": {
                   "path": "$.dateofdeath"
                 },
-                "type": "dateToWord"
+                "type": "date"
+              },
+              {
+                "variable": "dateToWordFormat", 
+                "value": {
+                  "path": "$.dateofdeath"
+                },
+                "type": "dateToWord",
+                "isUpperCaseRequired":true
               },
               {
                 "variable": "gender",
