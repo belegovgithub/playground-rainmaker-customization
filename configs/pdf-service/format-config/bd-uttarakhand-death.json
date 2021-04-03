@@ -417,8 +417,28 @@
                     "width": "1%"
                   },
                   {
-                    "text": "{{issuing_authority_label_multiLang}} / ISSUING AUTHORITY:",
-                    "style": "details-body"
+                    "stack": [
+                      {
+                        "text": "{{issuing_authority_label_multiLang}} / {{issuing_authority_label}}",
+                        "style": "details-body"
+                      },
+                      {
+                        "text": "रजिस्ट्रार (जन्म एवं मृत्यु)",
+                        "style": "details-body"
+                      },
+                      {
+                        "text": "REGISTRAR (BIRTH & DEATH)",
+                        "style": "details-body"
+                      },
+                      {
+                        "text": "छावनी  परिषद {{cb-name-multilang}}",
+                        "style": "details-body"
+                      },
+                      {
+                        "text": "CANTONMENT BOARD {{cb-name}}",
+                        "style": "details-body"
+                      }
+                    ]
                   }
                 ]
               }
