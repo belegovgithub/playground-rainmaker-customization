@@ -57,11 +57,11 @@
                     "margin": [0, 0, 0, 5]
                   },
                   {
-                    "text": "கண்டோன்மெண்ட் போர்டு {{cb-name-multilang}}",
+                    "text": "கண்டோன்மெண்ட் கழகம் {{cb-name-multilang-2}}",
                     "style": "appendix-header-body"
                   },
                   {
-                    "text": "CANTONMENT BOARD {{cb-name}}",
+                    "text": "CANTONMENT BOARD {{cb-name-2}}",
                     "style": "appendix-header-body"
                   }
                 ]
@@ -157,7 +157,7 @@
               {
                 "columns": [
                   {
-                    "text": "{{dist-name-multilang}} மாவட்டத்தின் {{block-name-multilang}} தாலுகாவின் -கண்டோன்மெண்ட்போர்டு பதிவு செய்த பதிவுதாரரின் பிறப்புக்கான அசல் பதிவிலிருந்து பின்வரும் தகவல்கள் எடுக்கப்பட்டுள்ளன என்பதை உறுதிப்படுத்த இது உள்ளது.",
+                    "text": "{{dist-name-multilang}} மாவட்டம் {{block-name-multilang}} தாலுகாவின் கண்டோன்மெண்ட்கழகம் பதிவு செய்த பதிவுதாரரின் பிறப்புக்கான அசல் பதிவேட்டிலிருந்து பின்வரும் தகவல்கள் எடுக்கப்பட்டுள்ளன என்று சான்று அளிக்கப்படுகிறது.",
                     "style": "rule-body_multiLang"
                   }
                 ]
@@ -167,7 +167,7 @@
               {
                 "columns": [
                   {
-                    "text": "THIS IS TO CERTIFY THAT THE FOLLOWING INFORMATION HAS BEEN TAKEN FROM THE ORIGINAL RECORD OF BIRTH WHICH IS THE REGISTER FOR CANTONMENT BOARD {{cb-name}} TALUK OF {{block-name}} DISTRICT OF {{dist-name}} DISTRICT OF TAMILNADU STATE, INDIA",
+                    "text": "THIS IS TO CERTIFY THAT THE FOLLOWING INFORMATION HAS BEEN TAKEN FROM THE ORIGINAL RECORD OF BIRTH WHICH IS THE REGISTER FOR CANTONMENT BOARD {{cb-name}} OF {{block-name}} TALUK OF {{dist-name}} DISTRICT OF TAMILNADU STATE, INDIA.",
                     "style": "rule-body"
                   }
                 ]
@@ -195,15 +195,14 @@
                     "width": "1%"
                   },
                   {
-                    "text": "SEX / பாலினம் : {{gender}}",
+                    "text": "SEX / பாலினம் : {{gender}}/{{gender_multilang}}",
                     "style": "details-body"
                   }
                 ]
               }
-            ],        
+            ],
             [
               {
-              
                 "columns": [
                   {
                     "stack": [
@@ -246,7 +245,7 @@
                     "width": "1%"
                   },
                   {
-                    "text": "NAME OF FATHER / தந்தையார் பெயர் : {{fatherName}}",
+                    "text": "NAME OF FATHER / தந்தை பெயர் : {{fatherName}}",
                     "style": "details-body"
                   }
                 ]
@@ -265,7 +264,7 @@
                     "width": "1%"
                   },
                   {
-                    "text": "FATHER'S UID NUMBER / தந்தையார் ஆதார்  எண் : {{fatherUid}}",
+                    "text": "FATHER'S UID NUMBER / தந்தை ஆதார்  எண் : {{fatherUid}}",
                     "style": "details-body"
                   }
                 ]
@@ -275,7 +274,7 @@
               {
                 "columns": [
                   {
-                    "text": "ADDRESS OF PARENTS AT THE TIME OF BIRTH OF THE CHILD / பெற்றோரின் பிறப்பின் போது முகவரி: {{childAddress}}",
+                    "text": "ADDRESS OF PARENTS AT THE TIME OF BIRTH OF THE CHILD / குழந்தை பிறப்பின் போது பெற்றோரின் முகவரி: {{childAddress}}",
                     "width": "49%",
                     "style": "details-body"
                   },
@@ -354,7 +353,7 @@
                   {
                     "stack": [
                       {
-                        "text": "Registrar of Birth & Death", 
+                        "text": "REGISTRAR (BIRTH & DEATH)", 
                         "fontSize": 9
                       },
                       {
@@ -362,11 +361,11 @@
                         "fontSize": 9
                       },    
                       {
-                        "text": "CANTONMENT BOARD {{cb-name}}", 
+                        "text": "CANTONMENT BOARD {{cb-name-2}}", 
                         "fontSize": 9
                       },
                       {
-                        "text": "கண்டோன்மெண்ட் போர்டு {{cb-name-multilang}}", 
+                        "text": "கண்டோன்மெண்ட் போர்டு {{cb-name-multilang-2}}", 
                         "fontSize": 9
                       }
                     ] 
@@ -404,19 +403,31 @@
               {
                 "stack": [
                   {
-                    "text": "THIS IS A COMPUTER GENERATED CERTIFICATE",
+                    "text": "“THIS IS A COMPUTER GENERATED CERTIFICATE”",
                     "style": "instruction-body" 
                   },
                   {
-                    "text": " THE GOVT.OF INDIA VIDE CIRCULAR NO.1/12/2014-VS(CRS) DATED 27-JULY-2015 HAS APPROVED THIS CERTIFICATE AS A VALID LEGAL DOCUMENT FOR ALL OFFICIAL PURPOSES",
+                    "text": "“THE GOVT.OF INDIA VIDE CIRCULAR NO.1/12/2014-VS(CRS) DATED 27-JULY-2015 HAS APPROVED THIS CERTIFICATE AS A VALID LEGAL DOCUMENT FOR ALL OFFICIAL PURPOSES”",
                     "style": "instruction-body" 
                   },
                   {
-                    "text": " THE REGISTRATION NUMBER IS UNIQUE TO EACH EVENT.",
+                    "text": "“THE REGISTRATION NUMBER IS UNIQUE TO EACH EVENT.”",
                     "style": "instruction-body" 
                   },
                   {
-                    "text": "“பிறப்பு மற்றும் இறப்பு பதிவு செய்வதை உறுதி செய்வீர் / ENSURE REGISTRATION OF EVERY BIRTH AND DEATH",
+                    "text": "“இது கணினி மூலம் பதிவேற்றம் செய்யப்பட்ட சான்றிதழ்”",
+                    "style": "instruction-body" 
+                  },
+                  {
+                    "text": "“இந்திய அரசு சுற்றறிக்கை எண் 1 / 12/2014-VS (CRS) தேதியிட்ட 27-ஜூலை -2015  மூலம் அங்கீகரித்த இந்த சான்றிதழ் அனைத்து உத்தியோகப்பூர்வ நோக்கங்களுக்கும் சட்ட ஆவணமாக இந்த சான்றிதழ் செல்லுபடியாகும்”",
+                    "style": "instruction-body" 
+                  },
+                  {
+                    "text": "“இந்த பதிவு எண் ஒவ்வொரு நிகழ்விற்கும் தனித்துவமானது”",
+                    "style": "instruction-body" 
+                  },
+                  {
+                    "text": "“பிறப்பு மற்றும் இறப்பு பதிவு செய்வதை உறுதி செய்வீர் / ENSURE REGISTRATION OF EVERY BIRTH AND DEATH”",
                     "style": "instruction-body" 
                   }
                 ] 

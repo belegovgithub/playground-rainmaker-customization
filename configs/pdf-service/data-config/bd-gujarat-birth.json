@@ -87,6 +87,13 @@
                 "type":"setEmpty"
               },
               {
+                "variable": "spouseName",
+                "value": {
+                  "path": "$.deathSpouseInfo.fullName"
+                },
+                "type":"setEmpty"
+              },
+              {
                 "variable": "parentsAddress",
                 "value": {
                   "path": "$.birthPermaddr.fullAddress"
