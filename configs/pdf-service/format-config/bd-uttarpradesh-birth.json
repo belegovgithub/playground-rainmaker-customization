@@ -203,7 +203,7 @@
               {
                 "columns": [
                   {
-                    "text": "{{name_label_multiLang}} / {{name_label}}: {{name}}",
+                    "text": ["{{name_label_multiLang}} / {{name_label}}:",{"text" :" {{name}}","bold":true}],
                     "width": "59%",
                     "style": "details-body"
                   },
@@ -226,11 +226,11 @@
                     "stack": [
                      
                     {
-                      "text": "{{dob_label_multiLang}} / {{dob_label}}: {{dob}}",                     
+                      "text": ["{{dob_label_multiLang}} / {{dob_label}}:",{"text" :" {{dob}}","bold":true}],                     
                       "style": "details-body"
                     },
                     {
-                      "text": "{{dateToWordFormat}}",
+                      "text": [{"text" :"{{dateToWordFormat}}","bold":true}],
                       "width": "100%",
                       "style": "details-body"
                     }                              
@@ -244,7 +244,7 @@
                     "width": "1%"
                   },
                   {
-                    "text": "{{pob_label_multiLang}} / {{pob_label}}: {{placeOfBirth}}",
+                    "text": ["{{pob_label_multiLang}} / {{pob_label}}:",{"text" :" {{placeOfBirth}}","bold":true}],  
                     "style": "details-body"
                   }
                 ]
@@ -255,7 +255,7 @@
               {
                 "columns": [
                   {
-                    "text": "{{mother_name_label_multiLang}} / {{mother_name_label}}: {{motherName}}",
+                    "text": ["{{mother_name_label_multiLang}} / {{mother_name_label}}:",{"text" :" {{motherName}}","bold":true}],  
                     "width": "59%",
                     "style": "details-body"
                   },
@@ -264,7 +264,7 @@
                     "width": "1%"
                   },
                   {
-                    "text": "{{father_name_label_multiLang}} / {{father_name_label}}: {{fatherName}}",
+                    "text": ["{{father_name_label_multiLang}} / {{father_name_label}}:",{"text" :" {{fatherName}}","bold":true}],  
                     "style": "details-body"
                   }
                 ]
@@ -293,7 +293,7 @@
               {
                 "columns": [
                   {
-                    "text": "बच्चे के जन्म के समय माता–पिता का पता / {{child_address_label}}: {{childAddress}}",
+                    "text": ["बच्चे के जन्म के समय माता–पिता का पता / {{child_address_label}}:",{"text" :" {{childAddress}}","bold":true}],  
                     "width": "59%",
                     "style": "details-body"
                   },
@@ -302,7 +302,7 @@
                     "width": "1%"
                   },
                   {
-                    "text": "माता-पिता का स्थाई पता / {{parent_address_label}}: {{parentsAddress}}",
+                    "text": ["माता-पिता का स्थाई पता / {{parent_address_label}}:",{"text" :" {{parentsAddress}}","bold":true}],  
                     "style": "details-body"
                   }
                 ]

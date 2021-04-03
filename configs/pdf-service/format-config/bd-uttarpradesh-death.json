@@ -203,7 +203,7 @@
               {
                 "columns": [
                   {
-                    "text": "मृतक का नाम  / NAME OF DECEASED: {{name}}",
+                    "text": ["मृतक का नाम  / NAME OF DECEASED:",{"text" :" {{name}}","bold":true}],  
                     "width": "59%",
                     "style": "details-body"
                   },
