@@ -145,7 +145,7 @@
               {
                 "columns": [
                   {
-                    "text": "(जन्म मृत्यु रजिस्ट्रीकरण अधिनियम,1969 की धारा 12/17 तथा उत्तराखंड जन्म जन्म रजिस्ट्रीकरण नियम, 2003 के  नियम 8/13 के अंतर्गत जारी किया गया)",
+                    "text": "(जन्म मृत्यु रजिस्ट्रीकरण अधिनियम,1969 की धारा 12/17 तथा उत्तराखंड जन्म मृत्यु रजिस्ट्रीकरण नियम, 2003 के  नियम 8/13 के अंतर्गत जारी किया गया)",
                     "style": "rule-header_multiLang"
                   }
                 ]
@@ -184,7 +184,7 @@
               {
                 "columns": [
                   {
-                    "text": "THIS  IS TO CERTIFY THAT THE  FOLLOWING  INFORMATION  HAS BEEN  TAKEN FROM  THE  ORIGINAL RECORD OF BIRTH WHICH  IS THE  REGISTER  FOR CANTONMENT BOARD {{cb-name}} OF TAHSIL/BLOCK {{block-name}} OF DISTRICT {{dist-name}} OF STATE/UNION TERRITORY UTTARAKHAND, INDIA.",
+                    "text": "THIS  IS TO CERTIFY THAT THE  FOLLOWING  INFORMATION  HAS BEEN  TAKEN FROM  THE  ORIGINAL RECORD OF BIRTH WHICH  IS THE  REGISTER  FOR CANTONMENT BOARD {{cb-name}} OF THESIL/BLOCK {{block-name}} OF DISTRICT {{dist-name}} OF STATE/UNION TERRITORY UTTARAKHAND, INDIA.",
                     "style": "rule-body"
                   }
                 ]
