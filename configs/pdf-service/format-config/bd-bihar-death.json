@@ -242,7 +242,7 @@
                     "width": "1%"
                   },
                   {
-                    "text": "मृत्यु का स्थान/ PLACE OF DEATH: {{placeOfBirth}}",
+                    "text": "मृत्यु का स्थान/ PLACE OF DEATH: {{placeOfDeath}}",
                     "style": "details-body"
                   }
                 ]
