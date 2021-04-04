@@ -309,7 +309,7 @@
               {
                 "columns": [
                   {
-                    "text": "मृत्यु के समय मृतक का पता / ADDRESS OF THE DECEASED AT THE TIME OF DEATH: {{childAddress}}",
+                    "text": "मृत्यु के समय मृतक का पता / ADDRESS OF THE DECEASED AT THE TIME OF DEATH: {{presentAdd}}",
                     "width": "59%",
                     "style": "details-body"
                   },

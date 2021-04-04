@@ -69,7 +69,7 @@
                     "style": "appendix-header-body"
                   },
                   {
-                    "text": "Registrar – CANTONMENT BOARD,{{cb-name}}, AJMER",
+                    "text": "Registrar – CHAVNI PARISHAD ,{{cb-name}}, AJMER",
                     "style": "appendix-header-body"
                   }
                 ]
@@ -127,7 +127,7 @@
               {
                 "columns": [
                   {
-                    "text": "(जन्म और मृत्यु रजिस्ट्रीकरण अधिनियम, 1969 की धारा 12/17 और राजस्थान जन्म और मृत्यु रजिस्ट्रीकरण अधिनियम, 2000 के नियम 8/13 के अधीन जारी किया गया)",
+                    "text": "(जन्म और मृत्यु रजिस्ट्रीकरण अधिनियम, 1969 की धारा 12/17 और राजस्थान जन्म और मृत्यु रजिस्ट्रीकरण नियम, 2000 के नियम 8/13 के अधीन जारी किया गया)",
                     "style": "rule-header_multiLang"
                   }
                 ]
@@ -183,7 +183,7 @@
                         "text": "छावनी परिषद, {{cb-name-multilang}} ",
                         "bold": true
                       },
-                      "तहसील/खण्ड {{block-name-multilang}} जिला {{dist-name-multilang}} राज्य/संघ राज्य ",{"text": "राजस्थान, भारत","bold":true}," का रजिस्टर है।"
+                      "तहसील/खण्ड {{block-name-multilang}} जिला जिला ",{"text": "xxxx","bold":true}," राज्य/संघ राज्य ",{"text": "राजस्थान, भारत","bold":true}," का रजिस्टर है।"
                     ],
                     "style": "rule-body_multiLang"
                   }
@@ -200,7 +200,7 @@
                         "text": "CANTONMENT BOARD, {{cb-name}} ",
                         "bold": true
                       },
-                      "of Tehsil/Block {{block-name}} of District ",
+                      "of Tehsil/Block जिला ",{"text": "xxxx","bold":true}," of District ",
                       {
                         "text": "{{dist-name}}",
                         "bold": true
