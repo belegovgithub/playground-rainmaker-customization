@@ -480,7 +480,8 @@
         "bold": false,
         "fontSize": 7,
         "fontWeight": 400,
-        "alignment": "center"
+        "alignment": "center",
+        "margin": [0, -20, 0, 0]
       },
       "qr-code": {
         "color": "#000000",
