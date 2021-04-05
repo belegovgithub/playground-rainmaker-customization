@@ -281,6 +281,18 @@
                                 }
                             },
                             {
+                                "variable": "name_applicant",
+                                "value": {
+                                    "path": "$.connectionHolders[0].name"
+                                }
+                            },
+                            {
+                                "variable": "correspondence_address_applicant",
+                                "value": {
+                                    "path": "$.connectionHolders[0].correspondenceAddress"
+                                }
+                            },
+                            {
                                 "variable": "plumberName",
                                 "value": {
                                     "path": "$.plumberInfo[0].name"

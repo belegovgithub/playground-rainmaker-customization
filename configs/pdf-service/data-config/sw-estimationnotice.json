@@ -39,6 +39,18 @@
                                 }
                             },
                             {
+                                "variable": "name_applicant",
+                                "value": {
+                                    "path": "$.connectionHolders[0].name"
+                                }
+                            },
+                            {
+                                "variable": "correspondence_address_applicant",
+                                "value": {
+                                    "path": "$.connectionHolders[0].correspondenceAddress"
+                                }
+                            },
+                            {
                                 "variable": "guardianName",
                                 "value": {
                                     "path": "$.property.owners[0].fatherOrHusbandName"
