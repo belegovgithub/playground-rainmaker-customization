@@ -3777,7 +3777,7 @@
        "indexName": "tlindex-v1",
        "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tradelicense.tenantId.keyword\":\"pb.testing\"}},{\"terms\":{\"Data.tradelicense.status.keyword\":[\"INITIATED\"]}}],\"must\":[{\"terms\":{\"Data.tradelicense.status.keyword\":[\"APPROVED\",\"EXPIRED\",\"CANCELLED\"]}}]}},\"aggs\":{\"Total Application Approved\":{\"value_count\":{\"field\":\"Data.tradelicense.applicationNumber.keyword\"}}}}}}",
        "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\",    \"district\" : \"Data.tenantData.city.districtCode\",  \"tenantId\" : \"Data.tradelicense.tenantId\"  ,  \"businessService\" : \"dataObject.Bill.billDetails.businessServices\"  }",
-       "dateRefField": "Data.tradelicense.issuedDate"
+       "dateRefField": "Data.tradelicense.applicationDate"
      },
      {
        "module": "LAMS",
