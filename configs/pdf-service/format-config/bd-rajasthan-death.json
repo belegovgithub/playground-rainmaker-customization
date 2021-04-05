@@ -69,7 +69,7 @@
                     "style": "appendix-header-body"
                   },
                   {
-                    "text": "Registrar – CANTONMENT BOARD,{{cb-name}}, AJMER",
+                    "text": "Registrar – CHAVNI PARISHAD,{{cb-name}}, AJMER",
                     "style": "appendix-header-body"
                   }
                 ]
@@ -183,7 +183,7 @@
                         "text": "छावनी परिषद, {{cb-name-multilang}} ",
                         "bold": true
                       },
-                      "तहसील/खण्ड {{block-name-multilang}} जिला {{dist-name-multilang}} राज्य/संघ राज्य ",{"text": "राजस्थान, भारत","bold":true}," का रजिस्टर है।"
+                      "तहसील/खण्ड {{block-name-multilang}} जिला ",{"text": "xxxx","bold":true}," राज्य/संघ राज्य ",{"text": "राजस्थान, भारत","bold":true}," का रजिस्टर है।"
                     ],
                     "style": "rule-body_multiLang"
                   }
@@ -200,7 +200,7 @@
                         "text": "CANTONMENT BOARD, {{cb-name}} ",
                         "bold": true
                       },
-                      "of Tehsil/Block {{block-name}} of District ",
+                      "of Tehsil/Block जिला ",{"text": "xxxx","bold":true}," of District ",
                       {
                         "text": "{{dist-name}}",
                         "bold": true

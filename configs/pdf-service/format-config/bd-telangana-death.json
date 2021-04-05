@@ -375,7 +375,7 @@
       "instruction-body": {
         "color": "#000000",
         "bold": false,
-        "fontSize": 9,
+        "fontSize":10,
         "fontWeight": 400,
         "alignment": "center"
       },

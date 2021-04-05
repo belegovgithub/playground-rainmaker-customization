@@ -174,7 +174,7 @@
               {
                 "columns": [
                   {
-                    "text": "यह प्रमाणित किया जाता है निम्नलिखित सूचना जन्म के मूल अभिलेख से ली गई है जो कि छावनी परिषद {{cb-name-multilang}} (सी.बी) तहसील {{block-name-multilang}} जिला {{dist-name-multilang}} राज्य/संघ प्रदेश उत्तर प्रदेश, भारत के रजिस्टर में उल्लेखित हैl",
+                    "text": "यह प्रमाणित किया जाता है निम्नलिखित सूचना जन्म के मूल अभिलेख से ली गई है जो कि छावनी परिषद {{cb-name-multilang}} (सी.बी) तहसील {{block-name-multilang}} जिला {{dist-name-multilang}} राज्य/संघ प्रदेश उत्तर प्रदेश, भारत के रजिस्टर में उल्लिखित हैl",
                     "style": "rule-body_multiLang"
                   }
                 ]
@@ -473,7 +473,8 @@
         "bold": false,
         "fontSize": 7,
         "fontWeight": 400,
-        "alignment": "center"
+        "alignment": "center",
+        "margin": [0, -20, 0, 0]
       },
       "qr-code": {
         "color": "#000000",

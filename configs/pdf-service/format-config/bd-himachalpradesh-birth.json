@@ -244,7 +244,7 @@
                     "width": "1%"
                   },
                   {
-                    "text": "जन्म स्थान/ PLACE OF BIRTH: {{placeOfBirth}}",
+                    "text": "{{pob_label_multiLang}} / {{pob_label}}: {{placeOfBirth}}",
                     "style": "details-body"
                   }
                 ]
@@ -450,7 +450,8 @@
         "bold": false,
         "fontSize": 7,
         "fontWeight": 400,
-        "alignment": "center"
+        "alignment": "center",
+        "margin": [0, -20, 0, 0]
       },
       "qr-code": {
         "color": "#000000",

@@ -242,7 +242,7 @@
                     "width": "1%"
                   },
                   {
-                    "text": "मृत्यु का स्थान/ PLACE OF DEATH: {{placeOfBirth}}",
+                    "text": "मृत्यु का स्थान/ PLACE OF DEATH: {{placeOfDeath}}",
                     "style": "details-body"
                   }
                 ]
@@ -309,7 +309,7 @@
               {
                 "columns": [
                   {
-                    "text": "मृत्यु के समय मृतक का पता / ADDRESS OF THE DECEASED AT THE TIME OF DEATH: {{childAddress}}",
+                    "text": "मृत्यु के समय मृतक का पता / ADDRESS OF THE DECEASED AT THE TIME OF DEATH: {{presentAdd}}",
                     "width": "59%",
                     "style": "details-body"
                   },
@@ -445,7 +445,8 @@
         "bold": false,
         "fontSize": 7,
         "fontWeight": 400,
-        "alignment": "center"
+        "alignment": "center",
+        "margin": [0, -20, 0, 0]
       },
       "qr-code": {
         "color": "#000000",

@@ -90,7 +90,7 @@
                   "type":"setEmpty"
                 },
                 {
-                  "variable": "permanentAddress", 
+                  "variable": "parentsAddress", 
                   "value": {
                     "path": "$.deathPermaddr.fullAddress"
                   },
@@ -114,20 +114,6 @@
                   "variable": "motherName", 
                   "value": {
                     "path": "$.deathMotherInfo.fullName"
-                  },
-                  "type":"setEmpty"
-                },
-                {
-                  "variable": "childAddress", 
-                  "value": {
-                    "path": "$.birthPermaddr.fullAddress"
-                  },
-                  "type":"setEmpty"
-                },
-                {
-                  "variable": "parentsAddress", 
-                  "value": {
-                    "path": "$.birthPresentaddr.fullAddress"
                   },
                   "type":"setEmpty"
                 },
