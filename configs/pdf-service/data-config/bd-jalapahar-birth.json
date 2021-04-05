@@ -14,7 +14,7 @@
               "direct": [
                 {
                     "variable": "emblemImage",
-                    "url": "https://raw.githubusercontent.com/belsoftware/webaccess/master/images/birth/emblem.png",
+                    "url": "https://raw.githubusercontent.com/belsoftware/webaccess/master/images/birth/emblemInd.png",
                     "type": "image"
                 },
                 {
