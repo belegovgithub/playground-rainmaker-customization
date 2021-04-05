@@ -2031,7 +2031,7 @@
      {
        "module": "TL",
        "indexName": "tlindex-v1",
-       "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tradelicense.tenantId.keyword\":\"pb.testing\"}},{\"terms\":{\"Data.tradelicense.status.keyword\":[\"INITIATED\"]}}],\"must\":[{\"terms\":{\"Data.tradelicense.status.keyword\":[\"APPROVED\"]}}]}},\"aggs\":{\"Total Application Approved\":{\"value_count\":{\"field\":\"Data.tradelicense.applicationNumber.keyword\"}}}}}}",
+       "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tradelicense.tenantId.keyword\":\"pb.testing\"}},{\"terms\":{\"Data.tradelicense.status.keyword\":[\"INITIATED\"]}}],\"must\":[{\"terms\":{\"Data.tradelicense.status.keyword\":[\"APPROVED\",\"EXPIRED\",\"CANCELLED\"]}}]}},\"aggs\":{\"Total Application Approved\":{\"value_count\":{\"field\":\"Data.tradelicense.applicationNumber.keyword\"}}}}}}",
        "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\", \r\n  \"district\" : \"Data.tenantData.city.districtCode\", \r\n\"tenantId\" : \"Data.tradelicense.tenantId.keyword\" \r\n}", 
        "dateRefField": "Data.tradelicense.applicationDate"
      },
