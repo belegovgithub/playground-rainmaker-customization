@@ -183,7 +183,11 @@
                         "text": "छावनी परिषद, {{cb-name-multilang}} ",
                         "bold": true
                       },
-                      "तहसील/खण्ड {{block-name-multilang}} जिला ",{"text": "xxxx","bold":true}," राज्य/संघ राज्य ",{"text": "राजस्थान, भारत","bold":true}," का रजिस्टर है।"
+                      "तहसील/खण्ड ",{"text": "xxxx","bold":true}," जिला ",{"text": "{{dist-name-multilang}}","bold":true}," राज्य/संघ राज्य ",
+                        {
+                          "text": "राजस्थान, भारत ",
+                          "bold": true
+                        },"का रजिस्टर है।"
                     ],
                     "style": "rule-body_multiLang"
                   }
@@ -197,7 +201,7 @@
                     "text": [
                       "This is to certify that the following information has been taken from the original record of death which is the register for (Local area / Local body) ",
                       {
-                        "text": "CANTONMENT BOARD, {{cb-name}} ",
+                        "text": "CHAVNI PARISHAD, {{cb-name}} ",
                         "bold": true
                       },
                       "of Tehsil/Block जिला ",{"text": "xxxx","bold":true}," of District ",
@@ -305,7 +309,7 @@
               {
                 "columns": [
                   {
-                    "text": "मृत्यु के समय मृतक का पता / Address of Deceased at the time of death: {{presentAdd}}",
+                    "text": "मृतक का मृत्यु के समय का पता/ Address of Deceased at the time of death: {{presentAdd}}",
                     "width": "49%",
                     "style": "details-body"
                   },

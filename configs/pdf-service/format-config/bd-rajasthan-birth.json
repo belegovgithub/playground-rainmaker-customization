@@ -183,7 +183,11 @@
                         "text": "छावनी परिषद, {{cb-name-multilang}} ",
                         "bold": true
                       },
-                      "तहसील/खण्ड {{block-name-multilang}} जिला जिला ",{"text": "xxxx","bold":true}," राज्य/संघ राज्य ",{"text": "राजस्थान, भारत","bold":true}," का रजिस्टर है।"
+                      "तहसील/खण्ड ",{"text": "xxxx","bold":true}," जिला ",{"text": "{{dist-name-multilang}}","bold":true}," राज्य/संघ राज्य ",
+                        {
+                          "text": "राजस्थान, भारत ",
+                          "bold": true
+                        },"का रजिस्टर है।"
                     ],
                     "style": "rule-body_multiLang"
                   }
@@ -197,10 +201,10 @@
                     "text": [
                       "This is to certify that the following information has been taken from the original record of birth which is the register for (Local area / Local body) ",
                       {
-                        "text": "CANTONMENT BOARD, {{cb-name}} ",
+                        "text": "CHAVNI PARISHAD, {{cb-name}} ",
                         "bold": true
                       },
-                      "of Tehsil/Block जिला ",{"text": "xxxx","bold":true}," of District ",
+                      "of Tehsil/Block ",{"text": "xxxx","bold":true}," of District ",
                       {
                         "text": "{{dist-name}}",
                         "bold": true
@@ -273,7 +277,7 @@
                         "style": "details-body"
                       },
                       {
-                        "text": "माता का आधार नंबर / Mother's Aadhaar No: {{motherUid}}",
+                        "text": "माता का आधार नंबर / Mother Aadhaar No: {{motherUid}}",
                         "style": "details-body"
                       },
                       {
@@ -281,7 +285,7 @@
                         "style": "details-body"
                       },
                       {
-                        "text": "पिता का आधार नंबर /Father's Aadhaar No: {{fatherUid}}",
+                        "text": "पिता का आधार नंबर /Father Aadhaar No: {{fatherUid}}",
                         "style": "details-body"
                       }
                     ]
@@ -302,7 +306,7 @@
                     "width": "1%"
                   },
                   {
-                    "text": "माता-पिता के स्थायी पता/ Permanent Address of parents: {{parentsAddress}}",
+                    "text": "माता-पिता का स्थायी पता/ Permanent Address of parents: {{parentsAddress}}",
                     "style": "details-body"
                   }
                 ]
