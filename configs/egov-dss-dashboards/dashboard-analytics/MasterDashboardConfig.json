@@ -604,7 +604,7 @@
                   "headers": []
                 },
                 {
-                  "id": "licenseIssued",
+                  "id": "totalApplicationsApproved",
                   "name": "DSS_TL_LICENSE_ISSUED",
                   "code": "",
                   "chartType": "metric",
@@ -825,7 +825,7 @@
                   "headers": []
                 },
                 {
-                  "id": "licenseIssued",
+                  "id": "totalApplicationsApproved",
                   "name": "DSS_TL_LICENSE_ISSUED",
                   "code": "",
                   "chartType": "metric",
@@ -5219,7 +5219,7 @@
                   "headers": []
                 },
                 {
-                  "id": "licenseIssued",
+                  "id": "totalApplicationsApproved",
                   "name": "DSS_TL_LICENSE_ISSUED",
                   "code": "",
                   "chartType": "metric",
