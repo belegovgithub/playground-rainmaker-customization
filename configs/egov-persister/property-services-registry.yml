@@ -18,7 +18,7 @@ serviceMaps:
         type: JSON
         dbType: JSONB
 
-    - query: INSERT INTO eg_pt_property (id, propertyid, tenantid, surveyid, accountid, oldpropertyid, status, acknowldgementnumber, propertytype, ownershipcategory, usagecategory, creationreason, nooffloors,noofflats, landarea, superbuiltuparea, linkedproperties, source,  channel, createdby, createdtime, lastmodifiedby, lastmodifiedtime, additionaldetails) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+    - query: INSERT INTO eg_pt_property (id, propertyid, tenantid, surveyid, accountid, oldpropertyid, status, acknowldgementnumber, propertytype, ownershipcategory, usagecategory, creationreason, nooffloors,noofflats, landarea, superbuiltuparea, linkedproperties, source,  channel, createdby, createdtime, lastmodifiedby, lastmodifiedtime, additionaldetails, abasPropertyId) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
       basePath: Property
       jsonMaps:
 
@@ -73,6 +73,8 @@ serviceMaps:
       - jsonPath: $.Property.additionalDetails
         type: JSON
         dbType: JSONB
+
+      - jsonPath: $.Property.abasPropertyId
 
 
     - query: INSERT INTO eg_pt_owner(ownerinfouuid, tenantid, propertyid, userid, status, isprimaryowner, ownertype, ownershippercentage, institutionid, relationship, createdby, createdtime, lastmodifiedby, lastmodifiedtime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
@@ -307,7 +309,7 @@ serviceMaps:
         type: JSON
         dbType: JSONB
 
-    - query: UPDATE eg_pt_property SET propertyid=?,  surveyid=?, accountid=?, oldpropertyid=?, status=?, propertytype=?, ownershipcategory=?, usagecategory=?, nooffloors=?,noofflats=?, landarea=?,   superbuiltuparea=?, linkedproperties=?, lastmodifiedby=?, lastmodifiedtime=?, additionaldetails=? WHERE Id=? AND tenantId=?;
+    - query: UPDATE eg_pt_property SET propertyid=?,  surveyid=?, accountid=?, oldpropertyid=?, status=?, propertytype=?, ownershipcategory=?, usagecategory=?, nooffloors=?,noofflats=?, landarea=?,   superbuiltuparea=?, linkedproperties=?, lastmodifiedby=?, lastmodifiedtime=?, additionaldetails=?, abasPropertyId=? WHERE Id=? AND tenantId=?;
       basePath: Property
       jsonMaps:
 
@@ -344,6 +346,8 @@ serviceMaps:
       - jsonPath: $.Property.additionalDetails
         type: JSON
         dbType: JSONB
+
+      - jsonPath: $.Property.abasPropertyId
 
       - jsonPath: $.Property.id
 
