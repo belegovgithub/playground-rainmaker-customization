@@ -69,7 +69,7 @@
                     "style": "appendix-header-body"
                   },
                   {
-                    "text": "Registrar – CHAVNI PARISHAD ,{{cb-name}}, AJMER",
+                    "text": "Registrar – CANTONMENT BOARD ,{{cb-name}}, AJMER",
                     "style": "appendix-header-body"
                   }
                 ]
@@ -201,7 +201,7 @@
                     "text": [
                       "This is to certify that the following information has been taken from the original record of birth which is the register for (Local area / Local body) ",
                       {
-                        "text": "CHAVNI PARISHAD, {{cb-name}} ",
+                        "text": "CANTONMENT BOARD, {{cb-name}} ",
                         "bold": true
                       },
                       "of Tehsil/Block ",{"text": "xxxx","bold":true}," of District ",
