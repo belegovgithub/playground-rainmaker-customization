@@ -1,0 +1,903 @@
+{
+    "key": "bd-jammu-death",
+    "DataConfigs": {
+      "serviceName": "rainmaker-common",
+      "version": "1.0.0",
+      "baseKeyPath": "$.DeathCertificate.*",
+      "entityIdPath":"$.id",
+      "isCommonTableBorderRequired": true,
+      "mappings": [
+        {
+          "topic": "common-pdf-generation-3",
+          "mappings": [
+            {
+              "direct": [
+                {
+                    "variable": "emblemImage",
+                    "url": "https://raw.githubusercontent.com/belsoftware/webaccess/master/images/birth/emblemInd.png",
+                    "type": "image"
+                },
+                {
+                    "variable": "govtImage",
+                    "url": "https://raw.githubusercontent.com/belsoftware/webaccess/master/images/birth/jammuKashmirGovtBnW.png",
+                    "type": "image"
+                },
+                {
+                  "variable": "govtImage1",
+                  "url": "https://raw.githubusercontent.com/belsoftware/webaccess/master/images/birth/jammuGovt.png",
+                  "type": "image"
+              },
+                {
+                    "variable": "form5",
+                    "url": "https://raw.githubusercontent.com/belsoftware/webaccess/master/images/birth/form5_Border.png",
+                    "type": "image"
+                },
+                {
+                  "variable": "name", 
+                  "value": {
+                    "path": "$.fullName"
+                  },
+                  "type":"setEmpty",
+                  "isUpperCaseRequired": true
+                },
+               
+                {
+                  "variable": "gender", 
+                  "value": {
+                    "path": "$.genderStr"
+                  },
+                  "type":"setEmpty",
+                  "isUpperCaseRequired": true
+                },
+                {
+                  "variable": "registrationNo", 
+                  "value": {
+                    "path": "$.registrationno"
+                  },
+                  "type":"setEmpty"
+                },
+                {
+                    "variable": "registration_date", 
+                    "value": {
+                      "path": "$.dateofreport"
+                    },
+                    "type": "dateOrEmpty"
+                  },
+                  {
+                    "variable": "age", 
+                    "value": {
+                      "path": "$.age"
+                    },
+                    "type": "setEmpty"
+                  },
+                  {
+                    "variable": "spouseName", 
+                    "value": {
+                      "path": "$.deathSpouseInfo.fullName"
+                    },
+                    "type": "setEmpty",
+                    "isUpperCaseRequired": true
+                  },    
+                {
+                  "variable": "fatherName", 
+                  "value": {
+                    "path": "$.deathFatherInfo.fullName"
+                  },
+                  "type":"setEmpty",
+                  "isUpperCaseRequired": true
+                },
+                {
+                  "variable": "motherName", 
+                  "value": {
+                    "path": "$.deathMotherInfo.fullName"
+                  },
+                  "type":"setEmpty",
+                  "isUpperCaseRequired": true
+                },
+                {
+                  "variable": "presentAddress", 
+                  "value": {
+                    "path": "$.deathPresentaddr.fullAddress"
+                  },
+                  "type":"setEmpty",
+                  "isUpperCaseRequired": true
+                },
+                {
+                  "variable": "parentsAddress", 
+                  "value": {
+                    "path": "$.deathPermaddr.fullAddress"
+                  },
+                  "type":"setEmpty",
+                  "isUpperCaseRequired": true
+                },
+                {
+                  "variable": "fatherUid", 
+                  "value": {
+                    "path": "$.deathFatherInfo.aadharno"
+                  },
+                  "type":"setEmpty",
+                  "isUpperCaseRequired": true
+                },
+                {
+                  "variable": "motherUid", 
+                  "value": {
+                    "path": "$.deathMotherInfo.aadharno"
+                  },
+                  "type":"setEmpty",
+                  "isUpperCaseRequired": true
+                },
+                {
+                  "variable": "remarks", 
+                  "value": {
+                    "path": "$.remarks"
+                  },
+                  "type":"setEmpty",
+                  "isUpperCaseRequired": true
+                },
+                  {
+                    "variable": "placeOfDeath", 
+                    "value": {
+                      "path": "$.placeofdeath"
+                    },
+                    "type":"setEmpty",
+                    "isUpperCaseRequired": true
+                  },
+                  {
+                    "variable": "dod", 
+                    "value": {
+                      "path": "$.dateofdeath"
+                    },
+                    "type": "date"
+                  },
+                  {
+                    "variable": "dateToWordFormat", 
+                    "value": {
+                      "path": "$.dateofdeath"
+                    },
+                    "type": "dateToWord",
+                    "isUpperCaseRequired":true
+                  },
+          
+                 
+                  {
+                    "variable": "deceasedAadharno", 
+                    "value": {
+                      "path": "$.aadharno"
+                    },
+                    "type":"setEmpty",
+                    "isUpperCaseRequired": true
+                  },
+                  {
+                    "variable": "spouceAadharNo", 
+                    "value": {
+                      "path": "$.deathSpouseInfo.aadharno"
+                    },
+                    "type":"setEmpty",
+                    "isUpperCaseRequired": true
+                  },
+                  {
+                    "variable": "issueDate", 
+                    "value": {
+                      "path": "$.dateofissue"
+                    },
+                    "type": "dateOrEmpty"
+                  },
+                  
+                  {
+                    "variable": "embeddedUrl", 
+                    "value": {
+                      "path": "$.embeddedUrl"
+                    }
+                  },
+                  {
+                    "variable": "cantonment-board",
+                    "value": {
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_TLCERTIFICATE_MUNICIPAL_CORPORATION"
+                    },
+                    "type": "label",
+                    "localisation":{
+                      "required":true,
+                      "prefix": null,
+                      "module":"rainmaker-pdf"
+                   }
+                  },
+                  {
+                    "variable": "govt_label",
+                    "value": {
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_GOVT_UP"
+                    },
+                    "type": "label",
+                    "localisation":{
+                      "required":true,
+                      "prefix": null,
+                      "module":"rainmaker-pdf"
+                   }
+                  },
+                  {
+                    "variable": "govt_label_multiLang",
+                    "value": {
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_GOVT_UP_MULTILANG"
+                    },
+                    "type": "label",
+                    "localisation":{
+                      "required":true,
+                      "prefix": null,
+                      "module":"rainmaker-pdf"
+                   }
+                  },
+                  {
+                    "variable": "dept_label",
+                    "value": {
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_DEPT"
+                    },
+                    "type": "label",
+                    "localisation":{
+                      "required":true,
+                      "prefix": null,
+                      "module":"rainmaker-pdf"
+                   }
+                  },
+                  {
+                    "variable": "dept_label_multiLang",
+                    "value": {
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_DEPT_MULTILANG"
+                    },
+                    "type": "label",
+                    "localisation":{
+                      "required":true,
+                      "prefix": null,
+                      "module":"rainmaker-pdf"
+                   }
+                  },
+                  {
+                    "variable": "gram_panchayat_label",
+                    "value": {
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_GRAM_PANCHAYAT"
+                    },
+                    "type": "label",
+                    "localisation":{
+                      "required":true,
+                      "prefix": null,
+                      "module":"rainmaker-pdf"
+                   }
+                  },
+                  {
+                    "variable": "gram_panchayat_label_multiLang",
+                    "value": {
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_GRAM_PANCHAYAT_MULTILANG"
+                    },
+                    "type": "label",
+                    "localisation":{
+                      "required":true,
+                      "prefix": null,
+                      "module":"rainmaker-pdf"
+                   }
+                  },
+                  {
+                    "variable": "certificate_label",
+                    "value": {
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_CERTIFICATE_BIRTH"
+                    },
+                    "type": "label",
+                    "localisation":{
+                      "required":true,
+                      "prefix": null,
+                      "module":"rainmaker-pdf"
+                   }
+                  },
+                  {
+                    "variable": "certificate_label_multiLang",
+                    "value": {
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_CERTIFICATE_BIRTH_MULTILANG"
+                    },
+                    "type": "label",
+                    "localisation":{
+                      "required":true,
+                      "prefix": null,
+                      "module":"rainmaker-pdf"
+                   }
+                  },
+                  {
+                    "variable": "rule1_label",
+                    "value": {
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_RULE_1"
+                    },
+                    "type": "label",
+                    "localisation":{
+                      "required":true,
+                      "prefix": null,
+                      "module":"rainmaker-pdf"
+                   }
+                  },
+                  {
+                    "variable": "rule1_label_multiLang",
+                    "value": {
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_RULE_1_MULTILANG"
+                    },
+                    "type": "label",
+                    "localisation":{
+                      "required":true,
+                      "prefix": null,
+                      "module":"rainmaker-pdf"
+                   }
+                  },
+                  {
+                    "variable": "rule2_label",
+                    "value": {
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_RULE_2"
+                    },
+                    "type": "label",
+                    "localisation":{
+                      "required":true,
+                      "prefix": null,
+                      "module":"rainmaker-pdf"
+                   }
+                  },
+                  {
+                    "variable": "rule2_label_multiLang",
+                    "value": {
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_RULE_2_MULTILANG"
+                    },
+                    "type": "label",
+                    "localisation":{
+                      "required":true,
+                      "prefix": null,
+                      "module":"rainmaker-pdf"
+                   }
+                  },
+                  {
+                    "variable": "name_label",
+                    "value": {
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_NAME"
+                    },
+                    "type": "label",
+                    "localisation":{
+                      "required":true,
+                      "prefix": null,
+                      "module":"rainmaker-pdf"
+                   }
+                  },
+                  {
+                    "variable": "name_label_multiLang",
+                    "value": {
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_DEATHCERIFICATE_NAME_MULTILANG"
+                    },
+                    "type": "label",
+                    "localisation":{
+                      "required":true,
+                      "prefix": null,
+                      "module":"rainmaker-pdf"
+                   }
+                  },
+                  {
+                    "variable": "gender_label",
+                    "value": {
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_GENDER"
+                    },
+                    "type": "label",
+                    "localisation":{
+                      "required":true,
+                      "prefix": null,
+                      "module":"rainmaker-pdf"
+                   }
+                  },
+                  {
+                    "variable": "gender_label_multiLang",
+                    "value": {
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_GENDER_MULTILANG"
+                    },
+                    "type": "label",
+                    "localisation":{
+                      "required":true,
+                      "prefix": null,
+                      "module":"rainmaker-pdf"
+                   }
+                  },
+                  {
+                    "variable": "aadhar_label_multiLang",
+                    "value": {
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_DEATHCERIFICATE_AADHAR_MULTILANG"
+                    },
+                    "type": "label",
+                    "localisation":{
+                      "required":true,
+                      "prefix": null,
+                      "module":"rainmaker-pdf"
+                   }
+                  },
+                  {
+                    "variable": "dob_label",
+                    "value": {
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_DOB"
+                    },
+                    "type": "label",
+                    "localisation":{
+                      "required":true,
+                      "prefix": null,
+                      "module":"rainmaker-pdf"
+                   }
+                  },
+                  {
+                    "variable": "dod_label_multiLang",
+                    "value": {
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_DEATHCERIFICATE_DOD_MULTILANG"
+                    },
+                    "type": "label",
+                    "localisation":{
+                      "required":true,
+                      "prefix": null,
+                      "module":"rainmaker-pdf"
+                   }
+                  },
+                  {
+                    "variable": "pob_label",
+                    "value": {
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_POB"
+                    },
+                    "type": "label",
+                    "localisation":{
+                      "required":true,
+                      "prefix": null,
+                      "module":"rainmaker-pdf"
+                   }
+                  },
+                  {
+                    "variable": "pod_label_multiLang",
+                    "value": {
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_DEATHCERIFICATE_POD_MULTILANG"
+                    },
+                    "type": "label",
+                    "localisation":{
+                      "required":true,
+                      "prefix": null,
+                      "module":"rainmaker-pdf"
+                   }
+                  },
+                  {
+                    "variable": "mother_name_label",
+                    "value": {
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_MOTHER_NAME"
+                    },
+                    "type": "label",
+                    "localisation":{
+                      "required":true,
+                      "prefix": null,
+                      "module":"rainmaker-pdf"
+                   }
+                  },
+                  {
+                    "variable": "mother_name_label_multiLang",
+                    "value": {
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_MOTHER_NAME_MULTILANG"
+                    },
+                    "type": "label",
+                    "localisation":{
+                      "required":true,
+                      "prefix": null,
+                      "module":"rainmaker-pdf"
+                   }
+                  },
+                  {
+                    "variable": "father_name_label",
+                    "value": {
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_FATHER_NAME"
+                    },
+                    "type": "label",
+                    "localisation":{
+                      "required":true,
+                      "prefix": null,
+                      "module":"rainmaker-pdf"
+                   }
+                  },
+                  {
+                    "variable": "father_name_label_multiLang",
+                    "value": {
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_FATHER_NAME_MULTILANG"
+                    },
+                    "type": "label",
+                    "localisation":{
+                      "required":true,
+                      "prefix": null,
+                      "module":"rainmaker-pdf"
+                   }
+                  },
+                  {
+                    "variable": "mother_uid_label",
+                    "value": {
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_MOTHER_UID"
+                    },
+                    "type": "label",
+                    "localisation":{
+                      "required":true,
+                      "prefix": null,
+                      "module":"rainmaker-pdf"
+                   }
+                  },
+                  {
+                    "variable": "mother_aadhar_label_multiLang",
+                    "value": {
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_DEATHCERIFICATE_AADHAR_MULTILANG"
+                    },
+                    "type": "label",
+                    "localisation":{
+                      "required":true,
+                      "prefix": null,
+                      "module":"rainmaker-pdf"
+                   }
+                  },
+                  {
+                    "variable": "father_uid_label",
+                    "value": {
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_FATHER_UID"
+                    },
+                    "type": "label",
+                    "localisation":{
+                      "required":true,
+                      "prefix": null,
+                      "module":"rainmaker-pdf"
+                   }
+                  },
+                  {
+                    "variable": "father_aadhar_label_multiLang",
+                    "value": {
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_DEATHCERIFICATE_AADHAR_MULTILANG"
+                    },
+                    "type": "label",
+                    "localisation":{
+                      "required":true,
+                      "prefix": null,
+                      "module":"rainmaker-pdf"
+                   }
+                  },
+                  {
+                    "variable": "child_address_label",
+                    "value": {
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_ADDRESS_OF_CHILD_BIRTH"
+                    },
+                    "type": "label",
+                    "localisation":{
+                      "required":true,
+                      "prefix": null,
+                      "module":"rainmaker-pdf"
+                   }
+                  },
+                  {
+                    "variable": "death_address_label_multiLang",
+                    "value": {
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_DEATHCERIFICATE_ADDRESS_OF_DEATH_MULTILANG"
+                    },
+                    "type": "label",
+                    "localisation":{
+                      "required":true,
+                      "prefix": null,
+                      "module":"rainmaker-pdf"
+                   }
+                  },
+                  {
+                    "variable": "parent_address_label",
+                    "value": {
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_PERMENENT_ADDRESS_OF_PARENT"
+                    },
+                    "type": "label",
+                    "localisation":{
+                      "required":true,
+                      "prefix": null,
+                      "module":"rainmaker-pdf"
+                   }
+                  },
+                  {
+                    "variable": "death_perm_address_label_multiLang",
+                    "value": {
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_DEATHCERIFICATE_PERMENENT_ADDRESS_OF_DECEASED_MULTILANG"
+                    },
+                    "type": "label",
+                    "localisation":{
+                      "required":true,
+                      "prefix": null,
+                      "module":"rainmaker-pdf"
+                   }
+                  },
+                  {
+                    "variable": "registration_label",
+                    "value": {
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_REGISTRATION_NUMBER"
+                    },
+                    "type": "label",
+                    "localisation":{
+                      "required":true,
+                      "prefix": null,
+                      "module":"rainmaker-pdf"
+                   }
+                  },
+                  {
+                    "variable": "registration_label_multiLang",
+                    "value": {
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_REGISTRATION_NUMBER_MULTILANG"
+                    },
+                    "type": "label",
+                    "localisation":{
+                      "required":true,
+                      "prefix": null,
+                      "module":"rainmaker-pdf"
+                   }
+                  },
+                  {
+                    "variable": "registration_date_label",
+                    "value": {
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_REGISTRATION_DATE"
+                    },
+                    "type": "label",
+                    "localisation":{
+                      "required":true,
+                      "prefix": null,
+                      "module":"rainmaker-pdf"
+                   }
+                  },
+                  {
+                    "variable": "registration_date_label_multiLang",
+                    "value": {
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_REGISTRATION_DATE_MULTILANG"
+                    },
+                    "type": "label",
+                    "localisation":{
+                      "required":true,
+                      "prefix": null,
+                      "module":"rainmaker-pdf"
+                   }
+                  },
+                  {
+                    "variable": "remarks_label",
+                    "value": {
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_REMARKS"
+                    },
+                    "type": "label",
+                    "localisation":{
+                      "required":true,
+                      "prefix": null,
+                      "module":"rainmaker-pdf"
+                   }
+                  },
+                  {
+                    "variable": "remarks_label_multiLang",
+                    "value": {
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_REMARKS_MULTILANG"
+                    },
+                    "type": "label",
+                    "localisation":{
+                      "required":true,
+                      "prefix": null,
+                      "module":"rainmaker-pdf"
+                   }
+                  },
+                  {
+                    "variable": "issue_date_label",
+                    "value": {
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_ISSUE_DATE"
+                    },
+                    "type": "label",
+                    "localisation":{
+                      "required":true,
+                      "prefix": null,
+                      "module":"rainmaker-pdf"
+                   }
+                  },
+                  {
+                    "variable": "issue_date_label_multiLang",
+                    "value": {
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_ISSUE_DATE_MULTILANG"
+                    },
+                    "type": "label",
+                    "localisation":{
+                      "required":true,
+                      "prefix": null,
+                      "module":"rainmaker-pdf"
+                   }
+                  },
+                  {
+                    "variable": "issuing_authority_label",
+                    "value": {
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_ISSUING_AUTHORITY_NAME"
+                    },
+                    "type": "label",
+                    "localisation":{
+                      "required":true,
+                      "prefix": null,
+                      "module":"rainmaker-pdf"
+                   }
+                  },
+                  {
+                    "variable": "issuing_authority_label_multiLang",
+                    "value": {
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_ISSUING_AUTHORITY_NAME_MULTILANG"
+                    },
+                    "type": "label",
+                    "localisation":{
+                      "required":true,
+                      "prefix": null,
+                      "module":"rainmaker-pdf"
+                   }
+                  },
+                  {
+                    "variable": "instruction1_label",
+                    "value": {
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_INSTRUCTION_1"
+                    },
+                    "type": "label",
+                    "localisation":{
+                      "required":true,
+                      "prefix": null,
+                      "module":"rainmaker-pdf"
+                   }
+                  },
+                  {
+                    "variable": "instruction1_label_multiLang",
+                    "value": {
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_INSTRUCTION_1_MULTILANG"
+                    },
+                    "type": "label",
+                    "localisation":{
+                      "required":true,
+                      "prefix": null,
+                      "module":"rainmaker-pdf"
+                   }
+                  },
+                  {
+                    "variable": "instruction2_label",
+                    "value": {
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_INSTRUCTION_2"
+                    },
+                    "type": "label",
+                    "localisation":{
+                      "required":true,
+                      "prefix": null,
+                      "module":"rainmaker-pdf"
+                   }
+                  },
+                  {
+                    "variable": "instruction2_label_multiLang",
+                    "value": {
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_INSTRUCTION_2_MULTILANG"
+                    },
+                    "type": "label",
+                    "localisation":{
+                      "required":true,
+                      "prefix": null,
+                      "module":"rainmaker-pdf"
+                   }
+                  },
+                  {
+                    "variable": "issuing_authority",
+                    "value": {
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_ISSUING_AUTHORITY"
+                    },
+                    "type": "label",
+                    "localisation":{
+                      "required":true,
+                      "prefix": null,
+                      "module":"rainmaker-pdf"
+                   }
+                  },
+                  {
+                    "variable": "issuing_authority_multiLang",
+                    "value": {
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_ISSUING_AUTHORITY_MULTILANG"
+                    },
+                    "type": "label",
+                    "localisation":{
+                      "required":true,
+                      "prefix": null,
+                      "module":"rainmaker-pdf"
+                   }
+                  },
+                  {
+                    "variable": "cb_label_name_multiLang",
+                    "value": {
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_TLCERTIFICATE_MUNICIPAL_CORPORATION_HI"
+                    },
+                    "type": "label",
+                    "localisation":{
+                      "required":true,
+                      "prefix": null,
+                      "module":"rainmaker-pdf" 
+                   }
+                  },
+                  {
+                    "variable": "cb_letter_label",
+                    "value": {
+                      "path": "PDF_STATIC_LABEL_BD_EN_CB"
+                    },
+                    "type": "label",
+                    "localisation":{
+                      "required":true,
+                      "prefix": null,
+                      "module":"rainmaker-pdf"
+                   }
+                  }
+                  
+              ]
+            },
+            {
+              "qrcodeConfig": [
+                {
+                    "variable": "qr_code_image",
+                    "value":"{{embeddedUrl}}"
+                }
+              ]
+            },
+            {
+                "externalAPI": [     
+                  { 
+                      "path": "http://localhost:8085/egov-mdms-service/v1/_get",
+                      "queryParam": "moduleName=tenant&masterName=tenants&tenantId=pb&filter=%5B?(@.code=='{$.tenantId}')%5D",
+                      "apiRequest": null,
+                      "responseMapping":[
+                        {
+                          "variable": "cb-name",
+                          "value":"$.MdmsRes.tenant.tenants[0].code",
+                          "localisation":{
+                            "required":true,
+                            "prefix": "PDF_STATIC_LABEL_BD_CB_EN",
+                            "module":"rainmaker-pdf"
+                            }
+                        },
+                        {
+                          "variable": "cb-name-multilang",
+                          "value":"$.MdmsRes.tenant.tenants[0].code",
+                          "localisation":{
+                            "required":true,
+                            "prefix": "PDF_STATIC_LABEL_BD_CB_HI",
+                            "module":"rainmaker-pdf"
+                            
+                            }
+                        },
+
+
+                        {
+                          "variable": "dist-name",
+                          "value":"$.MdmsRes.tenant.tenants[0].city.districtName",
+                          "localisation":{
+                            "required":true,
+                            "prefix": "PDF_STATIC_LABEL_BD_DIST_EN",
+                            "module":"rainmaker-pdf"
+                            }
+                        },                        
+                        {
+                          "variable": "dist-name-multilang",
+                          "value":"$.MdmsRes.tenant.tenants[0].city.districtName",
+                          "localisation":{
+                            "required":true,
+                            "prefix": "PDF_STATIC_LABEL_BD_DIST_HI",
+                            "module":"rainmaker-pdf"
+                            
+                            }
+                        },
+
+
+                        {
+                          "variable": "block-name",
+                          "value":"$.MdmsRes.tenant.tenants[0].city.blockName",
+                          "localisation":{
+                            "required":true,
+                            "prefix": "PDF_STATIC_LABEL_BD_BL_EN",
+                            "module":"rainmaker-pdf"
+                            }
+                        },                        
+                        {
+                          "variable": "block-name-multilang",
+                          "value":"$.MdmsRes.tenant.tenants[0].city.blockName",
+                          "localisation":{
+                            "required":true,
+                            "prefix": "PDF_STATIC_LABEL_BD_BL_HI",
+                            "module":"rainmaker-pdf"
+                            
+                            }
+                        }
+                      ]
+                  }
+                ]
+              }
+          ]
+        }
+      ]
+    }
+  }
