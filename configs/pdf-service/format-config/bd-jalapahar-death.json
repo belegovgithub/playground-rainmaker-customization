@@ -174,7 +174,7 @@
               {
                 "columns": [
                   {
-                    "text": "This is to certify that the following information has been taken from the original record of death which is in the register for (Local Area) CANTONMENT BOARD JALAPAHAR of Darjeeling P.S. Darjeeling District of West Bengal.",
+                    "text":[" ",{"text":"    "},"  ",{"text":"    "},"  ",{"text":"    "},"This is to certify that the following information has been taken from the original record of death  which is in the register for (Local Area)  Cantonment Board of Jalapahar of Darjeeling P.S. Darjeeling District of West Bengal."],
                     "style": "rule-body_multiLang"
                   }
                 ]
@@ -184,7 +184,7 @@
               {
                 "columns": [
                   {
-                    "text": "यो तथ्य द्वारा प्रमाणित गरिन्छ दिएको विवरण मृत्यु विवरण बाट लिएको हो । उक्त विवरण पच्चिम बंगाल राज्यको (स्थानीय क्षेत्र) छावनी परिषद  जल्पाहार जिल्ला दार्जिलिंग  थाना अधीन दार्जिलिंग मृत्यु पंजीकरण भएको छ ।",
+                    "text": ["  ",{"text":"    "},"  ",{"text":"    "},"  ",{"text":"    "},"यो तथ्य द्वारा प्रमाणित गरिन्छ भने दिइएको विबरण मूल मृत्यु विबरण पुस्तिकाबाट लिएको हो, जो छावनी परिषद जलापहाड़ दार्जीलिंग जिल्ला , पश्चिम बंगाल अन्तर्गत रहेको छ |"],
                     "style": "rule-body"
                   }
                 ]
@@ -402,19 +402,23 @@
                     "stack": [
                       {
                         "text": "Registrar of Birth & Death",
-                        "alignment": "left"
+                        "alignment": "center",
+                        "margin": [-40, 2, 0, 0]
                       },
                       {
                         "text": "जन्म अनि मृत्यु रजिस्ट्रार",
-                        "alignment": "left"
+                        "alignment": "center",
+                        "margin": [-40, 2, 0, 0]
                       },
                       {
                         "text": "Cantonment Board, Jalapahar",
-                        "alignment": "left"
+                        "alignment": "center",
+                        "margin": [-40, 2, 0, 0]
                       },
                       {
-                        "text": "छावनी परिषद, लेबोंग",
-                        "alignment": "left"
+                        "text": "छावनी परिषद, जलापहाड़",
+                        "alignment": "center",
+                        "margin": [-40, 2, 0, 0]
                       }
                     ],
                     "width": "30%"

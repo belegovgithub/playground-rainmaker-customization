@@ -174,7 +174,7 @@
               {
                 "columns": [
                   {
-                    "text": "This is to certify that the following information has been taken from the original record of birth which is in the register for (Local Area) CANTONMENT BOARD LEBONG of Darjeeling P.S. Darjeeling District of West Bengal.",
+                    "text": [" ",{"text":"    "},"  ",{"text":"    "},"  ",{"text":"    "},"This is to certify that the following information has been taken from the original record of birth which is in the register for (Local Area) Cantonment Board of Lebong of Darjeeling P.S. Darjeeling District of West Bengal."],
                     "style": "rule-body_multiLang"
                   }
                 ]
@@ -184,7 +184,7 @@
               {
                 "columns": [
                   {
-                    "text": "यो तथ्य द्वारा प्रमाणित गरिन्छ दिएको विवरण जन्म विवरण वाटा लिएको हो । उक्त विवरण पच्चिम बंगाल राज्यको (स्थानीय क्षेत्र) छावनी परिषद लेबॉन्ग जिल्ला दार्जिलिंग थाना अधीन दार्जिलिंग जन्म पंजीकरण भएको छ ।",
+                    "text": [" ",{"text":"    "},"  ",{"text":"    "},"  ",{"text":"    "},"यो तथ्य द्वारा प्रमाणित गरिन्छ दिएको विवरण जन्म विवरण वाटा लिएको हो । उक्त विवरण पच्चिम बंगाल राज्यको (स्थानीय क्षेत्र) छावनी परिषद लेबॉन्ग जिल्ला दार्जिलिंग थाना अधीन दार्जिलिंग जन्म पंजीकरण भएको छ ।"],
                     "style": "rule-body"
                   }
                 ]
@@ -420,19 +420,23 @@
                     "stack": [
                       {
                         "text": "Registrar of Birth & Death",
-                        "alignment": "left"
+                        "alignment": "center",
+                        "margin": [-40, 2, 0, 0]
                       },
                       {
                         "text": "जन्म अनि मृत्यु रजिस्ट्रार",
-                        "alignment": "left"
+                        "alignment": "center",
+                        "margin": [-40, 2, 0, 0]
                       },
                       {
                         "text": "Cantonment Board, Lebong",
-                        "alignment": "left"
+                        "alignment": "center",
+                        "margin": [-40, 2, 0, 0]
                       },
                       {
                         "text": "छावनी परिषद, लेबोंग",
-                        "alignment": "left"
+                        "alignment": "center",
+                        "margin": [-40, 2, 0, 0]
                       }
                     ],
                     "width": "30%"
