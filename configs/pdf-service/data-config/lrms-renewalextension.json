@@ -40,7 +40,8 @@
                   "variable": "instruction1", 
                   "value": {
                     "path": "$.instruction1"
-                  }
+                  },
+                  "type":"setEmpty"
                 },
                 {
                   "variable": "instruction2", 
