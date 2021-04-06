@@ -389,7 +389,7 @@
               {
                 "columns": [
                   {
-                    "text": "രജിസ്ട്രേഷന്‍ നമ്പര്‍/Registration Number:",
+                    "text": "രജിസ്ട്രേഷന്‍ നമ്പര്‍/Registration Number:{{registrationNo}}",
                     "width": "49%",
                     "style": "details-body"
                   },
