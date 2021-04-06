@@ -98,6 +98,13 @@
                   "type":"setEmpty"
                 },
                 {
+                  "variable": "aadharno", 
+                  "value": {
+                    "path": "$.aadharno"
+                  },
+                  "type":"setEmpty"
+                },
+                {
                   "variable": "fatherUid", 
                   "value": {
                     "path": "$.birthFatherInfo.aadharno"
