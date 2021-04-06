@@ -161,6 +161,13 @@
                     "type":"setEmpty"
                   },
                   {
+                    "variable": "spouseAadhar", 
+                    "value": {
+                      "path": "$.deathSpouseInfo.aadharno"
+                    },
+                    "type":"setEmpty"
+                  },
+                  {
                     "variable": "cantonment-board",
                     "value": {
                       "path": "PDF_STATIC_LABEL_CONSOLIDATED_TLCERTIFICATE_MUNICIPAL_CORPORATION"

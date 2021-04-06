@@ -78,7 +78,7 @@
                     "margin": [0, 1, 0, -2]
                   },
                   {
-                    "text": "CANTONMENT BOARD {{cb-name}}",
+                    "text": "CANTONMENT BOARD {{cb-name}} CANTONMENT",
                     "style": "appendix-header-body"
                   }
                 ]
@@ -261,9 +261,17 @@
                     "width": "1%"
                   },
                   {
+                    "stack":[
+                  {
                     "text": "पति / पत्नी  का नाम / NAME OF HUSBAND / WIFE: {{spouseName}}",
                     "style": "details-body"
+                  },
+                  {
+                    "text": "आधार नंबर / HUSBAND / WIFE AADHAAR NO: {{spouseAadhar}}",
+                    "style": "details-body"
                   }
+                ]
+                }
                 ]
               }
             ],
@@ -401,7 +409,7 @@
                         "margin": [-40, 2, 0, 0]
                       },
                       {
-                        "text": "CANTONMENT BOARD {{cb-name}}",
+                        "text": "CANTONMENT BOARD {{cb-name}} CANTONMENT",
                         "style": "details-body",
                         "alignment": "center",
                         "margin": [-40, 2, 0, 0]
