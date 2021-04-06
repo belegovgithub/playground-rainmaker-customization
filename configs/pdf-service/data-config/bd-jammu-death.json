@@ -1,9 +1,9 @@
 {
-    "key": "bd-madhyapradesh-birth",
+    "key": "bd-jammu-death",
     "DataConfigs": {
       "serviceName": "rainmaker-common",
       "version": "1.0.0",
-      "baseKeyPath": "$.BirthCertificate.*",
+      "baseKeyPath": "$.DeathCertificate.*",
       "entityIdPath":"$.id",
       "isCommonTableBorderRequired": true,
       "mappings": [
@@ -14,17 +14,22 @@
               "direct": [
                 {
                     "variable": "emblemImage",
-                    "url": "https://raw.githubusercontent.com/belsoftware/webaccess/master/images/birth/emblem.png",
+                    "url": "https://raw.githubusercontent.com/belsoftware/webaccess/master/images/birth/emblemInd.png",
                     "type": "image"
                 },
                 {
                     "variable": "govtImage",
-                    "url": "https://raw.githubusercontent.com/belsoftware/webaccess/master/images/birth/madhyapradesh-govt1.png",
+                    "url": "https://raw.githubusercontent.com/belsoftware/webaccess/master/images/birth/jammuKashmirGovtBnW.png",
                     "type": "image"
                 },
                 {
+                  "variable": "govtImage1",
+                  "url": "https://raw.githubusercontent.com/belsoftware/webaccess/master/images/birth/jammuGovt.png",
+                  "type": "image"
+              },
+                {
                     "variable": "form5",
-                    "url": "https://raw.githubusercontent.com/belsoftware/webaccess/master/images/birth/form5.png",
+                    "url": "https://raw.githubusercontent.com/belsoftware/webaccess/master/images/birth/form5_Border.png",
                     "type": "image"
                 },
                 {
@@ -32,28 +37,17 @@
                   "value": {
                     "path": "$.fullName"
                   },
-                  "type":"setEmpty"
+                  "type":"setEmpty",
+                  "isUpperCaseRequired": true
                 },
-                {
-                  "variable": "embeddedUrl", 
-                  "value": {
-                    "path": "$.embeddedUrl"
-                  },
-                  "type":"setEmpty"
-                },
-                {
-                  "variable": "dob", 
-                  "value": {
-                    "path": "$.dateofbirth"
-                  },
-                  "type": "dateOrEmpty"
-                },
+               
                 {
                   "variable": "gender", 
                   "value": {
                     "path": "$.genderStr"
                   },
-                  "type":"setEmpty"
+                  "type":"setEmpty",
+                  "isUpperCaseRequired": true
                 },
                 {
                   "variable": "registrationNo", 
@@ -69,68 +63,117 @@
                     },
                     "type": "dateOrEmpty"
                   },
+                  {
+                    "variable": "age", 
+                    "value": {
+                      "path": "$.age"
+                    },
+                    "type": "setEmpty"
+                  },
+                  {
+                    "variable": "spouseName", 
+                    "value": {
+                      "path": "$.deathSpouseInfo.fullName"
+                    },
+                    "type": "setEmpty",
+                    "isUpperCaseRequired": true
+                  },    
                 {
                   "variable": "fatherName", 
                   "value": {
-                    "path": "$.birthFatherInfo.fullName"
+                    "path": "$.deathFatherInfo.fullName"
                   },
-                  "type":"setEmpty"
+                  "type":"setEmpty",
+                  "isUpperCaseRequired": true
                 },
                 {
                   "variable": "motherName", 
                   "value": {
-                    "path": "$.birthMotherInfo.fullName"
+                    "path": "$.deathMotherInfo.fullName"
                   },
-                  "type":"setEmpty"
+                  "type":"setEmpty",
+                  "isUpperCaseRequired": true
                 },
                 {
-                  "variable": "childAddress", 
+                  "variable": "presentAddress", 
                   "value": {
-                    "path": "$.birthPresentaddr.fullAddress"
+                    "path": "$.deathPresentaddr.fullAddress"
                   },
-                  "type":"setEmpty"
+                  "type":"setEmpty",
+                  "isUpperCaseRequired": true
                 },
                 {
                   "variable": "parentsAddress", 
                   "value": {
-                    "path": "$.birthPermaddr.fullAddress"
+                    "path": "$.deathPermaddr.fullAddress"
                   },
-                  "type":"setEmpty"
-                },
-                {
-                  "variable": "aadharno", 
-                  "value": {
-                    "path": "$.aadharno"
-                  },
-                  "type":"setEmpty"
+                  "type":"setEmpty",
+                  "isUpperCaseRequired": true
                 },
                 {
                   "variable": "fatherUid", 
                   "value": {
-                    "path": "$.birthFatherInfo.aadharno"
+                    "path": "$.deathFatherInfo.aadharno"
                   },
-                  "type":"setEmpty"
+                  "type":"setEmpty",
+                  "isUpperCaseRequired": true
                 },
                 {
                   "variable": "motherUid", 
                   "value": {
-                    "path": "$.birthMotherInfo.aadharno"
+                    "path": "$.deathMotherInfo.aadharno"
                   },
-                  "type":"setEmpty"
+                  "type":"setEmpty",
+                  "isUpperCaseRequired": true
                 },
                 {
                   "variable": "remarks", 
                   "value": {
                     "path": "$.remarks"
                   },
-                  "type":"setEmpty"
+                  "type":"setEmpty",
+                  "isUpperCaseRequired": true
                 },
                   {
-                    "variable": "placeOfBirth", 
+                    "variable": "placeOfDeath", 
                     "value": {
-                      "path": "$.placeofbirth"
+                      "path": "$.placeofdeath"
                     },
-                    "type":"setEmpty"
+                    "type":"setEmpty",
+                    "isUpperCaseRequired": true
+                  },
+                  {
+                    "variable": "dod", 
+                    "value": {
+                      "path": "$.dateofdeath"
+                    },
+                    "type": "date"
+                  },
+                  {
+                    "variable": "dateToWordFormat", 
+                    "value": {
+                      "path": "$.dateofdeath"
+                    },
+                    "type": "dateToWord",
+                    "isUpperCaseRequired":true
+                  },
+          
+                 
+                  {
+                    "variable": "deceasedAadharno", 
+                    "value": {
+                      "path": "$.aadharno"
+                    },
+                    "type":"setEmpty",
+                    "isUpperCaseRequired": true
+                  },
+                  {
+                    "variable": "spouceAadharNo", 
+                    "value": {
+                      "path": "$.deathSpouseInfo.aadharno"
+                    },
+                    "type":"setEmpty",
+                    "isUpperCaseRequired": true
                   },
                   {
                     "variable": "issueDate", 
@@ -139,13 +182,12 @@
                     },
                     "type": "dateOrEmpty"
                   },
-                 
+                  
                   {
-                    "variable": "certificateType", 
+                    "variable": "embeddedUrl", 
                     "value": {
-                      "path": "$.certificateType"
-                    },
-                    "type":"setEmpty"
+                      "path": "$.embeddedUrl"
+                    }
                   },
                   {
                     "variable": "cantonment-board",
@@ -220,18 +262,6 @@
                    }
                   },
                   {
-                    "variable": "cb_label_name_multiLang",
-                    "value": {
-                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_TLCERTIFICATE_MUNICIPAL_CORPORATION_HI"
-                    },
-                    "type": "label",
-                    "localisation":{
-                      "required":true,
-                      "prefix": null,
-                      "module":"rainmaker-pdf" 
-                   }
-                  },
-                  {
                     "variable": "gram_panchayat_label_multiLang",
                     "value": {
                       "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_GRAM_PANCHAYAT_MULTILANG"
@@ -258,19 +288,7 @@
                   {
                     "variable": "certificate_label_multiLang",
                     "value": {
-                      "path": "PDF_STATIC_LABEL_BD_HI_CERTIFICATE"
-                    },
-                    "type": "label",
-                    "localisation":{
-                      "required":true,
-                      "prefix": null,
-                      "module":"rainmaker-pdf"
-                   }
-                  },
-                  {
-                    "variable": "certificate_label",
-                    "value": {
-                      "path": "PDF_STATIC_LABEL_BD_EN_CERTIFICATE"
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_CERTIFICATE_BIRTH_MULTILANG"
                     },
                     "type": "label",
                     "localisation":{
@@ -342,7 +360,7 @@
                   {
                     "variable": "name_label_multiLang",
                     "value": {
-                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_NAME_MULTILANG"
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_DEATHCERIFICATE_NAME_MULTILANG"
                     },
                     "type": "label",
                     "localisation":{
@@ -376,6 +394,18 @@
                    }
                   },
                   {
+                    "variable": "aadhar_label_multiLang",
+                    "value": {
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_DEATHCERIFICATE_AADHAR_MULTILANG"
+                    },
+                    "type": "label",
+                    "localisation":{
+                      "required":true,
+                      "prefix": null,
+                      "module":"rainmaker-pdf"
+                   }
+                  },
+                  {
                     "variable": "dob_label",
                     "value": {
                       "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_DOB"
@@ -388,9 +418,9 @@
                    }
                   },
                   {
-                    "variable": "dob_label_multiLang",
+                    "variable": "dod_label_multiLang",
                     "value": {
-                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_DOB_MULTILANG"
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_DEATHCERIFICATE_DOD_MULTILANG"
                     },
                     "type": "label",
                     "localisation":{
@@ -412,9 +442,9 @@
                    }
                   },
                   {
-                    "variable": "pob_label_multiLang",
+                    "variable": "pod_label_multiLang",
                     "value": {
-                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_POB_MULTILANG"
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_DEATHCERIFICATE_POD_MULTILANG"
                     },
                     "type": "label",
                     "localisation":{
@@ -484,9 +514,9 @@
                    }
                   },
                   {
-                    "variable": "mother_uid_label_multiLang",
+                    "variable": "mother_aadhar_label_multiLang",
                     "value": {
-                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_MOTHER_UID_MULTILANG"
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_DEATHCERIFICATE_AADHAR_MULTILANG"
                     },
                     "type": "label",
                     "localisation":{
@@ -508,9 +538,9 @@
                    }
                   },
                   {
-                    "variable": "father_uid_label_multiLang",
+                    "variable": "father_aadhar_label_multiLang",
                     "value": {
-                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_FATHER_UID_MULTILANG"
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_DEATHCERIFICATE_AADHAR_MULTILANG"
                     },
                     "type": "label",
                     "localisation":{
@@ -532,9 +562,9 @@
                    }
                   },
                   {
-                    "variable": "child_address_label_multiLang",
+                    "variable": "death_address_label_multiLang",
                     "value": {
-                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_ADDRESS_OF_CHILD_BIRTH_MULTILANG"
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_DEATHCERIFICATE_ADDRESS_OF_DEATH_MULTILANG"
                     },
                     "type": "label",
                     "localisation":{
@@ -556,9 +586,9 @@
                    }
                   },
                   {
-                    "variable": "parent_address_label_multiLang",
+                    "variable": "death_perm_address_label_multiLang",
                     "value": {
-                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_BIRTHCERIFICATE_PERMENENT_ADDRESS_OF_PARENT_MULTILANG"
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_DEATHCERIFICATE_PERMENENT_ADDRESS_OF_DECEASED_MULTILANG"
                     },
                     "type": "label",
                     "localisation":{
@@ -760,15 +790,15 @@
                    }
                   },
                   {
-                    "variable": "cb_letter_label_multilang",
+                    "variable": "cb_label_name_multiLang",
                     "value": {
-                      "path": "PDF_STATIC_LABEL_BD_HI_CB"
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_TLCERTIFICATE_MUNICIPAL_CORPORATION_HI"
                     },
                     "type": "label",
                     "localisation":{
                       "required":true,
                       "prefix": null,
-                      "module":"rainmaker-pdf"
+                      "module":"rainmaker-pdf" 
                    }
                   },
                   {
@@ -787,12 +817,12 @@
               ]
             },
             {
-                "qrcodeConfig": [
-                  {
-                      "variable": "qr_code_image",
-                      "value":"{{embeddedUrl}}"
-                  }
-                ]
+              "qrcodeConfig": [
+                {
+                    "variable": "qr_code_image",
+                    "value":"{{embeddedUrl}}"
+                }
+              ]
             },
             {
                 "externalAPI": [     

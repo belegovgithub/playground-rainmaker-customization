@@ -199,7 +199,7 @@
                 "columns": [
                   {
                     "text": "പേര്/Name",
-                    "width": "49%",
+                    "width": "45%",
                     "style": "details-body"
                   },
                   {
@@ -221,7 +221,7 @@
                   {
                     "text": "ആൺ / പെൺ /Sex ",
                     "style": "details-body",
-                    "width": "49%"
+                    "width": "45%"
                   },
                   {
                     "text": ":",
@@ -241,7 +241,7 @@
                 "columns": [
                   {
                     "text": "ജനന തീയതി/Date of Birth",
-                    "width": "49%",
+                    "width": "45%",
                     "style": "details-body"
                   },
                   {
@@ -254,7 +254,6 @@
 
                     "style": "details-body"
                   }
-                  
                 ]
               }
             ],
@@ -263,7 +262,7 @@
                 "columns": [
                   {
                     "text": " ",
-                    "width": "49%",
+                    "width": "45%",
                     "style": "details-body"
                   },
                   {
@@ -276,18 +275,16 @@
 
                     "style": "details-body"
                   }
-                  
                 ]
               }
             ],
-            
 
             [
               {
                 "columns": [
                   {
                     "text": "ജനന സ്ഥലം/Place of Birth",
-                    "width": "49%",
+                    "width": "45%",
                     "style": "details-body"
                   },
                   {
@@ -308,7 +305,7 @@
                 "columns": [
                   {
                     "text": "മാതാവിന്‍റെ പേര്/Name of Mother",
-                    "width": "49%",
+                    "width": "45%",
                     "style": "details-body"
                   },
                   {
@@ -329,7 +326,7 @@
                 "columns": [
                   {
                     "text": "പിതാവിന്‍റെ പേര്/Name of Father",
-                    "width": "49%",
+                    "width": "45%",
                     "style": "details-body"
                   },
                   {
@@ -349,7 +346,7 @@
                 "columns": [
                   {
                     "text": "കുട്ടിയുടെ ജനന സമയത്ത് മാതാപിതാക്കളുടെ മേല്‍വിലാസം/Address of the parents at the time of birth of the child",
-                    "width": "49%",
+                    "width": "45%",
                     "style": "details-body"
                   },
                   {
@@ -369,7 +366,7 @@
                 "columns": [
                   {
                     "text": "മാതാപിതാക്കളുടെ സ്ഥിരമായ മേല്‍വിലാസം/Permanent Address of the parents",
-                    "width": "49%",
+                    "width": "45%",
                     "style": "details-body"
                   },
                   {
@@ -389,8 +386,8 @@
               {
                 "columns": [
                   {
-                    "text": "രജിസ്ട്രേഷന്‍ നമ്പര്‍/Registration Number:",
-                    "width": "49%",
+                    "text": "രജിസ്ട്രേഷന്‍ നമ്പര്‍/Registration Number:{{registrationNo}}",
+                    "width": "45%",
                     "style": "details-body"
                   },
                   {
@@ -410,7 +407,7 @@
                   {
                     "text": "അഭിപ്രായക്കുറിപ്പ്/{{remarks_label}}",
                     "style": "details-body",
-                    "width": "49%"
+                    "width": "45%"
                   },
                   {
                     "text": ":",
@@ -430,7 +427,7 @@
                 "columns": [
                   {
                     "text": "നല്‍കുന്ന തീയതി/Date of Issue",
-                    "width": "49%",
+                    "width": "45%",
                     "style": "details-body"
                   },
                   {
@@ -451,7 +448,7 @@
                 "columns": [
                   {
                     "text": "Address of Issuing Authority",
-                    "width": "49%",
+                    "width": "45%",
                     "style": "details-body"
                   },
                   {
@@ -470,7 +467,7 @@
                 "columns": [
                   {
                     "text": " ",
-                    "width": "49%"
+                    "width": "45%"
                   },
                   {
                     "text": " ",
@@ -478,7 +475,7 @@
                   },
                   {
                     "text": "Cannanore Cantonment",
-                    "width": "49%",
+                    "width": "45%",
                     "style": "details-body",
                     "margin": [0, -10, 0, 0]
                   }
@@ -498,57 +495,21 @@
                         "height": 70,
                         "style": "qr-code"
                       }
-                    ] 
+                    ]
                   ]
                 },
                 "layout": "noBorders"
               }
-            ],
-
-            [
-              {
-                "columns": [
-                  {
-                    "stack": [
-                        {
-                        "text": "Ensure Registration of every Birth and Death",
-                        "style": "comment-body",
-                        "bold": true,
-                        "margin": [0,-20,0,0]
-                        },
-                        {
-                          "text": "ഓരോ ജനനവും മരണവും രജിസ്റ്റര്‍ ചെയ്തുവെന്നു ഉറപ്പുവരുത്തുക",
-                          "style": "comment-body",
-                          "bold": true
-                        },
-                        {
-                          "text": "This certify is computer generated and does not require any Seal/Signature in original",
-                          "style": "disclaimer"
-                         
-                        },
-                        {
-                          "text": "The Govt. vide G.O.(Ms) No.202/2012/LSGD/ dated 25/07/2012 has approved this certificate as a valid document for all official purposes",
-                          "style": "disclaimer"
-                          
-                        },
-                        {
-                          "text": "Authenticity of this certificate can be verified at www.cr.lsgkerala.gov.in The Key Number is unique to each event.",
-                          "style": "disclaimer"
-                         
-                        },
-                        {
-                          "text": "Certificate printed before the last updated is invalid",
-                          "style": "disclaimer_red"
-                         
-                        }
-                  ]
-                  }
-                ]
-              }
-            ] 
+            ]
           ]
         },
         "layout": "noBorders"
+      }
+    ],
+    "footer": [
+      {
+        "text": "“Ensure Registration of every Birth and Death”\n“ഓരോ ജനനവും മരണവും രജിസ്റ്റര്‍ ചെയ്തുവെന്നു ഉറപ്പുവരുത്തുക”\nThis certify is computer generated and does not require any Seal/Signature in original\nThe Govt. vide G.O.(Ms) No.202/2012/LSGD/ dated 25/07/2012 has approved this certificate as a valid document for all official purposes\nAuthenticity of this certificate can be verified at www.cr.lsgkerala.gov.in The Key Number is unique to each event\nCertificate printed before the last updated is invalid",
+        "style": "disclaimer"
       }
     ],
     "styles": {
@@ -571,9 +532,10 @@
       "disclaimer": {
         "color": "#000000",
         "bold": false,
-        "fontSize": 5,
+        "fontSize": 7,
         "fontWeight": 400,
-        "alignment": "center"
+        "alignment": "center",
+        "margin": [0, -20, 0, 0]
       },
       "disclaimer_red": {
         "color": "#000000",
@@ -626,7 +588,7 @@
       "title-header_multiLang": {
         "color": "#800000",
         "bold": true,
-        "fontSize": 15,
+        "fontSize": 12,
         "fontWeight": 400,
         "alignment": "center",
         "margin": [0, 3, 0, 0]
@@ -648,36 +610,36 @@
       "rule-header": {
         "color": "#696969",
         "bold": true,
-        "fontSize": 10,
+        "fontSize": 9,
         "fontWeight": 400,
-        "margin": [0, 0, 0, 5]
+        "margin": [0, 0, 0, 2]
       },
       "rule-header_multiLang": {
         "color": "#000000",
         "bold": true,
-        "fontSize": 11,
+        "fontSize": 10,
         "fontWeight": 400,
         "alignment": "center",
-        "margin": [0, 0, 0, 5]
+        "margin": [0, 0, 0, 2]
       },
       "rule-body": {
         "color": "#696969",
         "bold": true,
-        "fontSize": 10,
+        "fontSize": 9,
         "fontWeight": 400,
         "margin": [0, 0, 0, 0]
       },
       "rule-body_multiLang": {
         "color": "#696969",
         "bold": true,
-        "fontSize": 11,
+        "fontSize": 10,
         "fontWeight": 400,
         "margin": [0, 0, 0, 0]
       },
       "details-body": {
         "color": "#000000",
         "bold": false,
-        "fontSize": 10,
+        "fontSize": 9,
         "fontWeight": 400,
         "margin": [0, 0, 0, 0]
       },

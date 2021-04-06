@@ -49,7 +49,7 @@
                   "value": {
                     "path": "$.registrationno"
                   },
-                  "type":"dateOrEmpty"
+                  "type":"setEmpty"
                 },
                 {
                     "variable": "registration_date", 

@@ -1,9 +1,9 @@
 {
-    "key": "bd-jammukashmir-birth",
+    "key": "bd-badamibagh-death",
     "DataConfigs": {
       "serviceName": "rainmaker-common",
       "version": "1.0.0",
-      "baseKeyPath": "$.BirthCertificate.*",
+      "baseKeyPath": "$.DeathCertificate.*",
       "entityIdPath":"$.id",
       "isCommonTableBorderRequired": true,
       "mappings": [
@@ -39,13 +39,21 @@
                   "value": {
                     "path": "$.embeddedUrl"
                   }
-                },
+                }, 
                 {
-                  "variable": "dob", 
+                  "variable": "dod", 
                   "value": {
-                    "path": "$.dateofbirth"
+                    "path": "$.dateofdeath"
                   },
-                  "type": "dateOrEmpty"
+                   "type": "dateOrEmpty"
+                },     
+                
+                {
+                  "variable": "placeOfDeath", 
+                  "value": {
+                    "path": "$.placeofdeath"
+                  },
+                   "type": "setEmpty"
                 },
                 {
                   "variable": "gender", 
@@ -71,42 +79,42 @@
                 {
                   "variable": "fatherName", 
                   "value": {
-                    "path": "$.birthFatherInfo.fullName"
+                    "path": "$.deathFatherInfo.fullName"
                   },
                   "type":"setEmpty"
                 },
                 {
                   "variable": "motherName", 
                   "value": {
-                    "path": "$.birthMotherInfo.fullName"
+                    "path": "$.deathMotherInfo.fullName"
                   },
                   "type":"setEmpty"
                 },
                 {
-                  "variable": "childAddress", 
+                  "variable": "permanentAddress", 
                   "value": {
-                    "path": "$.birthPresentaddr.fullAddress"
+                    "path": "$.deathPermaddr.fullAddress"
                   },
                   "type":"setEmpty"
                 },
                 {
-                  "variable": "parentsAddress", 
+                  "variable": "presentAddress", 
                   "value": {
-                    "path": "$.birthPermaddr.fullAddress"
+                    "path": "$.deathPresentaddr.fullAddress"
                   },
                   "type":"setEmpty"
                 },
                 {
                   "variable": "fatherUid", 
                   "value": {
-                    "path": "$.birthFatherInfo.aadharno"
+                    "path": "$.deathFatherInfo.aadharno"
                   },
                   "type":"setEmpty"
                 },
                 {
                   "variable": "motherUid", 
                   "value": {
-                    "path": "$.birthMotherInfo.aadharno"
+                    "path": "$.deathMotherInfo.aadharno"
                   },
                   "type":"setEmpty"
                 },
@@ -131,7 +139,7 @@
                     },
                     "type": "dateOrEmpty"
                   },
-                   
+                 
                   {
                     "variable": "certificateType", 
                     "value": {
@@ -812,6 +820,7 @@
                             
                             }
                         },
+
 
                         {
                           "variable": "dist-name",

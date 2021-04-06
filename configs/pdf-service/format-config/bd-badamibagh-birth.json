@@ -1,5 +1,5 @@
 {
-  "key": "bd-jammukashmir-death",
+  "key": "bd-badamibagh-birth",
   "config": {
     "defaultStyle": {
       "font": "Cambay"
@@ -19,9 +19,9 @@
           "body": [
             [
               {
-                "columns": [ 
+                "columns": [
                   {
-                    "text": "Form No: 6",
+                    "text": "Form No: 5",
                     "width": "15%",
                     "style": "appendix-header-formNo"
                   }
@@ -53,7 +53,7 @@
 
               {
                 "image": "{{form5}}",
-                "width":70,
+                "width": 70,
                 "height": 70.25,
                 "margin": [0, -10, 0, 0]
               }
@@ -91,9 +91,9 @@
           "body": [
             [
               {
-                "decoration": "underline",
-                "text": "DEATH CERTIFICATE",
-                "style": "title-header"
+                "text": "BIRTH CERTIFICATE",
+                "style": "title-header",
+                "decoration": "underline"
               }
             ]
           ]
@@ -109,14 +109,9 @@
               {
                 "columns": [
                   {
-                    "margin": [
-                      0,
-                      0,
-                      0,
-                      10
-                  ],
                     "text": "Issued under section 12/17 of the Registration of Births and Deaths Act, 1969 and Rules 8/13 of the Jammu and Kashmir Registration of Birth and Deaths, 2000",
-                    "style": "instruction-body"
+                    "style": "instruction-body",
+                    "margin":[0,0,0,10]
                   }
                 ]
               }
@@ -125,14 +120,9 @@
               {
                 "columns": [
                   {
-                    "margin": [
-                      0,
-                      0,
-                      0,
-                      10
-                  ],
-                    "text": "This is to certify that the following information has been taken from the original record of Death which is the register for (Local Area/ Local Body)",
-                    "style": "instruction-body"
+                    "text": "This is to certify that the following information has been taken from the original record of Birth which is the register for (Local Area/ Local Body)",
+                    "style": "instruction-body",
+                    "margin":[0,0,0,10]
                   }
                 ]
               }
@@ -142,57 +132,29 @@
         "layout": "noBorders"
       },
       {
-        "layout": "noBorders",
         "style": "ws-head",
         "table": {
-            "body": [
-                [
-                    {
-                        "columns": [
-                            {
-                                "margin": [
-                                    0,
-                                    0,
-                                    0,
-                                    20
-                                ],
-                                "style": "instruction-body",
-                                "text": [
-                                    " ",
-                                    {
-                                        "bold": true,
-                                        "text": "{{cb-name}} Cantonment Board"
-                                    },
-                                    " of Tehsil/ Block ",
-                                    {
-                                        "bold": true,
-                                        "text": "{{block-name}}"
-                                    },
-                                    " of District ",
-                                    {
-                                        "bold": true,
-                                        "text": "{{dist-name}}"
-                                    },
-                                    " and of State ",
-                                    {
-                                        "bold": true,
-                                        "text": "Jammu and Kashmir"
-                                    }
-                                ]
-                            }
-                        ]
-                    }
+          "widths": ["*"],
+          "body": [
+            [
+              {
+                "columns": [
+                  {
+                    "text": [" ",{ "text":"{{cb-name}} Cantonment Board","bold":true}," of Tehsil/ Block ",{ "text":"{{block-name}}","bold":true}," of District ",{ "text":"{{dist-name}}","bold":true}," and of State ",{ "text":"Jammu and Kashmir","bold":true}],
+                    "style": "instruction-body",
+                    "margin":[0,0,0,20]
+                  }
                 ]
-            ],
-            "widths": [
-                "*"
-            ]
-        }
-    },
+              }
+            ] 
+          ]
+        },
+        "layout": "noBorders"
+      },
       {
-        "layout": "noBorders",
         "style": "ws-head",
-        "table": {         
+        "table": {
+          "widths": ["*"],
           "body": [
             [
               {
@@ -217,7 +179,7 @@
               {
                 "columns": [
                   {
-                    "text": "3. Date of Death: {{dod}}",
+                    "text": "3. Date of Birth: {{dob}}",
                     "width": "45%",
                     "style": "details-body"
                   },
@@ -226,7 +188,7 @@
                     "width": "10%"
                   },
                   {
-                    "text": "4. Place of Death: {{placeOfDeath}}",
+                    "text": "4. Place of Birth: {{placeOfBirth}}",
                     "style": "details-body"
                   }
                 ]
@@ -247,7 +209,7 @@
               {
                 "columns": [
                   {
-                    "text": "6. Name of Father/ Husband: {{fatherName}}",
+                    "text": "6. Name of Father: {{fatherName}}",
                     "style": "details-body"
                   }
                 ]
@@ -257,7 +219,7 @@
               {
                 "columns": [
                   {
-                    "text": "7. Address of the deceased at the time of death: {{presentAddress}}",
+                    "text": "7. Address of the parents at the time of birth of the child: {{childAddress}}",
 
                     "style": "details-body"
                   }
@@ -268,7 +230,7 @@
               {
                 "columns": [
                   {
-                    "text": "8.Permanent Address of the deceased: {{permanentAddress}}",
+                    "text": "8. Permanent Address of the parents: {{parentsAddress}}",
                     "style": "details-body"
                   }
                 ]
@@ -289,7 +251,7 @@
               {
                 "columns": [
                   {
-                    "text": "10.Registration No: {{registrationNo}}",
+                    "text": "10. Registration No: {{registrationNo}}",
                     "width": "45%",
                     "style": "details-body"
                   }
@@ -301,7 +263,7 @@
               {
                 "columns": [
                   {
-                    "text": "11.Date of Registration: {{registration_date}}",
+                    "text": "11. Date of Registration: {{registration_date}}",
                     "style": "details-body"
                   },
                   {
@@ -309,15 +271,10 @@
                     "width": "10%"
                   },
                   {
-                    "margin": [
-                      0,
-                      0,
-                      0,
-                      20
-                  ],
-                    "text": "12.Date of Issue: {{issueDate}}",
+                    "text": "12. Date of Issue: {{issueDate}}",
                     "width": "45%",
-                    "style": "details-body"
+                    "style": "details-body",
+                    "margin":[0,0,0,20]
                   }
                 ]
               }
@@ -334,79 +291,72 @@
                     "width": "10%"
                   },
                   {
-                    "text": "Signature of Issuing Authority",                    
+                    "text": "Signature of Issuing Authority",
                     "style": "details-body",
-                    "alignment": "center",
-                    "bold": false
+                    "bold":false,
+                    "alignment":"center"
                   }
                 ]
               }
             ],
             [
               {
-                  "columns": [
-                      {
-                          "text": " ",
-                          "width": "45%"
-                      },
-                      {
-                          "text": " ",
-                          "width": "10%"
-                      },
-                      {
-                          "stack": [
-                              {
-                                  "alignment": "center",
-                                  "bold": false,
-                                  "style": "details-body",
-                                  "text": "Registrar Birth & Death"
-                              },
-                              {
-                                  "alignment": "center",
-                                  "bold": false,
-                                  "style": "details-body",
-                                  "text": "{{cb-name}} CANTONMENT BOARD"
-                              }
-                          ]
-                      }
+                "columns": [
+                  {
+                    "text": " ",
+                    "width": "45%"
+                  },
+                  {
+                    "text": " ",
+                    "width": "10%"
+                  },
+                  {
+                    "stack":[
+                    {
+                      "text": "Registrar Birth & Death",
+                      "style": "details-body",
+                      "bold":false,
+                      "alignment":"center"
+                    },
+                    {
+                      "text": "{{cb-name}} CANTONMENT BOARD",
+                      "style": "details-body",
+                      "bold":false,
+                      "alignment":"center"
+                    }
                   ]
+                }
+                ]
               }
+            ]
           ]
-      ],
-      "widths": [
-          "*"
-      ]
-  }
-},
-{
-  "layout": "noBorders",
-  "style": "ws-head",
-  "table": {
-      "body": [
-          [
+        },
+        "layout": "noBorders"
+      },
+      {
+        "style": "ws-head",
+        "table": {
+          "widths": ["*"],
+          "body": [
+            [
               {
-                  "height": 70,
-                  "image": "{{qr_code_image}}",
-                  "style": "qr-code",
-                  "width": 70
+                "image": "{{qr_code_image}}",
+                "width": 70,
+                "height": 70,
+                "style": "qr-code"
               }
+            ]
           ]
-      ],
-      "widths": [
-          "*"
-      ]
-  }
-}
-],
-"defaultStyle": {
-"font": "Cambay"
-},
-"footer": [
-{
-  "style": "instruction-body",
-  "text": "Ensure Registration of every Birth and Death"
-}
-],
+        },
+        "layout": "noBorders"
+      }  
+    ],
+    "footer": [
+      {
+        "text": "Ensure Registration of every Birth and Death",
+        "style": "instruction-body" 
+      }
+    ],
     "styles": {
       "pdf-header": {
         "fillColor": "#F2F2F2",
@@ -427,28 +377,23 @@
       "instruction-body": {
         "color": "#000000",
         "bold": false,
-        "fontSize":11,
+        "fontSize": 11,
         "fontWeight": 400,
         "alignment": "center"
       },
       "qr-code": {
         "color": "#000000",
         "alignment": "left",
-        "margin": [0, -30, 0, 0]
+        "margin": [0, -60, 0, 0]
       },
       "title-header": {
-        "alignment": "center",
-        "bold": true,
         "color": "#0080ff",
+        "bold": true,
         "fontSize": 17,
         "fontWeight": 400,
-        "margin": [
-            0,
-            1,
-            0,
-            0
-        ]
-    },
+        "alignment": "center",
+        "margin": [0, 1, 0, 0]
+      },
       "title-header_multiLang": {
         "color": "#800000",
         "bold": true,
@@ -501,17 +446,12 @@
         "margin": [0, 0, 0, 0]
       },
       "details-body": {
-        "bold": true,
         "color": "#000000",
+        "bold": true,
         "fontSize": 12,
         "fontWeight": 400,
-        "margin": [
-            0,
-            2,
-            0,
-            0
-        ]
-    },
+        "margin": [0, 2, 0, 0]
+      },
       "appendix-header-body": {
         "color": "#696969",
         "bold": true,
