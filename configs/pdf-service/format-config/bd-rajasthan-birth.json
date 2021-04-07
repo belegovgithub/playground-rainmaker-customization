@@ -349,7 +349,7 @@
                   {
                     "stack": [ 
                       {
-                        "text": "जारी करने कि तारीख/Date of Issue: {{issueDate}}",
+                        "text": "जारी करने की तारीख/Date of Issue: {{issueDate}}",
                         "style": "details-body"
                       }
                     ]
