@@ -65,11 +65,11 @@
                     "style": "appendix-header-body"
                   },
                   {
-                    "text": "रजिस्ट्रार – {{cb_label_name_multiLang}},{{cb-name-multilang}}, अजमेर",
+                    "text": "रजिस्ट्रार – {{cb_label_name_multiLang}}, {{cb-name-multilang}}, अजमेर",
                     "style": "appendix-header-body"
                   },
                   {
-                    "text": "Registrar – CANTONMENT BOARD,{{cb-name}}, AJMER",
+                    "text": "Registrar – CANTONMENT BOARD, {{cb-name}}, AJMER",
                     "style": "appendix-header-body"
                   }
                 ]
