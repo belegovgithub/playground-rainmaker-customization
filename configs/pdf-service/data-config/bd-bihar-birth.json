@@ -13,19 +13,19 @@
             {
               "direct": [
                 {
-                    "variable": "emblemImage",
-                    "url": "https://raw.githubusercontent.com/belsoftware/webaccess/master/images/birth/emblem.png",
-                    "type": "image"
+                  "variable": "emblemImage",                        
+                  "id":"emblem.png",
+                  "type":"image"      
                 },
                 {
-                    "variable": "govtImage",
-                    "url": "https://raw.githubusercontent.com/belsoftware/webaccess/master/images/birth/biharGovt.png",
-                    "type": "image"
+                  "variable": "govtImage",                        
+                  "id":"brGovt.png",
+                  "type":"image"      
                 },
                 {
-                    "variable": "form5",
-                    "url": "https://raw.githubusercontent.com/belsoftware/webaccess/master/images/birth/form5.png",
-                    "type": "image"
+                  "variable": "form5",                        
+                  "id":"form5.png",
+                  "type":"image"      
                 },
                 {
                   "variable": "name", 
@@ -74,6 +74,14 @@
                     "path": "$.birthFatherInfo.fullName"
                   },
                   "type":"setEmpty"
+                },
+                {
+                  "variable": "dateToWordFormat", 
+                  "value": {
+                    "path": "$.dateofbirth"
+                  },
+                  "type": "dateToWord",
+                  "isUpperCaseRequired":true
                 },
                 {
                   "variable": "motherName", 
