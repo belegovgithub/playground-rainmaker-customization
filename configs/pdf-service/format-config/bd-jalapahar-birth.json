@@ -205,7 +205,7 @@
                   {
                     "stack": [
                       {
-                        "text": "Name: {{name}}",
+                        "text": "Name:",
                         "alignment": "left"
                       },
                       {
@@ -216,7 +216,7 @@
                     "width": "20%"
                   },
                   {
-                    "text": "{{name1}}",
+                    "text": "{{name}}",
                     "style": "details-body",
                     "alignment": "left"
                   }
