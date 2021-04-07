@@ -230,7 +230,6 @@
                     },
                     {
                       "text": "{{dateToWordFormat}}",
-                      "width": "100%",
                       "style": "details-body"
                     }  
                   ]

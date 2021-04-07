@@ -233,9 +233,17 @@
               {
                 "columns": [
                   {
+                    "stack":[
+                    {
                     "text": "मृत्यु की तिथि / DATE OF DEATH  : {{dod}}",
                     "width": "59%",
                     "style": "details-body"
+                    },
+                    {
+                      "text": "{{dateToWordFormat}}",
+                      "style": "details-body"
+                    }  
+                  ]
                   },
                   {
                     "text": " ",

@@ -19,7 +19,7 @@
                 },
                 {
                   "variable": "govtImage",                        
-                  "id":"brGovt.png",
+                  "id":"bhGovt.png",
                   "type":"image"      
                 },
                 {
@@ -46,6 +46,14 @@
                     "path": "$.dateofdeath"
                   },
                   "type": "dateOrEmpty"
+                },
+                {
+                  "variable": "dateToWordFormat", 
+                  "value": {
+                    "path": "$.dateofdeath"
+                  },
+                  "type": "dateToWord",
+                  "isUpperCaseRequired":true
                 },
                 {
                   "variable": "gender", 
