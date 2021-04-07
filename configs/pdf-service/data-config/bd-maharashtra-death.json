@@ -13,19 +13,19 @@
           {
             "direct": [
               {
-                "variable": "emblemImage",
-                "url": "https://raw.githubusercontent.com/belsoftware/webaccess/master/images/birth/emblem.png",
-                "type": "image"
+                "variable": "emblemImage",                        
+                "id":"emblem.png",
+                "type":"image"      
               },
               {
-                "variable": "govtImage",
-                "url": "https://raw.githubusercontent.com/belsoftware/webaccess/master/images/birth/maharashtraGovt.png",
-                "type": "image"
+                "variable": "govtImage",                        
+                "id":"mhGovt.png",
+                "type":"image"      
               },
               {
-                "variable": "form5",
-                "url": "https://raw.githubusercontent.com/belsoftware/webaccess/master/images/birth/form5.png",
-                "type": "image"
+                "variable": "form5",                        
+                "id":"form5.png",
+                "type":"image"      
               },
               {
                 "variable": "name",

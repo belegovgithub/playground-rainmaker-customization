@@ -55,8 +55,18 @@
                     "style": "appendix-header-body"
                   },
                   {
-                    "text": "(पच्चिम बंगाल जन्म – मृत्यु पंजीकरण एन २००० न॰ ९ एन हेर्नुहोस)",
+                    "text": "(पश्चिम बंगाल जन्म – मृत्यु पंजीकरण एन २००० न॰ ९ एन हेर्नुहोस)",
                     "style": "appendix-header-body"
+                  }
+                ]
+              },
+              {
+                "stack": [
+                  {
+                    "image": "{{form5}}",
+                    "width": 50,
+                    "height": 50.25,
+                    "margin": [0, -20, 0, 0]
                   }
                 ]
               }
@@ -84,7 +94,7 @@
                     "style": "appendix-header-body"
                   },
                   {
-                    "text": "(स्वस्थय एव परिवार कल्याण कार्यालय)",
+                    "text": "(स्वास्थ्य एवं परिवार कल्याण विभाग)",
                     "style": "appendix-header-body"
                   }
                 ]
@@ -102,7 +112,7 @@
             [
               {
                 "text": "CERTIFICATE OF DEATH",
-               "style": "title-header_multiLang",
+                "style": "title-header_multiLang",
                 "decoration": "underline"
               }
             ]
@@ -145,7 +155,7 @@
               {
                 "columns": [
                   {
-                    "text": "१९६९ सालको जन्म-मृत्यु पंजीकरण एन १२/१७ धारा अनुसार प्रदान",
+                    "text": "१९६९ सालको जन्म-मृत्यु पंजीकरण एन १२/१७धारा अनुसार जारी गरिएको",
                     "style": "rule-header_multiLang"
                   }
                 ]
@@ -164,7 +174,7 @@
               {
                 "columns": [
                   {
-                    "text": "This is to certify that the following information has been taken from the original record of death which is in the register for (Local Area) CANTONMENT BOARD LEBONG of Darjeeling P.S. Darjeeling District of West Bengal.",
+                    "text": [" ",{"text":"    "},"  ",{"text":"    "},"  ",{"text":"    "},"This is to certify that the following information has been taken from the original record of death which is in the register of Cantonment Board Lebong, Darjeeling District of West Bengal."],
                     "style": "rule-body_multiLang"
                   }
                 ]
@@ -174,7 +184,7 @@
               {
                 "columns": [
                   {
-                    "text": "यो तथ्य द्वारा प्रमाणित गरिन्छ दिएको विवरण मृत्यु विवरण बाट लिएको हो । उक्त विवरण पच्चिम बंगाल राज्यको (स्थानीय क्षेत्र) छावनी परिषद लेबॉन्ग जिल्ला दार्जिलिंग  थाना अधीन दार्जिलिंग मृत्यु पंजीकरण भएको छ ।",
+                    "text": [" ",{"text":"    "},"  ",{"text":"    "},"  ",{"text":"    "},"यो तथ्य द्वारा प्रमाणित गरिन्छ भने दिइएको विबरण मूल मृत्यु विबरण पुस्तिकाबाट लिएको हो, जो छावनी परिषद लेबोंग दार्जीलिंग, जिल्ला पश्चिम बंगाल अन्तर्गत रहेको छ |"],
                     "style": "rule-body"
                   }
                 ]
@@ -203,11 +213,11 @@
                         "alignment": "left"
                       }
                     ],
-                    "width": "20%"
+                    "width": "30%"
                   },
                   {
                     "text": "{{name}}",
-                    "width": "80%",
+                    "width": "70%",
                     "style": "details-body"
                   }
                 ]
@@ -227,7 +237,7 @@
                         "alignment": "left"
                       }
                     ],
-                    "width": "20%"
+                    "width": "30%"
                   },
                   {
                     "text": "{{gender}}",
@@ -251,11 +261,11 @@
                         "alignment": "left"
                       }
                     ],
-                    "width": "20%"
+                    "width": "30%"
                   },
                   {
                     "text": "{{dod}}",
-                    "width": "80%",
+                    "width": "70%",
                     "style": "details-body"
                   }
                 ]
@@ -275,11 +285,11 @@
                         "alignment": "left"
                       }
                     ],
-                    "width": "20%"
+                    "width": "30%"
                   },
                   {
                     "text": "{{placeOfDeath}}",
-                    "width": "30%",
+                    "width": "20%",
                     "style": "details-body"
                   },
                   {
@@ -317,11 +327,11 @@
                         "alignment": "left"
                       }
                     ],
-                    "width": "20%"
+                    "width": "30%"
                   },
                   {
                     "text": "{{fatherName}} {{spouseName}}",
-                    "width": "30%",
+                    "width": "20%",
                     "style": "details-body"
                   },
                   {
@@ -331,7 +341,7 @@
                         "alignment": "left"
                       },
                       {
-                        "text": "(पंजीकरण को तारीख)",
+                        "text": "(पंजीकरणको तारीख)",
                         "alignment": "left"
                       }
                     ],
@@ -348,12 +358,11 @@
             [
               {
                 "columns": [
-                   
                   {
                     "text": " ",
-                    "width": "60%",
+                    "width": "70%",
                     "style": "details-body"
-                  }, 
+                  },
                   {
                     "image": "{{qr_code_image}}",
                     "width": 70,
@@ -377,35 +386,39 @@
                         "alignment": "left"
                       }
                     ],
-                    "width": "20%"
+                    "width": "30%"
                   },
                   {
                     "text": "{{issueDate}}",
-                    "width": "30%",
+                    "width": "20%",
                     "style": "details-body"
                   },
                   {
                     "text": " ",
-                    "width": "10%",
+                    "width": "20%",
                     "style": "details-body"
                   },
                   {
                     "stack": [
                       {
                         "text": "Registrar of Birth & Death",
-                        "alignment": "left"
-                      },
-                      {
-                        "text": "जन्म अनि मृत्यु रजिस्ट्रार",
-                        "alignment": "left"
+                        "alignment": "center",
+                        "margin": [-40, 2, 0, 0]
                       },
                       {
                         "text": "Cantonment Board, Lebong",
-                        "alignment": "left"
+                        "alignment": "center",
+                        "margin": [-40, 2, 0, 0]
                       },
                       {
-                        "text": "छावनी परिषद, लेबोंग",
-                        "alignment": "left"
+                        "text": "जन्म अनि मृत्यु निवंधक",
+                        "alignment": "center",
+                        "margin": [-40, 2, 0, 0]
+                      },
+                      {
+                        "text": "छावनी परिषद , लेबोंग",
+                        "alignment": "center",
+                        "margin": [-40, 2, 0, 0]
                       }
                     ],
                     "width": "30%"
@@ -421,7 +434,7 @@
     "footer": [
       {
         "text": "Note : In the case of death, no disclosure shall be made of particulars regarding the cause of death as entered in the register.\nSee proviso to Section 17(1) of the Registration of Births and Deaths Act, 1969\nमृत्यु वहीमा वर्णित मृत्युको कारण उल्लेख गरिने छैन। १९६९ सालको जन्म-मृत्यु पंजीकरण एनको १७(१) धारा हेर्नुहोस।",
-        "style": "instruction-body" 
+        "style": "instruction-body"
       }
     ],
     "styles": {
@@ -452,7 +465,7 @@
       "qr-code": {
         "color": "#000000",
         "alignment": "left",
-        "margin": [0, 0, 0, 0]
+        "margin": [20, 0, 0, 0]
       },
       "title-header": {
         "color": "#000000",

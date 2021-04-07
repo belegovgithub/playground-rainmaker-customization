@@ -65,11 +65,11 @@
                     "style": "appendix-header-body"
                   },
                   {
-                    "text": "रजिस्ट्रार – {{cb_label_name_multiLang}},{{cb-name-multilang}}, अजमेर",
+                    "text": "रजिस्ट्रार – {{cb_label_name_multiLang}}, {{cb-name-multilang}}, अजमेर",
                     "style": "appendix-header-body"
                   },
                   {
-                    "text": "Registrar – CHAVNI PARISHAD,{{cb-name}}, AJMER",
+                    "text": "Registrar – CANTONMENT BOARD, {{cb-name}}, AJMER",
                     "style": "appendix-header-body"
                   }
                 ]
@@ -183,7 +183,11 @@
                         "text": "छावनी परिषद, {{cb-name-multilang}} ",
                         "bold": true
                       },
-                      "तहसील/खण्ड {{block-name-multilang}} जिला ",{"text": "xxxx","bold":true}," राज्य/संघ राज्य ",{"text": "राजस्थान, भारत","bold":true}," का रजिस्टर है।"
+                      "तहसील/खण्ड ",{"text": "xxxx","bold":true}," जिला ",{"text": "{{dist-name-multilang}}","bold":true}," राज्य/संघ राज्य ",
+                        {
+                          "text": "राजस्थान, भारत ",
+                          "bold": true
+                        },"का रजिस्टर है।"
                     ],
                     "style": "rule-body_multiLang"
                   }
@@ -305,7 +309,7 @@
               {
                 "columns": [
                   {
-                    "text": "मृत्यु के समय मृतक का पता / Address of Deceased at the time of death: {{presentAdd}}",
+                    "text": "मृतक का मृत्यु के समय का पता/ Address of Deceased at the time of death: {{presentAdd}}",
                     "width": "49%",
                     "style": "details-body"
                   },
@@ -357,7 +361,7 @@
                   {
                     "stack": [ 
                       {
-                        "text": "जारी करने कि तारीख/Date of Issue: {{issueDate}}",
+                        "text": "जारी करने की तारीख/Date of Issue: {{issueDate}}",
                         "style": "details-body"
                       }
                     ]

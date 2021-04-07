@@ -13,19 +13,19 @@
             {
               "direct": [
                 {
-                    "variable": "emblemImage",
-                    "url": "https://raw.githubusercontent.com/belsoftware/webaccess/master/images/birth/emblem.png",
-                    "type": "image"
+                  "variable": "emblemImage",                        
+                  "id":"emblem.png",
+                  "type":"image"      
                 },
                 {
-                    "variable": "govtImage",
-                    "url": "https://raw.githubusercontent.com/belsoftware/webaccess/master/images/birth/biharGovt.png",
-                    "type": "image"
+                  "variable": "govtImage",                        
+                  "id":"bhGovt.png",
+                  "type":"image"      
                 },
                 {
-                    "variable": "form5",
-                    "url": "https://raw.githubusercontent.com/belsoftware/webaccess/master/images/birth/form5.png",
-                    "type": "image"
+                  "variable": "form5",                        
+                  "id":"form5.png",
+                  "type":"image"      
                 },
                 {
                   "variable": "name", 
@@ -46,6 +46,14 @@
                     "path": "$.dateofdeath"
                   },
                   "type": "dateOrEmpty"
+                },
+                {
+                  "variable": "dateToWordFormat", 
+                  "value": {
+                    "path": "$.dateofdeath"
+                  },
+                  "type": "dateToWord",
+                  "isUpperCaseRequired":true
                 },
                 {
                   "variable": "gender", 
@@ -157,6 +165,13 @@
                     "variable": "certificateType", 
                     "value": {
                       "path": "$.certificateType"
+                    },
+                    "type":"setEmpty"
+                  },
+                  {
+                    "variable": "spouseAadhar", 
+                    "value": {
+                      "path": "$.deathSpouseInfo.aadharno"
                     },
                     "type":"setEmpty"
                   },
@@ -810,7 +825,7 @@
             {
                 "externalAPI": [     
                   { 
-                      "path": "http://egov-mdms-service:8080/egov-mdms-service/v1/_get",
+                      "path": "http://localhost:8085/egov-mdms-service/v1/_get",
                       "queryParam": "moduleName=tenant&masterName=tenants&tenantId=pb&filter=%5B?(@.code=='{$.tenantId}')%5D",
                       "apiRequest": null,
                       "responseMapping":[

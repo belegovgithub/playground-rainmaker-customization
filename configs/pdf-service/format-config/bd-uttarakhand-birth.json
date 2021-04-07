@@ -362,19 +362,27 @@
                       },
                       {
                         "text": "रजिस्ट्रार (जन्म एवं मृत्यु)",
-                        "style": "details-body"
+                        "style": "details-body",
+                        "alignment": "center", 
+                        "margin": [-40, 2, 0, 0]
                       },
                       {
                         "text": "REGISTRAR (BIRTH & DEATH)",
-                        "style": "details-body"
+                        "style": "details-body",
+                        "alignment": "center",
+                        "margin": [-40, 2, 0, 0]
                       },
                       {
                         "text": "छावनी  परिषद {{cb-name-multilang}}",
-                        "style": "details-body"
+                        "style": "details-body",
+                        "alignment": "center",
+                        "margin": [-40, 2, 0, 0]
                       },
                       {
                         "text": "CANTONMENT BOARD {{cb-name}}",
-                        "style": "details-body"
+                        "style": "details-body",
+                        "alignment": "center",
+                        "margin": [-40, 2, 0, 0]
                       }
                     ]
                   }

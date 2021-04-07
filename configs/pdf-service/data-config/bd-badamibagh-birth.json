@@ -1,9 +1,9 @@
 {
-    "key": "bd-madhyapradesh-death",
+    "key": "bd-badamibagh-birth",
     "DataConfigs": {
       "serviceName": "rainmaker-common",
       "version": "1.0.0",
-      "baseKeyPath": "$.DeathCertificate.*",
+      "baseKeyPath": "$.BirthCertificate.*",
       "entityIdPath":"$.id",
       "isCommonTableBorderRequired": true,
       "mappings": [
@@ -19,7 +19,7 @@
                 },
                 {
                   "variable": "govtImage",                        
-                  "id":"mpGovt.png",
+                  "id":"jkGovt.png",
                   "type":"image"      
                 },
                 {
@@ -41,9 +41,9 @@
                   }
                 },
                 {
-                  "variable": "dod", 
+                  "variable": "dob", 
                   "value": {
-                    "path": "$.dateofdeath"
+                    "path": "$.dateofbirth"
                   },
                   "type": "dateOrEmpty"
                 },
@@ -55,30 +55,9 @@
                   "type":"setEmpty"
                 },
                 {
-                  "variable": "spouseName", 
-                  "value": {
-                    "path": "$.deathSpouseInfo.fullName"
-                  },
-                  "type":"setEmpty"
-                },
-                {
-                  "variable": "spouceAadharNo", 
-                  "value": {
-                    "path": "$.deathSpouseInfo.aadharno"
-                  },
-                  "type":"setEmpty"
-                },
-                {
                   "variable": "registrationNo", 
                   "value": {
                     "path": "$.registrationno"
-                  },
-                  "type":"setEmpty"
-                },
-                {
-                  "variable": "age", 
-                  "value": {
-                    "path": "$.age"
                   },
                   "type":"setEmpty"
                 },
@@ -92,49 +71,42 @@
                 {
                   "variable": "fatherName", 
                   "value": {
-                    "path": "$.deathFatherInfo.fullName"
+                    "path": "$.birthFatherInfo.fullName"
                   },
                   "type":"setEmpty"
                 },
                 {
                   "variable": "motherName", 
                   "value": {
-                    "path": "$.deathMotherInfo.fullName"
+                    "path": "$.birthMotherInfo.fullName"
                   },
                   "type":"setEmpty"
                 },
                 {
-                  "variable": "aadharno", 
+                  "variable": "childAddress", 
                   "value": {
-                    "path": "$.aadharno"
+                    "path": "$.birthPresentaddr.fullAddress"
                   },
                   "type":"setEmpty"
                 },
                 {
-                  "variable": "presentAddress", 
+                  "variable": "parentsAddress", 
                   "value": {
-                    "path": "$.deathPresentaddr.fullAddress"
-                  },
-                  "type":"setEmpty"
-                },
-                {
-                  "variable": "permanentAddress", 
-                  "value": {
-                    "path": "$.deathPermaddr.fullAddress"
+                    "path": "$.birthPermaddr.fullAddress"
                   },
                   "type":"setEmpty"
                 },
                 {
                   "variable": "fatherUid", 
                   "value": {
-                    "path": "$.deathFatherInfo.aadharno"
+                    "path": "$.birthFatherInfo.aadharno"
                   },
                   "type":"setEmpty"
                 },
                 {
                   "variable": "motherUid", 
                   "value": {
-                    "path": "$.deathMotherInfo.aadharno"
+                    "path": "$.birthMotherInfo.aadharno"
                   },
                   "type":"setEmpty"
                 },
@@ -146,9 +118,9 @@
                   "type":"setEmpty"
                 },
                   {
-                    "variable": "placeOfDeath", 
+                    "variable": "placeOfBirth", 
                     "value": {
-                      "path": "$.placeofdeath"
+                      "path": "$.placeofbirth"
                     },
                     "type":"setEmpty"
                   },
@@ -840,7 +812,6 @@
                             
                             }
                         },
-
 
                         {
                           "variable": "dist-name",

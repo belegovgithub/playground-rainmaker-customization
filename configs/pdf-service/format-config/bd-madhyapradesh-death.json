@@ -281,7 +281,7 @@
                   },
                   {
                     "text": "आधार  नंबर  / HUSBAND/WIFE  AADHAAR NO: {{spouceAadharNo}}",
-                    "width": "59%",
+                   
                     "style": "details-body"
                   }
                 ]
@@ -329,7 +329,7 @@
               {
                 "columns": [
                   {
-                    "text": "मृत्यु के समय मृतक का पता / ADDRESS OF DECEASED AT THE TIME OF DEATH: {{presentAddress}}",
+                    "text": "मृत्यु के समय मृतक का पता / ADDRESS OF THE DECEASED AT THE TIME OF DEATH: {{presentAddress}}",
                     "width": "59%",
                     "style": "details-body"
                   },

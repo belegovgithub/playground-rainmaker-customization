@@ -1,5 +1,5 @@
 {
-    "key": "bd-madhyapradesh-death",
+    "key": "bd-badamibagh-death",
     "DataConfigs": {
       "serviceName": "rainmaker-common",
       "version": "1.0.0",
@@ -19,7 +19,7 @@
                 },
                 {
                   "variable": "govtImage",                        
-                  "id":"mpGovt.png",
+                  "id":"jkGovt.png",
                   "type":"image"      
                 },
                 {
@@ -39,13 +39,21 @@
                   "value": {
                     "path": "$.embeddedUrl"
                   }
-                },
+                }, 
                 {
                   "variable": "dod", 
                   "value": {
                     "path": "$.dateofdeath"
                   },
-                  "type": "dateOrEmpty"
+                   "type": "dateOrEmpty"
+                },     
+                
+                {
+                  "variable": "placeOfDeath", 
+                  "value": {
+                    "path": "$.placeofdeath"
+                  },
+                   "type": "setEmpty"
                 },
                 {
                   "variable": "gender", 
@@ -55,30 +63,9 @@
                   "type":"setEmpty"
                 },
                 {
-                  "variable": "spouseName", 
-                  "value": {
-                    "path": "$.deathSpouseInfo.fullName"
-                  },
-                  "type":"setEmpty"
-                },
-                {
-                  "variable": "spouceAadharNo", 
-                  "value": {
-                    "path": "$.deathSpouseInfo.aadharno"
-                  },
-                  "type":"setEmpty"
-                },
-                {
                   "variable": "registrationNo", 
                   "value": {
                     "path": "$.registrationno"
-                  },
-                  "type":"setEmpty"
-                },
-                {
-                  "variable": "age", 
-                  "value": {
-                    "path": "$.age"
                   },
                   "type":"setEmpty"
                 },
@@ -104,9 +91,9 @@
                   "type":"setEmpty"
                 },
                 {
-                  "variable": "aadharno", 
+                  "variable": "permanentAddress", 
                   "value": {
-                    "path": "$.aadharno"
+                    "path": "$.deathPermaddr.fullAddress"
                   },
                   "type":"setEmpty"
                 },
@@ -114,13 +101,6 @@
                   "variable": "presentAddress", 
                   "value": {
                     "path": "$.deathPresentaddr.fullAddress"
-                  },
-                  "type":"setEmpty"
-                },
-                {
-                  "variable": "permanentAddress", 
-                  "value": {
-                    "path": "$.deathPermaddr.fullAddress"
                   },
                   "type":"setEmpty"
                 },
@@ -146,9 +126,9 @@
                   "type":"setEmpty"
                 },
                   {
-                    "variable": "placeOfDeath", 
+                    "variable": "placeOfBirth", 
                     "value": {
-                      "path": "$.placeofdeath"
+                      "path": "$.placeofbirth"
                     },
                     "type":"setEmpty"
                   },
@@ -159,7 +139,7 @@
                     },
                     "type": "dateOrEmpty"
                   },
-                   
+                 
                   {
                     "variable": "certificateType", 
                     "value": {

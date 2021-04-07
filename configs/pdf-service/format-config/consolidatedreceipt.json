@@ -19,7 +19,6 @@
                      {
                        "text":"{{letter-code}}",
                        "style": "receipt-logo-header"
-                      
                      },
                      {
                          "text":"{{letter-header}}",
@@ -90,7 +89,6 @@
                                   "text":"{{serviceType}} {{payment_receipt}}",
                                    "alignment":"center",
                                    "style": "receipt-logo-title"
-                                  
                                  } 
                                ],
                                  "border":[

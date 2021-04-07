@@ -1,9 +1,9 @@
 {
-    "key": "bd-madhyapradesh-death",
+    "key": "bd-jammu-birth",
     "DataConfigs": {
       "serviceName": "rainmaker-common",
       "version": "1.0.0",
-      "baseKeyPath": "$.DeathCertificate.*",
+      "baseKeyPath": "$.BirthCertificate.*",
       "entityIdPath":"$.id",
       "isCommonTableBorderRequired": true,
       "mappings": [
@@ -14,12 +14,17 @@
               "direct": [
                 {
                   "variable": "emblemImage",                        
-                  "id":"emblem.png",
+                  "id":"emblemInd.png",
                   "type":"image"      
                 },
                 {
                   "variable": "govtImage",                        
-                  "id":"mpGovt.png",
+                  "id":"jkBnwGovt.png",
+                  "type":"image"      
+                },
+                {
+                  "variable": "govtImage1",                        
+                  "id":"jammuGovt.png",
                   "type":"image"      
                 },
                 {
@@ -27,12 +32,18 @@
                   "id":"form5.png",
                   "type":"image"      
                 },
+              {
+                  "variable": "form5",
+                  "url": "https://raw.githubusercontent.com/belsoftware/webaccess/master/images/birth/form5_Border.png",
+                  "type": "image"
+              },
                 {
                   "variable": "name", 
                   "value": {
                     "path": "$.fullName"
                   },
-                  "type":"setEmpty"
+                  "type":"setEmpty",
+                  "isUpperCaseRequired": true
                 },
                 {
                   "variable": "embeddedUrl", 
@@ -41,46 +52,36 @@
                   }
                 },
                 {
-                  "variable": "dod", 
+                  "variable": "dob", 
                   "value": {
-                    "path": "$.dateofdeath"
+                    "path": "$.dateofbirth"
                   },
-                  "type": "dateOrEmpty"
+                  "type": "date"
+                  
+                },
+                {
+                  "variable": "dateToWordFormat", 
+                  "value": {
+                    "path": "$.dateofbirth"
+                  },
+                  "type": "dateToWord",
+                  "isUpperCaseRequired":true
                 },
                 {
                   "variable": "gender", 
                   "value": {
                     "path": "$.genderStr"
                   },
-                  "type":"setEmpty"
-                },
-                {
-                  "variable": "spouseName", 
-                  "value": {
-                    "path": "$.deathSpouseInfo.fullName"
-                  },
-                  "type":"setEmpty"
-                },
-                {
-                  "variable": "spouceAadharNo", 
-                  "value": {
-                    "path": "$.deathSpouseInfo.aadharno"
-                  },
-                  "type":"setEmpty"
+                  "type":"setEmpty",
+                  "isUpperCaseRequired": true
                 },
                 {
                   "variable": "registrationNo", 
                   "value": {
                     "path": "$.registrationno"
                   },
-                  "type":"setEmpty"
-                },
-                {
-                  "variable": "age", 
-                  "value": {
-                    "path": "$.age"
-                  },
-                  "type":"setEmpty"
+                  "type":"setEmpty",
+                  "isUpperCaseRequired": true
                 },
                 {
                     "variable": "registration_date", 
@@ -92,65 +93,66 @@
                 {
                   "variable": "fatherName", 
                   "value": {
-                    "path": "$.deathFatherInfo.fullName"
+                    "path": "$.birthFatherInfo.fullName"
                   },
-                  "type":"setEmpty"
+                  "type":"setEmpty",
+                  "isUpperCaseRequired": true
                 },
                 {
                   "variable": "motherName", 
                   "value": {
-                    "path": "$.deathMotherInfo.fullName"
+                    "path": "$.birthMotherInfo.fullName"
                   },
-                  "type":"setEmpty"
+                  "type":"setEmpty",
+                  "isUpperCaseRequired": true
                 },
                 {
-                  "variable": "aadharno", 
+                  "variable": "childAddress", 
                   "value": {
-                    "path": "$.aadharno"
+                    "path": "$.birthPresentaddr.fullAddress"
                   },
-                  "type":"setEmpty"
+                  "type":"setEmpty",
+                  "isUpperCaseRequired": true
                 },
                 {
-                  "variable": "presentAddress", 
+                  "variable": "parentsAddress", 
                   "value": {
-                    "path": "$.deathPresentaddr.fullAddress"
+                    "path": "$.birthPermaddr.fullAddress"
                   },
-                  "type":"setEmpty"
-                },
-                {
-                  "variable": "permanentAddress", 
-                  "value": {
-                    "path": "$.deathPermaddr.fullAddress"
-                  },
-                  "type":"setEmpty"
+                  "type":"setEmpty",
+                  "isUpperCaseRequired": true
                 },
                 {
                   "variable": "fatherUid", 
                   "value": {
-                    "path": "$.deathFatherInfo.aadharno"
+                    "path": "$.birthFatherInfo.aadharno"
                   },
-                  "type":"setEmpty"
+                  "type":"setEmpty",
+                  "isUpperCaseRequired": true
                 },
                 {
                   "variable": "motherUid", 
                   "value": {
-                    "path": "$.deathMotherInfo.aadharno"
+                    "path": "$.birthMotherInfo.aadharno"
                   },
-                  "type":"setEmpty"
+                  "type":"setEmpty",
+                  "isUpperCaseRequired": true
                 },
                 {
                   "variable": "remarks", 
                   "value": {
                     "path": "$.remarks"
                   },
-                  "type":"setEmpty"
+                  "type":"setEmpty",
+                  "isUpperCaseRequired": true
                 },
                   {
-                    "variable": "placeOfDeath", 
+                    "variable": "placeOfBirth", 
                     "value": {
-                      "path": "$.placeofdeath"
+                      "path": "$.placeofbirth"
                     },
-                    "type":"setEmpty"
+                    "type":"setEmpty",
+                    "isUpperCaseRequired": true
                   },
                   {
                     "variable": "issueDate", 
@@ -159,13 +161,22 @@
                     },
                     "type": "dateOrEmpty"
                   },
-                   
+                  {
+                    "variable": "issueDateTime", 
+                    "value": {
+                      "path": "$.dateofissue"
+                    },
+                    "type": "dateOrEmpty",
+                    "format":"DD/MM/YYYY HH:mm:ss"
+                  },
+                
                   {
                     "variable": "certificateType", 
                     "value": {
                       "path": "$.certificateType"
                     },
-                    "type":"setEmpty"
+                    "type":"setEmpty",
+                    "isUpperCaseRequired": true
                   },
                   {
                     "variable": "cantonment-board",
@@ -823,64 +834,59 @@
                       "responseMapping":[
                         {
                           "variable": "cb-name",
-                          "value":"$.MdmsRes.tenant.tenants[0].code",
-                          "localisation":{
-                            "required":true,
+                          "value": "$.MdmsRes.tenant.tenants[0].code",
+                          "localisation": {
+                            "required": true,
                             "prefix": "PDF_STATIC_LABEL_BD_CB_EN",
-                            "module":"rainmaker-pdf"
-                            }
+                            "module": "rainmaker-pdf"
+                          }
                         },
                         {
                           "variable": "cb-name-multilang",
-                          "value":"$.MdmsRes.tenant.tenants[0].code",
-                          "localisation":{
-                            "required":true,
+                          "value": "$.MdmsRes.tenant.tenants[0].code",
+                          "localisation": {
+                            "required": true,
                             "prefix": "PDF_STATIC_LABEL_BD_CB_HI",
-                            "module":"rainmaker-pdf"
-                            
-                            }
+                            "module": "rainmaker-pdf"
+                          }
                         },
-
-
                         {
                           "variable": "dist-name",
-                          "value":"$.MdmsRes.tenant.tenants[0].city.districtName",
-                          "localisation":{
-                            "required":true,
+                          "value": "$.MdmsRes.tenant.tenants[0].city.districtName",
+                          "localisation": {
+                            "required": true,
                             "prefix": "PDF_STATIC_LABEL_BD_DIST_EN",
-                            "module":"rainmaker-pdf"
-                            }
-                        },                        
+                            "module": "rainmaker-pdf"
+                          }
+                        },
                         {
                           "variable": "dist-name-multilang",
-                          "value":"$.MdmsRes.tenant.tenants[0].city.districtName",
-                          "localisation":{
-                            "required":true,
+                          "value": "$.MdmsRes.tenant.tenants[0].city.districtName",
+                          "localisation": {
+                            "required": true,
                             "prefix": "PDF_STATIC_LABEL_BD_DIST_HI",
-                            "module":"rainmaker-pdf"
-                            
-                            }
+                            "module": "rainmaker-pdf"
+                          }
+                          
                         },
-
-
                         {
                           "variable": "block-name",
-                          "value":"$.MdmsRes.tenant.tenants[0].city.blockName",
-                          "localisation":{
-                            "required":true,
+                          "value": "$.MdmsRes.tenant.tenants[0].city.blockName",
+                          "localisation": {
+                            "required": true,
                             "prefix": "PDF_STATIC_LABEL_BD_BL_EN",
-                            "module":"rainmaker-pdf"
-                            }
-                        },                        
+                            "module": "rainmaker-pdf"
+                          }
+                        },
                         {
                           "variable": "block-name-multilang",
-                          "value":"$.MdmsRes.tenant.tenants[0].city.blockName",
-                          "localisation":{
-                            "required":true,
+                          "value": "$.MdmsRes.tenant.tenants[0].city.blockName",
+                          "localisation": {
+                            "required": true,
                             "prefix": "PDF_STATIC_LABEL_BD_BL_HI",
-                            "module":"rainmaker-pdf"
-                            
-                            }
+                            "module": "rainmaker-pdf"
+                          }
+                          
                         }
                       ]
                   }
