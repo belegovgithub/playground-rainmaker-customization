@@ -108,18 +108,18 @@
                   {
                     "text": [
                       "ਇਹ ਤਸਦੀਕ ਕੀਤਾ ਜਾਂਦਾ ਹੈ ਕਿ ਹੇਠ ਲਿਖੀ ਸੂਚਨਾ ਅਸਲ ਮੌਤ ਰਿਕਾਰਡ ਵਿਚੋਂ ਲਈ ਗਈ ਹੈ ਜਿਹੜੀ ਕਿ ਲੋਕਲ ਰਜਿਸਟਰਾਰ, ਜਨਮ ਤੇ ਮੌਤ, ਨਗਰ ਨਿਗਮ/ਕੌਂਸਲ/ਗ੍ਰਾਮ ਪੰਚਾਇਤ",
-                      { "text": " {{cb-name-multilang}}", "color": "#000000" },
+                      { "text": " ਕੰਟੋਨਮੈਂਟ ਬੋਰਡ {{cb-name-multilang}}", "color": "#000000" ,"decoration": "underline"},
                       " ਬਲਾਕ/ ਪੁਲਿਸ ਥਾਣਾ ",
                       {
                         "text": " {{block-name-multilang}}",
-                        "color": "#000000"
+                        "color": "#000000","decoration": "underline"
                       },
                       " ਤਹਿਸੀਲ  ",
-                      { "text": "{{dist-name-multilang}}", "color": "#000000" },
+                      { "text": "{{dist-name-multilang}}", "color": "#000000","decoration": "underline" },
                       " ਜ਼ਿਲ੍ਹਾ  ",
                       {
                         "text": " {{dist-name-multilang}}",
-                        "color": "#000000"
+                        "color": "#000000","decoration": "underline"
                       },
                       " ਪੰਜਾਬ, ਸਾਲ ___  ਦੇ ਜਨਮ ਰਜਿਸਟਰ ਵਿਚ ਦਰਜ ਹੈ |"
                     ],
@@ -134,13 +134,13 @@
                   {
                     "text": [
                       "This is to certify that the following information has been taken from the original death record which is registered in the birth register of Local Registrar, Births & Deaths, ",
-                      { "text": " {{cb-name}}", "color": "#000000" },
-                      " Cantonment Board,  Block/Police Station ",
-                      { "text": " {{block-name}}", "color": "#000000" },
+                      { "text": " Cantonment Board {{cb-name}} Cantt,", "color": "#000000" ,"decoration": "underline"},
+                      " Block/Police Station ",
+                      { "text": " {{block-name}}", "color": "#000000" ,"decoration": "underline"},
                       "  Tehsil ",
-                      { "text": " {{dist-name}}", "color": "#000000" },
+                      { "text": " {{dist-name}}", "color": "#000000" ,"decoration": "underline"},
                       " District ",
-                      { "text": " {{dist-name}}", "color": "#000000" },
+                      { "text": " {{dist-name}}", "color": "#000000","decoration": "underline" },
                       " of Punjab State of the Year ___"
                     ],
                     "style": "rule-header"
