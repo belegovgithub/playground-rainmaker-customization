@@ -52,9 +52,9 @@
                     "style": "appendix-header-body"
                   },
                   {
-                    "text": "GOVERNMENTOF TAMILNADU",
+                    "text": "GOVERNMENT OF TAMILNADU",
                     "style": "appendix-header-body",
-                    "margin": [0, 0, 0, 5]
+                    "margin": [0, 0, 0, 3]
                   },
                   {
                     "text": "கண்டோன்மெண்ட் கழகம் {{cb-name-multilang-2}}",
@@ -99,7 +99,7 @@
               {
                 "columns": [
                   {
-                    "text": "பிறப்புசான்றிதழ்/ BIRTH CERTIFICATE",
+                    "text": "பிறப்பு சான்றிதழ் / BIRTH CERTIFICATE",
                     "style":"title-header"
                      
                   }
@@ -128,7 +128,7 @@
               {
                 "columns": [
                   {
-                    "text": "(பிறப்பு மற்றும் இறப்புச் சட்டம், 1969 மற்றும் தமிழ்நாடு பிறப்பு மற்றும் இறப்பு விதிகள் 2000 இன்விதி 8/13 ஆகியவற்றின்பதிவு 12/17 ன் கீழ் குறிப்பிடப்பட்டுள்ளது.)",
+                    "text": "(பிறப்பு மற்றும் இறப்பு பதிவு சட்டம், 1969ன் பிரிவு 12/17 மற்றும் தமிழ்நாடு பிறப்பு மற்றும் இறப்பு பதிவு விதிகள் 2000 விதி எண்.8/13 இன் கீழ் வழங்கப்படுகிறது.)",
                     "style": "rule-header_multiLang"
                   }
                 ]
@@ -157,7 +157,7 @@
               {
                 "columns": [
                   {
-                    "text": "{{dist-name-multilang}} மாவட்டம் {{block-name-multilang}} தாலுகாவின் கண்டோன்மெண்ட்கழகம் பதிவு செய்த பதிவுதாரரின் பிறப்புக்கான அசல் பதிவேட்டிலிருந்து பின்வரும் தகவல்கள் எடுக்கப்பட்டுள்ளன என்று சான்று அளிக்கப்படுகிறது.",
+                    "text": "கீழ்கண்ட தகவல் இந்தியா, தமிழ்நாடு மாநிலம், {{dist-name-multilang}} மாவட்டம், {{block-name-multilang}} வட்டம், கண்டோன்மெண்ட் {{cb-name-multilang}}யை சேர்ந்த அசல் பிறப்பு பதிவேட்டிலிருந்து எடுக்கப்பட்டவை என சான்று அளிக்கப்படுகிறது.",
                     "style": "rule-body_multiLang"
                   }
                 ]
@@ -236,7 +236,7 @@
               {
                 "columns": [
                   {
-                    "text": "NAME OF MOTHER / தாயார் பெயர்: {{motherName}}",
+                    "text": "NAME OF MOTHER / தாயின் பெயர்: {{motherName}}",
                     "width": "49%",
                     "style": "details-body"
                   },
@@ -245,7 +245,7 @@
                     "width": "1%"
                   },
                   {
-                    "text": "NAME OF FATHER / தந்தை பெயர் : {{fatherName}}",
+                    "text": "NAME OF FATHER / தந்தையின் பெயர் : {{fatherName}}",
                     "style": "details-body"
                   }
                 ]
@@ -255,7 +255,7 @@
               {
                 "columns": [
                   {
-                    "text": "MOTHER'S UID NUMBER / தாயார் ஆதார்  எண் : {{motherUid}}",
+                    "text": "MOTHER'S UID NUMBER / தாயின் ஆதார்  எண் : {{motherUid}}",
                     "width": "49%",
                     "style": "details-body"
                   },
@@ -264,7 +264,7 @@
                     "width": "1%"
                   },
                   {
-                    "text": "FATHER'S UID NUMBER / தந்தை ஆதார்  எண் : {{fatherUid}}",
+                    "text": "FATHER'S UID NUMBER / தந்தையின் ஆதார்  எண் : {{fatherUid}}",
                     "style": "details-body"
                   }
                 ]
@@ -332,7 +332,7 @@
                     "width": "1%"
                   },
                   {
-                    "text": "ISSUING AUTHORITY/சான்றிதழ்அளிப்பவர்:",
+                    "text": "ISSUING AUTHORITY/சான்றிதழ் அளிப்பவர்:",
                     "style": "details-body",
                     "margin": [0, -15, 0, 0]
                   }
@@ -344,7 +344,7 @@
                 "columns": [
                   {
                     "text": " ",
-                    "width": "49%"
+                    "width": "30%"
                   },
                   {
                     "text": " ",
@@ -358,7 +358,7 @@
                         "alignment": "center"
                       },
                       {
-                        "text": "பதிவாளர் பிறப்பு மற்றும் இறப்பு ", 
+                        "text": "பதிவாளர் (பிறப்பு மற்றும் இறப்பு )", 
                         "fontSize": 9,
                         "alignment": "center"
                       },    
@@ -368,7 +368,7 @@
                         "alignment": "center"
                       },
                       {
-                        "text": "கண்டோன்மெண்ட் போர்டு {{cb-name-multilang-2}}", 
+                        "text": "கண்டோன்மெண்ட் {{cb-name-multilang-2}}", 
                         "fontSize": 9,
                         "alignment": "center"
                       }
@@ -401,7 +401,7 @@
     ],
     "footer": [
       {
-      "text": "“THIS IS A COMPUTER GENERATED CERTIFICATE”\n“THE GOVT.OF INDIA VIDE CIRCULAR NO.1/12/2014-VS(CRS) DATED 27-JULY-2015 HAS APPROVED THIS CERTIFICATE AS A VALID LEGAL DOCUMENT FOR ALL OFFICIAL PURPOSES”\n“THE REGISTRATION NUMBER IS UNIQUE TO EACH EVENT.”\n“இது கணினி மூலம் பதிவேற்றம் செய்யப்பட்ட சான்றிதழ்”\n“இந்திய அரசு சுற்றறிக்கை எண் 1 / 12/2014-VS (CRS) தேதியிட்ட 27-ஜூலை -2015  மூலம் அங்கீகரித்த இந்த சான்றிதழ் அனைத்து உத்தியோகப்பூர்வ நோக்கங்களுக்கும் சட்ட ஆவணமாக இந்த சான்றிதழ் செல்லுபடியாகும்”\n“இந்த பதிவு எண் ஒவ்வொரு நிகழ்விற்கும் தனித்துவமானது”\n“பிறப்பு மற்றும் இறப்பு பதிவு செய்வதை உறுதி செய்வீர் / ENSURE REGISTRATION OF EVERY BIRTH AND DEATH”",
+      "text": "“THIS IS A COMPUTER GENERATED CERTIFICATE”\n“THE GOVT.OF INDIA VIDE CIRCULAR NO.1/12/2014-VS(CRS) DATED 27-JULY-2015 HAS APPROVED THIS CERTIFICATE AS A VALID LEGAL DOCUMENT FOR ALL OFFICIAL PURPOSES”\n“THE REGISTRATION NUMBER IS UNIQUE TO EACH EVENT.”\n“இது கணினி மூலம் பதிவேற்றம் செய்யப்பட்ட சான்றிதழ்”\n“இந்திய அரசு சுற்றறிக்கை எண் 1 / 12/2014-VS (CRS) தேதியிட்ட 27-ஜூலை -2015  மூலம் அங்கீகரித்த இந்த சான்றிதழ் அனைத்து உத்தியோகப்பூர்வ நோக்கங்களுக்கும் சட்ட ஆவணமாக இந்த சான்றிதழ் செல்லுபடியாகும்”\n“ இந்த பதிவு எண் ஒவ்வொரு நிகழ்விற்கும் தனித்துவமானது”\n“பிறப்பு மற்றும் இறப்பு பதிவு செய்வதை உறுதி செய்வீர் / ENSURE REGISTRATION OF EVERY BIRTH AND DEATH”",
         "style": "instruction-body" 
       }
     ],
@@ -465,29 +465,29 @@
       },
       "rule-header": {
         "color": "#000000",
-        "bold": false,
-        "fontSize": 10,
+        "bold": true,
+        "fontSize": 7.5,
         "fontWeight": 400,
-        "margin": [0, -5, 0, 0]
+        "margin": [0, 0, 0, 0]
       },
       "rule-header_multiLang": {
         "color": "#000000",
-        "bold": false,
-        "fontSize": 10,
+        "bold": true,
+        "fontSize": 7.5,
         "fontWeight": 400,
         "margin": [0, -10, 0, 0]
       },
       "rule-body": {
         "color": "#000000",
-        "bold": false,
-        "fontSize": 10,
+        "bold": true,
+        "fontSize": 7.5,
         "fontWeight": 400,
-        "margin": [0, -5, 0, 0]
+        "margin": [0, 0, 0, 0]
       },
       "rule-body_multiLang": {
         "color": "#000000",
-        "bold": false,
-        "fontSize": 10,
+        "bold": true,
+        "fontSize": 7.5,
         "fontWeight": 400,
         "margin": [0, 3, 0, 0]
       },
@@ -591,7 +591,7 @@
         "margin": [0, 3, 0, 0]
       },
       "pdf-card-value": {
-        "fontSize": 10,
+        "fontSize": 8,
         "color": "rgba(0, 0, 0, 0.87)",
         "margin": [0, 0, 0, 1]
       },
