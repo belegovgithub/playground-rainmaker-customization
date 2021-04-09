@@ -433,6 +433,20 @@
        "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"pb.testing\"}},{\"term\":{\"Data.applicationStatus.keyword\":\"INITIATED\"}}]}},\"aggs\":{\"ULBs \":{\"terms\":{\"field\":\"Data.tenantId.keyword\",\"size\":1000,\"order\":{\"_term\":\"asc\"}},\"aggs\":{\"Total Transactions\":{\"filter\":{\"bool\":{\"must_not\":[]}},\"aggs\":{\"Total Services\":{\"value_count\":{\"field\":\"Data.applicationNo.keyword\"}}}}}}}}}}"
      },
      {
+      "module": "BIRTH",
+      "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\", \r\n  \"district\" : \"Data.tenantData.city.districtCode\", \r\n\"tenantId\" : \"Data.tenantId.keyword\" \r\n}",
+      "dateRefField": "Data.auditDetails.lastModifiedTime",
+      "indexName": "birth-cert-v1",
+      "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"pb.testing\"}},{\"term\":{\"Data.applicationStatus.keyword\":\"ACTIVE\"}}]}},\"aggs\":{\"ULBs \":{\"terms\":{\"field\":\"Data.tenantId.keyword\",\"size\":1000,\"order\":{\"_term\":\"asc\"}},\"aggs\":{\"Total Transactions\":{\"filter\":{\"bool\":{\"must_not\":[]}},\"aggs\":{\"Total Services\":{\"value_count\":{\"field\":\"Data.birthCertificateNo.keyword\"}}}}}}}}}}"
+    },
+    {
+      "module": "DEATH",
+      "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\", \r\n  \"district\" : \"Data.tenantData.city.districtCode\", \r\n\"tenantId\" : \"Data.tenantId.keyword\" \r\n}",
+      "dateRefField": "Data.auditDetails.lastModifiedTime",
+      "indexName": "death-cert-v1",
+      "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"pb.testing\"}},{\"term\":{\"Data.applicationStatus.keyword\":\"ACTIVE\"}}]}},\"aggs\":{\"ULBs \":{\"terms\":{\"field\":\"Data.tenantId.keyword\",\"size\":1000,\"order\":{\"_term\":\"asc\"}},\"aggs\":{\"Total Transactions\":{\"filter\":{\"bool\":{\"must_not\":[]}},\"aggs\":{\"Total Services\":{\"value_count\":{\"field\":\"Data.deathCertificateNo.keyword\"}}}}}}}}}}"
+    },
+     {
        "module": "COMMON",
        "requestQueryMap": "{\"tenantId\" : \"tenantId.keyword\"}",
        "dateRefField": "",
@@ -2052,7 +2066,7 @@
      {
        "module": "WS",
        "indexName": "water-services",
-       "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"Total Application Approved\":{\"value_count\":{\"field\":\"Data.connectionNo.keyword\"}}}}}}",
+       "aggrQuery": "{\"aggs\": {\"AGGR\": {\"filter\": {\"bool\": {\"must_not\": [{\"term\": { \"Data.tenantId.keyword\": \"pb.testing\"} }],\"must\": [{\"terms\": {\"Data.applicationStatus.keyword\": [\"CONNECTION_ACTIVATED\"]}}]}},\"aggs\": {\"Total Application Approved\": {\"value_count\": {\"field\": \"Data.connectionNo.keyword\"}}}}}}",
        "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\", \r\n  \"district\" : \"Data.tenantData.city.districtCode\", \r\n\"tenantId\" : \"Data.tenantId.keyword\" \r\n}", 
        "dateRefField": "Data.additionalDetails.appCreatedDate"
      },
@@ -2245,14 +2259,14 @@
      "dateRefField": "Data.auditDetails.lastModifiedTime"
    },
    {
-     "module": "DEATH",
-     "indexName": "death-cert-v1",
-     "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"pb.testing\"}},{\"terms\":{\"Data.applicationStatus.keyword\":[\"ACTIVE\"]}}]}},\"aggs\":{\"Total Application99\":{\"value_count\":{\"field\":\"Data.deathCertificateNo.keyword\"}}}}}}",
-     "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\", \r\n  \"district\" : \"Data.tenantData.city.districtCode\", \r\n\"tenantId\" : \"Data.tenantId.keyword\" \r\n}", 
-     "dateRefField": "Data.auditDetails.lastModifiedTime"
-   }
+    "module": "DEATH",
+    "indexName": "death-cert-v1",
+    "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"pb.testing\"}},{\"terms\":{\"Data.applicationStatus.keyword\":[\"ACTIVE\"]}}]}},\"aggs\":{\"Total Application99\":{\"value_count\":{\"field\":\"Data.deathCertificateNo.keyword\"}}}}}}",
+    "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\", \r\n  \"district\" : \"Data.tenantData.city.districtCode\", \r\n\"tenantId\" : \"Data.tenantId.keyword\" \r\n}", 
+    "dateRefField": "Data.auditDetails.lastModifiedTime"
+  }
    ],
-   "chartType": "metric",
+   "chartType": "metric", 
    "valueType": "number",
    "action": "",
    "documentType": "_doc",
@@ -2404,7 +2418,21 @@
        "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\", \r\n  \"district\" : \"Data.tenantData.city.districtCode\", \r\n\"tenantId\" : \"Data.tenantId\" \r\n}",
        "indexName": "sewerage-services",
        "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"pb.testing\"}},{\"terms\":{\"Data.applicationStatus.keyword\":[\"INITIATED\"]}}]}},\"aggs\":{\"Sewerage\":{\"value_count\":{\"field\":\"Data.tenantId.keyword\"}}}}}}"
-     }
+     },
+     {
+      "module": "BIRTH",
+      "dateRefField": "Data.auditDetails.lastModifiedTime",
+      "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\", \r\n  \"district\" : \"Data.tenantData.city.districtCode\", \r\n\"tenantId\" : \"Data.tenantId.keyword\" \r\n}", 
+      "indexName": "birth-cert-v1",
+      "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"pb.testing\"}},{\"terms\":{\"Data.applicationStatus.keyword\":[\"ACTIVE\"]}}]}},\"aggs\":{\"Birth\":{\"value_count\":{\"field\":\"Data.birthCertificateNo.keyword\"}}}}}}"
+    },
+    {
+      "module": "DEATH",
+      "dateRefField": "Data.auditDetails.lastModifiedTime",
+      "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\", \r\n  \"district\" : \"Data.tenantData.city.districtCode\", \r\n\"tenantId\" : \"Data.tenantId.keyword\" \r\n}", 
+      "indexName": "death-cert-v1",
+      "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"pb.testing\"}},{\"terms\":{\"Data.applicationStatus.keyword\":[\"ACTIVE\"]}}]}},\"aggs\":{\"Death\":{\"value_count\":{\"field\":\"Data.deathCertificateNo.keyword\"}}}}}}"    
+    }
    ],
    "chartType": "pie",
    "valueType": "number",
@@ -2417,7 +2445,9 @@
      "PGR",
      "Lease",
      "Water",
-     "Sewerage"
+     "Sewerage",
+     "Birth",
+     "Death"
    ],
    "insight": {
    },
@@ -2492,7 +2522,21 @@
        "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\", \r\n  \"district\" : \"Data.tenantData.city.districtCode\", \r\n\"tenantId\" : \"Data.tenantId.keyword\" \r\n}",
        "indexName": "sewerage-services",
        "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"Total Application\":{\"date_histogram\":{\"field\":\"Data.additionalDetails.appCreatedDate\",\"interval\":\"intervalvalue\"},\"aggs\":{\"Applications Total\":{\"filter\":{\"bool\":{\"must_not\":[{\"terms\":{\"Data.applicationStatus.keyword\":[\"INITIATED\"]}}]}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.applicationNo.keyword\"}}}}}},\"Closed Application\":{\"date_histogram\":{\"field\":\"Data.additionalDetails.appCreatedDate\",\"interval\":\"intervalvalue\"},\"aggs\":{\"Applications Closed\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.applicationStatus.keyword\":[\"REJECTED\",\"CONNECTION_ACTIVATED\"]}}]}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.applicationNo.keyword\"}}}}}}}}}}"
-     }
+     },
+     {
+      "module": "BIRTH",
+      "dateRefField": "Data.auditDetails.lastModifiedTime",
+      "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\", \r\n  \"district\" : \"Data.tenantData.city.districtCode\", \r\n\"tenantId\" : \"Data.tenantId.keyword\" \r\n}",
+      "indexName": "birth-cert-v1",
+      "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\": [{\"term\":{\"Data.tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"Total Application\":{\"date_histogram\":{\"field\": \"Data.auditDetails.lastModifiedTime\",\"interval\":\"intervalvalue\"},\"aggs\":{\"Applications Total\":{\"filter\":{\"bool\":{\"must_not\":[{\"terms\":{\"Data.applicationStatus.keyword\":[\"ACTIVE\"]}}]}},\"aggs\":{\"Count\": {\"value_count\": {\"field\":\"Data.birthCertificateNo.keyword\"}}}}}}}}}}"
+    },
+    {
+      "module": "DEATH",
+      "dateRefField": "Data.auditDetails.lastModifiedTime",
+      "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\", \r\n  \"district\" : \"Data.tenantData.city.districtCode\", \r\n\"tenantId\" : \"Data.tenantId.keyword\" \r\n}",
+      "indexName": "death-cert-v1",
+      "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\": [{\"term\":{\"Data.tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"Total Application\":{\"date_histogram\":{\"field\": \"Data.auditDetails.lastModifiedTime\",\"interval\":\"intervalvalue\"},\"aggs\":{\"Applications Total\":{\"filter\":{\"bool\":{\"must_not\":[{\"terms\":{\"Data.applicationStatus.keyword\":[\"ACTIVE\"]}}]}},\"aggs\":{\"Count\": {\"value_count\": {\"field\":\"Data.deathCertificateNo.keyword\"}}}}}}}}}}"
+    }
    ],
    "chartType": "line",
    "valueType": "number",
@@ -3682,7 +3726,7 @@
      {
        "module": "TL",
        "indexName": "tlindex-v1",
-       "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tradelicense.tenantId.keyword\":\"pb.testing\"}}],\"must\":[{\"terms\":{\"Data.tradelicense.status.keyword\":[\"APPROVED\",\"REJECTED\",\"PENDINGPAYMENT\",\"CANCELLED\"]}}]}},\"aggs\":{\"License Issued99\":{\"value_count\":{\"field\":\"Data.tradelicense.applicationNumber.keyword\"}}}}}}",
+       "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tradelicense.tenantId.keyword\":\"pb.testing\"}}],\"must\":[{\"terms\":{\"Data.tradelicense.status.keyword\":[\"APPROVED\",\"REJECTED\",\"PENDINGPAYMENT\",\"CANCELLED\",\"EXPIRED\"]}}]}},\"aggs\":{\"License Issued99\":{\"value_count\":{\"field\":\"Data.tradelicense.applicationNumber.keyword\"}}}}}}",
        "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\",    \"district\" : \"Data.tenantData.city.districtCode\",  \"tenantId\" : \"Data.tradelicense.tenantId\"  ,  \"businessService\" : \"dataObject.Bill.billDetails.businessServices\"  }",
        "dateRefField": "Data.tradelicense.applicationDate"
      }
@@ -6478,13 +6522,13 @@
  "wstotalConnection": {
    "chartName": "DSS_WS_TOTAL_CONNECTIONS",
    "queries": [
-     {
-       "module": "WS",
-       "indexName": "water-services",
-       "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"Total Connection\":{\"value_count\":{\"field\":\"Data.connectionNo.keyword\"}}}}}}",
-       "requestQueryMap": "{\"tenantId\" : \"Data.tenantId\", \"wardId\" : \"Data.ward.name.keyword\"}",
-       "dateRefField": "Data.connectionExecutionDate"
-     }
+    {
+      "module": "WS",
+      "indexName": "water-services",
+      "aggrQuery": "{\"aggs\": {\"AGGR\": {\"filter\": {\"bool\": {\"must_not\": [{\"term\": { \"Data.tenantId.keyword\": \"pb.testing\"} }],\"must\": [ {\"terms\": {\"Data.applicationStatus.keyword\": [\"CONNECTION_ACTIVATED\"]}}]}},\"aggs\": {\"Total Connection\": {\"value_count\": {\"field\": \"Data.connectionNo.keyword\"}}}}}}",
+      "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\", \r\n  \"district\" : \"Data.tenantData.city.districtCode\", \r\n\"tenantId\" : \"Data.tenantId.keyword\" \r\n}", 
+      "dateRefField": "Data.additionalDetails.appCreatedDate"
+    }
    ],
    "chartType": "metric",
    "valueType": "number",
