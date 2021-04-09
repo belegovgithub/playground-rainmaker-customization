@@ -52,7 +52,7 @@
                     "style": "appendix-header-body"
                   },
                   {
-                    "text": "ਚੀਫ ਰਿਜਸਟਰਾਰ, ਜਨਮ ਅਤੇ ਮੌਤ, ਪੰਜਾਬ",
+                    "text": "ਰਿਜਸਟਰਾਰ, ਜਨਮ ਅਤੇ ਮੌਤ, ਪੰਜਾਬ",
                     "style": "appendix-header-body",
                     "margin": [0, 0, 0, 2]
                   },
@@ -108,18 +108,18 @@
                   {
                     "text": [
                       "ਇਹ ਤਸਦੀਕ ਕੀਤਾ ਜਾਂਦਾ ਹੈ ਕਿ ਹੇਠ ਲਿਖੀ ਸੂਚਨਾ ਅਸਲ ਮੌਤ ਰਿਕਾਰਡ ਵਿਚੋਂ ਲਈ ਗਈ ਹੈ ਜਿਹੜੀ ਕਿ ਲੋਕਲ ਰਜਿਸਟਰਾਰ, ਜਨਮ ਤੇ ਮੌਤ, ਨਗਰ ਨਿਗਮ/ਕੌਂਸਲ/ਗ੍ਰਾਮ ਪੰਚਾਇਤ",
-                      { "text": " {{cb-name-multilang}}", "color": "#000000" },
+                      { "text": " ਕੰਟੋਨਮੈਂਟ ਬੋਰਡ {{cb-name-multilang}}", "color": "#000000" ,"decoration": "underline"},
                       " ਬਲਾਕ/ ਪੁਲਿਸ ਥਾਣਾ ",
                       {
                         "text": " {{block-name-multilang}}",
-                        "color": "#000000"
+                        "color": "#000000","decoration": "underline"
                       },
                       " ਤਹਿਸੀਲ  ",
-                      { "text": "{{dist-name-multilang}}", "color": "#000000" },
+                      { "text": "{{dist-name-multilang}}", "color": "#000000","decoration": "underline" },
                       " ਜ਼ਿਲ੍ਹਾ  ",
                       {
                         "text": " {{dist-name-multilang}}",
-                        "color": "#000000"
+                        "color": "#000000","decoration": "underline"
                       },
                       " ਪੰਜਾਬ, ਸਾਲ ___  ਦੇ ਜਨਮ ਰਜਿਸਟਰ ਵਿਚ ਦਰਜ ਹੈ |"
                     ],
@@ -134,13 +134,13 @@
                   {
                     "text": [
                       "This is to certify that the following information has been taken from the original death record which is registered in the birth register of Local Registrar, Births & Deaths, ",
-                      { "text": " {{cb-name}}", "color": "#000000" },
-                      " Cantonment Board,  Block/Police Station ",
-                      { "text": " {{block-name}}", "color": "#000000" },
+                      { "text": " Cantonment Board {{cb-name}} Cantt,", "color": "#000000" ,"decoration": "underline"},
+                      " Block/Police Station ",
+                      { "text": " {{block-name}}", "color": "#000000" ,"decoration": "underline"},
                       "  Tehsil ",
-                      { "text": " {{dist-name}}", "color": "#000000" },
+                      { "text": " {{dist-name}}", "color": "#000000" ,"decoration": "underline"},
                       " District ",
-                      { "text": " {{dist-name}}", "color": "#000000" },
+                      { "text": " {{dist-name}}", "color": "#000000","decoration": "underline" },
                       " of Punjab State of the Year ___"
                     ],
                     "style": "rule-header"
@@ -168,7 +168,7 @@
                       },
                       {
                         "text": "ਮ੍ਰਿਤਕ ਦਾ ਨਾਮ/ Name of Deceased: {{name}}",
-                        "width": "1%"
+                        "style": "details-body"
                       },
                       {
                         "text": "ਪਿਤਾ/ਪਤੀ ਦਾ ਨਾਮ/Father’s /Husband’s Name: {{fatherName}}{{spouseName}}",
@@ -269,11 +269,13 @@
                     "stack": [
                       {
                         "text": "ਸਰਟੀਫਿਕੇਟ ਤਿਆਰ ਕਰਨ ਵਾਲੇ ਦਾ ਨਾਮ ਅਤੇ ਅਹੁਦਾ",
-                        "fontSize": 9
+                        "fontSize": 9,
+                        "color": "#FF0000"
                       },
                       {
                         "text": "Name & Designation of Official who prepared certificate",
-                        "fontSize": 9
+                        "fontSize": 9,
+                        "color": "#FF0000"
                       }
                     ]
                   },
@@ -285,15 +287,18 @@
                     "stack": [
                       {
                         "text": "ਜਾਰੀ ਕਰਨ ਵਾਲੇ ਅਧਿਕਾਰੀ ਦੇ ਦਸਖਤ, ਨਾਮ ਤੇ ਪਤਾ",
-                        "fontSize": 9
+                        "fontSize": 9,
+                        "color": "#FF0000"
                       },
                       {
                         "text": "Signature, Name & address of the issuing authority ",
-                        "fontSize": 9
+                        "fontSize": 9,
+                        "color": "#FF0000"
                       },
                       {
                         "text": "CANTONMENT BOARD {{cb-name}}",
-                        "fontSize": 9
+                        "fontSize": 9,
+                        "color": "#FF0000"
                       }
                     ]
                   }
@@ -320,42 +325,7 @@
           ]
         },
         "layout": "noBorders"
-      },
-      {
-        "style": "ws-head",
-        "table": {
-          "widths": ["*"],
-          "body": [
-            [
-              {
-                "stack": [
-                  {
-                    "text": "ਜਨਮ ਅਤੇ ਮੌਤ ਰਿਜਸਟਰੇਸ਼ਨ ਐਕਟ, 1969 ਦੇ ਧਾਰਾ 12/17 ਅਤੇ ਪੰਜਾਬ ਜਨਮ ਅਤੇ ਮੌਤ ਰਿਜਸਟਰੇਸ਼ਨ ਿਨਯਮ, 2004 ਦੇ ਿਨਯਮ 8/13 ਦੇ ਅਧੀਨ ਜਾਰੀ ਕੀਤਾ ",
-                    "style": "instruction-body"
-                  },
-                  {
-                    "text": "ਹਰ ਜਨਮ ਅਤੇ ਮੌਤ ਦੀ ਰਜਿਸਟ੍ਰੇਸ਼ਨ ਨੂੰ ਯਕੀਨੀ ਬਣਾਉਣਾ /Ensure registration of every birth and death",
-                    "style": "instruction-body"
-                  },
-                  {
-                    "text": "Issued u/s 12/17 of the Registration of Birth & Death Act,1969 & Rules 8/13 the Punjab Registration of Births & Deaths rules 2004",
-                    "style": "instruction-body"
-                  },
-                  {
-                    "text": "21 ਿਦਨਾਂ ਦੇ ਅੰਦਰ ਜਨਮ / ਮੌਤ ਦੀ ਘਟਨਾ ਦੀ ਰਿਜਸਟਰੀ ਕਰਾਏ ਅਤੇ ਸਰਟੀਿਫਕੇਟ ਦੀ ਮੁਫਤ ਕਾਪੀ ਪ˛ਾਪਤ ਕਰੋ",
-                    "style": "instruction-body"
-                  },
-                  {
-                    "text": "Registered the Births / Deaths event within 21 Days and get a free copy of certificate",
-                    "style": "instruction-body"
-                  }
-                ]
-              }
-            ]
-          ]
-        },
-        "layout": "noBorders"
-      }
+      } 
     ],
     "footer": [
       {
@@ -386,7 +356,7 @@
         "fontSize": 7,
         "fontWeight": 400,
         "alignment": "left",
-        "margin": [-10, -20, 0, 0]
+        "margin": [10, -20, 0, 0]
       },
       "qr-code": {
         "color": "#000000",
@@ -424,40 +394,40 @@
       "rule-header": {
         "color": "#FF0000",
         "bold": false,
-        "fontSize": 10,
+        "fontSize": 9,
         "fontWeight": 400,
         "margin": [0, 0, 0, 3]
       },
       "rule-header_multiLang": {
         "color": "#FF0000",
         "bold": false,
-        "fontSize": 11,
+        "fontSize": 9,
         "fontWeight": 400,
         "margin": [0, 0, 0, -1]
       },
       "rule-body": {
         "color": "#FF0000",
         "bold": false,
-        "fontSize": 10,
+        "fontSize": 9,
         "fontWeight": 400,
         "margin": [0, 0, 0, 0]
       },
       "rule-body_multiLang": {
         "color": "#FF0000",
         "bold": false,
-        "fontSize": 11,
+        "fontSize": 9,
         "fontWeight": 400,
         "margin": [0, 0, 0, 0]
       },
       "details-body": {
         "color": "#FF0000",
         "bold": false,
-        "fontSize": 11,
+        "fontSize": 10,
         "fontWeight": 400,
-        "margin": [0, 5, 0, 0]
+        "margin": [0, 0, 0, 0]
       },
       "appendix-header-body": {
-        "color": "#004d00",
+        "color": "#FF0000",
         "bold": true,
         "fontSize": 9,
         "fontWeight": 400,
@@ -466,7 +436,7 @@
       "receipt-value-down-sub": {
         "color": "#000000",
         "bold": false,
-        "fontSize": 11,
+        "fontSize": 8,
         "fontWeight": 400,
         "alignment": "left",
         "margin": [0, 0, 0, 5]

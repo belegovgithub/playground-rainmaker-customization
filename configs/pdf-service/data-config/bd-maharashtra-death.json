@@ -98,6 +98,13 @@
                 "type":"setEmpty"
               },
               {
+                "variable": "aadharNo",
+                "value": {
+                  "path": "$.aadharno"
+                },
+                "type":"setEmpty"
+              },
+              {
                 "variable": "presentAdd",
                 "value": {
                   "path": "$.deathPresentaddr.fullAddress"
