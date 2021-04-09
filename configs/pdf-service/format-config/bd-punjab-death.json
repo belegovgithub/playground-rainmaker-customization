@@ -163,7 +163,7 @@
                   {
                     "stack":[
                       {
-                        "text": "ਸੈਕਸ/ Sex: {{gender}}",
+                        "text": "ਲਿੰਗ/ Sex: {{gender}}",
                         "style": "details-body"
                       },
                       {
