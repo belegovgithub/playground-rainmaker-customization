@@ -13,15 +13,14 @@
           {
             "direct": [
               {
-                "variable": "emblemImage",
-                "url": "https://raw.githubusercontent.com/belsoftware/webaccess/master/images/birth/emblemInd.png",
-                "type": "image"
+                "variable": "emblemImage",                        
+                "id":"emblemInd.png",
+                "type":"image"      
               },
-               
               {
-                "variable": "form5",
-                "url": "https://raw.githubusercontent.com/belsoftware/webaccess/master/images/birth/form5.png",
-                "type": "image"
+                "variable": "form5",                        
+                "id":"form5_Border.png",
+                "type":"image"      
               },
               {
                 "variable": "name",

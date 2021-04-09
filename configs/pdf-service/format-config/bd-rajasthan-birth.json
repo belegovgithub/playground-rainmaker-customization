@@ -65,11 +65,11 @@
                     "style": "appendix-header-body"
                   },
                   {
-                    "text": "रजिस्ट्रार – {{cb_label_name_multiLang}},{{cb-name-multilang}}, अजमेर",
+                    "text": "रजिस्ट्रार – {{cb_label_name_multiLang}}, {{cb-name-multilang}}, अजमेर",
                     "style": "appendix-header-body"
                   },
                   {
-                    "text": "Registrar – CANTONMENT BOARD ,{{cb-name}}, AJMER",
+                    "text": "Registrar – CANTONMENT BOARD , {{cb-name}}, AJMER",
                     "style": "appendix-header-body"
                   }
                 ]
@@ -178,7 +178,7 @@
                 "columns": [
                   {
                     "text": [
-                      "यह प्रमाणित किया जाता है कि निम्मलिखित सूचना जन्म के मूल अभिलेख से ली गयी है जो कि (स्थानीय क्षेत्र / स्थानीय निकाय) ",
+                      "यह प्रमाणित किया जाता है कि निम्नलिखित सूचना जन्म के मूल अभिलेख से ली गयी है जो कि (स्थानीय क्षेत्र / स्थानीय निकाय) ",
                       {
                         "text": "छावनी परिषद, {{cb-name-multilang}} ",
                         "bold": true
@@ -349,7 +349,7 @@
                   {
                     "stack": [ 
                       {
-                        "text": "जारी करने कि तारीख/Date of Issue: {{issueDate}}",
+                        "text": "जारी करने की तारीख/Date of Issue: {{issueDate}}",
                         "style": "details-body"
                       }
                     ]
