@@ -255,7 +255,7 @@
               {
                 "columns": [
                   {
-                    "text": "ਜਾਰੀ ਕਰਨ ਦੀ ਿਮਤੀ / Date of Issue: {{issueDate}}",
+                    "text": "ਜਾਰੀ ਕਰਨ ਦੀ ਮਿਤੀ / Date of Issue: {{issueDate}}",
                     "width": "49%",
                     "style": "details-body"
                   }
