@@ -1,0 +1,216 @@
+{
+  "key": "pt-bill",
+  "documentType": "PROPERTYBILL",
+  "DataConfigs": {
+    "moduleName": "PT",
+    "version": "1.0.0",
+    "baseKeyPath": "$.Bill.*",
+    "entityIdPath":"$.id",
+    "isCommonTableBorderRequired": true,
+    "mappings": [
+      {
+        "topic": "common-pdf-generation-1",
+        "staticConfigPath": "https://raw.githubusercontent.com/egovernments/egov-services/vishal-feature-filestore/core/egov-indexer/src/main/resources/rainmaker-pgr-indexer.yml",
+        "mappings": [
+          {
+            "direct": [
+              {
+                "variable": "billNo",
+                "value": {
+                  "path": "$.billNumber"
+                }
+              },
+              {
+                "variable": "propertyNo",
+                "value": {
+                  "path": "$.consumerCode"
+                }
+              },
+              {
+                "variable": "billDate",
+                "value": {
+                  "path": "$.billDate"
+                },
+                "type":"date"
+              },
+              {
+                "variable": "oldPropertyNo",
+                "value": {
+                  "path": "$.status"
+                }
+              },
+              {
+                "variable": "location",
+                "value": {
+                  "path": "$.address.locality"
+                },
+                "localisation":{
+                  "required":true,
+                  "prefix": "REVENUE",
+                  "module": "rainmaker",
+                  "prefixCbName":true
+               },
+               "type":"boundary"
+              },
+              {
+                "variable": "usageType",
+                "value": {
+                  "path": "$.usageType"
+                }
+              },
+              {
+                "variable": "wardNo",
+                "value": {
+                  "path": "$.wardNo"
+                }
+              },
+              {
+                "variable": "arv",
+                "value": {
+                  "path": "$.arv"
+                }
+              },
+              {
+                "variable": "blockNo",
+                "value": {
+                  "path": "$.blockNo"
+                }
+              },
+              {
+                "variable": "assesseName",
+                "value": {
+                  "path": "$.user.name"
+                }
+              },
+              {
+                "variable": "address",
+                "value": {
+                  "path": "$.address.city"
+                }
+              },
+              {
+                "variable": "variable10",                        
+                "value":{
+                     "path":"$.arrearDtl.*"                          
+                 },
+                 "type":"array",
+                 "format":{                            
+                    "type":"string",
+                    "scema":[
+                      {
+                        "variable": "taxheadCode",
+                        "value": "taxHeadCode",
+                        "type": "string",
+                        "localisation": {
+                          "required": true,
+                          "prefix": null,
+                          "module": "rainmaker-uc"
+                        }
+                      },
+                      {
+                        "variable": "currentAmount",
+                        "value": "currentDemand"
+                      },
+                      {
+                        "variable": "arrearAmount",
+                        "value": "arrears"
+                      },
+                      {
+                        "variable": "totalAmount",
+                        "value": "total"
+                      }
+                      ]
+                } 
+             } 
+            ]
+          },
+          {
+            "externalAPI": [     
+              { 
+                "path": "http://localhost:8085/egov-mdms-service/v1/_get",
+                "queryParam": "moduleName=tenant&masterName=tenants&tenantId=pb&filter=%5B?(@.code=='{$.tenantId}')%5D",
+                  "apiRequest": null,
+                  "responseMapping":[
+                    {             
+                      "variable":"address",
+                      "value":"$.MdmsRes.tenant.tenants[0].address"
+                    },
+                    {
+                      "variable":"phoneNumber",
+                      "value":"$.MdmsRes.tenant.tenants[0].contactNumber"
+                    },
+                    {
+                      "variable":"website",
+                      "value":"$.MdmsRes.tenant.tenants[0].domainUrl"
+                    },
+                    {
+                      "variable":"email",
+                      "value":"$.MdmsRes.tenant.tenants[0].emailId"
+                    },
+                    {
+                      "variable": "logoImage",
+                      "value":"$.MdmsRes.tenant.tenants[0].logoIdPdf",
+                      "type": "image"
+                    },
+                    {
+                      "variable": "cb-name",
+                      "value": "$.MdmsRes.tenant.tenants[0].code",
+                      "localisation": {
+                        "required": true,
+                        "prefix": "PDF_STATIC_LABEL_BD_CB_EN",
+                        "module": "rainmaker-pdf"
+                      }
+                    },
+                    {
+                      "variable": "logo_header",
+                      "value":"$.MdmsRes.tenant.tenants[0].code",
+                      "localisation":{
+                      "required":true,
+                      "prefix": "TENANT_TENANTS",
+                      "module":"rainmaker-common"
+                      }
+                    }
+                  ]
+              },
+              { 
+                "path": "http://localhost:8085/egov-mdms-service/v1/_get",
+                "queryParam": "moduleName=tenant&masterName=footer&tenantId=pb&filter=%5B?(@.code=='{$.tenantId}' %26%26 @.service=='{$.businessService}')%5D",
+                "apiRequest": null,
+                "responseMapping":[
+                  {
+                    "variable": "variable11",                        
+                    "value": "$.MdmsRes.tenant.footer[0].billFooterContent.*",
+                     "type":"array",
+                     "format":{                            
+                        "type":"string",
+                        "scema":[
+                           {
+                            "variable":"disclaimerContent",
+                            "value":"disclaimer",
+                            "type":"string",
+                            "localisation":{
+                              "required":true,
+                              "prefix": null,
+                              "module": "rainmaker-common"
+                           }
+                         }
+                        ]
+                    } 
+                 }
+                ]
+            }
+            ]
+          },
+          {
+            "qrcodeConfig": [
+               {
+                  "variable": "qrcodeimage",
+                  "value":"{{hostname}}citizen/egov-common/pay?consumerCode={{propertyID}}&tenantId={{tenantId}}&businessService={{businessServiceCode}}"
+               }
+            ]
+         }
+        ]
+      }
+    ]
+  }
+}

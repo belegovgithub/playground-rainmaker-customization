@@ -14,9 +14,12 @@
               {
                 "columns": [
                   {
-                    "text": "logo",
-                    "width": "5%"
-                  },
+                    "text": "img",
+                    "width": 60,
+                    "height": 72,
+                    "alignment": "left"
+                     
+                  }, 
                   {
                     "stack": [
                       {
@@ -32,7 +35,7 @@
                         "margin": [0, 0, 0, 10]
                       },
                       {
-                        "text": "(Under section 66(a) Cantonment Act 2006)",
+                        "text": "Under section 66 a Cantonment Act 2006",
                         "alignment": "center"
                       },
                       {
@@ -58,11 +61,15 @@
                 "columns": [
                   {
                     "text": "Bill No",
-                    "style": "label-headder"
+                    "bold": true,
+                             "alignment": "left",
+                             "width":"15%"
                   },
                   {
                     "text": " : ",
-                    "style": "label-colon"
+                    "bold": true,
+                            "alignment": "left",
+                            "width":"2%"
                   },
                   {
                     "text": "{{billNo}}",
@@ -70,11 +77,15 @@
                   },
                   {
                     "text": "Property No.",
-                    "style": "label-headder"
+                    "bold": true,
+                             "alignment": "left",
+                             "width":"15%"
                   },
                   {
                     "text": " : ",
-                    "style": "label-colon"
+                    "bold": true,
+                    "alignment": "left",
+                    "width":"2%"
                   },
                   {
                     "text": "{{propertyNo}}",
@@ -88,11 +99,15 @@
                 "columns": [
                   {
                     "text": "Bill Date",
-                    "style": "label-headder"
+                    "bold": true,
+                             "alignment": "left",
+                             "width":"15%"
                   },
                   {
                     "text": " : ",
-                    "style": "label-colon"
+                    "bold": true,
+                    "alignment": "left",
+                    "width":"2%"
                   },
                   {
                     "text": "{{billDate}}",
@@ -100,11 +115,15 @@
                   },
                   {
                     "text": "Old Property No.",
-                    "style": "label-headder"
+                    "bold": true,
+                    "alignment": "left",
+                    "width":"15%"
                   },
                   {
                     "text": " : ",
-                    "style": "label-colon"
+                    "bold": true,
+                    "alignment": "left",
+                    "width":"2%"
                   },
                   {
                     "text": "{{oldPropertyNo}}",
@@ -118,15 +137,21 @@
                 "columns": [
                   {
                     "text": "Location",
-                    "style": "label-headder"
+                    "bold": true,
+                             "alignment": "left",
+                             "width":"15%"
                   },
                   {
                     "text": " : ",
-                    "style": "label-colon"
+                    "bold": true,
+                    "alignment": "left",
+                    "width":"2%"
                   },
                   {
                     "text": "{{location}}",
-                    "style": "label-value"
+                    "bold": true,
+                             "alignment": "left",
+                             "width":"15%"
                   },
                   {
                     "text": "Usage Type",
@@ -134,7 +159,9 @@
                   },
                   {
                     "text": " : ",
-                    "style": "label-colon"
+                    "bold": true,
+                    "alignment": "left",
+                    "width":"2%"
                   },
                   {
                     "text": "{{usageType}}",
@@ -148,15 +175,21 @@
                 "columns": [
                   {
                     "text": "Ward",
-                    "style": "label-headder"
+                    "bold": true,
+                    "alignment": "left",
+                    "width":"15%"
                   },
                   {
                     "text": " : ",
-                    "style": "label-colon"
+                    "bold": true,
+                    "alignment": "left",
+                    "width":"2%"
                   },
                   {
                     "text": "{{wardNo}}",
-                    "style": "label-value"
+                    "bold": true,
+                    "alignment": "left",
+                    "width":"15%"
                   },
                   {
                     "text": "ARV",
@@ -164,7 +197,9 @@
                   },
                   {
                     "text": " : ",
-                    "style": "label-colon"
+                    "bold": true,
+                    "alignment": "left",
+                    "width":"2%"
                   },
                   {
                     "text": "{{arv}}",
@@ -178,15 +213,21 @@
                 "columns": [
                   {
                     "text": "Block",
-                    "style": "label-headder"
+                    "bold": true,
+                    "alignment": "left",
+                    "width":"15%"
                   },
                   {
                     "text": " : ",
-                    "style": "label-colon"
+                    "bold": true,
+                    "alignment": "left",
+                    "width":"2%"
                   },
                   {
                     "text": "{{blockNo}}",
-                    "style": "label-value"
+                    "bold": true,
+                    "alignment": "left",
+                    "width":"15%"
                   },
                   {
                     "text": "Assessee Name",
@@ -194,7 +235,9 @@
                   },
                   {
                     "text": " : ",
-                    "style": "label-colon"
+                    "bold": true,
+                    "alignment": "left",
+                    "width":"2%"
                   },
                   {
                     "text": "{{assesseName}}",
@@ -208,11 +251,15 @@
                 "columns": [
                   {
                     "text": "Address",
-                    "style": "label-headder"
+                    "bold": true,
+                             "alignment": "left",
+                             "width":"15%"
                   },
                   {
                     "text": " : ",
-                    "style": "label-colon"
+                    "bold": true,
+                    "alignment": "left",
+                    "width":"2%"
                   },
                   {
                     "text": "{{address}}",
@@ -229,21 +276,27 @@
       {
         "style": "ws-head",
         "table": {
-          "widths": ["*", "*", "*"],
+          "widths": ["*", "*", "*","*"],
           "body": [
             [
               {
-                "text": "first column",
+                "text": "Tax Description",
                 "fillColor": "#555555",
-                "color": "#00FFFF"
+                "bold":true  
               },
               {
-                "text": "second column",
-                "color": "#555555",
-                "fillColor": "#dedede"
+                "text": "Arrear Amount Rs.", 
+                "bold":true,
+                "fillColor": "#555555"
               },
               {
-                "text": "third column",
+                "text": "Current Demand Rs",
+                "bold":true,
+                "fillColor": "#555555"
+              },
+              {
+                "text": "Total Amount Rs.",
+                "bold":true,
                 "fillColor": "#555555"
               }
             ]
@@ -254,19 +307,9 @@
       {
         "style": "ws-head",
         "table": {
-          "widths": ["*", "*", "*"],
+          "widths": ["*", "*", "*","*"],
           "body": [
-            [
-              {
-                "text": "first column"
-              },
-              {
-                "text": "second column"
-              },
-              {
-                "text": "third column"
-              }
-            ]
+             "{{#variable10}}[{\"text\": \"{{taxheadCode}}\"},{\"text\": \"{{currentAmount}}\"},{\"text\": \"{{arrearAmount}}\"},{\"text\": \"{{totalAmount}}\"}]{{/variable10}}"
           ]
         },
         "layout": "noBorders"
@@ -274,14 +317,13 @@
     ],
     "styles": {
       "label-headder": {
-        "width": "20%",
-        "font": "bold"
+        "bold": true,
+        "alignment": "left"
       },
       "label-colon": {
-        "width": "2%"
+        "width": "1%"
       },
       "label-value": {
-        "width": "30%",
         "alignment": "left"
       },
       "noc-head": {
