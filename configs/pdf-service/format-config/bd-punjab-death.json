@@ -197,19 +197,7 @@
             ],
             [
               {
-                "stack": [
-                  {
-                    "text": "ਪਿਤਾ/ਪਤੀ ਦਾ ਨਾਮ/Father’s /Husband’s Name: {{fatherName}}",
-                    "style": "details-body"
-                  },
-                  {
-                    "text": "ਮ੍ਰਿਤਕ ਦੀ ਮਾਤਾ ਦਾ ਨਾਮ/Name of Deceased’s Mother: {{motherName}}",
-                    "style": "details-body"
-                  },
-                  {
-                    "text": "ਮੌਤ ਅਸਥਾਨ/ Place of Death: {{placeOfDeath}}",
-                    "style": "details-body"
-                  },
+                "stack": [ 
                   {
                     "text": "ਰਜਿਸਟ੍ਰੇਸ਼ਨ ਦੀ ਮਿਤੀ/ Date of Registration: {{registration_date}}",
                     "style": "details-body"
