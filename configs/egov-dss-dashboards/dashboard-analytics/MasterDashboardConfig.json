@@ -2220,6 +2220,7 @@
       
       ]
     },
+ 
     
     {
       "name": "DSS_M_COLLECT_DASHBOARD",
@@ -3338,6 +3339,44 @@
                   "headers": []
                 }
               ]
+            },
+            {
+              "id": 191,
+              "name": "DSS_PROPERTY_TAX",
+              "vizType": "module",
+              "moduleLevel": "PT",
+              "ref": {
+                "url": "propertytax",
+                "logoUrl": "",
+                "type": "internal"
+              },
+              "label": "",
+              "charts": [
+                {
+                  "id": "totalCollectionv2",
+                  "name": "DSS_TOTAL_COLLECTION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "totalTransactions",
+                  "name": "DSS_TOTAL_TRANSACTIONS",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "avgTransactions",
+                  "name": "DSS_MC_AVG_DAILY_TRANSACTIONS",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
             }
           ]
         },
@@ -3748,6 +3787,36 @@
                   "headers": []
                 }
               ]
+            },
+            {
+              "id": 191,
+              "name": "DSS_PROPERTY_TAX",
+              "vizType": "module",
+              "moduleLevel": "PT",
+              "ref": {
+                "url": "citizen-home-propertytax",
+                "logoUrl": "",
+                "type": "internal"
+              },
+              "label": "",
+              "charts": [
+                {
+                  "id": "totalTransactions",
+                  "name": "DSS_TOTAL_TRANSACTIONS",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "avgTransactions",
+                  "name": "DSS_MC_AVG_DAILY_TRANSACTIONS",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
             }
           ]
         },
@@ -3757,6 +3826,48 @@
           "vizArray": [
           ]
         }
+      ]
+    },
+
+
+
+    {
+      "name": "DSS_PROPERTY_TAX_DASHBOARD",
+      "id": "citizen-home-propertytax",
+      "isActive": "",
+      "style": "linear",
+      "visualizations": [
+        
+      {
+          "row": 9,
+          "name": "DSS_SERVICE",
+          "vizArray": [
+            {
+              "id": 431,
+              "name": "DSS_MC_TRANSACTIONS_BY_TENANT",
+              "dimensions": {
+                "height": 350,
+                "width": 12
+              },
+              "vizType": "chart",
+              "label": "",
+              "noUnit": false,
+              "isCollapsible": true,
+              "charts": [
+                {
+                  "id": "xMcTransactionsByTenant",
+                  "name": "DSS_MC_TRANSACTIONS_BY_TENANT",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "Boundary"
+                }
+              ]
+            }
+          ]
+        }
+      
       ]
     },
 	
@@ -4049,19 +4160,20 @@
               ]
             },
             {
-              "id": 223,
-              "name": "DSS_PT_COLLECTION_BY_USAGE_TYPE",
+              "id": 323,
+              "name": "DSS_TL_LICENSE_BY_PAYMENT_TYPE",
               "dimensions": {
                 "height": 250,
                 "width": 4
               },
               "vizType": "chart",
-              "noUnit": true,
+              "label": "",
+              "noUnit": false,
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "collectionByUsageTypev2",
-                  "name": "DSS_PT_COLLECTION_BY_USAGE_TYPE",
+                  "id": "licenseByLicenseTypev2",
+                  "name": "DSS_TL_LICENSE_BY_PAYMENT_TYPE",
                   "code": "",
                   "chartType": "donut",
                   "filter": "",
@@ -4071,50 +4183,14 @@
             }
           ]
         },
-        {
-          "row": 3,
-          "name": "DSS_REVENUE",
-          "vizArray": [
-            {
-              "id": 231,
-              "name": "DSS_PT_KEY_FY_INDICATORS",
-              "dimensions": {
-                "height": 350,
-                "width": 12
-              },
-              "vizType": "chart",
-              "noUnit": false,
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "demandCollectionIndexDDRRevenuev2",
-                  "name": "DSS_PT_DEMAND_COLLECTION_BOUNDARY",
-                  "code": "",
-                  "chartType": "table",
-                  "filter": "",
-                  "headers": [],
-                  "tabName": "Boundary"
-                },
-                {
-                  "id": "demandCollectionIndexUsageRevenuev2",
-                  "name": "DSS_PT_DEMAND_COLLECTION_USAGETYPE",
-                  "code": "",
-                  "chartType": "table",
-                  "filter": "",
-                  "headers": [],
-                  "tabName": "Usage"
-                }
-              ]
-            }
-          ]
-        },
+        
         {
           "row": 4,
           "name": "DSS_REVENUE",
           "vizArray": [
-            {
+                     {
               "id": 231,
-              "name": "DSS_PT_TAX_HEAD",
+              "name": "DSS_TL_KEY_FY_INDICATORS",
               "dimensions": {
                 "height": 350,
                 "width": 12
@@ -4125,164 +4201,36 @@
               "isCollapsible": true,
               "charts": [
                 {
-                  "id": "taxHeadsBreakupDDRRevenuev2",
-                  "name": "DSS_PT_TAX_HEAD_BREAKUP_REVENUE",
+                  "id": "licenceTaxHeadsBreakupBoundaryv2",
+                  "name": "DSS_TL_KEY_FY_INDICATORS",
                   "code": "",
                   "chartType": "table",
                   "filter": "",
                   "headers": [],
-                  "tabName": "Boundary"
+                  "tabName": "Cantonment Board Wise"
                 },
                 {
-                  "id": "taxHeadsBreakupUsagev2",
-                  "name": "DSS_PT_TAX_HEAD_BREAKUP_USAGE",
+                  "id": "licenceTaxHeadsBreakupWardv2",
+                  "name": "DSS_TL_KEY_FY_INDICATORS",
                   "code": "",
                   "chartType": "table",
                   "filter": "",
                   "headers": [],
-                  "tabName": "Usage"
+                  "tabName": "Ward Wise"
                 }
               ]
             }
+          
           ]
         },
+
         {
           "row": 5,
           "name": "DSS_SERVICE",
           "vizArray": [
             {
-              "id": 241,
-              "name": "DSS_OVERVIEW",
-              "dimensions": {
-                "height": 350,
-                "width": 5
-              },
-              "vizType": "metric-collection",
-              "isCollapsible": false,
-              "label": "DSS_OVERVIEW",
-              "charts": [
-                {
-                  "id": "propertiesAssessed",
-                  "name": "DSS_PT_TOTAL_PROPERTIES_ASSESSED",
-                  "code": "",
-                  "chartType": "metric",
-                  "filter": "",
-                  "headers": []
-                },
-                {
-                  "id": "totalAssessment",
-                  "name": "DSS_PT_TOTAL_ASSESSMENTS",
-                  "code": "",
-                  "chartType": "metric",
-                  "filter": "",
-                  "headers": []
-                },
-                {
-                  "id": "activeUlbs",
-                  "name": "DSS_PT_TOTAL_ACTIVE_ULBS",
-                  "code": "",
-                  "chartType": "metric",
-                  "filter": "",
-                  "headers": []
-                }
-              ]
-            },
-            {
-              "id": 242,
-              "name": "DSS_PT_CUMULATIVE_PROPERTIES_ASSESSED",
-              "dimensions": {
-                "height": 350,
-                "width": 7
-              },
-              "vizType": "chart",
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "cumulativePropertiesAssessed",
-                  "name": "Monthly",
-                  "code": "",
-                  "chartType": "line",
-                  "filter": "",
-                  "headers": []
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "row": 6,
-          "name": "DSS_SERVICE",
-          "vizArray": [
-            {
-              "id": 251,
-              "name": "DSS_PT_TOP_3_PERFORMING_ULBS",
-              "dimensions": {
-                "height": 250,
-                "width": 4
-              },
-              "vizType": "performing-metric",
-              "isCollapsible": false,
-              "label": "",
-              "charts": [
-                {
-                  "id": "topPerformingUlbsCompletionRate",
-                  "name": "DSS_PT_TOP_3_PERFORMING_ULBS",
-                  "code": "",
-                  "chartType": "bar",
-                  "filter": "",
-                  "headers": []
-                }
-              ]
-            },
-            {
-              "id": 252,
-              "name": "DSS_PT_BOTTOM_3_PERFORMING_ULBS",
-              "dimensions": {
-                "height": 250,
-                "width": 4
-              },
-              "vizType": "performing-metric",
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "bottomPerformingUlbsCompletionRate",
-                  "name": "DSS_PT_BOTTOM_3_PERFORMING_ULBS",
-                  "code": "",
-                  "chartType": "bar",
-                  "filter": "",
-                  "headers": []
-                }
-              ]
-            },
-            {
-              "id": 253,
-              "name": "DSS_PT_PROPERTIES_BY_USAGE_TYPE",
-              "dimensions": {
-                "height": 250,
-                "width": 4
-              },
-              "vizType": "chart",
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "propertiesByUsageType",
-                  "name": "DSS_PT_PROPERTIES_BY_USAGE_TYPE",
-                  "code": "",
-                  "chartType": "donut",
-                  "filter": "",
-                  "headers": []
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "row": 7,
-          "name": "DSS_SERVICE",
-          "vizArray": [
-            {
-              "id": 231,
-              "name": "DSS_PT_PROPERTIES_BY_FINANCIAL_YEAR",
+              "id": 431,
+              "name": "DSS_MC_TRANSACTIONS_BY_TENANT",
               "dimensions": {
                 "height": 350,
                 "width": 12
@@ -4293,8 +4241,8 @@
               "isCollapsible": true,
               "charts": [
                 {
-                  "id": "xptFyByDDR",
-                  "name": "",
+                  "id": "xMcTransactionsByTenant",
+                  "name": "DSS_MC_TRANSACTIONS_BY_TENANT",
                   "code": "",
                   "chartType": "table",
                   "filter": "",
@@ -4305,6 +4253,7 @@
             }
           ]
         }
+        
       ]
     },
 
@@ -4582,6 +4531,7 @@
         }
       ]
     },
+
     {
       "name": "DSS_PROPERTY_TAX_DASHBOARD",
       "id": "ulb-propertyTax",
@@ -4604,6 +4554,7 @@
               "isCollapsible": false,
               "label": "DSS_OVERVIEW",
               "charts": [
+
                 {
                   "id": "todaysCollectionv2",
                   "name": "DSS_TOTAL_COLLECTION_TODAY",
@@ -4709,19 +4660,20 @@
               ]
             },
             {
-              "id": 223,
-              "name": "DSS_PT_COLLECTION_BY_USAGE_TYPE",
+              "id": 323,
+              "name": "DSS_TL_LICENSE_BY_PAYMENT_TYPE",
               "dimensions": {
                 "height": 250,
                 "width": 4
               },
               "vizType": "chart",
-              "noUnit": true,
+              "label": "",
+              "noUnit": false,
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "collectionByUsageTypev2",
-                  "name": "DSS_PT_COLLECTION_BY_USAGE_TYPE",
+                  "id": "licenseByLicenseTypev2",
+                  "name": "DSS_TL_LICENSE_BY_PAYMENT_TYPE",
                   "code": "",
                   "chartType": "donut",
                   "filter": "",
@@ -4731,218 +4683,54 @@
             }
           ]
         },
-        {
-          "row": 3,
-          "name": "DSS_REVENUE",
-          "vizArray": [
-            {
-              "id": 231,
-              "name": "DSS_PT_DEMAND_COLLECTION",
-              "dimensions": {
-                "height": 350,
-                "width": 12
-              },
-              "vizType": "chart",
-              "noUnit": false,
-              "isCollapsible": true,
-              "charts": [
-                {
-                  "id": "demandCollectionIndexDDRRevenuev2",
-                  "name": "DSS_PT_DEMAND_COLLECTION_BOUNDARY",
-                  "code": "",
-                  "chartType": "table",
-                  "filter": "",
-                  "headers": [],
-                  "tabName": "Boundary"
-                },
-                {
-                  "id": "demandCollectionIndexUsageRevenuev2",
-                  "name": "DSS_PT_DEMAND_COLLECTION_USAGETYPE",
-                  "code": "",
-                  "chartType": "table",
-                  "filter": "",
-                  "headers": [],
-                  "tabName": "Usage"
-                }
-              ]
-            }
-          ]
-        },
+        
         {
           "row": 4,
           "name": "DSS_REVENUE",
           "vizArray": [
-            {
+                     {
               "id": 231,
-              "name": "DSS_PT_TAX_HEAD",
+              "name": "DSS_TL_KEY_FY_INDICATORS",
               "dimensions": {
                 "height": 350,
                 "width": 12
               },
               "vizType": "chart",
               "label": "",
-              "noUnit": true,
-              "isCollapsible": false,
+              "noUnit": false,
+              "isCollapsible": true,
               "charts": [
                 {
-                  "id": "taxHeadsBreakupDDRRevenuev2",
-                  "name": "DSS_PT_TAX_HEAD_BREAKUP_REVENUE",
+                  "id": "licenceTaxHeadsBreakupBoundaryv2",
+                  "name": "DSS_TL_KEY_FY_INDICATORS",
                   "code": "",
                   "chartType": "table",
                   "filter": "",
                   "headers": [],
-                  "tabName": "Boundary"
+                  "tabName": "Cantonment Board Wise"
                 },
                 {
-                  "id": "taxHeadsBreakupUsagev2",
-                  "name": "DSS_PT_TAX_HEAD_BREAKUP_USAGE",
+                  "id": "licenceTaxHeadsBreakupWardv2",
+                  "name": "DSS_TL_KEY_FY_INDICATORS",
                   "code": "",
                   "chartType": "table",
                   "filter": "",
                   "headers": [],
-                  "tabName": "Usage"
+                  "tabName": "Ward Wise"
                 }
               ]
             }
+          
           ]
         },
+
         {
           "row": 5,
           "name": "DSS_SERVICE",
           "vizArray": [
             {
-              "id": 241,
-              "name": "DSS_OVERVIEW",
-              "dimensions": {
-                "height": 350,
-                "width": 5
-              },
-              "vizType": "metric-collection",
-              "isCollapsible": false,
-              "label": "DSS_OVERVIEW",
-              "charts": [
-                {
-                  "id": "propertiesAssessed",
-                  "name": "DSS_PT_TOTAL_PROPERTIES_ASSESSED",
-                  "code": "",
-                  "chartType": "metric",
-                  "filter": "",
-                  "headers": []
-                },
-                {
-                  "id": "totalAssessment",
-                  "name": "DSS_PT_TOTAL_ASSESSMENTS",
-                  "code": "",
-                  "chartType": "metric",
-                  "filter": "",
-                  "headers": []
-                },
-                {
-                  "id": "activeUlbs",
-                  "name": "DSS_PT_TOTAL_ACTIVE_ULBS",
-                  "code": "",
-                  "chartType": "metric",
-                  "filter": "",
-                  "headers": []
-                }
-              ]
-            },
-            {
-              "id": 242,
-              "name": "DSS_PT_CUMULATIVE_PROPERTIES_ASSESSED",
-              "dimensions": {
-                "height": 350,
-                "width": 7
-              },
-              "vizType": "chart",
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "cumulativePropertiesAssessed",
-                  "name": "Monthly",
-                  "code": "",
-                  "chartType": "line",
-                  "filter": "",
-                  "headers": []
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "row": 6,
-          "name": "DSS_SERVICE",
-          "vizArray": [
-            {
-              "id": 251,
-              "name": "DSS_PT_TOP_3_PERFORMING_ULBS",
-              "dimensions": {
-                "height": 250,
-                "width": 4
-              },
-              "vizType": "performing-metric",
-              "isCollapsible": false,
-              "label": "",
-              "charts": [
-                {
-                  "id": "topPerformingUlbsCompletionRate",
-                  "name": "DSS_PT_TOP_3_PERFORMING_ULBS",
-                  "code": "",
-                  "chartType": "bar",
-                  "filter": "",
-                  "headers": []
-                }
-              ]
-            },
-            {
-              "id": 252,
-              "name": "DSS_PT_BOTTOM_3_PERFORMING_ULBS",
-              "dimensions": {
-                "height": 250,
-                "width": 4
-              },
-              "vizType": "performing-metric",
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "bottomPerformingUlbsCompletionRate",
-                  "name": "DSS_PT_BOTTOM_3_PERFORMING_ULBS",
-                  "code": "",
-                  "chartType": "bar",
-                  "filter": "",
-                  "headers": []
-                }
-              ]
-            },
-            {
-              "id": 253,
-              "name": "DSS_PT_PROPERTIES_BY_USAGE_TYPE",
-              "dimensions": {
-                "height": 250,
-                "width": 4
-              },
-              "vizType": "chart",
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "propertiesByUsageType",
-                  "name": "DSS_PT_PROPERTIES_BY_USAGE_TYPE",
-                  "code": "",
-                  "chartType": "donut",
-                  "filter": "",
-                  "headers": []
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "row": 7,
-          "name": "DSS_SERVICE",
-          "vizArray": [
-            {
-              "id": 231,
-              "name": "DSS_PT_PROPERTIES_BY_FINANCIAL_YEAR",
+              "id": 431,
+              "name": "DSS_MC_TRANSACTIONS_BY_TENANT",
               "dimensions": {
                 "height": 350,
                 "width": 12
@@ -4953,8 +4741,8 @@
               "isCollapsible": true,
               "charts": [
                 {
-                  "id": "xptFyByDDR",
-                  "name": "",
+                  "id": "xMcTransactionsByTenant",
+                  "name": "DSS_MC_TRANSACTIONS_BY_TENANT",
                   "code": "",
                   "chartType": "table",
                   "filter": "",
@@ -4965,8 +4753,10 @@
             }
           ]
         }
+        
       ]
     },
+
     {
       "name": "DSS_TRADE_LICENSE_DASHBOARD",
       "id": "ulb-tradeLicense",
@@ -5876,6 +5666,36 @@
                 {
                   "id": "totalApplication",
                   "name": "DSS_TOTAL_CERT_DOWNLOAD",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 121,
+              "name": "DSS_PROPERTY_TAX",
+              "vizType": "module",
+              "moduleLevel": "PT",
+              "ref": {
+                "url": "ulb-propertytax",
+                "logoUrl": "",
+                "type": "internal"
+              },
+              "label": "",
+              "charts": [
+                {
+                  "id": "totalCollectionv2",
+                  "name": "DSS_TOTAL_COLLECTION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "totalTransactions",
+                  "name": "DSS_MC_TOTAL_TRANSACTIONS",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
