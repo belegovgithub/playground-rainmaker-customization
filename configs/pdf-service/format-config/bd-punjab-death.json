@@ -52,7 +52,7 @@
                     "style": "appendix-header-body"
                   },
                   {
-                    "text": "ਰਿਜਸਟਰਾਰ, ਜਨਮ ਅਤੇ ਮੌਤ, ਪੰਜਾਬ",
+                    "text": "ਚੀਫ ਰਜਿਸਟਰਾਰ ਜਨਮ ਤੇ ਮੌਤ,ਪੰਜਾਬ",
                     "style": "appendix-header-body",
                     "margin": [0, 0, 0, 2]
                   },
@@ -163,7 +163,7 @@
                   {
                     "stack":[
                       {
-                        "text": "ਸੈਕਸ/ Sex: {{gender}}",
+                        "text": "ਲਿੰਗ/ Sex: {{gender}}",
                         "style": "details-body"
                       },
                       {
@@ -385,7 +385,7 @@
         "margin": [0, -5, 0, 0]
       },
       "appendix-header-formNo": {
-        "color": "#000000",
+        "color": "#FF0000",
         "bold": false,
         "fontSize": 8,
         "fontWeight": 400,

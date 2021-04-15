@@ -52,7 +52,7 @@
                     "style": "appendix-header-body"
                   },
                   {
-                    "text": "ਚੀਫ ਰਿਜਸਟਰਾਰ, ਜਨਮ ਅਤੇ ਮੌਤ, ਪੰਜਾਬ",
+                    "text": "ਚੀਫ ਰਜਿਸਟਰਾਰ ਜਨਮ ਤੇ ਮੌਤ,ਪੰਜਾਬ",
                     "style": "appendix-header-body",
                     "margin": [0, 0, 0, 2]
                   },
@@ -89,7 +89,7 @@
           "body": [
             [
               {
-                "text": "ਜਨਮ ਸਰਟੀਿਫਕੇਟ / Birth Certificate",
+                "text": "ਜਨਮ ਸਰਟੀਫਿਕੇਟ / Birth Certificate",
                 "style": "title-header_multiLang"
               }
             ]
@@ -135,7 +135,8 @@
                     "text": [
                       "This is to certify that the following information has been taken from the original birth record which is registered in the birth register of Local Registrar, Births & Deaths, ",
                       { "text": "  Cantonment Board {{cb-name}} Cantt , {{cb-name}}", "color": "#000000", "decoration": "underline"}, 
-                      "  Tehsil ",
+                      "Block/ Police Station", { "text": " {{block-name}}", "color": "#000000" ,"decoration": "underline"},
+                      " Tehsil ",
                       { "text": " {{dist-name}}", "color": "#000000" ,"decoration": "underline"},
                       " District ",
                       { "text": " {{dist-name}}", "color": "#000000" ,"decoration": "underline"},
@@ -159,7 +160,7 @@
               {
                 "columns": [
                   {
-                    "text": "ਸੈਕਸ/ Sex: {{gender}}",
+                    "text": "ਲਿੰਗ/ Sex: {{gender}}",
                     "style": "details-body"
                   },
                   {
@@ -205,7 +206,7 @@
               {
                 "columns": [
                   {
-                    "text": "ਰਜਿਸਟਰੀ ਕਰਨ ਦੀ ਮਿਤੀ/ Date of Registration: {{registration_date}}",
+                    "text": "ਰਜਿਸਟ੍ਰੇਸ਼ਨ ਦੀ ਮਿਤੀ/ Date of Registration: {{registration_date}}",
                     "width": "49%",
                     "style": "details-body"
                   },
@@ -214,7 +215,7 @@
                     "width": "1%"
                   },
                   {
-                    "text": "ਰਿਜਸਟਰੇਸ਼ਨ ਨੰ ਬਰ / Registration No: {{registrationNo}}",
+                    "text": "ਰਜਿਸਟਰੇਸ਼ਨ ਨੰਬਰ / Registration No: {{registrationNo}}",
                     "style": "details-body"
                   }
                 ]
@@ -224,7 +225,7 @@
               {
                 "columns": [
                   {
-                    "text": "ਬੱਚੇ ਦੇ ਜਨਮ ਦੇ ਸਮ ਮਾਤਾ-ਿਪਤਾ ਦਾ ਪਤਾ / Address of Parents at the time of birth of child: {{childAddress}}",
+                    "text": "ਬੱਚੇ ਦੇ ਜਨਮ ਦੇ ਸਮੇ ਮਾਤਾ ਪਿਤਾ ਦਾ ਪਤਾ/ Address of Parents at the time of birth of child: {{childAddress}}",
                     "width": "49%",
                     "style": "details-body"
                   },
@@ -233,7 +234,7 @@
                     "width": "1%"
                   },
                   {
-                    "text": "ਮਾਿਪਆਂ ਦਾ ਪੱਕਾ ਪਤਾ / Permanent Address of Parents : {{parentsAddress}}",
+                    "text": "ਮਾਪਿਆਂ ਦਾ ਪੱਕਾ ਪਤਾ / Permanent Address of Parents : {{parentsAddress}}",
                     "style": "details-body"
                   }
                 ]
@@ -243,7 +244,7 @@
               {
                 "columns": [
                   {
-                    "text": "ਟਿੱਪਣੀਆਂ (ਜੇ ਕੋਈ ਹੈ ) / Remarks (if any): {{remarks}}",
+                    "text": "ਟਿੱਪਣੀ (ਜੇ ਕੋਈ ਹੈ ) / Remarks (if any): {{remarks}}",
                     "width": "49%",
                     "style": "details-body"
                   }
@@ -254,7 +255,7 @@
               {
                 "columns": [
                   {
-                    "text": "ਜਾਰੀ ਕਰਨ ਦੀ ਿਮਤੀ / Date of Issue: {{issueDate}}",
+                    "text": "ਜਾਰੀ ਕਰਨ ਦੀ ਮਿਤੀ / Date of Issue: {{issueDate}}",
                     "width": "49%",
                     "style": "details-body"
                   }
@@ -283,7 +284,7 @@
                   {
                     "stack": [
                       {
-                        "text": "ਜਾਰੀ ਕਰਨ ਵਾਲੇ ਅਿਧਕਾਰੀ ਦੇ ਹਸਤਾਖਰ, ਨਾਮ ਅਤੇ ਪਤਾ",
+                        "text": "ਜਾਰੀ ਕਰਨ ਵਾਲੇ ਅਧਿਕਾਰੀ ਦੇ ਦਸਖਤ, ਨਾਮ ਤੇ ਪਤਾ",
                         "style": "details-body"
                       },
                       {
@@ -371,14 +372,14 @@
         "margin": [0, 0, 0, 0]
       },
       "appendix-header-serialNo": {
-        "color": "#000000",
+        "color": "#004d00",
         "bold": false,
         "fontSize": 8,
         "fontWeight": 400,
         "margin": [0, -5, 0, 0]
       },
       "appendix-header-formNo": {
-        "color": "#000000",
+        "color": "#004d00",
         "bold": false,
         "fontSize": 8,
         "fontWeight": 400,
