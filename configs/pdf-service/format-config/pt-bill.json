@@ -24,23 +24,22 @@
                     "stack": [
                       {
                         "text": "{{cb-name}} Cantonment Board.",
-                        "alignment": "center",
-                        "bold": true,
-                        "margin": [0, 0, 0, 10]
+                         "style":"header-cbName"
                       },
                       {
                         "text": "Property Tax Bill",
-                        "alignment": "center",
-                        "bold": true,
-                        "margin": [0, 0, 0, 10]
+                        "style":"header-title"
                       },
                       {
-                        "text": "Under section 66 a Cantonment Act 2006",
-                        "alignment": "center"
+                        "text": "(Under section 66(a) Cantonment Act 2006)",
+                        "alignment": "center",
+                        "italics": true,
+                        "fontSize": 8
                       },
                       {
                         "text": "Tax Bill for the period 01/04/2020 To 31/03/2021",
-                        "alignment": "center"
+                        "alignment": "center",
+                        "fontSize": 8
                       }
                     ]
                   }
@@ -493,6 +492,22 @@
         "fontSize": 12,
         "color": "#484848",
         "margin": [-25, 30, -8, -8]
+      },
+      "header-cbName": {
+        "color": "#000000",
+        "fontSize": 12,
+        "fontWeight": 700,
+        "alignment": "center",
+        "bold": true,
+        "margin": [0, 0, 0, 10]
+      },
+      "header-title": {
+        "color": "#000000",
+        "fontSize": 9,
+        "fontWeight": 700,
+        "alignment": "center",
+        "bold": true,
+        "margin": [0, 0, 0, 10]
       },
       "receipt-table-value": {
         "color": "#000000",
