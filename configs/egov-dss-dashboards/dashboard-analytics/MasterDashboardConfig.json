@@ -4201,8 +4201,8 @@
               "isCollapsible": true,
               "charts": [
                 {
-                  "id": "licenceTaxHeadsBreakupBoundaryv2",
-                  "name": "DSS_TL_KEY_FY_INDICATORS",
+                  "id": "PropertyTaxHeadsBreakupBoundaryv2",
+                  "name": "DSS_PT_TAX_HEAD_BREAKUP_BOUNDARY",
                   "code": "",
                   "chartType": "table",
                   "filter": "",
@@ -4534,7 +4534,7 @@
 
     {
       "name": "DSS_PROPERTY_TAX_DASHBOARD",
-      "id": "ulb-propertyTax",
+      "id": "ulb-propertytax",
       "isActive": "",
       "style": "linear",
       "visualizations": [
@@ -4701,8 +4701,8 @@
               "isCollapsible": true,
               "charts": [
                 {
-                  "id": "licenceTaxHeadsBreakupBoundaryv2",
-                  "name": "DSS_TL_KEY_FY_INDICATORS",
+                  "id": "PropertyTaxHeadsBreakupBoundaryv2",
+                  "name": "DSS_PT_TAX_HEAD_BREAKUP_BOUNDARY",
                   "code": "",
                   "chartType": "table",
                   "filter": "",
