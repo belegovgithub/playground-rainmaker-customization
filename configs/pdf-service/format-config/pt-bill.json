@@ -231,6 +231,19 @@
                   {
                     "text": "{{address}}",
                     "style": "label-value"
+                  },
+                  {
+                    "text": " ",
+                    "style": "label-headder"
+                  },
+                  {
+                    "text": "   ",
+                    "width": "2%",
+                    "fontSize": 10
+                  },
+                  {
+                    "text": " ",
+                    "style": "label-value"
                   }
                 ]
               }
@@ -248,23 +261,23 @@
             [
               {
                 "text": "Tax Description",
-                "fillColor": "#555555",
+                "fillColor": "#cccccc",
                 "bold": true
               },
               {
                 "text": "Arrear Amount Rs.",
                 "bold": true,
-                "fillColor": "#555555"
+                "fillColor": "#cccccc"
               },
               {
                 "text": "Current Demand Rs",
                 "bold": true,
-                "fillColor": "#555555"
+                "fillColor": "#cccccc"
               },
               {
                 "text": "Total Amount Rs.",
                 "bold": true,
-                "fillColor": "#555555"
+                "fillColor": "#cccccc"
               }
             ]
           ]
@@ -275,9 +288,154 @@
         "table": {
           "widths": ["35%", "20%", "20%", "25%"],
           "body": [
-            "{{#variable10}}[{\"text\": \"{{taxheadCode}}\"},{\"text\": \"{{currentAmount}}\"},{\"text\": \"{{arrearAmount}}\"},{\"text\": \"{{totalAmount}}\"}]{{/variable10}}"
+            "{{#variable10}}[{\"text\": \"{{taxheadCode}}\"},{\"text\": \"{{arrearAmount}}\"},{\"text\": \"{{currentAmount}}\"},{\"text\": \"{{totalAmount}}\"}]{{/variable10}}"
           ]
         } 
+      },
+      {
+        "style": "ws-head",
+        "table": {
+          "widths": ["35%", "20%", "20%", "25%"],
+          "body": [
+            [
+              {
+                "text": "Total Bill Amount ",
+                "bold": true,
+                "border": [
+                  true,
+                  false,
+                  true,
+                  true
+                ]
+              },
+              {
+                "text": "{{totalArrears}}",
+                "bold": true,
+                "border": [
+                  false,
+                  false,
+                  true,
+                  true
+                ]
+              },
+              {
+                "text": "{{totalCurrent}}",
+                "bold": true,
+                "border": [
+                  false,
+                  false,
+                  true,
+                  true
+                ]
+              },
+              {
+                "text": "{{totalAmount}}",
+                "bold": true,
+                "border": [
+                  false,
+                  false,
+                  true,
+                  true
+                ]
+              }  
+            ],
+            [
+              {
+                "text": "Total Payable Amount",
+                "bold": true,
+                "border": [
+                  true,
+                  false,
+                  true,
+                  true
+                ]
+              },
+              {
+                "text": " ",
+                "bold": true,
+                "border": [
+                  false,
+                  false,
+                  true,
+                  true
+                ]
+              },
+              {
+                "text": " ",
+                "bold": true,
+                "border": [
+                  false,
+                  false,
+                  true,
+                  true
+                ]
+              },
+              {
+                "text": "{{totalAmount}}",
+                "bold": true,
+                "border": [
+                  false,
+                  false,
+                  true,
+                  true
+                ]
+              }  
+            ]
+          ]
+        } 
+      },
+      {
+        "style": "ws-head",
+        "table": {
+          "widths": ["*"],
+          "body": [
+            [
+              {
+                "text": "Amount (In Words) :{{amountInWords}}",
+                "bold": true,
+                "fillColor": "#cccccc",
+                "border": [
+                  true,
+                  false,
+                  true,
+                  true
+                ]
+              } 
+            ]
+          ]
+        } 
+      },
+      {
+        "style": "ws-head",
+        "table": {
+          "widths": ["*"],
+          "body": [
+            [
+              {
+                "text": "Bill Due Date: ",
+                "bold": true
+                
+              } 
+            ]
+          ]
+        },  "layout": "noBorders"
+      },
+      {
+        "style": "ws-head",
+        "table": {
+          "widths": ["*"],
+          "body": [
+            [
+              {
+                "text": "**CEO,{{cb-name}} ",
+                "alignment":"right",
+                "margin":[0,30,0,0]
+                
+                
+              } 
+            ]
+          ]
+        }, "layout": "noBorders"
       }
     ],
     "styles": {

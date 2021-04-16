@@ -36,7 +36,7 @@
               {
                 "variable": "oldPropertyNo",
                 "value": {
-                  "path": "$.status"
+                  "path": "$.oldPropertyId"
                 }
               },
               {
@@ -55,7 +55,7 @@
               {
                 "variable": "usageType",
                 "value": {
-                  "path": "$.usageType"
+                  "path": "$.usageCategory"
                 }
               },
               {
@@ -87,6 +87,109 @@
                 "value": {
                   "path": "$.address.city"
                 }
+              },
+              {
+                "variable": "houseTaxArrear",
+                "value":{
+                  "path": "$.arrearDtl[?(@.taxHeadCode == 'PT_HOUSE_TAX')].arrears"
+                }
+              },
+              {
+                "variable": "houseTaxCurrent",
+                "value":{
+                  "path": "$.arrearDtl[?(@.taxHeadCode == 'PT_HOUSE_TAX')].currentDemand"
+                }
+              },
+              {
+                "variable": "houseTaxTotal",
+                "value":{
+                  "path": "$.arrearDtl[?(@.taxHeadCode == 'PT_HOUSE_TAX')].total"
+                }
+              },
+              {
+                "variable": "waterTaxArrear",
+                "value":{
+                  "path": "$.arrearDtl[?(@.taxHeadCode == 'PT_WATER_TAX')].arrears"
+                }
+              },
+              {
+                "variable": "waterTaxCurrent",
+                "value":{
+                  "path": "$.arrearDtl[?(@.taxHeadCode == 'PT_WATER_TAX')].currentDemand"
+                }
+              },
+              {
+                "variable": "waterTaxTotal",
+                "value":{
+                  "path": "$.arrearDtl[?(@.taxHeadCode == 'PT_WATER_TAX')].total"
+                }
+              },
+              {
+                "variable": "converancyTaxArrear",
+                "value":{
+                  "path": "$.arrearDtl[?(@.taxHeadCode == 'PT_CONSERVANCY_TAX')].arrears"
+                }
+              },
+              {
+                "variable": "converancyTaxCurrent",
+                "value":{
+                  "path": "$.arrearDtl[?(@.taxHeadCode == 'PT_CONSERVANCY_TAX')].currentDemand"
+                }
+              },
+              {
+                "variable": "converancyTaxTotal",
+                "value":{
+                  "path": "$.arrearDtl[?(@.taxHeadCode == 'PT_CONSERVANCY_TAX')].total"
+                }
+              },
+              {
+                "variable": "lighteningTaxArrear",
+                "value":{
+                  "path": "$.arrearDtl[?(@.taxHeadCode == 'PT_LIGHTINING_TAX')].arrears"
+                }
+              },
+              {
+                "variable": "lighteningTaxCurrent",
+                "value":{
+                  "path": "$.arrearDtl[?(@.taxHeadCode == 'PT_LIGHTINING_TAX')].currentDemand"
+                }
+              },
+              {
+                "variable": "lighteningTaxTotal",
+                "value":{
+                  "path": "$.arrearDtl[?(@.taxHeadCode == 'PT_LIGHTINING_TAX')].total"
+                }
+              },
+              {
+                "variable": "educationTaxArrear",
+                "value":{
+                  "path": "$.arrearDtl[?(@.taxHeadCode == 'PT_EDUCATION_TAX')].arrears"
+                }
+              },
+              {
+                "variable": "educationTaxCurrent",
+                "value":{
+                  "path": "$.arrearDtl[?(@.taxHeadCode == 'PT_EDUCATION_TAX')].currentDemand"
+                }
+              },
+              {
+                "variable": "educationTaxTotal",
+                "value":{
+                  "path": "$.arrearDtl[?(@.taxHeadCode == 'PT_EDUCATION_TAX')].total"
+                }
+              },
+              {
+                "variable": "totalAmount",
+                "value": {
+                  "path": "$.totalAmount"
+                }
+              },
+              {
+                "variable": "amountInWords",
+                "value": {
+                  "path": "$.totalAmount"
+                },
+                "type":"amountInWords"
               },
               {
                 "variable": "variable10",                        
@@ -122,6 +225,19 @@
                       ]
                 } 
              } 
+            ]
+          },
+          {
+            "derived": [
+              {
+                "variable": "totalArrears",
+                "formula": "{{educationTaxArrear}} + {{lighteningTaxArrear}} + {{converancyTaxArrear}} + {{waterTaxArrear}} + {{houseTaxArrear}}"
+              },
+              {
+                "variable": "totalCurrent",
+                "formula": "{{educationTaxCurrent}} + {{lighteningTaxCurrent}} + {{converancyTaxCurrent}} + {{waterTaxCurrent}} + {{houseTaxCurrent}}"
+              }
+               
             ]
           },
           {
