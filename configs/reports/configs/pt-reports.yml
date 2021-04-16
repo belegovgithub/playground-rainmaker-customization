@@ -545,7 +545,7 @@ ReportDefinitions:
     searchClause: AND financialyear = $financialyear
   query: |
     SELECT 
-      initcap(split_part(pay.tenantid, '.', 2)) as tenantid, 
+      initcap(split_part(bill.tenantid, '.', 2)) as tenantid, 
       COUNT(*) AS totalassessments,
       SUM(bill.totalamount) AS totalamount, 
       SUM(pd.amountpaid) AS totalamountpaid,
