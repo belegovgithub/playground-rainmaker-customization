@@ -864,7 +864,7 @@ ReportDefinitions:
     source: pt
     total: false
   - name: arv
-    label: reports.pt.currentarv
+    label: PT_ASSESMENT_INFO_AREA_RENT
     type: string
     source: pt
     total: true    
