@@ -6,32 +6,32 @@ ReportDefinitions:
   moduleName: rainmaker-pt
   sourceColumns:
   - name: tenantid
-    label: reports.pt.tenantid 
+    label: PT_ULB_CITY 
     type: string
     source: pt
     total: false
   - name: propertyid
-    label: reports.pt.propertyid 
+    label: reports.pt.propertyId 
     type: string
     source: pt
     total: false
   - name: receiptnumber
-    label: reports.pt.receiptnumber 
+    label: PT_RECEIPT_RECEIPT_NO 
     type: string
     source: pt
     total: false
   - name: receiptdate
-    label: reports.pt.receiptdate
+    label: reports.pt.receiptDate
     type: string
     source: pt
     total: false
   - name: paymentmode
-    label: reports.pt.paymentmode
+    label: PT_RECEIPT_PAYMENT_MODE
     type: string
     source: pt
     total: false
   - name: transactionnumber
-    label: reports.pt.transactionnumber 
+    label: PT_RECEIPT_TRANSACTION_ID 
     type: string
     source: pt
     total: false
@@ -51,27 +51,27 @@ ReportDefinitions:
     source: pt
     total: true
   - name: watertax
-    label: reports.pt.watertax 
+    label: PT_WATER_TAX 
     type: string
     source: pt
     total: true
   - name: conservancytax
-    label: reports.pt.conservancytax
+    label: PT_CONSERVANCY_TAX
     type: string
     source: pt
     total: true
   - name: lightiningtax
-    label: reports.pt.lightiningtax 
+    label: PT_LIGHTINING_TAX
     type: string
     source: pt
     total: true
   - name: educationtax
-    label: reports.pt.educationtax 
+    label: PT_EDUCATION_TAX
     type: string
     source: pt
     total: true 
   - name: totalcollection
-    label: reports.pt.totalcollection 
+    label: PT_TOTAL_AMOUNT 
     type: string
     source: pt
     total: true
@@ -81,12 +81,12 @@ ReportDefinitions:
     source: pt
     total: false
   - name: mohallaname
-    label: reports.pt.mohallaname
+    label: PT_PROPERTY_ADDRESS_MOHALLA
     type: string
     source: pt
     total: false
   - name: doorno
-    label: reports.pt.doorno
+    label: PT_COMMON_DOOR_NO_LABEL
     type: string
     source: pt
     total: false
@@ -175,32 +175,32 @@ ReportDefinitions:
   moduleName: rainmaker-pt
   sourceColumns:
   - name: tenantid
-    label: reports.pt.tenantid 
+    label: PT_ULB_CITY 
     type: string
     source: pt
     total: false
   - name: propertyid
-    label: reports.pt.propertyid 
+    label: reports.pt.propertyId 
     type: string
     source: pt
     total: false
   - name: receiptnumber
-    label: reports.pt.receiptnumber 
+    label: PT_RECEIPT_RECEIPT_NO 
     type: string
     source: pt
     total: false
   - name: receiptdate
-    label: reports.pt.receiptdate
+    label: reports.pt.receiptDate
     type: string
     source: pt
     total: false
   - name: paymentmode
-    label: reports.pt.paymentmode
+    label: PT_RECEIPT_PAYMENT_MODE
     type: string
     source: pt
     total: false
   - name: transactionnumber
-    label: reports.pt.transactionnumber 
+    label: PT_RECEIPT_TRANSACTION_ID 
     type: string
     source: pt
     total: false
@@ -220,26 +220,26 @@ ReportDefinitions:
     source: pt
     total: true
   - name: watertax
-    label: reports.pt.watertax 
+    label: PT_WATER_TAX 
     type: string
     source: pt
     total: true
   - name: conservancytax
-    label: reports.pt.conservancytax
+    label: PT_CONSERVANCY_TAX
     type: string
     source: pt
     total: true
   - name: lightiningtax
-    label: reports.pt.lightiningtax 
+    label: PT_LIGHTINING_TAX
     type: string
     source: pt
     total: true
   - name: educationtax
-    label: reports.pt.educationtax 
+    label: PT_EDUCATION_TAX
     type: string
     source: pt 
   - name: totalcollection
-    label: reports.pt.totalcollection 
+    label: PT_TOTAL_AMOUNT 
     type: string
     source: pt
     total: false
@@ -359,32 +359,32 @@ ReportDefinitions:
   moduleName: rainmaker-pt
   sourceColumns:
   - name: tenantid
-    label: reports.pt.tenantid 
+    label: PT_ULB_CITY 
     type: string
     source: pt
     total: false
   - name: propertyid
-    label: reports.pt.propertyid 
+    label: reports.pt.propertyId 
     type: string
     source: pt
     total: false
   - name: receiptnumber
-    label: reports.pt.receiptnumber 
+    label: PT_RECEIPT_RECEIPT_NO 
     type: string
     source: pt
     total: false
   - name: receiptdate
-    label: reports.pt.receiptdate
+    label: reports.pt.receiptDate
     type: string
     source: pt
     total: false
   - name: paymentmode
-    label: reports.pt.paymentmode
+    label: PT_RECEIPT_PAYMENT_MODE
     type: string
     source: pt
     total: false
   - name: transactionnumber
-    label: reports.pt.transactionnumber 
+    label: PT_RECEIPT_TRANSACTION_ID 
     type: string
     source: pt
     total: false
@@ -404,26 +404,26 @@ ReportDefinitions:
     source: pt
     total: true
   - name: watertax
-    label: reports.pt.watertax 
+    label: PT_WATER_TAX 
     type: string
     source: pt
     total: true
   - name: conservancytax
-    label: reports.pt.conservancytax
+    label: PT_CONSERVANCY_TAX
     type: string
     source: pt
     total: true
   - name: lightiningtax
-    label: reports.pt.lightiningtax 
+    label: PT_LIGHTINING_TAX
     type: string
     source: pt
     total: true
   - name: educationtax
-    label: reports.pt.educationtax 
+    label: PT_EDUCATION_TAX
     type: string
     source: pt 
   - name: totalcollection
-    label: reports.pt.totalcollection 
+    label: PT_TOTAL_AMOUNT 
     type: string
     source: pt
     total: false
@@ -645,32 +645,32 @@ ReportDefinitions:
   moduleName: rainmaker-pt
   sourceColumns:
   - name: tenantid
-    label: reports.pt.tenantid 
+    label: PT_ULB_CITY 
     type: string
     source: pt
     total: false
   - name: propertyid
-    label: reports.pt.propertyid 
+    label: reports.pt.propertyId 
     type: string
     source: pt
     total: false
   - name: receiptnumber
-    label: reports.pt.receiptnumber 
+    label: PT_RECEIPT_RECEIPT_NO 
     type: string
     source: pt
     total: false
   - name: receiptdate
-    label: reports.pt.receiptdate
+    label: reports.pt.receiptDate
     type: string
     source: pt
     total: false
   - name: paymentmode
-    label: reports.pt.paymentmode
+    label: PT_RECEIPT_PAYMENT_MODE
     type: string
     source: pt
     total: false
   - name: transactionnumber
-    label: reports.pt.transactionnumber 
+    label: PT_RECEIPT_TRANSACTION_ID 
     type: string
     source: pt
     total: false
@@ -690,27 +690,27 @@ ReportDefinitions:
     source: pt
     total: true
   - name: watertax
-    label: reports.pt.watertax 
+    label: PT_WATER_TAX 
     type: string
     source: pt
     total: true
   - name: conservancytax
-    label: reports.pt.conservancytax
+    label: PT_CONSERVANCY_TAX
     type: string
     source: pt
     total: true
   - name: lightiningtax
-    label: reports.pt.lightiningtax 
+    label: PT_LIGHTINING_TAX
     type: string
     source: pt
     total: true
   - name: educationtax
-    label: reports.pt.educationtax 
+    label: PT_EDUCATION_TAX
     type: string
     source: pt
     total: true 
   - name: totalcollection
-    label: reports.pt.totalcollection 
+    label: PT_TOTAL_AMOUNT 
     type: string
     source: pt
     total: true
@@ -720,12 +720,12 @@ ReportDefinitions:
     source: pt
     total: false
   - name: mohallaname
-    label: reports.pt.mohallaname
+    label: PT_PROPERTY_ADDRESS_MOHALLA
     type: string
     source: pt
     total: false
   - name: doorno
-    label: reports.pt.doorno
+    label: PT_COMMON_DOOR_NO_LABEL
     type: string
     source: pt
     total: false
