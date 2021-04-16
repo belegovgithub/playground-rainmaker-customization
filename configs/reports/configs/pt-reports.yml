@@ -808,3 +808,168 @@ ReportDefinitions:
     pay.paymentstatus != 'CANCELLED' 
   groupby: GROUP BY pay.tenantid,pd.receiptnumber,bill.consumercode,pd.receiptdate,pay.transactionnumber,pay.paymentmode,un.name,msg.message,addr.doorno,eu.name,pd.amountpaid
 
+- reportName: DemandRegisterReport
+  summary: Reports for Reconcillation of data in PT
+  version: 1.0.0
+  moduleName: rainmaker-pt
+  sourceColumns:
+  - name: propertyid
+    label: reports.pt.PropertyId
+    type: string
+    source: pt
+    total: false
+  - name: abasid
+    label: reports.pt.oldPropertyId
+    type: string
+    source: pt
+    total: false
+  - name: name
+    label: reports.pt.Owners
+    type: string
+    total: false
+    source: pt
+  - name: mobilenumber
+    label: reports.pt.mobile
+    type: string
+    total: false
+    source: pt    
+  - name: doorno
+    label: reports.pt.DoorNo
+    type: string
+    source: pt
+    total: false
+  - name: mohallaname
+    label: reports.pt.Mohallaname
+    type: string
+    source: pt
+    total: false
+  - name: propertytype
+    label: reports.pt.PropertyType
+    type: string
+    source: pt
+    total: false
+  - name: propertysubtype
+    label: reports.pt.Propertysubtype
+    type: string
+    source: pt
+    total: false
+  - name: usagetype
+    label: reports.pt.usage
+    type: string
+    source: pt
+    total: false
+  - name: subusagetype
+    label: reports.pt.usage
+    type: string
+    source: pt
+    total: false
+  - name: arv
+    label: reports.pt.currentarv
+    type: string
+    source: pt
+    total: true    
+  - name: housetax
+    label: reports.pt.housetax
+    type: string
+    source: pt
+    total: true
+  - name: watertax
+    label: reports.pt.watertax
+    type: string
+    source: pt
+    total: true
+  - name: conservancytax
+    label: reports.pt.conservancytax
+    type: string
+    source: pt
+    total: true
+  - name: educationtax
+    label: reports.pt.educationtax
+    type: string
+    source: pt
+    total: true  
+  - name: penalty
+    label: reports.pt.penaltytax
+    type: string
+    source: pt
+    total: true
+  - name: rebate
+    label: reports.pt.rebate
+    type: string
+    source: pt
+    total: true
+  - name: interest
+    label: reports.pt.interest
+    type: string
+    source: pt
+    total: true  
+  - name: totaltax
+    label: reports.pt.totaltax
+    type: string
+    source: pt
+    total: true
+  - name: totalcollected
+    label: reports.pt.totalcollected
+    type: string
+    source: pt
+    total: true
+  searchParams:
+  - name: fromDate
+    label: reports.pt.fromDate
+    type: epoch
+    source: pt
+    isMandatory: false
+    searchClause: AND demand.createddate >= $fromDate
+  - name: toDate
+    label: reports.pt.toDate
+    type: epoch
+    source: pt
+    isMandatory: false
+    searchClause: AND demand.createddate <= $toDate
+  - name: Wardname
+    label: WardName
+    type: singlevaluelist
+    pattern: http://egov-location:8080/egov-location/location/v11/boundarys/_search?hierarchyTypeCode=REVENUE&boundaryType=Block&tenantId=$tenantid|$.TenantBoundary[*].boundary[*].code|$.TenantBoundary[*].boundary[*].name
+    source: pt
+    wrapper: true
+    isMandatory: false
+    searchClause: AND addr.locality = $Wardname
+  query: | 
+    select initcap(split_part(demand.tenantid, '.', 2)) as tenantid,
+    demand.consumercode as propertyid,pt.oldpropertyid as abasid,
+    initcap(split_part(pt.propertytype, '.', 1)) as propertytype,
+    initcap(split_part(pt.propertytype, '.', 2)) as propertysubtype,
+    initcap(split_part(ptunit.usagecategory, '.', 1)) as usagetype,
+    initcap(split_part(ptunit.usagecategory, '.', 2)) as subusagetype,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_INTEREST%' THEN demanddetail.taxamount ELSE 0 END) as interest,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_PENALTY%' THEN demanddetail.taxamount ELSE 0 END) as penalty,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_REBATE%' THEN demanddetail.taxamount ELSE 0 END) as rebate,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_HOUSE_TAX' THEN demanddetail.taxamount ELSE 0 END) as housetax ,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_WATER_TAX'  THEN demanddetail.taxamount ELSE 0 END) as watertax ,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN demanddetail.taxamount ELSE 0 END) as conservancytax ,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_TAX' THEN demanddetail.taxamount ELSE 0 END) as educationtax,
+    (SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_INTEREST' THEN demanddetail.taxamount ELSE 0 END)  + SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_PENALTY%' THEN demanddetail.taxamount ELSE 0 END) + SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_REBATE%' THEN demanddetail.taxamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_HOUSE_TAX' THEN demanddetail.taxamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_WATER_TAX' THEN demanddetail.taxamount ELSE 0 END)  +SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN demanddetail.taxamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN demanddetail.taxamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_TAX' THEN demanddetail.taxamount ELSE 0 END)) as totaltax,
+    (SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_INTEREST' THEN demanddetail.collectionamount ELSE 0 END)  + SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_PENALTY%' THEN demanddetail.collectionamount ELSE 0 END) + SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_REBATE%' THEN demanddetail.collectionamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_HOUSE_TAX' THEN demanddetail.collectionamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_WATER_TAX' THEN demanddetail.collectionamount ELSE 0 END)  +SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN demanddetail.collectionamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN demanddetail.collectionamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_TAX' THEN demanddetail.collectionamount ELSE 0 END)) as totalcollection,
+    ptunit.arv as arv,
+    msg.message as mohallaname,
+    addr.doorno as doorno,
+    eu.name as name,
+    eu.mobilenumber as mobilenumber
+    from egbs_demand_v1 demand,
+    egbs_demanddetail_v1 demanddetail,
+    eg_pt_address addr,
+    eg_pt_unit ptunit,
+    eg_user eu,
+    message msg,
+    eg_pt_property pt 
+    where demanddetail.demandid= demand.id and
+    pt.propertyid=demand.consumercode and
+    addr.propertyid=pt.id and
+    ptunit.propertyid = pt.id and
+    RIGHT(msg.code,8)=addr.locality and
+    msg.tenantid=demand.tenantid and
+    eu.uuid=(select poo.userid from eg_pt_owner poo where poo.propertyid=(select pdd.id from eg_pt_property pdd where pdd.propertyid= demand.consumercode fetch first 1 row only) fetch first 1 row only) and     msg.locale='en_IN' and
+    demand.tenantid LIKE $tenantid and
+    demand.businessservice ='PT' 
+  groupby:  GROUP BY demand.tenantid,demand.consumercode,addr.doorno,msg.message,addr.doorno,eu.name,pt.oldpropertyid,pt.propertytype,ptunit.usagecategory,eu.mobilenumber, ptunit.arv
+  orderby:  ORDER BY demand.consumercode
