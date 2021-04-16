@@ -36,7 +36,7 @@
               {
                 "variable": "oldPropertyNo",
                 "value": {
-                  "path": "$.status"
+                  "path": "$.oldPropertyId"
                 }
               },
               {
@@ -55,7 +55,7 @@
               {
                 "variable": "usageType",
                 "value": {
-                  "path": "$.usageType"
+                  "path": "$.usageCategory"
                 }
               },
               {
@@ -87,6 +87,109 @@
                 "value": {
                   "path": "$.address.city"
                 }
+              },
+              {
+                "variable": "houseTaxArrear",
+                "value":{
+                  "path": "$.arrearDtl[?(@.taxHeadCode == 'PT_HOUSE_TAX')].arrears"
+                }
+              },
+              {
+                "variable": "houseTaxCurrent",
+                "value":{
+                  "path": "$.arrearDtl[?(@.taxHeadCode == 'PT_HOUSE_TAX')].currentDemand"
+                }
+              },
+              {
+                "variable": "houseTaxTotal",
+                "value":{
+                  "path": "$.arrearDtl[?(@.taxHeadCode == 'PT_HOUSE_TAX')].total"
+                }
+              },
+              {
+                "variable": "waterTaxArrear",
+                "value":{
+                  "path": "$.arrearDtl[?(@.taxHeadCode == 'PT_WATER_TAX')].arrears"
+                }
+              },
+              {
+                "variable": "waterTaxCurrent",
+                "value":{
+                  "path": "$.arrearDtl[?(@.taxHeadCode == 'PT_WATER_TAX')].currentDemand"
+                }
+              },
+              {
+                "variable": "waterTaxTotal",
+                "value":{
+                  "path": "$.arrearDtl[?(@.taxHeadCode == 'PT_WATER_TAX')].total"
+                }
+              },
+              {
+                "variable": "converancyTaxArrear",
+                "value":{
+                  "path": "$.arrearDtl[?(@.taxHeadCode == 'PT_CONSERVANCY_TAX')].arrears"
+                }
+              },
+              {
+                "variable": "converancyTaxCurrent",
+                "value":{
+                  "path": "$.arrearDtl[?(@.taxHeadCode == 'PT_CONSERVANCY_TAX')].currentDemand"
+                }
+              },
+              {
+                "variable": "converancyTaxTotal",
+                "value":{
+                  "path": "$.arrearDtl[?(@.taxHeadCode == 'PT_CONSERVANCY_TAX')].total"
+                }
+              },
+              {
+                "variable": "lighteningTaxArrear",
+                "value":{
+                  "path": "$.arrearDtl[?(@.taxHeadCode == 'PT_LIGHTINING_TAX')].arrears"
+                }
+              },
+              {
+                "variable": "lighteningTaxCurrent",
+                "value":{
+                  "path": "$.arrearDtl[?(@.taxHeadCode == 'PT_LIGHTINING_TAX')].currentDemand"
+                }
+              },
+              {
+                "variable": "lighteningTaxTotal",
+                "value":{
+                  "path": "$.arrearDtl[?(@.taxHeadCode == 'PT_LIGHTINING_TAX')].total"
+                }
+              },
+              {
+                "variable": "educationTaxArrear",
+                "value":{
+                  "path": "$.arrearDtl[?(@.taxHeadCode == 'PT_EDUCATION_TAX')].arrears"
+                }
+              },
+              {
+                "variable": "educationTaxCurrent",
+                "value":{
+                  "path": "$.arrearDtl[?(@.taxHeadCode == 'PT_EDUCATION_TAX')].currentDemand"
+                }
+              },
+              {
+                "variable": "educationTaxTotal",
+                "value":{
+                  "path": "$.arrearDtl[?(@.taxHeadCode == 'PT_EDUCATION_TAX')].total"
+                }
+              },
+              {
+                "variable": "totalAmount",
+                "value": {
+                  "path": "$.totalAmount"
+                }
+              },
+              {
+                "variable": "amountInWords",
+                "value": {
+                  "path": "$.totalAmount"
+                },
+                "type":"amountInWords"
               },
               {
                 "variable": "variable10",                        
@@ -125,28 +228,25 @@
             ]
           },
           {
+            "derived": [
+              {
+                "variable": "totalArrears",
+                "formula": "{{educationTaxArrear}} + {{lighteningTaxArrear}} + {{converancyTaxArrear}} + {{waterTaxArrear}} + {{houseTaxArrear}}"
+              },
+              {
+                "variable": "totalCurrent",
+                "formula": "{{educationTaxCurrent}} + {{lighteningTaxCurrent}} + {{converancyTaxCurrent}} + {{waterTaxCurrent}} + {{houseTaxCurrent}}"
+              }
+               
+            ]
+          },
+          {
             "externalAPI": [     
               { 
-                "path": "http://localhost:8085/egov-mdms-service/v1/_get",
+                "path": "http://egov-mdms-service:8080/egov-mdms-service/v1/_get",
                 "queryParam": "moduleName=tenant&masterName=tenants&tenantId=pb&filter=%5B?(@.code=='{$.tenantId}')%5D",
                   "apiRequest": null,
                   "responseMapping":[
-                    {             
-                      "variable":"address",
-                      "value":"$.MdmsRes.tenant.tenants[0].address"
-                    },
-                    {
-                      "variable":"phoneNumber",
-                      "value":"$.MdmsRes.tenant.tenants[0].contactNumber"
-                    },
-                    {
-                      "variable":"website",
-                      "value":"$.MdmsRes.tenant.tenants[0].domainUrl"
-                    },
-                    {
-                      "variable":"email",
-                      "value":"$.MdmsRes.tenant.tenants[0].emailId"
-                    },
                     {
                       "variable": "logoImage",
                       "value":"$.MdmsRes.tenant.tenants[0].logoIdPdf",
@@ -173,7 +273,7 @@
                   ]
               },
               { 
-                "path": "http://localhost:8085/egov-mdms-service/v1/_get",
+                "path": "http://egov-mdms-service:8080/egov-mdms-service/v1/_get",
                 "queryParam": "moduleName=tenant&masterName=footer&tenantId=pb&filter=%5B?(@.code=='{$.tenantId}' %26%26 @.service=='{$.businessService}')%5D",
                 "apiRequest": null,
                 "responseMapping":[

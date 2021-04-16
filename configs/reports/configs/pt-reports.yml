@@ -6,32 +6,32 @@ ReportDefinitions:
   moduleName: rainmaker-pt
   sourceColumns:
   - name: tenantid
-    label: reports.pt.tenantid 
+    label: PT_ULB_CITY 
     type: string
     source: pt
     total: false
   - name: propertyid
-    label: reports.pt.propertyid 
+    label: reports.pt.propertyId 
     type: string
     source: pt
     total: false
   - name: receiptnumber
-    label: reports.pt.receiptnumber 
+    label: PT_RECEIPT_RECEIPT_NO 
     type: string
     source: pt
     total: false
   - name: receiptdate
-    label: reports.pt.receiptdate
+    label: reports.pt.receiptDate
     type: string
     source: pt
     total: false
   - name: paymentmode
-    label: reports.pt.paymentmode
+    label: PT_RECEIPT_PAYMENT_MODE
     type: string
     source: pt
     total: false
   - name: transactionnumber
-    label: reports.pt.transactionnumber 
+    label: PT_RECEIPT_TRANSACTION_ID 
     type: string
     source: pt
     total: false
@@ -51,27 +51,27 @@ ReportDefinitions:
     source: pt
     total: true
   - name: watertax
-    label: reports.pt.watertax 
+    label: PT_WATER_TAX 
     type: string
     source: pt
     total: true
   - name: conservancytax
-    label: reports.pt.conservancytax
+    label: PT_CONSERVANCY_TAX
     type: string
     source: pt
     total: true
   - name: lightiningtax
-    label: reports.pt.lightiningtax 
+    label: PT_LIGHTINING_TAX
     type: string
     source: pt
     total: true
   - name: educationtax
-    label: reports.pt.educationtax 
+    label: PT_EDUCATION_TAX
     type: string
     source: pt
     total: true 
   - name: totalcollection
-    label: reports.pt.totalcollection 
+    label: PT_TOTAL_AMOUNT 
     type: string
     source: pt
     total: true
@@ -81,12 +81,12 @@ ReportDefinitions:
     source: pt
     total: false
   - name: mohallaname
-    label: reports.pt.mohallaname
+    label: PT_PROPERTY_ADDRESS_MOHALLA
     type: string
     source: pt
     total: false
   - name: doorno
-    label: reports.pt.doorno
+    label: PT_COMMON_DOOR_NO_LABEL
     type: string
     source: pt
     total: false
@@ -132,11 +132,11 @@ ReportDefinitions:
     pay.transactionnumber as transactionnumber,
     SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_INTEREST%' THEN bad.amount ELSE 0 END) as interest,
     SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_PENALTY%' or taxheadcode LIKE 'PT_LATE_ASSESSMENT_PENALTY' THEN bad.amount ELSE 0 END) as penalty,
-    SUM(CASE WHEN taxheadcode LIKE 'PT_HOUSE_TAX' THEN bad.amount ELSE 0 END) as housetax ,
-	  SUM(CASE WHEN taxheadcode LIKE 'PT_WATER_TAX'  THEN bad.amount ELSE 0 END) as watertax ,
-	  SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN bad.amount ELSE 0 END) as conservancytax ,
-	  SUM(CASE WHEN taxheadcode LIKE 'PT_LIGHTINING_TAX' THEN bad.amount ELSE 0 END) as lightiningtax ,
-	  SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_TAX' THEN bad.amount ELSE 0 END) as educationtax ,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_HOUSE_TAX' THEN bad.amount ELSE 0 END) as housetax,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_WATER_TAX'  THEN bad.amount ELSE 0 END) as watertax ,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN bad.amount ELSE 0 END) as conservancytax ,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_LIGHTINING_TAX' THEN bad.amount ELSE 0 END) as lightiningtax ,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_TAX' THEN bad.amount ELSE 0 END) as educationtax ,
     SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_REBATE' or taxheadcode like 'PT_PROMOTIONAL_REBATE' THEN bad.amount ELSE 0 END) as rebate,
     pd.amountpaid as totalcollection,
     un.name as collectorname,
@@ -175,32 +175,32 @@ ReportDefinitions:
   moduleName: rainmaker-pt
   sourceColumns:
   - name: tenantid
-    label: reports.pt.tenantid 
+    label: PT_ULB_CITY 
     type: string
     source: pt
     total: false
   - name: propertyid
-    label: reports.pt.propertyid 
+    label: reports.pt.propertyId 
     type: string
     source: pt
     total: false
   - name: receiptnumber
-    label: reports.pt.receiptnumber 
+    label: PT_RECEIPT_RECEIPT_NO 
     type: string
     source: pt
     total: false
   - name: receiptdate
-    label: reports.pt.receiptdate
+    label: reports.pt.receiptDate
     type: string
     source: pt
     total: false
   - name: paymentmode
-    label: reports.pt.paymentmode
+    label: PT_RECEIPT_PAYMENT_MODE
     type: string
     source: pt
     total: false
   - name: transactionnumber
-    label: reports.pt.transactionnumber 
+    label: PT_RECEIPT_TRANSACTION_ID 
     type: string
     source: pt
     total: false
@@ -220,26 +220,26 @@ ReportDefinitions:
     source: pt
     total: true
   - name: watertax
-    label: reports.pt.watertax 
+    label: PT_WATER_TAX 
     type: string
     source: pt
     total: true
   - name: conservancytax
-    label: reports.pt.conservancytax
+    label: PT_CONSERVANCY_TAX
     type: string
     source: pt
     total: true
   - name: lightiningtax
-    label: reports.pt.lightiningtax 
+    label: PT_LIGHTINING_TAX
     type: string
     source: pt
     total: true
   - name: educationtax
-    label: reports.pt.educationtax 
+    label: PT_EDUCATION_TAX
     type: string
     source: pt 
   - name: totalcollection
-    label: reports.pt.totalcollection 
+    label: PT_TOTAL_AMOUNT 
     type: string
     source: pt
     total: false
@@ -273,9 +273,9 @@ ReportDefinitions:
     SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_INTEREST%' THEN bad.amount ELSE 0 END) as interest,
     SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_PENALTY%' THEN bad.amount ELSE 0 END) as penalty,
     SUM(CASE WHEN taxheadcode LIKE 'PT_HOUSE_TAX' THEN bad.amount ELSE 0 END) as housetax ,
-	  SUM(CASE WHEN taxheadcode LIKE 'PT_WATER_TAX'  THEN bad.amount ELSE 0 END) as watertax ,
-	  SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN bad.amount ELSE 0 END) as conservancytax ,
-	  SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_TAX' THEN bad.amount ELSE 0 END) as educationtax ,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_WATER_TAX'  THEN bad.amount ELSE 0 END) as watertax ,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN bad.amount ELSE 0 END) as conservancytax ,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_TAX' THEN bad.amount ELSE 0 END) as educationtax ,
     (SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_INTEREST' THEN bad.amount ELSE 0 END)  + SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_PENALTY%' THEN bad.amount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_HOUSE_TAX' THEN bad.amount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_WATER_TAX' THEN bad.amount ELSE 0 END)  +SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN bad.amount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN bad.amount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_TAX' THEN bad.amount ELSE 0 END)) as totalcollection
     from egcl_payment pay,
     egcl_paymentdetail pd,
@@ -302,12 +302,12 @@ ReportDefinitions:
     source: pt
     total: true
   - name: totalamount
-    label: reports.pt.totalamount
+    label: PT_TOTAL_AMOUNT
     type: string
     source: pt
     total: true
   - name: totalamountpaid
-    label: reports.pt.totalamountpaid
+    label: PT_AMOUNT_PAID
     type: string
     source: pt
     total: true
@@ -322,7 +322,7 @@ ReportDefinitions:
     source: pt
     total: true
   - name: totalamountdue
-    label: reports.pt.totalamountdue
+    label: PT_TOTAL_DUES
     type: string
     source: pt
     total: true
@@ -359,32 +359,32 @@ ReportDefinitions:
   moduleName: rainmaker-pt
   sourceColumns:
   - name: tenantid
-    label: reports.pt.tenantid 
+    label: PT_ULB_CITY 
     type: string
     source: pt
     total: false
   - name: propertyid
-    label: reports.pt.propertyid 
+    label: reports.pt.propertyId 
     type: string
     source: pt
     total: false
   - name: receiptnumber
-    label: reports.pt.receiptnumber 
+    label: PT_RECEIPT_RECEIPT_NO 
     type: string
     source: pt
     total: false
   - name: receiptdate
-    label: reports.pt.receiptdate
+    label: reports.pt.receiptDate
     type: string
     source: pt
     total: false
   - name: paymentmode
-    label: reports.pt.paymentmode
+    label: PT_RECEIPT_PAYMENT_MODE
     type: string
     source: pt
     total: false
   - name: transactionnumber
-    label: reports.pt.transactionnumber 
+    label: PT_RECEIPT_TRANSACTION_ID 
     type: string
     source: pt
     total: false
@@ -404,26 +404,26 @@ ReportDefinitions:
     source: pt
     total: true
   - name: watertax
-    label: reports.pt.watertax 
+    label: PT_WATER_TAX 
     type: string
     source: pt
     total: true
   - name: conservancytax
-    label: reports.pt.conservancytax
+    label: PT_CONSERVANCY_TAX
     type: string
     source: pt
     total: true
   - name: lightiningtax
-    label: reports.pt.lightiningtax 
+    label: PT_LIGHTINING_TAX
     type: string
     source: pt
     total: true
   - name: educationtax
-    label: reports.pt.educationtax 
+    label: PT_EDUCATION_TAX
     type: string
     source: pt 
   - name: totalcollection
-    label: reports.pt.totalcollection 
+    label: PT_TOTAL_AMOUNT 
     type: string
     source: pt
     total: false
@@ -457,9 +457,9 @@ ReportDefinitions:
     SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_INTEREST%' THEN bad.amount ELSE 0 END) as interest,
     SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_PENALTY%' THEN bad.amount ELSE 0 END) as penalty,
     SUM(CASE WHEN taxheadcode LIKE 'PT_HOUSE_TAX' THEN bad.amount ELSE 0 END) as housetax ,
-	  SUM(CASE WHEN taxheadcode LIKE 'PT_WATER_TAX'  THEN bad.amount ELSE 0 END) as watertax ,
-	  SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN bad.amount ELSE 0 END) as conservancytax ,
-	  SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_TAX' THEN bad.amount ELSE 0 END) as educationtax ,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_WATER_TAX'  THEN bad.amount ELSE 0 END) as watertax ,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN bad.amount ELSE 0 END) as conservancytax ,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_TAX' THEN bad.amount ELSE 0 END) as educationtax ,
     (SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_INTEREST' THEN bad.amount ELSE 0 END)  + SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_PENALTY%' THEN bad.amount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_HOUSE_TAX' THEN bad.amount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_WATER_TAX' THEN bad.amount ELSE 0 END)  +SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN bad.amount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN bad.amount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_TAX' THEN bad.amount ELSE 0 END)) as totalcollection
     from egcl_payment pay,
     egcl_paymentdetail pd,
@@ -490,12 +490,12 @@ ReportDefinitions:
     source: pt
     total: true
   - name: totalamount
-    label: reports.pt.totalamount
+    label: PT_TOTAL_AMOUNT
     type: string
     source: pt
     total: true  
   - name: totalamountpaid
-    label: reports.pt.totalamountpaid
+    label: PT_AMOUNT_PAID
     type: string
     source: pt
     total: true
@@ -510,7 +510,7 @@ ReportDefinitions:
     source: pt
     total: true
   - name: totalamountdue
-    label: reports.pt.totalamountdue
+    label: PT_TOTAL_DUES
     type: string
     source: pt
     total: true
@@ -545,7 +545,7 @@ ReportDefinitions:
     searchClause: AND financialyear = $financialyear
   query: |
     SELECT 
-      select initcap(split_part(pay.tenantid, '.', 2)) as tenantid, 
+      initcap(split_part(bill.tenantid, '.', 2)) as tenantid, 
       COUNT(*) AS totalassessments,
       SUM(bill.totalamount) AS totalamount, 
       SUM(pd.amountpaid) AS totalamountpaid,
@@ -572,7 +572,7 @@ ReportDefinitions:
     source: pt
     total: true
   - name: totalamountpaid
-    label: reports.pt.totalamountpaid
+    label: PT_AMOUNT_PAID
     type: string
     source: pt
     total: true
@@ -587,7 +587,7 @@ ReportDefinitions:
     source: pt
     total: true
   - name: totalamountdue
-    label: reports.pt.totalamountdue
+    label: PT_TOTAL_DUES
     type: string
     source: pt
     total: true
@@ -638,3 +638,504 @@ ReportDefinitions:
       WHERE tenantid LIKE CONCAT(SPLIT_PART($tenantid, '.', 1), '%') and tenantid = $tenantid
   groupby: GROUP BY tenantid
   orderby: ORDER BY tenantid, totalamountpaid DESC NULLS LAST
+
+- reportName: DGDEReceiptRegister
+  summary: Receipt Register
+  version: 1.0.0
+  moduleName: rainmaker-pt
+  sourceColumns:
+  - name: tenantid
+    label: PT_ULB_CITY 
+    type: string
+    source: pt
+    total: false
+  - name: propertyid
+    label: reports.pt.propertyId 
+    type: string
+    source: pt
+    total: false
+  - name: receiptnumber
+    label: PT_RECEIPT_RECEIPT_NO 
+    type: string
+    source: pt
+    total: false
+  - name: receiptdate
+    label: reports.pt.receiptDate
+    type: string
+    source: pt
+    total: false
+  - name: paymentmode
+    label: PT_RECEIPT_PAYMENT_MODE
+    type: string
+    source: pt
+    total: false
+  - name: transactionnumber
+    label: PT_RECEIPT_TRANSACTION_ID 
+    type: string
+    source: pt
+    total: false
+  - name: interest
+    label: reports.pt.interest
+    type: string
+    source: pt
+    total: true
+  - name: penalty
+    label: reports.pt.penalty
+    type: string
+    source: pt
+    total: true  
+  - name: housetax
+    label: reports.pt.housetax
+    type: string
+    source: pt
+    total: true
+  - name: watertax
+    label: PT_WATER_TAX 
+    type: string
+    source: pt
+    total: true
+  - name: conservancytax
+    label: PT_CONSERVANCY_TAX
+    type: string
+    source: pt
+    total: true
+  - name: lightiningtax
+    label: PT_LIGHTINING_TAX
+    type: string
+    source: pt
+    total: true
+  - name: educationtax
+    label: PT_EDUCATION_TAX
+    type: string
+    source: pt
+    total: true 
+  - name: totalcollection
+    label: PT_TOTAL_AMOUNT 
+    type: string
+    source: pt
+    total: true
+  - name: collectorname
+    label: reports.pt.collectorname
+    type: string
+    source: pt
+    total: false
+  - name: mohallaname
+    label: PT_PROPERTY_ADDRESS_MOHALLA
+    type: string
+    source: pt
+    total: false
+  - name: doorno
+    label: PT_COMMON_DOOR_NO_LABEL
+    type: string
+    source: pt
+    total: false
+  - name: ownername
+    label: reports.pt.ownername
+    type: string
+    source: pt
+    total: false
+  searchParams:
+  - name: fromDate
+    label: reports.pt.fromDate
+    type: epoch
+    source: pt
+    isMandatory: false
+    searchClause: AND pd.receiptdate >= $fromDate
+  - name: toDate
+    label: reports.pt.toDate
+    type: epoch
+    source: pt
+    isMandatory: false
+    searchClause: AND pd.receiptdate <= $toDate
+  - name: paymentMode
+    label: Payment Mode
+    type: singlevaluelist
+    pattern: 'list://CASH:CASH,Online:Online,CARD:CARD,DD:DD,CHEQUE:CHEQUE'
+    source: pt
+    isMandatory: false
+    searchClause: AND paymentmode = $paymentMode
+  - name: collectorname
+    label: Collector Name
+    type: singlevaluelist
+    pattern: http://egov-hrms:8080/egov-hrms/employees/_search?tenantId=$tenantid&roles=PTCEMP|$.Employees[*].user.id|$.Employees[*].user.name
+    source: pt
+    wrapper: true
+    isMandatory: false
+    searchClause: AND un.id = $collectorname::INTEGER
+  query: |
+    select initcap(split_part(pay.tenantid, '.', 2)) as tenantid,
+    bill.consumercode as propertyid,
+    pd.receiptnumber  as receiptnumber,
+    To_char(To_timestamp(pd.receiptdate/1000 ), 'DD/MM/YYYY')  AS receiptdate,
+    pay.paymentmode as paymentmode,
+    pay.transactionnumber as transactionnumber,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_INTEREST%' THEN bad.amount ELSE 0 END) as interest,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_PENALTY%' or taxheadcode LIKE 'PT_LATE_ASSESSMENT_PENALTY' THEN bad.amount ELSE 0 END) as penalty,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_HOUSE_TAX' THEN bad.amount ELSE 0 END) as housetax,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_WATER_TAX'  THEN bad.amount ELSE 0 END) as watertax ,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN bad.amount ELSE 0 END) as conservancytax ,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_LIGHTINING_TAX' THEN bad.amount ELSE 0 END) as lightiningtax ,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_TAX' THEN bad.amount ELSE 0 END) as educationtax ,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_REBATE' or taxheadcode like 'PT_PROMOTIONAL_REBATE' THEN bad.amount ELSE 0 END) as rebate,
+    pd.amountpaid as totalcollection,
+    un.name as collectorname,
+    msg.message as mohallaname,
+    addr.doorno as doorno,
+    eu.name as ownername
+    from egcl_payment pay,
+    egcl_paymentdetail pd,
+    egcl_bill bill,
+    egcl_billdetial bd,
+    egcl_billaccountdetail bad,
+    eg_user un,
+    eg_pt_address addr,
+    eg_user eu,
+    message msg,
+    eg_pt_property pt
+    where pd.paymentid= pay.id and
+    pd.billid=bill.id and
+    bd.billid=bill.id and
+    bad.billdetailid=bd.id and
+    pay.createdby=CAST(un.id as varchar) and
+    addr.propertyid=pt.id and
+    pt.propertyid=bill.consumercode and
+    RIGHT(msg.code,8)=addr.locality and
+    msg.tenantid=pay.tenantid and
+    eu.uuid=(select poo.userid from eg_pt_owner poo where poo.propertyid=(select pdd.id from eg_pt_property pdd where pdd.propertyid= bill.consumercode fetch first 1 row only) fetch first 1 row only) and
+    msg.locale='en_IN' and
+    pay.tenantid !='pb.testing' and 
+    pd.businessservice='PT'and 
+    pay.paymentstatus != 'CANCELLED' 
+  groupby: GROUP BY pay.tenantid,pd.receiptnumber,bill.consumercode,pd.receiptdate,pay.transactionnumber,pay.paymentmode,un.name,msg.message,addr.doorno,eu.name,pd.amountpaid
+
+- reportName: DemandRegisterReport
+  summary: Reports for Reconcillation of data in PT
+  version: 1.0.0
+  moduleName: rainmaker-pt
+  sourceColumns:
+  - name: propertyid
+    label: reports.pt.propertyId
+    type: string
+    source: pt
+    total: false
+  - name: abasid
+    label: PT_EXISTING_PROPERTY_ID
+    type: string
+    source: pt
+    total: false
+  - name: name
+    label: PT_OWNER_NAME
+    type: string
+    total: false
+    source: pt
+  - name: mobilenumber
+    label: PT_COMMON_APPLICANT_MOBILE_NO_LABEL
+    type: string
+    total: false
+    source: pt    
+  - name: doorno
+    label: PT_COMMON_DOOR_NO_LABEL
+    type: string
+    source: pt
+    total: false
+  - name: mohallaname
+    label: PT_PROPERTY_ADDRESS_MOHALLA
+    type: string
+    source: pt
+    total: false
+  - name: propertytype
+    label: PT_COMMON_PROPERTY_TYPE
+    type: string
+    source: pt
+    total: false
+  - name: propertysubtype
+    label: reports.pt.Propertysubtype
+    type: string
+    source: pt
+    total: false
+  - name: usagetype
+    label: PT_COMMON_USAGE_TYPE
+    type: string
+    source: pt
+    total: false
+  - name: subusagetype
+    label: PT_COMMON_SUB_USAGE_TYPE
+    type: string
+    source: pt
+    total: false
+  - name: arv
+    label: PT_ASSESMENT_INFO_AREA_RENT
+    type: string
+    source: pt
+    total: true    
+  - name: housetax
+    label: reports.pt.housetax
+    type: string
+    source: pt
+    total: true
+  - name: watertax
+    label: PT_WATER_TAX
+    type: string
+    source: pt
+    total: true
+  - name: conservancytax
+    label: PT_CONSERVANCY_TAX
+    type: string
+    source: pt
+    total: true
+  - name: educationtax
+    label: PT_EDUCATION_TAX
+    type: string
+    source: pt
+    total: true  
+  - name: penalty
+    label:  reports.pt.penalty
+    type: string
+    source: pt
+    total: true
+  - name: rebate
+    label: reports.pt.rebate
+    type: string
+    source: pt
+    total: true
+  - name: interest
+    label: reports.pt.interest
+    type: string
+    source: pt
+    total: true  
+  - name: totaltax
+    label: PT_TOTAL_AMOUNT
+    type: string
+    source: pt
+    total: true
+  - name: totalcollected
+    label: PT_COLLECTED
+    type: string
+    source: pt
+    total: true
+  searchParams:
+  - name: fromDate
+    label: reports.pt.fromDate
+    type: epoch
+    source: pt
+    isMandatory: false
+    searchClause: AND demand.createddate >= $fromDate
+  - name: toDate
+    label: reports.pt.toDate
+    type: epoch
+    source: pt
+    isMandatory: false
+    searchClause: AND demand.createddate <= $toDate
+  - name: Wardname
+    label: WardName
+    type: singlevaluelist
+    pattern: http://egov-location:8080/egov-location/location/v11/boundarys/_search?hierarchyTypeCode=REVENUE&boundaryType=Block&tenantId=$tenantid|$.TenantBoundary[*].boundary[*].code|$.TenantBoundary[*].boundary[*].name
+    source: pt
+    wrapper: true
+    isMandatory: false
+    searchClause: AND addr.locality = $Wardname
+  query: | 
+    select initcap(split_part(demand.tenantid, '.', 2)) as tenantid,
+    demand.consumercode as propertyid,pt.oldpropertyid as abasid,
+    initcap(split_part(pt.propertytype, '.', 1)) as propertytype,
+    initcap(split_part(pt.propertytype, '.', 2)) as propertysubtype,
+    initcap(split_part(ptunit.usagecategory, '.', 1)) as usagetype,
+    initcap(split_part(ptunit.usagecategory, '.', 2)) as subusagetype,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_INTEREST%' THEN demanddetail.taxamount ELSE 0 END) as interest,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_PENALTY%' THEN demanddetail.taxamount ELSE 0 END) as penalty,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_REBATE%' THEN demanddetail.taxamount ELSE 0 END) as rebate,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_HOUSE_TAX' THEN demanddetail.taxamount ELSE 0 END) as housetax ,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_WATER_TAX'  THEN demanddetail.taxamount ELSE 0 END) as watertax ,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN demanddetail.taxamount ELSE 0 END) as conservancytax ,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_TAX' THEN demanddetail.taxamount ELSE 0 END) as educationtax,
+    (SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_INTEREST' THEN demanddetail.taxamount ELSE 0 END)  + SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_PENALTY%' THEN demanddetail.taxamount ELSE 0 END) + SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_REBATE%' THEN demanddetail.taxamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_HOUSE_TAX' THEN demanddetail.taxamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_WATER_TAX' THEN demanddetail.taxamount ELSE 0 END)  +SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN demanddetail.taxamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN demanddetail.taxamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_TAX' THEN demanddetail.taxamount ELSE 0 END)) as totaltax,
+    (SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_INTEREST' THEN demanddetail.collectionamount ELSE 0 END)  + SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_PENALTY%' THEN demanddetail.collectionamount ELSE 0 END) + SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_REBATE%' THEN demanddetail.collectionamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_HOUSE_TAX' THEN demanddetail.collectionamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_WATER_TAX' THEN demanddetail.collectionamount ELSE 0 END)  +SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN demanddetail.collectionamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN demanddetail.collectionamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_TAX' THEN demanddetail.collectionamount ELSE 0 END)) as totalcollection,
+    ptunit.arv as arv,
+    msg.message as mohallaname,
+    addr.doorno as doorno,
+    eu.name as name,
+    eu.mobilenumber as mobilenumber
+    from egbs_demand_v1 demand,
+    egbs_demanddetail_v1 demanddetail,
+    eg_pt_address addr,
+    eg_pt_unit ptunit,
+    eg_user eu,
+    message msg,
+    eg_pt_property pt 
+    where demanddetail.demandid= demand.id and
+    pt.propertyid=demand.consumercode and
+    addr.propertyid=pt.id and
+    ptunit.propertyid = pt.id and
+    RIGHT(msg.code,8)=addr.locality and
+    msg.tenantid=demand.tenantid and
+    eu.uuid=(select poo.userid from eg_pt_owner poo where poo.propertyid=(select pdd.id from eg_pt_property pdd where pdd.propertyid= demand.consumercode fetch first 1 row only) fetch first 1 row only) and     msg.locale='en_IN' and
+    demand.tenantid LIKE $tenantid and
+    demand.businessservice ='PT' 
+  groupby:  GROUP BY demand.tenantid,demand.consumercode,addr.doorno,msg.message,addr.doorno,eu.name,pt.oldpropertyid,pt.propertytype,ptunit.usagecategory,eu.mobilenumber, ptunit.arv
+  orderby:  ORDER BY demand.consumercode
+
+- reportName: DGDEDemandRegisterReport
+  summary: Reports for Reconcillation of data in PT
+  version: 1.0.0
+  moduleName: rainmaker-pt
+  sourceColumns:
+  - name: propertyid
+    label: reports.pt.PropertyId
+    type: string
+    source: pt
+    total: false
+  - name: abasid
+    label: reports.pt.oldPropertyId
+    type: string
+    source: pt
+    total: false
+  - name: name
+    label: reports.pt.Owners
+    type: string
+    total: false
+    source: pt
+  - name: mobilenumber
+    label: reports.pt.mobile
+    type: string
+    total: false
+    source: pt    
+  - name: doorno
+    label: reports.pt.DoorNo
+    type: string
+    source: pt
+    total: false
+  - name: mohallaname
+    label: reports.pt.Mohallaname
+    type: string
+    source: pt
+    total: false
+  - name: propertytype
+    label: reports.pt.PropertyType
+    type: string
+    source: pt
+    total: false
+  - name: propertysubtype
+    label: reports.pt.Propertysubtype
+    type: string
+    source: pt
+    total: false
+  - name: usagetype
+    label: reports.pt.usage
+    type: string
+    source: pt
+    total: false
+  - name: subusagetype
+    label: reports.pt.usage
+    type: string
+    source: pt
+    total: false
+  - name: arv
+    label: reports.pt.currentarv
+    type: string
+    source: pt
+    total: true    
+  - name: housetax
+    label: reports.pt.housetax
+    type: string
+    source: pt
+    total: true
+  - name: watertax
+    label: reports.pt.watertax
+    type: string
+    source: pt
+    total: true
+  - name: conservancytax
+    label: reports.pt.conservancytax
+    type: string
+    source: pt
+    total: true
+  - name: educationtax
+    label: reports.pt.educationtax
+    type: string
+    source: pt
+    total: true  
+  - name: penalty
+    label: reports.pt.penaltytax
+    type: string
+    source: pt
+    total: true
+  - name: rebate
+    label: reports.pt.rebate
+    type: string
+    source: pt
+    total: true
+  - name: interest
+    label: reports.pt.interest
+    type: string
+    source: pt
+    total: true  
+  - name: totaltax
+    label: reports.pt.totaltax
+    type: string
+    source: pt
+    total: true
+  - name: totalcollected
+    label: reports.pt.totalcollected
+    type: string
+    source: pt
+    total: true
+  searchParams:
+  - name: fromDate
+    label: reports.pt.fromDate
+    type: epoch
+    source: pt
+    isMandatory: false
+    searchClause: AND demand.createddate >= $fromDate
+  - name: toDate
+    label: reports.pt.toDate
+    type: epoch
+    source: pt
+    isMandatory: false
+    searchClause: AND demand.createddate <= $toDate
+  - name: Wardname
+    label: WardName
+    type: singlevaluelist
+    pattern: http://egov-location:8080/egov-location/location/v11/boundarys/_search?hierarchyTypeCode=REVENUE&boundaryType=Block&tenantId=$tenantid|$.TenantBoundary[*].boundary[*].code|$.TenantBoundary[*].boundary[*].name
+    source: pt
+    wrapper: true
+    isMandatory: false
+    searchClause: AND addr.locality = $Wardname
+  query: | 
+    select initcap(split_part(demand.tenantid, '.', 2)) as tenantid,
+    demand.consumercode as propertyid,pt.oldpropertyid as abasid,
+    initcap(split_part(pt.propertytype, '.', 1)) as propertytype,
+    initcap(split_part(pt.propertytype, '.', 2)) as propertysubtype,
+    initcap(split_part(ptunit.usagecategory, '.', 1)) as usagetype,
+    initcap(split_part(ptunit.usagecategory, '.', 2)) as subusagetype,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_INTEREST%' THEN demanddetail.taxamount ELSE 0 END) as interest,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_PENALTY%' THEN demanddetail.taxamount ELSE 0 END) as penalty,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_REBATE%' THEN demanddetail.taxamount ELSE 0 END) as rebate,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_HOUSE_TAX' THEN demanddetail.taxamount ELSE 0 END) as housetax ,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_WATER_TAX'  THEN demanddetail.taxamount ELSE 0 END) as watertax ,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN demanddetail.taxamount ELSE 0 END) as conservancytax ,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_TAX' THEN demanddetail.taxamount ELSE 0 END) as educationtax,
+    (SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_INTEREST' THEN demanddetail.taxamount ELSE 0 END)  + SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_PENALTY%' THEN demanddetail.taxamount ELSE 0 END) + SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_REBATE%' THEN demanddetail.taxamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_HOUSE_TAX' THEN demanddetail.taxamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_WATER_TAX' THEN demanddetail.taxamount ELSE 0 END)  +SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN demanddetail.taxamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN demanddetail.taxamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_TAX' THEN demanddetail.taxamount ELSE 0 END)) as totaltax,
+    (SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_INTEREST' THEN demanddetail.collectionamount ELSE 0 END)  + SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_PENALTY%' THEN demanddetail.collectionamount ELSE 0 END) + SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_REBATE%' THEN demanddetail.collectionamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_HOUSE_TAX' THEN demanddetail.collectionamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_WATER_TAX' THEN demanddetail.collectionamount ELSE 0 END)  +SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN demanddetail.collectionamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN demanddetail.collectionamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_TAX' THEN demanddetail.collectionamount ELSE 0 END)) as totalcollection,
+    ptunit.arv as arv,
+    msg.message as mohallaname,
+    addr.doorno as doorno,
+    eu.name as name,
+    eu.mobilenumber as mobilenumber
+    from egbs_demand_v1 demand,
+    egbs_demanddetail_v1 demanddetail,
+    eg_pt_address addr,
+    eg_pt_unit ptunit,
+    eg_user eu,
+    message msg,
+    eg_pt_property pt 
+    where demanddetail.demandid= demand.id and
+    pt.propertyid=demand.consumercode and
+    addr.propertyid=pt.id and
+    ptunit.propertyid = pt.id and
+    RIGHT(msg.code,8)=addr.locality and
+    msg.tenantid=demand.tenantid and
+    eu.uuid=(select poo.userid from eg_pt_owner poo where poo.propertyid=(select pdd.id from eg_pt_property pdd where pdd.propertyid= demand.consumercode fetch first 1 row only) fetch first 1 row only) and msg.locale='en_IN' and
+    demand.tenantid != 'pb.testing'  and
+    demand.businessservice ='PT' 
+  groupby:  GROUP BY demand.tenantid,demand.consumercode,addr.doorno,msg.message,addr.doorno,eu.name,pt.oldpropertyid,pt.propertytype,ptunit.usagecategory,eu.mobilenumber, ptunit.arv
+  orderby:  ORDER BY demand.consumercode
