@@ -302,12 +302,12 @@ ReportDefinitions:
     source: pt
     total: true
   - name: totalamount
-    label: reports.pt.totalamount
+    label: PT_TOTAL_AMOUNT
     type: string
     source: pt
     total: true
   - name: totalamountpaid
-    label: reports.pt.totalamountpaid
+    label: PT_AMOUNT_PAID
     type: string
     source: pt
     total: true
@@ -322,7 +322,7 @@ ReportDefinitions:
     source: pt
     total: true
   - name: totalamountdue
-    label: reports.pt.totalamountdue
+    label: PT_TOTAL_DUES
     type: string
     source: pt
     total: true
@@ -490,12 +490,12 @@ ReportDefinitions:
     source: pt
     total: true
   - name: totalamount
-    label: reports.pt.totalamount
+    label: PT_TOTAL_AMOUNT
     type: string
     source: pt
     total: true  
   - name: totalamountpaid
-    label: reports.pt.totalamountpaid
+    label: PT_AMOUNT_PAID
     type: string
     source: pt
     total: true
@@ -510,7 +510,7 @@ ReportDefinitions:
     source: pt
     total: true
   - name: totalamountdue
-    label: reports.pt.totalamountdue
+    label: PT_TOTAL_DUES
     type: string
     source: pt
     total: true
@@ -545,7 +545,7 @@ ReportDefinitions:
     searchClause: AND financialyear = $financialyear
   query: |
     SELECT 
-      select initcap(split_part(pay.tenantid, '.', 2)) as tenantid, 
+      initcap(split_part(pay.tenantid, '.', 2)) as tenantid, 
       COUNT(*) AS totalassessments,
       SUM(bill.totalamount) AS totalamount, 
       SUM(pd.amountpaid) AS totalamountpaid,
@@ -572,7 +572,7 @@ ReportDefinitions:
     source: pt
     total: true
   - name: totalamountpaid
-    label: reports.pt.totalamountpaid
+    label: PT_AMOUNT_PAID
     type: string
     source: pt
     total: true
@@ -587,7 +587,7 @@ ReportDefinitions:
     source: pt
     total: true
   - name: totalamountdue
-    label: reports.pt.totalamountdue
+    label: PT_TOTAL_DUES
     type: string
     source: pt
     total: true
@@ -814,37 +814,37 @@ ReportDefinitions:
   moduleName: rainmaker-pt
   sourceColumns:
   - name: propertyid
-    label: reports.pt.PropertyId
+    label: reports.pt.propertyId
     type: string
     source: pt
     total: false
   - name: abasid
-    label: reports.pt.oldPropertyId
+    label: PT_EXISTING_PROPERTY_ID
     type: string
     source: pt
     total: false
   - name: name
-    label: reports.pt.Owners
+    label: PT_OWNER_NAME
     type: string
     total: false
     source: pt
   - name: mobilenumber
-    label: reports.pt.mobile
+    label: PT_COMMON_APPLICANT_MOBILE_NO_LABEL
     type: string
     total: false
     source: pt    
   - name: doorno
-    label: reports.pt.DoorNo
+    label: PT_COMMON_DOOR_NO_LABEL
     type: string
     source: pt
     total: false
   - name: mohallaname
-    label: reports.pt.Mohallaname
+    label: PT_PROPERTY_ADDRESS_MOHALLA
     type: string
     source: pt
     total: false
   - name: propertytype
-    label: reports.pt.PropertyType
+    label: PT_COMMON_PROPERTY_TYPE
     type: string
     source: pt
     total: false
@@ -854,12 +854,12 @@ ReportDefinitions:
     source: pt
     total: false
   - name: usagetype
-    label: reports.pt.usage
+    label: PT_COMMON_USAGE_TYPE
     type: string
     source: pt
     total: false
   - name: subusagetype
-    label: reports.pt.usage
+    label: PT_COMMON_SUB_USAGE_TYPE
     type: string
     source: pt
     total: false
@@ -874,22 +874,22 @@ ReportDefinitions:
     source: pt
     total: true
   - name: watertax
-    label: reports.pt.watertax
+    label: PT_WATER_TAX
     type: string
     source: pt
     total: true
   - name: conservancytax
-    label: reports.pt.conservancytax
+    label: PT_CONSERVANCY_TAX
     type: string
     source: pt
     total: true
   - name: educationtax
-    label: reports.pt.educationtax
+    label: PT_EDUCATION_TAX
     type: string
     source: pt
     total: true  
   - name: penalty
-    label: reports.pt.penaltytax
+    label:  reports.pt.penalty
     type: string
     source: pt
     total: true
@@ -904,12 +904,12 @@ ReportDefinitions:
     source: pt
     total: true  
   - name: totaltax
-    label: reports.pt.totaltax
+    label: PT_TOTAL_AMOUNT
     type: string
     source: pt
     total: true
   - name: totalcollected
-    label: reports.pt.totalcollected
+    label: PT_COLLECTED
     type: string
     source: pt
     total: true
