@@ -217,15 +217,18 @@
                       },
                       {
                         "variable": "currentAmount",
-                        "value": "currentDemand"
+                        "value": "currentDemand",
+                        "type":"setZero"
                       },
                       {
                         "variable": "arrearAmount",
-                        "value": "arrears"
+                        "value": "arrears",
+                        "type":"setZero"
                       },
                       {
                         "variable": "totalAmount",
-                        "value": "total"
+                        "value": "total",
+                        "type":"setZero"
                       }
                       ]
                 } 
