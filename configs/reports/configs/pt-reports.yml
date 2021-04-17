@@ -440,6 +440,14 @@ ReportDefinitions:
     source: pt
     isMandatory: false
     searchClause: AND pd.receiptdate <= $toDate
+  - name: ulb
+    label: PT_ULB_CITY
+    type: singlevaluelist
+    pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=tenant&masterName=tenants|$.MdmsRes.tenant.tenants.*.code|$.MdmsRes.tenant.tenants.*.name
+    source: pt
+    wrapper: true
+    isMandatory: false
+    searchClause: AND pay.tenantid = $ulb
   - name: paymentMode
     label: Payment Mode
     type: singlevaluelist
@@ -528,13 +536,13 @@ ReportDefinitions:
     isMandatory: false
     searchClause: AND receiptdate <= $toDate
   - name: ulb
-    label: ULB
+    label: PT_ULB_CITY
     type: singlevaluelist
     pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=tenant&masterName=tenants|$.MdmsRes.tenant.tenants.*.code|$.MdmsRes.tenant.tenants.*.name
     source: pt
     wrapper: true
     isMandatory: false
-    searchClause: AND tenantid = $ulb
+    searchClause: AND bill.tenantid = $ulb
   - name: financialyear
     label: Financial Year
     type: singlevaluelist
@@ -747,6 +755,14 @@ ReportDefinitions:
     source: pt
     isMandatory: false
     searchClause: AND pd.receiptdate <= $toDate
+  - name: ulb
+    label: PT_ULB_CITY
+    type: singlevaluelist
+    pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=tenant&masterName=tenants|$.MdmsRes.tenant.tenants.*.code|$.MdmsRes.tenant.tenants.*.name
+    source: pt
+    wrapper: true
+    isMandatory: false
+    searchClause: AND pay.tenantid = $ulb
   - name: paymentMode
     label: Payment Mode
     type: singlevaluelist
@@ -980,37 +996,37 @@ ReportDefinitions:
   moduleName: rainmaker-pt
   sourceColumns:
   - name: propertyid
-    label: reports.pt.PropertyId
+    label: reports.pt.propertyId
     type: string
     source: pt
     total: false
   - name: abasid
-    label: reports.pt.oldPropertyId
+    label: PT_EXISTING_PROPERTY_ID
     type: string
     source: pt
     total: false
   - name: name
-    label: reports.pt.Owners
+    label: PT_OWNER_NAME
     type: string
     total: false
     source: pt
   - name: mobilenumber
-    label: reports.pt.mobile
+    label: PT_COMMON_APPLICANT_MOBILE_NO_LABEL
     type: string
     total: false
     source: pt    
   - name: doorno
-    label: reports.pt.DoorNo
+    label: PT_COMMON_DOOR_NO_LABEL
     type: string
     source: pt
     total: false
   - name: mohallaname
-    label: reports.pt.Mohallaname
+    label: PT_PROPERTY_ADDRESS_MOHALLA
     type: string
     source: pt
     total: false
   - name: propertytype
-    label: reports.pt.PropertyType
+    label: PT_COMMON_PROPERTY_TYPE
     type: string
     source: pt
     total: false
@@ -1020,17 +1036,17 @@ ReportDefinitions:
     source: pt
     total: false
   - name: usagetype
-    label: reports.pt.usage
+    label: PT_COMMON_USAGE_TYPE
     type: string
     source: pt
     total: false
   - name: subusagetype
-    label: reports.pt.usage
+    label: PT_COMMON_SUB_USAGE_TYPE
     type: string
     source: pt
     total: false
   - name: arv
-    label: reports.pt.currentarv
+    label: PT_ASSESMENT_INFO_AREA_RENT
     type: string
     source: pt
     total: true    
@@ -1040,22 +1056,22 @@ ReportDefinitions:
     source: pt
     total: true
   - name: watertax
-    label: reports.pt.watertax
+    label: PT_WATER_TAX
     type: string
     source: pt
     total: true
   - name: conservancytax
-    label: reports.pt.conservancytax
+    label: PT_CONSERVANCY_TAX
     type: string
     source: pt
     total: true
   - name: educationtax
-    label: reports.pt.educationtax
+    label: PT_EDUCATION_TAX
     type: string
     source: pt
     total: true  
   - name: penalty
-    label: reports.pt.penaltytax
+    label:  reports.pt.penalty
     type: string
     source: pt
     total: true
@@ -1070,12 +1086,12 @@ ReportDefinitions:
     source: pt
     total: true  
   - name: totaltax
-    label: reports.pt.totaltax
+    label: PT_TOTAL_AMOUNT
     type: string
     source: pt
     total: true
   - name: totalcollected
-    label: reports.pt.totalcollected
+    label: PT_COLLECTED
     type: string
     source: pt
     total: true
@@ -1092,6 +1108,14 @@ ReportDefinitions:
     source: pt
     isMandatory: false
     searchClause: AND demand.createddate <= $toDate
+  - name: ulb
+    label: PT_ULB_CITY
+    type: singlevaluelist
+    pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=tenant&masterName=tenants|$.MdmsRes.tenant.tenants.*.code|$.MdmsRes.tenant.tenants.*.name
+    source: pt
+    wrapper: true
+    isMandatory: false
+    searchClause: AND pay.tenantid = $ulb
   - name: Wardname
     label: WardName
     type: singlevaluelist
