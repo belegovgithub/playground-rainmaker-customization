@@ -750,9 +750,9 @@
                "fontWeight": 500,
                "margin": [
                  3,
-                 2,
+                 1,
                  0,
-                 2
+                 1
                ]
              },
              "receipt-table-value-total": {
@@ -800,9 +800,9 @@
                "alignment": "left",
                "margin": [
                  3,
-                 2,
+                 1,
                  0,
-                 2
+                 1
                ]
              },
              "receipt-table-value-spcl": {
@@ -813,9 +813,9 @@
               "alignment": "left",
               "margin": [
                 3,
-                2,
+                1,
                 0,
-                2
+                1
               ]
             },
              "receipt-table-value2": {
