@@ -265,7 +265,7 @@
                 }
               },
               {
-                "variable": "important_messagews",
+                "variable": "important_message",
                 "value": {
                   "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_IMPORTANT_MESSAGE"
                 },
@@ -277,7 +277,7 @@
                 }
               },
               {
-                "variable": "payment_receivedws",
+                "variable": "payment_received",
                 "value": {
                   "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_PAYMENT_RECEIVED"
                 },
@@ -289,7 +289,7 @@
                 }
               },
               {
-                "variable": "this_documentws",
+                "variable": "this_document",
                 "value": {
                   "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_THIS_DOCUMENT"
                 },
@@ -301,7 +301,7 @@
                 }
               },
               {
-                "variable": "this_is_aws",
+                "variable": "this_is_a",
                 "value": {
                   "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_THIS_IS"
                 },
@@ -313,7 +313,7 @@
                 }
               },
               {
-                "variable": "assessment_paymentws",
+                "variable": "assessment_payment",
                 "value": {
                   "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_ASSESSSMENT_PAYMENT"
                 },
@@ -325,7 +325,7 @@
                 }
               },
               {
-                "variable": "please_depositws",
+                "variable": "please_deposit",
                 "value": {
                   "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_PLEASE_DEPOSIT"
                 },
@@ -337,7 +337,7 @@
                 }
               },
               {
-                "variable": "if_the_taxws",
+                "variable": "if_the_tax",
                 "value": {
                   "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_IF_THE_TAX"
                 },
