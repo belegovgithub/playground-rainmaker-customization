@@ -598,8 +598,8 @@
       },
       {
         "text": "{{acknowledgement_for}}",
-        "style": "footer-header",
-        "pageBreak": "before"
+        "style": "footer-header"
+       
       },
       {
         "style": "noc-table4",
@@ -956,9 +956,9 @@
       "footer-header": {
         "margin": [
           0,
-          15,
+          10,
           0,
-          -40
+          -20
         ],
         "bold": true,
         "color": "#000000",
