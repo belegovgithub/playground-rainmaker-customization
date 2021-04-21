@@ -4,6 +4,7 @@ ReportDefinitions:
   summary: Receipt Register
   version: 1.0.0
   moduleName: rainmaker-pt
+  decryptionPathId: ReceiptRegister
   sourceColumns:
   - name: tenantid
     label: PT_ULB_CITY 
@@ -651,6 +652,7 @@ ReportDefinitions:
   summary: Receipt Register
   version: 1.0.0
   moduleName: rainmaker-pt
+  decryptionPathId: DGDEReceiptRegister
   sourceColumns:
   - name: tenantid
     label: PT_ULB_CITY 
@@ -828,6 +830,7 @@ ReportDefinitions:
   summary: Reports for Reconcillation of data in PT
   version: 1.0.0
   moduleName: rainmaker-pt
+  decryptionPathId: DemandRegisterReport
   sourceColumns:
   - name: propertyid
     label: reports.pt.propertyId
@@ -994,6 +997,7 @@ ReportDefinitions:
   summary: Reports for Reconcillation of data in PT
   version: 1.0.0
   moduleName: rainmaker-pt
+  decryptionPathId: DGDEDemandRegisterReport
   sourceColumns:
   - name: propertyid
     label: reports.pt.propertyId
