@@ -5130,6 +5130,103 @@
   ],
   "_comment": " totalApplication is the chartId"
  },
+ "totalApplicationToday": {
+  "chartName": "DSS_TOTAL_APPLICATION",
+  "queries": [
+    {
+    "module": "ORS",
+    "indexName": "orsindex-v2",
+    "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"tenantId.keyword\":\"pb.testing\"}}],\"must\":{\"range\":{\"appointment_date\":{\"gt\":\"now-1d\/d\",\"lte\":\"now\"}}}}},\"aggs\":{\"Total Application100\":{\"sum\":{\"field\":\"successful_appointment\"}}}}}}",
+    "requestQueryMap": "{\"wardId\" : \"ward.name.keyword\", \r\n  \"district\" : \"tenantData.city.districtCode\", \r\n\"tenantId\" : \"tenantId.keyword\" \r\n}", 
+    "dateRefField": "appointment_date"
+    }
+  ],
+  "chartType": "metric", 
+  "valueType": "number",
+  "action": "",
+  "documentType": "_doc",
+  "drillChart": "none",
+  "aggregationPaths": [
+    "Total Application100"
+  ],
+  "_comment": ""
+},
+"maleAppointments": {
+  "chartName": "DSS_TOTAL_APPLICATION",
+  "queries": [
+    {
+    "module": "ORS",
+    "indexName": "orsindex-v2",
+    "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"Total Application100\":{\"sum\":{\"field\":\"male_successful_appointment\"}}}}}}",
+    "requestQueryMap": "{\"wardId\" : \"ward.name.keyword\", \r\n  \"district\" : \"tenantData.city.districtCode\", \r\n\"tenantId\" : \"tenantId.keyword\" \r\n}", 
+    "dateRefField": "appointment_date"
+    }
+  ],
+  "chartType": "metric", 
+  "valueType": "number",
+  "action": "",
+  "documentType": "_doc",
+  "drillChart": "none",
+  "aggregationPaths": [
+    "Total Application100"
+  ],
+  "_comment": ""
+},
+"femaleAppointments": {
+  "chartName": "DSS_TOTAL_APPLICATION",
+  "queries": [
+    {
+    "module": "ORS",
+    "indexName": "orsindex-v2",
+    "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"Total Application100\":{\"sum\":{\"field\":\"female_successful_appointment\"}}}}}}",
+    "requestQueryMap": "{\"wardId\" : \"ward.name.keyword\", \r\n  \"district\" : \"tenantData.city.districtCode\", \r\n\"tenantId\" : \"tenantId.keyword\" \r\n}", 
+    "dateRefField": "appointment_date"
+    }
+  ],
+  "chartType": "metric", 
+  "valueType": "number",
+  "action": "",
+  "documentType": "_doc",
+  "drillChart": "none",
+  "aggregationPaths": [
+    "Total Application100"
+  ],
+  "_comment": ""
+},
+
+ "appointmentsTimeLine": {
+  "chartName": "DSS_TL_CUMULATIVE_LICENSE_ISSUED",
+  "queries": [
+    {
+      "module": "ORS",
+      "indexName": "orsindex-v2",
+      "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"Appointments Male\":{\"date_histogram\":{\"field\":\"appointment_date\",\"interval\":\"day\"},\"aggs\":{\"Appointments Male\":{\"sum\":{\"field\":\"male_successful_appointment\"}}}}}}}}",
+      "requestQueryMap": "{\"wardId\" : \"ward.name.keyword\", \"tenantId\" : \"tenantData.code\" ,\"district\" : \"tenantData.city.districtCode\"}",
+      "dateRefField": "appointment_date"
+    },
+    {
+      "module": "ORS",
+      "indexName": "orsindex-v2",
+      "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"Appointments Female\":{\"date_histogram\":{\"field\":\"appointment_date\",\"interval\":\"day\"},\"aggs\":{\"Appointments Female\":{\"sum\":{\"field\":\"female_successful_appointment\"}}}}}}}}",
+      "requestQueryMap": "{\"wardId\" : \"ward.name.keyword\", \"tenantId\" : \"tenantData.code\" ,\"district\" : \"tenantData.city.districtCode\"}",
+      "dateRefField": "appointment_date"
+    }
+  ],
+  "chartType": "line",
+  "valueType": "number",
+  "action": "",
+  "documentType": "_doc",
+  "drillChart": "none",
+  "aggregationPaths": [
+    "Appointments Male",
+    "Appointments Female"
+  ],
+  "isCumulative": false,
+  "interval": "week",
+  "insight": {
+  },
+  "_comment": " Total Number of License having issued"
+},
  "xOpdStatusByTenant": {
   "chartName": "DSS_OPD_STATUS_BY_TENANT",
   "queries": [
