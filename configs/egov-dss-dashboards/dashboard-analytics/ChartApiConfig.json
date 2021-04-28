@@ -5235,7 +5235,7 @@
       "requestQueryMap": "{\"wardId\" : \"ward.name.keyword\", \"tenantId\" : \"tenantId.keyword\" }",
       "dateRefField": "appointment_date",
       "indexName": "orsindex-v2",
-      "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"ULBs \":{\"terms\":{\"field\":\"tenantId.keyword\",\"size\":200,\"order\":{\"_term\":\"asc\"}},\"aggs\":{\"Male Appointments\":{\"filter\":{\"terms\":{\"status_code.keyword\":[\"1\"]}},\"aggs\":{\"Male Appointments\":{\"sum\":{\"field\":\"male_successful_appointment\"}}}},\"Female Appointments\":{\"filter\":{\"terms\":{\"status_code.keyword\":[\"1\"]}},\"aggs\":{\"Female Appointments\":{\"sum\":{\"field\":\"female_successful_appointment\"}}}}}}}}}}"
+      "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"ULBs \":{\"terms\":{\"field\":\"tenantId.keyword\",\"size\":200,\"order\":{\"_term\":\"asc\"}},\"aggs\":{\"Appointments Male\":{\"filter\":{\"terms\":{\"status_code.keyword\":[\"1\"]}},\"aggs\":{\"Appointments Male\":{\"sum\":{\"field\":\"male_successful_appointment\"}}}},\"Appointments Female\":{\"filter\":{\"terms\":{\"status_code.keyword\":[\"1\"]}},\"aggs\":{\"Appointments Female\":{\"sum\":{\"field\":\"female_successful_appointment\"}}}}}}}}}}"
     }
   ],
   "filterKeys": [
@@ -5251,7 +5251,7 @@
     {
       "postAggregationTheory" : "",
       "actionName": "AdditiveComputedField",
-      "fields" : ["Male Appointments", "Female Appointments"],
+      "fields" : ["Appointments Male", "Appointments Female"],
       "newField" : "Total Appointments",
       "_comments": "fields are field names picked from its aggregation query to use post aggregation newField value with given new field name  "
     }
@@ -5268,7 +5268,7 @@
       "requestQueryMap": "{\"wardId\" : \"ward.name.keyword\", \"tenantId\" : \"tenantId.keyword\" }",
       "dateRefField": "appointment_date",
       "indexName": "orsindex-v2",
-      "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"ULBs \":{\"terms\":{\"field\":\"hospital_name.keyword\",\"size\":200,\"order\":{\"_term\":\"asc\"}},\"aggs\":{\"Male Appointments\":{\"filter\":{\"terms\":{\"status_code.keyword\":[\"1\"]}},\"aggs\":{\"Male Appointments\":{\"sum\":{\"field\":\"male_successful_appointment\"}}}},\"Female Appointments\":{\"filter\":{\"terms\":{\"status_code.keyword\":[\"1\"]}},\"aggs\":{\"Female Appointments\":{\"sum\":{\"field\":\"female_successful_appointment\"}}}}}}}}}}"
+      "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"ULBs \":{\"terms\":{\"field\":\"hospital_name.keyword\",\"size\":200,\"order\":{\"_term\":\"asc\"}},\"aggs\":{\"Appointments Male\":{\"filter\":{\"terms\":{\"status_code.keyword\":[\"1\"]}},\"aggs\":{\"Appointments Male\":{\"sum\":{\"field\":\"male_successful_appointment\"}}}},\"Appointments Female\":{\"filter\":{\"terms\":{\"status_code.keyword\":[\"1\"]}},\"aggs\":{\"Appointments Female\":{\"sum\":{\"field\":\"female_successful_appointment\"}}}}}}}}}}"
     }
   ],
   "filterKeys": [
@@ -5284,7 +5284,7 @@
     {
       "postAggregationTheory" : "",
       "actionName": "AdditiveComputedField",
-      "fields" : ["Male Appointments", "Female Appointments"],
+      "fields" : ["Appointments Male", "Appointments Female"],
       "newField" : "Total Appointments",
       "_comments": "fields are field names picked from its aggregation query to use post aggregation newField value with given new field name  "
     }
