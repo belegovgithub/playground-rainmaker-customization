@@ -2180,6 +2180,115 @@
       
       ]
     },
+    {
+      "name": "DSS_OPD",
+      "id": "ors",
+      "isActive": "",
+      "style": "linear",
+      "visualizations": [
+        {
+          "row": 6,
+          "name": "DSS_SERVICE",
+          "vizArray": [
+            {
+              "id": 341,
+              "name": "DSS_OVERVIEW",
+              "dimensions": {
+                "height": 350,
+                "width": 5
+              },
+              "vizType": "metric-collection",
+              "isCollapsible": false,
+              "label": "DSS_OVERVIEW",
+              "charts": [
+                {
+                  "id": "maleAppointments",
+                  "name": "DSS_TOTAL_APPOINTMENTS_MALE",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "femaleAppointments",
+                  "name": "DSS_TOTAL_APPOINTMENTS_FEMALE",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "totalApplication",
+                  "name": "DSS_TOTAL_APPOINTMENTS",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 342,
+              "name": "DSS_APPOINTMENTS_TIMELINE",
+              "dimensions": {
+                "height": 350,
+                "width": 7
+              },
+              "vizType": "chart",
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "appointmentsTimeLine",
+                  "name": "Monthly",
+                  "code": "",
+                  "chartType": "line",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 9,
+          "name": "DSS_SERVICE",
+          "vizArray": [
+            {
+              "id": 431,
+              "name": "DSS_OPD_STATUS_BY_TENANT",
+              "dimensions": {
+                "height": 350,
+                "width": 12
+              },
+              "vizType": "chart",
+              "label": "",
+              "noUnit": false,
+              "isCollapsible": true,
+              "charts": [
+                {
+                  "id": "xOpdStatusByTenant",
+                  "name": "DSS_OPD_BY_TENANT",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "Boundary"
+                },
+                {
+                  "id": "xOpdStatusByHospital",
+                  "name": "DSS_OPD_BY_HOSPITAL",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "Hospital"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
 
 {
       "name": "DSS_M_COLLECT_DASHBOARD",
@@ -3377,6 +3486,37 @@
                   "headers": []
                 }
               ]
+            },
+            {
+              "id": 151,
+              "name": "DSS_OPD",
+              "vizType": "module",
+              "moduleLevel": "ORS",
+              "ref": {
+                "url": "ors",
+                "logoUrl": "",
+                "type": "internal"
+              },
+              "label": "",
+              "removedCharts":[],
+              "charts": [
+                {
+                  "id": "totalHospitals",
+                  "name": "DSS_TOTAL_HOSPITALS",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "totalApplication",
+                  "name": "DSS_TOTAL_APPOINTMENTS",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
             }
           ]
         },
@@ -3811,6 +3951,37 @@
                 {
                   "id": "avgTransactions",
                   "name": "DSS_MC_AVG_DAILY_TRANSACTIONS",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 151,
+              "name": "DSS_OPD",
+              "vizType": "module",
+              "moduleLevel": "ors",
+              "ref": {
+                "url": "ors",
+                "logoUrl": "",
+                "type": "internal"
+              },
+              "label": "",
+              "removedCharts":[],
+              "charts": [
+                {
+                  "id": "totalHospitals",
+                  "name": "DSS_TOTAL_HOSPITALS",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "totalApplication",
+                  "name": "DSS_TOTAL_APPOINTMENTS",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",

@@ -2370,7 +2370,14 @@
     "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"pb.testing\"}},{\"terms\":{\"Data.applicationStatus.keyword\":[\"ACTIVE\"]}}]}},\"aggs\":{\"Total Application99\":{\"value_count\":{\"field\":\"Data.deathCertificateNo.keyword\"}}}}}}",
     "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\", \r\n  \"district\" : \"Data.tenantData.city.districtCode\", \r\n\"tenantId\" : \"Data.tenantId.keyword\" \r\n}", 
     "dateRefField": "Data.auditDetails.lastModifiedTime"
-  }
+   },
+   {
+    "module": "ORS",
+    "indexName": "orsindex-v2",
+    "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"Total Application99\":{\"sum\":{\"field\":\"successful_appointment\"}}}}}}",
+    "requestQueryMap": "{\"wardId\" : \"ward.name.keyword\", \r\n  \"district\" : \"tenantData.city.districtCode\", \r\n\"tenantId\" : \"tenantId.keyword\" \r\n}", 
+    "dateRefField": "appointment_date"
+   }
    ],
    "chartType": "metric", 
    "valueType": "number",
@@ -5102,6 +5109,93 @@
    },
    "_comment": ""
  },
+ "totalHospitals": {
+  "chartName": "DSS_TOTAL_APPLICATION",
+  "queries": [
+    {
+    "module": "ORS",
+    "indexName": "orsindex-v2",
+    "aggrQuery": "{\"aggs\":{\"totalHospitals\":{\"cardinality\":{\"field\":\"hospital_name.keyword\",\"precision_threshold\":100}}}}",
+    "requestQueryMap": "{\"wardId\" : \"ward.name.keyword\", \r\n  \"district\" : \"tenantData.city.districtCode\", \r\n\"tenantId\" : \"tenantId.keyword\" \r\n}", 
+    "dateRefField": "appointment_date"
+    }
+  ],
+  "chartType": "metric", 
+  "valueType": "number",
+  "action": "",
+  "documentType": "_doc",
+  "drillChart": "none",
+  "aggregationPaths": [
+    "totalHospitals"
+  ],
+  "_comment": " totalApplication is the chartId"
+ },
+ "xOpdStatusByTenant": {
+  "chartName": "DSS_OPD_STATUS_BY_TENANT",
+  "queries": [
+    {
+      "module": "ORS",
+      "requestQueryMap": "{\"wardId\" : \"ward.name.keyword\", \"tenantId\" : \"tenantId.keyword\" }",
+      "dateRefField": "appointment_date",
+      "indexName": "orsindex-v2",
+      "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"ULBs \":{\"terms\":{\"field\":\"tenantId.keyword\",\"size\":200,\"order\":{\"_term\":\"asc\"}},\"aggs\":{\"Male Appointments\":{\"filter\":{\"terms\":{\"status_code.keyword\":[\"1\"]}},\"aggs\":{\"Male Appointments\":{\"sum\":{\"field\":\"male_successful_appointment\"}}}},\"Female Appointments\":{\"filter\":{\"terms\":{\"status_code.keyword\":[\"1\"]}},\"aggs\":{\"Female Appointments\":{\"sum\":{\"field\":\"female_successful_appointment\"}}}}}}}}}}"
+    }
+  ],
+  "filterKeys": [
+    {"key": "tenantId", "column": "Boundary"}
+  ],
+  "chartType": "xtable",
+  "valueType": "number",
+  "drillChart": "xOpdStatusByHospital",
+  "plotLabel": "Boundary",
+  "excludedColumns": [],
+  "removedFields":[],
+  "computedFields": [
+    {
+      "postAggregationTheory" : "",
+      "actionName": "AdditiveComputedField",
+      "fields" : ["Male Appointments", "Female Appointments"],
+      "newField" : "Total Appointments",
+      "_comments": "fields are field names picked from its aggregation query to use post aggregation newField value with given new field name  "
+    }
+  ],
+  "insight": {
+  },
+  "_comment": ""
+},
+"xOpdStatusByHospital": {
+  "chartName": "DSS_OPD_STATUS_BY_HOSPITAL",
+  "queries": [
+    {
+      "module": "ORS",
+      "requestQueryMap": "{\"wardId\" : \"ward.name.keyword\", \"tenantId\" : \"tenantId.keyword\" }",
+      "dateRefField": "appointment_date",
+      "indexName": "orsindex-v2",
+      "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"ULBs \":{\"terms\":{\"field\":\"hospital_name.keyword\",\"size\":200,\"order\":{\"_term\":\"asc\"}},\"aggs\":{\"Male Appointments\":{\"filter\":{\"terms\":{\"status_code.keyword\":[\"1\"]}},\"aggs\":{\"Male Appointments\":{\"sum\":{\"field\":\"male_successful_appointment\"}}}},\"Female Appointments\":{\"filter\":{\"terms\":{\"status_code.keyword\":[\"1\"]}},\"aggs\":{\"Female Appointments\":{\"sum\":{\"field\":\"female_successful_appointment\"}}}}}}}}}}"
+    }
+  ],
+  "filterKeys": [
+    {"key": "hospital_name", "column": "Hospital"}
+  ],
+  "chartType": "xtable",
+  "valueType": "number",
+  "drillChart": "none",
+  "plotLabel": "Hospital",
+  "excludedColumns": [],
+  "removedFields":[],
+  "computedFields": [
+    {
+      "postAggregationTheory" : "",
+      "actionName": "AdditiveComputedField",
+      "fields" : ["Male Appointments", "Female Appointments"],
+      "newField" : "Total Appointments",
+      "_comments": "fields are field names picked from its aggregation query to use post aggregation newField value with given new field name  "
+    }
+  ],
+  "insight": {
+  },
+  "_comment": ""
+},
  "_comment": "PGR NON-COLLECTION CHARTS",
  "completionRate": {
    "chartName": "DSS_PGR_COMPLETION_RATE",

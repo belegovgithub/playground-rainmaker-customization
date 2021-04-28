@@ -48,6 +48,9 @@
           "id": "death"
         },
         {
+          "id": "ors"
+        },
+        {
           "id": "citizen-home"
         },
         {
@@ -79,6 +82,9 @@
         },
         {
           "id": "citizen-home-death"
+        },
+        {
+          "id": "citizen-home-ors"
         }
       ]
     },
@@ -122,8 +128,11 @@
         {
           "id": "ulb-lease"
         },
-                {
+        {
           "id": "citizen-home"
+        },
+        {
+          "id": "ulb-ors"
         }
       ]
     }
