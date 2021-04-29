@@ -70,13 +70,26 @@
                 "variable": "waterSource",
                 "value": {
                   "path": "$.waterSource"
-                }
+                },
+                "type": "splitString",
+                  "localisation":{
+                    "required":true,
+                    "prefix":"WS_SERVICES_MASTERS_WATERSOURCE",   
+                    "module":"rainmaker-ws",
+                    "isCategoryRequired":true
+                 }
               },
               {
                 "variable": "waterSubSource",
                 "value": {
-                  "path": "$.waterSubSource"
-                }
+                  "path": "$.waterSource"
+                },
+                  "localisation":{
+                    "required":true,
+                    "prefix":"WS_SERVICES_MASTERS_WATERSOURCE_BULKSUPPLY",   
+                    "module":"rainmaker-ws",
+                    "isMainTypeRequired":true
+                 }
               },
               {
                 "variable": "propertyType",
