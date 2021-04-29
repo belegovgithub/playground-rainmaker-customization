@@ -48,7 +48,13 @@
           "id": "death"
         },
         {
+          "id": "ors"
+        },
+        {
           "id": "citizen-home"
+        },
+        {
+          "id": "citizen-home-propertytax"
         },
         {
           "id": "citizen-home-mCollect"
@@ -76,6 +82,9 @@
         },
         {
           "id": "citizen-home-death"
+        },
+        {
+          "id": "citizen-home-ors"
         }
       ]
     },
@@ -90,7 +99,7 @@
           "id": "ulb-pgr"
         },
         {
-          "id": "ulb-propertyTax"
+          "id": "ulb-propertytax"
         },
         {
           "id": "ulb-tradeLicense"
@@ -119,8 +128,11 @@
         {
           "id": "ulb-lease"
         },
-                {
+        {
           "id": "citizen-home"
+        },
+        {
+          "id": "ulb-ors"
         }
       ]
     }
