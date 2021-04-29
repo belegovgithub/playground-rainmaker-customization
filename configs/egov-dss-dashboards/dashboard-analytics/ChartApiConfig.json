@@ -5247,6 +5247,8 @@
   "plotLabel": "Boundary",
   "excludedColumns": [],
   "removedFields":[],
+  "forceFormat":"number",
+  "_comment": "forceFormat is used to force the datatype of returned values to amount/number/percentage",
   "computedFields": [
     {
       "postAggregationTheory" : "",
@@ -5257,8 +5259,7 @@
     }
   ],
   "insight": {
-  },
-  "_comment": ""
+  }
 },
 "xOpdStatusByHospital": {
   "chartName": "DSS_OPD_STATUS_BY_HOSPITAL",
@@ -5280,6 +5281,8 @@
   "plotLabel": "Hospital",
   "excludedColumns": [],
   "removedFields":[],
+  "forceFormat":"number",
+  "_comment": "forceFormat is used to force the datatype of returned values to amount/number/percentage",
   "computedFields": [
     {
       "postAggregationTheory" : "",
@@ -5290,10 +5293,8 @@
     }
   ],
   "insight": {
-  },
-  "_comment": ""
+  }
 },
- "_comment": "PGR NON-COLLECTION CHARTS",
  "completionRate": {
    "chartName": "DSS_PGR_COMPLETION_RATE",
    "queries": [
