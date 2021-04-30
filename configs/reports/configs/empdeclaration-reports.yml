@@ -1,0 +1,28 @@
+ReportDefinitions:
+  - reportName: DGDELevelDeclarationStatusReport
+    summary: List of Declarations taken by Employee
+    version: 1.0.0
+    moduleName: rainmaker-empdeclaration
+    sourceColumns:
+    - name: tenantid
+      type: string
+      source: empdeclaration
+      total: false
+    - name: declaredon
+      type: string
+      source: empdeclaration
+      total: false
+    - name: agreed
+      type: string
+      source: empdeclaration
+      total: false
+    - name: startdate
+      type: string
+      source: empdeclaration
+      total: false
+    - name: endddate
+      type: string
+      source: empdeclaration
+      total: false      
+    query: select (select us.tenantid from eg_user us where us.uuid=emp.declaredby) , emp.* from eg_emp_declaration_dtls emp
+    orderby: order by tenantid,declaredon
