@@ -2373,7 +2373,7 @@
    },
    {
     "module": "ORS",
-    "indexName": "orsindex-v2",
+    "indexName": "orsindex-v1",
     "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"Total Application99\":{\"sum\":{\"field\":\"successful_appointment\"}}}}}}",
     "requestQueryMap": "{\"wardId\" : \"ward.name.keyword\", \r\n  \"district\" : \"tenantData.city.districtCode\", \r\n\"tenantId\" : \"tenantId.keyword\" \r\n}", 
     "dateRefField": "appointment_date"
@@ -5114,7 +5114,7 @@
   "queries": [
     {
     "module": "ORS",
-    "indexName": "orsindex-v2",
+    "indexName": "orsindex-v1",
     "aggrQuery": "{\"aggs\":{\"totalHospitals\":{\"cardinality\":{\"field\":\"hospital_name.keyword\",\"precision_threshold\":100}}}}",
     "requestQueryMap": "{\"wardId\" : \"ward.name.keyword\", \r\n  \"district\" : \"tenantData.city.districtCode\", \r\n\"tenantId\" : \"tenantId.keyword\" \r\n}", 
     "dateRefField": "appointment_date"
@@ -5135,7 +5135,7 @@
   "queries": [
     {
     "module": "ORS",
-    "indexName": "orsindex-v2",
+    "indexName": "orsindex-v1",
     "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"tenantId.keyword\":\"pb.testing\"}}],\"must\":{\"range\":{\"appointment_date\":{\"gt\":\"now-1d\/d\",\"lte\":\"now\"}}}}},\"aggs\":{\"Total Application100\":{\"sum\":{\"field\":\"successful_appointment\"}}}}}}",
     "requestQueryMap": "{\"wardId\" : \"ward.name.keyword\", \r\n  \"district\" : \"tenantData.city.districtCode\", \r\n\"tenantId\" : \"tenantId.keyword\" \r\n}", 
     "dateRefField": "appointment_date"
@@ -5156,7 +5156,7 @@
   "queries": [
     {
     "module": "ORS",
-    "indexName": "orsindex-v2",
+    "indexName": "orsindex-v1",
     "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"Total Application100\":{\"sum\":{\"field\":\"male_successful_appointment\"}}}}}}",
     "requestQueryMap": "{\"wardId\" : \"ward.name.keyword\", \r\n  \"district\" : \"tenantData.city.districtCode\", \r\n\"tenantId\" : \"tenantId.keyword\" \r\n}", 
     "dateRefField": "appointment_date"
@@ -5177,7 +5177,7 @@
   "queries": [
     {
     "module": "ORS",
-    "indexName": "orsindex-v2",
+    "indexName": "orsindex-v1",
     "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"Total Application100\":{\"sum\":{\"field\":\"female_successful_appointment\"}}}}}}",
     "requestQueryMap": "{\"wardId\" : \"ward.name.keyword\", \r\n  \"district\" : \"tenantData.city.districtCode\", \r\n\"tenantId\" : \"tenantId.keyword\" \r\n}", 
     "dateRefField": "appointment_date"
@@ -5199,14 +5199,14 @@
   "queries": [
     {
       "module": "ORS",
-      "indexName": "orsindex-v2",
+      "indexName": "orsindex-v1",
       "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"Appointments Male\":{\"date_histogram\":{\"field\":\"appointment_date\",\"interval\":\"day\"},\"aggs\":{\"Appointments Male\":{\"sum\":{\"field\":\"male_successful_appointment\"}}}}}}}}",
       "requestQueryMap": "{\"wardId\" : \"ward.name.keyword\", \"tenantId\" : \"tenantData.code\" ,\"district\" : \"tenantData.city.districtCode\"}",
       "dateRefField": "appointment_date"
     },
     {
       "module": "ORS",
-      "indexName": "orsindex-v2",
+      "indexName": "orsindex-v1",
       "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"Appointments Female\":{\"date_histogram\":{\"field\":\"appointment_date\",\"interval\":\"day\"},\"aggs\":{\"Appointments Female\":{\"sum\":{\"field\":\"female_successful_appointment\"}}}}}}}}",
       "requestQueryMap": "{\"wardId\" : \"ward.name.keyword\", \"tenantId\" : \"tenantData.code\" ,\"district\" : \"tenantData.city.districtCode\"}",
       "dateRefField": "appointment_date"
@@ -5234,7 +5234,7 @@
       "module": "ORS",
       "requestQueryMap": "{\"wardId\" : \"ward.name.keyword\", \"tenantId\" : \"tenantId.keyword\" }",
       "dateRefField": "appointment_date",
-      "indexName": "orsindex-v2",
+      "indexName": "orsindex-v1",
       "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"ULBs \":{\"terms\":{\"field\":\"tenantId.keyword\",\"size\":200,\"order\":{\"_term\":\"asc\"}},\"aggs\":{\"Appointments Male\":{\"filter\":{\"terms\":{\"status_code.keyword\":[\"1\"]}},\"aggs\":{\"Appointments Male\":{\"sum\":{\"field\":\"male_successful_appointment\"}}}},\"Appointments Female\":{\"filter\":{\"terms\":{\"status_code.keyword\":[\"1\"]}},\"aggs\":{\"Appointments Female\":{\"sum\":{\"field\":\"female_successful_appointment\"}}}}}}}}}}"
     }
   ],
@@ -5268,7 +5268,7 @@
       "module": "ORS",
       "requestQueryMap": "{\"wardId\" : \"ward.name.keyword\", \"tenantId\" : \"tenantId.keyword\" }",
       "dateRefField": "appointment_date",
-      "indexName": "orsindex-v2",
+      "indexName": "orsindex-v1",
       "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"ULBs \":{\"terms\":{\"field\":\"hospital_name.keyword\",\"size\":200,\"order\":{\"_term\":\"asc\"}},\"aggs\":{\"Appointments Male\":{\"filter\":{\"terms\":{\"status_code.keyword\":[\"1\"]}},\"aggs\":{\"Appointments Male\":{\"sum\":{\"field\":\"male_successful_appointment\"}}}},\"Appointments Female\":{\"filter\":{\"terms\":{\"status_code.keyword\":[\"1\"]}},\"aggs\":{\"Appointments Female\":{\"sum\":{\"field\":\"female_successful_appointment\"}}}}}}}}}}"
     }
   ],
