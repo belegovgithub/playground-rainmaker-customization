@@ -694,7 +694,7 @@
             "qrcodeConfig": [
               {
                   "variable": "qr_code_image",
-                  "value":"Owner Name : {{ownerName}},Mobile no : {{ownerMobileNumber}},Consumer No: {{consumerNo}}, Service: {{water_label}}, meter Id: {{meterID}}, Property Id: {{propertyID}}, Billing Period: {{fromPeriod}} to {{toPeriod}}"
+                  "value":"Owner Name : {{ownerName}},Mobile no : {{ownerMobileNumber}},Consumer No: {{consumerNo}}, Service: {{water_label}}, meter Id: {{meterID}}, Property Id: {{propertyID}}"
               }
             ]
         }
