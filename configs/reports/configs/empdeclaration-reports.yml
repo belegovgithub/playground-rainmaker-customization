@@ -29,5 +29,5 @@ ReportDefinitions:
       type: string
       source: empdeclaration
       total: false      
-    query: select (select initcap(split_part(us.tenantid, '.', 2)) from eg_user us where us.uuid=emp.declaredby) , To_char(emp.declaredon,'DD/MM/YYYY') , To_char(emp.startdate,'DD/MM/YYYY') , emp.agreed , To_char(emp.endddate,'DD/MM/YYYY') from eg_emp_declaration_dtls emp
+    query: select (select initcap(split_part(us.tenantid, '.', 2)) from eg_user us where us.uuid=emp.declaredby) as tenantid, To_char(emp.declaredon,'DD/MM/YYYY') , To_char(emp.startdate,'DD/MM/YYYY') , emp.agreed , To_char(emp.endddate,'DD/MM/YYYY') from eg_emp_declaration_dtls emp
     orderby: order by tenantid,declaredon
