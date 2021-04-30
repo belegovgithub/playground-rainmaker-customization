@@ -5,24 +5,29 @@ ReportDefinitions:
     moduleName: rainmaker-empdeclaration
     sourceColumns:
     - name: tenantid
+      label: EMP_DECL_TENANTID
       type: string
       source: empdeclaration
       total: false
     - name: declaredon
+      label: EMP_DECL_DECLAREDON
       type: string
       source: empdeclaration
       total: false
     - name: agreed
+      label: EMP_DECL_AGREED
       type: string
       source: empdeclaration
       total: false
     - name: startdate
+      label: EMP_DECL_STARTDATE
       type: string
       source: empdeclaration
       total: false
     - name: endddate
+      label: EMP_DECL_ENDDDATE
       type: string
       source: empdeclaration
       total: false      
-    query: select (select us.tenantid from eg_user us where us.uuid=emp.declaredby) , emp.* from eg_emp_declaration_dtls emp
+    query: select (select initcap(split_part(us.tenantid, '.', 2)) from eg_user us where us.uuid=emp.declaredby) , To_char(emp.declaredon,'DD/MM/YYYY') , To_char(emp.startdate,'DD/MM/YYYY') , emp.agreed , To_char(emp.endddate,'DD/MM/YYYY') from eg_emp_declaration_dtls emp
     orderby: order by tenantid,declaredon
