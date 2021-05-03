@@ -195,6 +195,33 @@
           "expression": "applicationNo"
         }
       ]
+    },
+    {
+      "id": "8",
+      "domain": "BIRTH_CERT",
+      "indexName": "birth-cert-v1",
+      "documentType": "",
+      "query": "{\"query\":{\"bool\":{\"must\":[{\"match_phrase\":{\"Data.birthCertificateNo\":\"value\"}}]}}}",
+      "targetReferences": [
+        {
+          "fieldName": "birthCertificateNo",
+          "argument": "Data.birthCertificateNo",
+          "dataType": "String",
+          "value": "$value",
+          "seperator": " ",
+          "expression": "birthCertificateNo"
+        }
+      ],
+      "sourceReferences": [
+        {
+          "fieldName": "consumerCode",
+          "argument": "Data.birthCertificateNo",
+          "dataType": "String",
+          "value": "$value",
+          "seperator": " ",
+          "expression": "birthCertificateNo"
+        }
+      ]
     }
   ]
 }

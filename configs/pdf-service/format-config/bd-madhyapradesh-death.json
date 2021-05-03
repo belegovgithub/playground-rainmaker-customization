@@ -1,0 +1,671 @@
+{
+  "key": "bd-madhyapradesh-death",
+  "config": {
+    "defaultStyle": {
+      "font": "Cambay"
+    },
+    "watermark": {
+      "text": "BEL UAT BEL UAT",
+      "color": "gery",
+      "opacity": 0.1,
+      "bold": true,
+      "italics": false
+    },
+    "content": [
+      {
+        "style": "ws-head",
+        "table": {
+          "widths": ["*"],
+          "body": [
+            [
+              {
+                "image": "{{emblemImage}}",
+                "width": 35,
+                "height": 45,
+                "style": "appendix-header-emblem"
+              }
+            ]
+          ]
+        },
+        "layout": "noBorders"
+      },
+      {
+        "style": "ws-head",
+        "table": {
+          "widths": ["20%", "60%", "20%"],
+          "body": [
+            [
+              {
+                "stack": [
+                  {
+                    "text": "सं. 1",
+                    "style": "appendix-header-serialNo"
+                  },
+                  {
+                    "text": "No .1",
+                    "style": "appendix-header-serialNo"
+                  },
+                  {
+                    "image": "{{govtImage}}",
+                    "width": 50,
+                    "height": 50.25,
+                    "margin": [-10, 0, 0, 0]
+                  }
+                ]
+              },
+              {
+                "stack": [
+                  {
+                    "text": "मध्य प्रदेश सरकार",
+                    "style": "appendix-header-body"
+                  },
+                  {
+                    "text": "GOVERNMENT OF MADHYA PRADESH",
+                    "style": "appendix-header-body",
+                    "margin": [0, 0, 0, 0]
+                  },
+                  {
+                    "text": "योजना, आर्थिक एवं सांख्यिकी विभाग",
+                    "style": "appendix-header-body"
+                  },
+                  {
+                    "text": "DEPARTMENT OF PLANNING, ECONOMICS & STATISTICS",
+                    "style": "appendix-header-body"
+                  },
+                  {
+                    "text": "{{cb_label_name_multiLang}} {{cb-name-multilang}} कैन्ट",
+                    "style": "appendix-header-body",
+                    "margin": [0, 1, 0, -2]
+                  },
+                  {
+                    "text": "CANTONMENT BOARD {{cb-name}} CANTT",
+                    "style": "appendix-header-body"
+                  }
+                ]
+              },
+              {
+                "stack": [
+                  {
+                    "text": "प्रपत्र-6",
+                    "style": "appendix-header-formNo"
+                  },
+                  {
+                    "text": "FORM-6",
+                    "style": "appendix-header-formNo"
+                  },
+                  {
+                    "image": "{{form5}}",
+                    "width": 50,
+                    "height": 50.25,
+                    "margin": [10, 0, 0, 0]
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        "layout": "noBorders"
+      },
+      {
+        "style": "ws-head",
+        "table": {
+          "widths": ["*"],
+          "body": [
+            [
+              {
+                "text": "मृत्यु प्रमाण पत्र",
+                "style": "title-header_multiLang"
+              }
+            ]
+          ]
+        },
+        "layout": "noBorders"
+      },
+      {
+        "style": "ws-head",
+        "table": {
+          "widths": ["*"],
+          "body": [
+            [
+              {
+                "text": "DEATH CERTIFICATE",
+                "style": "title-header"
+              }
+            ]
+          ]
+        },
+        "layout": "noBorders"
+      },
+      {
+        "style": "ws-head",
+        "table": {
+          "widths": ["*"],
+          "body": [
+            [
+              {
+                "columns": [
+                  {
+                    "text": "(जन्म मृत्यु रजिस्ट्रीकरण अधिनियम,1969 की धारा 12/17 तथा मध्य प्रदेश जन्म मृत्यु रजिस्ट्रीकरण नियम, 1999  के  नियम 8/13 के अंतर्गत, जारी किया गया)",
+                    "style": "rule-header_multiLang"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": "(ISSUED  UNDER SECTION  12/17 OF THE REGISTRATION OF BIRTHS & DEATHS ACT, 1969  AND RULE 8/13  OF THE MADHYA PRADESH REGISTRATION OF BIRTHS & DEATHS RULES 1999)",
+                    "style": "rule-header"
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        "layout": "noBorders"
+      },
+      {
+        "style": "ws-head",
+        "table": {
+          "widths": ["*"],
+          "body": [
+            [
+              {
+                "columns": [
+                  {
+                    "text": "यह प्रमाणित किया जाता है निम्नलिखित सूचना मृत्यु के मूल अभिलेख से ली गई है जो कि छावनी परिषद {{cb-name-multilang}} कैन्ट तहसील {{block-name-multilang}} जिला {{dist-name-multilang}} राज्य/संघ प्रदेश मध्य प्रदेश, भारत के रजिस्टर मे उल्लिखित है ।",
+                    "style": "rule-body_multiLang"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": "THIS  IS TO CERTIFY THAT THE  FOLLOWING  INFORMATION  HAS BEEN  TAKEN FROM  THE  ORIGINAL RECORD OF DEATH WHICH  IS THE  REGISTER  FOR CANTONMENT BOARD {{cb-name}} CANTT OF TAHSIL/BLOCK {{block-name}} OF DISTRICT {{dist-name}} OF STATE/UNION TERRITORY MADHYA PRADESH, INDIA.",
+                    "style": "rule-body"
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        "layout": "noBorders"
+      },
+      {
+        "style": "ws-head",
+        "table": {
+          "widths": ["*"],
+          "body": [
+            [
+              {
+                "columns": [
+                  {
+                    "text": "मृतक का नाम / NAME OF DECEASED: {{name}}",
+                    "width": "59%",
+                    "style": "details-body"
+                  },
+                  {
+                    "text": " ",
+                    "width": "1%"
+                  },
+                  {
+                    "text": "{{gender_label_multiLang}} / SEX : {{gender}}",
+                    "style": "details-body"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": "आधार  नंबर  / AADHAAR NO: {{aadharno}}",
+                    "width": "59%",
+                    "style": "details-body"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": "मृत्यु की तिथि / DATE OF DEATH: {{dod}}",
+                    "width": "59%",
+                    "style": "details-body"
+                  },
+                  {
+                    "text": " ",
+                    "width": "1%"
+                  },
+                  {
+                    "text": "मृत्यु का स्थान / PLACE OF DEATH: {{placeOfDeath}}",
+                    "style": "details-body"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": "मृतक की उम्र /AGE OF DECEASED : {{age}}",
+                    "width": "59%",
+                    "style": "details-body"
+                  },
+                  {
+                    "text": " ",
+                    "width": "1%"
+                  },
+                  {
+                    "text": "पति / पत्नी का नाम/ NAME OF HUSBAND/WIFE: {{spouseName}}",
+                    "style": "details-body"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": " ",
+                    "width": "59%",
+                    "style": "details-body"
+                  },
+                  {
+                    "text": " ",
+                    "width": "1%"
+                  },
+                  {
+                    "text": "आधार  नंबर  / HUSBAND/WIFE  AADHAAR NO: {{spouceAadharNo}}",
+                   
+                    "style": "details-body"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": "{{mother_name_label_multiLang}} / NAME OF MOTHER: {{motherName}}",
+                    "width": "59%",
+                    "style": "details-body"
+                  },
+                  {
+                    "text": " ",
+                    "width": "1%"
+                  },
+                  {
+                    "text": "{{father_name_label_multiLang}} / NAME OF FATHER: {{fatherName}}",
+                    "style": "details-body"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": "आधार नंबर / MOTHER'S AADHAAR NO: {{motherUid}}",
+                    "width": "59%",
+                    "style": "details-body"
+                  },
+                  {
+                    "text": " ",
+                    "width": "1%"
+                  },
+                  {
+                    "text": "आधार नंबर / FATHER'S AADHAAR NO: {{fatherUid}}",
+                    "style": "details-body"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": "मृत्यु के समय मृतक का पता / ADDRESS OF THE DECEASED AT THE TIME OF DEATH: {{presentAddress}}",
+                    "width": "59%",
+                    "style": "details-body"
+                  },
+                  {
+                    "text": " ",
+                    "width": "1%"
+                  },
+                  {
+                    "text": "मृतक का स्थायी पता / PERMANENT ADDRESS OF DECEASED: {{permanentAddress}}",
+                    "style": "details-body"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": "{{registration_label_multiLang}} / REGISTRATION NO: {{registrationNo}}",
+                    "width": "59%",
+                    "style": "details-body"
+                  },
+                  {
+                    "text": " ",
+                    "width": "1%"
+                  },
+                  {
+                    "text": "{{registration_date_label_multiLang}} / DATE OF REGISTRATION: {{registration_date}}",
+                    "style": "details-body"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": "{{remarks_label_multiLang}} / REMARKS(IF ANY): {{remarks}}",
+                    "width": "59%",
+                    "style": "details-body"
+                  },
+                  {
+                    "text": " ",
+                    "width": "1%"
+                  },
+                  {
+                    "text": " ",
+                    "style": "details-body"
+                  }
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": "{{issue_date_label_multiLang}} / DATE OF ISSUE: {{issueDate}}",
+                    "width": "59%",
+                    "style": "details-body"
+                  },
+                  {
+                    "text": " ",
+                    "width": "1%"
+                  },
+                  {
+                    "stack":[
+                    {
+                      "text": "{{issuing_authority_label_multiLang}} / {{issuing_authority_label}}",
+                      "style": "details-body"
+                    } 
+                  ]
+                } 
+                ]
+              }
+            ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": " ",
+                    "width": "49%",
+                    "style": "details-body"
+                  },
+                  {
+                    "text": " ",
+                    "width": "1%"
+                  },
+                  {
+                    "stack":[
+                      {
+                        "text": "रजिस्ट्रार (जन्म एवं मृत्यु)",
+                        "style": "details-body"  
+                      },
+                      {
+                        "text": "REGISTRAR (BIRTH & DEATH)",
+                        "style": "details-body"
+                        
+                      },
+                      {
+                        "text": "{{cb_label_name_multiLang}} {{cb-name-multilang}} कैन्ट",
+                        "style": "details-body"
+                      },
+                      {
+                        "text": "CANTONMENT BOARD {{cb-name}} CANTT",
+                        "style": "details-body"
+                      }
+                  ],"alignment":"center"
+                } 
+                ]
+              }
+            ]
+          ]
+        },
+        "layout": "noBorders"
+      },
+      {
+        "style": "ws-head",
+        "table": {
+          "widths": ["*"],
+          "body": [
+            [
+              {
+                "image": "{{qr_code_image}}",
+                "width": 70,
+                "height": 70,
+                "style": "qr-code"
+              }
+            ]
+            
+          ]
+        },
+        "layout": "noBorders"
+      }  
+    ],
+    "footer": [
+      {
+        "text": "“THIS IS A COMPUTER GENERATED CERTIFICATE WHICH CONTAINS FACSIMILE SIGNATURE OF THE ISSUING AUTHORITY.”\n“THE GOVT. OF INDIA VIDE CIRCULAR NO. 1/12/2014-VS(CRS) DATED 27-JULY-2015 HAS APPROVED THIS CERTIFICATE AS A VALID LEGAL DOCUMENT FOR ALL OFFICIAL PURPOSES”\n“प्रत्‍येक जन्‍म एवं मृत्‍यु का पंजीकरण सुनिश्‍चित करें”/“ENSURE REGISTRATION OF EVERY BIRTH AND DEATH”",
+        "style": "instruction-body" 
+      }
+    ],
+    "styles": {
+      "pdf-header": {
+        "fillColor": "#F2F2F2",
+        "margin": [-70, -41, -81, 10]
+      },
+      "appendix-header": {
+        "color": "#000000",
+        "bold": true,
+        "fontSize": 9,
+        "fontWeight": 400,
+        "alignment": "center"
+      },
+      "appendix-header-emblem": {
+        "color": "#000000",
+        "alignment": "center",
+        "margin": [0, -30, 0, 0]
+      },
+      "appendix-header-serialNo": {
+        "color": "#000000",
+        "bold": false,
+        "fontSize": 8,
+        "fontWeight": 400,
+        "margin": [0, -5, 0, 0]
+      },
+      "appendix-header-formNo": {
+        "color": "#000000",
+        "bold": false,
+        "fontSize": 8,
+        "fontWeight": 400,
+        "margin": [20, -5, 0, 0]
+      },
+      "instruction-body": {
+        "color": "#000000",
+        "bold": false,
+        "fontSize": 7,
+        "fontWeight": 400,
+        "alignment": "center",
+        "margin": [0, -20, 0, 0]
+      },
+      "qr-code": {
+        "color": "#000000",
+        "alignment": "left",
+        "margin": [0, 0, 0, 0]
+      },
+      "title-header": {
+        "color": "#0c5e4b",
+        "bold": true,
+        "fontSize": 10,
+        "fontWeight": 400,
+        "alignment": "center",
+        "margin": [0, -10, 0, 0]
+      },
+      "title-header_multiLang": {
+        "color": "#0c5e4b",
+        "bold": true,
+        "fontSize": 10,
+        "fontWeight": 400,
+        "alignment": "center",
+        "margin": [0, 0, 0, 0]
+      },
+      "rule-header": {
+        "color": "#000000",
+        "bold": false,
+        "fontSize": 8,
+        "fontWeight": 400,
+        "margin": [0, 0, 0, 1]
+      },
+      "rule-header_multiLang": {
+        "color": "#000000",
+        "bold": false,
+        "fontSize": 9,
+        "fontWeight": 400,
+        "margin": [0, 0, 0, 0]
+      },
+      "rule-body": {
+        "color": "#000000",
+        "bold": false,
+        "fontSize": 8,
+        "fontWeight": 400,
+        "margin": [0, 0, 0, 0]
+      },
+      "rule-body_multiLang": {
+        "color": "#000000",
+        "bold": false,
+        "fontSize": 9,
+        "fontWeight": 400,
+        "margin": [0, 0, 0, 0]
+      },
+      "details-body": {
+        "color": "#000000",
+        "bold": false,
+        "fontSize": 8,
+        "fontWeight": 400,
+        "margin": [0, 2, 0, 0]
+      },
+      "appendix-header-body": {
+        "color": "#000080",
+        "bold": true,
+        "fontSize": 8,
+        "fontWeight": 400,
+        "alignment": "center"
+      },
+      "receipt-value-down-sub": {
+        "color": "#000000",
+        "bold": false,
+        "fontSize": 11,
+        "fontWeight": 400,
+        "alignment": "left",
+        "margin": [0, 0, 0, 5]
+      },
+      "receipt-value-down-rec": {
+        "color": "#000000",
+        "bold": false,
+        "fontSize": 13,
+        "fontWeight": 400,
+        "alignment": "left",
+        "margin": [0, 0, 0, 0]
+      },
+      "receipt-value-down": {
+        "color": "#000000",
+        "bold": false,
+        "fontSize": 13,
+        "fontWeight": 400,
+        "alignment": "left",
+        "margin": [-8, 0, 0, 5]
+      },
+      "pdf-application-no-value": {
+        "fontSize": 12,
+        "font": "Roboto",
+        "italics": true,
+        "margin": [-18, 8, 0, 0],
+        "color": "#484848"
+      },
+      "pdf-header-text": {
+        "color": "#484848",
+        "fontSize": 20,
+        "bold": true,
+        "letterSpacing": 0.74,
+        "margin": [0, 0, 0, 5]
+      },
+      "pdf-header-sub-text": {
+        "color": "#484848",
+        "fontSize": 15,
+        "letterSpacing": 0.6
+      },
+      "pdf-application-no": {
+        "fontSize": 12,
+        "bold": true,
+        "margin": [-18, 8, 0, 0],
+        "color": "#484848"
+      },
+      "pdf-card-title": {
+        "fontSize": 11,
+        "bold": true,
+        "margin": [-18, 16, 8, 8],
+        "color": "#484848",
+        "fontWeight": 500
+      },
+      "pdf-card-no-title": {
+        "fontSize": 11,
+        "bold": true,
+        "color": "#484848",
+        "fontWeight": 500
+      },
+      "pdf-table-card-white": {
+        "fillColor": "white",
+        "fontSize": 7,
+        "color": "#484848",
+        "margin": [-20, -2, -8, -8]
+      },
+      "pdf-table-card": {
+        "fillColor": "#F2F2F2",
+        "fontSize": 7,
+        "color": "#484848",
+        "margin": [-20, -2, -8, -8]
+      },
+      "pdf-card-key": {
+        "color": "rgba(0, 0, 0, 0.54)",
+        "fontSize": 8,
+        "margin": [0, 1, 0, 0]
+      },
+      "pdf-card-sub-header": {
+        "color": "rgba(0, 0, 0, 0.94)",
+        "fontSize": 9,
+        "bold": true,
+        "margin": [0, 3, 0, 0]
+      },
+      "pdf-card-value": {
+        "fontSize": 10,
+        "color": "rgba(0, 0, 0, 0.87)",
+        "margin": [0, 0, 0, 1]
+      },
+      "pdf-head-qr-code": {
+        "fillColor": "#F2F2F2",
+        "margin": [-70, -41, -81, 0]
+      }
+    }
+  }
+}

@@ -70,13 +70,26 @@
                 "variable": "waterSource",
                 "value": {
                   "path": "$.waterSource"
-                }
+                },
+                "type": "splitString",
+                  "localisation":{
+                    "required":true,
+                    "prefix":"WS_SERVICES_MASTERS_WATERSOURCE",   
+                    "module":"rainmaker-ws",
+                    "isCategoryRequired":true
+                 }
               },
               {
                 "variable": "waterSubSource",
                 "value": {
-                  "path": "$.waterSubSource"
-                }
+                  "path": "$.waterSource"
+                },
+                  "localisation":{
+                    "required":true,
+                    "prefix":"WS_SERVICES_MASTERS_WATERSOURCE_BULKSUPPLY",   
+                    "module":"rainmaker-ws",
+                    "isMainTypeRequired":true
+                 }
               },
               {
                 "variable": "propertyType",
@@ -681,7 +694,7 @@
             "qrcodeConfig": [
               {
                   "variable": "qr_code_image",
-                  "value":"Owner Name : {{ownerName}},Mobile no : {{ownerMobileNumber}},Consumer No: {{consumerNo}}, Service: {{water_label}}, meter Id: {{meterID}}, Property Id: {{propertyID}}, Billing Period: {{fromPeriod}} to {{toPeriod}}"
+                  "value":"Owner Name : {{ownerName}},Mobile no : {{ownerMobileNumber}},Consumer No: {{consumerNo}}, Service: {{water_label}}, meter Id: {{meterID}}, Property Id: {{propertyID}}"
               }
             ]
         }
