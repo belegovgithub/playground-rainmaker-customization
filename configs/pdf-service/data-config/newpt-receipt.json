@@ -269,6 +269,18 @@
                    }
                   },
                   {
+                    "variable": "branch_name",
+                    "value": {
+                      "path": "PDF_STATIC_LABEL_PT_RECEIPT_BRANCH_NAME_LABEL"
+                    },
+                    "type": "label",
+                    "localisation":{
+                      "required":true,
+                      "prefix": null,
+                      "module":"rainmaker-pdf"
+                   }
+                  },
+                  {
                     "variable": "amount_received_label",
                     "value": {
                       "path": "PDF_STATIC_LABEL_PT_RECEIPT_AMOUNT_RECEIVED_LABEL"
@@ -399,6 +411,18 @@
                     "module": "rainmaker-commonpay"
                  }
                 },
+                {
+                    "variable": "cantonment-board",
+                    "value": {
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_TLCERTIFICATE_MUNICIPAL_CORPORATION"
+                    },
+                    "type": "label",
+                    "localisation":{
+                      "required":true,
+                      "prefix": null,
+                      "module":"rainmaker-pdf"
+                   }
+                  },
                 {
                   "variable": "variable10",
                   "value": {
