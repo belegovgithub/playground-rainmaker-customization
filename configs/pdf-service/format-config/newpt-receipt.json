@@ -24,7 +24,7 @@
                     "stack": [
                       {
                         "text": "{{cb-name}} {{cantonment-board}}",
-                        "style": "pdf-title"
+                        "style": "pdf-header"
                       },
                       {
                         "text": "{{form-no}}",
@@ -274,6 +274,7 @@
               {
                 "text": "{{disclaimer}}",
                 "border": [true, false, false, false],
+                "fontSize":7,
                 "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"]
               },
               {
@@ -294,10 +295,12 @@
                     "text": "............................."
                   },
                   {
-                    "text": "{{signature_label}}"
+                    "text": "{{signature_label}}",
+                    "fontSize":7
                   },
                   {
-                    "text": "{{designation_label}}"
+                    "text": "{{designation_label}}",
+                    "fontSize":7
                   }
                 ],
                 "border": [false, false, true, true],
@@ -309,16 +312,23 @@
       }
     ],
     "styles": {
+      "pdf-header": {
+        "alignment": "center",
+        "fontSize":12
+      },
       "pdf-title": {
-        "alignment": "center"
+        "alignment": "center",
+        "fontSize":9
       },
       "pdf-label": {
         "bold": true,
         "fillColor": "#E6E6FA",
+        "fontSize":8,
         "border": [true, true, true, true]
       },
       "pdf-value": {
-        "border": [true, true, true, true]
+        "border": [true, true, true, true],
+        "fontSize":8
       }
     }
   }
