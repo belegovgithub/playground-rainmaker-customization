@@ -1,0 +1,325 @@
+{
+  "key": "newpt-receipt",
+  "config": {
+    "defaultStyle": {
+      "font": "Camby"
+    },
+    "watermark": {
+      "text": "BEL UAT BEL UAT",
+      "color": "gery",
+      "opacity": 0.1,
+      "bold": true,
+      "italics": false
+    },
+    "content": [
+      {
+        "style": "ws-head",
+        "table": {
+          "widths": ["*"],
+          "body": [
+            [
+              {
+                "columns": [
+                  {
+                    "stack": [
+                      {
+                        "text": "{{cb-name}} {{cantonment-board}}",
+                        "style": "pdf-title"
+                      },
+                      {
+                        "text": "{{form-no}}",
+                        "style": "pdf-title"
+                      },
+                      {
+                        "text": "{{receipt_voucher_label}}",
+                        "style": "pdf-title"
+                      },
+                      {
+                        "text": "{{rule_label}}",
+                        "style": "pdf-title"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        "layout": "noBorders",
+        "margin": [0, 20, 0, 20]
+      },
+      {
+        "style": "ws-head",
+        "table": {
+          "widths": ["15%", "85%"],
+          "body": [
+            [
+              {
+                "text": "{{receipt_no_label}}",
+                "style": "pdf-label",
+                "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"]
+              },
+              {
+                "text": "{{receipt_date_label}}",
+                "style": "pdf-label",
+                "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"]
+              }
+            ],
+            [
+              {
+                "text": "{{receiptNo}}",
+                "style": "pdf-value",
+                "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"]
+              },
+              {
+                "text": "{{receiptDate}}",
+                "style": "pdf-value",
+                "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"]
+              }
+            ],
+            [
+              {
+                "text": "{{received_from_label}}",
+                "style": "pdf-label",
+                "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"]
+              },
+              {
+                "text": "{{payerName}}",
+                "style": "pdf-value",
+                "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"]
+              }
+            ],
+            [
+              {
+                "text": "{{amount_label}}",
+                "style": "pdf-label",
+                "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"]
+              },
+              {
+                "text": "{{paidAmount}}",
+                "style": "pdf-value",
+                "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"]
+              }
+            ],
+            [
+              {
+                "text": "{{amount_words_label}}",
+                "style": "pdf-label",
+                "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"]
+              },
+              {
+                "text": "{{amountInWords}}",
+                "style": "pdf-value",
+                "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"]
+              }
+            ],
+            [
+              {
+                "text": "{{received_on}}",
+                "style": "pdf-label",
+                "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"]
+              },
+              {
+                "text": "{{account_receipt}}",
+                "style": "pdf-value",
+                "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"]
+              }
+            ]
+          ]
+        }
+      },
+      {
+        "style": "ws-head",
+        "table": {
+          "widths": ["16.2%", "10%", "10%", "10%", "30%", "23.8%"],
+          "body": [
+            [
+              {
+                "text": "{{mode_of_receipt}}",
+                "style": "pdf-label",
+                "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"]
+              },
+              {
+                "text": "{{amount_label}}",
+                "style": "pdf-label",
+                "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"]
+              },
+              {
+                "text": "{{cheque_no_label}}",
+                "style": "pdf-label",
+                "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"]
+              },
+              {
+                "text": "{{cheque_date_label}}",
+                "style": "pdf-label",
+                "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"]
+              },
+              {
+                "text": "{{bank_name_label}}",
+                "style": "pdf-label",
+                "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"]
+              },
+              {
+                "text": "{{amount_received_label}}",
+                "style": "pdf-label",
+                "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"]
+              }
+            ],
+            [
+              {
+                "text": "{{payment_mode}}",
+                "style": "pdf-value",
+                "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"]
+              },
+              {
+                "text": "{{paidAmount}}",
+                "style": "pdf-value",
+                "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"]
+              },
+              {
+                "text": " ",
+                "style": "pdf-value",
+                "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"]
+              },
+              {
+                "text": " ",
+                "style": "pdf-value",
+                "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"]
+              },
+              {
+                "text": " ",
+                "style": "pdf-value",
+                "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"]
+              },
+              {
+                "text": " ",
+                "style": "pdf-value",
+                "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"]
+              }
+            ]
+          ]
+        }
+      },
+      {
+        "style": "ws-head",
+        "table": {
+          "widths": ["16%", "9.5%", "21.7%", "29.5%", "23.4%"],
+          "body": [
+            [
+              {
+                "text": "{{refrence_no_label}}",
+                "style": "pdf-label",
+                "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"]
+              },
+              {
+                "text": "{{date_of_bill}}",
+                "style": "pdf-label",
+                "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"]
+              },
+              {
+                "text": "{{tax_head_details}}",
+                "style": "pdf-label",
+                "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"]
+              },
+              {
+                "text": "{{payable_amount}}",
+                "style": "pdf-label",
+                "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"]
+              },
+              {
+                "text": "{{amount_received}}",
+                "style": "pdf-label",
+                "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"]
+              }
+            ]
+          ]
+        }
+      },
+      {
+        "style": "ws-head",
+        "table": {
+          "widths": ["16%", "9.5%", "21.7%", "29.5%", "23.4%"],
+          "body": [
+            "{{#variable10}}[{\"text\": \"{{bill_no}}\",\"style\": \"pdf-value\", \"borderColor\": [\"#A9A9A9\", \"#A9A9A9\", \"#A9A9A9\", \"#A9A9A9\"]},{ \"text\": \"{{date_of_bill}}\", \"style\": \"pdf-value\", \"borderColor\": [\"#A9A9A9\", \"#A9A9A9\", \"#A9A9A9\", \"#A9A9A9\"]},{ \"text\": \"{{tax_head}}\", \"style\": \"pdf-value\",\"borderColor\": [\"#A9A9A9\", \"#A9A9A9\", \"#A9A9A9\", \"#A9A9A9\"]},{\"text\": \"{{amount_payable}}\",\"style\": \"pdf-value\",\"borderColor\": [\"#A9A9A9\", \"#A9A9A9\", \"#A9A9A9\", \"#A9A9A9\"]},{\"text\": \"{{amount_recieved}}\",\"style\": \"pdf-value\",\"borderColor\": [\"#A9A9A9\", \"#A9A9A9\", \"#A9A9A9\", \"#A9A9A9\"]}]{{/variable10}}"
+          ]
+        }
+      },
+      {
+        "style": "ws-head",
+        "table": {
+          "widths": ["78%", "22%"],
+          "body": [
+            [
+              {
+                "text": "{{total_label}}",
+                "style": "pdf-label",
+                "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"]
+              },
+              {
+                "text": "{{total}}",
+                "style": "pdf-label",
+                "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"]
+              }
+            ]
+          ]
+        }
+      },
+      {
+        "style": "ws-head",
+        "table": {
+          "widths": ["70%", "30%"],
+          "heights": [40, 50],
+          "body": [
+            [
+              {
+                "text": "{{disclaimer}}",
+                "border": [true, false, false, false],
+                "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"]
+              },
+              {
+                "text": " ",
+                "border": [false, false, true, false],
+                "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"]
+              }
+            ],
+            [
+              {
+                "text": " ",
+                "border": [true, false, false, true],
+                "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"]
+              },
+              {
+                "stack": [
+                  {
+                    "text": "............................."
+                  },
+                  {
+                    "text": "{{signature_label}}"
+                  },
+                  {
+                    "text": "{{designation_label}}"
+                  }
+                ],
+                "border": [false, false, true, true],
+                "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"]
+              }
+            ]
+          ]
+        }
+      }
+    ],
+    "styles": {
+      "pdf-title": {
+        "alignment": "center"
+      },
+      "pdf-label": {
+        "bold": true,
+        "fillColor": "#E6E6FA",
+        "border": [true, true, true, true]
+      },
+      "pdf-value": {
+        "border": [true, true, true, true]
+      }
+    }
+  }
+}
