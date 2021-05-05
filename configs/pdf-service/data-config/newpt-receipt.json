@@ -89,6 +89,31 @@
                   "type": "date"
                 },
                 {
+                  "variable": "G8ReceiptNo",
+                  "value": {
+                    "path": "$.paymentDetails[0].manualReceiptNumber"
+                  }
+                },
+                {
+                  "variable": "G8ReceiptDate",
+                  "value": {
+                    "path": "$.paymentDetails[0].manualReceiptDate"
+                  },
+                  "type": "date"
+                },
+                {
+                  "variable": "transactionID", 
+                  "value": {
+                    "path": "$.transactionNumber"
+                  }
+                },
+                {
+                  "variable": "consumerCode", 
+                  "value": {
+                    "path": "$.paymentDetails[0].bill.consumerCode"
+                  }
+                },
+                {
                     "variable": "form-no",
                     "value": {
                       "path": "PDF_STATIC_LABEL_PT_RECEIPT_FORM_NO"
@@ -104,6 +129,18 @@
                     "variable": "receipt_voucher_label",
                     "value": {
                       "path": "PDF_STATIC_LABEL_PT_RECEIPT_VOUCHER_LABEL"
+                    },
+                    "type": "label",
+                    "localisation":{
+                      "required":true,
+                      "prefix": null,
+                      "module":"rainmaker-pdf"
+                   }
+                  },
+                  {
+                    "variable": "payer_contact",
+                    "value": {
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_PAYER_CONTACT"
                     },
                     "type": "label",
                     "localisation":{
@@ -236,6 +273,42 @@
                     "variable": "cheque_no_label",
                     "value": {
                       "path": "PDF_STATIC_LABEL_PT_RECEIPT_CHEQUE_NO_LABEL"
+                    },
+                    "type": "label",
+                    "localisation":{
+                      "required":true,
+                      "prefix": null,
+                      "module":"rainmaker-pdf"
+                   }
+                  },
+                  {
+                    "variable": "bank_transaction_no",
+                    "value": {
+                      "path": "PDF_STATIC_LABEL_PT_RECEIPT_BANK_TRANSACTION_NO"
+                    },
+                    "type": "label",
+                    "localisation":{
+                      "required":true,
+                      "prefix": null,
+                      "module":"rainmaker-pdf"
+                   }
+                  },
+                  {
+                    "variable": "g8_receipt_date",
+                    "value": {
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_G8_RECEIPT_DATE"
+                    },
+                    "type": "label",
+                    "localisation":{
+                      "required":true,
+                      "prefix": null,
+                      "module":"rainmaker-pdf"
+                   }
+                  },
+                  {
+                    "variable": "g8_receipt_no",
+                    "value": {
+                      "path": "PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_G8_RECEIPT_NO"
                     },
                     "type": "label",
                     "localisation":{
@@ -487,6 +560,17 @@
                           }
                       }
                     ]
+                },
+                {
+                  "path": "http://egov-pg-service:8080/pg-service/transaction/v1/_search",
+                  "queryParam": "txnId=$.instrumentNumber",
+                  "apiRequest": null,
+                  "responseMapping":[
+                    {
+                      "variable":"bankTransactionNo",                        
+                      "value": "$.Transaction[0].bankTransactionNo" 
+                   }
+                  ]
                 }
               ]
             },      

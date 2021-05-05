@@ -13,7 +13,7 @@
     },
     "content": [
       {
-        "style": "ws-head",
+        "style": "noc-head",
         "table": {
           "widths": ["*"],
           "body": [
@@ -91,6 +91,18 @@
             ],
             [
               {
+                "text": "{{payer_contact}}",
+                "style": "pdf-label",
+                "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"]
+              },
+              {
+                "text": "{{payerContact}}",
+                "style": "pdf-value",
+                "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"]
+              }
+            ],
+            [
+              {
                 "text": "{{amount_label}}",
                 "style": "pdf-label",
                 "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"]
@@ -120,7 +132,7 @@
                 "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"]
               },
               {
-                "text": "{{account_receipt}}",
+                "text": "{{consumerCode}}",
                 "style": "pdf-value",
                 "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"]
               }
@@ -131,7 +143,7 @@
       {
         "style": "ws-head",
         "table": {
-          "widths": ["16.2%", "10%", "10%", "10%", "30%", "23.8%"],
+          "widths":["16.2%", "10%","20%","24%","15%","15%"],
           "body": [
             [
               {
@@ -150,17 +162,17 @@
                 "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"]
               },
               {
-                "text": "{{cheque_date_label}}",
+                "text": "{{bank_transaction_no}}",
                 "style": "pdf-label",
                 "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"]
               },
               {
-                "text": "{{bank_name_label}}",
+                "text": "{{g8_receipt_date}}",
                 "style": "pdf-label",
                 "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"]
               },
               {
-                "text": "{{branch_name}}",
+                "text": "{{g8_receipt_no}}",
                 "style": "pdf-label",
                 "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"]
               }
@@ -177,22 +189,22 @@
                 "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"]
               },
               {
-                "text": " ",
+                "text": "{{transactionID}}",
                 "style": "pdf-value",
                 "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"]
               },
               {
-                "text": " ",
+                "text": "{{bankTransactionNo}}",
                 "style": "pdf-value",
                 "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"]
               },
               {
-                "text": " ",
+                "text": "{{G8ReceiptDate}}",
                 "style": "pdf-value",
                 "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"]
               },
               {
-                "text": " ",
+                "text": "{{G8ReceiptNo}}",
                 "style": "pdf-value",
                 "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"]
               }
@@ -203,7 +215,7 @@
       {
         "style": "ws-head",
         "table": {
-          "widths": ["16%", "9.5%", "21.7%", "29.5%", "23.4%"],
+          "widths": ["16%", "9.7%","19.6%","23.6%","31.4%"],
           "body": [
             [
               {
@@ -238,7 +250,7 @@
       {
         "style": "ws-head",
         "table": {
-          "widths": ["16%", "9.5%", "21.7%", "29.5%", "23.4%"],
+          "widths": ["16%", "9.7%","19.6%","23.6%","31.4%"],
           "body": [
             "{{#variable10}}[{\"text\": \"{{bill_no}}\",\"style\": \"pdf-value\", \"borderColor\": [\"#A9A9A9\", \"#A9A9A9\", \"#A9A9A9\", \"#A9A9A9\"]},{ \"text\": \"{{date_of_bill}}\", \"style\": \"pdf-value\", \"borderColor\": [\"#A9A9A9\", \"#A9A9A9\", \"#A9A9A9\", \"#A9A9A9\"]},{ \"text\": \"{{tax_head}}\", \"style\": \"pdf-value\",\"borderColor\": [\"#A9A9A9\", \"#A9A9A9\", \"#A9A9A9\", \"#A9A9A9\"]},{\"text\": \"{{amount_payable}}\",\"style\": \"pdf-value\",\"borderColor\": [\"#A9A9A9\", \"#A9A9A9\", \"#A9A9A9\", \"#A9A9A9\"]},{\"text\": \"{{amount_recieved}}\",\"style\": \"pdf-value\",\"borderColor\": [\"#A9A9A9\", \"#A9A9A9\", \"#A9A9A9\", \"#A9A9A9\"]}]{{/variable10}}"
           ]
@@ -312,6 +324,14 @@
       }
     ],
     "styles": {
+      "noc-head": {
+        "margin": [
+          -25,
+          -30,
+          0,
+          1
+        ]
+      },
       "pdf-header": {
         "alignment": "center",
         "fontSize":12
