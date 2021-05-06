@@ -517,11 +517,12 @@
                       },
                       {
                         "variable": "bill_no",
-                        "value": " "
+                        "value": "billNo"
                       },
                       {
                         "variable": "date_of_bill",
-                        "value": " "
+                        "value": "billDate",
+                        "type":"date"
                       },
                       {
                         "variable": "amount_payable",

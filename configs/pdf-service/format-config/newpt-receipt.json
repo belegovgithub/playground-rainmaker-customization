@@ -45,8 +45,7 @@
             ]
           ]
         },
-        "layout": "noBorders",
-        "margin": [0, 20, 0, 20]
+        "layout": "noBorders"
       },
       {
         "style": "ws-head",
@@ -215,7 +214,7 @@
       {
         "style": "ws-head",
         "table": {
-          "widths": ["16%", "9.7%","19.6%","23.6%","31.4%"],
+          "widths": ["16%", "9.7%","19.6%","23.6%","31.2%"],
           "body": [
             [
               {
@@ -250,7 +249,7 @@
       {
         "style": "ws-head",
         "table": {
-          "widths": ["16%", "9.7%","19.6%","23.6%","31.4%"],
+          "widths": ["16%", "9.7%","19.6%","23.6%","31.2%"],
           "body": [
             "{{#variable10}}[{\"text\": \"{{bill_no}}\",\"style\": \"pdf-value\", \"borderColor\": [\"#A9A9A9\", \"#A9A9A9\", \"#A9A9A9\", \"#A9A9A9\"]},{ \"text\": \"{{date_of_bill}}\", \"style\": \"pdf-value\", \"borderColor\": [\"#A9A9A9\", \"#A9A9A9\", \"#A9A9A9\", \"#A9A9A9\"]},{ \"text\": \"{{tax_head}}\", \"style\": \"pdf-value\",\"borderColor\": [\"#A9A9A9\", \"#A9A9A9\", \"#A9A9A9\", \"#A9A9A9\"]},{\"text\": \"{{amount_payable}}\",\"style\": \"pdf-value\",\"borderColor\": [\"#A9A9A9\", \"#A9A9A9\", \"#A9A9A9\", \"#A9A9A9\"]},{\"text\": \"{{amount_recieved}}\",\"style\": \"pdf-value\",\"borderColor\": [\"#A9A9A9\", \"#A9A9A9\", \"#A9A9A9\", \"#A9A9A9\"]}]{{/variable10}}"
           ]
@@ -259,7 +258,7 @@
       {
         "style": "ws-head",
         "table": {
-          "widths": ["78%", "22%"],
+          "widths": ["70.6%","29.5%"],
           "body": [
             [
               {
@@ -327,7 +326,7 @@
       "noc-head": {
         "margin": [
           -25,
-          -30,
+          -25,
           0,
           1
         ]
