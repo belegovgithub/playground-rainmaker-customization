@@ -340,7 +340,49 @@
             ],
             [
               {
-                "text": "Total Payable Amount",
+                "text": "Advance Amount available ",
+                "bold": true,
+                "border": [
+                  true,
+                  false,
+                  true,
+                  true
+                ]
+              },
+              {
+                "text": " ",
+                "bold": true,
+                "border": [
+                  false,
+                  false,
+                  true,
+                  true
+                ]
+              },
+              {
+                "text": " ",
+                "bold": true,
+                "border": [
+                  false,
+                  false,
+                  true,
+                  true
+                ]
+              },
+              {
+                "text": "{{advanceAmount}}",
+                "bold": true,
+                "border": [
+                  false,
+                  false,
+                  true,
+                  true
+                ]
+              }  
+            ],
+            [
+              {
+                "text": "Amount due as on Date",
                 "bold": true,
                 "border": [
                   true,
@@ -371,6 +413,90 @@
               },
               {
                 "text": "{{totalAmount}}",
+                "bold": true,
+                "border": [
+                  false,
+                  false,
+                  true,
+                  true
+                ]
+              }  
+            ],
+            [
+              {
+                "text": "Amount adjusted against current dues",
+                "bold": true,
+                "border": [
+                  true,
+                  false,
+                  true,
+                  true
+                ]
+              },
+              {
+                "text": " ",
+                "bold": true,
+                "border": [
+                  false,
+                  false,
+                  true,
+                  true
+                ]
+              },
+              {
+                "text": " ",
+                "bold": true,
+                "border": [
+                  false,
+                  false,
+                  true,
+                  true
+                ]
+              },
+              {
+                "text": "{{advanceAmount}}",
+                "bold": true,
+                "border": [
+                  false,
+                  false,
+                  true,
+                  true
+                ]
+              }  
+            ],
+            [
+              {
+                "text": "Total Payable Amount",
+                "bold": true,
+                "border": [
+                  true,
+                  false,
+                  true,
+                  true
+                ]
+              },
+              {
+                "text": " ",
+                "bold": true,
+                "border": [
+                  false,
+                  false,
+                  true,
+                  true
+                ]
+              },
+              {
+                "text": " ",
+                "bold": true,
+                "border": [
+                  false,
+                  false,
+                  true,
+                  true
+                ]
+              },
+              {
+                "text": "{{payableAmount}}",
                 "bold": true,
                 "border": [
                   false,

@@ -94,6 +94,12 @@
                 }
               },
               {
+                "variable": "advanceAmount",
+                "value": {
+                  "path": "$.advanceAmount"
+                }
+              },
+              {
                 "variable": "houseTaxArrear",
                 "value":{
                   "path": "$.arrearDtl[?(@.taxHeadCode == 'PT_HOUSE_TAX')].arrears"
@@ -190,9 +196,15 @@
                 }
               },
               {
+                "variable": "payableAmount",
+                "value": {
+                  "path": "$.payableAmount"
+                }
+              },
+              {
                 "variable": "amountInWords",
                 "value": {
-                  "path": "$.totalAmount"
+                  "path": "$.payableAmount"
                 },
                 "type":"amountInWords"
               },
@@ -244,8 +256,7 @@
               {
                 "variable": "totalCurrent",
                 "formula": "{{educationTaxCurrent}} + {{lighteningTaxCurrent}} + {{converancyTaxCurrent}} + {{waterTaxCurrent}} + {{houseTaxCurrent}}"
-              }
-               
+              }  
             ]
           },
           {
