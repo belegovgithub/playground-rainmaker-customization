@@ -300,27 +300,27 @@
               {
                 "style": "ws-head",
                 "table": {
-                  "widths": ["75%", "25%"],
+                  "widths": ["80%", "20%"],
                   "body": [
                     [
                       {
                         "text": "Tax Description",
                         "fillColor": "#cccccc",
                         "bold": true,
-                        "style": "receipt-taxhead-value"
+                        "style": "receipt-taxhead-label"
                         
                       }, 
                       {
                         "text": "Total Amount Rs.",
                         "bold": true,
                         "fillColor": "#cccccc",
-                        "style": "receipt-taxhead-value"
+                        "style": "receipt-taxhead-label"
                       }
                     ],
                     [
                       {
                         "text": "{{charge_label}}",
-                        "style": "receipt-taxhead-value"
+                        "style": "receipt-taxhead-label"
                       },
                       {
                         "text": "{{charge}}",
@@ -331,7 +331,7 @@
                     [
                       {
                         "text": "{{penalty_label}}",
-                        "style": "receipt-taxhead-value"
+                        "style": "receipt-taxhead-label"
                        
                       },
                       {
@@ -343,7 +343,7 @@
                     [
                       {
                         "text": "{{rebate_label}}",
-                        "style": "receipt-taxhead-value"
+                        "style": "receipt-taxhead-label"
                         
                       },
                       {
@@ -355,7 +355,7 @@
                     [
                       {
                         "text": "{{others_label}}",
-                        "style": "receipt-taxhead-value"
+                        "style": "receipt-taxhead-label"
                        
                       },
                       {
@@ -367,7 +367,7 @@
                     [
                       {
                         "text": "{{arrears_label}}",
-                        "style": "receipt-taxhead-value"
+                        "style": "receipt-taxhead-label"
                          
                       },
                       {
@@ -379,7 +379,7 @@
                     [
                       {
                         "text": "{{advanceAvailable_label}}",
-                        "style": "receipt-taxhead-value"
+                        "style": "receipt-taxhead-label"
                          
                       },
                       {
@@ -392,7 +392,7 @@
                     [
                       {
                         "text": "Advance Amount available ",
-                        "style": "receipt-taxhead-value"
+                        "style": "receipt-taxhead-label"
                        
                       },
                       {
@@ -404,7 +404,7 @@
                     [
                       {
                         "text": "Amount due as on Date",
-                        "style": "receipt-taxhead-value"
+                        "style": "receipt-taxhead-label"
                        
                       },
                       {
@@ -416,7 +416,7 @@
                     [
                       {
                         "text": "Amount adjusted against current dues",
-                        "style": "receipt-taxhead-value"
+                        "style": "receipt-taxhead-label"
                        
                       },
                       {
@@ -428,7 +428,7 @@
                     [
                       {
                         "text": "Total Payable Amount",
-                        "style": "receipt-taxhead-value"
+                        "style": "receipt-taxhead-label"
                        
                       },
                       {
@@ -440,7 +440,7 @@
                     [
                       {
                         "text": "Amount (In Words) :{{amountInWords}}",
-                        "style": "receipt-taxhead-value",
+                        "style": "receipt-taxhead-label",
                         "width":"100%",
                         "border": [
                           true,
@@ -725,6 +725,14 @@
                ]
       },
       "receipt-taxhead-value": {
+        "color": "#000000",
+               "bold": true,
+               "fontSize": 11,
+               "fontWeight": 500,
+               "alignment":"right"
+               
+      },
+      "receipt-taxhead-label": {
         "color": "#000000",
                "bold": true,
                "fontSize": 11,

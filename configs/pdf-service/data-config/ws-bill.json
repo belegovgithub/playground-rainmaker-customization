@@ -613,7 +613,7 @@
               },
               {
                 "variable": "arrears",
-                "formula": "{{billTotalAmount}}>{{demandTotalAmount}}?({{billTotalAmount}}-{{demandTotalAmount}}).toFixed(2):0"
+                "formula": "{{billTotalAmount}}>{{demandTotalAmount}}?({{billTotalAmount}}-{{demandTotalAmount}}).toFixed(2):(0).toFixed(2)"
               },
               {
                 "variable": "advanceAdjusted",
@@ -621,7 +621,7 @@
               },
               {
                 "variable": "advanceAvailable",
-                "formula": "{{billTotalAmount}}<0?{{billTotalAmount}}*-1:0"
+                "formula": "{{billTotalAmount}}<0?({{billTotalAmount}}*-1).toFixed(2):(0).toFixed(2)"
               },
               {
                 "variable": "others",
