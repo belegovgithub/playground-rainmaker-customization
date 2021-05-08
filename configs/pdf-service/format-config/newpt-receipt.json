@@ -296,9 +296,12 @@
             ],
             [
               {
-                "text": " ",
+                "image": "{{qrcodeimage}}",
                 "border": [true, false, false, true],
-                "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"]
+                "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"],
+                "width": 64,
+                "height": 64,
+                "margin":[10,-10,0,0]
               },
               {
                 "stack": [
