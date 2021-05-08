@@ -146,6 +146,18 @@
                 }
               },
               {
+                "variable": "Rs",
+                "value": {
+                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_TLAPP_RUPEE"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-pdf"
+                }
+              },
+              {
                 "variable": "serviceType",
                 "value": {
                   "path": "$.businessService"
@@ -374,6 +386,13 @@
                 }
               },
               {
+                "variable": "amountInWords",
+                "value": {
+                  "path": "$.totalAmount"
+                },
+                "type":"amountInWords"
+              },
+              {
                 "variable": "payerAddress",
                 "value": {
                   "path": "$.payerAddress"
@@ -570,15 +589,15 @@
             "derived": [
               {
                 "variable": "charge",
-                "formula": "{{ws_charge}}"
+                "formula": "({{ws_charge}}).toFixed(2)"
               },
               {
                 "variable": "penalty",
-                "formula": "{{timePenalty}}+{{adhocPenalty}}"
+                "formula": "({{timePenalty}}+{{adhocPenalty}}).toFixed(2)"
               },
               {
                 "variable": "rebate",
-                "formula": "{{timeRebate}}+{{adhocRebate}}"
+                "formula": "({{timeRebate}}+{{adhocRebate}}).toFixed(2)"
               },
               {
                 "variable": "billOthers",
@@ -598,7 +617,7 @@
               },
               {
                 "variable": "advanceAdjusted",
-                "formula": "{{billTotalAmount}}>=0?({{billTotalAmount}}<{{demandTotalAmount}}?({{billTotalAmount}}-{{demandTotalAmount}}).toFixed(2):0):{{demandTotalAmount}} * -1"
+                "formula": "{{billTotalAmount}}>=0?({{billTotalAmount}}<{{demandTotalAmount}}?({{demandTotalAmount}} - {{billTotalAmount}}).toFixed(2):0):{{demandTotalAmount}} * -1"
               },
               {
                 "variable": "advanceAvailable",
@@ -610,7 +629,7 @@
               },
               {
                 "variable": "calculatedTotal",
-                "formula": "{{billTotalAmount}}>0?{{billTotalAmount}}:0"
+                "formula": "({{billTotalAmount}}>0?{{billTotalAmount}}:0).toFixed(2)"
               }
             ]
           },
