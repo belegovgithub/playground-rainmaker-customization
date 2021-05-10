@@ -219,7 +219,19 @@
               {
                 "variable": "charge_label",
                 "value": {
-                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_CHARGE"
+                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_WATER_CHARGE"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-pdf"
+                }
+              },
+              {
+                "variable": "interest_label",
+                "value": {
+                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_INTEREST_CHARGE"
                 },
                 "type": "label",
                 "localisation": {
@@ -612,6 +624,10 @@
                 "formula": "{{total}}"
               },
               {
+                "variable": "interest_amount",
+                "formula": "{{ws_time_interest}}>0?({{ws_time_interest}}).toFixed(2):(0).toFixed(2)"
+              },
+              {
                 "variable": "arrears",
                 "formula": "{{billTotalAmount}}>{{demandTotalAmount}}?({{billTotalAmount}}-{{demandTotalAmount}}).toFixed(2):(0).toFixed(2)"
               },
@@ -630,6 +646,10 @@
               {
                 "variable": "calculatedTotal",
                 "formula": "({{billTotalAmount}}>0?{{billTotalAmount}}:0).toFixed(2)"
+              },
+              {
+                "variable": "addedTotal",
+                "formula": "{{arrears}}+{{charge}}+{{interest_amount}}-{{rebate}}+{{penalty}}+{{others}}"
               }
             ]
           },

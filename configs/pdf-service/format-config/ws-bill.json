@@ -319,76 +319,98 @@
                     ],
                     [
                       {
-                        "text": "{{charge_label}}",
-                        "style": "receipt-taxhead-label"
+                        "text": "{{arrears_label}}",
+                        "style": "receipt-taxhead-label",
+                        "bold": false
                       },
                       {
-                        "text": "{{charge}}",
-                        "style": "receipt-taxhead-value"
+                        "text": "{{arrears}}",
+                        "style": "receipt-taxhead-value",
+                        "bold": false
                         
                       }
                     ],
                     [
                       {
+                        "text": "{{charge_label}}",
+                        "style": "receipt-taxhead-label",
+                        "bold": false
+                      },
+                      {
+                        "text": "{{charge}}",
+                        "style": "receipt-taxhead-value",
+                        "bold": false
+                        
+                      }
+                    ],
+                    [
+                      {
+                        "text": "{{interest_label}}",
+                        "style": "receipt-taxhead-label",
+                        "bold": false
+                       
+                      },
+                      {
+                        "text": "{{interest_amount}}",
+                        "style": "receipt-taxhead-value",
+                        "bold": false
+                         
+                      }
+                    ],
+                    [
+                      {
                         "text": "{{penalty_label}}",
-                        "style": "receipt-taxhead-label"
+                        "style": "receipt-taxhead-label",
+                        "bold": false
                        
                       },
                       {
                         "text": "{{penalty}}",
-                        "style": "receipt-taxhead-value"
+                        "style": "receipt-taxhead-value",
+                        "bold": false
                          
                       }
                     ],
                     [
                       {
                         "text": "{{rebate_label}}",
-                        "style": "receipt-taxhead-label"
+                        "style": "receipt-taxhead-label",
+                        "bold": false
                         
                       },
                       {
                         "text": "{{rebate}}",
-                        "style": "receipt-taxhead-value"
+                        "style": "receipt-taxhead-value",
+                        "bold": false
                        
                       }
                     ],
                     [
                       {
                         "text": "{{others_label}}",
-                        "style": "receipt-taxhead-label"
+                        "style": "receipt-taxhead-label",
+                        "bold": false
                        
                       },
                       {
                         "text": "{{others}}",
-                        "style": "receipt-taxhead-value"
+                        "style": "receipt-taxhead-value",
+                        "bold": false
                        
                       }
                     ],
                     [
                       {
-                        "text": "{{arrears_label}}",
+                        "text": "Total",
                         "style": "receipt-taxhead-label"
-                         
+                       
                       },
                       {
-                        "text": "{{arrears}}",
+                        "text": "{{addedTotal}}",
                         "style": "receipt-taxhead-value"
                         
                       }
                     ],
-                    [
-                      {
-                        "text": "{{advanceAvailable_label}}",
-                        "style": "receipt-taxhead-label"
-                         
-                      },
-                      {
-                        "text": "{{advanceAvailable}}",
-                        "style": "receipt-taxhead-value"
-                         
-                      }
-                    ],
-                    
                     [
                       {
                         "text": "Advance Amount available ",
@@ -423,6 +445,18 @@
                         "text": "{{advanceAdjusted}}",
                         "style": "receipt-taxhead-value"
                         
+                      }
+                    ],
+                    [
+                      {
+                        "text": "{{advanceAvailable_label}}",
+                        "style": "receipt-taxhead-label"
+                         
+                      },
+                      {
+                        "text": "{{advanceAvailable}}",
+                        "style": "receipt-taxhead-value"
+                         
                       }
                     ],
                     [

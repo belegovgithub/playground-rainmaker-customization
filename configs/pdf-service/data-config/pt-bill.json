@@ -199,7 +199,7 @@
                 "variable": "payableAmount",
                 "value": {
                   "path": "$.payableAmount"
-                }
+                } 
               },
               {
                 "variable": "amountInWords",
@@ -256,7 +256,31 @@
               {
                 "variable": "totalCurrent",
                 "formula": "{{educationTaxCurrent}} + {{lighteningTaxCurrent}} + {{converancyTaxCurrent}} + {{waterTaxCurrent}} + {{houseTaxCurrent}}"
-              }  
+              },
+              {
+                "variable": "totalCalculatedAmount",
+                "formula": "{{totalArrears}} + {{totalCurrent}}" 
+              },
+              {
+                "variable": "demandTotalAmount",
+                "formula": "{{ws_charge}} + {{pt_charge}}" 
+              },
+              {
+                "variable": "advanceAdjusted",
+                "formula": "{{totalAmount}}>=0?({{totalAmount}}<{{demandTotalAmount}}?({{demandTotalAmount}} - {{totalAmount}}).toFixed(2):0):{{demandTotalAmount}} * -1"
+              },
+              {
+                "variable": "amountAdjusted",
+                "formula": "{{totalAmount}}>=0?({{totalAmount}}<{{advanceAmount}}?({{totalAmount}}):({{advanceAmount}})):0 * -1"
+              },
+              {
+                "variable": "payableAmountFinal",
+                "formula": "{{totalAmount}}>=0?({{totalAmount}}<{{amountAdjusted}}?({{amountAdjusted}}-{{totalAmount}}):({{totalAmount}}-{{amountAdjusted}})):0 * -1"
+              },
+              {
+                "variable": "advanceAvailable",
+                "formula": "(0).toFixed(2)"
+              }
             ]
           },
           {
@@ -290,6 +314,26 @@
                       }
                     }
                   ]
+              },
+              {
+                "path": "http://billing-service.egov:8080/billing-service/demand/_search",
+                "queryParam": "tenantId=$.tenantId,consumerCode=$.consumerCode,businessService=WS",
+                "apiRequest": null,
+                "responseMapping": [
+                  {
+                    "variable": "pt_advanceAmount",
+                    "value": "$.Demands[(@.length-1)].demandDetails[?(@.taxHeadMasterCode == 'PT_ADVANCE_CARRYFORWARD')].taxAmount"
+                  },
+                  {
+                    "variable": "ws_charge",
+                    "value": "$.Demands[(@.length-1)].demandDetails[?(@.taxHeadMasterCode == 'PT_WATER_TAX')].taxAmount"
+                  },
+                  {
+                    "variable": "pt_charge",
+                    "value": "$.Demands[(@.length-1)].demandDetails[?(@.taxHeadMasterCode == 'PT_HOUSE_TAX')].taxAmount"
+                  }
+                   
+                ]
               }  
             ]
           },
