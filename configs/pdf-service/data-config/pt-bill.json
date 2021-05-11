@@ -100,6 +100,36 @@
                 }
               },
               {
+                "variable": "totalArrearsval",
+                "value": {
+                  "path": "$.totalArrear"
+                }
+              },
+              {
+                "variable": "amountAdjustedval",
+                "value": {
+                  "path": "$.adjustedAmount"
+                }
+              },
+              {
+                "variable": "advanceAmountPaid",
+                "value": {
+                  "path": "$.totalPaid"
+                }
+              },
+              {
+                "variable": "advanceCarryForward",
+                "value": {
+                  "path": "$.advanceCarryforward"
+                }
+              },
+              {
+                "variable": "totalCurrentval",
+                "value": {
+                  "path": "$.totalCurrent"
+                }
+              },
+              {
                 "variable": "houseTaxArrear",
                 "value":{
                   "path": "$.arrearDtl[?(@.taxHeadCode == 'PT_HOUSE_TAX')].arrears"
@@ -209,6 +239,95 @@
                 "type":"amountInWords"
               },
               {
+                "variable": "acknowledgement_for",
+                "value": {
+                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_ACKNOWLEDGEMENT"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-pdf"
+                }
+              },
+              {
+                "variable": "total_payment",
+                "value": {
+                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_TOTAL_PAYMENT"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-pdf"
+                }
+              },
+              {
+                "variable": "receivers_signature",
+                "value": {
+                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_RECEIVERS_SIGNATURE"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-pdf"
+                }
+              },
+              {
+                "variable": "bill_no",
+                "value": {
+                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_BILL_NO"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-pdf"
+                }
+              },
+              {
+                "variable": "property_id",
+                "value": {
+                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_PROPERTY_ID"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-pdf"
+                }
+              },
+              {
+                "variable": "date_label",
+                "value": {
+                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_DATE"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-pdf"
+                }
+              },
+              {
+                "variable": "name_address",
+                "value": {
+                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_NAME_ADDRESS"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-pdf"
+                }
+              },
+              {
+                "variable": "scissorImage",
+                "url": "http://www.pngall.com/wp-content/uploads/2016/03/Scissor-PNG-Clipart.png",
+                "type": "image"
+              },
+              {
                 "variable": "variable10",                        
                 "value":{
                      "path":"$.arrearDtl.*"                          
@@ -259,7 +378,7 @@
               },
               {
                 "variable": "totalCalculatedAmount",
-                "formula": "{{totalArrears}} + {{totalCurrent}}" 
+                "formula": "{{totalArrearsval}} + {{totalCurrentval}}" 
               },
               {
                 "variable": "demandTotalAmount",

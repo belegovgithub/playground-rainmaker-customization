@@ -50,7 +50,8 @@
             ]
           ]
         },
-        "border": true
+        "border": true,
+        "margin": [0, -20, 0, 0]
       },
       {
         "style": "ws-head",
@@ -239,7 +240,7 @@
           ]
         },
         "layout": "noBorders",
-        "margin": [0, 20, 0, 20]
+        "margin": [0, 10, 0, 10]
       },
       {
         "style": "ws-head",
@@ -301,7 +302,7 @@
                 ]
               },
               {
-                "text": "{{totalArrears}}",
+                "text": "{{totalArrearsval}}",
                 "bold": true,
                 "alignment":"right",
                 "border": [
@@ -312,7 +313,7 @@
                 ]
               },
               {
-                "text": "{{totalCurrent}}",
+                "text": "{{totalCurrentval}}",
                 "bold": true,
                 "alignment":"right",
                 "border": [
@@ -336,7 +337,7 @@
             ],
             [
               {
-                "text": "Advance Amount available ",
+                "text": "Advance Amount available / Paid",
                 "bold": true,
                 "border": [
                   true,
@@ -366,7 +367,7 @@
                 ]
               },
               {
-                "text": "{{advanceAmount}}",
+                "text": "{{advanceAmountPaid}}",
                 "alignment":"right",
                 "bold": true,
                 "border": [
@@ -452,7 +453,7 @@
                 ]
               },
               {
-                "text": "{{amountAdjusted}}",
+                "text": "{{amountAdjustedval}}",
                 "alignment":"right",
                 "bold": true,
                 "border": [
@@ -495,7 +496,7 @@
                 ]
               },
               {
-                "text": "{{advanceAvailable}}",
+                "text": "{{advanceCarryForward}}",
                 "alignment":"right",
                 "bold": true,
                 "border": [
@@ -538,7 +539,7 @@
                 ]
               },
               {
-                "text": "{{payableAmountFinal}}",
+                "text": "{{payableAmount}}",
                 "alignment":"right",
                 "bold": true,
                 "border": [
@@ -597,13 +598,193 @@
               {
                 "text": "**CEO,{{cb-name}} ",
                 "alignment":"right",
-                "margin":[0,30,0,0]
+                "margin":[0,15,0,-20]
                 
                 
               } 
             ]
           ]
         }, "layout": "noBorders"
+      },
+      {
+        "canvas": [
+          {
+            "type": "line",
+            "x1": -40,
+            "y1": 30,
+            "x2": 700,
+            "y2": 30,
+            "dash": {
+              "length": 10,
+              "space": 5
+            }
+          }
+        ]
+      },
+      {
+        "image": "{{scissorImage}}",
+        "width": 24,
+        "height": 24,
+        "margin": [
+          -30,
+          -11.2,
+          0,
+          0
+        ]
+      },
+      {
+        "text": "{{acknowledgement_for}}",
+        "style": "footer-header"
+       
+      },
+      {
+        "style": "noc-table4",
+        "table": {
+          "widths": [
+            "20%",
+            "35%",
+            "25%",
+            "35%"
+          ],
+          "body": [
+            [
+              {
+                "text": "{{date_label}}",
+                "border": [
+                  false,
+                  false,
+                  false,
+                  false
+                ],
+                "style": "receipt-table-value-ack"
+                
+              },
+              {
+                "text": "{{billDate}}",
+                "border": [
+                  false,
+                  false,
+                  false,
+                  false
+                ],
+                "style": "receipt-table-value-ack",
+                "bold":false
+                
+              },
+              {
+                "text": "{{bill_no}}",
+                "border": [
+                  false,
+                  false,
+                  false,
+                  false
+                ],
+                "style": "receipt-table-value-ack"
+                
+              },
+              {
+                "text":"{{billNo}}",
+                "border": [
+                  false,
+                  false,
+                  false,
+                  false
+                ],
+                "style": "receipt-table-value-ack" ,
+                "bold":false       
+              }
+            ],
+            [
+              {
+                
+                "text": "{{property_id}}",
+                "border": [
+                  false,
+                  false,
+                  false,
+                  false
+                ],
+                "style": "receipt-table-value-ack"
+              },
+              {
+                "text": "{{propertyNo}}",
+                "border": [
+                  false,
+                  false,
+                  false,
+                  false
+                ],
+                "style": "receipt-table-value-ack",
+                "bold":false
+              },
+              {
+                "text": "{{total_payment}}",
+                "border": [
+                  false,
+                  false,
+                  false,
+                  false
+                ],
+                "style": "receipt-table-value-ack"
+              },
+              {
+                "text": "{{payableAmount}}",
+                "border": [
+                  false,
+                  false,
+                  false,
+                  false
+                ],
+                "style": "receipt-table-value-ack",
+                "bold":false
+              }
+            ]
+            
+          ]
+        }
+      },
+      {
+        "style": "noc-table5",
+        "table": {
+          "widths": [
+            "20%",
+            "*"
+            
+          ],
+          "body": [
+            [
+              
+                {
+                  "text": "{{name_address}} ",
+                  "border": [
+                    false,
+                    false,
+                    false,
+                    false
+                  ],
+                  "style": "receipt-table-value-ack"
+                },
+                {
+                  "text": "{{assesseName}},{{address}}",
+                  "border": [
+                    false,
+                    false,
+                    false,
+                    false
+                  ],
+                  "style": "receipt-table-value-ack",
+                  "bold":false
+                }
+            
+              
+            ]
+          ]
+        }
+      },
+
+      {
+        "text": "{{receivers_signature}}",
+        "style": "footer-bottom"
       }
     ],
     "styles": {
@@ -653,7 +834,12 @@
       "noc-table4": {
         "fontSize": 12,
         "color": "#484848",
-        "margin": [-25, 75, -8, -8]
+        "margin": [-25, 60, -8, -8]
+      },
+      "noc-table5": {
+        "fontSize": 12,
+        "color": "#484848",
+        "margin": [-25, 5, -8, -8]
       },
       "noc-table2": {
         "fontSize": 12,
@@ -687,6 +873,13 @@
         "fontSize": 12,
         "fontWeight": 500,
         "margin": [8, 5, 0, 0]
+      },
+      "receipt-table-value-ack": {
+        "color": "#000000",
+        "bold": true,
+        "fontSize": 12,
+        "fontWeight": 500,
+        "margin": [0, -5, 0, 0]
       },
       "receipt-table-value2": {
         "color": "#000000",
@@ -762,13 +955,13 @@
         "alignment": "right"
       },
       "footer-header": {
-        "margin": [0, 15, 0, -40],
+        "margin": [0, 5, 0, -50],
         "bold": true,
         "color": "#000000",
         "alignment": "center"
       },
       "footer-bottom": {
-        "margin": [0, 50, 0, 0],
+        "margin": [0, 15, 0, 0],
         "bold": true,
         "color": "#000000",
         "alignment": "right"
