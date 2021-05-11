@@ -526,7 +526,8 @@
                       },
                       {
                         "variable": "amount_payable",
-                        "value": "amount"
+                        "value": "amount",
+                        "type":"setPositive"
                       },
                       {
                         "variable": "amount_recieved",
