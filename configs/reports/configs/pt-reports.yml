@@ -164,7 +164,7 @@ ReportDefinitions:
       poo ON poo.propertyid = pt.propertyid
       JOIN eg_user as un ON pay.createdby::INTEGER=un.id
       where pay.tenantid LIKE $tenantid  and pd.businessservice='PT'and pay.paymentstatus != 'CANCELLED'
-    groupby: GROUP BY pay.tenantid,pd.receiptnumber,bill.consumercode,pd.receiptdate,pay.transactionnumber,pay.paymentmode,addr.doorno,poo.name,pd.amountpaid,un.name
+  groupby: GROUP BY pay.tenantid,pd.receiptnumber,bill.consumercode,pd.receiptdate,pay.transactionnumber,pay.paymentmode,addr.doorno,poo.name,pd.amountpaid,un.name
 
 - reportName: CancelledReceiptRegister
   summary: Receipt Register for cancelled Receipts
