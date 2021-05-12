@@ -4,6 +4,9 @@ ReportDefinitions:
   summary: Receipt Register
   version: 1.0.0
   moduleName: rainmaker-pt
+  additionalConfig:
+    print:
+      pdfPageSize: "A2"
   decryptionPathId: ReceiptRegister
   externalService:
   - entity: $.TenantBoundary[0].boundary
@@ -148,7 +151,7 @@ ReportDefinitions:
     un.name as collectorname,
     addr.doorno as doorno,
     (SELECT boundary_def.name FROM (VALUES tbl_boundary) AS boundary_def(name,code) where code=addr.locality) as mohallaname,
-    poo.name as name
+    name
     from eg_pt_property pt
     Join eg_pt_address as addr on addr.propertyid=pt.id
     INNER JOIN egcl_bill as bill ON bill.consumercode = pt.propertyid  and bill.status != 'Cancelled'
@@ -170,6 +173,11 @@ ReportDefinitions:
   summary: Receipt Register for cancelled Receipts
   version: 1.0.0
   moduleName: rainmaker-pt
+  externalService:
+  - entity: $.TenantBoundary[0].boundary
+    apiURL: http://egov-location:8080/egov-location/location/v11/boundarys/_search?hierarchyTypeCode=REVENUE&boundaryType=Locality&tenantId=$tenantId
+    keyOrder: name,code
+    tableName: tbl_boundary
   sourceColumns:
   - name: tenantid
     label: PT_ULB_CITY 
@@ -268,25 +276,34 @@ ReportDefinitions:
     pay.paymentmode as paymentmode,
     pay.transactionnumber as transactionnumber,
     SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_INTEREST%' THEN bad.amount ELSE 0 END) as interest,
-    SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_PENALTY%' THEN bad.amount ELSE 0 END) as penalty,
-    SUM(CASE WHEN taxheadcode LIKE 'PT_HOUSE_TAX' THEN bad.amount ELSE 0 END) as housetax ,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_PENALTY%' or taxheadcode LIKE 'PT_LATE_ASSESSMENT_PENALTY' THEN bad.amount ELSE 0 END) as penalty,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_HOUSE_TAX' THEN bad.amount ELSE 0 END) as housetax,
     SUM(CASE WHEN taxheadcode LIKE 'PT_WATER_TAX'  THEN bad.amount ELSE 0 END) as watertax ,
     SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN bad.amount ELSE 0 END) as conservancytax ,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_LIGHTINING_TAX' THEN bad.amount ELSE 0 END) as lightiningtax ,
     SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_TAX' THEN bad.amount ELSE 0 END) as educationtax ,
-    (SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_INTEREST' THEN bad.amount ELSE 0 END)  + SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_PENALTY%' THEN bad.amount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_HOUSE_TAX' THEN bad.amount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_WATER_TAX' THEN bad.amount ELSE 0 END)  +SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN bad.amount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN bad.amount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_TAX' THEN bad.amount ELSE 0 END)) as totalcollection
-    from egcl_payment pay,
-    egcl_paymentdetail pd,
-    egcl_bill bill,
-    egcl_billdetial bd,
-    egcl_billaccountdetail bad
-    where pd.paymentid= pay.id and
-    pd.billid=bill.id and
-    bd.billid=bill.id and
-    bad.billdetailid=bd.id and
-    pay.tenantid LIKE $tenantid and 
-    pd.businessservice='PT'and 
-    pay.paymentstatus = 'CANCELLED' AND pay.tenantid != 'pb.testing'
-  groupby: GROUP BY pay.tenantid,pd.receiptnumber,bill.consumercode,pd.receiptdate,pay.transactionnumber,pay.paymentmode
+    SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_REBATE' or taxheadcode like 'PT_PROMOTIONAL_REBATE' THEN bad.amount ELSE 0 END) as rebate,
+    pd.amountpaid as totalcollection,
+    un.name as collectorname,
+    addr.doorno as doorno,
+    (SELECT boundary_def.name FROM (VALUES tbl_boundary) AS boundary_def(name,code) where code=addr.locality) as mohallaname,
+    name
+    from eg_pt_property pt
+    Join eg_pt_address as addr on addr.propertyid=pt.id
+    INNER JOIN egcl_bill as bill ON bill.consumercode = pt.propertyid  and bill.status = 'Cancelled'
+    JOIN egcl_billdetial as bd ON bd.billid = bill.id
+    INNER JOIN egcl_billaccountdetail as bad ON bd.id = bad .billdetailid
+    LEFT OUTER JOIN egcl_paymentdetail as pd ON pd.billid = bill.id
+    LEFT OUTER JOIN egcl_payment as pay ON pay.id = pd.paymentid and pay.paymentstatus != 'CANCELLED'
+    LEFT OUTER Join eg_pg_transactions as pgtxn ON pay.transactionnumber = pgtxn.txn_id
+    LEFT JOIN (
+      SELECT propertyid, array_to_string(array_agg(name),', ') as name, array_to_string(array_agg(mobilenumber),', ') as mobilenumber
+      FROM eg_pt_owner poo
+      INNER JOIN eg_user ptuser ON ptuser.uuid = poo.userid group by propertyid) 
+      poo ON poo.propertyid = pt.propertyid
+      JOIN eg_user as un ON pay.createdby::INTEGER=un.id
+      where pay.tenantid LIKE $tenantid  and pd.businessservice='PT'and pay.paymentstatus = 'CANCELLED'
+  groupby: GROUP BY pay.tenantid,pd.receiptnumber,bill.consumercode,pd.receiptdate,pay.transactionnumber,pay.paymentmode,addr.doorno,poo.name,pd.amountpaid,un.name,addr.locality
 
 - reportName: CBPTCollection
   summary: CB wise PT Collection
@@ -308,12 +325,12 @@ ReportDefinitions:
     type: string
     source: pt
     total: true
-  - name: totaloffline
+  - name: offline
     label: reports.pt.totaloffline
     type: string
     source: pt
     total: true
-  - name: totalonline
+  - name: online
     label: reports.pt.totalonline
     type: string
     source: pt
@@ -354,6 +371,11 @@ ReportDefinitions:
   summary: Receipt Register for cancelled Receipts State
   version: 1.0.0
   moduleName: rainmaker-pt
+  externalService:
+  - entity: $.TenantBoundary[0].boundary
+    apiURL: http://egov-location:8080/egov-location/location/v11/boundarys/_search?hierarchyTypeCode=REVENUE&boundaryType=Locality&tenantId=$tenantId
+    keyOrder: name,code
+    tableName: tbl_boundary
   sourceColumns:
   - name: tenantid
     label: PT_ULB_CITY 
@@ -460,24 +482,34 @@ ReportDefinitions:
     pay.paymentmode as paymentmode,
     pay.transactionnumber as transactionnumber,
     SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_INTEREST%' THEN bad.amount ELSE 0 END) as interest,
-    SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_PENALTY%' THEN bad.amount ELSE 0 END) as penalty,
-    SUM(CASE WHEN taxheadcode LIKE 'PT_HOUSE_TAX' THEN bad.amount ELSE 0 END) as housetax ,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_PENALTY%' or taxheadcode LIKE 'PT_LATE_ASSESSMENT_PENALTY' THEN bad.amount ELSE 0 END) as penalty,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_HOUSE_TAX' THEN bad.amount ELSE 0 END) as housetax,
     SUM(CASE WHEN taxheadcode LIKE 'PT_WATER_TAX'  THEN bad.amount ELSE 0 END) as watertax ,
     SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN bad.amount ELSE 0 END) as conservancytax ,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_LIGHTINING_TAX' THEN bad.amount ELSE 0 END) as lightiningtax ,
     SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_TAX' THEN bad.amount ELSE 0 END) as educationtax ,
-    (SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_INTEREST' THEN bad.amount ELSE 0 END)  + SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_PENALTY%' THEN bad.amount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_HOUSE_TAX' THEN bad.amount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_WATER_TAX' THEN bad.amount ELSE 0 END)  +SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN bad.amount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN bad.amount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_TAX' THEN bad.amount ELSE 0 END)) as totalcollection
-    from egcl_payment pay,
-    egcl_paymentdetail pd,
-    egcl_bill bill,
-    egcl_billdetial bd,
-    egcl_billaccountdetail bad
-    where pd.paymentid= pay.id and
-    pd.billid=bill.id and
-    bd.billid=bill.id and
-    bad.billdetailid=bd.id and
-    pd.businessservice='PT'and 
-    pay.paymentstatus = 'CANCELLED' AND pay.tenantid != 'pb.testing'
-  groupby: GROUP BY pay.tenantid,pd.receiptnumber,bill.consumercode,pd.receiptdate,pay.transactionnumber,pay.paymentmode
+    SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_REBATE' or taxheadcode like 'PT_PROMOTIONAL_REBATE' THEN bad.amount ELSE 0 END) as rebate,
+    pd.amountpaid as totalcollection,
+    un.name as collectorname,
+    addr.doorno as doorno,
+    (SELECT boundary_def.name FROM (VALUES tbl_boundary) AS boundary_def(name,code) where code=addr.locality) as mohallaname,
+    name
+    from eg_pt_property pt
+    Join eg_pt_address as addr on addr.propertyid=pt.id
+    INNER JOIN egcl_bill as bill ON bill.consumercode = pt.propertyid  and bill.status = 'Cancelled'
+    JOIN egcl_billdetial as bd ON bd.billid = bill.id
+    INNER JOIN egcl_billaccountdetail as bad ON bd.id = bad .billdetailid
+    LEFT OUTER JOIN egcl_paymentdetail as pd ON pd.billid = bill.id
+    LEFT OUTER JOIN egcl_payment as pay ON pay.id = pd.paymentid and pay.paymentstatus != 'CANCELLED'
+    LEFT OUTER Join eg_pg_transactions as pgtxn ON pay.transactionnumber = pgtxn.txn_id
+    LEFT JOIN (
+      SELECT propertyid, array_to_string(array_agg(name),', ') as name, array_to_string(array_agg(mobilenumber),', ') as mobilenumber
+      FROM eg_pt_owner poo
+      INNER JOIN eg_user ptuser ON ptuser.uuid = poo.userid group by propertyid) 
+      poo ON poo.propertyid = pt.propertyid
+      JOIN eg_user as un ON pay.createdby::INTEGER=un.id
+      where pay.tenantid  != 'pb.testing' pd.businessservice='PT'and pay.paymentstatus = 'CANCELLED'
+  groupby: GROUP BY pay.tenantid,pd.receiptnumber,bill.consumercode,pd.receiptdate,pay.transactionnumber,pay.paymentmode,addr.doorno,poo.name,pd.amountpaid,un.name,addr.locality
 
 - reportName: CBWidePtCollection
   summary: CB Wide PT Collection
@@ -504,12 +536,12 @@ ReportDefinitions:
     type: string
     source: pt
     total: true
-  - name: totaloffline
+  - name: offline
     label: reports.pt.totaloffline
     type: string
     source: pt
     total: true
-  - name: totalonline
+  - name: online
     label: reports.pt.totalonline
     type: string
     source: pt
@@ -649,6 +681,11 @@ ReportDefinitions:
   version: 1.0.0
   moduleName: rainmaker-pt
   decryptionPathId: DGDEReceiptRegister
+  externalService:
+  - entity: $.TenantBoundary[0].boundary
+    apiURL: http://egov-location:8080/egov-location/location/v11/boundarys/_search?hierarchyTypeCode=REVENUE&boundaryType=Locality&tenantId=$tenantId
+    keyOrder: name,code
+    tableName: tbl_boundary
   sourceColumns:
   - name: tenantid
     label: PT_ULB_CITY 
@@ -793,34 +830,25 @@ ReportDefinitions:
     SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_REBATE' or taxheadcode like 'PT_PROMOTIONAL_REBATE' THEN bad.amount ELSE 0 END) as rebate,
     pd.amountpaid as totalcollection,
     un.name as collectorname,
-    msg.message as mohallaname,
     addr.doorno as doorno,
-    eu.name as ownername
-    from egcl_payment pay,
-    egcl_paymentdetail pd,
-    egcl_bill bill,
-    egcl_billdetial bd,
-    egcl_billaccountdetail bad,
-    eg_user un,
-    eg_pt_address addr,
-    eg_user eu,
-    message msg,
-    eg_pt_property pt
-    where pd.paymentid= pay.id and
-    pd.billid=bill.id and
-    bd.billid=bill.id and
-    bad.billdetailid=bd.id and
-    pay.createdby=CAST(un.id as varchar) and
-    addr.propertyid=pt.id and
-    pt.propertyid=bill.consumercode and
-    RIGHT(msg.code,8)=addr.locality and
-    msg.tenantid=pay.tenantid and
-    eu.uuid=(select poo.userid from eg_pt_owner poo where poo.propertyid=(select pdd.id from eg_pt_property pdd where pdd.propertyid= bill.consumercode fetch first 1 row only) fetch first 1 row only) and
-    msg.locale='en_IN' and
-    pay.tenantid !='pb.testing' and 
-    pd.businessservice='PT'and 
-    pay.paymentstatus != 'CANCELLED' 
-  groupby: GROUP BY pay.tenantid,pd.receiptnumber,bill.consumercode,pd.receiptdate,pay.transactionnumber,pay.paymentmode,un.name,msg.message,addr.doorno,eu.name,pd.amountpaid
+    (SELECT boundary_def.name FROM (VALUES tbl_boundary) AS boundary_def(name,code) where code=addr.locality) as mohallaname,
+    name
+    from eg_pt_property pt
+    Join eg_pt_address as addr on addr.propertyid=pt.id
+    INNER JOIN egcl_bill as bill ON bill.consumercode = pt.propertyid  and bill.status != 'Cancelled'
+    JOIN egcl_billdetial as bd ON bd.billid = bill.id
+    INNER JOIN egcl_billaccountdetail as bad ON bd.id = bad .billdetailid
+    LEFT OUTER JOIN egcl_paymentdetail as pd ON pd.billid = bill.id
+    LEFT OUTER JOIN egcl_payment as pay ON pay.id = pd.paymentid and pay.paymentstatus != 'CANCELLED'
+    LEFT OUTER Join eg_pg_transactions as pgtxn ON pay.transactionnumber = pgtxn.txn_id
+    LEFT JOIN (
+      SELECT propertyid, array_to_string(array_agg(name),', ') as name, array_to_string(array_agg(mobilenumber),', ') as mobilenumber
+      FROM eg_pt_owner poo
+      INNER JOIN eg_user ptuser ON ptuser.uuid = poo.userid group by propertyid) 
+      poo ON poo.propertyid = pt.propertyid
+      JOIN eg_user as un ON pay.createdby::INTEGER=un.id
+      where pay.tenantid != 'pb.testing' pd.businessservice='PT'and pay.paymentstatus != 'CANCELLED'
+  groupby: GROUP BY pay.tenantid,pd.receiptnumber,bill.consumercode,pd.receiptdate,pay.transactionnumber,pay.paymentmode,addr.doorno,poo.name,pd.amountpaid,un.name,addr.locality
 
 - reportName: DemandRegisterReport
   summary: Reports for Reconcillation of data in PT
@@ -830,6 +858,11 @@ ReportDefinitions:
   additionalConfig:
     print:
       pdfPageSize: "A2"
+  externalService:
+  - entity: $.TenantBoundary[0].boundary
+    apiURL: http://egov-location:8080/egov-location/location/v11/boundarys/_search?hierarchyTypeCode=REVENUE&boundaryType=Locality&tenantId=$tenantId
+    keyOrder: name,code
+    tableName: tbl_boundary
   sourceColumns:
   - name: propertyid
     label: reports.pt.propertyId
@@ -960,43 +993,44 @@ ReportDefinitions:
     initcap(split_part(ptunit.usagecategory, '.', 1)) as usagetype,
     initcap(split_part(ptunit.usagecategory, '.', 2)) as subusagetype,
     SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_INTEREST%' THEN demanddetail.taxamount ELSE 0 END) as interest,
-    SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_PENALTY%' THEN demanddetail.taxamount ELSE 0 END) as penalty,
-    SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_REBATE%' THEN demanddetail.taxamount ELSE 0 END) as rebate,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_DEMANDNOTICE_CHARGE%' THEN demanddetail.taxamount ELSE 0 END) as penalty,
     SUM(CASE WHEN taxheadcode LIKE 'PT_HOUSE_TAX' THEN demanddetail.taxamount ELSE 0 END) as housetax ,
     SUM(CASE WHEN taxheadcode LIKE 'PT_WATER_TAX'  THEN demanddetail.taxamount ELSE 0 END) as watertax ,
     SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN demanddetail.taxamount ELSE 0 END) as conservancytax ,
     SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_TAX' THEN demanddetail.taxamount ELSE 0 END) as educationtax,
-    (SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_INTEREST' THEN demanddetail.taxamount ELSE 0 END)  + SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_PENALTY%' THEN demanddetail.taxamount ELSE 0 END) + SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_REBATE%' THEN demanddetail.taxamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_HOUSE_TAX' THEN demanddetail.taxamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_WATER_TAX' THEN demanddetail.taxamount ELSE 0 END)  +SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN demanddetail.taxamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN demanddetail.taxamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_TAX' THEN demanddetail.taxamount ELSE 0 END)) as totaltax,
-    (SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_INTEREST' THEN demanddetail.collectionamount ELSE 0 END)  + SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_PENALTY%' THEN demanddetail.collectionamount ELSE 0 END) + SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_REBATE%' THEN demanddetail.collectionamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_HOUSE_TAX' THEN demanddetail.collectionamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_WATER_TAX' THEN demanddetail.collectionamount ELSE 0 END)  +SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN demanddetail.collectionamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN demanddetail.collectionamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_TAX' THEN demanddetail.collectionamount ELSE 0 END)) as totalcollection,
-    ptunit.arv as arv,
-    msg.message as mohallaname,
-    addr.doorno as doorno,
-    eu.name as name,
-    eu.mobilenumber as mobilenumber
-    from egbs_demand_v1 demand,
-    egbs_demanddetail_v1 demanddetail,
-    eg_pt_address addr,
-    eg_pt_unit ptunit,
-    eg_user eu,
-    message msg,
-    eg_pt_property pt 
-    where demanddetail.demandid= demand.id and
-    pt.propertyid=demand.consumercode and
-    addr.propertyid=pt.id and
-    ptunit.propertyid = pt.id and
-    RIGHT(msg.code,8)=addr.locality and
-    msg.tenantid=demand.tenantid and
-    eu.uuid=(select poo.userid from eg_pt_owner poo where poo.propertyid=(select pdd.id from eg_pt_property pdd where pdd.propertyid= demand.consumercode fetch first 1 row only) fetch first 1 row only) and     msg.locale='en_IN' and
-    demand.tenantid LIKE $tenantid and
-    demand.businessservice ='PT' 
-  groupby:  GROUP BY demand.tenantid,demand.consumercode,addr.doorno,msg.message,addr.doorno,eu.name,pt.oldpropertyid,pt.propertytype,ptunit.usagecategory,eu.mobilenumber, ptunit.arv
-  orderby:  ORDER BY demand.consumercode
+    SUM(CASE WHEN taxheadcode LIKE 'PT_CONSOLIDATED_PROPERTY_TAX' THEN demanddetail.taxamount ELSE 0 END) as consolidatedtax ,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_SANITARY_CESS'  THEN demanddetail.taxamount ELSE 0 END) as sanitarycess ,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_CESS' THEN demanddetail.taxamount ELSE 0 END) as educationcess ,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_DRAINAGE_TAX' THEN demanddetail.taxamount ELSE 0 END) as drainagetax,
+    (SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_INTEREST' THEN demanddetail.taxamount ELSE 0 END)  + SUM(CASE WHEN taxheadcode LIKE 'PT_DEMANDNOTICE_CHARGE%' THEN demanddetail.taxamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_HOUSE_TAX' THEN demanddetail.taxamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_WATER_TAX' THEN demanddetail.taxamount ELSE 0 END)  +SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN demanddetail.taxamount ELSE 0 END)+SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_TAX' THEN demanddetail.taxamount ELSE 0 END)+SUM(CASE WHEN taxheadcode LIKE 'PT_DRAINAGE_TAX' THEN demanddetail.taxamount ELSE 0 END)  +SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_CESS' THEN demanddetail.taxamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_SANITARY_CESS' THEN demanddetail.taxamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_CONSOLIDATED_PROPERTY_TAX' THEN demanddetail.taxamount ELSE 0 END)) as totaltax,
+    (SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_INTEREST' THEN demanddetail.collectionamount ELSE 0 END)  + SUM(CASE WHEN taxheadcode LIKE 'PT_DEMANDNOTICE_CHARGE%' THEN demanddetail.collectionamount ELSE 0 END)+SUM(CASE WHEN taxheadcode LIKE 'PT_HOUSE_TAX' THEN demanddetail.collectionamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_WATER_TAX' THEN demanddetail.collectionamount ELSE 0 END)  +SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN demanddetail.collectionamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_TAX' THEN demanddetail.collectionamount ELSE 0 END)+SUM(CASE WHEN taxheadcode LIKE 'PT_CONSOLIDATED_PROPERTY_TAX' THEN demanddetail.collectionamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_SANITARY_CESS' THEN demanddetail.collectionamount ELSE 0 END)  +SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_CESS' THEN demanddetail.collectionamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_DRAINAGE_TAX' THEN demanddetail.collectionamount ELSE 0 END))as totalcollection,
+    ptunit.arv as arv,addr.doorno as doorno,(SELECT boundary_def.name FROM (VALUES tbl_boundary) AS boundary_def(name,code) where code=addr.locality) as mohallaname,
+    name,
+    mobilenumber
+    from egbs_demand_v1 demand
+    inner join egbs_demanddetail_v1 as demanddetail on demanddetail.demandid= demand.id
+    Inner join eg_pt_property as pt on  pt.propertyid=demand.consumercode
+    Join eg_pt_address as addr on addr.propertyid=pt.id
+    Left outer join eg_pt_unit as ptunit on ptunit.propertyid = pt.id
+    LEFT JOIN (
+      SELECT propertyid, array_to_string(array_agg(name),', ') as name, array_to_string(array_agg(mobilenumber),', ') as mobilenumber
+      FROM eg_pt_owner poo
+      INNER JOIN eg_user ptuser ON ptuser.uuid = poo.userid group by propertyid)
+      poo ON poo.propertyid = pt.id
+      where demand.tenantid LIKE $tenantid and demand.businessservice ='PT'
+  groupby: GROUP BY demand.tenantid,demand.consumercode,addr.doorno,msg.message,addr.doorno,eu.name,pt.oldpropertyid,pt.propertytype,ptunit.usagecategory,eu.mobilenumber, ptunit.arv
+  orderby: ORDER BY demand.consumercode
 
 - reportName: DGDEDemandRegisterReport
   summary: Reports for Reconcillation of data in PT
   version: 1.0.0
   moduleName: rainmaker-pt
   decryptionPathId: DGDEDemandRegisterReport
+  externalService:
+  - entity: $.TenantBoundary[0].boundary
+    apiURL: http://egov-location:8080/egov-location/location/v11/boundarys/_search?hierarchyTypeCode=REVENUE&boundaryType=Locality&tenantId=$tenantId
+    keyOrder: name,code
+    tableName: tbl_boundary
   additionalConfig:
     print:
       pdfPageSize: "A2"
@@ -1138,34 +1172,29 @@ ReportDefinitions:
     initcap(split_part(ptunit.usagecategory, '.', 1)) as usagetype,
     initcap(split_part(ptunit.usagecategory, '.', 2)) as subusagetype,
     SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_INTEREST%' THEN demanddetail.taxamount ELSE 0 END) as interest,
-    SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_PENALTY%' THEN demanddetail.taxamount ELSE 0 END) as penalty,
-    SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_REBATE%' THEN demanddetail.taxamount ELSE 0 END) as rebate,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_DEMANDNOTICE_CHARGE%' THEN demanddetail.taxamount ELSE 0 END) as penalty,
     SUM(CASE WHEN taxheadcode LIKE 'PT_HOUSE_TAX' THEN demanddetail.taxamount ELSE 0 END) as housetax ,
     SUM(CASE WHEN taxheadcode LIKE 'PT_WATER_TAX'  THEN demanddetail.taxamount ELSE 0 END) as watertax ,
     SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN demanddetail.taxamount ELSE 0 END) as conservancytax ,
     SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_TAX' THEN demanddetail.taxamount ELSE 0 END) as educationtax,
-    (SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_INTEREST' THEN demanddetail.taxamount ELSE 0 END)  + SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_PENALTY%' THEN demanddetail.taxamount ELSE 0 END) + SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_REBATE%' THEN demanddetail.taxamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_HOUSE_TAX' THEN demanddetail.taxamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_WATER_TAX' THEN demanddetail.taxamount ELSE 0 END)  +SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN demanddetail.taxamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN demanddetail.taxamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_TAX' THEN demanddetail.taxamount ELSE 0 END)) as totaltax,
-    (SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_INTEREST' THEN demanddetail.collectionamount ELSE 0 END)  + SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_PENALTY%' THEN demanddetail.collectionamount ELSE 0 END) + SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_REBATE%' THEN demanddetail.collectionamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_HOUSE_TAX' THEN demanddetail.collectionamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_WATER_TAX' THEN demanddetail.collectionamount ELSE 0 END)  +SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN demanddetail.collectionamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN demanddetail.collectionamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_TAX' THEN demanddetail.collectionamount ELSE 0 END)) as totalcollection,
-    ptunit.arv as arv,
-    msg.message as mohallaname,
-    addr.doorno as doorno,
-    eu.name as name,
-    eu.mobilenumber as mobilenumber
-    from egbs_demand_v1 demand,
-    egbs_demanddetail_v1 demanddetail,
-    eg_pt_address addr,
-    eg_pt_unit ptunit,
-    eg_user eu,
-    message msg,
-    eg_pt_property pt 
-    where demanddetail.demandid= demand.id and
-    pt.propertyid=demand.consumercode and
-    addr.propertyid=pt.id and
-    ptunit.propertyid = pt.id and
-    RIGHT(msg.code,8)=addr.locality and
-    msg.tenantid=demand.tenantid and
-    eu.uuid=(select poo.userid from eg_pt_owner poo where poo.propertyid=(select pdd.id from eg_pt_property pdd where pdd.propertyid= demand.consumercode fetch first 1 row only) fetch first 1 row only) and msg.locale='en_IN' and
-    demand.tenantid != 'pb.testing'  and
-    demand.businessservice ='PT' 
-  groupby:  GROUP BY demand.tenantid,demand.consumercode,addr.doorno,msg.message,addr.doorno,eu.name,pt.oldpropertyid,pt.propertytype,ptunit.usagecategory,eu.mobilenumber, ptunit.arv
-  orderby:  ORDER BY demand.consumercode
+    SUM(CASE WHEN taxheadcode LIKE 'PT_CONSOLIDATED_PROPERTY_TAX' THEN demanddetail.taxamount ELSE 0 END) as consolidatedtax ,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_SANITARY_CESS'  THEN demanddetail.taxamount ELSE 0 END) as sanitarycess ,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_CESS' THEN demanddetail.taxamount ELSE 0 END) as educationcess ,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_DRAINAGE_TAX' THEN demanddetail.taxamount ELSE 0 END) as drainagetax,
+    (SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_INTEREST' THEN demanddetail.taxamount ELSE 0 END)  + SUM(CASE WHEN taxheadcode LIKE 'PT_DEMANDNOTICE_CHARGE%' THEN demanddetail.taxamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_HOUSE_TAX' THEN demanddetail.taxamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_WATER_TAX' THEN demanddetail.taxamount ELSE 0 END)  +SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN demanddetail.taxamount ELSE 0 END)+SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_TAX' THEN demanddetail.taxamount ELSE 0 END)+SUM(CASE WHEN taxheadcode LIKE 'PT_DRAINAGE_TAX' THEN demanddetail.taxamount ELSE 0 END)  +SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_CESS' THEN demanddetail.taxamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_SANITARY_CESS' THEN demanddetail.taxamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_CONSOLIDATED_PROPERTY_TAX' THEN demanddetail.taxamount ELSE 0 END)) as totaltax,
+    (SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_INTEREST' THEN demanddetail.collectionamount ELSE 0 END)  + SUM(CASE WHEN taxheadcode LIKE 'PT_DEMANDNOTICE_CHARGE%' THEN demanddetail.collectionamount ELSE 0 END)+SUM(CASE WHEN taxheadcode LIKE 'PT_HOUSE_TAX' THEN demanddetail.collectionamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_WATER_TAX' THEN demanddetail.collectionamount ELSE 0 END)  +SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN demanddetail.collectionamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_TAX' THEN demanddetail.collectionamount ELSE 0 END)+SUM(CASE WHEN taxheadcode LIKE 'PT_CONSOLIDATED_PROPERTY_TAX' THEN demanddetail.collectionamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_SANITARY_CESS' THEN demanddetail.collectionamount ELSE 0 END)  +SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_CESS' THEN demanddetail.collectionamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_DRAINAGE_TAX' THEN demanddetail.collectionamount ELSE 0 END))as totalcollection,
+    ptunit.arv as arv,addr.doorno as doorno,(SELECT boundary_def.name FROM (VALUES tbl_boundary) AS boundary_def(name,code) where code=addr.locality) as mohallaname,
+    name,
+    mobilenumber
+    from egbs_demand_v1 demand
+    inner join egbs_demanddetail_v1 as demanddetail on demanddetail.demandid= demand.id
+    Inner join eg_pt_property as pt on  pt.propertyid=demand.consumercode
+    Join eg_pt_address as addr on addr.propertyid=pt.id
+    Left outer join eg_pt_unit as ptunit on ptunit.propertyid = pt.id
+    LEFT JOIN (
+      SELECT propertyid, array_to_string(array_agg(name),', ') as name, array_to_string(array_agg(mobilenumber),', ') as mobilenumber
+      FROM eg_pt_owner poo
+      poo ON poo.propertyid = pt.id
+      where demand.tenantid != 'pb.testing' and demand.businessservice ='PT' 
+  groupby: GROUP BY demand.tenantid,demand.consumercode,addr.doorno,msg.message,addr.doorno,eu.name,pt.oldpropertyid,pt.propertytype,ptunit.usagecategory,eu.mobilenumber, ptunit.arv
+  orderby: ORDER BY demand.consumercode
