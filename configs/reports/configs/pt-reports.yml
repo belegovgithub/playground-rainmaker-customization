@@ -151,7 +151,7 @@ ReportDefinitions:
     un.name as collectorname,
     addr.doorno as doorno,
     (SELECT boundary_def.name FROM (VALUES tbl_boundary) AS boundary_def(name,code) where code=addr.locality) as mohallaname,
-    name
+    poo.name as name
     from eg_pt_property pt
     Join eg_pt_address as addr on addr.propertyid=pt.id
     INNER JOIN egcl_bill as bill ON bill.consumercode = pt.propertyid  and bill.status != 'Cancelled'
@@ -1005,8 +1005,8 @@ ReportDefinitions:
     (SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_INTEREST' THEN demanddetail.taxamount ELSE 0 END)  + SUM(CASE WHEN taxheadcode LIKE 'PT_DEMANDNOTICE_CHARGE%' THEN demanddetail.taxamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_HOUSE_TAX' THEN demanddetail.taxamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_WATER_TAX' THEN demanddetail.taxamount ELSE 0 END)  +SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN demanddetail.taxamount ELSE 0 END)+SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_TAX' THEN demanddetail.taxamount ELSE 0 END)+SUM(CASE WHEN taxheadcode LIKE 'PT_DRAINAGE_TAX' THEN demanddetail.taxamount ELSE 0 END)  +SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_CESS' THEN demanddetail.taxamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_SANITARY_CESS' THEN demanddetail.taxamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_CONSOLIDATED_PROPERTY_TAX' THEN demanddetail.taxamount ELSE 0 END)) as totaltax,
     (SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_INTEREST' THEN demanddetail.collectionamount ELSE 0 END)  + SUM(CASE WHEN taxheadcode LIKE 'PT_DEMANDNOTICE_CHARGE%' THEN demanddetail.collectionamount ELSE 0 END)+SUM(CASE WHEN taxheadcode LIKE 'PT_HOUSE_TAX' THEN demanddetail.collectionamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_WATER_TAX' THEN demanddetail.collectionamount ELSE 0 END)  +SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN demanddetail.collectionamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_TAX' THEN demanddetail.collectionamount ELSE 0 END)+SUM(CASE WHEN taxheadcode LIKE 'PT_CONSOLIDATED_PROPERTY_TAX' THEN demanddetail.collectionamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_SANITARY_CESS' THEN demanddetail.collectionamount ELSE 0 END)  +SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_CESS' THEN demanddetail.collectionamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_DRAINAGE_TAX' THEN demanddetail.collectionamount ELSE 0 END))as totalcollection,
     ptunit.arv as arv,addr.doorno as doorno,(SELECT boundary_def.name FROM (VALUES tbl_boundary) AS boundary_def(name,code) where code=addr.locality) as mohallaname,
-    name,
-    mobilenumber
+    poo.name as name,
+    poo.mobilenumber as mobilenumber
     from egbs_demand_v1 demand
     inner join egbs_demanddetail_v1 as demanddetail on demanddetail.demandid= demand.id
     Inner join eg_pt_property as pt on  pt.propertyid=demand.consumercode
@@ -1018,7 +1018,7 @@ ReportDefinitions:
       INNER JOIN eg_user ptuser ON ptuser.uuid = poo.userid group by propertyid)
       poo ON poo.propertyid = pt.id
       where demand.tenantid LIKE $tenantid and demand.businessservice ='PT'
-  groupby: GROUP BY demand.tenantid,demand.consumercode,addr.doorno,msg.message,addr.doorno,eu.name,pt.oldpropertyid,pt.propertytype,ptunit.usagecategory,eu.mobilenumber, ptunit.arv
+  groupby: GROUP BY demand.tenantid,demand.consumercode,addr.doorno,addr.doorno,poo.name,pt.oldpropertyid,pt.propertytype,ptunit.usagecategory,poo.mobilenumber, ptunit.arv
   orderby: ORDER BY demand.consumercode
 
 - reportName: DGDEDemandRegisterReport
@@ -1184,8 +1184,8 @@ ReportDefinitions:
     (SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_INTEREST' THEN demanddetail.taxamount ELSE 0 END)  + SUM(CASE WHEN taxheadcode LIKE 'PT_DEMANDNOTICE_CHARGE%' THEN demanddetail.taxamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_HOUSE_TAX' THEN demanddetail.taxamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_WATER_TAX' THEN demanddetail.taxamount ELSE 0 END)  +SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN demanddetail.taxamount ELSE 0 END)+SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_TAX' THEN demanddetail.taxamount ELSE 0 END)+SUM(CASE WHEN taxheadcode LIKE 'PT_DRAINAGE_TAX' THEN demanddetail.taxamount ELSE 0 END)  +SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_CESS' THEN demanddetail.taxamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_SANITARY_CESS' THEN demanddetail.taxamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_CONSOLIDATED_PROPERTY_TAX' THEN demanddetail.taxamount ELSE 0 END)) as totaltax,
     (SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_INTEREST' THEN demanddetail.collectionamount ELSE 0 END)  + SUM(CASE WHEN taxheadcode LIKE 'PT_DEMANDNOTICE_CHARGE%' THEN demanddetail.collectionamount ELSE 0 END)+SUM(CASE WHEN taxheadcode LIKE 'PT_HOUSE_TAX' THEN demanddetail.collectionamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_WATER_TAX' THEN demanddetail.collectionamount ELSE 0 END)  +SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN demanddetail.collectionamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_TAX' THEN demanddetail.collectionamount ELSE 0 END)+SUM(CASE WHEN taxheadcode LIKE 'PT_CONSOLIDATED_PROPERTY_TAX' THEN demanddetail.collectionamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_SANITARY_CESS' THEN demanddetail.collectionamount ELSE 0 END)  +SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_CESS' THEN demanddetail.collectionamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_DRAINAGE_TAX' THEN demanddetail.collectionamount ELSE 0 END))as totalcollection,
     ptunit.arv as arv,addr.doorno as doorno,(SELECT boundary_def.name FROM (VALUES tbl_boundary) AS boundary_def(name,code) where code=addr.locality) as mohallaname,
-    name,
-    mobilenumber
+    poo.name as name,
+    poo.mobilenumber as mobilenumber
     from egbs_demand_v1 demand
     inner join egbs_demanddetail_v1 as demanddetail on demanddetail.demandid= demand.id
     Inner join eg_pt_property as pt on  pt.propertyid=demand.consumercode
@@ -1196,5 +1196,5 @@ ReportDefinitions:
       FROM eg_pt_owner poo
       poo ON poo.propertyid = pt.id
       where demand.tenantid != 'pb.testing' and demand.businessservice ='PT' 
-  groupby: GROUP BY demand.tenantid,demand.consumercode,addr.doorno,msg.message,addr.doorno,eu.name,pt.oldpropertyid,pt.propertytype,ptunit.usagecategory,eu.mobilenumber, ptunit.arv
+  groupby: GROUP BY demand.tenantid,demand.consumercode,addr.doorno,addr.doorno,poo.name,pt.oldpropertyid,pt.propertytype,ptunit.usagecategory,poo.mobilenumber, ptunit.arv
   orderby: ORDER BY demand.consumercode
