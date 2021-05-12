@@ -287,7 +287,7 @@ ReportDefinitions:
     un.name as collectorname,
     addr.doorno as doorno,
     (SELECT boundary_def.name FROM (VALUES tbl_boundary) AS boundary_def(name,code) where code=addr.locality) as mohallaname,
-    name
+    poo.name
     from eg_pt_property pt
     Join eg_pt_address as addr on addr.propertyid=pt.id
     INNER JOIN egcl_bill as bill ON bill.consumercode = pt.propertyid  and bill.status = 'Cancelled'
@@ -493,7 +493,7 @@ ReportDefinitions:
     un.name as collectorname,
     addr.doorno as doorno,
     (SELECT boundary_def.name FROM (VALUES tbl_boundary) AS boundary_def(name,code) where code=addr.locality) as mohallaname,
-    name
+    poo.name as name
     from eg_pt_property pt
     Join eg_pt_address as addr on addr.propertyid=pt.id
     INNER JOIN egcl_bill as bill ON bill.consumercode = pt.propertyid  and bill.status = 'Cancelled'
@@ -832,7 +832,7 @@ ReportDefinitions:
     un.name as collectorname,
     addr.doorno as doorno,
     (SELECT boundary_def.name FROM (VALUES tbl_boundary) AS boundary_def(name,code) where code=addr.locality) as mohallaname,
-    name
+    poo.name as name
     from eg_pt_property pt
     Join eg_pt_address as addr on addr.propertyid=pt.id
     INNER JOIN egcl_bill as bill ON bill.consumercode = pt.propertyid  and bill.status != 'Cancelled'
@@ -1018,7 +1018,7 @@ ReportDefinitions:
       INNER JOIN eg_user ptuser ON ptuser.uuid = poo.userid group by propertyid)
       poo ON poo.propertyid = pt.id
       where demand.tenantid LIKE $tenantid and demand.businessservice ='PT'
-  groupby: GROUP BY demand.tenantid,demand.consumercode,addr.doorno,addr.doorno,poo.name,pt.oldpropertyid,pt.propertytype,ptunit.usagecategory,poo.mobilenumber, ptunit.arv
+  groupby: GROUP BY demand.tenantid,demand.consumercode,addr.doorno,addr.doorno,poo.name,pt.oldpropertyid,pt.propertytype,ptunit.usagecategory,poo.mobilenumber, ptunit.arv,addr.locality
   orderby: ORDER BY demand.consumercode
 
 - reportName: DGDEDemandRegisterReport
@@ -1196,5 +1196,5 @@ ReportDefinitions:
       FROM eg_pt_owner poo
       poo ON poo.propertyid = pt.id
       where demand.tenantid != 'pb.testing' and demand.businessservice ='PT' 
-  groupby: GROUP BY demand.tenantid,demand.consumercode,addr.doorno,addr.doorno,poo.name,pt.oldpropertyid,pt.propertytype,ptunit.usagecategory,poo.mobilenumber, ptunit.arv
+  groupby: GROUP BY demand.tenantid,demand.consumercode,addr.doorno,addr.doorno,poo.name,pt.oldpropertyid,pt.propertytype,ptunit.usagecategory,poo.mobilenumber, ptunit.arv,addr.locality
   orderby: ORDER BY demand.consumercode
