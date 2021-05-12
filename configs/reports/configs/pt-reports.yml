@@ -5,6 +5,11 @@ ReportDefinitions:
   version: 1.0.0
   moduleName: rainmaker-pt
   decryptionPathId: ReceiptRegister
+  externalService:
+  - entity: $.TenantBoundary[0].boundary
+    apiURL: http://egov-location:8080/egov-location/location/v11/boundarys/_search?hierarchyTypeCode=REVENUE&boundaryType=Locality&tenantId=$tenantId
+    keyOrder: name,code
+    tableName: tbl_boundary
   sourceColumns:
   - name: tenantid
     label: PT_ULB_CITY 
@@ -141,34 +146,25 @@ ReportDefinitions:
     SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_REBATE' or taxheadcode like 'PT_PROMOTIONAL_REBATE' THEN bad.amount ELSE 0 END) as rebate,
     pd.amountpaid as totalcollection,
     un.name as collectorname,
-    msg.message as mohallaname,
     addr.doorno as doorno,
-    eu.name as name
-    from egcl_payment pay,
-    egcl_paymentdetail pd,
-    egcl_bill bill,
-    egcl_billdetial bd,
-    egcl_billaccountdetail bad,
-    eg_user un,
-    eg_pt_address addr,
-    eg_user eu,
-    message msg,
-    eg_pt_property pt
-    where pd.paymentid= pay.id and
-    pd.billid=bill.id and
-    bd.billid=bill.id and
-    bad.billdetailid=bd.id and
-    pay.createdby=CAST(un.id as varchar) and
-    addr.propertyid=pt.id and
-    pt.propertyid=bill.consumercode and
-    RIGHT(msg.code,8)=addr.locality and
-    msg.tenantid=pay.tenantid and
-    eu.uuid=(select poo.userid from eg_pt_owner poo where poo.propertyid=(select pdd.id from eg_pt_property pdd where pdd.propertyid= bill.consumercode fetch first 1 row only) fetch first 1 row only) and
-    msg.locale='en_IN' and
-    pay.tenantid LIKE $tenantid and 
-    pd.businessservice='PT'and 
-    pay.paymentstatus != 'CANCELLED' AND pay.tenantid != 'pb.testing'
-  groupby: GROUP BY pay.tenantid,pd.receiptnumber,bill.consumercode,pd.receiptdate,pay.transactionnumber,pay.paymentmode,un.name,msg.message,addr.doorno,eu.name,pd.amountpaid
+    (SELECT boundary_def.name FROM (VALUES tbl_boundary) AS boundary_def(name,code) where code=addr.locality) as mohallaname,
+    poo.name as name
+    from eg_pt_property pt
+    Join eg_pt_address as addr on addr.propertyid=pt.id
+    INNER JOIN egcl_bill as bill ON bill.consumercode = pt.propertyid  and bill.status != 'Cancelled'
+    JOIN egcl_billdetial as bd ON bd.billid = bill.id
+    INNER JOIN egcl_billaccountdetail as bad ON bd.id = bad .billdetailid
+    LEFT OUTER JOIN egcl_paymentdetail as pd ON pd.billid = bill.id
+    LEFT OUTER JOIN egcl_payment as pay ON pay.id = pd.paymentid and pay.paymentstatus != 'CANCELLED'
+    LEFT OUTER Join eg_pg_transactions as pgtxn ON pay.transactionnumber = pgtxn.txn_id
+    LEFT JOIN (
+      SELECT propertyid, array_to_string(array_agg(name),', ') as name, array_to_string(array_agg(mobilenumber),', ') as mobilenumber
+      FROM eg_pt_owner poo
+      INNER JOIN eg_user ptuser ON ptuser.uuid = poo.userid group by propertyid) 
+      poo ON poo.propertyid = pt.propertyid
+      JOIN eg_user as un ON pay.createdby::INTEGER=un.id
+      where pay.tenantid LIKE $tenantid  and pd.businessservice='PT'and pay.paymentstatus != 'CANCELLED'
+    groupby: GROUP BY pay.tenantid,pd.receiptnumber,bill.consumercode,pd.receiptdate,pay.transactionnumber,pay.paymentmode,addr.doorno,poo.name,pd.amountpaid,un.name
 
 - reportName: CancelledReceiptRegister
   summary: Receipt Register for cancelled Receipts
