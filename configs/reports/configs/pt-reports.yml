@@ -49,8 +49,8 @@ ReportDefinitions:
     type: string
     source: pt
     total: true
-  - name: penalty
-    label: reports.pt.penalty
+  - name: demandnoticecharge
+    label: reports.pt.demandnotice
     type: string
     source: pt
     total: true  
@@ -76,6 +76,31 @@ ReportDefinitions:
     total: true
   - name: educationtax
     label: PT_EDUCATION_TAX
+    type: string
+    source: pt
+    total: true 
+  - name: consolidatedpropertytax
+    label: PT_CONSOLIDATED_PROPERTY_TAX
+    type: string
+    source: pt
+    total: true 
+  - name: sanitarycess
+    label: PT_SANITARY_CESS
+    type: string
+    source: pt
+    total: true
+  - name: educationcess
+    label: PT_EDUCATION_CESS
+    type: string
+    source: pt
+    total: true 
+  - name: additionalwatertax
+    label: PT_ADDL_WATER_TAX
+    type: string
+    source: pt
+    total: true 
+  - name: drainagetax
+    label: PT_DRAINAGE_TAX
     type: string
     source: pt
     total: true 
@@ -140,13 +165,17 @@ ReportDefinitions:
     pay.paymentmode as paymentmode,
     pay.transactionnumber as transactionnumber,
     SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_INTEREST%' THEN bad.amount ELSE 0 END) as interest,
-    SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_PENALTY%' or taxheadcode LIKE 'PT_LATE_ASSESSMENT_PENALTY' THEN bad.amount ELSE 0 END) as penalty,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_DEMANDNOTICE_CHARGE' THEN bad.amount ELSE 0 END) as demandnoticecharge,
     SUM(CASE WHEN taxheadcode LIKE 'PT_HOUSE_TAX' THEN bad.amount ELSE 0 END) as housetax,
     SUM(CASE WHEN taxheadcode LIKE 'PT_WATER_TAX'  THEN bad.amount ELSE 0 END) as watertax ,
     SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN bad.amount ELSE 0 END) as conservancytax ,
     SUM(CASE WHEN taxheadcode LIKE 'PT_LIGHTINING_TAX' THEN bad.amount ELSE 0 END) as lightiningtax ,
     SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_TAX' THEN bad.amount ELSE 0 END) as educationtax ,
-    SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_REBATE' or taxheadcode like 'PT_PROMOTIONAL_REBATE' THEN bad.amount ELSE 0 END) as rebate,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_CONSOLIDATED_PROPERTY_TAX' THEN bad.amount ELSE 0 END) as consolidatedpropertytax,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_SANITARY_CESS' THEN bad.amount ELSE 0 END) as sanitarycess,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_CESS' THEN bad.amount ELSE 0 END) as educationcess,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_ADDL_WATER_TAX' THEN bad.amount ELSE 0 END) as additionalwatertax,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_DRAINAGE_TAX' THEN bad.amount ELSE 0 END) as drainagetax,
     pd.amountpaid as totalcollection,
     un.name as collectorname,
     addr.doorno as doorno,
@@ -214,11 +243,11 @@ ReportDefinitions:
     type: string
     source: pt
     total: false
-  - name: penalty
-    label: reports.pt.penalty
+  - name: demandnoticecharge
+    label: reports.pt.demandnotice
     type: string
     source: pt
-    total: false  
+    total: true   
   - name: housetax
     label: reports.pt.housetax
     type: string
@@ -242,7 +271,33 @@ ReportDefinitions:
   - name: educationtax
     label: PT_EDUCATION_TAX
     type: string
-    source: pt 
+    source: pt
+    total: true  
+  - name: consolidatedpropertytax
+    label: PT_CONSOLIDATED_PROPERTY_TAX
+    type: string
+    source: pt
+    total: true 
+  - name: sanitarycess
+    label: PT_SANITARY_CESS
+    type: string
+    source: pt
+    total: true
+  - name: educationcess
+    label: PT_EDUCATION_CESS
+    type: string
+    source: pt
+    total: true 
+  - name: additionalwatertax
+    label: PT_ADDL_WATER_TAX
+    type: string
+    source: pt
+    total: true 
+  - name: drainagetax
+    label: PT_DRAINAGE_TAX
+    type: string
+    source: pt
+    total: true  
   - name: totalcollection
     label: PT_TOTAL_AMOUNT 
     type: string
@@ -276,13 +331,17 @@ ReportDefinitions:
     pay.paymentmode as paymentmode,
     pay.transactionnumber as transactionnumber,
     SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_INTEREST%' THEN bad.amount ELSE 0 END) as interest,
-    SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_PENALTY%' or taxheadcode LIKE 'PT_LATE_ASSESSMENT_PENALTY' THEN bad.amount ELSE 0 END) as penalty,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_DEMANDNOTICE_CHARGE' THEN bad.amount ELSE 0 END) as demandnoticecharge,
     SUM(CASE WHEN taxheadcode LIKE 'PT_HOUSE_TAX' THEN bad.amount ELSE 0 END) as housetax,
     SUM(CASE WHEN taxheadcode LIKE 'PT_WATER_TAX'  THEN bad.amount ELSE 0 END) as watertax ,
     SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN bad.amount ELSE 0 END) as conservancytax ,
     SUM(CASE WHEN taxheadcode LIKE 'PT_LIGHTINING_TAX' THEN bad.amount ELSE 0 END) as lightiningtax ,
     SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_TAX' THEN bad.amount ELSE 0 END) as educationtax ,
-    SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_REBATE' or taxheadcode like 'PT_PROMOTIONAL_REBATE' THEN bad.amount ELSE 0 END) as rebate,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_CONSOLIDATED_PROPERTY_TAX' THEN bad.amount ELSE 0 END) as consolidatedpropertytax,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_SANITARY_CESS' THEN bad.amount ELSE 0 END) as sanitarycess,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_CESS' THEN bad.amount ELSE 0 END) as educationcess,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_ADDL_WATER_TAX' THEN bad.amount ELSE 0 END) as additionalwatertax,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_DRAINAGE_TAX' THEN bad.amount ELSE 0 END) as drainagetax,
     pd.amountpaid as totalcollection,
     un.name as collectorname,
     addr.doorno as doorno,
@@ -412,11 +471,11 @@ ReportDefinitions:
     type: string
     source: pt
     total: false
-  - name: penalty
-    label: reports.pt.penalty
+  - name: demandnoticecharge
+    label: reports.pt.demandnotice
     type: string
     source: pt
-    total: false  
+    total: true  
   - name: housetax
     label: reports.pt.housetax
     type: string
@@ -441,6 +500,32 @@ ReportDefinitions:
     label: PT_EDUCATION_TAX
     type: string
     source: pt 
+    total: true  
+  - name: consolidatedpropertytax
+    label: PT_CONSOLIDATED_PROPERTY_TAX
+    type: string
+    source: pt
+    total: true 
+  - name: sanitarycess
+    label: PT_SANITARY_CESS
+    type: string
+    source: pt
+    total: true
+  - name: educationcess
+    label: PT_EDUCATION_CESS
+    type: string
+    source: pt
+    total: true 
+  - name: additionalwatertax
+    label: PT_ADDL_WATER_TAX
+    type: string
+    source: pt
+    total: true 
+  - name: drainagetax
+    label: PT_DRAINAGE_TAX
+    type: string
+    source: pt
+    total: true 
   - name: totalcollection
     label: PT_TOTAL_AMOUNT 
     type: string
@@ -482,13 +567,17 @@ ReportDefinitions:
     pay.paymentmode as paymentmode,
     pay.transactionnumber as transactionnumber,
     SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_INTEREST%' THEN bad.amount ELSE 0 END) as interest,
-    SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_PENALTY%' or taxheadcode LIKE 'PT_LATE_ASSESSMENT_PENALTY' THEN bad.amount ELSE 0 END) as penalty,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_DEMANDNOTICE_CHARGE' THEN bad.amount ELSE 0 END) as demandnoticecharge,
     SUM(CASE WHEN taxheadcode LIKE 'PT_HOUSE_TAX' THEN bad.amount ELSE 0 END) as housetax,
     SUM(CASE WHEN taxheadcode LIKE 'PT_WATER_TAX'  THEN bad.amount ELSE 0 END) as watertax ,
     SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN bad.amount ELSE 0 END) as conservancytax ,
     SUM(CASE WHEN taxheadcode LIKE 'PT_LIGHTINING_TAX' THEN bad.amount ELSE 0 END) as lightiningtax ,
     SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_TAX' THEN bad.amount ELSE 0 END) as educationtax ,
-    SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_REBATE' or taxheadcode like 'PT_PROMOTIONAL_REBATE' THEN bad.amount ELSE 0 END) as rebate,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_CONSOLIDATED_PROPERTY_TAX' THEN bad.amount ELSE 0 END) as consolidatedpropertytax,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_SANITARY_CESS' THEN bad.amount ELSE 0 END) as sanitarycess,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_CESS' THEN bad.amount ELSE 0 END) as educationcess,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_ADDL_WATER_TAX' THEN bad.amount ELSE 0 END) as additionalwatertax,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_DRAINAGE_TAX' THEN bad.amount ELSE 0 END) as drainagetax,
     pd.amountpaid as totalcollection,
     un.name as collectorname,
     addr.doorno as doorno,
@@ -722,11 +811,11 @@ ReportDefinitions:
     type: string
     source: pt
     total: true
-  - name: penalty
-    label: reports.pt.penalty
+  - name: demandnoticecharge
+    label: reports.pt.demandnotice
     type: string
     source: pt
-    total: true  
+    total: true   
   - name: housetax
     label: reports.pt.housetax
     type: string
@@ -749,6 +838,31 @@ ReportDefinitions:
     total: true
   - name: educationtax
     label: PT_EDUCATION_TAX
+    type: string
+    source: pt
+    total: true 
+  - name: consolidatedpropertytax
+    label: PT_CONSOLIDATED_PROPERTY_TAX
+    type: string
+    source: pt
+    total: true 
+  - name: sanitarycess
+    label: PT_SANITARY_CESS
+    type: string
+    source: pt
+    total: true
+  - name: educationcess
+    label: PT_EDUCATION_CESS
+    type: string
+    source: pt
+    total: true 
+  - name: additionalwatertax
+    label: PT_ADDL_WATER_TAX
+    type: string
+    source: pt
+    total: true 
+  - name: drainagetax
+    label: PT_DRAINAGE_TAX
     type: string
     source: pt
     total: true 
@@ -821,13 +935,17 @@ ReportDefinitions:
     pay.paymentmode as paymentmode,
     pay.transactionnumber as transactionnumber,
     SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_INTEREST%' THEN bad.amount ELSE 0 END) as interest,
-    SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_PENALTY%' or taxheadcode LIKE 'PT_LATE_ASSESSMENT_PENALTY' THEN bad.amount ELSE 0 END) as penalty,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_DEMANDNOTICE_CHARGE' THEN bad.amount ELSE 0 END) as demandnoticecharge,
     SUM(CASE WHEN taxheadcode LIKE 'PT_HOUSE_TAX' THEN bad.amount ELSE 0 END) as housetax,
     SUM(CASE WHEN taxheadcode LIKE 'PT_WATER_TAX'  THEN bad.amount ELSE 0 END) as watertax ,
     SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN bad.amount ELSE 0 END) as conservancytax ,
     SUM(CASE WHEN taxheadcode LIKE 'PT_LIGHTINING_TAX' THEN bad.amount ELSE 0 END) as lightiningtax ,
     SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_TAX' THEN bad.amount ELSE 0 END) as educationtax ,
-    SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_REBATE' or taxheadcode like 'PT_PROMOTIONAL_REBATE' THEN bad.amount ELSE 0 END) as rebate,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_CONSOLIDATED_PROPERTY_TAX' THEN bad.amount ELSE 0 END) as consolidatedpropertytax,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_SANITARY_CESS' THEN bad.amount ELSE 0 END) as sanitarycess,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_CESS' THEN bad.amount ELSE 0 END) as educationcess,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_ADDL_WATER_TAX' THEN bad.amount ELSE 0 END) as additionalwatertax,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_DRAINAGE_TAX' THEN bad.amount ELSE 0 END) as drainagetax,
     pd.amountpaid as totalcollection,
     un.name as collectorname,
     addr.doorno as doorno,
@@ -914,11 +1032,16 @@ ReportDefinitions:
     type: string
     source: pt
     total: false
-  - name: arv
-    label: PT_ASSESMENT_INFO_AREA_RENT
+  - name: interest
+    label: reports.pt.interest
     type: string
     source: pt
-    total: true    
+    total: true 
+  - name: demandnoticecharge
+    label: reports.pt.demandnotice
+    type: string
+    source: pt
+    total: true     
   - name: housetax
     label: reports.pt.housetax
     type: string
@@ -939,21 +1062,31 @@ ReportDefinitions:
     type: string
     source: pt
     total: true  
-  - name: penalty
-    label:  reports.pt.penalty
+  - name: consolidatedpropertytax
+    label: PT_CONSOLIDATED_PROPERTY_TAX
+    type: string
+    source: pt
+    total: true 
+  - name: sanitarycess
+    label: PT_SANITARY_CESS
     type: string
     source: pt
     total: true
-  - name: rebate
-    label: reports.pt.rebate
+  - name: educationcess
+    label: PT_EDUCATION_CESS
     type: string
     source: pt
-    total: true
-  - name: interest
-    label: reports.pt.interest
+    total: true 
+  - name: additionalwatertax
+    label: PT_ADDL_WATER_TAX
     type: string
     source: pt
-    total: true  
+    total: true 
+  - name: drainagetax
+    label: PT_DRAINAGE_TAX
+    type: string
+    source: pt
+    total: true 
   - name: totaltax
     label: PT_TOTAL_AMOUNT
     type: string
@@ -964,6 +1097,11 @@ ReportDefinitions:
     type: string
     source: pt
     total: true
+  - name: arv
+    label: PT_ASSESMENT_INFO_AREA_RENT
+    type: string
+    source: pt
+    total: true 
   searchParams:
   - name: fromDate
     label: reports.pt.fromDate
@@ -993,7 +1131,7 @@ ReportDefinitions:
     initcap(split_part(ptunit.usagecategory, '.', 1)) as usagetype,
     initcap(split_part(ptunit.usagecategory, '.', 2)) as subusagetype,
     SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_INTEREST%' THEN demanddetail.taxamount ELSE 0 END) as interest,
-    SUM(CASE WHEN taxheadcode LIKE 'PT_DEMANDNOTICE_CHARGE%' THEN demanddetail.taxamount ELSE 0 END) as penalty,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_DEMANDNOTICE_CHARGE%' THEN demanddetail.taxamount ELSE 0 END) as demandnoticecharge,
     SUM(CASE WHEN taxheadcode LIKE 'PT_HOUSE_TAX' THEN demanddetail.taxamount ELSE 0 END) as housetax ,
     SUM(CASE WHEN taxheadcode LIKE 'PT_WATER_TAX'  THEN demanddetail.taxamount ELSE 0 END) as watertax ,
     SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN demanddetail.taxamount ELSE 0 END) as conservancytax ,
@@ -1001,9 +1139,10 @@ ReportDefinitions:
     SUM(CASE WHEN taxheadcode LIKE 'PT_CONSOLIDATED_PROPERTY_TAX' THEN demanddetail.taxamount ELSE 0 END) as consolidatedtax ,
     SUM(CASE WHEN taxheadcode LIKE 'PT_SANITARY_CESS'  THEN demanddetail.taxamount ELSE 0 END) as sanitarycess ,
     SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_CESS' THEN demanddetail.taxamount ELSE 0 END) as educationcess ,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_ADDL_WATER_TAX' THEN demanddetail.taxamount ELSE 0 END) as additionalwatertax ,
     SUM(CASE WHEN taxheadcode LIKE 'PT_DRAINAGE_TAX' THEN demanddetail.taxamount ELSE 0 END) as drainagetax,
-    (SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_INTEREST' THEN demanddetail.taxamount ELSE 0 END)  + SUM(CASE WHEN taxheadcode LIKE 'PT_DEMANDNOTICE_CHARGE%' THEN demanddetail.taxamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_HOUSE_TAX' THEN demanddetail.taxamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_WATER_TAX' THEN demanddetail.taxamount ELSE 0 END)  +SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN demanddetail.taxamount ELSE 0 END)+SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_TAX' THEN demanddetail.taxamount ELSE 0 END)+SUM(CASE WHEN taxheadcode LIKE 'PT_DRAINAGE_TAX' THEN demanddetail.taxamount ELSE 0 END)  +SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_CESS' THEN demanddetail.taxamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_SANITARY_CESS' THEN demanddetail.taxamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_CONSOLIDATED_PROPERTY_TAX' THEN demanddetail.taxamount ELSE 0 END)) as totaltax,
-    (SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_INTEREST' THEN demanddetail.collectionamount ELSE 0 END)  + SUM(CASE WHEN taxheadcode LIKE 'PT_DEMANDNOTICE_CHARGE%' THEN demanddetail.collectionamount ELSE 0 END)+SUM(CASE WHEN taxheadcode LIKE 'PT_HOUSE_TAX' THEN demanddetail.collectionamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_WATER_TAX' THEN demanddetail.collectionamount ELSE 0 END)  +SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN demanddetail.collectionamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_TAX' THEN demanddetail.collectionamount ELSE 0 END)+SUM(CASE WHEN taxheadcode LIKE 'PT_CONSOLIDATED_PROPERTY_TAX' THEN demanddetail.collectionamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_SANITARY_CESS' THEN demanddetail.collectionamount ELSE 0 END)  +SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_CESS' THEN demanddetail.collectionamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_DRAINAGE_TAX' THEN demanddetail.collectionamount ELSE 0 END))as totalcollection,
+    (SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_INTEREST' THEN demanddetail.taxamount ELSE 0 END)  + SUM(CASE WHEN taxheadcode LIKE 'PT_DEMANDNOTICE_CHARGE%' THEN demanddetail.taxamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_HOUSE_TAX' THEN demanddetail.taxamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_WATER_TAX' THEN demanddetail.taxamount ELSE 0 END)  +SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN demanddetail.taxamount ELSE 0 END)+SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_TAX' THEN demanddetail.taxamount ELSE 0 END)+SUM(CASE WHEN taxheadcode LIKE 'PT_ADDL_WATER_TAX' THEN demanddetail.taxamount ELSE 0 END)+SUM(CASE WHEN taxheadcode LIKE 'PT_DRAINAGE_TAX' THEN demanddetail.taxamount ELSE 0 END)  +SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_CESS' THEN demanddetail.taxamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_SANITARY_CESS' THEN demanddetail.taxamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_CONSOLIDATED_PROPERTY_TAX' THEN demanddetail.taxamount ELSE 0 END)) as totaltax,
+    (SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_INTEREST' THEN demanddetail.collectionamount ELSE 0 END)  + SUM(CASE WHEN taxheadcode LIKE 'PT_DEMANDNOTICE_CHARGE%' THEN demanddetail.collectionamount ELSE 0 END)+SUM(CASE WHEN taxheadcode LIKE 'PT_HOUSE_TAX' THEN demanddetail.collectionamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_WATER_TAX' THEN demanddetail.collectionamount ELSE 0 END)  +SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN demanddetail.collectionamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_TAX' THEN demanddetail.collectionamount ELSE 0 END)+SUM(CASE WHEN taxheadcode LIKE 'PT_CONSOLIDATED_PROPERTY_TAX' THEN demanddetail.collectionamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_SANITARY_CESS' THEN demanddetail.collectionamount ELSE 0 END)  +SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_CESS' THEN demanddetail.collectionamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_ADDL_WATER_TAX' THEN demanddetail.collectionamount ELSE 0 END)+SUM(CASE WHEN taxheadcode LIKE 'PT_DRAINAGE_TAX' THEN demanddetail.collectionamount ELSE 0 END))as totalcollection,
     ptunit.arv as arv,addr.doorno as doorno,(SELECT boundary_def.name FROM (VALUES tbl_boundary) AS boundary_def(name,code) where code=addr.locality) as mohallaname,
     poo.name as name,
     poo.mobilenumber as mobilenumber
@@ -1110,16 +1249,36 @@ ReportDefinitions:
     type: string
     source: pt
     total: true  
-  - name: penalty
-    label:  reports.pt.penalty
+  - name: consolidatedpropertytax
+    label: PT_CONSOLIDATED_PROPERTY_TAX
+    type: string
+    source: pt
+    total: true 
+  - name: sanitarycess
+    label: PT_SANITARY_CESS
     type: string
     source: pt
     total: true
-  - name: rebate
-    label: reports.pt.rebate
+  - name: educationcess
+    label: PT_EDUCATION_CESS
     type: string
     source: pt
-    total: true
+    total: true 
+  - name: additionalwatertax
+    label: PT_ADDL_WATER_TAX
+    type: string
+    source: pt
+    total: true 
+  - name: drainagetax
+    label: PT_DRAINAGE_TAX
+    type: string
+    source: pt
+    total: true 
+  - name: demandnoticecharge
+    label: reports.pt.demandnotice
+    type: string
+    source: pt
+    total: true  
   - name: interest
     label: reports.pt.interest
     type: string
@@ -1180,9 +1339,10 @@ ReportDefinitions:
     SUM(CASE WHEN taxheadcode LIKE 'PT_CONSOLIDATED_PROPERTY_TAX' THEN demanddetail.taxamount ELSE 0 END) as consolidatedtax ,
     SUM(CASE WHEN taxheadcode LIKE 'PT_SANITARY_CESS'  THEN demanddetail.taxamount ELSE 0 END) as sanitarycess ,
     SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_CESS' THEN demanddetail.taxamount ELSE 0 END) as educationcess ,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_ADDL_WATER_TAX' THEN demanddetail.taxamount ELSE 0 END) as additionalwatertax ,
     SUM(CASE WHEN taxheadcode LIKE 'PT_DRAINAGE_TAX' THEN demanddetail.taxamount ELSE 0 END) as drainagetax,
-    (SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_INTEREST' THEN demanddetail.taxamount ELSE 0 END)  + SUM(CASE WHEN taxheadcode LIKE 'PT_DEMANDNOTICE_CHARGE%' THEN demanddetail.taxamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_HOUSE_TAX' THEN demanddetail.taxamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_WATER_TAX' THEN demanddetail.taxamount ELSE 0 END)  +SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN demanddetail.taxamount ELSE 0 END)+SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_TAX' THEN demanddetail.taxamount ELSE 0 END)+SUM(CASE WHEN taxheadcode LIKE 'PT_DRAINAGE_TAX' THEN demanddetail.taxamount ELSE 0 END)  +SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_CESS' THEN demanddetail.taxamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_SANITARY_CESS' THEN demanddetail.taxamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_CONSOLIDATED_PROPERTY_TAX' THEN demanddetail.taxamount ELSE 0 END)) as totaltax,
-    (SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_INTEREST' THEN demanddetail.collectionamount ELSE 0 END)  + SUM(CASE WHEN taxheadcode LIKE 'PT_DEMANDNOTICE_CHARGE%' THEN demanddetail.collectionamount ELSE 0 END)+SUM(CASE WHEN taxheadcode LIKE 'PT_HOUSE_TAX' THEN demanddetail.collectionamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_WATER_TAX' THEN demanddetail.collectionamount ELSE 0 END)  +SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN demanddetail.collectionamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_TAX' THEN demanddetail.collectionamount ELSE 0 END)+SUM(CASE WHEN taxheadcode LIKE 'PT_CONSOLIDATED_PROPERTY_TAX' THEN demanddetail.collectionamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_SANITARY_CESS' THEN demanddetail.collectionamount ELSE 0 END)  +SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_CESS' THEN demanddetail.collectionamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_DRAINAGE_TAX' THEN demanddetail.collectionamount ELSE 0 END))as totalcollection,
+    (SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_INTEREST' THEN demanddetail.taxamount ELSE 0 END)  + SUM(CASE WHEN taxheadcode LIKE 'PT_DEMANDNOTICE_CHARGE%' THEN demanddetail.taxamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_HOUSE_TAX' THEN demanddetail.taxamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_WATER_TAX' THEN demanddetail.taxamount ELSE 0 END)  +SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN demanddetail.taxamount ELSE 0 END)+SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_TAX' THEN demanddetail.taxamount ELSE 0 END)+SUM(CASE WHEN taxheadcode LIKE 'PT_ADDL_WATER_TAX' THEN demanddetail.taxamount ELSE 0 END)+SUM(CASE WHEN taxheadcode LIKE 'PT_DRAINAGE_TAX' THEN demanddetail.taxamount ELSE 0 END)  +SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_CESS' THEN demanddetail.taxamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_SANITARY_CESS' THEN demanddetail.taxamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_CONSOLIDATED_PROPERTY_TAX' THEN demanddetail.taxamount ELSE 0 END)) as totaltax,
+    (SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_INTEREST' THEN demanddetail.collectionamount ELSE 0 END)  + SUM(CASE WHEN taxheadcode LIKE 'PT_DEMANDNOTICE_CHARGE%' THEN demanddetail.collectionamount ELSE 0 END)+SUM(CASE WHEN taxheadcode LIKE 'PT_HOUSE_TAX' THEN demanddetail.collectionamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_WATER_TAX' THEN demanddetail.collectionamount ELSE 0 END)  +SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN demanddetail.collectionamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_TAX' THEN demanddetail.collectionamount ELSE 0 END)+SUM(CASE WHEN taxheadcode LIKE 'PT_ADDL_WATER_TAX' THEN demanddetail.collectionamount ELSE 0 END)+SUM(CASE WHEN taxheadcode LIKE 'PT_CONSOLIDATED_PROPERTY_TAX' THEN demanddetail.collectionamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_SANITARY_CESS' THEN demanddetail.collectionamount ELSE 0 END)  +SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_CESS' THEN demanddetail.collectionamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'PT_DRAINAGE_TAX' THEN demanddetail.collectionamount ELSE 0 END))as totalcollection,
     ptunit.arv as arv,addr.doorno as doorno,(SELECT boundary_def.name FROM (VALUES tbl_boundary) AS boundary_def(name,code) where code=addr.locality) as mohallaname,
     poo.name as name,
     poo.mobilenumber as mobilenumber
