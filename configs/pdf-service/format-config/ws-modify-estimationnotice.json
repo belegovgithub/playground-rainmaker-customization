@@ -1,0 +1,682 @@
+{
+    "key": "ws-modify-estimationnotice",
+    "config": {
+        "defaultStyle": {
+            "font": "Cambay"
+        },
+        "watermark": { "text": "BEL UAT BEL UAT", "color": "gery", "opacity": 0.1, "bold": true, "italics": false },
+        "content": [
+            {
+                "style": "ws-head",
+                "table": {
+                    "widths": [
+                        "*"
+                    ],
+                    "body": [
+                        [
+                            {
+                                "stack": [
+                                     {
+                                        "text": "{{annexture_b}}",
+                                        "style": "appendix-header"
+                                         
+                                    }
+                                    
+                                ]
+                              
+                                 
+                            }
+                        ]
+                    ]
+                },
+                "layout": "noBorders"
+            },
+	    {
+                "alignment": "left",
+                "table": {
+                    "widths": [
+                        "*"
+                    ],
+                    "body": [
+                        [
+                            {
+                                "stack": [
+                                    {
+                                        "table": {
+                                         "widths": [
+                                           "80%",
+                                           "20%"
+                                         ],
+                                         "body": [
+                                           [
+                                             {
+                                               "text":"{{file_no}}: {{appNo}}",
+                                               "border":[
+                                                 false,
+                                                 false,
+                                                 false,
+                                                 false
+                                               ],
+                                                "style": "receipt-table-value"
+                                             },
+                                             {
+                                               "text":"{{dateLabel}}: {{appDate}}",
+                                               "border":[
+                                                 false,
+                                                 false,
+                                                 false,
+                                                 false
+                                               ],
+                                                "style": "receipt-table-value-down"
+                                                 
+                                             }
+                                           ]
+                                           ]
+                                       }
+                                    }
+                                ]
+                              
+                                 
+                            }
+                        ]
+                    ]
+                },
+                "layout": "noBorders",
+                "margin": [
+                 -5,
+                 2,
+                 0,
+                 2
+               ]
+            },
+            {
+                "style": "ws-head",
+                "table": {
+                    "widths": [
+                        "*"
+                    ],
+                    "body": [
+                        [
+                            {
+                                "stack": [
+                                     {
+                                        "text": "{{toLabel}}",
+                                        "style": "receipt-value-down-rec"
+                                         
+                                    },
+                                    {
+                                        "text": "{{name_applicant}}",
+                                        "style": "receipt-value-down-rec"
+                                         
+                                    },
+                                    {
+                                        "text": "{{correspondence_address_applicant}}",
+                                        "style": "receipt-value-down-rec"
+                                         
+                                    },{
+                                        "text": "{{logo_header}} {{cantt_board}}",
+                                        "style": "receipt-value-down-rec"
+                                         
+                                    }
+                                ]
+                              
+                                 
+                            }
+                        ]
+                    ]
+                },
+                "layout": "noBorders"
+            },
+            {
+                 "style": "ws-head",
+                "table": {
+                    "widths": [
+                        "*"
+                    ],
+                    "body": [
+                                        [ 
+                                            {
+                                                 "columns": [
+                                                    {
+                                                        "width": "10%",
+                                                        "text": "{{subjectLabel}}",
+                                                         "bold": true,
+                                                         "fontSize": 11.5
+                                                        
+                                                    },
+                                                    {
+                                                        "text": "{{change_water_conn}} {{name_applicant}} {{water_conn_no_stmt}} {{conn_no}} {{at_label}} {{houseNo}}, {{address}},{{logo_header}} {{cantt_board}}",
+                                                        "width": "90%",
+                                                        "bold": true,
+                                                        "fontSize": 11.5
+                                                         
+                                                    }
+                                                ],
+                                                "margin": [
+                                                                0,
+                                                                5,
+                                                                0,
+                                                                0
+                                                            ]
+                                            }
+                                        ]
+                         
+                    ]
+                },
+                "layout": "noBorders"
+            },
+             {
+                 "style": "ws-head",
+                "table": {
+                    "widths": [
+                        "*"
+                    ],
+                    "body": [
+                                        [ 
+                                            {
+                                                 "columns": [
+                                                    {
+                                                        "width": "18%",
+                                                        "text": "{{referenceLabel}}",
+                                                         "bold": false,
+                                                         "italics": true,
+                                                          "margin": [
+                                                                25,
+                                                                8,
+                                                                0,
+                                                                0
+                                                            ]
+                                                        
+                                                    },
+                                                    {
+                                                        "text": "{{referenceStatement1}} {{appNo}} {{referenceStatement2}} {{dateLabel}} {{applicationDate}} {{referenceStatement3}}",
+                                                        "width": "88%",
+                                                        "bold": false,
+                                                        "italics": true,
+                                                         "margin": [
+                                                                0,
+                                                                8,
+                                                                0,
+                                                                0
+                                                            ]
+                                                        
+                                                        
+                                                         
+                                                    }
+                                                ],
+                                                "margin": [
+                                                                0,
+                                                                0,
+                                                                0,
+                                                                0
+                                                            ]
+                                            }
+                                        ]
+                         
+                    ]
+                },
+                "layout": "noBorders"
+            },
+             {
+                 "style": "ws-head",
+                "table": {
+                    "widths": [
+                        "*"
+                    ],
+                    "body": [
+                        
+                                [
+                            {
+                                "border": [
+                                    false,
+                                    false,
+                                    false,
+                                    false
+                                ],
+                                "columns": [
+                                    {
+                                        "width": "100%",
+                                        "ol": [
+                                            {
+                                                
+                                            },
+                                            {
+                                                "text": "{{applStatement1}} {{water_conn_small}} {{to_applicant}} {{name_applicant}} {{with_stmt}} {{water_conn_no_stmt}} {{conn_no}} {{grant_stmt2}} {{houseNo}}, {{address}},{{logo_header}} {{cantt_board}} {{applStatement3}}.{{change_stmt}}",
+                                                "style": "receipt-value-down"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "margin": [
+                                    7,
+                                    10,
+                                    0,
+                                    0
+                                ]
+                            }
+                        ],
+                        [
+                             {
+                                                 "columns": [
+                                                    {
+                                                        "width": "5%", 
+                                                        "text": "a)",
+                                                        "alignment": "left"
+                                                    },
+                                                    {
+                                                         "width": "75%", 
+                                                        "text": "{{water_conn_chargeLabel}}",
+                                                        "alignment": "left"
+                                                    },
+                                                    {
+                    
+                                                        "text": "{{rupeesLabel}} {{waterConnCharge}}",
+                                                        "alignment": "left"
+                                                    }
+                                                    ]
+                                           }
+                            
+                        ],
+                        [
+                            {
+                                                "columns": [
+                                                   {
+                                                       "width": "5%", 
+                                                       "text": "b)",
+                                                       "alignment": "left"
+                                                   },
+                                                   {
+                                                        "width": "75%", 
+                                                       "text": "{{security_fee_label}}",
+                                                       "alignment": "left"
+                                                   },
+                                                   {
+                   
+                                                       "text": "{{rupeesLabel}} {{securityCharge}}",
+                                                       "alignment": "left"
+                                                   }
+                                                   ]
+                                          }
+                           
+                       ],
+                        [
+                             {
+                                                 "columns": [
+                                                    {
+                                                        "width": "5%", 
+                                                        "text": "c)",
+                                                        "alignment": "left"
+                                                    },
+                                                    {
+                                                         "width": "75%", 
+                                                        "text": "{{roadCuttingChargeLabel}}",
+                                                        "alignment": "left"
+                                                    },
+                                                    {
+                    
+                                                        "text": "{{rupeesLabel}} {{roadCharge}}",
+                                                        "alignment": "left"
+                                                    }
+                                                    ]
+                                           }
+                            
+                        ],
+                        [
+                             {
+                                                 "columns": [
+                                                    {
+                                                        "width": "5%", 
+                                                        "text": "d)",
+                                                        "alignment": "left"
+                                                    },
+                                                    {
+                                                         "width": "75%", 
+                                                        "text": "{{meterLabourChargeLabel}}",
+                                                        "alignment": "left"
+                                                    },
+                                                    {
+                    
+                                                        "text": "{{rupeesLabel}} {{waterMiscCharge}}",
+                                                        "alignment": "left"
+                                                    }
+                                                    ]
+                                           }
+                            
+                        ],
+                        [
+                             {
+                                                 "columns": [
+                                                    {
+                                                        "width": "5%", 
+                                                        "text": "e)",
+                                                        "alignment": "left"
+                                                    },
+                                                    {
+                                                         "width": "75%", 
+                                                        "text": "{{otherChargesLabel}}",
+                                                        "alignment": "left"
+                                                    },
+                                                    {
+                    
+                                                        "text": "{{rupeesLabel}} {{otherCharges}}",
+                                                        "alignment": "left"
+                                                    }
+                                                    ]
+                                           }
+                            
+                        ],
+                        [
+                            {
+                                                "columns": [
+                                                   {
+                                                       "width": "0%", 
+                                                       "text": " ",
+                                                       "alignment": "left",
+                                                        "margin": [
+                                                               0,
+                                                               10,
+                                                               0,
+                                                               0
+                                                           ]
+                                                   },
+                                                   {
+                                                        "width": "80%", 
+                                                       "text": "{{totalLabel}} :{{totalInWords}}",
+                                                       "alignment": "left",
+                                                       "bold": true,
+                                   
+                                                        "margin": [
+                                                               0,
+                                                               10,
+                                                               0,
+                                                               0
+                                                           ]
+                                                   },
+                                                   {
+                   
+                                                       "text": "{{rupeesLabel}} {{totalAmount}}",
+                                                       "alignment": "left",
+                                                       "bold": true,
+                                   
+                                                        "margin": [
+                                                               0,
+                                                               10,
+                                                               0,
+                                                               0
+                                                           ]
+                                                   }
+                                                   ]
+                                          }
+                           
+                       ],
+                        [
+                             {
+                                "border": [
+                                    false,
+                                    false,
+                                    false,
+                                    false
+                                ],
+                                "columns": [
+                                    {
+                                        "width": "100%",
+                                        "ol": [
+                                            {
+                                                
+                                            },
+                                             {
+                                                
+                                            },
+                                            {
+                                                "text": "{{paymentStatement}} {{totalAmount}} {{paymentStatement2}} {{water_conn}} {{paymentStatement2_1}}",
+                                                "style": "receipt-value-down"
+                                            },
+                                            {
+                                                "text": "{{paymentStatement3}} {{water_conn_small}} {{paymentStatement3_1}}. {{paymentStatement4}} {{water_conn}} {{paymentStatement5}}",
+                                                "style": "receipt-value-down"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "margin": [
+                                    7,
+                                    10,
+                                    0,
+                                    0
+                                ]
+                            }
+                            
+                            ]
+                         
+                    ]
+                },
+                "layout": "noBorders"
+            },
+            {
+                 "style": "ws-head",
+                "table": {
+                    "widths": [
+                        "*"
+                    ],
+                    "body": [
+                                        
+                                        [ 
+                                                    {
+                                                        "text": "{{ceoLabel}}",
+                                                        "alignment": "right",
+                                                        "margin": [
+                                                                0,
+                                                                10,
+                                                                0,
+                                                                0
+                                                            ]
+                                                    }
+                                                
+                                        ],
+                                        [ 
+                                                    {
+                                                        "text": "{{logo_header}} {{cantt_board}}",
+                                                        "alignment": "right",
+                                                        "margin": [
+                                                                0,
+                                                                0,
+                                                                0,
+                                                                0
+                                                            ]
+                                                    }
+                                                
+                                        ]
+                            
+                    ]
+                },
+                "layout": "noBorders"
+            }
+          
+        ],
+        "styles":  {
+            "pdf-header": {
+              "fillColor": "#F2F2F2",
+              "margin": [
+                -70,
+                -41,
+                -81,
+                10
+              ]
+            },
+            "ws-head": {
+                "margin": [
+                    0,
+                    -5,
+                    0,
+                    0
+                ]
+            },
+             "appendix-header": {
+             "color": "#000000",
+                        "bold": true,
+                        "fontSize": 11,
+                        "fontWeight": 400,
+                        "alignment": "right"
+            },
+            "receipt-value-down-sub": {
+                        "color": "#000000",
+                        "bold": false,
+                        "fontSize": 11,
+                        "fontWeight": 400,
+                        "alignment": "left",
+                        "margin": [
+                            0,
+                            0,
+                            0,
+                            5
+                        ]
+                    },
+                "receipt-value-down-rec": {
+                        "color": "#000000",
+                        "bold": false,
+                        "fontSize": 11.5,
+                        "fontWeight": 400,
+                        "alignment": "left",
+                        "margin": [
+                            0,
+                            0,
+                            0,
+                            0
+                        ]
+                    },
+            "receipt-value-down": {
+                        "color": "#000000",
+                        "bold": false,
+                        "fontSize": 11.5,
+                        "fontWeight": 400,
+                        "alignment": "left",
+                        "margin": [
+                            -8,
+                            0,
+                            0,
+                            5
+                        ]
+                    },
+            "pdf-application-no-value": {
+              "fontSize": 12,
+              "font": "Roboto",
+              "italics": true,
+              "margin": [
+                -18,
+                8,
+                0,
+                0
+              ],
+              "color": "#484848"
+            },
+            "pdf-header-text": {
+              "color": "#484848",
+              "fontSize": 20,
+              "bold": true,
+              "letterSpacing": 0.74,
+              "margin": [
+                0,
+                0,
+                0,
+                5
+              ]
+            },
+            "pdf-header-sub-text": {
+              "color": "#484848",
+              "fontSize": 15,
+              "letterSpacing": 0.6
+            },
+            "pdf-application-no": {
+              "fontSize": 12,
+              "bold": true,
+              "margin": [
+                -18,
+                8,
+                0,
+                0
+              ],
+              "color": "#484848"
+            },
+            "pdf-card-title": {
+              "fontSize": 11,
+              "bold": true,
+              "margin": [
+                -18,
+                16,
+                8,
+                8
+              ],
+              "color": "#484848",
+              "fontWeight": 500
+            },
+            "pdf-card-no-title": {
+              "fontSize": 11,
+              "bold": true,
+              "color": "#484848",
+              "fontWeight": 500
+            },
+            "pdf-table-card-white": {
+              "fillColor": "white",
+              "fontSize": 7,
+              "color": "#484848",
+              "margin": [
+                -20,
+                -2,
+                -8,
+                -8
+              ]
+            },
+            "pdf-table-card": {
+              "fillColor": "#F2F2F2",
+              "fontSize": 7,
+              "color": "#484848",
+              "margin": [
+                -20,
+                -2,
+                -8,
+                -8
+              ]
+            },
+            "pdf-card-key": {
+              "color": "rgba(0, 0, 0, 0.54)",
+              "fontSize": 8,
+              "margin": [
+                0,
+                1,
+                0,
+                0
+              ]
+            },
+            "pdf-card-sub-header": {
+              "color": "rgba(0, 0, 0, 0.94)",
+              "fontSize": 9,
+              "bold": true,
+              "margin": [
+                0,
+                3,
+                0,
+                0
+              ]
+            },
+            "pdf-card-value": {
+              "fontSize": 10,
+              "color": "rgba(0, 0, 0, 0.87)",
+              "margin": [
+                0,
+                0,
+                0,
+                1
+              ]
+            },
+            "pdf-head-qr-code": {
+              "fillColor": "#F2F2F2",
+              "margin": [
+                -70,
+                -41,
+                -81,
+                0
+              ]
+            }
+          }
+    }
+}
