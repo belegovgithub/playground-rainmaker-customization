@@ -35,12 +35,12 @@ ReportDefinitions:
       type: epoch
       source: empdeclaration
       isMandatory: false
-      searchClause: AND extract(EPOCH from emp.declaredon) >= $fromDate
+      searchClause: AND extract(EPOCH from emp.declaredon)*1000 >= $fromDate
     - name: toDate
       label: EMP_DECL_TODATE
       type: epoch
       source: empdeclaration
       isMandatory: false
-      searchClause: AND extract(EPOCH from emp.declaredon) <= $toDate      
+      searchClause: AND extract(EPOCH from emp.declaredon)*1000 <= $toDate      
     query: select initcap(split_part(us.tenantid, '.', 2)) as tenantid, To_char(emp.declaredon,'DD/MM/YYYY') as declaredon, To_char(emp.startdate,'DD/MM/YYYY') as startdate, emp.agreed, To_char(emp.endddate,'DD/MM/YYYY') as endddate from eg_emp_declaration_dtls emp left join eg_user us on us.uuid=emp.declaredby where us.tenantid!='pb.testing'
     orderby: order by tenantid,declaredon
