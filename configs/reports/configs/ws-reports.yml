@@ -642,8 +642,8 @@ ReportDefinitions:
   query: SELECT distinct pd.receiptnumber,To_char(To_timestamp(service.connectionexecutiondate/ 1000), 'DD/MM/YYYY') as executiondate,service.connectiontype,msgroad.message as roadtype,ws.roadcuttingarea,message.message as status,eg_user.name as name,eg_user.mobilenumber,applicationno,pgtxn.bank_transaction_no as banktxnNo,totalamount,To_char(To_timestamp(pd.manualreceiptdate/ 1000), 'DD/MM/YYYY') AS g8issuedate,pd.manualreceiptnumber as g8receiptno FROM eg_sw_connection ws   INNER JOIN egcl_bill bill ON bill.consumercode = ws.applicationno and bill.status !='Cancelled' JOIN egcl_billdetial as bild ON bild.billid = bill.id INNER JOIN(Select DISTINCT billdetailid,amount, taxheadcode,message.message as feeType from egcl_billaccountdetail bilaccd INNER JOIN message ON taxheadcode = message.code AND message.locale='en_IN')  as bilaccd ON bild.id = bilaccd .billdetailid LEFT OUTER JOIN egcl_paymentdetail as pd ON pd.billid =bill.id LEFT OUTER JOIN egcl_payment as pay ON pay.id = pd.paymentid and pay.paymentstatus != 'CANCELLED' LEFT OUTER Join eg_pg_transactions as pgtxn ON pay.transactionnumber = pgtxn.txn_id LEFT OUTER JOIN eg_pt_owner as owner ON owner.propertyid =property_id LEFT OUTER JOIN eg_user  ON uuid =owner.userid LEFT OUTER JOIN message ON substring(message.code,11) ='CONNECTION_ACTIVATED' AND message.locale = 'en_IN'  LEFT OUTER JOIN message as msgroad ON CONCAT('WS_ROADTYPE_',ws.roadtype) = msgroad.code AND msgroad.locale='en_IN' AND msgroad.module='rainmaker-ws' LEFT OUTER JOIN eg_sw_service as service ON service.connection_id=ws.id WHERE ws.tenantid like $tenantid AND service.connectiontype is NOT NULL
 
 - reportName: CBSewerageRegistryReport
-  summary: CB Level Water Registry Report
-  decryptionPathId: CBWaterRegistryReport
+  summary: CB Level Sewerage Registry Report
+  decryptionPathId: CBSewerageRegistryReport
   version: 1.0.0
   moduleName: rainmaker-ws
   additionalConfig:

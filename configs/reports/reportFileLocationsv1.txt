@@ -3,4 +3,5 @@ rainmaker-uc=uc-reports.yml
 rainmaker-pgr=pgr-reports.yml
 rainmaker-ws=ws-reports.yml
 rainmaker-lams=lrms-reports.yml
+rainmaker-pt=pt-reports.yml
 rainmaker-empdeclaration=empdeclaration-reports.yml

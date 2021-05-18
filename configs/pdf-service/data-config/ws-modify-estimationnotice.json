@@ -1,0 +1,1097 @@
+{
+    "key": "ws-modify-estimationnotice",
+    "DataConfigs": {
+        "serviceName": "rainmaker-common",
+        "version": "1.0.0",
+        "baseKeyPath": "$.WnsConnection.*",
+        "entityIdPath": "$.applicationNo",
+        "isCommonTableBorderRequired": true,
+        "mappings": [
+            {
+                "topic": "common-pdf-generation-3",
+                "mappings": [
+                    {
+                        "direct": [
+                            {
+                                "variable": "appNo",
+                                "value": {
+                                    "path": "$.applicationNo"
+                                }
+                            },
+                            {
+                                "variable": "appDate",
+                                "value": {
+                                    "path": "$.auditDetails.lastModifiedTime"
+                                },
+                                "type":"date"
+                            },
+                            {
+                                "variable": "applicationDate",
+                                "value": {
+                                    "path": "$.additionalDetails.appCreatedDate"
+                                },
+                                "type":"date"
+                            },
+                            {
+                                "variable": "name",
+                                "value": {
+                                    "path": "$.property.owners[0].name"
+                                }
+                            },
+                            {
+                                "variable": "name_applicant",
+                                "value": {
+                                    "path": "$.connectionHolders[0].name"
+                                }
+                            },
+                            {
+                                "variable": "guardianName",
+                                "value": {
+                                    "path": "$.property.owners[0].fatherOrHusbandName"
+                                }
+                            },
+                            {
+                                "variable": "usageType",
+                                "value": {
+                                    "path": "$.property.usageCategory"
+                                }
+                            },
+                            {
+                                "variable": "houseNo",
+                                "value": {
+                                    "path": "$.property.address.doorNo"
+                                }
+                            },
+                            {
+                                "variable": "mobileNumber",
+                                "value": {
+                                    "path": "$.property.owners[0].mobileNumber"
+                                }
+                            },
+                            {
+                                "variable": "correspondence_address_applicant",
+                                "value": {
+                                    "path": "$.connectionHolders[0].correspondenceAddress"
+                                }
+                            },
+                            {
+                                "variable": "address",
+                                "value": {
+                                    "path": "$.property.address.locality.code"
+                                },
+                                "localisation":{
+                                    "required":true,
+                                    "prefix": "REVENUE",
+                                    "module": "rainmaker",
+                                    "prefixCbName":true
+                                 },
+                                 "type":"boundary"  
+                            },
+                            {
+                                "variable": "pincode",
+                                "value": {
+                                    "path": "$.property.address.pincode"
+                                }
+                            },
+                            {
+                                "variable": "formFee",
+                                "value": {
+                                    "path": "$.pdfTaxhead[?(@.taxHeadCode == 'FORM_FEE')].estimateAmount"
+                                }
+                            },
+                            {
+                                "variable": "ScrutinyFee",
+                                "value": {
+                                    "path": "$.pdfTaxhead[?(@.taxHeadCode == 'SCRUTINY_FEE')].estimateAmount"
+                                }
+                            },
+                            {
+                                "variable": "otherCharges",
+                                "value": {
+                                    "path": "$.pdfTaxhead[?(@.taxHeadCode == 'OTHER_CHARGE')].estimateAmount"
+                                }
+                            },
+                            {
+                                "variable": "securityCharge",
+                                "value": {
+                                    "path": "$.pdfTaxhead[?(@.taxHeadCode == 'SECURITY_CHARGE')].estimateAmount"
+                                }
+                            },
+                            {
+                                "variable": "taxCess",
+                                "value": {
+                                    "path": "$.pdfTaxhead[?(@.taxHeadCode == 'TAX_AND_CESS')].estimateAmount"
+                                }
+                            },
+                            {
+                                "variable": "roadCharge",
+                                "value": {
+                                    "path": "$.pdfTaxhead[?(@.taxHeadCode == 'ROAD_CUTTING_CHARGE')].estimateAmount"
+                                }
+                            },
+                            {
+                                "variable": "oneTimeFee",
+                                "value": {
+                                    "path": "$.pdfTaxhead[?(@.taxHeadCode == 'ONE_TIME_FEE')].estimateAmount"
+                                }
+                            },
+                            {
+                                "variable": "labourCharge",
+                                "value": {
+                                    "path": "$.pdfTaxhead[?(@.taxHeadCode == 'LABOUR_CHARGE')].estimateAmount"
+                                }
+                            },
+                            {
+                                "variable": "meterCharge",
+                                "value": {
+                                    "path": "$.pdfTaxhead[?(@.taxHeadCode == 'METER_CHARGE')].estimateAmount"
+                                }
+                            },
+                            {
+                                "variable": "penaltyAmount",
+                                "value": {
+                                    "path": "$.additionalDetails.adhocPenalty"
+                                }
+                            },
+                            {
+                                "variable": "rebateAmount",
+                                "value": {
+                                    "path": "$.additionalDetails.adhocRebate"
+                                }
+                            },
+                            {
+                                "variable": "penaltyComments",
+                                "value": {
+                                    "path": "$.additionalDetails.adhocPenaltyComment"
+                                }
+                            },
+                            {
+                                "variable": "totalAmount",
+                                "value": {
+                                    "path": "$.totalAmount"
+                                }
+                            },
+                            {
+                                "variable": "service",
+                                "value": {
+                                    "path": "$.service"
+                                }
+                            },
+                            {
+                                "variable": "conn_no",
+                                "value": {
+                                    "path": "$.connectionNo"
+                                }
+                            },
+                            {
+                                "variable": "tenantName",
+                                "value": {
+                                    "path": "$.tenantName"
+                                }
+                            },
+                            {
+                                "variable": "totalInWords",
+                                "value": {
+                                    "path": "$.totalAmount"
+                                },
+                                "type":"amountInWords"
+                            },
+                            {
+                                "variable": "finYear",
+                                "value": {
+                                    "path": "$.auditDetails.lastModifiedTime"
+                                },
+                                "type":"currentFinYear"
+                            },
+                            {
+                                "variable": "estimation_notice_header",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_ESTIMATION_NOTICE_HEADER"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "change_water_conn",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_APPL_CHANGE_WS_CONN"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "water_conn_no_stmt",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_APPL_WATERCONN"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "at_label",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_APPL_AT"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "annexture_b",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_ANNEXTURE_B"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "file_no",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_FILE_NO"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "dateLabel",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_DATE_LABEL"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "toLabel",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_TO_LABEL"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "grant_stmt",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_GRANT_STATEMENT"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "to_smt",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_TO_STATEMENT"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "water_conn",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_WATER_CONN_STATEMENT"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "water_conn_small",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_WATER_CONN_SMALL_STATEMENT"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "grant_stmt2",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_GRANT_STATEMENT2"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "change_stmt",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_APPL_MODIFY_CHANGE_STMT"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "with_stmt",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_WITH_STATEMENT"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "referenceLabel",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_REFERENCE"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "subjectLabel",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_SUBJECT"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "referenceStatement1",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_REFERENCE_STATEMENT1"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "referenceStatement2",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_REFERENCE_STATEMENT2"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "dateLabel",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_CONSOLIDATED_ACKNOWELDGMENT_DATE_LABEL"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "referenceStatement3",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_REFERENCE_STATEMENT3"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "applStatement1",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_APPL_MODIFY_STATEMENT1"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "to_applicant",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_APPLICANT_STATEMENT"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "applStatement2",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_APPL_STATEMENT2"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "applStatement3",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_APPL_STATEMENT3"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "applStatement4",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_APPL_STATEMENT4"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "applStatement4_1",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_APPL_STATEMENT4_1"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "applStatement5",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_APPL_STATEMENT5"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "water_conn_chargeLabel",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_WATER_CONN_CHARGE"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "security_fee_label",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_SECURITY_CHARGE"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "rupeesLabel",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_RUPEES"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "roadCuttingChargeLabel",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_ROAD_CUTTING"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "meterLabourChargeLabel",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_METER_LABOUR_CHARGE"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "waterConnMiscLabel",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_WATER_CONN_CHARGES"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "otherChargesLabel",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_OTHER_CHARGE"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "paymentStatement",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_PAYMENT_STATEMENT1"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "paymentStatement2",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_PAYMENT_STATEMENT2"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "paymentStatement2_1",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_PAYMENT_STATEMENT2_1"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "paymentStatement3",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_PAYMENT_STATEMENT3"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "paymentStatement3_1",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_PAYMENT_STATEMENT3_1"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "paymentStatement4",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_PAYMENT_STATEMENT4"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "paymentStatement5",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_PAYMENT_STATEMENT5"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "totalLabel",
+                                "value": {
+                                    "path": "PDF_STATIC_LABELWS_CONSOLIDATED_ACKNOWELDGMENT_TOTAL"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "ceoLabel",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_COMMISSIONER_EO"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "UAT",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_UAT"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "connection_header",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_CONNECTION_HEADER"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "app_no",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_APPLICATION_NO"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "app_date",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_APP_DATE"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "user_name",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_USER_NAME"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "guardian_name",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_GUARDIAN"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "usage_type",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_USAGE_TYPE"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "mobile_no",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_MOBILE_NO"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "house_no",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_DOOR_HOUSE_NO"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "user_address",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_ADDRESS"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "estimation_header",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_ESTIMATION_HEADER"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "sl_no",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_SERIAL_NO"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "fee_estimate",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_FEES_ESTIMATE_HEADER"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "amount",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_AMOUNT"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "form_fee",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_FORM_FEE"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "scrutiny_fee",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_SCRUTINY_FEE"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "other_charge",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_OTHER_CHARGE"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "security_charge",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_SECURITY_CHARGE"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "tax_cess",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_TAX_CESS"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "penalty",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_PENALTY"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "rebate",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_REBATE"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "comments",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_PENALTY_COMMENTS"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "grand_total",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_GRAND_TOTAL"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "approved_by",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_APPROVED_BY"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "one_time_fee",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_ONE_TIME_FEE"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "road_charge",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_ACKNOWELDGMENT_ROAD_CHARGE"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            },
+                            {
+                                "variable": "cantt_board",
+                                "value": {
+                                    "path": "PDF_STATIC_LABEL_WS_CONSOLIDATED_MUNICIPAL_COUNCIL"
+                                },
+                                "type": "label",
+                                "localisation": {
+                                    "required": true,
+                                    "prefix": null,
+                                    "module": "rainmaker-pdf"
+                                }
+                            }
+
+                        ]
+                    },
+                    {
+                        "derived": [
+                           {
+                              "variable": "waterConnCharge",
+                              "formula": "{{oneTimeFee}}+{{ScrutinyFee}}+{{formFee}}"
+                           },
+                           {
+                            "variable": "waterMiscCharge",
+                            "formula": "{{meterCharge}}+{{labourCharge}}"
+                            } 
+                        ]
+                     },
+                    {
+                        "externalAPI": [
+                            {
+                                "path": "http://egov-mdms-service:8080/egov-mdms-service/v1/_get",
+                                "queryParam": "moduleName=tenant&masterName=tenants&tenantId=pb&filter=%5B?(@.code=='{$.property.tenantId}')%5D",
+                                "apiRequest": null,
+                                "responseMapping": [
+                                    {
+                                        "variable": "logo_header",
+                                        "value": "$.MdmsRes.tenant.tenants[0].code",
+                                        "localisation": {
+                                            "required": true,
+                                            "prefix": "TENANT_TENANTS",
+                                            "module": "rainmaker-common"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,471 @@
+{
+  "key": "pt-bill",
+  "documentType": "PROPERTYBILL",
+  "DataConfigs": {
+    "moduleName": "PT",
+    "version": "1.0.0",
+    "baseKeyPath": "$.Bill.*",
+    "entityIdPath":"$.id",
+    "isCommonTableBorderRequired": true,
+    "mappings": [
+      {
+        "topic": "common-pdf-generation-1",
+        "staticConfigPath": "https://raw.githubusercontent.com/egovernments/egov-services/vishal-feature-filestore/core/egov-indexer/src/main/resources/rainmaker-pgr-indexer.yml",
+        "mappings": [
+          {
+            "direct": [
+              {
+                "variable": "billNo",
+                "value": {
+                  "path": "$.billNumber"
+                }
+              },
+              {
+                "variable": "propertyNo",
+                "value": {
+                  "path": "$.consumerCode"
+                }
+              },
+              {
+                "variable": "billDate",
+                "value": {
+                  "path": "$.billDate"
+                },
+                "type":"date"
+              },
+              {
+                "variable": "oldPropertyNo",
+                "value": {
+                  "path": "$.oldPropertyId"
+                }
+              },
+              {
+                "variable": "location",
+                "value": {
+                  "path": "$.address.locality"
+                },
+                "localisation":{
+                  "required":true,
+                  "prefix": "REVENUE",
+                  "module": "rainmaker",
+                  "prefixCbName":true
+               },
+               "type":"boundary"
+              },
+              {
+                "variable": "usageType",
+                "value": {
+                  "path": "$.usageCategory"
+                },
+                "localisation":{
+                  "required":true,
+                  "prefix": "COMMON_PROPUSGTYPE",
+                  "module": "rainmaker-pt"
+               }
+              },
+              {
+                "variable": "wardNo",
+                "value": {
+                  "path": "$.wardNo"
+                }
+              },
+              {
+                "variable": "arv",
+                "value": {
+                  "path": "$.arv"
+                }
+              },
+              {
+                "variable": "blockNo",
+                "value": {
+                  "path": "$.blockNo"
+                }
+              },
+              {
+                "variable": "assesseName",
+                "value": {
+                  "path": "$.user.name"
+                }
+              },
+              {
+                "variable": "address",
+                "value": {
+                  "path": "$.address.city"
+                }
+              },
+              {
+                "variable": "advanceAmount",
+                "value": {
+                  "path": "$.advanceAmount"
+                }
+              },
+              {
+                "variable": "totalArrearsval",
+                "value": {
+                  "path": "$.totalArrear"
+                }
+              },
+              {
+                "variable": "amountAdjustedval",
+                "value": {
+                  "path": "$.adjustedAmount"
+                }
+              },
+              {
+                "variable": "advanceAmountPaid",
+                "value": {
+                  "path": "$.totalPaid"
+                }
+              },
+              {
+                "variable": "advanceCarryForward",
+                "value": {
+                  "path": "$.advanceCarryforward"
+                }
+              },
+              {
+                "variable": "totalCurrentval",
+                "value": {
+                  "path": "$.totalCurrent"
+                }
+              },
+              {
+                "variable": "houseTaxArrear",
+                "value":{
+                  "path": "$.arrearDtl[?(@.taxHeadCode == 'PT_HOUSE_TAX')].arrears"
+                }
+              },
+              {
+                "variable": "houseTaxCurrent",
+                "value":{
+                  "path": "$.arrearDtl[?(@.taxHeadCode == 'PT_HOUSE_TAX')].currentDemand"
+                }
+              },
+              {
+                "variable": "houseTaxTotal",
+                "value":{
+                  "path": "$.arrearDtl[?(@.taxHeadCode == 'PT_HOUSE_TAX')].total"
+                }
+              },
+              {
+                "variable": "waterTaxArrear",
+                "value":{
+                  "path": "$.arrearDtl[?(@.taxHeadCode == 'PT_WATER_TAX')].arrears"
+                }
+              },
+              {
+                "variable": "waterTaxCurrent",
+                "value":{
+                  "path": "$.arrearDtl[?(@.taxHeadCode == 'PT_WATER_TAX')].currentDemand"
+                }
+              },
+              {
+                "variable": "waterTaxTotal",
+                "value":{
+                  "path": "$.arrearDtl[?(@.taxHeadCode == 'PT_WATER_TAX')].total"
+                }
+              },
+              {
+                "variable": "converancyTaxArrear",
+                "value":{
+                  "path": "$.arrearDtl[?(@.taxHeadCode == 'PT_CONSERVANCY_TAX')].arrears"
+                }
+              },
+              {
+                "variable": "converancyTaxCurrent",
+                "value":{
+                  "path": "$.arrearDtl[?(@.taxHeadCode == 'PT_CONSERVANCY_TAX')].currentDemand"
+                }
+              },
+              {
+                "variable": "converancyTaxTotal",
+                "value":{
+                  "path": "$.arrearDtl[?(@.taxHeadCode == 'PT_CONSERVANCY_TAX')].total"
+                }
+              },
+              {
+                "variable": "lighteningTaxArrear",
+                "value":{
+                  "path": "$.arrearDtl[?(@.taxHeadCode == 'PT_LIGHTINING_TAX')].arrears"
+                }
+              },
+              {
+                "variable": "lighteningTaxCurrent",
+                "value":{
+                  "path": "$.arrearDtl[?(@.taxHeadCode == 'PT_LIGHTINING_TAX')].currentDemand"
+                }
+              },
+              {
+                "variable": "lighteningTaxTotal",
+                "value":{
+                  "path": "$.arrearDtl[?(@.taxHeadCode == 'PT_LIGHTINING_TAX')].total"
+                }
+              },
+              {
+                "variable": "educationTaxArrear",
+                "value":{
+                  "path": "$.arrearDtl[?(@.taxHeadCode == 'PT_EDUCATION_TAX')].arrears"
+                }
+              },
+              {
+                "variable": "educationTaxCurrent",
+                "value":{
+                  "path": "$.arrearDtl[?(@.taxHeadCode == 'PT_EDUCATION_TAX')].currentDemand"
+                }
+              },
+              {
+                "variable": "educationTaxTotal",
+                "value":{
+                  "path": "$.arrearDtl[?(@.taxHeadCode == 'PT_EDUCATION_TAX')].total"
+                }
+              },
+              {
+                "variable": "totalAmount",
+                "value": {
+                  "path": "$.totalAmount"
+                }
+              },
+              {
+                "variable": "payableAmount",
+                "value": {
+                  "path": "$.payableAmount"
+                } 
+              },
+              {
+                "variable": "amountInWords",
+                "value": {
+                  "path": "$.payableAmount"
+                },
+                "type":"amountInWords"
+              },
+              {
+                "variable": "acknowledgement_for",
+                "value": {
+                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_ACKNOWLEDGEMENT"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-pdf"
+                }
+              },
+              {
+                "variable": "total_payment",
+                "value": {
+                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_TOTAL_PAYMENT"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-pdf"
+                }
+              },
+              {
+                "variable": "receivers_signature",
+                "value": {
+                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_RECEIVERS_SIGNATURE"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-pdf"
+                }
+              },
+              {
+                "variable": "bill_no",
+                "value": {
+                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_BILL_NO"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-pdf"
+                }
+              },
+              {
+                "variable": "property_id",
+                "value": {
+                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_PROPERTY_ID"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-pdf"
+                }
+              },
+              {
+                "variable": "date_label",
+                "value": {
+                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_DATE"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-pdf"
+                }
+              },
+              {
+                "variable": "name_address",
+                "value": {
+                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_NAME_ADDRESS"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-pdf"
+                }
+              },
+              {
+                "variable": "scissorImage",
+                "url": "http://www.pngall.com/wp-content/uploads/2016/03/Scissor-PNG-Clipart.png",
+                "type": "image"
+              },
+              {
+                "variable": "variable10",                        
+                "value":{
+                     "path":"$.arrearDtl.*"                          
+                 },
+                 "type":"array",
+                 "format":{                            
+                    "type":"string",
+                    "scema":[
+                      {
+                        "variable": "taxheadCode",
+                        "value": "taxHeadCode",
+                        "type": "string",
+                        "localisation": {
+                          "required": true,
+                          "prefix": null,
+                          "module": "rainmaker-common"
+                        }
+                      },
+                      {
+                        "variable": "currentAmount",
+                        "value": "currentDemand",
+                        "type":"setZero"
+                      },
+                      {
+                        "variable": "arrearAmount",
+                        "value": "arrears",
+                        "type":"setZero"
+                      },
+                      {
+                        "variable": "totalAmount",
+                        "value": "total",
+                        "type":"setZero"
+                      }
+                      ]
+                } 
+             } 
+            ]
+          },
+          {
+            "derived": [
+              {
+                "variable": "totalArrears",
+                "formula": "{{educationTaxArrear}} + {{lighteningTaxArrear}} + {{converancyTaxArrear}} + {{waterTaxArrear}} + {{houseTaxArrear}}"
+              },
+              {
+                "variable": "totalCurrent",
+                "formula": "{{educationTaxCurrent}} + {{lighteningTaxCurrent}} + {{converancyTaxCurrent}} + {{waterTaxCurrent}} + {{houseTaxCurrent}}"
+              },
+              {
+                "variable": "totalCalculatedAmount",
+                "formula": "{{totalArrearsval}} + {{totalCurrentval}}" 
+              },
+              {
+                "variable": "demandTotalAmount",
+                "formula": "{{ws_charge}} + {{pt_charge}}" 
+              },
+              {
+                "variable": "advanceAdjusted",
+                "formula": "{{totalAmount}}>=0?({{totalAmount}}<{{demandTotalAmount}}?({{demandTotalAmount}} - {{totalAmount}}).toFixed(2):0):{{demandTotalAmount}} * -1"
+              },
+              {
+                "variable": "amountAdjusted",
+                "formula": "{{totalAmount}}>=0?({{totalAmount}}<{{advanceAmount}}?({{totalAmount}}):({{advanceAmount}})):0 * -1"
+              },
+              {
+                "variable": "payableAmountFinal",
+                "formula": "{{totalAmount}}>=0?({{totalAmount}}<{{amountAdjusted}}?({{amountAdjusted}}-{{totalAmount}}):({{totalAmount}}-{{amountAdjusted}})):0 * -1"
+              },
+              {
+                "variable": "advanceAvailable",
+                "formula": "(0).toFixed(2)"
+              }
+            ]
+          },
+          {
+            "externalAPI": [     
+              { 
+                "path": "http://egov-mdms-service:8080/egov-mdms-service/v1/_get",
+                "queryParam": "moduleName=tenant&masterName=tenants&tenantId=pb&filter=%5B?(@.code=='{$.tenantId}')%5D",
+                  "apiRequest": null,
+                  "responseMapping":[
+                    {
+                      "variable": "logoImage",
+                      "value":"$.MdmsRes.tenant.tenants[0].logoIdPdf",
+                      "type": "image"
+                    },
+                    {
+                      "variable": "cb-name",
+                      "value": "$.MdmsRes.tenant.tenants[0].code",
+                      "localisation": {
+                        "required": true,
+                        "prefix": "PDF_STATIC_LABEL_BD_CB_EN",
+                        "module": "rainmaker-pdf"
+                      }
+                    },
+                    {
+                      "variable": "logo_header",
+                      "value":"$.MdmsRes.tenant.tenants[0].code",
+                      "localisation":{
+                      "required":true,
+                      "prefix": "TENANT_TENANTS",
+                      "module":"rainmaker-common"
+                      }
+                    }
+                  ]
+              },
+              {
+                "path": "http://billing-service.egov:8080/billing-service/demand/_search",
+                "queryParam": "tenantId=$.tenantId,consumerCode=$.consumerCode,businessService=WS",
+                "apiRequest": null,
+                "responseMapping": [
+                  {
+                    "variable": "pt_advanceAmount",
+                    "value": "$.Demands[(@.length-1)].demandDetails[?(@.taxHeadMasterCode == 'PT_ADVANCE_CARRYFORWARD')].taxAmount"
+                  },
+                  {
+                    "variable": "ws_charge",
+                    "value": "$.Demands[(@.length-1)].demandDetails[?(@.taxHeadMasterCode == 'PT_WATER_TAX')].taxAmount"
+                  },
+                  {
+                    "variable": "pt_charge",
+                    "value": "$.Demands[(@.length-1)].demandDetails[?(@.taxHeadMasterCode == 'PT_HOUSE_TAX')].taxAmount"
+                  }
+                   
+                ]
+              }  
+            ]
+          },
+          {
+            "qrcodeConfig": [
+               {
+                  "variable": "qrcodeimage",
+                  "value":"{{hostname}}citizen/egov-common/pay?consumerCode={{propertyID}}&tenantId={{tenantId}}&businessService={{businessServiceCode}}"
+               }
+            ]
+         }
+        ]
+      }
+    ]
+  }
+}

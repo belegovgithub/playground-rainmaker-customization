@@ -1,5 +1,5 @@
 {
-    "key": "ws-estimationnotice",
+    "key": "ws-modify-estimationnotice",
     "config": {
         "defaultStyle": {
             "font": "Cambay"
@@ -145,7 +145,7 @@
                                                         
                                                     },
                                                     {
-                                                        "text": "{{grant_stmt}} {{water_conn}} {{to_smt}} {{name_applicant}} {{with_stmt}} {{water_conn_small}} {{grant_stmt2}} {{houseNo}}, {{address}},{{logo_header}} {{cantt_board}}",
+                                                        "text": "{{change_water_conn}} {{name_applicant}} {{water_conn_no_stmt}} {{conn_no}} {{at_label}} {{houseNo}}, {{address}},{{logo_header}} {{cantt_board}}",
                                                         "width": "90%",
                                                         "bold": true,
                                                         "fontSize": 11.5
@@ -241,7 +241,7 @@
                                                 
                                             },
                                             {
-                                                "text": "{{applStatement1}} {{water_conn_small}} {{to_applicant}} {{name_applicant}} {{with_stmt}} {{water_conn_small}} {{grant_stmt2}} {{houseNo}}, {{address}},{{logo_header}} {{cantt_board}} {{applStatement3}}.{{applStatement4_1}} {{water_conn_small}} {{to_smt}} {{houseNo}} {{address}} ,{{logo_header}} {{cantt_board}} {{applStatement5}}",
+                                                "text": "{{applStatement1}} {{water_conn_small}} {{to_applicant}} {{name_applicant}} {{with_stmt}} {{water_conn_no_stmt}} {{conn_no}} {{grant_stmt2}} {{houseNo}}, {{address}},{{logo_header}} {{cantt_board}} {{applStatement3}}.{{change_stmt}}",
                                                 "style": "receipt-value-down"
                                             }
                                         ]
