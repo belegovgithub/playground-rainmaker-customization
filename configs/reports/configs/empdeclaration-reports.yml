@@ -28,6 +28,19 @@ ReportDefinitions:
       label: EMP_DECL_ENDDDATE
       type: string
       source: empdeclaration
-      total: false      
-    query: select (select initcap(split_part(us.tenantid, '.', 2)) from eg_user us where us.uuid=emp.declaredby) as tenantid, To_char(emp.declaredon,'DD/MM/YYYY') as declaredon, To_char(emp.startdate,'DD/MM/YYYY') as startdate, emp.agreed , To_char(emp.endddate,'DD/MM/YYYY') as endddate from eg_emp_declaration_dtls emp
+      total: false
+    searchParams:
+    - name: fromDate
+      label: EMP_DECL_FROMDDATE
+      type: epoch
+      source: empdeclaration
+      isMandatory: false
+      searchClause: AND extract(EPOCH from emp.declaredon) >= $fromDate
+    - name: toDate
+      label: EMP_DECL_TODATE
+      type: epoch
+      source: empdeclaration
+      isMandatory: false
+      searchClause: AND extract(EPOCH from emp.declaredon) <= $toDate      
+    query: select initcap(split_part(us.tenantid, '.', 2)) as tenantid, To_char(emp.declaredon,'DD/MM/YYYY') as declaredon, To_char(emp.startdate,'DD/MM/YYYY') as startdate, emp.agreed, To_char(emp.endddate,'DD/MM/YYYY') as endddate from eg_emp_declaration_dtls emp left join eg_user us on us.uuid=emp.declaredby where us.tenantid!='pb.testing'
     orderby: order by tenantid,declaredon
