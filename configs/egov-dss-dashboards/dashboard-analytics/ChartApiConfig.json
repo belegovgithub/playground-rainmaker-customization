@@ -5158,6 +5158,52 @@
   ],
   "_comment": ""
 },
+
+"echhawaniResidentsAppointments": {
+  "chartName": "DSS_ECHHAWANI_APPOINTMENTS",
+  "queries": [
+    {
+    "module": "ORS",
+    "indexName": "orsindex-v1",
+    "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"Total Application100\":{\"sum\":{\"field\":\"chhawani_resident_successful_appointment\"}}}}}}",
+    "requestQueryMap": "{\"wardId\" : \"ward.name.keyword\", \r\n  \"district\" : \"tenantData.city.districtCode\", \r\n\"tenantId\" : \"tenantId.keyword\" \r\n}", 
+    "dateRefField": "appointment_date"
+    }
+  ],
+  "chartType": "metric", 
+  "valueType": "number",
+  "action": "",
+  "documentType": "_doc",
+  "drillChart": "none",
+  "aggregationPaths": [
+    "Total Application100"
+  ],
+  "_comment": ""
+},
+
+"nonEchhawaniResidentsAppointments": {
+  "chartName": "DSS_NON_ECHHAWANI_APPOINTMENTS",
+  "queries": [
+    {
+    "module": "ORS",
+    "indexName": "orsindex-v1",
+    "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"Total Application100\":{\"sum\":{\"field\":\"chhawani_nonresident_successful_appointment\"}}}}}}",
+    "requestQueryMap": "{\"wardId\" : \"ward.name.keyword\", \r\n  \"district\" : \"tenantData.city.districtCode\", \r\n\"tenantId\" : \"tenantId.keyword\" \r\n}", 
+    "dateRefField": "appointment_date"
+    }
+  ],
+  "chartType": "metric", 
+  "valueType": "number",
+  "action": "",
+  "documentType": "_doc",
+  "drillChart": "none",
+  "aggregationPaths": [
+    "Total Application100"
+  ],
+  "_comment": ""
+},
+
+
 "maleAppointments": {
   "chartName": "DSS_TOTAL_APPLICATION",
   "queries": [
@@ -5242,7 +5288,7 @@
       "requestQueryMap": "{\"wardId\" : \"ward.name.keyword\", \"tenantId\" : \"tenantId.keyword\" }",
       "dateRefField": "appointment_date",
       "indexName": "orsindex-v1",
-      "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"ULBs \":{\"terms\":{\"field\":\"tenantId.keyword\",\"size\":200,\"order\":{\"_term\":\"asc\"}},\"aggs\":{\"Appointments Male\":{\"filter\":{\"terms\":{\"status_code.keyword\":[\"1\"]}},\"aggs\":{\"Appointments Male\":{\"sum\":{\"field\":\"male_successful_appointment\"}}}},\"Appointments Female\":{\"filter\":{\"terms\":{\"status_code.keyword\":[\"1\"]}},\"aggs\":{\"Appointments Female\":{\"sum\":{\"field\":\"female_successful_appointment\"}}}}}}}}}}"
+      "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"ULBs \":{\"terms\":{\"field\":\"tenantId.keyword\",\"size\":200,\"order\":{\"_term\":\"asc\"}},\"aggs\":{\"Appointments Male\":{\"filter\":{\"terms\":{\"status_code.keyword\":[\"1\"]}},\"aggs\":{\"Appointments Male\":{\"sum\":{\"field\":\"male_successful_appointment\"}}}},\"Appointments Female\":{\"filter\":{\"terms\":{\"status_code.keyword\":[\"1\"]}},\"aggs\":{\"Appointments Female\":{\"sum\":{\"field\":\"female_successful_appointment\"}}}},\"echhawani_Appointments\":{\"filter\":{\"terms\":{\"status_code.keyword\":[\"1\"]}},\"aggs\":{\"echhawani_Appointments\":{\"sum\":{\"field\":\"chhawani_resident_successful_appointment\"}}}},\"non_Echhawani_Appointments\":{\"filter\":{\"terms\":{\"status_code.keyword\":[\"1\"]}},\"aggs\":{\"non_Echhawani_Appointments\":{\"sum\":{\"field\":\"chhawani_nonresident_successful_appointment\"}}}}}}}}}}"
     }
   ],
   "filterKeys": [
@@ -5265,6 +5311,13 @@
       "_comments": "fields are field names picked from its aggregation query to use post aggregation newField value with given new field name  "
     }
   ],
+  "aggregationPaths": [
+    
+	"Appointments Male",
+	"Appointments Female",
+	"echhawani_Appointments",
+	"non_Echhawani_Appointments"
+  ],
   "insight": {
   }
 },
@@ -5276,7 +5329,7 @@
       "requestQueryMap": "{\"wardId\" : \"ward.name.keyword\", \"tenantId\" : \"tenantId.keyword\" }",
       "dateRefField": "appointment_date",
       "indexName": "orsindex-v1",
-      "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"ULBs \":{\"terms\":{\"field\":\"hospital_name.keyword\",\"size\":200,\"order\":{\"_term\":\"asc\"}},\"aggs\":{\"Appointments Male\":{\"filter\":{\"terms\":{\"status_code.keyword\":[\"1\"]}},\"aggs\":{\"Appointments Male\":{\"sum\":{\"field\":\"male_successful_appointment\"}}}},\"Appointments Female\":{\"filter\":{\"terms\":{\"status_code.keyword\":[\"1\"]}},\"aggs\":{\"Appointments Female\":{\"sum\":{\"field\":\"female_successful_appointment\"}}}}}}}}}}"
+      "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"ULBs \":{\"terms\":{\"field\":\"hospital_name.keyword\",\"size\":200,\"order\":{\"_term\":\"asc\"}},\"aggs\":{\"Appointments Male\":{\"filter\":{\"terms\":{\"status_code.keyword\":[\"1\"]}},\"aggs\":{\"Appointments Male\":{\"sum\":{\"field\":\"male_successful_appointment\"}}}},\"Appointments Female\":{\"filter\":{\"terms\":{\"status_code.keyword\":[\"1\"]}},\"aggs\":{\"Appointments Female\":{\"sum\":{\"field\":\"female_successful_appointment\"}}}},\"echhawani_Appointments\":{\"filter\":{\"terms\":{\"status_code.keyword\":[\"1\"]}},\"aggs\":{\"echhawani_Appointments\":{\"sum\":{\"field\":\"chhawani_resident_successful_appointment\"}}}},\"non_Echhawani_Appointments\":{\"filter\":{\"terms\":{\"status_code.keyword\":[\"1\"]}},\"aggs\":{\"non_Echhawani_Appointments\":{\"sum\":{\"field\":\"chhawani_nonresident_successful_appointment\"}}}}}}}}}}"
     }
   ],
   "filterKeys": [
@@ -5298,6 +5351,13 @@
       "newField" : "Total Appointments",
       "_comments": "fields are field names picked from its aggregation query to use post aggregation newField value with given new field name  "
     }
+  ],
+  "aggregationPaths": [
+
+	"Appointments Male",
+	"Appointments Female",
+	"echhawani_Appointments",
+	"non_Echhawani_Appointments"
   ],
   "insight": {
   }
