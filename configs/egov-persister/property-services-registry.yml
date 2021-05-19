@@ -77,7 +77,7 @@ serviceMaps:
       - jsonPath: $.Property.abasPropertyId
 
 
-    - query: INSERT INTO eg_pt_owner(ownerinfouuid, tenantid, propertyid, userid, status, isprimaryowner, ownertype, ownershippercentage, institutionid, relationship, createdby, createdtime, lastmodifiedby, lastmodifiedtime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+    - query: INSERT INTO eg_pt_owner(ownerinfouuid, tenantid, propertyid, userid, status, isprimaryowner, ownertype, ownershippercentage, institutionid, relationship, createdby, createdtime, lastmodifiedby, lastmodifiedtime, sameAsPeropertyAddress) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
       basePath: Property.owners.*
       jsonMaps:
 
@@ -109,6 +109,7 @@ serviceMaps:
 
       - jsonPath: $.Property.auditDetails.lastModifiedTime
 
+      - jsonPath: $.Property.owners.*.sameAsPeropertyAddress
 
     - query: INSERT INTO eg_pt_document (id, tenantid, entityid, documenttype, filestoreid, documentuid, status, createdby, lastmodifiedby, createdtime, lastmodifiedtime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
       basePath: $.Property.documents.*
@@ -354,7 +355,7 @@ serviceMaps:
       - jsonPath: $.Property.tenantId
 
 
-    - query: INSERT INTO eg_pt_owner (ownerinfouuid, tenantid, propertyid, userid, status, isprimaryowner, ownertype, ownershippercentage, institutionid, relationship, createdby, createdtime, lastmodifiedby, lastmodifiedtime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ON CONFLICT (userid, propertyid) DO UPDATE SET status=EXCLUDED.status, isprimaryowner=EXCLUDED.isprimaryowner, ownertype=EXCLUDED.ownertype, ownershippercentage=EXCLUDED.ownershippercentage, institutionid=EXCLUDED.institutionid, relationship=EXCLUDED.relationship, lastmodifiedby=EXCLUDED.lastModifiedby, lastmodifiedtime=EXCLUDED.lastmodifiedtime;
+    - query: INSERT INTO eg_pt_owner (ownerinfouuid, tenantid, propertyid, userid, status, isprimaryowner, ownertype, ownershippercentage, institutionid, relationship, createdby, createdtime, lastmodifiedby, lastmodifiedtime, sameAsPeropertyAddress) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ON CONFLICT (userid, propertyid) DO UPDATE SET status=EXCLUDED.status, isprimaryowner=EXCLUDED.isprimaryowner, ownertype=EXCLUDED.ownertype, ownershippercentage=EXCLUDED.ownershippercentage, institutionid=EXCLUDED.institutionid, relationship=EXCLUDED.relationship, lastmodifiedby=EXCLUDED.lastModifiedby, lastmodifiedtime=EXCLUDED.lastmodifiedtime, sameAsPeropertyAddress=EXCLUDED.sameAsPeropertyAddress;
       basePath: Property.owners.*
       jsonMaps:
 
@@ -385,6 +386,8 @@ serviceMaps:
       - jsonPath: $.Property.auditDetails.lastModifiedBy
 
       - jsonPath: $.Property.auditDetails.lastModifiedTime
+
+      - jsonPath: $.Property.owners.*.sameAsPeropertyAddress
 
     - query: INSERT INTO eg_pt_document (id, tenantid, entityid, documenttype, filestoreid, documentuid, status, createdby, lastmodifiedby, createdtime, lastmodifiedtime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ON CONFLICT (id) DO UPDATE SET documenttype = EXCLUDED.documenttype,fileStoreid = EXCLUDED.filestoreid, documentuid=EXCLUDED.documentuid, status=EXCLUDED.status, lastmodifiedby = EXCLUDED.lastModifiedby, lastmodifiedtime = EXCLUDED.lastmodifiedtime;
       basePath: $.Property.documents.*
