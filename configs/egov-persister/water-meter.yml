@@ -37,7 +37,7 @@ serviceMaps:
        - jsonPath: $.meterReadings.auditDetails.lastModifiedTime
 
 
-- version: 1.0
+-  version: 1.0
    name: FailedBill
    description: Create a failed bill record
    fromTopic: ws-dead-letter-topic-single
