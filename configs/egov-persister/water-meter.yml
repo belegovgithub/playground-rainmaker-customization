@@ -36,49 +36,5 @@ serviceMaps:
 
        - jsonPath: $.meterReadings.auditDetails.lastModifiedTime
 
-
--  version: 1.0
-   description: Create a failed bill record
-   fromTopic: ws-dead-letter-topic-single
-   isTransaction: true
-   queryMaps:
-    - query: INSERT INTO eg_ws_failedbill (id,connectionno,applicationno,assesmentyear,lastreading,currentreading,fromdate,todate,consumption,createdby,lastmodifiedby,createdtime,lastmodfifedtime,tenantid,reason,status) VALUES (?, ?, ?, ?, ?, ?, ?,?,?,?,?,?,?,?,?,?);
-      basePath: $.billFailureNotificationObj
-      jsonMaps:
-       - jsonPath: $.billFailureNotificationObj.id
-       
-       - jsonPath: $.billFailureNotificationObj.connectionNo
-
-       - jsonPath: $.billFailureNotificationObj.applicationNo
-
-       - jsonPath: $.billFailureNotificationObj.assessmentYear
-       
-       - jsonPath: $.billFailureNotificationObj.lastReading
-
-       - jsonPath: $.billFailureNotificationObj.currentReading
-       
-       - jsonPath: $.billFailureNotificationObj.fromDate
-
-       - jsonPath: $.billFailureNotificationObj.toDate
-
-       - jsonPath: $.billFailureNotificationObj.consumption
-       
-       - jsonPath: $.billFailureNotificationObj.auditDetails.createdBy
-
-       - jsonPath: $.billFailureNotificationObj.auditDetails.lastModifiedBy
-
-       - jsonPath: $.billFailureNotificationObj.auditDetails.createdTime
-
-       - jsonPath: $.billFailureNotificationObj.auditDetails.lastModifiedTime
-
-       - jsonPath: $.billFailureNotificationObj.tenantId
-
-       - jsonPath: $.billFailureNotificationObj.reason
-
-       - jsonPath: $.billFailureNotificationObj.status
-       
-
-       
-
       
 
