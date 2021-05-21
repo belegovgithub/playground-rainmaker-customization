@@ -324,7 +324,7 @@
               },
               {
                 "variable": "scissorImage",
-                "url": "scissor.png",
+                "id": "scissor.png",
                 "type": "image"
               },
               {
