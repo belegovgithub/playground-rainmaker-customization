@@ -381,6 +381,10 @@
                 "formula": "{{totalArrearsval}} + {{totalCurrentval}}" 
               },
               {
+                "variable": "demandTotalAmount",
+                "formula": "(0).toFixed(2)" 
+              },
+              {
                 "variable": "advanceAdjusted",
                 "formula": "{{totalAmount}}>=0?({{totalAmount}}<{{demandTotalAmount}}?({{demandTotalAmount}} - {{totalAmount}}).toFixed(2):0):{{demandTotalAmount}} * -1"
               },
@@ -430,6 +434,7 @@
                     }
                   ]
               }
+              
             ]
           },
           {
