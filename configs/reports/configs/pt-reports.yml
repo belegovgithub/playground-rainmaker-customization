@@ -145,7 +145,7 @@ ReportDefinitions:
   - name: paymentMode
     label: Payment Mode
     type: singlevaluelist
-    pattern: 'list://CASH:CASH,Online:Online,CARD:CARD,DD:DD,CHEQUE:CHEQUE'
+    pattern: 'list://CARD:CARD,CASH:CASH,CHEQUE:CHEQUE,Online:Online'
     source: pt
     isMandatory: false
     searchClause: AND paymentmode = $paymentMode
@@ -193,7 +193,7 @@ ReportDefinitions:
       SELECT propertyid, array_to_string(array_agg(name),', ') as name, array_to_string(array_agg(mobilenumber),', ') as mobilenumber
       FROM eg_pt_owner poo
       INNER JOIN eg_user ptuser ON ptuser.uuid = poo.userid group by propertyid) 
-      poo ON poo.propertyid = pt.propertyid
+      poo ON poo.propertyid = pt.id
       JOIN eg_user as un ON pay.createdby::INTEGER=un.id
       where pay.tenantid LIKE $tenantid  and pd.businessservice='PT'and pay.paymentstatus != 'CANCELLED'
   groupby: GROUP BY pay.tenantid,pd.receiptnumber,bill.consumercode,pd.receiptdate,pay.transactionnumber,pay.paymentmode,addr.doorno,poo.name,pd.amountpaid,un.name,addr.locality
@@ -319,7 +319,7 @@ ReportDefinitions:
   - name: paymentMode
     label: Payment Mode
     type: singlevaluelist
-    pattern: 'list://CASH:CASH,Online:Online,CARD:CARD,DD:DD,CHEQUE:CHEQUE'
+    pattern: 'list://CARD:CARD,CASH:CASH,CHEQUE:CHEQUE,Online:Online'
     source: pt
     isMandatory: false
     searchClause: AND paymentmode = $paymentMode
@@ -359,7 +359,7 @@ ReportDefinitions:
       SELECT propertyid, array_to_string(array_agg(name),', ') as name, array_to_string(array_agg(mobilenumber),', ') as mobilenumber
       FROM eg_pt_owner poo
       INNER JOIN eg_user ptuser ON ptuser.uuid = poo.userid group by propertyid) 
-      poo ON poo.propertyid = pt.propertyid
+      poo ON poo.propertyid = pt.id
       JOIN eg_user as un ON pay.createdby::INTEGER=un.id
       where pay.tenantid LIKE $tenantid  and pd.businessservice='PT'and pay.paymentstatus = 'CANCELLED'
   groupby: GROUP BY pay.tenantid,pd.receiptnumber,bill.consumercode,pd.receiptdate,pay.transactionnumber,pay.paymentmode,addr.doorno,poo.name,pd.amountpaid,un.name,addr.locality
@@ -595,7 +595,7 @@ ReportDefinitions:
       SELECT propertyid, array_to_string(array_agg(name),', ') as name, array_to_string(array_agg(mobilenumber),', ') as mobilenumber
       FROM eg_pt_owner poo
       INNER JOIN eg_user ptuser ON ptuser.uuid = poo.userid group by propertyid) 
-      poo ON poo.propertyid = pt.propertyid
+      poo ON poo.propertyid = pt.id
       JOIN eg_user as un ON pay.createdby::INTEGER=un.id
       where pay.tenantid  != 'pb.testing' pd.businessservice='PT'and pay.paymentstatus = 'CANCELLED'
   groupby: GROUP BY pay.tenantid,pd.receiptnumber,bill.consumercode,pd.receiptdate,pay.transactionnumber,pay.paymentmode,addr.doorno,poo.name,pd.amountpaid,un.name,addr.locality
@@ -963,7 +963,7 @@ ReportDefinitions:
       SELECT propertyid, array_to_string(array_agg(name),', ') as name, array_to_string(array_agg(mobilenumber),', ') as mobilenumber
       FROM eg_pt_owner poo
       INNER JOIN eg_user ptuser ON ptuser.uuid = poo.userid group by propertyid) 
-      poo ON poo.propertyid = pt.propertyid
+      poo ON poo.propertyid = pt.id
       JOIN eg_user as un ON pay.createdby::INTEGER=un.id
       where pay.tenantid != 'pb.testing' pd.businessservice='PT'and pay.paymentstatus != 'CANCELLED'
   groupby: GROUP BY pay.tenantid,pd.receiptnumber,bill.consumercode,pd.receiptdate,pay.transactionnumber,pay.paymentmode,addr.doorno,poo.name,pd.amountpaid,un.name,addr.locality
