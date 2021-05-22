@@ -66,7 +66,7 @@ ReportDefinitions:
     source: ws
     isMandatory: false
     searchClause: AND ws.lastmodifiedtime <= $toDate
-  query: SELECT connectionno as connectionno,applicationno as applicationno,reason as reason from eg_ws_failed_bill WHERE ws.tenantId LIKE $tenantid and status = 'Y'
+  query: SELECT connectionno as connectionno,applicationno as applicationno,reason as reason from eg_ws_failed_bill ws WHERE ws.tenantId LIKE $tenantid and ws.status = 'BILL_FAILED'
 
 - reportName: ModifyWaterConnectionApplicationStatusReport
   summary: Nummber of applications by there status
