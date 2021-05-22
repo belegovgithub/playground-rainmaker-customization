@@ -32,6 +32,42 @@ ReportDefinitions:
   groupby: GROUP BY message.message
   orderby: ORDER BY case message.message when 'Initiated' then 1 when 'Pending For Document Verification' then 2 when 'Pending For Field Inspection' then 3 when 'Pending for Citizen Action' then 4 when 'Pending for Approval' then 5 when 'Pending for Payment' then 6 when 'Pending for Connection Activation' then 7 else 8 end
 
+
+- reportName: WaterConnectionFailedBillReport
+  summary: Nummber of applications by there status
+  version: 1.0.0
+  moduleName: rainmaker-ws
+  sourceColumns:
+  - name: connectionno
+    label: WS_COMMON_TABLE_CONN_NO
+    type: string
+    source: ws
+    total: false
+  - name: applicationno
+    label: WS_COMMON_TABLE_APPL_NO
+    type: string
+    source: ws
+    total: false
+  - name: reason
+    label: WS_COMMON_TABLE_REASON
+    type: string
+    source: ws
+    total: false
+  searchParams:
+  - name: fromDate
+    label: WS_COMMON_FROM_DATE_LABEL
+    type: epoch
+    source: ws
+    isMandatory: false
+    searchClause: AND ws.lastmodifiedtime >= $fromDate
+  - name: toDate
+    label: WS_COMMON_TO_DATE_LABEL
+    type: epoch
+    source: ws
+    isMandatory: false
+    searchClause: AND ws.lastmodifiedtime <= $toDate
+  query: SELECT connectionno as connectionno,applicationno as applicationno,reason as reason from eg_ws_failed_bill WHERE ws.tenantId LIKE $tenantid and status = 'Y'
+
 - reportName: ModifyWaterConnectionApplicationStatusReport
   summary: Nummber of applications by there status
   version: 1.0.0
