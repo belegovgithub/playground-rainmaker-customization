@@ -607,13 +607,90 @@
         }, "layout": "noBorders"
       },
       {
+        "style": "ws-head1",
+        "table": {
+          "widths": ["6%","94%"],
+          "body": [
+            [
+              {
+                "text": "NOTE:",
+                "bold": true,
+                "border": [
+                  false,
+                  false,
+                  false,
+                  false
+                ]
+              },
+              {
+                "text": "{{rebate_date}}",
+                "bold": false,
+                "border": [
+                  false,
+                  false,
+                  false,
+                  false
+                ]
+              }
+
+            ],
+            [
+              {
+                "text": " ",
+                "bold": true,
+                "border": [
+                  false,
+                  false,
+                  false,
+                  false
+                ]
+              },
+              {
+                "text": "{{demand_date}}",
+                "bold": false,
+                "border": [
+                  false,
+                  false,
+                  false,
+                  false
+                ]
+              }
+
+            ],
+            [
+              {
+                "text": " ",
+                "bold": true,
+                "border": [
+                  false,
+                  false,
+                  false,
+                  false
+                ]
+              },
+              {
+                "text": "{{interest_date}}",
+                "bold": false,
+                "border": [
+                  false,
+                  false,
+                  false,
+                  false
+                ]
+              }
+            ]
+          ]
+        },"layout": "noBorders"
+      }
+      ,
+      {
         "canvas": [
           {
             "type": "line",
             "x1": -40,
-            "y1": 30,
+            "y1": 15,
             "x2": 700,
-            "y2": 30,
+            "y2": 15,
             "dash": {
               "length": 10,
               "space": 5
@@ -765,7 +842,7 @@
                   "style": "receipt-table-value-ack"
                 },
                 {
-                  "text": "{{assesseName}},{{address}}",
+                  "text": "{{assesseName}},{{location}},{{address}}",
                   "border": [
                     false,
                     false,
@@ -781,6 +858,7 @@
           ]
         }
       },
+    
 
       {
         "text": "{{receivers_signature}}",
@@ -803,6 +881,10 @@
       },
       "ws-head": {
         "fontSize": 10
+      },
+      "ws-head1": {
+        "fontSize": 10,
+        "margin":[0,15,0,-1]
       },
       "label-value": {
         "alignment": "left",
@@ -839,7 +921,7 @@
       "noc-table5": {
         "fontSize": 12,
         "color": "#484848",
-        "margin": [-25, 5, -8, -8]
+        "margin": [-25, 5, -8, -18]
       },
       "noc-table2": {
         "fontSize": 12,
@@ -955,13 +1037,13 @@
         "alignment": "right"
       },
       "footer-header": {
-        "margin": [0, 5, 0, -50],
+        "margin": [0, 5, 0, -55],
         "bold": true,
         "color": "#000000",
         "alignment": "center"
       },
       "footer-bottom": {
-        "margin": [0, 15, 0, 0],
+        "margin": [0, 24, 0, 0],
         "bold": true,
         "color": "#000000",
         "alignment": "right"
