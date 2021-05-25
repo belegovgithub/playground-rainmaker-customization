@@ -43,8 +43,23 @@ ReportDefinitions:
     type: string
     source: ws
     total: false
-  - name: applicationno
+  - name: assessmentyear
     label: WS_COMMON_TABLE_APPL_NO
+    type: string
+    source: ws
+    total: false
+  - name: fromdate
+    label: WS_COMMON_FROM_DATE_LABEL
+    type: string
+    source: ws
+    total: false
+  - name: todate
+    label: WS_COMMON_TO_DATE_LABEL
+    type: string
+    source: ws
+    total: false
+  - name: createdtime
+    label: WS_COMMON_CREATED_DATE_LABEL
     type: string
     source: ws
     total: false
@@ -66,7 +81,7 @@ ReportDefinitions:
     source: ws
     isMandatory: false
     searchClause: AND ws.lastmodifiedtime <= $toDate
-  query: SELECT connectionno as connectionno,applicationno as applicationno,reason as reason from eg_ws_failed_bill ws WHERE ws.tenantId LIKE $tenantid and ws.status = 'BILL_FAILED'
+  query: 	SELECT connectionno as connectionno,assessmentyear as assessmentyear,to_char(To_timestamp(fromdate / 1000), 'DD/MM/YYYY') as fromdate, to_char(To_timestamp(todate / 1000), 'DD/MM/YYYY') as todate , to_char(To_timestamp(createdtime / 1000), 'DD/MM/YYYY') as createdtime ,reason as reason from eg_ws_failed_bill ws WHERE ws.tenantId LIKE $tenantid and ws.status = 'BILL_FAILED'
 
 - reportName: ModifyWaterConnectionApplicationStatusReport
   summary: Nummber of applications by there status
