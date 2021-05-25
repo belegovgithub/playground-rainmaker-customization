@@ -485,6 +485,19 @@
                  }
                 },
                 {
+                  "variable": "address",
+                  "value": {
+                    "path": "$.address.locality"
+                  },
+                  "localisation":{
+                    "required":true,
+                    "prefix": "REVENUE",
+                    "module": "rainmaker",
+                    "prefixCbName":true
+                 },
+                 "type":"boundary"
+                },
+                {
                     "variable": "cantonment-board",
                     "value": {
                       "path": "PDF_STATIC_LABEL_CONSOLIDATED_TLCERTIFICATE_MUNICIPAL_CORPORATION"
