@@ -275,18 +275,6 @@
                 }
               },
               {
-                "variable": "rebate_date",
-                "value": {
-                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_REBATE_DATE"
-                },
-                "type": "label",
-                "localisation": {
-                  "required": true,
-                  "prefix": null,
-                  "module": "rainmaker-pdf"
-                }
-              },
-              {
                 "variable": "demand_date",
                 "value": {
                   "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_DEMAND_DATE"

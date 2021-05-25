@@ -623,29 +623,6 @@
                 ]
               },
               {
-                "text": "{{rebate_date}}",
-                "bold": false,
-                "border": [
-                  false,
-                  false,
-                  false,
-                  false
-                ]
-              }
-
-            ],
-            [
-              {
-                "text": " ",
-                "bold": true,
-                "border": [
-                  false,
-                  false,
-                  false,
-                  false
-                ]
-              },
-              {
                 "text": "{{demand_date}}",
                 "bold": false,
                 "border": [
@@ -681,8 +658,7 @@
             ]
           ]
         },"layout": "noBorders"
-      }
-      ,
+      },
       {
         "canvas": [
           {
