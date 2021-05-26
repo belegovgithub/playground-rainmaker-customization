@@ -1113,13 +1113,13 @@ ReportDefinitions:
     type: epoch
     source: pt
     isMandatory: false
-    searchClause: AND demand.createddate >= $fromDate
+    searchClause: AND demand.createdtime >= $fromDate
   - name: toDate
     label: reports.pt.toDate
     type: epoch
     source: pt
     isMandatory: false
-    searchClause: AND demand.createddate <= $toDate
+    searchClause: AND demand.createdtime <= $toDate
   - name: Wardname
     label: Mohalla
     type: singlevaluelist
@@ -1311,13 +1311,13 @@ ReportDefinitions:
     type: epoch
     source: pt
     isMandatory: false
-    searchClause: AND demand.createddate >= $fromDate
+    searchClause: AND demand.createdtime >= $fromDate
   - name: toDate
     label: reports.pt.toDate
     type: epoch
     source: pt
     isMandatory: false
-    searchClause: AND demand.createddate <= $toDate
+    searchClause: AND demand.createdtime <= $toDate
   - name: ulb
     label: PT_ULB_CITY
     type: singlevaluelist
