@@ -36,7 +36,15 @@ ReportDefinitions:
       type: epoch
       source: birthcount
       isMandatory: false
-      searchClause: AND extract(EPOCH from createdtime)*1000 <= $toDate      
-    query: SELECT tenantid, COUNT(CASE WHEN createdby='import-user' THEN createdby ELSE NULL END) AS LegacyRecords, COUNT(CASE WHEN createdby!='import-user' THEN createdby ELSE NULL END) AS NonLegacyRecords, count(*) as TotalRecords FROM eg_birth_dtls 
+      searchClause: AND extract(EPOCH from createdtime)*1000 <= $toDate  
+    - name: ulb
+      label: BND_APPL_CANT 
+      type: singlevaluelist
+      pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=tenant&masterName=tenants|$.MdmsRes.tenant.tenants.*.code|$.MdmsRes.tenant.tenants.*.name
+      source: tl
+      wrapper: true
+      isMandatory: false
+      searchClause: AND tenantid = $ulb      
+    query: SELECT initcap(split_part(tenantid, '.', 2)) as tenantid, COUNT(CASE WHEN createdby='import-user' THEN createdby ELSE NULL END) AS LegacyRecords, COUNT(CASE WHEN createdby!='import-user' THEN createdby ELSE NULL END) AS NonLegacyRecords, count(*) as TotalRecords FROM eg_birth_dtls where tenantid != 'pb.testing'
     groupby: GROUP BY tenantid 
     orderby: order by tenantid
