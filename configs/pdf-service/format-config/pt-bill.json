@@ -660,32 +660,7 @@
         },"layout": "noBorders"
       },
       {
-        "canvas": [
-          {
-            "type": "line",
-            "x1": -40,
-            "y1": 15,
-            "x2": 700,
-            "y2": 15,
-            "dash": {
-              "length": 10,
-              "space": 5
-            }
-          }
-        ]
-      },
-      {
-        "image": "{{scissorImage}}",
-        "width": 24,
-        "height": 24,
-        "margin": [
-          -30,
-          -11.2,
-          0,
-          0
-        ]
-      },
-      {
+        "pageBreak": "before",
         "text": "{{acknowledgement_for}}",
         "style": "footer-header"
        
@@ -892,12 +867,12 @@
       "noc-table4": {
         "fontSize": 12,
         "color": "#484848",
-        "margin": [-25, 60, -8, -8]
+        "margin": [-25, 75, -8, -8]
       },
       "noc-table5": {
         "fontSize": 12,
         "color": "#484848",
-        "margin": [-25, 5, -8, -18]
+        "margin": [-25, 7, -8, -18]
       },
       "noc-table2": {
         "fontSize": 12,
@@ -1019,7 +994,7 @@
         "alignment": "center"
       },
       "footer-bottom": {
-        "margin": [0, 24, 0, 0],
+        "margin": [0, 35, 0, 0],
         "bold": true,
         "color": "#000000",
         "alignment": "right"

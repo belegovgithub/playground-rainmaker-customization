@@ -394,15 +394,15 @@
             "derived": [
               {
                 "variable": "totalArrears",
-                "formula": "{{educationTaxArrear}} + {{lighteningTaxArrear}} + {{converancyTaxArrear}} + {{waterTaxArrear}} + {{houseTaxArrear}}"
+                "formula": "({{educationTaxArrear}} + {{lighteningTaxArrear}} + {{converancyTaxArrear}} + {{waterTaxArrear}} + {{houseTaxArrear}}).toFixed(2)"
               },
               {
                 "variable": "totalCurrent",
-                "formula": "{{educationTaxCurrent}} + {{lighteningTaxCurrent}} + {{converancyTaxCurrent}} + {{waterTaxCurrent}} + {{houseTaxCurrent}}"
+                "formula": "({{educationTaxCurrent}} + {{lighteningTaxCurrent}} + {{converancyTaxCurrent}} + {{waterTaxCurrent}} + {{houseTaxCurrent}}).toFixed(2)"
               },
               {
                 "variable": "totalCalculatedAmount",
-                "formula": "{{totalArrearsval}} + {{totalCurrentval}}" 
+                "formula": "({{totalArrearsval}} + {{totalCurrentval}}).toFixed(2)" 
               },
               {
                 "variable": "demandTotalAmount",
@@ -429,7 +429,7 @@
           {
             "externalAPI": [     
               { 
-                "path": "http://egov-mdms-service:8080/egov-mdms-service/v1/_get",
+                "path": "http://localhost:8085/egov-mdms-service/v1/_get",
                 "queryParam": "moduleName=tenant&masterName=tenants&tenantId=pb&filter=%5B?(@.code=='{$.tenantId}')%5D",
                   "apiRequest": null,
                   "responseMapping":[
