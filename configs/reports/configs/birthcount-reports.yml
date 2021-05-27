@@ -30,13 +30,13 @@ ReportDefinitions:
       type: epoch
       source: birthcount
       isMandatory: false
-      searchClause: AND extract(EPOCH from createdtime)*1000 >= $fromDate
+      searchClause: AND createdtime >= $fromDate
     - name: toDate
       label: BND_TO_DATE
       type: epoch
       source: birthcount
       isMandatory: false
-      searchClause: AND extract(EPOCH from createdtime)*1000 <= $toDate  
+      searchClause: AND createdtime <= $toDate  
     - name: ulb
       label: BND_APPL_CANT 
       type: singlevaluelist
