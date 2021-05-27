@@ -1,0 +1,42 @@
+ReportDefinitions:
+  - reportName: BirthRecordsCountReport
+    summary: Count of Birth Records
+    version: 1.0.0
+    moduleName: rainmaker-bnd
+    sourceColumns:
+    - name: tenantid
+      label: EMP_DECL_TENANTID
+      type: string
+      source: birthcount
+      total: false
+    - name: legacyRecords
+      label: EMP_BND_LEGACYRECORDS
+      type: string
+      source: birthcount
+      total: false
+    - name: nonLegacyRecords
+      label: EMP_BND_NONLEGACYRECORDS
+      type: string
+      source: birthcount
+      total: false
+    - name: totalRecords
+      label: EMP_BND_TOTALRECORDS
+      type: string
+      source: birthcount
+      total: false
+    searchParams:
+    - name: fromDate
+      label: BND_FROM_DATE
+      type: epoch
+      source: birthcount
+      isMandatory: false
+      searchClause: AND extract(EPOCH from createdtime)*1000 >= $fromDate
+    - name: toDate
+      label: BND_TO_DATE
+      type: epoch
+      source: birthcount
+      isMandatory: false
+      searchClause: AND extract(EPOCH from createdtime)*1000 <= $toDate      
+    query: SELECT tenantid, COUNT(CASE WHEN createdby='import-user' THEN createdby ELSE NULL END) AS LegacyRecords, COUNT(CASE WHEN createdby!='import-user' THEN createdby ELSE NULL END) AS NonLegacyRecords, count(*) as TotalRecords FROM eg_birth_dtls 
+    groupby: GROUP BY tenantid 
+    orderby: order by tenantid
