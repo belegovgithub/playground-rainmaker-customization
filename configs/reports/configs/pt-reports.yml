@@ -1072,13 +1072,13 @@ ReportDefinitions:
     source: pt
     wrapper: true
     isMandatory: false
-    searchClause: AND addr.locality = $Wardname
+    searchClause: AND locality = $Wardname
   query: | 
     select initcap(split_part(tenantid, '.', 2)) as tenantid,
     consumercode as propertyid, oldpropertyid as oldcode,
     name as name,mobilenumber as mobilenumber,
     (SELECT boundary_def.name FROM (VALUES tbl_boundary) AS boundary_def(name,code) where code=locality) as mohallaname,
-    CONCAT(doorno,', ',mohallaname) as address  ,arv,
+    CONCAT(doorno,', ') as address  ,arv,
     initcap(split_part(usagecategory, '.', 1)) as usagetype,initcap(split_part(usagecategory, '.', 2)) as subusagetype,
     CONCAT('House Tax:',SUM(CASE WHEN dem_code = 'PT_HOUSE_TAX' THEN dem_tax ELSE 0 END),E'\n',
     'Water Tax:',  SUM(CASE WHEN dem_code = 'PT_WATER_TAX'  THEN dem_tax ELSE 0 END),E'\n',
