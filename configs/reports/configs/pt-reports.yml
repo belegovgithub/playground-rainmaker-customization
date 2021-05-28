@@ -1026,22 +1026,22 @@ ReportDefinitions:
     label: reports.pt.demand
     type: string
     source: pt
-    total: true
+    total: false
   - name: totalcollected
     label: PT_COLLECTED
     type: string
     source: pt
-    total: true
+    total: false
   - name: excessadjustment
     label: PT_EXCESSADJUSTMENT
     type: string
     source: pt
-    total: true
+    total: false
   - name: billadjustment
     label: PT_BILLAdjustment
     type: string
     source: pt
-    total: true  
+    total: false  
   - name: totaldue
     label: PT_DUE
     type: string
