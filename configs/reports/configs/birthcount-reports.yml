@@ -49,7 +49,6 @@ ReportDefinitions:
     groupby: GROUP BY tenantid 
     orderby: order by tenantid
 
-ReportDefinitions:
   - reportName: DeathRecordsCountReport
     summary: Count of Death Records
     version: 1.0.0
