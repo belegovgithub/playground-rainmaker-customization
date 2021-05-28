@@ -1077,7 +1077,7 @@ ReportDefinitions:
     select initcap(split_part(tenantid, '.', 2)) as tenantid,
     consumercode as propertyid, oldpropertyid as oldcode,
     name as name,mobilenumber as mobilenumber,
-    (SELECT boundary_def.name FROM (VALUES tbl_boundary) AS boundary_def(name,code) where code=addr.locality) as mohallaname,
+    (SELECT boundary_def.name FROM (VALUES tbl_boundary) AS boundary_def(name,code) where code=locality) as mohallaname,
     CONCAT(doorno,', ',mohallaname) as address  ,arv,
     initcap(split_part(usagecategory, '.', 1)) as usagetype,initcap(split_part(usagecategory, '.', 2)) as subusagetype,
     CONCAT('House Tax:',SUM(CASE WHEN dem_code = 'PT_HOUSE_TAX' THEN dem_tax ELSE 0 END),E'\n',
@@ -1166,8 +1166,8 @@ ReportDefinitions:
       INNER JOIN eg_user ptuser ON ptuser.uuid = poo.userid group by propertyid)
       poo ON poo.propertyid = pt.id
       where demand.tenantid LIKE $tenantid and demand.businessservice ='PT')t  
-  groupby: GROUP BY demand.tenantid,demand.consumercode,addr.doorno,addr.doorno,poo.name,pt.oldpropertyid,pt.propertytype,ptunit.usagecategory,poo.mobilenumber, ptunit.arv,addr.locality
-  orderby: ORDER BY demand.consumercode
+  groupby: GROUP BY tenantid,consumercode,doorno,name,oldpropertyid,propertytype,usagecategory,mobilenumber, arv,locality
+  orderby: ORDER BY consumercode
 
 - reportName: DGDEDemandRegisterReport
   summary: Reports for Reconcillation of data in PT
