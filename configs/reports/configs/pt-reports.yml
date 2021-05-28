@@ -1092,12 +1092,12 @@ ReportDefinitions:
     type: string
     source: pt
     total: false
-  - name: totaltax
+  - name: totaldemand
     label: PT_TOTAL_AMOUNT
     type: string
     source: pt
     total: true
-  - name: totalcollected
+  - name: totalcollection
     label: PT_COLLECTED
     type: string
     source: pt
