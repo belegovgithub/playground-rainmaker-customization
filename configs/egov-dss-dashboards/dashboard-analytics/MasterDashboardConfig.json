@@ -1827,7 +1827,73 @@
 	              ]
 	            }
 	          ]
-	        }
+	        },
+          {
+            "row": 1,
+            "name": "FORECASTS",
+            "vizArray": [
+              {
+                "id": 311,
+                "name": "DSS_OVERVIEW",
+                "dimensions": {
+                  "height": 350,
+                  "width": 5
+                },
+                "vizType": "metric-collection",
+                "label": "DSS_OVERVIEW",
+                "noUnit": true,
+                "isCollapsible": false,
+                "charts": [
+                  {
+                    "id": "todaysForecast",
+                    "name": "Todays Forecast",
+                    "code": "",
+                    "chartType": "metric",
+                    "filter": {"title": "TODAY"},
+                    "headers": []
+                  },
+                  {
+                    "id": "fiveDayForecast",
+                    "name": "Five Day Forecast",
+                    "code": "",
+                    "chartType": "metric",
+                    "filter": "",
+                    "headers": []
+                  },
+                  {
+                    "id": "totalCollectionv2",
+                    "name": "Actual Till Date",
+                    "code": "",
+                    "chartType": "metric",
+                    "filter": "",
+                    "headers": []
+                  }
+                ]
+              },
+              {
+                "id": 312,
+                "name": "Collection Forecast",
+                "dimensions": {
+                  "height": 350,
+                  "width": 7
+                },
+                "vizType": "chart",
+                "label": "",
+                "noUnit": true,
+                "isCollapsible": false,
+                "charts": [
+                  {
+                    "id": "mcCumulativeCollectionv2Forecast",
+                    "name": "Monthly",
+                    "code": "",
+                    "chartType": "line",
+                    "filter": "",
+                    "headers": []
+                  }
+                ]
+              }
+            ]
+          }
       
       ]
     },
