@@ -1022,6 +1022,11 @@ ReportDefinitions:
     type: string
     source: pt
     total: true
+  - name: emptyheader
+    label: reports.pt.empty
+    type: string
+    source: pt
+    total: false
   - name: housetax
     label: reports.pt.housetax
     type: string
@@ -1140,7 +1145,7 @@ ReportDefinitions:
     (SELECT boundary_def.name FROM (VALUES tbl_boundary) AS boundary_def(name,code) where code=locality) as mohallaname,
     CONCAT(doorno,', ') as address  ,arv,
     initcap(split_part(usagecategory, '.', 1)) as usagetype,initcap(split_part(usagecategory, '.', 2)) as subusagetype,
-    CONCAT('Demand: ',E'\n','Collected: ',E'\n','Excess Adjustment: ',E'\n','Bill Adjustment: '),
+    CONCAT('Demand: ',E'\n','Collected: ',E'\n','Excess Adjustment: ',E'\n','Bill Adjustment: ') as emptyheader,
     CONCAT(SUM(CASE WHEN dem_code = 'PT_HOUSE_TAX' THEN dem_tax ELSE 0 END),E'\n',
     SUM(CASE WHEN dem_code = 'PT_HOUSE_TAX' THEN collectionamount ELSE 0 END),E'\n',
     SUM(CASE WHEN SIGN(amen_tax)=-1 AND amen_code = 'PT_HOUSE_TAX' THEN ABS(amen_tax) ELSE 0 END),E'\n',
