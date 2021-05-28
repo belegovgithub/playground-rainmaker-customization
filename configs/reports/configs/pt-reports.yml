@@ -1078,7 +1078,7 @@ ReportDefinitions:
     consumercode as propertyid, oldpropertyid as oldcode,
     name as name,mobilenumber as mobilenumber,
     (SELECT boundary_def.name FROM (VALUES tbl_boundary) AS boundary_def(name,code) where code=addr.locality) as mohallaname,
-    CONCAT(doorno,', ',mohallaname) as addr,arv,
+    CONCAT(doorno,', ',mohallaname) as address  ,arv,
     initcap(split_part(usagecategory, '.', 1)) as usagetype,initcap(split_part(usagecategory, '.', 2)) as subusagetype,
     CONCAT('House Tax:',SUM(CASE WHEN dem_code = 'PT_HOUSE_TAX' THEN dem_tax ELSE 0 END),E'\n',
     'Water Tax:',  SUM(CASE WHEN dem_code = 'PT_WATER_TAX'  THEN dem_tax ELSE 0 END),E'\n',
