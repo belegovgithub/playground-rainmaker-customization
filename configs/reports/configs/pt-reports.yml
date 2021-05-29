@@ -14,16 +14,21 @@ ReportDefinitions:
     keyOrder: name,code
     tableName: tbl_boundary
   sourceColumns:
-  - name: tenantid
-    label: PT_ULB_CITY 
-    type: string
-    source: pt
-    total: false
   - name: propertyid
     label: reports.pt.propertyId 
     type: string
     source: pt
     total: false
+  - name: oldpropertyid
+    label: PT_EXISTING_PROPERTY_ID
+    type: string
+    source: pt
+    total: false  
+  - name: finyear
+    label: reports.pt.finyear  
+    type: string
+    source: pt
+    total: false  
   - name: receiptnumber
     label: PT_RECEIPT_RECEIPT_NO 
     type: string
@@ -159,10 +164,11 @@ ReportDefinitions:
     searchClause: AND un.id = $collectorname::INTEGER
   query: |
     select initcap(split_part(pay.tenantid, '.', 2)) as tenantid,
-    bill.consumercode as propertyid,
+    bill.consumercode as propertyid,pt.oldpropertyid as oldpropertyid,
     pd.receiptnumber  as receiptnumber,
     To_char(To_timestamp(pd.receiptdate/1000 ), 'DD/MM/YYYY')  AS receiptdate,
     pay.paymentmode as paymentmode,
+    CONCAT(initcap(split_part((To_char(To_timestamp(bd.fromperiod / 1000), 'DD/MM/YYYY')),'/',3)),'-',initcap(split_part((To_char(To_timestamp(bd.toperiod / 1000), 'DD/MM/YYYY')),'/',3)))as finyear,
     pay.transactionnumber as transactionnumber,
     SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_INTEREST%' THEN bad.amount ELSE 0 END) as interest,
     SUM(CASE WHEN taxheadcode LIKE 'PT_DEMANDNOTICE_CHARGE' THEN bad.amount ELSE 0 END) as demandnoticecharge,
@@ -196,7 +202,7 @@ ReportDefinitions:
       poo ON poo.propertyid = pt.id
       JOIN eg_user as un ON pay.createdby::INTEGER=un.id
       where pay.tenantid LIKE $tenantid  and pd.businessservice='PT'and pay.paymentstatus != 'CANCELLED'
-  groupby: GROUP BY pay.tenantid,pd.receiptnumber,bill.consumercode,pd.receiptdate,pay.transactionnumber,pay.paymentmode,addr.doorno,poo.name,pd.amountpaid,un.name,addr.locality
+  groupby: GROUP BY pay.tenantid,pd.receiptnumber,bill.consumercode,pd.receiptdate,pay.transactionnumber,pay.paymentmode,addr.doorno,poo.name,pd.amountpaid,un.name,addr.locality,pt.oldpropertyid,bd.fromperiod,bd.toperiod
 
 - reportName: CancelledReceiptRegister
   summary: Receipt Register for cancelled Receipts
@@ -208,16 +214,21 @@ ReportDefinitions:
     keyOrder: name,code
     tableName: tbl_boundary
   sourceColumns:
-  - name: tenantid
-    label: PT_ULB_CITY 
-    type: string
-    source: pt
-    total: false
   - name: propertyid
     label: reports.pt.propertyId 
     type: string
     source: pt
     total: false
+  - name: oldpropertyid
+    label: PT_EXISTING_PROPERTY_ID
+    type: string
+    source: pt
+    total: false
+  - name: finyear
+    label: reports.pt.finyear  
+    type: string
+    source: pt
+    total: false   
   - name: receiptnumber
     label: PT_RECEIPT_RECEIPT_NO 
     type: string
@@ -325,11 +336,12 @@ ReportDefinitions:
     searchClause: AND paymentmode = $paymentMode
   query: |
     select initcap(split_part(pay.tenantid, '.', 2)) as tenantid,
-    bill.consumercode as propertyid,
+    bill.consumercode as propertyid,pt.oldpropertyid as oldpropertyid,
     pd.receiptnumber  as receiptnumber,
     To_char(To_timestamp(pd.receiptdate/1000 ), 'DD/MM/YYYY')  AS receiptdate,
     pay.paymentmode as paymentmode,
     pay.transactionnumber as transactionnumber,
+    CONCAT(initcap(split_part((To_char(To_timestamp(bd.fromperiod / 1000), 'DD/MM/YYYY')),'/',3)),'-',initcap(split_part((To_char(To_timestamp(bd.toperiod / 1000), 'DD/MM/YYYY')),'/',3)))as finyear,
     SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_INTEREST%' THEN bad.amount ELSE 0 END) as interest,
     SUM(CASE WHEN taxheadcode LIKE 'PT_DEMANDNOTICE_CHARGE' THEN bad.amount ELSE 0 END) as demandnoticecharge,
     SUM(CASE WHEN taxheadcode LIKE 'PT_HOUSE_TAX' THEN bad.amount ELSE 0 END) as housetax,
@@ -362,7 +374,7 @@ ReportDefinitions:
       poo ON poo.propertyid = pt.id
       JOIN eg_user as un ON pay.createdby::INTEGER=un.id
       where pay.tenantid LIKE $tenantid  and pd.businessservice='PT'and pay.paymentstatus = 'CANCELLED'
-  groupby: GROUP BY pay.tenantid,pd.receiptnumber,bill.consumercode,pd.receiptdate,pay.transactionnumber,pay.paymentmode,addr.doorno,poo.name,pd.amountpaid,un.name,addr.locality
+  groupby: GROUP BY pay.tenantid,pd.receiptnumber,bill.consumercode,pd.receiptdate,pay.transactionnumber,pay.paymentmode,addr.doorno,poo.name,pd.amountpaid,un.name,addr.locality,pt.oldpropertyid,bd.fromperiod,bd.toperiod
 
 - reportName: CBPTCollection
   summary: CB wise PT Collection
@@ -446,6 +458,16 @@ ReportDefinitions:
     type: string
     source: pt
     total: false
+  - name: oldpropertyid
+    label: PT_EXISTING_PROPERTY_ID 
+    type: string
+    source: pt
+    total: false
+  - name: finyear
+    label: reports.pt.finyear  
+    type: string
+    source: pt
+    total: false  
   - name: receiptnumber
     label: PT_RECEIPT_RECEIPT_NO 
     type: string
@@ -561,11 +583,12 @@ ReportDefinitions:
     searchClause: AND paymentmode = $paymentMode
   query: |
     select initcap(split_part(pay.tenantid, '.', 2)) as tenantid,
-    bill.consumercode as propertyid,
+    bill.consumercode as propertyid,pt.oldpropertyid as oldpropertyid,
     pd.receiptnumber  as receiptnumber,
     To_char(To_timestamp(pd.receiptdate/1000 ), 'DD/MM/YYYY')  AS receiptdate,
     pay.paymentmode as paymentmode,
     pay.transactionnumber as transactionnumber,
+    CONCAT(initcap(split_part((To_char(To_timestamp(bd.fromperiod / 1000), 'DD/MM/YYYY')),'/',3)),'-',initcap(split_part((To_char(To_timestamp(bd.toperiod / 1000), 'DD/MM/YYYY')),'/',3)))as finyear,
     SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_INTEREST%' THEN bad.amount ELSE 0 END) as interest,
     SUM(CASE WHEN taxheadcode LIKE 'PT_DEMANDNOTICE_CHARGE' THEN bad.amount ELSE 0 END) as demandnoticecharge,
     SUM(CASE WHEN taxheadcode LIKE 'PT_HOUSE_TAX' THEN bad.amount ELSE 0 END) as housetax,
@@ -598,7 +621,7 @@ ReportDefinitions:
       poo ON poo.propertyid = pt.id
       JOIN eg_user as un ON pay.createdby::INTEGER=un.id
       where pay.tenantid  != 'pb.testing' pd.businessservice='PT'and pay.paymentstatus = 'CANCELLED'
-  groupby: GROUP BY pay.tenantid,pd.receiptnumber,bill.consumercode,pd.receiptdate,pay.transactionnumber,pay.paymentmode,addr.doorno,poo.name,pd.amountpaid,un.name,addr.locality
+  groupby: GROUP BY pay.tenantid,pd.receiptnumber,bill.consumercode,pd.receiptdate,pay.transactionnumber,pay.paymentmode,addr.doorno,poo.name,pd.amountpaid,un.name,addr.locality,pt.oldpropertyid,bd.fromperiod,bd.toperiod
 
 - reportName: CBWidePtCollection
   summary: CB Wide PT Collection
@@ -786,6 +809,16 @@ ReportDefinitions:
     type: string
     source: pt
     total: false
+  - name: oldpropertyid
+    label: PT_EXISTING_PROPERTY_ID
+    type: string
+    source: pt
+    total: false
+  - name: finyear
+    label: reports.pt.finyear  
+    type: string
+    source: pt
+    total: false  
   - name: receiptnumber
     label: PT_RECEIPT_RECEIPT_NO 
     type: string
@@ -929,11 +962,12 @@ ReportDefinitions:
     searchClause: AND un.id = $collectorname::INTEGER
   query: |
     select initcap(split_part(pay.tenantid, '.', 2)) as tenantid,
-    bill.consumercode as propertyid,
+    bill.consumercode as propertyid,pt.oldpropertyid as oldpropertyid,
     pd.receiptnumber  as receiptnumber,
     To_char(To_timestamp(pd.receiptdate/1000 ), 'DD/MM/YYYY')  AS receiptdate,
     pay.paymentmode as paymentmode,
     pay.transactionnumber as transactionnumber,
+    CONCAT(initcap(split_part((To_char(To_timestamp(bd.fromperiod / 1000), 'DD/MM/YYYY')),'/',3)),'-',initcap(split_part((To_char(To_timestamp(bd.toperiod / 1000), 'DD/MM/YYYY')),'/',3)))as finyear,
     SUM(CASE WHEN taxheadcode LIKE 'PT_TIME_INTEREST%' THEN bad.amount ELSE 0 END) as interest,
     SUM(CASE WHEN taxheadcode LIKE 'PT_DEMANDNOTICE_CHARGE' THEN bad.amount ELSE 0 END) as demandnoticecharge,
     SUM(CASE WHEN taxheadcode LIKE 'PT_HOUSE_TAX' THEN bad.amount ELSE 0 END) as housetax,
@@ -966,7 +1000,7 @@ ReportDefinitions:
       poo ON poo.propertyid = pt.id
       JOIN eg_user as un ON pay.createdby::INTEGER=un.id
       where pay.tenantid != 'pb.testing' pd.businessservice='PT'and pay.paymentstatus != 'CANCELLED'
-  groupby: GROUP BY pay.tenantid,pd.receiptnumber,bill.consumercode,pd.receiptdate,pay.transactionnumber,pay.paymentmode,addr.doorno,poo.name,pd.amountpaid,un.name,addr.locality
+  groupby: GROUP BY pay.tenantid,pd.receiptnumber,bill.consumercode,pd.receiptdate,pay.transactionnumber,pay.paymentmode,addr.doorno,poo.name,pd.amountpaid,un.name,addr.locality,bd.fromperiod,bd.toperiod
 
 - reportName: DemandRegisterReport
   summary: Reports for Reconcillation of data in PT
@@ -1123,13 +1157,13 @@ ReportDefinitions:
     type: epoch
     source: pt
     isMandatory: false
-    searchClause: AND demand.createdtime >= $fromDate
+    searchClause: AND createdtime >= $fromDate
   - name: toDate
     label: reports.pt.toDate
     type: epoch
     source: pt
     isMandatory: false
-    searchClause: AND demand.createdtime <= $toDate
+    searchClause: AND createdtime <= $toDate
   - name: Wardname
     label: Mohalla
     type: singlevaluelist
@@ -1145,7 +1179,7 @@ ReportDefinitions:
     (SELECT boundary_def.name FROM (VALUES tbl_boundary) AS boundary_def(name,code) where code=locality) as mohallaname,
     CONCAT(doorno,', ') as address  ,arv,
     initcap(split_part(usagecategory, '.', 1)) as usagetype,initcap(split_part(usagecategory, '.', 2)) as subusagetype,
-    CONCAT('Demand: <br>',E'\n','Collected: ',E'\n','Excess Adjustment: ',E'\n','Bill Adjustment: ') as emptyheader,
+    CONCAT('Demand: ',E'\r','Collected: ',E'\r','Excess Adjustment: ',E'\r','Bill Adjustment: ') as emptyheader,
     CONCAT(SUM(CASE WHEN dem_code = 'PT_HOUSE_TAX' THEN dem_tax ELSE 0 END),E'\n',
     SUM(CASE WHEN dem_code = 'PT_HOUSE_TAX' THEN collectionamount ELSE 0 END),E'\n',
     SUM(CASE WHEN SIGN(amen_tax)=-1 AND amen_code = 'PT_HOUSE_TAX' THEN ABS(amen_tax) ELSE 0 END),E'\n',
