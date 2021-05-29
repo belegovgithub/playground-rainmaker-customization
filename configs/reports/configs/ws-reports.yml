@@ -1287,6 +1287,158 @@ ReportDefinitions:
   groupby: GROUP BY tenantid
   orderby: ORDER BY tenantid
 
+- reportName: WSDGDEDemandRegisterReport
+  summary: Reports for Reconcillation of data in WS
+  version: 1.0.0
+  moduleName: rainmaker-ws
+  decryptionPathId: WSDGDEDemandRegisterReport
+  additionalConfig:
+    print:
+      pdfPageSize: "A2"
+  externalService:
+  - entity: $.TenantBoundary[0].boundary
+    apiURL: http://egov-location:8080/egov-location/location/v11/boundarys/_search?hierarchyTypeCode=REVENUE&boundaryType=Locality&tenantId=$tenantId
+    keyOrder: name,code
+    tableName: tbl_boundary
+  sourceColumns:
+  - name: connectionno
+    label: WS_MYCONNECTIONS_CONSUMER_NO
+    type: string
+    source: ws
+    total: false
+  - name: propertyid
+    label: reports.ws.propertyId
+    type: string
+    source: ws
+    total: false
+  - name: oldconnectionno
+    label: WS_SEARCH_CONNNECTION_OLD_CONSUMER_LABEL
+    type: string
+    source: ws
+    total: false
+  - name: name
+    label: WS_CONN_HOLDER_NAME
+    type: string
+    total: false
+    source: ws
+  - name: mobilenumber
+    label: WS_CONN_HOLDER_MOBILE
+    type: string
+    total: false
+    source: ws    
+  - name: doorno
+    label: PT_COMMON_DOOR_NO_LABEL
+    type: string
+    source: pt
+    total: false
+  - name: mohallaname
+    label: PT_PROPERTY_ADDRESS_MOHALLA
+    type: string
+    source: ws
+    total: false
+  - name: usagetype
+    label: WS_COMMON_USAGE_TYPE
+    type: string
+    source: pt
+    total: false
+  - name: subusagetype
+    label: WS_SUB_USAGE_TYPE
+    type: string
+    source: pt
+    total: false
+  - name: charge
+    label: WS_CHARGE
+    type: string
+    source: pt
+    total: true 
+  - name: rebate
+    label: BILL_WS_TIME_REBATE
+    type: string
+    source: ws
+    total: true     
+  - name: penalty
+    label: WS_TIME_PENALTY
+    type: string
+    source: ws
+    total: true
+  - name: roundoff
+    label: WS_FEE_ROUND_OFF
+    type: string
+    source: ws
+    total: true
+  - name: totaltax
+    label: PT_TOTAL_AMOUNT
+    type: string
+    source: ws
+    total: true
+  - name: totalcollected
+    label: PT_COLLECTED
+    type: string
+    source: ws
+    total: true
+  - name: totaldue
+    label: PT_DUE
+    type: string
+    source: ws
+    total: true
+  searchParams:
+  - name: fromDate
+    label: reports.ws.fromDate
+    type: epoch
+    source: ws
+    isMandatory: false
+    searchClause: AND demand.createdtime >= $fromDate
+  - name: toDate
+    label: reports.ws.toDate
+    type: epoch
+    source: ws
+    isMandatory: false
+    searchClause: AND demand.createdtime <= $toDate
+  - name: Wardname
+    label: Mohalla
+    type: singlevaluelist
+    pattern: http://egov-location:8080/egov-location/location/v11/boundarys/_search?hierarchyTypeCode=REVENUE&boundaryType=Locality&tenantId=$tenantid|$.TenantBoundary[*].boundary[*].code|$.TenantBoundary[*].boundary[*].name
+    source: ws
+    wrapper: true
+    isMandatory: false
+    searchClause: AND addr.locality = $Wardname
+  query: | 
+    select initcap(split_part(demand.tenantid, '.', 2)) as tenantid,
+    demand.consumercode as connectionno,
+    pt.propertyid as propertyid,
+    ws.oldconnectionno as oldconnectionno,
+    initcap(ws.usagecategory) as usagetype,
+    initcap(ws.subusagecategory) as subusagetype, 
+    SUM(CASE WHEN taxheadcode LIKE 'WS_CHARGE%' THEN demanddetail.taxamount ELSE 0 END) as charge,
+    SUM(CASE WHEN taxheadcode LIKE 'WS_TIME_REBATE%' THEN demanddetail.taxamount ELSE 0 END) as rebate,
+    SUM(CASE WHEN taxheadcode LIKE 'WS_TIME_PENALTY'  THEN demanddetail.taxamount ELSE 0 END) as penalty ,
+    SUM(CASE WHEN taxheadcode LIKE 'WS_ROUND_OFF' THEN demanddetail.taxamount ELSE 0 END) as roundoff ,
+    (SUM(CASE WHEN taxheadcode LIKE 'WS_CHARGE' THEN demanddetail.taxamount ELSE 0 END)  + SUM(CASE WHEN taxheadcode LIKE 'WS_TIME_REBATE%' THEN demanddetail.taxamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'WS_TIME_ADHOC_PENALTY' THEN demanddetail.taxamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'WS_TIME_PENALTY' THEN demanddetail.taxamount ELSE 0 END)  +SUM(CASE WHEN taxheadcode LIKE 'WS_ROUND_OFF' THEN demanddetail.taxamount ELSE 0 END) ) as totaltax,
+    (SUM(CASE WHEN taxheadcode LIKE 'WS_CHARGE' THEN demanddetail.collectionamount ELSE 0 END)  + SUM(CASE WHEN taxheadcode LIKE 'WS_TIME_REBATE%' THEN demanddetail.collectionamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'WS_TIME_ADHOC_PENALTY' THEN demanddetail.collectionamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'WS_TIME_PENALTY' THEN demanddetail.collectionamount ELSE 0 END)  +SUM(CASE WHEN taxheadcode LIKE 'WS_ROUND_OFF' THEN demanddetail.collectionamount ELSE 0 END) ) as totalcollection,
+    (SUM(CASE WHEN taxheadcode LIKE 'WS_CHARGE' THEN demanddetail.taxamount ELSE 0 END)  + SUM(CASE WHEN taxheadcode LIKE 'WS_TIME_REBATE%' THEN demanddetail.taxamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'WS_TIME_ADHOC_PENALTY' THEN demanddetail.taxamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'WS_TIME_PENALTY' THEN demanddetail.taxamount ELSE 0 END)  +SUM(CASE WHEN taxheadcode LIKE 'WS_ROUND_OFF' THEN demanddetail.taxamount ELSE 0 END) -(SUM(CASE WHEN taxheadcode LIKE 'WS_CHARGE' THEN demanddetail.collectionamount ELSE 0 END)  + SUM(CASE WHEN taxheadcode LIKE 'WS_TIME_REBATE%' THEN demanddetail.collectionamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'WS_TIME_ADHOC_PENALTY' THEN demanddetail.collectionamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'WS_TIME_PENALTY' THEN demanddetail.collectionamount ELSE 0 END)  +SUM(CASE WHEN taxheadcode LIKE 'WS_ROUND_OFF' THEN demanddetail.collectionamount ELSE 0 END) )) as totaldue,
+    (CASE WHEN connholder.connname is null THEN poo.name ELSE connholder.connname END) as name ,
+    (CASE WHEN connholder.connmobilenumber is null THEN poo.mobilenumber ELSE connholder.connmobilenumber END) as name , 
+     addr.doorno as doorno, (SELECT boundary_def.name FROM (VALUES tbl_boundary) AS boundary_def(name,code) where code=addr.locality) as mohallaname 
+    from egbs_demand_v1 demand
+    inner join egbs_demanddetail_v1 as demanddetail on demanddetail.demandid= demand.id
+    Inner join eg_ws_connection ws on  ws.connectionno=demand.consumercode
+    Inner join eg_pt_property as pt on  pt.propertyid=ws.property_id
+    Join eg_pt_address as addr on addr.propertyid=pt.id
+    Left outer join eg_pt_unit as ptunit on ptunit.propertyid = pt.id
+    LEFT JOIN (
+      SELECT propertyid, array_to_string(array_agg(name),', ') as name, array_to_string(array_agg(mobilenumber),', ') as mobilenumber
+      FROM eg_pt_owner poo
+      INNER JOIN eg_user ptuser ON ptuser.uuid = poo.userid group by propertyid)
+      poo ON poo.propertyid = pt.id
+    LEFT JOIN (
+      SELECT connectionid, array_to_string(array_agg(name),', ') as connname, array_to_string(array_agg(mobilenumber),', ') as connmobilenumber
+      FROM eg_ws_connectionholder connholder
+      INNER JOIN eg_user wsuser ON wsuser.uuid = connholder.userid group by connectionid)
+      connholder ON connholder.connectionid = ws.id
+      where demand.tenantid != 'pb.testing' and demand.businessservice ='WS'
+  groupby: GROUP BY demand.tenantid,demand.consumercode,addr.doorno, poo.name,pt.propertyid,ws.usagecategory,ws.subusagecategory,poo.mobilenumber,connholder.connname,connholder.connmobilenumber,addr.locality,ws.oldconnectionno
+  orderby: ORDER BY demand.consumercode
+
 - reportName: WSDemandRegisterReport
   summary: Reports for Reconcillation of data in WS
   version: 1.0.0
@@ -1411,15 +1563,14 @@ ReportDefinitions:
     initcap(ws.subusagecategory) as subusagetype, 
     SUM(CASE WHEN taxheadcode LIKE 'WS_CHARGE%' THEN demanddetail.taxamount ELSE 0 END) as charge,
     SUM(CASE WHEN taxheadcode LIKE 'WS_TIME_REBATE%' THEN demanddetail.taxamount ELSE 0 END) as rebate,
-    SUM(CASE WHEN taxheadcode LIKE 'WS_TIME_INTEREST' THEN demanddetail.taxamount ELSE 0 END) as interest ,
     SUM(CASE WHEN taxheadcode LIKE 'WS_TIME_PENALTY'  THEN demanddetail.taxamount ELSE 0 END) as penalty ,
-    SUM(CASE WHEN taxheadcode LIKE 'WS_Round_Off' THEN demanddetail.taxamount ELSE 0 END) as roundoff ,
-    (SUM(CASE WHEN taxheadcode LIKE 'WS_CHARGE' THEN demanddetail.taxamount ELSE 0 END)  + SUM(CASE WHEN taxheadcode LIKE 'WS_TIME_REBATE%' THEN demanddetail.taxamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'WS_TIME_INTEREST' THEN demanddetail.taxamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'WS_TIME_PENALTY' THEN demanddetail.taxamount ELSE 0 END)  +SUM(CASE WHEN taxheadcode LIKE 'WS_Round_Off' THEN demanddetail.taxamount ELSE 0 END) ) as totaltax,
-    (SUM(CASE WHEN taxheadcode LIKE 'WS_CHARGE' THEN demanddetail.collectionamount ELSE 0 END)  + SUM(CASE WHEN taxheadcode LIKE 'WS_TIME_REBATE%' THEN demanddetail.collectionamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'WS_TIME_INTEREST' THEN demanddetail.collectionamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'WS_TIME_PENALTY' THEN demanddetail.collectionamount ELSE 0 END)  +SUM(CASE WHEN taxheadcode LIKE 'WS_Round_Off' THEN demanddetail.collectionamount ELSE 0 END) ) as totalcollection,
-    (SUM(CASE WHEN taxheadcode LIKE 'WS_CHARGE' THEN demanddetail.taxamount ELSE 0 END)  + SUM(CASE WHEN taxheadcode LIKE 'WS_TIME_REBATE%' THEN demanddetail.taxamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'WS_TIME_INTEREST' THEN demanddetail.taxamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'WS_TIME_PENALTY' THEN demanddetail.taxamount ELSE 0 END)  +SUM(CASE WHEN taxheadcode LIKE 'WS_Round_Off' THEN demanddetail.taxamount ELSE 0 END) -(SUM(CASE WHEN taxheadcode LIKE 'WS_CHARGE' THEN demanddetail.collectionamount ELSE 0 END)  + SUM(CASE WHEN taxheadcode LIKE 'WS_TIME_REBATE%' THEN demanddetail.collectionamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'WS_TIME_INTEREST' THEN demanddetail.collectionamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'WS_TIME_PENALTY' THEN demanddetail.collectionamount ELSE 0 END)  +SUM(CASE WHEN taxheadcode LIKE 'WS_Round_Off' THEN demanddetail.collectionamount ELSE 0 END) )) as totaldue,
+    SUM(CASE WHEN taxheadcode LIKE 'WS_ROUND_OFF' THEN demanddetail.taxamount ELSE 0 END) as roundoff ,
+    (SUM(CASE WHEN taxheadcode LIKE 'WS_CHARGE' THEN demanddetail.taxamount ELSE 0 END)  + SUM(CASE WHEN taxheadcode LIKE 'WS_TIME_REBATE%' THEN demanddetail.taxamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'WS_TIME_ADHOC_PENALTY' THEN demanddetail.taxamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'WS_TIME_PENALTY' THEN demanddetail.taxamount ELSE 0 END)  +SUM(CASE WHEN taxheadcode LIKE 'WS_ROUND_OFF' THEN demanddetail.taxamount ELSE 0 END) ) as totaltax,
+    (SUM(CASE WHEN taxheadcode LIKE 'WS_CHARGE' THEN demanddetail.collectionamount ELSE 0 END)  + SUM(CASE WHEN taxheadcode LIKE 'WS_TIME_REBATE%' THEN demanddetail.collectionamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'WS_TIME_ADHOC_PENALTY' THEN demanddetail.collectionamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'WS_TIME_PENALTY' THEN demanddetail.collectionamount ELSE 0 END)  +SUM(CASE WHEN taxheadcode LIKE 'WS_ROUND_OFF' THEN demanddetail.collectionamount ELSE 0 END) ) as totalcollection,
+    (SUM(CASE WHEN taxheadcode LIKE 'WS_CHARGE' THEN demanddetail.taxamount ELSE 0 END)  + SUM(CASE WHEN taxheadcode LIKE 'WS_TIME_REBATE%' THEN demanddetail.taxamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'WS_TIME_ADHOC_PENALTY' THEN demanddetail.taxamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'WS_TIME_PENALTY' THEN demanddetail.taxamount ELSE 0 END)  +SUM(CASE WHEN taxheadcode LIKE 'WS_ROUND_OFF' THEN demanddetail.taxamount ELSE 0 END) -(SUM(CASE WHEN taxheadcode LIKE 'WS_CHARGE' THEN demanddetail.collectionamount ELSE 0 END)  + SUM(CASE WHEN taxheadcode LIKE 'WS_TIME_REBATE%' THEN demanddetail.collectionamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'WS_TIME_ADHOC_PENALTY' THEN demanddetail.collectionamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'WS_TIME_PENALTY' THEN demanddetail.collectionamount ELSE 0 END)  +SUM(CASE WHEN taxheadcode LIKE 'WS_ROUND_OFF' THEN demanddetail.collectionamount ELSE 0 END) )) as totaldue,
     (CASE WHEN connholder.connname is null THEN poo.name ELSE connholder.connname END) as name ,
     (CASE WHEN connholder.connmobilenumber is null THEN poo.mobilenumber ELSE connholder.connmobilenumber END) as name , 
-     addr.doorno as doorno, ,(SELECT boundary_def.name FROM (VALUES tbl_boundary) AS boundary_def(name,code) where code=addr.locality) as mohallaname,
+     addr.doorno as doorno, (SELECT boundary_def.name FROM (VALUES tbl_boundary) AS boundary_def(name,code) where code=addr.locality) as mohallaname 
     from egbs_demand_v1 demand
     inner join egbs_demanddetail_v1 as demanddetail on demanddetail.demandid= demand.id
     Inner join eg_ws_connection ws on  ws.connectionno=demand.consumercode
@@ -1436,6 +1587,6 @@ ReportDefinitions:
       FROM eg_ws_connectionholder connholder
       INNER JOIN eg_user wsuser ON wsuser.uuid = connholder.userid group by connectionid)
       connholder ON connholder.connectionid = ws.id
-      where demand.tenantid LIKE $tenantid and demand.businessservice ='WS'
-  groupby: GROUP BY demand.tenantid,demand.consumercode,addr.doorno, poo.name,pt.propertyid,ws.usagecategory,ws.subusagecategory,poo.mobilenumber,connholder.connname,connholder.connmobilenumber,addr.locality
+      where demand.tenantid LIKE $tenantid  and demand.businessservice ='WS'
+  groupby: GROUP BY demand.tenantid,demand.consumercode,addr.doorno, poo.name,pt.propertyid,ws.usagecategory,ws.subusagecategory,poo.mobilenumber,connholder.connname,connholder.connmobilenumber,addr.locality,ws.oldconnectionno
   orderby: ORDER BY demand.consumercode
