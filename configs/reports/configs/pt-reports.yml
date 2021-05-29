@@ -1145,7 +1145,7 @@ ReportDefinitions:
     (SELECT boundary_def.name FROM (VALUES tbl_boundary) AS boundary_def(name,code) where code=locality) as mohallaname,
     CONCAT(doorno,', ') as address  ,arv,
     initcap(split_part(usagecategory, '.', 1)) as usagetype,initcap(split_part(usagecategory, '.', 2)) as subusagetype,
-    CONCAT('Demand: ',E'\n','Collected: ',E'\n','Excess Adjustment: ',E'\n','Bill Adjustment: ') as emptyheader,
+    CONCAT('Demand: <br>',E'\n','Collected: ',E'\n','Excess Adjustment: ',E'\n','Bill Adjustment: ') as emptyheader,
     CONCAT(SUM(CASE WHEN dem_code = 'PT_HOUSE_TAX' THEN dem_tax ELSE 0 END),E'\n',
     SUM(CASE WHEN dem_code = 'PT_HOUSE_TAX' THEN collectionamount ELSE 0 END),E'\n',
     SUM(CASE WHEN SIGN(amen_tax)=-1 AND amen_code = 'PT_HOUSE_TAX' THEN ABS(amen_tax) ELSE 0 END),E'\n',
@@ -1222,7 +1222,7 @@ ReportDefinitions:
       FROM eg_pt_owner poo
       INNER JOIN eg_user ptuser ON ptuser.uuid = poo.userid group by propertyid)
       poo ON poo.propertyid = pt.id
-      where demand.tenantid LIKE $tenantid and demand.businessservice ='PT')t  
+      where demand.tenantid LIKE $tenantid and demand.businessservice ='PT')t where 1=1 
   groupby: GROUP BY tenantid,consumercode,doorno,name,oldpropertyid,propertytype,usagecategory,mobilenumber, arv,locality
   orderby: ORDER BY consumercode
 
