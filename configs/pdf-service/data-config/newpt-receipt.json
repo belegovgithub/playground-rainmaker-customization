@@ -116,7 +116,7 @@
                 {
                     "variable": "form-no",
                     "value": {
-                      "path": "PDF_STATIC_LABEL_PT_RECEIPT_FORM_NO"
+                      "path": "PDF_STATIC_LABEL_PT_RECEIPT_FORM_NO_NEW"
                     },
                     "type": "label",
                     "localisation":{
