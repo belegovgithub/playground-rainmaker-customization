@@ -485,9 +485,9 @@
                  }
                 },
                 {
-                  "variable": "address",
+                  "variable": "location",
                   "value": {
-                    "path": "$.address.locality"
+                    "path": "$.address.locality.code"
                   },
                   "localisation":{
                     "required":true,
@@ -496,6 +496,36 @@
                     "prefixCbName":true
                  },
                  "type":"boundary"
+                },
+                {
+                  "variable": "houseno",
+                  "value": {
+                    "path": "$.address.street"
+                  }
+                },
+                {
+                  "variable": "street",
+                  "value": {
+                    "path": "$.address.street"
+                  }
+                },
+                {
+                  "variable": "pincode",
+                  "value": {
+                    "path": "$.address.pincode"
+                  }
+                },
+                {
+                  "variable": "city",
+                  "value": {
+                    "path": "$.address.city"
+                  }
+                },
+                {
+                  "variable": "address",
+                  "value": {
+                    "path": "$.address.city"
+                  }
                 },
                 {
                     "variable": "cantonment-board",
@@ -593,7 +623,7 @@
               "qrcodeConfig": [
                 {
                     "variable": "qrcodeimage",
-                    "value":"Payer Name : {{payerName}}, Receipt number: {{receiptNo}}, Date of payment: {{receiptDate}}, Fees Paid: {{paidAmount}}"
+                    "value":"Payer Name : {{payerName}}, Address : {{location}}, Receipt number: {{receiptNo}}, Date of payment: {{receiptDate}}, Fees Paid: {{paidAmount}}"
                 }
               ]
           }
