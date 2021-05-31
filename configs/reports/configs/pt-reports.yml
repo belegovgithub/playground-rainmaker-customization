@@ -1726,6 +1726,6 @@ ReportDefinitions:
     from egbs_demand_v1 demand
     inner join egbs_demanddetail_v1 as demanddetail on demanddetail.demandid= demand.id
     left join egbs_amendment_taxdetail amendtaxdetail on amendtaxdetail.id = demanddetail.id
-    where demand.tenantid LIKE LIKE $tenantid and demand.businessservice ='PT')t  where 1 =  1 
+    where demand.tenantid LIKE $tenantid and demand.businessservice ='PT')t  where 1 =  1 
   groupby: GROUP BY tenantid
   orderby: ORDER BY tenantid
