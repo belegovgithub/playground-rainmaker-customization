@@ -1613,22 +1613,11 @@ ReportDefinitions:
     type: string
     source: pt
     total: false
-  - name: totaldemand
+  - name: total
     label: PT_TOTAL_AMOUNT
     type: string
     source: pt
     total: true
-  - name: totalcollection
-    label: PT_COLLECTED
-    type: string
-    source: pt
-    total: true   
-  - name: totaldue
-    label: PT_DUE
-    type: string
-    source: pt
-    total: true
-  - name: advance
     label: PT_ADVANCE_CARRYFORWARD
     type: string
     source: pt
@@ -1715,7 +1704,7 @@ ReportDefinitions:
     SUM(CASE WHEN dem_code = 'PT_DEMANDNOTICE_CHARGE' then  dem_tax -collectionamount ELSE 0 END)) as demandnoticecharge,
     CONCAT(SUM(dem_tax),E'\n',SUM(CASE WHEN SIGN(amen_tax)=-1 then ABS(amen_tax) else 0 END),E'\n',
     SUM(CASE WHEN SIGN(amen_tax)=1 then ABS(amen_tax) else 0 END) ,E'\n',
-    SUM(collectionamount),chr(10),(SUM(dem_tax)+SUM(collectionamount)+SUM(CASE WHEN (amen_tax)!=0 then amen_tax else 0 end))),
+    SUM(collectionamount),chr(10),(SUM(dem_tax)+SUM(collectionamount)+SUM(CASE WHEN (amen_tax)!=0 then amen_tax else 0 end))) as total,
     SUM(CASE WHEN dem_code = 'PT_ADVANCE_CARRYFORWARD' THEN ABS(dem_tax) ELSE 0 END) as advance
     from (
     select demand.tenantid,
