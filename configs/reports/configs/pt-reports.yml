@@ -1236,6 +1236,7 @@ ReportDefinitions:
     from (
     select demand.tenantid,
     demand.consumercode,
+    demand.createdtime as createdtime,
     addr.doorno,
     addr.locality,
     ptunit.usagecategory,
@@ -1257,7 +1258,7 @@ ReportDefinitions:
       INNER JOIN eg_user ptuser ON ptuser.uuid = poo.userid group by propertyid)
       poo ON poo.propertyid = pt.id
       where demand.tenantid LIKE $tenantid and demand.businessservice ='PT')t where 1=1 
-  groupby: GROUP BY tenantid,consumercode,doorno,name,oldpropertyid,propertytype,usagecategory,mobilenumber, arv,locality
+  groupby: GROUP BY tenantid,consumercode,doorno,name,oldpropertyid,propertytype,usagecategory,mobilenumber, arv,locality,createdtime
   orderby: ORDER BY consumercode
 
 - reportName: DGDEDemandRegisterReport
@@ -1507,6 +1508,7 @@ ReportDefinitions:
     from (
     select demand.tenantid,
     demand.consumercode,
+    demand.createdtime as createdtime,
     addr.doorno,
     addr.locality,
     ptunit.usagecategory,
@@ -1528,7 +1530,7 @@ ReportDefinitions:
       INNER JOIN eg_user ptuser ON ptuser.uuid = poo.userid group by propertyid)
       poo ON poo.propertyid = pt.id
       where demand.tenantid != 'pb.testing' and demand.businessservice ='PT')t where 1=1 
-  groupby: GROUP BY tenantid,consumercode,doorno,name,oldpropertyid,propertytype,usagecategory,mobilenumber, arv,locality
+  groupby: GROUP BY tenantid,consumercode,doorno,name,oldpropertyid,propertytype,usagecategory,mobilenumber, arv,locality,createdtime
   orderby: ORDER BY tenantid,consumercode
   
 - reportName: CBPTDemandCollection
