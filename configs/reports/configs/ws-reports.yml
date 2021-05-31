@@ -1382,18 +1382,6 @@ ReportDefinitions:
     source: ws
     total: true
   searchParams:
-  - name: fromDate
-    label: reports.ws.fromDate
-    type: epoch
-    source: ws
-    isMandatory: false
-    searchClause: AND demand.createdtime >= $fromDate
-  - name: toDate
-    label: reports.ws.toDate
-    type: epoch
-    source: ws
-    isMandatory: false
-    searchClause: AND demand.createdtime <= $toDate
   - name: Wardname
     label: Mohalla
     type: singlevaluelist
@@ -1534,18 +1522,6 @@ ReportDefinitions:
     source: ws
     total: true
   searchParams:
-  - name: fromDate
-    label: reports.ws.fromDate
-    type: epoch
-    source: ws
-    isMandatory: false
-    searchClause: AND demand.createdtime >= $fromDate
-  - name: toDate
-    label: reports.ws.toDate
-    type: epoch
-    source: ws
-    isMandatory: false
-    searchClause: AND demand.createdtime <= $toDate
   - name: Wardname
     label: Mohalla
     type: singlevaluelist
