@@ -1617,7 +1617,7 @@ ReportDefinitions:
     label: PT_TOTAL_AMOUNT
     type: string
     source: pt
-    total: true
+    total: false
     label: PT_ADVANCE_CARRYFORWARD
     type: string
     source: pt
