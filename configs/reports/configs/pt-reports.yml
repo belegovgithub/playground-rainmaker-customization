@@ -1618,6 +1618,7 @@ ReportDefinitions:
     type: string
     source: pt
     total: false
+  - name: advance
     label: PT_ADVANCE_CARRYFORWARD
     type: string
     source: pt
