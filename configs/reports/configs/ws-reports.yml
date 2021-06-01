@@ -1535,6 +1535,7 @@ ReportDefinitions:
     type: string
     source: ws
     isMandatory: false
+    searchClause: AND totaldue >= $dueAmount
   query: | 
     WITH CTE AS (select initcap(split_part(demand.tenantid, '.', 2)) as tenantid,
     demand.consumercode as connectionno,
@@ -1569,6 +1570,5 @@ ReportDefinitions:
       INNER JOIN eg_user wsuser ON wsuser.uuid = connholder.userid group by connectionid)
       connholder ON connholder.connectionid = ws.id
       where demand.tenantid LIKE $tenantid  and demand.businessservice ='WS'
-  groupby: GROUP BY demand.tenantid,demand.consumercode,addr.doorno, poo.name,pt.propertyid,ws.usagecategory,ws.subusagecategory,poo.mobilenumber,connholder.connname,connholder.connmobilenumber,addr.locality,ws.oldconnectionno
-  orderby: ORDER BY demand.consumercode)
-  select * from CTE where totaldue > $dueAmount
+      GROUP BY demand.tenantid,demand.consumercode,addr.doorno, poo.name,pt.propertyid,ws.usagecategory,ws.subusagecategory,poo.mobilenumber,connholder.connname,connholder.connmobilenumber,addr.locality,ws.oldconnectionno
+      ORDER BY demand.consumercode) select * from CTE where 1=1 
