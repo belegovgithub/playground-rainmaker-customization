@@ -29,7 +29,7 @@
               {
                 "variable": "billDate",
                 "value": {
-                  "path": "$.billDate"
+                  "path": "$.auditDetails.createdTime"
                 },
                 "type":"date"
               },
@@ -52,6 +52,25 @@
                },
                "type":"boundary"
               },
+              {
+                "variable": "houseno",
+                "value": {
+                  "path": "$.address.street"
+                }
+              },
+              {
+                "variable": "street",
+                "value": {
+                  "path": "$.address.street"
+                }
+              },
+              {
+                "variable": "pincode",
+                "value": {
+                  "path": "$.address.pincode"
+                }
+              }
+              ,
               {
                 "variable": "usageType",
                 "value": {
@@ -429,7 +448,7 @@
           {
             "externalAPI": [     
               { 
-                "path": "http://egov-mdms-service:8080/egov-mdms-service/v1/_get",
+                "path": "http://localhost:8085/egov-mdms-service/v1/_get",
                 "queryParam": "moduleName=tenant&masterName=tenants&tenantId=pb&filter=%5B?(@.code=='{$.tenantId}')%5D",
                   "apiRequest": null,
                   "responseMapping":[

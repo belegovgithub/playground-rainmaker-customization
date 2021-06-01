@@ -74,7 +74,7 @@
                   {
                     "text": "Bill No",
                     "style": "label-headder",
-                    "width": "18%" 
+                    "width": "18%"
                   },
                   {
                     "text": " : ",
@@ -89,7 +89,7 @@
                   {
                     "text": "Property No.",
                     "style": "label-headder",
-                    "width": "18%"   
+                    "width": "18%"  
                   },
                   {
                     "text": " : ",
@@ -98,7 +98,7 @@
                   {
                     "text": "{{propertyNo}}",
                     "style": "label-value",
-                    "width": "30%"           
+                    "width": "30%"        
                   }
                 ]
               }
@@ -119,7 +119,7 @@
                   {
                     "text": "{{billDate}}",
                     "style": "label-value",
-                    "width": "30%"         
+                    "width": "30%"        
                   },
                   {
                     "text": "Old Property No.",
@@ -170,11 +170,57 @@
                   {
                     "text": "{{usageType}}",
                     "style": "label-value",
-                    "width": "30%"         
+                    "width": "30%"        
                   }
                 ]
               }
             ],
+            [
+              {
+                "columns": [
+                  {
+                    "text": "Assessee Name",
+                    "style": "label-headder",
+                    "width": "18%"
+                  },
+                  {
+                    "text": " : ",
+                    "width": "2%",
+                    "fontSize": 10
+                  },
+                  {
+                    "text": "{{assesseName}}",
+                    "style": "label-value",
+                    "width": "30%"        
+                  },
+                  {
+                    "text": "ARV",
+                    "style": "label-headder",
+                    "width": "18%"
+                  },
+                  {
+                    "text": " : ",
+                    "width": "2%",
+                    "fontSize": 10
+                  },
+                  {
+                    "text": "{{arv}}",
+                    "style": "label-value",
+                    "width": "30%"       
+                  }
+                ]
+              }
+            ]
+          ]
+      },
+      "layout": "noBorders",
+      "margin": [0, 0, 0, 0]
+    },
+        {
+              "style": "ws-head",
+              "table": {
+                "widths": ["110%","*","*"],
+                "body": [
             [
               {
                 "columns": [
@@ -189,60 +235,10 @@
                     "fontSize": 10
                   },
                   {
-                    "text": "{{address}}",
+                    "text": "{{houseno}},{{street}}{{address}}-{{pincode}}",
                     "style": "label-value",
-                    "width": "30%"         
-                  },
-                  {
-                    "text": "ARV",
-                    "style": "label-headder",
-                    "width": "18%" 
-                  },
-                  {
-                    "text": " : ",
-                    "width": "2%",
-                    "fontSize": 10
-                  },
-                  {
-                    "text": "{{arv}}",
-                    "style": "label-value",
-                    "width": "30%"         
-                  }
-                ]
-              }
-            ],
-            [
-              {
-                "columns": [
-                  {
-                    "text": "Assessee Name",
-                    "style": "label-headder",
-                    "width": "18%" 
-                  },
-                  {
-                    "text": " : ",
-                    "width": "2%",
-                    "fontSize": 10
-                  },
-                  {
-                    "text": "{{assesseName}}",
-                    "style": "label-value",
-                    "width": "30%"         
-                  },
-                  {
-                    "text": " ",
-                    "style": "label-headder",
-                    "width": "18%" 
-                  },
-                  {
-                    "text": " ",
-                    "width": "2%",
-                    "fontSize": 10
-                  },
-                  {
-                    "text": " ",
-                    "style": "label-value",
-                    "width": "30%"         
+                    "width": "30%"
+                          
                   }
                 ]
               }
@@ -250,7 +246,7 @@
           ]
         },
         "layout": "noBorders",
-        "margin": [0, 2, 0, 2]
+        "margin": [0, 0, 0, 0]
       },
       {
         "style": "ws-head",
