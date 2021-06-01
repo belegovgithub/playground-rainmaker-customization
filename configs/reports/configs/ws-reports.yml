@@ -1535,7 +1535,7 @@ ReportDefinitions:
     type: string
     source: ws
     isMandatory: false
-    searchClause: AND totaldue >= $dueAmount
+    searchClause: AND totaldue > $dueAmount
   query: | 
     WITH CTE AS (select initcap(split_part(demand.tenantid, '.', 2)) as tenantid,
     demand.consumercode as connectionno,
