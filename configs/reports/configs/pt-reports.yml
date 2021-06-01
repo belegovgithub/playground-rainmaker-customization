@@ -108,7 +108,22 @@ ReportDefinitions:
     label: PT_DRAINAGE_TAX
     type: string
     source: pt
-    total: true 
+    total: true
+  - name: cash
+    label: reports.pt.cash
+    type: string
+    source: pt
+    total: true
+  - name: card
+    label: reports.pt.card
+    type: string
+    source: pt
+    total: true
+  - name: online
+    label: reports.pt.online
+    type: string
+    source: pt
+    total: true    
   - name: totalcollection
     label: PT_TOTAL_AMOUNT 
     type: string
@@ -182,6 +197,9 @@ ReportDefinitions:
     SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_CESS' THEN bad.adjustedamount ELSE 0 END) as educationcess,
     SUM(CASE WHEN taxheadcode LIKE 'PT_ADDL_WATER_TAX' THEN bad.adjustedamount ELSE 0 END) as additionalwatertax,
     SUM(CASE WHEN taxheadcode LIKE 'PT_DRAINAGE_TAX' THEN bad.adjustedamount ELSE 0 END) as drainagetax,
+    SUM(CASE WHEN pay.paymentmode LIKE 'CASH' THEN bad.adjustedamount ELSE 0 END) as cash,
+	  SUM(CASE WHEN pay.paymentmode LIKE 'CARD' THEN bad.adjustedamount ELSE 0 END) as card,
+	  SUM(CASE WHEN pay.paymentmode LIKE 'ONLINE' THEN bad.adjustedamount ELSE 0 END) as online,
     pd.amountpaid as totalcollection,
     un.name as collectorname,
     addr.doorno as doorno,
@@ -898,6 +916,21 @@ ReportDefinitions:
     label: PT_DRAINAGE_TAX
     type: string
     source: pt
+    total: true
+  - name: cash
+    label: reports.pt.cash
+    type: string
+    source: pt
+    total: true
+  - name: card
+    label: reports.pt.card
+    type: string
+    source: pt
+    total: true
+  - name: online
+    label: reports.pt.online
+    type: string
+    source: pt
     total: true 
   - name: totalcollection
     label: PT_TOTAL_AMOUNT 
@@ -980,6 +1013,9 @@ ReportDefinitions:
     SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_CESS' THEN bad.adjustedamount ELSE 0 END) as educationcess,
     SUM(CASE WHEN taxheadcode LIKE 'PT_ADDL_WATER_TAX' THEN bad.adjustedamount ELSE 0 END) as additionalwatertax,
     SUM(CASE WHEN taxheadcode LIKE 'PT_DRAINAGE_TAX' THEN bad.adjustedamount ELSE 0 END) as drainagetax,
+    SUM(CASE WHEN pay.paymentmode LIKE 'CASH' THEN bad.adjustedamount ELSE 0 END) as cash,
+	  SUM(CASE WHEN pay.paymentmode LIKE 'CARD' THEN bad.adjustedamount ELSE 0 END) as card,
+	  SUM(CASE WHEN pay.paymentmode LIKE 'ONLINE' THEN bad.adjustedamount ELSE 0 END) as online,
     pd.amountpaid as totalcollection,
     un.name as collectorname,
     addr.doorno as doorno,
