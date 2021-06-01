@@ -1532,7 +1532,7 @@ ReportDefinitions:
     searchClause: AND addr.locality = $Wardname
   - name: dueAmount
     label: PT_DUE
-    type: string
+    type: number
     source: ws
     isMandatory: false
     searchClause: AND totaldue > $dueAmount
