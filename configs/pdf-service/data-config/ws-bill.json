@@ -592,7 +592,7 @@
               },
               {
                 "variable": "scissorImage",
-                "url": "http://www.pngall.com/wp-content/uploads/2016/03/Scissor-PNG-Clipart.png",
+                "id": "scissor.png",
                 "type": "image"
               }
             ]
@@ -678,7 +678,7 @@
                   },
                   {
                     "variable": "logoImage",
-                    "value": "$.MdmsRes.tenant.tenants[0].logoId",
+                    "value": "$.MdmsRes.tenant.tenants[0].logoIdPdf",
                     "type": "image"
                   },
                   {
@@ -693,7 +693,7 @@
                 ]
               },
               {
-                "path": "http://billing-service.egov:8080/billing-service/demand/_search",
+                "path": "http://billing-service:8080/billing-service/demand/_search",
                 "queryParam": "tenantId=$.tenantId,consumerCode=$.consumerCode,businessService=WS",
                 "apiRequest": null,
                 "responseMapping": [
