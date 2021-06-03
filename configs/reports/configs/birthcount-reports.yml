@@ -13,17 +13,17 @@ ReportDefinitions:
       label: EMP_BND_LEGACYRECORDS
       type: string
       source: bnd
-      total: false
+      total: true
     - name: nonLegacyRecords
       label: EMP_BND_NONLEGACYRECORDS
       type: string
       source: bnd
-      total: false
+      total: true
     - name: totalRecords
       label: EMP_BND_TOTALRECORDS
       type: string
       source: bnd
-      total: false
+      total: true
     searchParams:
     - name: fromDate
       label: BND_FROM_DATE
@@ -63,17 +63,17 @@ ReportDefinitions:
       label: EMP_BND_LEGACYRECORDS
       type: string
       source: bnd
-      total: false
+      total: true
     - name: nonLegacyRecords
       label: EMP_BND_NONLEGACYRECORDS
       type: string
       source: bnd
-      total: false
+      total: true
     - name: totalRecords
       label: EMP_BND_TOTALRECORDS
       type: string
       source: bnd
-      total: false
+      total: true
     searchParams:
     - name: fromDate
       label: BND_FROM_DATE
@@ -98,3 +98,87 @@ ReportDefinitions:
     query: SELECT initcap(split_part(tenantid, '.', 2)) as tenantid, COUNT(CASE WHEN createdby='import-user' THEN createdby ELSE NULL END) AS LegacyRecords, COUNT(CASE WHEN createdby!='import-user' THEN createdby ELSE NULL END) AS NonLegacyRecords, count(*) as TotalRecords FROM eg_death_dtls where tenantid != 'pb.testing'
     groupby: GROUP BY tenantid 
     orderby: order by tenantid
+    
+  - reportName: BirthRecordsCountReportCBLevel
+    summary: Count of Birth Records
+    version: 1.0.0
+    moduleName: rainmaker-bnd
+    sourceColumns:
+    - name: tenantid
+      label: BND_APPL_CANT
+      type: string
+      source: bnd
+      total: false
+    - name: legacyRecords
+      label: EMP_BND_LEGACYRECORDS
+      type: string
+      source: bnd
+      total: true
+    - name: nonLegacyRecords
+      label: EMP_BND_NONLEGACYRECORDS
+      type: string
+      source: bnd
+      total: true
+    - name: totalRecords
+      label: EMP_BND_TOTALRECORDS
+      type: string
+      source: bnd
+      total: true
+    searchParams:
+    - name: fromDate
+      label: BND_FROM_DATE
+      type: epoch
+      source: bnd
+      isMandatory: false
+      searchClause: AND createdtime >= $fromDate
+    - name: toDate
+      label: BND_TO_DATE
+      type: epoch
+      source: bnd
+      isMandatory: false
+      searchClause: AND createdtime <= $toDate       
+    query: SELECT initcap(split_part(tenantid, '.', 2)) as tenantid, COUNT(CASE WHEN createdby='import-user' THEN createdby ELSE NULL END) AS LegacyRecords, COUNT(CASE WHEN createdby!='import-user' THEN createdby ELSE NULL END) AS NonLegacyRecords, count(*) as TotalRecords FROM eg_birth_dtls where tenantid = $tenantid
+    groupby: GROUP BY tenantid 
+    orderby: order by tenantid
+
+  - reportName: DeathRecordsCountReportCBLevel
+    summary: Count of Death Records
+    version: 1.0.0
+    moduleName: rainmaker-bnd
+    sourceColumns:
+    - name: tenantid
+      label: BND_APPL_CANT
+      type: string
+      source: bnd
+      total: false
+    - name: legacyRecords
+      label: EMP_BND_LEGACYRECORDS
+      type: string
+      source: bnd
+      total: true
+    - name: nonLegacyRecords
+      label: EMP_BND_NONLEGACYRECORDS
+      type: string
+      source: bnd
+      total: true
+    - name: totalRecords
+      label: EMP_BND_TOTALRECORDS
+      type: string
+      source: bnd
+      total: true
+    searchParams:
+    - name: fromDate
+      label: BND_FROM_DATE
+      type: epoch
+      source: bnd
+      isMandatory: false
+      searchClause: AND createdtime >= $fromDate
+    - name: toDate
+      label: BND_TO_DATE
+      type: epoch
+      source: bnd
+      isMandatory: false
+      searchClause: AND createdtime <= $toDate       
+    query: SELECT initcap(split_part(tenantid, '.', 2)) as tenantid, COUNT(CASE WHEN createdby='import-user' THEN createdby ELSE NULL END) AS LegacyRecords, COUNT(CASE WHEN createdby!='import-user' THEN createdby ELSE NULL END) AS NonLegacyRecords, count(*) as TotalRecords FROM eg_death_dtls where tenantid = $tenantid
+    groupby: GROUP BY tenantid 
+    orderby: order by tenantid    
