@@ -1183,7 +1183,7 @@ ReportDefinitions:
     source: pt
     total: true
   - name: advance
-    label: PT_ADVANCE_CARRYFORWARD
+    label: ADVANCE_CARRYFORWARD
     type: string
     source: pt
     total: true  
@@ -1447,7 +1447,7 @@ ReportDefinitions:
     source: pt
     total: true
   - name: advance
-    label: PT_ADVANCE_CARRYFORWARD
+    label: ADVANCE_CARRYFORWARD
     type: string
     source: pt
     total: true 
@@ -1655,7 +1655,7 @@ ReportDefinitions:
     source: pt
     total: false
   - name: advance
-    label: PT_ADVANCE_CARRYFORWARD
+    label: ADVANCE_CARRYFORWARD
     type: string
     source: pt
     total: true
