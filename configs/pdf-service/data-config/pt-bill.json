@@ -29,7 +29,7 @@
               {
                 "variable": "billDate",
                 "value": {
-                  "path": "$.auditDetails.createdTime"
+                  "path": "$.billDate"
                 },
                 "type":"date"
               },
