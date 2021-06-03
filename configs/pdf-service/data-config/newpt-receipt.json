@@ -40,7 +40,7 @@
                 {
                     "variable": "receiptDate", 
                     "value": {
-                      "path": "$.paymentDetails[0].billDate"
+                      "path": "$.paymentDetails[0].receiptDate"
                     },
                     "type":"date"
                   },
