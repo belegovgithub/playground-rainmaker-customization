@@ -1535,7 +1535,7 @@ ReportDefinitions:
     type: number
     source: ws
     isMandatory: false
-    searchClause: AND totalDue = $dueAmount
+    searchClause: AND totaldue >= $dueAmount
   query: | 
     WITH CTE AS (select initcap(split_part(demand.tenantid, '.', 2)) as tenantid,
     demand.consumercode as connectionno,
@@ -1571,4 +1571,4 @@ ReportDefinitions:
       connholder ON connholder.connectionid = ws.id
       where demand.tenantid LIKE $tenantid  and demand.businessservice ='WS'
       GROUP BY demand.tenantid,demand.consumercode,addr.doorno, poo.name,pt.propertyid,ws.usagecategory,ws.subusagecategory,poo.mobilenumber,connholder.connname,connholder.connmobilenumber,addr.locality,ws.oldconnectionno
-      ORDER BY demand.consumercode) select * from CTE where 1=1 and totaldue > totalDue
+      ORDER BY demand.consumercode) select * from CTE where 1=1 
