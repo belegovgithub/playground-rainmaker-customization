@@ -1674,7 +1674,7 @@ ReportDefinitions:
     searchClause: AND createdtime <= $toDate
   query: |
     select initcap(split_part(tenantid, '.', 2)) as tenantid,
-    CONCAT('Demand: ',E'\r','Excess Adjustment: ',E'\n','Bill Adjustment: ',E'\n','Collected: ',E'\n','Outstanding') as amount,
+    CONCAT('Demand: ',E'\r\n','Excess Adjustment: ',E'\r\n','Bill Adjustment: ',E'\r\n','Collected: ',E'\r\n','Outstanding') as amount,
     CONCAT(SUM(CASE WHEN dem_code = 'PT_HOUSE_TAX' THEN dem_tax ELSE 0 END),E'\n',
     SUM(CASE WHEN SIGN(amen_tax)=-1 AND amen_code = 'PT_HOUSE_TAX' THEN ABS(amen_tax) ELSE 0 END),E'\n',
     SUM(CASE WHEN SIGN(amen_tax)=1 AND amen_code = 'PT_HOUSE_TAX' THEN ABS(amen_tax) ELSE 0 END),E'\n',
