@@ -1530,14 +1530,8 @@ ReportDefinitions:
     wrapper: true
     isMandatory: false
     searchClause: AND addr.locality = $Wardname
-  - name: dueAmount
-    label: PT_DUE
-    type: number
-    source: ws
-    isMandatory: false
-    searchClause: AND totaldue >= $dueAmount
   query: | 
-    WITH CTE AS (select initcap(split_part(demand.tenantid, '.', 2)) as tenantid,
+    select initcap(split_part(demand.tenantid, '.', 2)) as tenantid,
     demand.consumercode as connectionno,
     pt.propertyid as propertyid,
     ws.oldconnectionno as oldconnectionno,
@@ -1570,5 +1564,5 @@ ReportDefinitions:
       INNER JOIN eg_user wsuser ON wsuser.uuid = connholder.userid group by connectionid)
       connholder ON connholder.connectionid = ws.id
       where demand.tenantid LIKE $tenantid  and demand.businessservice ='WS'
-      GROUP BY demand.tenantid,demand.consumercode,addr.doorno, poo.name,pt.propertyid,ws.usagecategory,ws.subusagecategory,poo.mobilenumber,connholder.connname,connholder.connmobilenumber,addr.locality,ws.oldconnectionno
-      ORDER BY demand.consumercode) select * from CTE where 1=1 
+  groupby: GROUP BY demand.tenantid,demand.consumercode,addr.doorno, poo.name,pt.propertyid,ws.usagecategory,ws.subusagecategory,poo.mobilenumber,connholder.connname,connholder.connmobilenumber,addr.locality,ws.oldconnectionno
+  orderby: ORDER BY demand.consumercode
