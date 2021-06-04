@@ -261,7 +261,7 @@
                     "margin": [0, 0, 0, -4]
                   },
                   {
-                    "text": "{{houseno}},{{street}}{{address}}-{{pincode}}",
+                    "text": "{{houseno}} {{street}} {{address}} {{pincode}}",
                     "style": "label-value",
                     "width": "30%",
                     "margin": [0, 0, 0, -4]
