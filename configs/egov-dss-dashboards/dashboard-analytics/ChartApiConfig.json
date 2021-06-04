@@ -1184,7 +1184,7 @@
       "dateRefField": "dataObject.paymentDetails.receiptDate",
       "requestQueryMap": "{\"wardId\" : \"domainObject.ward.name.keyword\",\"module\" : \"dataObject.paymentDetails.businessService.keyword\", \"tenantId\" : \"dataObject.tenantId\"}",
       "indexName": "dss-payment_v2_forecast",
-      "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"dataObject.tenantId.keyword\":\"pb.testing\"}},{\"terms\":{\"dataObject.bill.status.keyword\":[\"Cancelled\"]}},{\"terms\":{\"dataObject.paymentDetails.businessService.keyword\":[\"DEATH_CERT\",\"BIRTH_CERT\",\"TL\",\"PT\",\"SW\",\"SW.ONE_TIME_FEE\",\"WS\",\"WS.ONE_TIME_FEE\"]}}],\"must\":[{\"range\":{\"dataObject.paymentDetails.receiptDate\":{\"gt\":\"now\",\"lte\":\"now+1d\/d\"}}}]}},\"aggs\":{\"Todays Collection\":{\"sum\":{\"field\":\"dataObject.paymentDetails.bill.billDetails.amountPaid\"}}}}}}"
+      "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"dataObject.tenantId.keyword\":\"pb.testing\"}},{\"terms\":{\"dataObject.bill.status.keyword\":[\"Cancelled\"]}},{\"terms\":{\"dataObject.paymentDetails.businessService.keyword\":[\"DEATH_CERT\",\"BIRTH_CERT\",\"TL\",\"PT\",\"SW\",\"SW.ONE_TIME_FEE\",\"WS\",\"WS.ONE_TIME_FEE\"]}}],\"must\":[{\"range\":{\"dataObject.paymentDetails.receiptDate\":{\"gt\":\"now-1d\/d\",\"lte\":\"now\"}}}]}},\"aggs\":{\"Todays Collection\":{\"sum\":{\"field\":\"dataObject.paymentDetails.bill.billDetails.amountPaid\"}}}}}}"
     }
   ],
   "chartType": "metric",
@@ -1214,7 +1214,7 @@
       "dateRefField": "dataObject.paymentDetails.receiptDate",
       "requestQueryMap": "{\"wardId\" : \"domainObject.ward.name.keyword\",\"module\" : \"dataObject.paymentDetails.businessService.keyword\", \"tenantId\" : \"dataObject.tenantId\"}",
       "indexName": "dss-payment_v2_forecast",
-      "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"dataObject.tenantId.keyword\":\"pb.testing\"}},{\"terms\":{\"dataObject.bill.status.keyword\":[\"Cancelled\"]}},{\"terms\":{\"dataObject.paymentDetails.businessService.keyword\":[\"DEATH_CERT\",\"BIRTH_CERT\",\"TL\",\"PT\",\"SW\",\"SW.ONE_TIME_FEE\",\"WS\",\"WS.ONE_TIME_FEE\"]}}],\"must\":[{\"range\":{\"dataObject.paymentDetails.receiptDate\":{\"gt\":\"now\",\"lte\":\"now+5d\/d\"}}}]}},\"aggs\":{\"Todays Collection\":{\"sum\":{\"field\":\"dataObject.paymentDetails.bill.billDetails.amountPaid\"}}}}}}"
+      "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"dataObject.tenantId.keyword\":\"pb.testing\"}},{\"terms\":{\"dataObject.bill.status.keyword\":[\"Cancelled\"]}},{\"terms\":{\"dataObject.paymentDetails.businessService.keyword\":[\"DEATH_CERT\",\"BIRTH_CERT\",\"TL\",\"PT\",\"SW\",\"SW.ONE_TIME_FEE\",\"WS\",\"WS.ONE_TIME_FEE\"]}}],\"must\":[{\"range\":{\"dataObject.paymentDetails.receiptDate\":{\"gt\":\"now-1d\/d\",\"lte\":\"now\"}}}]}},\"aggs\":{\"Todays Collection\":{\"sum\":{\"field\":\"dataObject.paymentDetails.bill.billDetails.amountPaid\"}}}}}}"
     }
   ],
   "chartType": "metric",
