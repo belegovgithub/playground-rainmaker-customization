@@ -1674,7 +1674,7 @@ ReportDefinitions:
     searchClause: AND createdtime <= $toDate
   query: |
     select initcap(split_part(tenantid, '.', 2)) as tenantid,
-    CONCAT('Demand: ', '<br/>','Excess Adjustment: ','<br/>','Bill Adjustment: ','<br/>','Collected: ','<br/>','Outstanding') as amount,
+    CONCAT('Demand: ',E'\r\n','Excess Adjustment: ',E'\r\n','Bill Adjustment: ',E'\r\n','Collected: ',E'\r\n','Outstanding') as amount,
     CONCAT(SUM(CASE WHEN dem_code = 'PT_HOUSE_TAX' THEN dem_tax ELSE 0 END),E'\r\n',
     SUM(CASE WHEN SIGN(amen_tax)=-1 AND amen_code = 'PT_HOUSE_TAX' THEN ABS(amen_tax) ELSE 0 END),E'\r\n',
     SUM(CASE WHEN SIGN(amen_tax)=1 AND amen_code = 'PT_HOUSE_TAX' THEN ABS(amen_tax) ELSE 0 END),E'\r\n',
@@ -1685,10 +1685,10 @@ ReportDefinitions:
     SUM(CASE WHEN SIGN(amen_tax)=1 AND amen_code = 'PT_WATER_TAX' THEN ABS(amen_tax) ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_WATER_TAX' THEN collectionamount ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_WATER_TAX' and dem_tax != 0 then  COALESCE( taxout, 0 ) ELSE 0 END)) as watertax,
-    CONCAT(SUM(CASE WHEN dem_code = 'PT_CONSERVANCY_TAX' THEN dem_tax ELSE 0 END),'<br/>',
-    SUM(CASE WHEN SIGN(amen_tax)=-1 AND amen_code = 'PT_CONSERVANCY_TAX' THEN ABS(amen_tax) ELSE 0 END),'<br/>',
-    SUM(CASE WHEN SIGN(amen_tax)=1 AND amen_code = 'PT_CONSERVANCY_TAX' THEN ABS(amen_tax) ELSE 0 END),'<br/>',
-    SUM(CASE WHEN dem_code = 'PT_CONSERVANCY_TAX' THEN collectionamount ELSE 0 END),'<br/>',
+    CONCAT(SUM(CASE WHEN dem_code = 'PT_CONSERVANCY_TAX' THEN dem_tax ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN SIGN(amen_tax)=-1 AND amen_code = 'PT_CONSERVANCY_TAX' THEN ABS(amen_tax) ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN SIGN(amen_tax)=1 AND amen_code = 'PT_CONSERVANCY_TAX' THEN ABS(amen_tax) ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN dem_code = 'PT_CONSERVANCY_TAX' THEN collectionamount ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_CONSERVANCY_TAX' and dem_tax != 0 then  COALESCE( taxout, 0 ) ELSE 0 END) ) as conservancytax,
     CONCAT(SUM(CASE WHEN dem_code = 'PT_EDUCATION_TAX' THEN dem_tax ELSE 0 END),E'\r\n',
     SUM(CASE WHEN SIGN(amen_tax)=-1 AND amen_code = 'PT_EDUCATION_TAX' THEN ABS(amen_tax) ELSE 0 END),E'\r\n',
