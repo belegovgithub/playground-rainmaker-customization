@@ -7,7 +7,7 @@ serviceMaps:
    fromTopic: save-ws-connection
    isTransaction: true
    queryMaps: 
-    - query: INSERT INTO eg_ws_connection (id, tenantid, property_id, applicationno, applicationstatus, status, connectionno, oldconnectionno,roadcuttingarea,action,roadtype, createdby, lastmodifiedby, createdtime, lastmodifiedtime, applicationtype, dateEffectiveFrom, locality, isoldapplication, authorizedconnection,usagecategory,subusagecategory) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?,?,?,?,?,?,?,?,?,?);
+    - query: INSERT INTO eg_ws_connection (id, tenantid, property_id, applicationno, applicationstatus, status, connectionno, oldconnectionno,roadcuttingarea,action,roadtype, createdby, lastmodifiedby, createdtime, lastmodifiedtime, applicationtype, dateEffectiveFrom, locality, isoldapplication, authorizedconnection,usagecategory,subusagecategory, proposedusagecategory ,proposedsubusagecategory) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?,?,?,?,?,?,?,?,?,?,?,?);
       basePath: $.WaterConnection
       jsonMaps:
        - jsonPath: $.WaterConnection.id 
@@ -53,6 +53,10 @@ serviceMaps:
        - jsonPath: $.WaterConnection.usageCategory
 
        - jsonPath: $.WaterConnection.subUsageCategory
+  
+       - jsonPath: $.WaterConnection.proposedUsageCategory
+
+       - jsonPath: $.WaterConnection.proposedSubUsageCategory
        
     - query: INSERT INTO eg_ws_service(connection_id,connectionCategory,connectionType,waterSource,meterId,meterInstallationDate,initialmeterreading,pipeSize,noOfTaps,connectionexecutiondate,proposedPipeSize,proposedTaps, motorinfo, appCreatedDate, createdby, lastmodifiedby, createdtime, lastmodifiedtime,sourceinfo) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);
       basePath: $.WaterConnection
@@ -139,7 +143,7 @@ serviceMaps:
       jsonMaps:
       - jsonPath: $.WaterConnection.id
       
-    - query: UPDATE eg_ws_connection SET applicationstatus=?, status=?, connectionno=?, oldconnectionno=?, action=?, roadCuttingArea=?, roadType=?, adhocpenalty=?, adhocrebate=?, adhocpenaltyreason=?, adhocpenaltycomment=?, adhocrebatereason=?, adhocrebatecomment=?, lastModifiedBy=?, lastModifiedTime=?, dateEffectiveFrom=?, locality=?, isoldapplication=?, property_id=? , authorizedconnection=? ,usagecategory=? ,subusagecategory=? WHERE id=?;
+    - query: UPDATE eg_ws_connection SET applicationstatus=?, status=?, connectionno=?, oldconnectionno=?, action=?, roadCuttingArea=?, roadType=?, adhocpenalty=?, adhocrebate=?, adhocpenaltyreason=?, adhocpenaltycomment=?, adhocrebatereason=?, adhocrebatecomment=?, lastModifiedBy=?, lastModifiedTime=?, dateEffectiveFrom=?, locality=?, isoldapplication=?, property_id=? , authorizedconnection=? ,usagecategory=? ,subusagecategory=? , proposedUsageCategory=? , proposedSubUsageCategory=? WHERE id=?;
       basePath: $.WaterConnection
       jsonMaps:
 
@@ -186,6 +190,10 @@ serviceMaps:
        - jsonPath: $.WaterConnection.usageCategory
 
        - jsonPath: $.WaterConnection.subUsageCategory
+
+       - jsonPath: $.WaterConnection.proposedUsageCategory
+
+       - jsonPath: $.WaterConnection.proposedSubUsageCategory
 
        - jsonPath: $.WaterConnection.id 
        

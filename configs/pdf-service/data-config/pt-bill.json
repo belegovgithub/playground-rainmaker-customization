@@ -56,19 +56,22 @@
                 "variable": "houseno",
                 "value": {
                   "path": "$.address.street"
-                }
+                },
+                "type":"setEmpty"
               },
               {
                 "variable": "street",
                 "value": {
                   "path": "$.address.street"
-                }
+                },
+                "type":"setEmpty"
               },
               {
                 "variable": "pincode",
                 "value": {
                   "path": "$.address.pincode"
-                }
+                },
+                "type":"setEmpty"
               }
               ,
               {
