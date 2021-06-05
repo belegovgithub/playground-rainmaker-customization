@@ -177,6 +177,14 @@ ReportDefinitions:
     wrapper: true
     isMandatory: false
     searchClause: AND un.id = $collectorname::INTEGER
+  - name: financialyear
+    label: Financial Year
+    type: singlevaluelist
+    pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=egf-master&masterName=FinancialYear|$.MdmsRes.egf-master.FinancialYear.[?(@.module=='PT')].startingDate|$.MdmsRes.egf-master.FinancialYear.[?(@.module=='PT')].name
+    source: pt
+    wrapper: true
+    isMandatory: false
+    searchClause: AND bd.fromperiod = $financialyear 
   query: |
     select initcap(split_part(pay.tenantid, '.', 2)) as tenantid,
     bill.consumercode as propertyid,pt.oldpropertyid as oldpropertyid,
