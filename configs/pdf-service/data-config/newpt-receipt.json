@@ -500,7 +500,14 @@
                 {
                   "variable": "houseno",
                   "value": {
-                    "path": "$.address.street"
+                    "path": "$.address.doorNo"
+                  },
+                  "type":"setEmpty"
+                },
+                {
+                  "variable": "building",
+                  "value": {
+                    "path": "$.address.buildingName"
                   },
                   "type":"setEmpty"
                 },
