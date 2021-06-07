@@ -1203,9 +1203,9 @@ ReportDefinitions:
     consumercode as propertyid, oldpropertyid as oldcode,
     name as name,mobilenumber as mobilenumber,
     (SELECT boundary_def.name FROM (VALUES tbl_boundary) AS boundary_def(name,code) where code=locality) as mohallaname,
-    CONCAT(doorno,', ') as address  ,arv,
+    CONCAT(doorno,' ',street,' ',buildingname) as address  ,arv,
     initcap(split_part(usagecategory, '.', 1)) as usagetype,initcap(split_part(usagecategory, '.', 2)) as subusagetype,
-    CONCAT('Demand: ',E'\r\n','Excess Adjustment: ',E'\r\n','Bill Adjustment: ','Collected: ',E'\r\n','Outstanding: ') as emptyheader,
+    CONCAT('Demand: ',E'\r\n','Excess Adjustment: ',E'\r\n','Bill Adjustment: ',E'\r\n','Collected: ',E'\r\n','Outstanding: ') as emptyheader,
     CONCAT(SUM(CASE WHEN dem_code = 'PT_HOUSE_TAX' THEN dem_tax ELSE 0 END),E'\r\n',
     SUM(CASE WHEN SIGN(amen_tax)=-1 AND amen_code = 'PT_HOUSE_TAX' THEN ABS(amen_tax) ELSE 0 END),E'\r\n',
     SUM(CASE WHEN SIGN(amen_tax)=1 AND amen_code = 'PT_HOUSE_TAX' THEN ABS(amen_tax) ELSE 0 END),E'\r\n',
@@ -1279,6 +1279,8 @@ ReportDefinitions:
     demand.consumercode,
     demand.createdtime as createdtime,
     addr.doorno,
+    addr.buildingname,
+    addr.street,
     addr.locality,
     ptunit.usagecategory,
     ptunit.arv,
@@ -1300,7 +1302,7 @@ ReportDefinitions:
       INNER JOIN eg_user ptuser ON ptuser.uuid = poo.userid group by propertyid)
       poo ON poo.propertyid = pt.id
       where demand.tenantid LIKE $tenantid and demand.businessservice ='PT')t where 1=1 
-  groupby: GROUP BY tenantid,consumercode,doorno,name,oldpropertyid,propertytype,usagecategory,mobilenumber, arv,locality,createdtime
+  groupby: GROUP BY tenantid,consumercode,doorno,name,oldpropertyid,propertytype,usagecategory,mobilenumber, arv,locality,createdtime,street,buildingname
   orderby: ORDER BY consumercode
 
 - reportName: DGDEDemandRegisterReport
@@ -1477,13 +1479,13 @@ ReportDefinitions:
     isMandatory: false
     searchClause: AND locality = $Wardname
   query: | 
-    select initcap(split_part(tenantid, '.', 2)) as tenantid,
+        select initcap(split_part(tenantid, '.', 2)) as tenantid,
     consumercode as propertyid, oldpropertyid as oldcode,
     name as name,mobilenumber as mobilenumber,
     (SELECT boundary_def.name FROM (VALUES tbl_boundary) AS boundary_def(name,code) where code=locality) as mohallaname,
-    CONCAT(doorno,', ') as address  ,arv,
+    CONCAT(doorno,' ',street,' ',buildingname) as address  ,arv,
     initcap(split_part(usagecategory, '.', 1)) as usagetype,initcap(split_part(usagecategory, '.', 2)) as subusagetype,
-    CONCAT('Demand: ',E'\r\n','Excess Adjustment: ',E'\r\n','Bill Adjustment: ','Collected: ',E'\r\n','Outstanding: ') as emptyheader,
+    CONCAT('Demand: ',E'\r\n','Excess Adjustment: ',E'\r\n','Bill Adjustment: ',E'\r\n','Collected: ',E'\r\n','Outstanding: ') as emptyheader,
     CONCAT(SUM(CASE WHEN dem_code = 'PT_HOUSE_TAX' THEN dem_tax ELSE 0 END),E'\r\n',
     SUM(CASE WHEN SIGN(amen_tax)=-1 AND amen_code = 'PT_HOUSE_TAX' THEN ABS(amen_tax) ELSE 0 END),E'\r\n',
     SUM(CASE WHEN SIGN(amen_tax)=1 AND amen_code = 'PT_HOUSE_TAX' THEN ABS(amen_tax) ELSE 0 END),E'\r\n',
@@ -1557,6 +1559,8 @@ ReportDefinitions:
     demand.consumercode,
     demand.createdtime as createdtime,
     addr.doorno,
+    addr.buildingname,
+    addr.street,
     addr.locality,
     ptunit.usagecategory,
     ptunit.arv,
@@ -1578,7 +1582,7 @@ ReportDefinitions:
       INNER JOIN eg_user ptuser ON ptuser.uuid = poo.userid group by propertyid)
       poo ON poo.propertyid = pt.id
       where demand.tenantid != 'pb.testing' and demand.businessservice ='PT')t where 1=1 
-  groupby: GROUP BY tenantid,consumercode,doorno,name,oldpropertyid,propertytype,usagecategory,mobilenumber, arv,locality,createdtime
+  groupby: GROUP BY tenantid,consumercode,doorno,name,oldpropertyid,propertytype,usagecategory,mobilenumber, arv,locality,createdtime,street,buildingname
   orderby: ORDER BY tenantid,consumercode
   
 - reportName: CBPTDemandCollection
@@ -1686,7 +1690,7 @@ ReportDefinitions:
     searchClause: AND createdtime <= $toDate
   query: |
     select initcap(split_part(tenantid, '.', 2)) as tenantid,
-    CONCAT('Demand: ',E'\r\n','Excess Adjustment: ',E'\r\n','Bill Adjustment: ',E'\r\n','Collected: ',E'\r\n','Outstanding') as amount,
+    CONCAT('Demand: ',E'\r\n','Excess Adjustment: ',E'\r\n','Bill Adjustment: ',E'\r\n','Collected: ',E'\r\n','Outstanding:') as amount,
     CONCAT(SUM(CASE WHEN dem_code = 'PT_HOUSE_TAX' THEN dem_tax ELSE 0 END),E'\r\n',
     SUM(CASE WHEN SIGN(amen_tax)=-1 AND amen_code = 'PT_HOUSE_TAX' THEN ABS(amen_tax) ELSE 0 END),E'\r\n',
     SUM(CASE WHEN SIGN(amen_tax)=1 AND amen_code = 'PT_HOUSE_TAX' THEN ABS(amen_tax) ELSE 0 END),E'\r\n',
