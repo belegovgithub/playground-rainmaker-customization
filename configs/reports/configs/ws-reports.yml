@@ -540,7 +540,7 @@ ReportDefinitions:
     type: string
     source: ws
     total: false
-  - name: service.connectiontype
+  - name: connectiontype
     label: WS_SERV_DETAIL_CONN_TYPE
     type: string
     source: ws
@@ -550,7 +550,7 @@ ReportDefinitions:
     type: string
     source: ws
     total: false
-  - name: activationdate
+  - name: dateeffectivefrom
     label: WS_MODIFICATIONS_EFFECTIVE_DATE
     type: string
     source: ws
@@ -576,7 +576,7 @@ ReportDefinitions:
   #   wrapper: true
   #   isMandatory: false
   #   searchClause: AND ws.applicationstatus = $status
-  query: select ws.applicationno,ws.connectionno, msg.message as applicationType,ws.dateeffectivefrom,service.connectiontype ,
+  query: select ws.applicationno,ws.connectionno, msg.message as applicationType,ws.dateeffectivefrom,service.connectiontype as connectiontype,
     (CASE WHEN connholder.connname is null THEN poo.name ELSE connholder.connname END) as name,
     CASE WHEN ws.applicationType = 'NEW_WATER_CONNECTION' then message.message else msgmodify.message END appstatus from eg_ws_connection ws 
     Inner join eg_pt_property as pt on  pt.propertyid=ws.property_id
