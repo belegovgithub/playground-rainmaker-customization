@@ -2,7 +2,7 @@ ServiceMaps:
  serviceName: Property Tax - rainmaker
  version: 1.0.0
  mappings:
-  - topic: save-pt-property
+  - topic: save-property-registry
     configKey: INDEX
     indexes:
     - name: ptindex-v1
@@ -46,7 +46,7 @@ ServiceMaps:
             outJsonPath: $.Data.tenantData
 
 
-  - topic: update-pt-property
+  - topic: update-property-registry
     configKey: INDEX
     indexes:
     - name: ptindex-v1
