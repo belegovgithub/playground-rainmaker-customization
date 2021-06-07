@@ -540,6 +540,10 @@ ReportDefinitions:
     type: string
     source: ws
     total: false
+  - name: mobilenumber
+    label: CORE_COMMON_MOBILE_NUMBER
+    type: string
+    source: ws
   - name: connectiontype
     label: WS_SERV_DETAIL_CONN_TYPE
     type: string
@@ -578,6 +582,7 @@ ReportDefinitions:
   #   searchClause: AND ws.applicationstatus = $status
   query: select ws.applicationno,ws.connectionno, msg.message as applicationType,ws.dateeffectivefrom,service.connectiontype as connectiontype,
     (CASE WHEN connholder.connname is null THEN poo.name ELSE connholder.connname END) as name,
+    (CASE WHEN connholder.connmobilenumber is null THEN poo.mobilenumber ELSE connholder.connmobilenumber END) as mobilenumber ,
     CASE WHEN ws.applicationType = 'NEW_WATER_CONNECTION' then message.message else msgmodify.message END appstatus from eg_ws_connection ws 
     Inner join eg_pt_property as pt on  pt.propertyid=ws.property_id
     LEFT JOIN (
@@ -594,7 +599,6 @@ ReportDefinitions:
     LEFT OUTER JOIN message ON CONCAT('WF_NEWWS1_',ws.applicationstatus) = message.code AND message.locale='en_IN' 
     LEFT OUTER JOIN message  msgmodify ON CONCAT('WF_MODIFYWSCONNECTION_',ws.applicationstatus) = msgmodify.code AND msgmodify.locale='en_IN' 
     LEFT OUTER JOIN message as msg ON CONCAT('WS_CONNECTION_TYPE_',ws.applicationtype) = msg.code AND msg.locale='en_IN' AND msg.module='rainmaker-ws' 
-    LEFT OUTER JOIN message as msgroad ON CONCAT('WS_ROADTYPE_',ws.roadtype) = msgroad.code AND msgroad.locale='en_IN' AND msgroad.module='rainmaker-ws' 
     WHERE ws.tenantid like 'pb.ajmer' AND service.connectiontype is NOT NULL 
   orderby: ORDER BY  ws.applicationno 
 
