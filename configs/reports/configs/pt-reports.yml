@@ -1489,7 +1489,7 @@ ReportDefinitions:
     isMandatory: false
     searchClause: AND locality = $Wardname
   query: | 
-        select initcap(split_part(tenantid, '.', 2)) as tenantid,
+    select initcap(split_part(tenantid, '.', 2)) as tenantid,
     consumercode as propertyid, oldpropertyid as oldcode,
     name as name,mobilenumber as mobilenumber,
     (SELECT boundary_def.name FROM (VALUES tbl_boundary) AS boundary_def(name,code) where code=locality) as mohallaname,
