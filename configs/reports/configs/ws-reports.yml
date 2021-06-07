@@ -556,7 +556,7 @@ ReportDefinitions:
     total: false
   - name: dateeffectivefrom
     label: WS_MODIFICATIONS_EFFECTIVE_DATE
-    type: string
+    type: epoch
     source: ws
     total: false
   searchParams:
