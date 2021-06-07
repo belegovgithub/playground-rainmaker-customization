@@ -1077,6 +1077,11 @@ ReportDefinitions:
     type: string
     source: pt
     total: false
+  - name: mohallaname
+    label: PT_PROPERTY_ADDRESS_MOHALLA
+    type: string
+    source: pt  
+    total: false
   - name: usagetype
     label: PT_COMMON_USAGE_TYPE
     type: string
@@ -1346,6 +1351,11 @@ ReportDefinitions:
     source: pt    
   - name: addr
     label: reports.pt.address
+    type: string
+    source: pt
+    total: false
+  - name: mohallaname
+    label: PT_PROPERTY_ADDRESS_MOHALLA
     type: string
     source: pt
     total: false
