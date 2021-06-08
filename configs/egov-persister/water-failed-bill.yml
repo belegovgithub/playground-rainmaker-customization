@@ -1,0 +1,92 @@
+serviceMaps:
+ serviceName: Failed Bill Generation
+ mappings:
+ - version: 1.0
+   description: Create a failed bill record
+   fromTopic: ws-failedBill-topic
+   isTransaction: true
+   queryMaps:
+    - query: INSERT INTO eg_ws_failed_bill (id,connectionno,applicationno,assessmentyear,lastreading,currentreading,fromdate,todate,consumption,createdby,lastmodifiedby,createdtime,lastmodifiedtime,tenantid,reason,status) VALUES (?, ?, ?, ?, ?, ?, ?,?,?,?,?,?,?,?,?,?);
+      basePath:  $.BillFailureNotificationObj
+      jsonMaps:
+       - jsonPath:  $.BillFailureNotificationObj.id
+       
+       - jsonPath:  $.BillFailureNotificationObj.connectionNo
+
+       - jsonPath:  $.BillFailureNotificationObj.applicationNo
+
+       - jsonPath:  $.BillFailureNotificationObj.assessmentYear
+       
+       - jsonPath:  $.BillFailureNotificationObj.lastReading
+
+       - jsonPath:  $.BillFailureNotificationObj.currentReading
+       
+       - jsonPath:  $.BillFailureNotificationObj.fromDate
+
+       - jsonPath:  $.BillFailureNotificationObj.toDate
+
+       - jsonPath:  $.BillFailureNotificationObj.consumption
+       
+       - jsonPath:  $.BillFailureNotificationObj.createdBy
+
+       - jsonPath:  $.BillFailureNotificationObj.lastModifiedBy
+
+       - jsonPath:  $.BillFailureNotificationObj.createdTime
+
+       - jsonPath:  $.BillFailureNotificationObj.lastModifiedTime
+
+       - jsonPath:  $.BillFailureNotificationObj.tenantId
+
+       - jsonPath:  $.BillFailureNotificationObj.reason
+
+       - jsonPath:  $.BillFailureNotificationObj.status
+
+ - version: 1.0
+   description: Update Failed Bill details in eg_ws_failed_bill  table
+   fromTopic: update-ws-failedBill-topic
+   isTransaction: true
+   queryMaps:
+    - query: UPDATE eg_ws_failed_bill SET id=?,connectionno=?,applicationno=?,assessmentyear=?,lastreading=?,currentreading=?,fromdate=?,todate=?,consumption=?,createdby=?,lastmodifiedby=?,createdtime=?,lastmodifiedtime=?,tenantid=?,reason=?,status=? WHERE connectionno=? AND assessmentyear=?;
+      basePath: $.BillFailureNotificationObj
+      jsonMaps:
+      
+       - jsonPath:  $.BillFailureNotificationObj.id
+       
+       - jsonPath:  $.BillFailureNotificationObj.connectionNo
+
+       - jsonPath:  $.BillFailureNotificationObj.applicationNo
+
+       - jsonPath:  $.BillFailureNotificationObj.assessmentYear
+       
+       - jsonPath:  $.BillFailureNotificationObj.lastReading
+
+       - jsonPath:  $.BillFailureNotificationObj.currentReading
+       
+       - jsonPath:  $.BillFailureNotificationObj.fromDate
+
+       - jsonPath:  $.BillFailureNotificationObj.toDate
+
+       - jsonPath:  $.BillFailureNotificationObj.consumption
+       
+       - jsonPath:  $.BillFailureNotificationObj.createdBy
+
+       - jsonPath:  $.BillFailureNotificationObj.lastModifiedBy
+
+       - jsonPath:  $.BillFailureNotificationObj.createdTime
+
+       - jsonPath:  $.BillFailureNotificationObj.lastModifiedTime
+
+       - jsonPath:  $.BillFailureNotificationObj.tenantId
+
+       - jsonPath:  $.BillFailureNotificationObj.reason
+
+       - jsonPath:  $.BillFailureNotificationObj.status
+       
+       - jsonPath:  $.BillFailureNotificationObj.connectionNo
+
+       - jsonPath:  $.BillFailureNotificationObj.assessmentYear
+       
+ 
+
+
+

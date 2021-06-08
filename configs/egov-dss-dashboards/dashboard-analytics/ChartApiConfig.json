@@ -461,6 +461,20 @@
        "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"pb.testing\"}},{\"term\":{\"Data.applicationStatus.keyword\":\"INITIATED\"}}]}},\"aggs\":{\"ULBs \":{\"terms\":{\"field\":\"Data.tenantId.keyword\",\"size\":1000,\"order\":{\"_term\":\"asc\"}},\"aggs\":{\"Total Transactions\":{\"filter\":{\"bool\":{\"must_not\":[]}},\"aggs\":{\"Total Services\":{\"value_count\":{\"field\":\"Data.applicationNo.keyword\"}}}}}}}}}}"
      },
      {
+      "module": "BIRTH",
+      "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\", \r\n  \"district\" : \"Data.tenantData.city.districtCode\", \r\n\"tenantId\" : \"Data.tenantId.keyword\" \r\n}",
+      "dateRefField": "Data.auditDetails.lastModifiedTime",
+      "indexName": "birth-cert-v1",
+      "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"pb.testing\"}},{\"term\":{\"Data.applicationStatus.keyword\":\"ACTIVE\"}}]}},\"aggs\":{\"ULBs \":{\"terms\":{\"field\":\"Data.tenantId.keyword\",\"size\":1000,\"order\":{\"_term\":\"asc\"}},\"aggs\":{\"Total Transactions\":{\"filter\":{\"bool\":{\"must_not\":[]}},\"aggs\":{\"Total Services\":{\"value_count\":{\"field\":\"Data.birthCertificateNo.keyword\"}}}}}}}}}}"
+    },
+    {
+      "module": "DEATH",
+      "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\", \r\n  \"district\" : \"Data.tenantData.city.districtCode\", \r\n\"tenantId\" : \"Data.tenantId.keyword\" \r\n}",
+      "dateRefField": "Data.auditDetails.lastModifiedTime",
+      "indexName": "death-cert-v1",
+      "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"pb.testing\"}},{\"term\":{\"Data.applicationStatus.keyword\":\"ACTIVE\"}}]}},\"aggs\":{\"ULBs \":{\"terms\":{\"field\":\"Data.tenantId.keyword\",\"size\":1000,\"order\":{\"_term\":\"asc\"}},\"aggs\":{\"Total Transactions\":{\"filter\":{\"bool\":{\"must_not\":[]}},\"aggs\":{\"Total Services\":{\"value_count\":{\"field\":\"Data.deathCertificateNo.keyword\"}}}}}}}}}}"
+    },
+     {
        "module": "COMMON",
        "requestQueryMap": "{\"tenantId\" : \"tenantId.keyword\"}",
        "dateRefField": "",
@@ -2223,14 +2237,14 @@
      {
        "module": "WS",
        "indexName": "water-services",
-       "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"pb.testing\"}}],\"must\":[{\"term\":{\"Data.applicationStatus.keyword\":\"CONNECTION_ACTIVATED\"}}]}},\"aggs\":{\"averageProcessingTime\":{\"avg\":{\"script\":{\"lang\":\"painless\",\"source\":\"long d1 =  doc['Data.additionalDetails.appCreatedDate'].value ; long d2 = params._source.Data.history[0].auditDetails.createdTime;double differenceInMillis = (double)d1-d2;return Math.abs(differenceInMillis\/86400000);\"}}}}}}}",
+       "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"pb.testing\"}}],\"must\":[{\"terms\":{\"Data.applicationStatus.keyword\":[\"REJECTED\"]}}]}},\"aggs\":{\"Total Application Rejected\":{\"value_count\":{\"field\":\"Data.applicationNo.keyword\"}}}}}}",
        "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\", \r\n  \"district\" : \"Data.tenantData.city.districtCode\", \r\n\"tenantId\" : \"Data.tenantId.keyword\" \r\n}", 
        "dateRefField": "Data.additionalDetails.appCreatedDate"
      },
     {
      "module": "SW",
      "indexName": "sewerage-services",
-     "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"pb.testing\"}}],\"must\":[{\"term\":{\"Data.applicationStatus.keyword\":\"CONNECTION_ACTIVATED\"}}]}},\"aggs\":{\"averageProcessingTime\":{\"avg\":{\"script\":{\"lang\":\"painless\",\"source\":\"long d1 =  doc['Data.additionalDetails.appCreatedDate'].value ; long d2 = params._source.Data.history[0].auditDetails.createdTime;double differenceInMillis = (double)d1-d2;return Math.abs(differenceInMillis\/86400000);\"}}}}}}}",
+     "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"pb.testing\"}}],\"must\":[{\"terms\":{\"Data.status.keyword\":[\"REJECTED\"]}}]}},\"aggs\":{\"Total Application Rejected\":{\"value_count\":{\"field\":\"Data.applicationNo.keyword\"}}}}}}",
      "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\", \r\n  \"district\" : \"Data.tenantData.city.districtCode\", \r\n\"tenantId\" : \"Data.tenantId.keyword\" \r\n}", 
      "dateRefField": "Data.additionalDetails.appCreatedDate"
    }
@@ -2281,14 +2295,14 @@
      {
        "module": "WS",
        "indexName": "water-services",
-       "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"pb.testing\"}}],\"must\":[{\"term\":{\"Data.applicationStatus.keyword\":\"CONNECTION_ACTIVATED\"}}]}},\"aggs\":{\"averageProcessingTime\":{\"avg\":{\"script\":{\"lang\":\"painless\",\"source\":\"long d1 =  doc['Data.additionalDetails.appCreatedDate'].value ; long d2 = doc['Data.connectionExecutionDate'].value;double differenceInMillis = (double)d1-d2;return Math.abs(differenceInMillis\/86400000);\"}}}}}}}",
+       "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"pb.testing\"}}],\"must\":[{\"term\":{\"Data.applicationStatus.keyword\":\"CONNECTION_ACTIVATED\"}}]}},\"aggs\":{\"averageProcessingTime\":{\"avg\":{\"script\":{\"lang\":\"painless\",\"source\":\"long d1 =  doc['Data.additionalDetails.appCreatedDate'].value ; long d2 = params._source.Data.history[0].auditDetails.createdTime;double differenceInMillis = (double)d1-d2;return Math.abs(differenceInMillis\/86400000);\"}}}}}}}",
        "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\", \r\n  \"district\" : \"Data.tenantData.city.districtCode\", \r\n\"tenantId\" : \"Data.tenantId.keyword\" \r\n}", 
        "dateRefField": "Data.additionalDetails.appCreatedDate"
      },
     {
      "module": "SW",
      "indexName": "sewerage-services",
-     "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"pb.testing\"}}],\"must\":[{\"term\":{\"Data.applicationStatus.keyword\":\"CONNECTION_ACTIVATED\"}}]}},\"aggs\":{\"averageProcessingTime\":{\"avg\":{\"script\":{\"lang\":\"painless\",\"source\":\"long d1 =  doc['Data.additionalDetails.appCreatedDate'].value ; long d2 = doc['Data.connectionExecutionDate'].value;double differenceInMillis = (double)d1-d2;return Math.abs(differenceInMillis\/86400000);\"}}}}}}}",
+     "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"pb.testing\"}}],\"must\":[{\"term\":{\"Data.applicationStatus.keyword\":\"CONNECTION_ACTIVATED\"}}]}},\"aggs\":{\"averageProcessingTime\":{\"avg\":{\"script\":{\"lang\":\"painless\",\"source\":\"long d1 =  doc['Data.additionalDetails.appCreatedDate'].value ; long d2 = params._source.Data.history[0].auditDetails.createdTime;double differenceInMillis = (double)d1-d2;return Math.abs(differenceInMillis\/86400000);\"}}}}}}}",
      "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\", \r\n  \"district\" : \"Data.tenantData.city.districtCode\", \r\n\"tenantId\" : \"Data.tenantId.keyword\" \r\n}", 
      "dateRefField": "Data.additionalDetails.appCreatedDate"
    }
@@ -2358,14 +2372,21 @@
      "dateRefField": "Data.auditDetails.lastModifiedTime"
    },
    {
-     "module": "DEATH",
-     "indexName": "death-cert-v1",
-     "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"pb.testing\"}},{\"terms\":{\"Data.applicationStatus.keyword\":[\"ACTIVE\"]}}]}},\"aggs\":{\"Total Application99\":{\"value_count\":{\"field\":\"Data.deathCertificateNo.keyword\"}}}}}}",
-     "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\", \r\n  \"district\" : \"Data.tenantData.city.districtCode\", \r\n\"tenantId\" : \"Data.tenantId.keyword\" \r\n}", 
-     "dateRefField": "Data.auditDetails.lastModifiedTime"
+    "module": "DEATH",
+    "indexName": "death-cert-v1",
+    "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"pb.testing\"}},{\"terms\":{\"Data.applicationStatus.keyword\":[\"ACTIVE\"]}}]}},\"aggs\":{\"Total Application99\":{\"value_count\":{\"field\":\"Data.deathCertificateNo.keyword\"}}}}}}",
+    "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\", \r\n  \"district\" : \"Data.tenantData.city.districtCode\", \r\n\"tenantId\" : \"Data.tenantId.keyword\" \r\n}", 
+    "dateRefField": "Data.auditDetails.lastModifiedTime"
+   },
+   {
+    "module": "ORS",
+    "indexName": "orsindex-v1",
+    "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"Total Application99\":{\"sum\":{\"field\":\"successful_appointment\"}}}}}}",
+    "requestQueryMap": "{\"wardId\" : \"ward.name.keyword\", \r\n  \"district\" : \"tenantData.city.districtCode\", \r\n\"tenantId\" : \"tenantId.keyword\" \r\n}", 
+    "dateRefField": "appointment_date"
    }
    ],
-   "chartType": "metric",
+   "chartType": "metric", 
    "valueType": "number",
    "action": "",
    "documentType": "_doc",
@@ -2517,7 +2538,21 @@
        "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\", \r\n  \"district\" : \"Data.tenantData.city.districtCode\", \r\n\"tenantId\" : \"Data.tenantId\" \r\n}",
        "indexName": "sewerage-services",
        "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"pb.testing\"}},{\"terms\":{\"Data.applicationStatus.keyword\":[\"INITIATED\"]}}]}},\"aggs\":{\"Sewerage\":{\"value_count\":{\"field\":\"Data.tenantId.keyword\"}}}}}}"
-     }
+     },
+     {
+      "module": "BIRTH",
+      "dateRefField": "Data.auditDetails.lastModifiedTime",
+      "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\", \r\n  \"district\" : \"Data.tenantData.city.districtCode\", \r\n\"tenantId\" : \"Data.tenantId.keyword\" \r\n}", 
+      "indexName": "birth-cert-v1",
+      "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"pb.testing\"}},{\"terms\":{\"Data.applicationStatus.keyword\":[\"ACTIVE\"]}}]}},\"aggs\":{\"Birth\":{\"value_count\":{\"field\":\"Data.birthCertificateNo.keyword\"}}}}}}"
+    },
+    {
+      "module": "DEATH",
+      "dateRefField": "Data.auditDetails.lastModifiedTime",
+      "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\", \r\n  \"district\" : \"Data.tenantData.city.districtCode\", \r\n\"tenantId\" : \"Data.tenantId.keyword\" \r\n}", 
+      "indexName": "death-cert-v1",
+      "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"pb.testing\"}},{\"terms\":{\"Data.applicationStatus.keyword\":[\"ACTIVE\"]}}]}},\"aggs\":{\"Death\":{\"value_count\":{\"field\":\"Data.deathCertificateNo.keyword\"}}}}}}"    
+    }
    ],
    "chartType": "pie",
    "valueType": "number",
@@ -2530,7 +2565,9 @@
      "PGR",
      "Lease",
      "Water",
-     "Sewerage"
+     "Sewerage",
+     "Birth",
+     "Death"
    ],
    "insight": {
    },
@@ -2605,7 +2642,21 @@
        "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\", \r\n  \"district\" : \"Data.tenantData.city.districtCode\", \r\n\"tenantId\" : \"Data.tenantId.keyword\" \r\n}",
        "indexName": "sewerage-services",
        "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"Total Application\":{\"date_histogram\":{\"field\":\"Data.additionalDetails.appCreatedDate\",\"interval\":\"intervalvalue\"},\"aggs\":{\"Applications Total\":{\"filter\":{\"bool\":{\"must_not\":[{\"terms\":{\"Data.applicationStatus.keyword\":[\"INITIATED\"]}}]}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.applicationNo.keyword\"}}}}}},\"Closed Application\":{\"date_histogram\":{\"field\":\"Data.additionalDetails.appCreatedDate\",\"interval\":\"intervalvalue\"},\"aggs\":{\"Applications Closed\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.applicationStatus.keyword\":[\"REJECTED\",\"CONNECTION_ACTIVATED\"]}}]}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.applicationNo.keyword\"}}}}}}}}}}"
-     }
+     },
+     {
+      "module": "BIRTH",
+      "dateRefField": "Data.auditDetails.lastModifiedTime",
+      "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\", \r\n  \"district\" : \"Data.tenantData.city.districtCode\", \r\n\"tenantId\" : \"Data.tenantId.keyword\" \r\n}",
+      "indexName": "birth-cert-v1",
+      "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\": [{\"term\":{\"Data.tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"Total Application\":{\"date_histogram\":{\"field\": \"Data.auditDetails.lastModifiedTime\",\"interval\":\"intervalvalue\"},\"aggs\":{\"Applications Total\":{\"filter\":{\"bool\":{\"must_not\":[{\"terms\":{\"Data.applicationStatus.keyword\":[\"ACTIVE\"]}}]}},\"aggs\":{\"Count\": {\"value_count\": {\"field\":\"Data.birthCertificateNo.keyword\"}}}}}}}}}}"
+    },
+    {
+      "module": "DEATH",
+      "dateRefField": "Data.auditDetails.lastModifiedTime",
+      "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\", \r\n  \"district\" : \"Data.tenantData.city.districtCode\", \r\n\"tenantId\" : \"Data.tenantId.keyword\" \r\n}",
+      "indexName": "death-cert-v1",
+      "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\": [{\"term\":{\"Data.tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"Total Application\":{\"date_histogram\":{\"field\": \"Data.auditDetails.lastModifiedTime\",\"interval\":\"intervalvalue\"},\"aggs\":{\"Applications Total\":{\"filter\":{\"bool\":{\"must_not\":[{\"terms\":{\"Data.applicationStatus.keyword\":[\"ACTIVE\"]}}]}},\"aggs\":{\"Count\": {\"value_count\": {\"field\":\"Data.deathCertificateNo.keyword\"}}}}}}}}}}"
+    }
    ],
    "chartType": "line",
    "valueType": "number",
@@ -3881,6 +3932,7 @@
    },
    "_comment": " licenseIssued is the Chart ID"
  },
+
  "_comment": "TL NON-COLLECTION CHARTS",
  "licenseIssued": {
    "chartName": "DSS_TL_LICENSE_ISSUED",
@@ -3888,9 +3940,9 @@
      {
        "module": "TL",
        "indexName": "tlindex-v1",
-       "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tradelicense.tenantId.keyword\":\"pb.testing\"}},{\"terms\":{\"Data.tradelicense.status.keyword\":[\"INITIATED\"]}}],\"must\":[{\"terms\":{\"Data.tradelicense.status.keyword\":[\"APPROVED\",\"EXPIRED\",\"CANCELLED\"]}}]}},\"aggs\":{\"Total Application Approved\":{\"value_count\":{\"field\":\"Data.tradelicense.applicationNumber.keyword\"}}}}}}",
+       "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tradelicense.tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\": {\"License Issued\": {\"value_count\": {\"field\": \"Data.tradelicense.licenseNumber.keyword\"}}}}}}",
        "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\",    \"district\" : \"Data.tenantData.city.districtCode\",  \"tenantId\" : \"Data.tradelicense.tenantId\"  ,  \"businessService\" : \"dataObject.Bill.billDetails.businessServices\"  }",
-       "dateRefField": "Data.tradelicense.applicationDate"
+       "dateRefField": "Data.tradelicense.issuedDate"
      },
      {
        "module": "LAMS",
@@ -4820,7 +4872,7 @@
        "requestQueryMap": "{\"wardId\" : \"Data.complaintWard.name.keyword\", \"tenantId\" : \"Data.tenantId.keyword\" , \"departmentId\" : \"Data.department.keyword\"}",
        "dateRefField": "Data.dateOfComplaint",
        "indexName": "pgrindex-v1",
-       "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"Ward \":{\"terms\":{\"field\":\"Data.complaintWard.name.keyword\",\"size\":1000},\"aggs\":{\"withinSLA\":{\"range\":{\"script\":{\"lang\":\"painless\",\"source\":\"doc['Data.slaHours'].value\"},\"ranges\":[{\"key\":\"withinSLA\",\"from\":0,\"to\":360}]}},\"Total Complaints\":{\"value_count\":{\"field\":\"Data.dateOfComplaint\"}},\"Closed_Complaints\":{\"filter\":{\"terms\":{\"Data.status.keyword\":[\"closed\",\"rejected\",\"resolved\"]}},\"aggs\":{\"Closed Complaints\":{\"value_count\":{\"field\":\"Data.tenantId.keyword\"}}}},\"Open_Complaints\":{\"filter\":{\"terms\":{\"Data.status.keyword\":[\"open\"]}},\"aggs\":{\"Open Complaints\":{\"value_count\":{\"field\":\"Data.tenantId.keyword\"}}}},\"Reopened_Complaints\":{\"filter\":{\"terms\":{\"Data.status.keyword\":[\"reopen\"]}},\"aggs\":{\"Reopened Complaints\":{\"value_count\":{\"field\":\"Data.tenantId.keyword\"}}}}}}}}}}"
+       "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"withinSLA\":{\"range\":{\"script\":{\"lang\":\"painless\",\"source\":\"doc['Data.slaHours'].value\"},\"ranges\":[{\"key\":\"withinSLA\",\"from\":0,\"to\":360}]}},\"Total Complaints\":{\"value_count\":{\"field\":\"Data.dateOfComplaint\"}},\"Closed_Complaints\":{\"filter\":{\"terms\":{\"Data.status.keyword\":[\"closed\",\"rejected\",\"resolved\"]}},\"aggs\":{\"Closed Complaints\":{\"value_count\":{\"field\":\"Data.tenantId.keyword\"}}}},\"Open_Complaints\":{\"filter\":{\"terms\":{\"Data.status.keyword\":[\"open\",\"assigned\",\"reassignrequested\"]}},\"aggs\":{\"Open Complaints\":{\"value_count\":{\"field\":\"Data.tenantId.keyword\"}}}},\"Reopened_Complaints\":{\"filter\":{\"terms\":{\"Data.status.keyword\":[\"reopen\"]}},\"aggs\":{\"Reopened Complaints\":{\"value_count\":{\"field\":\"Data.tenantId.keyword\"}}}}}}}}"
      }
    ],
    "filterKeys": [
@@ -5064,7 +5116,252 @@
    },
    "_comment": ""
  },
- "_comment": "PGR NON-COLLECTION CHARTS",
+ "totalHospitals": {
+  "chartName": "DSS_TOTAL_APPLICATION",
+  "queries": [
+    {
+    "module": "ORS",
+    "indexName": "orsindex-v1",
+    "aggrQuery": "{\"aggs\":{\"totalHospitals\":{\"cardinality\":{\"field\":\"hospital_name.keyword\",\"precision_threshold\":100}}}}",
+    "requestQueryMap": "{\"wardId\" : \"ward.name.keyword\", \r\n  \"district\" : \"tenantData.city.districtCode\", \r\n\"tenantId\" : \"tenantId.keyword\" \r\n}", 
+    "dateRefField": "appointment_date"
+    }
+  ],
+  "chartType": "metric", 
+  "valueType": "number",
+  "action": "",
+  "documentType": "_doc",
+  "drillChart": "none",
+  "aggregationPaths": [
+    "totalHospitals"
+  ],
+  "_comment": " totalApplication is the chartId"
+ },
+ "totalApplicationToday": {
+  "chartName": "DSS_TOTAL_APPLICATION",
+  "queries": [
+    {
+    "module": "ORS",
+    "indexName": "orsindex-v1",
+    "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"tenantId.keyword\":\"pb.testing\"}}],\"must\":{\"range\":{\"appointment_date\":{\"gt\":\"now-1d\/d\",\"lte\":\"now\"}}}}},\"aggs\":{\"Total Application100\":{\"sum\":{\"field\":\"successful_appointment\"}}}}}}",
+    "requestQueryMap": "{\"wardId\" : \"ward.name.keyword\", \r\n  \"district\" : \"tenantData.city.districtCode\", \r\n\"tenantId\" : \"tenantId.keyword\" \r\n}", 
+    "dateRefField": "appointment_date"
+    }
+  ],
+  "chartType": "metric", 
+  "valueType": "number",
+  "action": "",
+  "documentType": "_doc",
+  "drillChart": "none",
+  "aggregationPaths": [
+    "Total Application100"
+  ],
+  "_comment": ""
+},
+
+"echhawaniResidentsAppointments": {
+  "chartName": "DSS_ECHHAWANI_APPOINTMENTS",
+  "queries": [
+    {
+    "module": "ORS",
+    "indexName": "orsindex-v1",
+    "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"Total Application100\":{\"sum\":{\"field\":\"chhawani_resident_successful_appointment\"}}}}}}",
+    "requestQueryMap": "{\"wardId\" : \"ward.name.keyword\", \r\n  \"district\" : \"tenantData.city.districtCode\", \r\n\"tenantId\" : \"tenantId.keyword\" \r\n}", 
+    "dateRefField": "appointment_date"
+    }
+  ],
+  "chartType": "metric", 
+  "valueType": "number",
+  "action": "",
+  "documentType": "_doc",
+  "drillChart": "none",
+  "aggregationPaths": [
+    "Total Application100"
+  ],
+  "_comment": ""
+},
+
+"nonEchhawaniResidentsAppointments": {
+  "chartName": "DSS_NON_ECHHAWANI_APPOINTMENTS",
+  "queries": [
+    {
+    "module": "ORS",
+    "indexName": "orsindex-v1",
+    "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"Total Application100\":{\"sum\":{\"field\":\"chhawani_nonresident_successful_appointment\"}}}}}}",
+    "requestQueryMap": "{\"wardId\" : \"ward.name.keyword\", \r\n  \"district\" : \"tenantData.city.districtCode\", \r\n\"tenantId\" : \"tenantId.keyword\" \r\n}", 
+    "dateRefField": "appointment_date"
+    }
+  ],
+  "chartType": "metric", 
+  "valueType": "number",
+  "action": "",
+  "documentType": "_doc",
+  "drillChart": "none",
+  "aggregationPaths": [
+    "Total Application100"
+  ],
+  "_comment": ""
+},
+
+
+"maleAppointments": {
+  "chartName": "DSS_TOTAL_APPLICATION",
+  "queries": [
+    {
+    "module": "ORS",
+    "indexName": "orsindex-v1",
+    "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"Total Application100\":{\"sum\":{\"field\":\"male_successful_appointment\"}}}}}}",
+    "requestQueryMap": "{\"wardId\" : \"ward.name.keyword\", \r\n  \"district\" : \"tenantData.city.districtCode\", \r\n\"tenantId\" : \"tenantId.keyword\" \r\n}", 
+    "dateRefField": "appointment_date"
+    }
+  ],
+  "chartType": "metric", 
+  "valueType": "number",
+  "action": "",
+  "documentType": "_doc",
+  "drillChart": "none",
+  "aggregationPaths": [
+    "Total Application100"
+  ],
+  "_comment": ""
+},
+"femaleAppointments": {
+  "chartName": "DSS_TOTAL_APPLICATION",
+  "queries": [
+    {
+    "module": "ORS",
+    "indexName": "orsindex-v1",
+    "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"Total Application100\":{\"sum\":{\"field\":\"female_successful_appointment\"}}}}}}",
+    "requestQueryMap": "{\"wardId\" : \"ward.name.keyword\", \r\n  \"district\" : \"tenantData.city.districtCode\", \r\n\"tenantId\" : \"tenantId.keyword\" \r\n}", 
+    "dateRefField": "appointment_date"
+    }
+  ],
+  "chartType": "metric", 
+  "valueType": "number",
+  "action": "",
+  "documentType": "_doc",
+  "drillChart": "none",
+  "aggregationPaths": [
+    "Total Application100"
+  ],
+  "_comment": ""
+},
+
+ "appointmentsTimeLine": {
+  "chartName": "DSS_TL_CUMULATIVE_LICENSE_ISSUED",
+  "queries": [
+    {
+      "module": "ORS",
+      "indexName": "orsindex-v1",
+      "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"Appointments Male\":{\"date_histogram\":{\"field\":\"appointment_date\",\"interval\":\"day\"},\"aggs\":{\"Appointments Male\":{\"sum\":{\"field\":\"male_successful_appointment\"}}}}}}}}",
+      "requestQueryMap": "{\"wardId\" : \"ward.name.keyword\", \"tenantId\" : \"tenantData.code\" ,\"district\" : \"tenantData.city.districtCode\"}",
+      "dateRefField": "appointment_date"
+    },
+    {
+      "module": "ORS",
+      "indexName": "orsindex-v1",
+      "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"Appointments Female\":{\"date_histogram\":{\"field\":\"appointment_date\",\"interval\":\"day\"},\"aggs\":{\"Appointments Female\":{\"sum\":{\"field\":\"female_successful_appointment\"}}}}}}}}",
+      "requestQueryMap": "{\"wardId\" : \"ward.name.keyword\", \"tenantId\" : \"tenantData.code\" ,\"district\" : \"tenantData.city.districtCode\"}",
+      "dateRefField": "appointment_date"
+    }
+  ],
+  "chartType": "line",
+  "valueType": "number",
+  "action": "",
+  "documentType": "_doc",
+  "drillChart": "none",
+  "aggregationPaths": [
+    "Appointments Male",
+    "Appointments Female"
+  ],
+  "isCumulative": false,
+  "interval": "week",
+  "insight": {
+  },
+  "_comment": " Total Number of License having issued"
+},
+ "xOpdStatusByTenant": {
+  "chartName": "DSS_OPD_STATUS_BY_TENANT",
+  "queries": [
+    {
+      "module": "ORS",
+      "requestQueryMap": "{\"wardId\" : \"ward.name.keyword\", \"tenantId\" : \"tenantId.keyword\" }",
+      "dateRefField": "appointment_date",
+      "indexName": "orsindex-v1",
+      "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"ULBs \":{\"terms\":{\"field\":\"tenantId.keyword\",\"size\":200,\"order\":{\"_term\":\"asc\"}},\"aggs\":{\"Appointments Male\":{\"filter\":{\"terms\":{\"status_code.keyword\":[\"1\"]}},\"aggs\":{\"Appointments Male\":{\"sum\":{\"field\":\"male_successful_appointment\"}}}},\"Appointments Female\":{\"filter\":{\"terms\":{\"status_code.keyword\":[\"1\"]}},\"aggs\":{\"Appointments Female\":{\"sum\":{\"field\":\"female_successful_appointment\"}}}},\"echhawani_Appointments\":{\"filter\":{\"terms\":{\"status_code.keyword\":[\"1\"]}},\"aggs\":{\"echhawani_Appointments\":{\"sum\":{\"field\":\"chhawani_resident_successful_appointment\"}}}},\"non_Echhawani_Appointments\":{\"filter\":{\"terms\":{\"status_code.keyword\":[\"1\"]}},\"aggs\":{\"non_Echhawani_Appointments\":{\"sum\":{\"field\":\"chhawani_nonresident_successful_appointment\"}}}}}}}}}}"
+    }
+  ],
+  "filterKeys": [
+    {"key": "tenantId", "column": "Boundary"}
+  ],
+  "chartType": "xtable",
+  "valueType": "number",
+  "drillChart": "xOpdStatusByHospital",
+  "plotLabel": "Boundary",
+  "excludedColumns": [],
+  "removedFields":[],
+  "forceFormat":"number",
+  "_comment": "forceFormat is used to force the datatype of returned values to amount/number/percentage",
+  "computedFields": [
+    {
+      "postAggregationTheory" : "",
+      "actionName": "AdditiveComputedField",
+      "fields" : ["Appointments Male", "Appointments Female"],
+      "newField" : "Total Appointments",
+      "_comments": "fields are field names picked from its aggregation query to use post aggregation newField value with given new field name  "
+    }
+  ],
+  "aggregationPaths": [
+    
+	"Appointments Male",
+	"Appointments Female",
+	"echhawani_Appointments",
+	"non_Echhawani_Appointments"
+  ],
+  "insight": {
+  }
+},
+"xOpdStatusByHospital": {
+  "chartName": "DSS_OPD_STATUS_BY_HOSPITAL",
+  "queries": [
+    {
+      "module": "ORS",
+      "requestQueryMap": "{\"wardId\" : \"ward.name.keyword\", \"tenantId\" : \"tenantId.keyword\" }",
+      "dateRefField": "appointment_date",
+      "indexName": "orsindex-v1",
+      "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"ULBs \":{\"terms\":{\"field\":\"hospital_name.keyword\",\"size\":200,\"order\":{\"_term\":\"asc\"}},\"aggs\":{\"Appointments Male\":{\"filter\":{\"terms\":{\"status_code.keyword\":[\"1\"]}},\"aggs\":{\"Appointments Male\":{\"sum\":{\"field\":\"male_successful_appointment\"}}}},\"Appointments Female\":{\"filter\":{\"terms\":{\"status_code.keyword\":[\"1\"]}},\"aggs\":{\"Appointments Female\":{\"sum\":{\"field\":\"female_successful_appointment\"}}}},\"echhawani_Appointments\":{\"filter\":{\"terms\":{\"status_code.keyword\":[\"1\"]}},\"aggs\":{\"echhawani_Appointments\":{\"sum\":{\"field\":\"chhawani_resident_successful_appointment\"}}}},\"non_Echhawani_Appointments\":{\"filter\":{\"terms\":{\"status_code.keyword\":[\"1\"]}},\"aggs\":{\"non_Echhawani_Appointments\":{\"sum\":{\"field\":\"chhawani_nonresident_successful_appointment\"}}}}}}}}}}"
+    }
+  ],
+  "filterKeys": [
+    {"key": "hospital_name", "column": "Hospital"}
+  ],
+  "chartType": "xtable",
+  "valueType": "number",
+  "drillChart": "none",
+  "plotLabel": "Hospital",
+  "excludedColumns": [],
+  "removedFields":[],
+  "forceFormat":"number",
+  "_comment": "forceFormat is used to force the datatype of returned values to amount/number/percentage",
+  "computedFields": [
+    {
+      "postAggregationTheory" : "",
+      "actionName": "AdditiveComputedField",
+      "fields" : ["Appointments Male", "Appointments Female"],
+      "newField" : "Total Appointments",
+      "_comments": "fields are field names picked from its aggregation query to use post aggregation newField value with given new field name  "
+    }
+  ],
+  "aggregationPaths": [
+
+	"Appointments Male",
+	"Appointments Female",
+	"echhawani_Appointments",
+	"non_Echhawani_Appointments"
+  ],
+  "insight": {
+  }
+},
  "completionRate": {
    "chartName": "DSS_PGR_COMPLETION_RATE",
    "queries": [
@@ -5966,6 +6263,8 @@
    },
    "_comment": " "
  },
+
+
  "wscumulativeCollections": {
   "chartName": "DSS_W&S_TOTAL_CUMULATIVE_COLLECTION",
   "queries": [
@@ -7303,6 +7602,8 @@
    },
    "_comment": " "
  },
+
+
  "swcumulativeCollections": {
   "chartName": "DSS_SW_TOTAL_CUMULATIVE_COLLECTION",
   "queries": [
