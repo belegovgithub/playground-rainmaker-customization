@@ -7,29 +7,27 @@ ServiceMaps:
     indexes:
     - name: ptindex-v1
       type: property
-      id: $.Property.id, $.Property.tenantId
+      id: $.propertyId, $.tenantId
       isBulk: true
-      timeStampField: $.Property.auditDetails.createdTime
-      jsonPath: $
+      timeStampField: $.auditDetails.createdTime
+      jsonPath: $.Property
       customJsonMapping:
         #indexMapping: {"Data":{"propertyId":"","tenantId":"","propertyDetails":{},"address":{},"ward":{},"tenantData":{},"@timestamp":"timestamp"}}
-        indexMapping: {"Data":{"property":{},"ward":{},"tenantData":{},"@timestamp":"timestamp"}}
+        indexMapping: {"Data":{"propertyId":"","tenantId":"","propertyDetails":{},"address":{},"ward":{},"tenantData":{}}}
         fieldMapping:
-        - inJsonPath: $.Property
-          outJsonPath: $.Data.property
-       # - inJsonPath: $.propertyId
-       #   outJsonPath: $.Data.propertyId
-        #- inJsonPath: $.tenantId
-        #  outJsonPath: $.Data.tenantId
-        #- inJsonPath: $.propertyDetails
-        #  outJsonPath: $.Data.propertyDetails
-        #- inJsonPath: $.address
-        #  outJsonPath: $.Data.address
-        #- inJsonPath: $.@timestamp
-        #  outJsonPath: $.Data.@timestamp
+        - inJsonPath: $.propertyId
+          outJsonPath: $.Data.propertyId
+        - inJsonPath: $.tenantId
+          outJsonPath: $.Data.tenantId
+        - inJsonPath: $
+          outJsonPath: $.Data.propertyDetails
+        - inJsonPath: $.address
+          outJsonPath: $.Data.address
+        # - inJsonPath: $.@timestamp
+        #   outJsonPath: $.Data.@timestamp
         externalUriMapping:
         - path: http://egov-location:8080/egov-location/location/v11/boundarys/_search
-          queryParam: hierarchyTypeCode=REVENUE,boundaryType=Block,codes=$.Property.address.locality.code,tenantId=$.Property.tenantId
+          queryParam: hierarchyTypeCode=REVENUE,boundaryType=Block,codes=$.address.locality.code,tenantId=$.tenantId
           apiRequest: {"RequestInfo": {"apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654", "requesterId": "61",
           "authToken": "02dbe5be-28df-4d82-954f-3d27c56cca7d","userInfo":{"id":73}}}
           uriResponseMapping:
@@ -43,7 +41,7 @@ ServiceMaps:
           filter: "[?(@.code == $tenant)]"
           filterMapping:
           - variable: $tenant
-            valueJsonpath: $.Property.tenantId
+            valueJsonpath: $.tenantId
           uriResponseMapping:
           - inJsonPath: $.MdmsRes.tenant.tenants
             outJsonPath: $.Data.tenantData
