@@ -14,13 +14,13 @@ ServiceMaps:
       customJsonMapping:
         indexMapping: {"Data":{"propertyId":"","tenantId":"","propertyDetails":{},"address":{},"ward":{},"tenantData":{},"@timestamp":"timestamp"}}
         fieldMapping:
-        - inJsonPath: $.propertyId
+        - inJsonPath: $.Property.propertyId
           outJsonPath: $.Data.propertyId
-        - inJsonPath: $.tenantId
+        - inJsonPath: $.Property.tenantId
           outJsonPath: $.Data.tenantId
-        - inJsonPath: $.propertyDetails
+        - inJsonPath: $.Property
           outJsonPath: $.Data.propertyDetails
-        - inJsonPath: $.address
+        - inJsonPath: $.Property.address
           outJsonPath: $.Data.address
         - inJsonPath: $.@timestamp
           outJsonPath: $.Data.@timestamp
