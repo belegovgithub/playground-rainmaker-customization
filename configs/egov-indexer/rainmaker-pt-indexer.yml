@@ -10,20 +10,23 @@ ServiceMaps:
       id: $.propertyId, $.tenantId
       isBulk: true
       timeStampField: $.auditDetails.createdTime
-      jsonPath: $.Properties.*
+      jsonPath: $.Property
       customJsonMapping:
-        indexMapping: {"Data":{"propertyId":"","tenantId":"","propertyDetails":{},"address":{},"ward":{},"tenantData":{},"@timestamp":"timestamp"}}
+        #indexMapping: {"Data":{"propertyId":"","tenantId":"","propertyDetails":{},"address":{},"ward":{},"tenantData":{},"@timestamp":"timestamp"}}
+        indexMapping: {"Data":{"property":{},"ward":{},"tenantData":{},"@timestamp":"timestamp"}}
         fieldMapping:
-        - inJsonPath: $.propertyId
+        - inJsonPath: $
           outJsonPath: $.Data.propertyId
-        - inJsonPath: $.tenantId
-          outJsonPath: $.Data.tenantId
-        - inJsonPath: $.propertyDetails
-          outJsonPath: $.Data.propertyDetails
-        - inJsonPath: $.address
-          outJsonPath: $.Data.address
-        - inJsonPath: $.@timestamp
-          outJsonPath: $.Data.@timestamp
+       # - inJsonPath: $.propertyId
+       #   outJsonPath: $.Data.propertyId
+        #- inJsonPath: $.tenantId
+        #  outJsonPath: $.Data.tenantId
+        #- inJsonPath: $.propertyDetails
+        #  outJsonPath: $.Data.propertyDetails
+        #- inJsonPath: $.address
+        #  outJsonPath: $.Data.address
+        #- inJsonPath: $.@timestamp
+        #  outJsonPath: $.Data.@timestamp
         externalUriMapping:
         - path: http://egov-location:8080/egov-location/location/v11/boundarys/_search
           queryParam: hierarchyTypeCode=REVENUE,boundaryType=Block,codes=$.address.locality.code,tenantId=$.tenantId
