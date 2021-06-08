@@ -10,7 +10,7 @@ ServiceMaps:
       id: $.propertyId, $.tenantId
       isBulk: true
       timeStampField: $.auditDetails.createdTime
-      jsonPath: $.Properties.*
+      jsonPath: $.*
       customJsonMapping:
         indexMapping: {"Data":{"propertyId":"","tenantId":"","propertyDetails":{},"address":{},"ward":{},"tenantData":{},"@timestamp":"timestamp"}}
         fieldMapping:
@@ -54,7 +54,7 @@ ServiceMaps:
       id: $.propertyId, $.tenantId
       isBulk: true
       timeStampField: $.auditDetails.createdTime
-      jsonPath: $.Properties.*
+      jsonPath: $.*
       customJsonMapping:
         indexMapping: {"Data":{"propertyId":"","tenantId":"","propertyDetails":{},"address":{},"ward":{},"tenantData":{},"@timestamp":"timestamp"}}
         fieldMapping:
