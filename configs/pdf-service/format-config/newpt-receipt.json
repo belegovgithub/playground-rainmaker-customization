@@ -78,6 +78,18 @@
             ],
             [
               {
+                "text": "{{owner_label}}",
+                "style": "pdf-label",
+                "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"]
+              },
+              {
+                "text": "{{ownerName}}",
+                "style": "pdf-value",
+                "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"]
+              }
+            ],
+            [
+              {
                 "text": "{{received_from_label}}",
                 "style": "pdf-label",
                 "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"]
@@ -88,6 +100,7 @@
                 "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"]
               }
             ],
+            
             [
               {
                 "text": "Address",

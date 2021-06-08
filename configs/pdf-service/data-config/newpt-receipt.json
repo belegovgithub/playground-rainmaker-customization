@@ -12,6 +12,7 @@
           "mappings": [
             {
               "direct": [
+                
                 {
                   "variable": "payerName", 
                   "value": {
@@ -117,6 +118,18 @@
                     "variable": "form-no",
                     "value": {
                       "path": "PDF_STATIC_LABEL_PT_RECEIPT_FORM_NO_NEW"
+                    },
+                    "type": "label",
+                    "localisation":{
+                      "required":true,
+                      "prefix": null,
+                      "module":"rainmaker-pdf"
+                   }
+                  },
+                  {
+                    "variable": "owner_label",
+                    "value": {
+                      "path": "PDF_STATIC_LABEL_PT_RECEIPT_OWNER_LABEL"
                     },
                     "type": "label",
                     "localisation":{
@@ -535,6 +548,12 @@
                   "variable": "address",
                   "value": {
                     "path": "$.address.city"
+                  }
+                },
+                {
+                  "variable": "ownerName",
+                  "value": {
+                    "path": "$.owners[0].name"
                   }
                 },
                 {
