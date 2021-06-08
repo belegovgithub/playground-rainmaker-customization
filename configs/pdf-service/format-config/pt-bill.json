@@ -6,6 +6,16 @@
     },
     "content": [
       {
+        "style":"ws-head",
+        "table":{
+           "widths":[
+              "*"
+           ],
+           "body":[
+              [
+                  {
+                 "stack": [
+      {
         "style": "ws-head",
         "table": {
           "widths": ["*"],
@@ -16,9 +26,9 @@
                   {
                     "image": "{{logoImage}}",
                     "width": 60,
-                    "height": 72,
+                    "height": 70,
                     "alignment": "left",
-                    "margin": [20, 5, 0, 0]
+                    "margin": [20, 0, 0, 0]
                   },
                   {
                     "stack": [
@@ -51,7 +61,7 @@
           ]
         },
         "border": true,
-        "margin": [0, -20, 0, 0]
+        "margin": [0, -5, 0, 0]
       },
       {
         "style": "ws-head",
@@ -64,31 +74,37 @@
                   {
                     "text": "Bill No",
                     "style": "label-headder",
-                    "width": "18%" 
+                    "width": "18%",
+                    "margin": [0, 0, 0, -5]
                   },
                   {
                     "text": " : ",
-                    "width": "2%"
+                    "width": "2%",
+                    "margin": [0, 0, 0, -5]
                   },
                   {
                     "text": "{{billNo}}",
                     "style": "label-value",
-                    "width": "30%" 
+                    "width": "30%",
+                    "margin": [0, 0, 0, -5]
                    
                   },
                   {
                     "text": "Property No.",
                     "style": "label-headder",
-                    "width": "18%"   
+                    "width": "18%",
+                    "margin": [0, 0, 0, -5]
                   },
                   {
                     "text": " : ",
-                    "width": "2%"  
+                    "width": "2%",
+                    "margin": [0, 0, 0, -5]
                   },
                   {
                     "text": "{{propertyNo}}",
                     "style": "label-value",
-                    "width": "30%"           
+                    "width": "30%" ,
+                    "margin": [0, 0, 0, -5]     
                   }
                 ]
               }
@@ -99,32 +115,38 @@
                   {
                     "text": "Bill Date",
                     "style": "label-headder",
-                    "width": "18%" 
+                    "width": "18%",
+                    "margin": [0, 0, 0, -5] 
                   },
                   {
                     "text": " : ",
                     "width": "2%",
-                    "fontSize": 10
+                    "fontSize": 9,
+                    "margin": [0, 0, 0, -5]
                   },
                   {
                     "text": "{{billDate}}",
                     "style": "label-value",
-                    "width": "30%"         
+                    "width": "30%",
+                    "margin": [0, 0, 0, -5]        
                   },
                   {
                     "text": "Old Property No.",
                     "style": "label-headder",
-                    "width": "18%" 
+                    "width": "18%",
+                    "margin": [0, 0, 0, -5]
                   },
                   {
                     "text": " : ",
                     "width": "2%",
-                    "fontSize": 10
+                    "fontSize": 9,
+                    "margin": [0, 0, 0, -5]
                   },
                   {
                     "text": "{{oldPropertyNo}}",
                     "style": "label-value",
-                    "width": "30%"         
+                    "width": "30%",
+                    "margin": [0, 0, 0, -5]         
                   }
                 ]
               }
@@ -135,68 +157,38 @@
                   {
                     "text": "Location",
                     "style": "label-headder",
-                    "width": "18%" 
+                    "width": "18%",
+                    "margin": [0, 0, 0, -5] 
                   },
                   {
                     "text": " : ",
                     "width": "2%",
-                    "fontSize": 10
+                    "fontSize": 9,
+                    "margin": [0, 0, 0, -5]
                   },
                   {
                     "text": "{{location}}",
                     "style": "label-value",
-                    "width": "30%"         
+                    "width": "30%",
+                    "margin": [0, 0, 0, -5]        
                   },
                   {
                     "text": "Usage Type",
                     "style": "label-headder",
-                    "width": "18%" 
+                    "width": "18%",
+                    "margin": [0, 0, 0, -5] 
                   },
                   {
                     "text": " : ",
                     "width": "2%",
-                    "fontSize": 10
+                    "fontSize": 9,
+                    "margin": [0, 0, 0, -5]
                   },
                   {
                     "text": "{{usageType}}",
                     "style": "label-value",
-                    "width": "30%"         
-                  }
-                ]
-              }
-            ],
-            [
-              {
-                "columns": [
-                  {
-                    "text": "Address",
-                    "style": "label-headder",
-                    "width": "18%" 
-                  },
-                  {
-                    "text": " : ",
-                    "width": "2%",
-                    "fontSize": 10
-                  },
-                  {
-                    "text": "{{address}}",
-                    "style": "label-value",
-                    "width": "30%"         
-                  },
-                  {
-                    "text": "ARV",
-                    "style": "label-headder",
-                    "width": "18%" 
-                  },
-                  {
-                    "text": " : ",
-                    "width": "2%",
-                    "fontSize": 10
-                  },
-                  {
-                    "text": "{{arv}}",
-                    "style": "label-value",
-                    "width": "30%"         
+                    "width": "30%",
+                    "margin": [0, 0, 0, -5]       
                   }
                 ]
               }
@@ -207,32 +199,73 @@
                   {
                     "text": "Assessee Name",
                     "style": "label-headder",
-                    "width": "18%" 
+                    "width": "18%",
+                    "margin": [0, 0, 0, -5]
                   },
                   {
                     "text": " : ",
                     "width": "2%",
-                    "fontSize": 10
+                    "fontSize": 9,
+                    "margin": [0, 0, 0, -5]
                   },
                   {
                     "text": "{{assesseName}}",
                     "style": "label-value",
-                    "width": "30%"         
+                    "width": "30%" ,
+                    "margin": [0, 0, 0, -5]       
                   },
                   {
-                    "text": " ",
+                    "text": "ARV",
                     "style": "label-headder",
-                    "width": "18%" 
+                    "width": "18%",
+                    "margin": [0, 0, 0, -5]
                   },
                   {
-                    "text": " ",
+                    "text": " : ",
                     "width": "2%",
-                    "fontSize": 10
+                    "fontSize": 9,
+                    "margin": [0, 0, 0, -5]
                   },
                   {
-                    "text": " ",
+                    "text": "{{arv}}",
                     "style": "label-value",
-                    "width": "30%"         
+                    "width": "30%",
+                    "margin": [0, 0, 0, -5]       
+                  }
+                ]
+              }
+            ]
+          ]
+      },
+      "layout": "noBorders",
+      "margin": [0, 0, 0, 0]
+    },
+        {
+              "style": "ws-head",
+              "table": {
+                "widths": ["110%","*","*"],
+                "body": [
+            [
+              {
+                "columns": [
+                  {
+                    "text": "Address",
+                    "style": "label-headder",
+                    "width": "18%" ,
+                    "margin": [0, 0, 0, -4]
+                  },
+                  {
+                    "text": " : ",
+                    "width": "2%",
+                    "fontSize": 9,
+                    "margin": [0, 0, 0, -4]
+                  },
+                  {
+                    "text": "{{houseno}} {{street}} {{address}} {{pincode}}",
+                    "style": "label-value",
+                    "width": "30%",
+                    "margin": [0, 0, 0, -4]
+                          
                   }
                 ]
               }
@@ -240,37 +273,41 @@
           ]
         },
         "layout": "noBorders",
-        "margin": [0, 10, 0, 10]
+        "margin": [0, 0, 0, 0]
       },
       {
         "style": "ws-head",
         "table": {
-          "widths": ["40%", "17%", "17%", "26%"],
+          "widths": ["38%", "18%", "18%", "26%"],
           "body": [
             [
               {
                 "text": "Tax Description",
                 "fillColor": "#cccccc",
                 "bold": true,
-                "alignment":"center"
+                "alignment":"center",
+                "margin": [0, -2, 0, -2]
               },
               {
-                "text": "Arrear Amount Rs.",
+                "text": "Arrear Amount(Rs)",
                 "bold": true,
                 "fillColor": "#cccccc",
-                "alignment":"center"
+                "alignment":"center",
+                "margin": [0, -2, 0, -2]
               },
               {
-                "text": "Current Demand Rs",
+                "text": "Current Demand(Rs)",
                 "bold": true,
                 "fillColor": "#cccccc",
-                "alignment":"center"
+                "alignment":"center",
+                "margin": [0, -2, 0, -2]
               },
               {
-                "text": "Total Amount Rs.",
+                "text": "Total Amount(Rs)",
                 "bold": true,
                 "fillColor": "#cccccc", 
-                "alignment":"center"
+                "alignment":"center",
+                "margin": [0, -2, 0, -2]
               }
             ]
           ]
@@ -279,21 +316,23 @@
       {
         "style": "ws-head",
         "table": {
-          "widths": ["40%", "17%", "17%", "26%"],
+          "widths": ["38%", "18%", "18%", "26%"],
           "body": [
             "{{#variable10}}[{\"text\": \"{{taxheadCode}}\"},{\"text\": \"{{arrearAmount}}\",\"style\": \"pdf-value\"},{\"text\": \"{{currentAmount}}\",\"style\": \"pdf-value\"},{\"text\": \"{{totalAmount}}\",\"style\": \"pdf-value\"}]{{/variable10}}"
-          ]
+          ],
+          "margin": [0, -2, 0, -2]
         } 
       },
       {
         "style": "ws-head",
         "table": {
-          "widths": ["40%", "17%", "17%", "26%"],
+          "widths": ["38%", "18%", "18%", "26%"],
           "body": [
             [
               {
                 "text": "Total Bill Amount ",
                 "bold": true,
+                "margin": [0, -2, 0, -2],
                 "border": [
                   true,
                   false,
@@ -304,6 +343,7 @@
               {
                 "text": "{{totalArrearsval}}",
                 "bold": true,
+                "margin": [0, -2, 0, -2],
                 "alignment":"right",
                 "border": [
                   false,
@@ -315,6 +355,7 @@
               {
                 "text": "{{totalCurrentval}}",
                 "bold": true,
+                "margin": [0, -2, 0, -2],
                 "alignment":"right",
                 "border": [
                   false,
@@ -326,6 +367,7 @@
               {
                 "text": "{{totalCalculatedAmount}}",
                 "bold": true,
+                "margin": [0, -2, 0, -2],
                 "alignment":"right",
                 "border": [
                   false,
@@ -339,6 +381,7 @@
               {
                 "text": "Advance Amount available / Paid",
                 "bold": true,
+                "margin": [0, -2, 0, -2],
                 "border": [
                   true,
                   false,
@@ -349,6 +392,7 @@
               {
                 "text": " ",
                 "bold": true,
+                "margin": [0, -2, 0, -2],
                 "border": [
                   false,
                   false,
@@ -359,6 +403,7 @@
               {
                 "text": " ",
                 "bold": true,
+                "margin": [0, -2, 0, -2],
                 "border": [
                   false,
                   false,
@@ -369,6 +414,7 @@
               {
                 "text": "{{advanceAmountPaid}}",
                 "alignment":"right",
+                "margin": [0, -2, 0, -2],
                 "bold": true,
                 "border": [
                   false,
@@ -382,6 +428,7 @@
               {
                 "text": "Amount due as on Date",
                 "bold": true,
+                "margin": [0, -2, 0, -2],
                 "border": [
                   true,
                   false,
@@ -392,6 +439,7 @@
               {
                 "text": " ",
                 "bold": true,
+                "margin": [0, -2, 0, -2],
                 "border": [
                   false,
                   false,
@@ -402,6 +450,7 @@
               {
                 "text": " ",
                 "bold": true,
+                "margin": [0, -2, 0, -2],
                 "border": [
                   false,
                   false,
@@ -412,6 +461,7 @@
               {
                 "text": "{{totalCalculatedAmount}}",
                 "alignment":"right",
+                "margin": [0, -2, 0, -2],
                 "bold": true,
                 "border": [
                   false,
@@ -425,6 +475,7 @@
               {
                 "text": "Amount adjusted against current dues",
                 "bold": true,
+                "margin": [0, -2, 0, -2],
                 "border": [
                   true,
                   false,
@@ -435,6 +486,7 @@
               {
                 "text": " ",
                 "bold": true,
+                "margin": [0, -2, 0, -2],
                 "border": [
                   false,
                   false,
@@ -445,6 +497,7 @@
               {
                 "text": " ",
                 "bold": true,
+                "margin": [0, -2, 0, -2],
                 "border": [
                   false,
                   false,
@@ -455,6 +508,7 @@
               {
                 "text": "{{amountAdjustedval}}",
                 "alignment":"right",
+                "margin": [0, -2, 0, -2],
                 "bold": true,
                 "border": [
                   false,
@@ -468,6 +522,7 @@
               {
                 "text": "Advance Carry Forward",
                 "bold": true,
+                "margin": [0, -2, 0, -2],
                 "border": [
                   true,
                   false,
@@ -478,6 +533,7 @@
               {
                 "text": " ",
                 "bold": true,
+                "margin": [0, -2, 0, -2],
                 "border": [
                   false,
                   false,
@@ -488,6 +544,7 @@
               {
                 "text": " ",
                 "bold": true,
+                "margin": [0, -2, 0, -2],
                 "border": [
                   false,
                   false,
@@ -498,6 +555,7 @@
               {
                 "text": "{{advanceCarryForward}}",
                 "alignment":"right",
+                "margin": [0, -2, 0, -2],
                 "bold": true,
                 "border": [
                   false,
@@ -511,6 +569,7 @@
               {
                 "text": "Total Payable Amount",
                 "bold": true,
+                "margin": [0, -2, 0, -2],
                 "border": [
                   true,
                   false,
@@ -521,6 +580,7 @@
               {
                 "text": " ",
                 "bold": true,
+                "margin": [0, -2, 0, -2],
                 "border": [
                   false,
                   false,
@@ -531,6 +591,7 @@
               {
                 "text": " ",
                 "bold": true,
+                "margin": [0, -2, 0, -2],
                 "border": [
                   false,
                   false,
@@ -542,6 +603,7 @@
                 "text": "{{payableAmount}}",
                 "alignment":"right",
                 "bold": true,
+                "margin": [0, -2, 0, -2],
                 "border": [
                   false,
                   false,
@@ -562,6 +624,7 @@
               {
                 "text": "Amount (In Words) :{{amountInWords}}",
                 "bold": true,
+                "margin": [0, -2, 0, -2],
                 "fillColor": "#cccccc",
                 "border": [
                   true,
@@ -607,13 +670,66 @@
         }, "layout": "noBorders"
       },
       {
+        "style": "ws-head1",
+        "table": {
+          "widths": ["6%","94%"],
+          "body": [
+            [
+              {
+                "text": "NOTE:",
+                "bold": true,
+                "border": [
+                  false,
+                  false,
+                  false,
+                  false
+                ]
+              },
+              {
+                "text": "{{demand_date}}",
+                "bold": false,
+                "border": [
+                  false,
+                  false,
+                  false,
+                  false
+                ]
+              }
+
+            ],
+            [
+              {
+                "text": " ",
+                "bold": true,
+                "border": [
+                  false,
+                  false,
+                  false,
+                  false
+                ]
+              },
+              {
+                "text": "{{interest_date}}",
+                "bold": false,
+                "border": [
+                  false,
+                  false,
+                  false,
+                  false
+                ]
+              }
+            ]
+          ]
+        },"layout": "noBorders"
+      },
+      {
         "canvas": [
           {
             "type": "line",
             "x1": -40,
-            "y1": 30,
+            "y1": 5,
             "x2": 700,
-            "y2": 30,
+            "y2": 5,
             "dash": {
               "length": 10,
               "space": 5
@@ -626,7 +742,7 @@
         "width": 24,
         "height": 24,
         "margin": [
-          -30,
+          -10,
           -11.2,
           0,
           0
@@ -642,9 +758,9 @@
         "table": {
           "widths": [
             "20%",
-            "35%",
-            "25%",
-            "35%"
+            "30%",
+            "20%",
+            "30%"
           ],
           "body": [
             [
@@ -691,7 +807,7 @@
                   false
                 ],
                 "style": "receipt-table-value-ack" ,
-                "bold":false       
+                "bold":false     
               }
             ],
             [
@@ -765,7 +881,7 @@
                   "style": "receipt-table-value-ack"
                 },
                 {
-                  "text": "{{assesseName}},{{address}}",
+                  "text": "{{assesseName}},{{location}},{{address}}",
                   "border": [
                     false,
                     false,
@@ -781,18 +897,31 @@
           ]
         }
       },
-
       {
         "text": "{{receivers_signature}}",
         "style": "footer-bottom"
       }
+    ]
+  }
+]
+]
+},
+"layout": "noBorders",
+"margin":[
+-25,
+-12,
+-25,
+0
+]
+}
     ],
     "styles": {
       "label-headder": {
         "bold": true,
         "alignment": "left",
         "width": "18%",
-        "fontSize": 10
+        "fontSize": 9,
+        "margin":[0,-1,0,-15]
       },
       "label-colon": {
         "width": "2%",
@@ -802,12 +931,18 @@
         "alignment":"right"
       },
       "ws-head": {
-        "fontSize": 10
+        "fontSize": 9,
+        "margin":[0,-1,0,-1]
+      },
+      "ws-head1": {
+        "fontSize": 8,
+        "margin":[0,15,0,-1]
       },
       "label-value": {
         "alignment": "left",
-        "fontSize": 10,
-        "width": "30%"
+        "fontSize": 9,
+        "width": "30%",
+        "margin":[0,-1,0,-15]
       },
       "noc-head": {
         "margin": [-25, -30, 0, 1]
@@ -834,12 +969,12 @@
       "noc-table4": {
         "fontSize": 12,
         "color": "#484848",
-        "margin": [-25, 60, -8, -8]
+        "margin": [-25, 75, -8, -8]
       },
       "noc-table5": {
         "fontSize": 12,
         "color": "#484848",
-        "margin": [-25, 5, -8, -8]
+        "margin": [-25, 7, -8, -18]
       },
       "noc-table2": {
         "fontSize": 12,
@@ -857,7 +992,7 @@
         "fontWeight": 700,
         "alignment": "center",
         "bold": true,
-        "margin": [0, 0, 0, 10]
+        "margin": [0, 0, 0, 0]
       },
       "header-title": {
         "color": "#000000",
@@ -865,7 +1000,7 @@
         "fontWeight": 700,
         "alignment": "center",
         "bold": true,
-        "margin": [0, 0, 0, 10]
+        "margin": [0, 0, 0, 0]
       },
       "receipt-table-value": {
         "color": "#000000",
@@ -877,9 +1012,9 @@
       "receipt-table-value-ack": {
         "color": "#000000",
         "bold": true,
-        "fontSize": 12,
+        "fontSize": 9,
         "fontWeight": 500,
-        "margin": [0, -5, 0, 0]
+        "margin": [20, 0, 0, -4]
       },
       "receipt-table-value2": {
         "color": "#000000",
@@ -955,14 +1090,15 @@
         "alignment": "right"
       },
       "footer-header": {
-        "margin": [0, 5, 0, -50],
+        "margin": [0, 0, 0, -70],
         "bold": true,
         "color": "#000000",
         "alignment": "center"
       },
       "footer-bottom": {
-        "margin": [0, 15, 0, 0],
+        "margin": [0, 20, 0, 0],
         "bold": true,
+        "fontSize": 10,
         "color": "#000000",
         "alignment": "right"
       },

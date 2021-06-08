@@ -116,7 +116,7 @@
                 {
                     "variable": "form-no",
                     "value": {
-                      "path": "PDF_STATIC_LABEL_PT_RECEIPT_FORM_NO"
+                      "path": "PDF_STATIC_LABEL_PT_RECEIPT_FORM_NO_NEW"
                     },
                     "type": "label",
                     "localisation":{
@@ -485,6 +485,52 @@
                  }
                 },
                 {
+                  "variable": "location",
+                  "value": {
+                    "path": "$.address.locality.code"
+                  },
+                  "localisation":{
+                    "required":true,
+                    "prefix": "REVENUE",
+                    "module": "rainmaker",
+                    "prefixCbName":true
+                 },
+                 "type":"boundary"
+                },
+                {
+                  "variable": "houseno",
+                  "value": {
+                    "path": "$.address.street"
+                  },
+                  "type":"setEmpty"
+                },
+                {
+                  "variable": "street",
+                  "value": {
+                    "path": "$.address.street"
+                  },
+                  "type":"setEmpty"
+                },
+                {
+                  "variable": "pincode",
+                  "value": {
+                    "path": "$.address.pincode"
+                  },
+                  "type":"setEmpty"
+                },
+                {
+                  "variable": "city",
+                  "value": {
+                    "path": "$.address.city"
+                  }
+                },
+                {
+                  "variable": "address",
+                  "value": {
+                    "path": "$.address.city"
+                  }
+                },
+                {
                     "variable": "cantonment-board",
                     "value": {
                       "path": "PDF_STATIC_LABEL_CONSOLIDATED_TLCERTIFICATE_MUNICIPAL_CORPORATION"
@@ -580,7 +626,7 @@
               "qrcodeConfig": [
                 {
                     "variable": "qrcodeimage",
-                    "value":"Payer Name : {{payerName}}, Receipt number: {{receiptNo}}, Date of payment: {{receiptDate}}, Fees Paid: {{paidAmount}}"
+                    "value":"Payer Name : {{payerName}}, Address : {{location}}, Receipt number: {{receiptNo}}, Date of payment: {{receiptDate}}, Fees Paid: {{paidAmount}}"
                 }
               ]
           }

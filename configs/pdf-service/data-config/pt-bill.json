@@ -53,6 +53,28 @@
                "type":"boundary"
               },
               {
+                "variable": "houseno",
+                "value": {
+                  "path": "$.address.street"
+                },
+                "type":"setEmpty"
+              },
+              {
+                "variable": "street",
+                "value": {
+                  "path": "$.address.street"
+                },
+                "type":"setEmpty"
+              },
+              {
+                "variable": "pincode",
+                "value": {
+                  "path": "$.address.pincode"
+                },
+                "type":"setEmpty"
+              }
+              ,
+              {
                 "variable": "usageType",
                 "value": {
                   "path": "$.usageCategory"
@@ -275,6 +297,30 @@
                 }
               },
               {
+                "variable": "demand_date",
+                "value": {
+                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_DEMAND_DATE"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-pdf"
+                }
+              },
+              {
+                "variable": "interest_date",
+                "value": {
+                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_INTEREST_DATE"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-pdf"
+                }
+              },
+              {
                 "variable": "bill_no",
                 "value": {
                   "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_BILL_NO"
@@ -324,7 +370,7 @@
               },
               {
                 "variable": "scissorImage",
-                "url": "http://www.pngall.com/wp-content/uploads/2016/03/Scissor-PNG-Clipart.png",
+                "id": "scissor.png",
                 "type": "image"
               },
               {
@@ -370,19 +416,19 @@
             "derived": [
               {
                 "variable": "totalArrears",
-                "formula": "{{educationTaxArrear}} + {{lighteningTaxArrear}} + {{converancyTaxArrear}} + {{waterTaxArrear}} + {{houseTaxArrear}}"
+                "formula": "({{educationTaxArrear}} + {{lighteningTaxArrear}} + {{converancyTaxArrear}} + {{waterTaxArrear}} + {{houseTaxArrear}}).toFixed(2)"
               },
               {
                 "variable": "totalCurrent",
-                "formula": "{{educationTaxCurrent}} + {{lighteningTaxCurrent}} + {{converancyTaxCurrent}} + {{waterTaxCurrent}} + {{houseTaxCurrent}}"
+                "formula": "({{educationTaxCurrent}} + {{lighteningTaxCurrent}} + {{converancyTaxCurrent}} + {{waterTaxCurrent}} + {{houseTaxCurrent}}).toFixed(2)"
               },
               {
                 "variable": "totalCalculatedAmount",
-                "formula": "{{totalArrearsval}} + {{totalCurrentval}}" 
+                "formula": "({{totalArrearsval}} + {{totalCurrentval}}).toFixed(2)" 
               },
               {
                 "variable": "demandTotalAmount",
-                "formula": "{{ws_charge}} + {{pt_charge}}" 
+                "formula": "(0).toFixed(2)" 
               },
               {
                 "variable": "advanceAdjusted",
@@ -433,27 +479,8 @@
                       }
                     }
                   ]
-              },
-              {
-                "path": "http://billing-service.egov:8080/billing-service/demand/_search",
-                "queryParam": "tenantId=$.tenantId,consumerCode=$.consumerCode,businessService=WS",
-                "apiRequest": null,
-                "responseMapping": [
-                  {
-                    "variable": "pt_advanceAmount",
-                    "value": "$.Demands[(@.length-1)].demandDetails[?(@.taxHeadMasterCode == 'PT_ADVANCE_CARRYFORWARD')].taxAmount"
-                  },
-                  {
-                    "variable": "ws_charge",
-                    "value": "$.Demands[(@.length-1)].demandDetails[?(@.taxHeadMasterCode == 'PT_WATER_TAX')].taxAmount"
-                  },
-                  {
-                    "variable": "pt_charge",
-                    "value": "$.Demands[(@.length-1)].demandDetails[?(@.taxHeadMasterCode == 'PT_HOUSE_TAX')].taxAmount"
-                  }
-                   
-                ]
-              }  
+              }
+              
             ]
           },
           {
