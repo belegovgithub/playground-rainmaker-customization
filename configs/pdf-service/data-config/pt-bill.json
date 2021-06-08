@@ -55,14 +55,7 @@
               {
                 "variable": "houseno",
                 "value": {
-                  "path": "$.address.street"
-                },
-                "type":"setEmpty"
-              },
-              {
-                "variable": "street",
-                "value": {
-                  "path": "$.address.street"
+                  "path": "$.address.doorNo"
                 },
                 "type":"setEmpty"
               },

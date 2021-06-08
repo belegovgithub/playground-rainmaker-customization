@@ -261,7 +261,7 @@
                     "margin": [0, 0, 0, -4]
                   },
                   {
-                    "text": "{{houseno}} {{street}} {{address}} {{pincode}}",
+                    "text": "{{houseno}} {{address}} {{pincode}}",
                     "style": "label-value",
                     "width": "30%",
                     "margin": [0, 0, 0, -4]
@@ -644,7 +644,7 @@
           "body": [
             [
               {
-                "text": "Bill Due Date: ",
+                "text": "Bill Due Date: 30/06/2021",
                 "bold": true
                 
               } 
