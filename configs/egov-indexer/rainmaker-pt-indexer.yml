@@ -7,7 +7,7 @@ ServiceMaps:
     indexes:
     - name: ptindex-v1
       type: property
-      id: $.Property.id, $.tenantId
+      id: $.Property.id, $.Property.tenantId
       isBulk: true
       timeStampField: $.Property.auditDetails.createdTime
       jsonPath: $.Property
@@ -29,7 +29,7 @@ ServiceMaps:
         #  outJsonPath: $.Data.@timestamp
         externalUriMapping:
         - path: http://egov-location:8080/egov-location/location/v11/boundarys/_search
-          queryParam: hierarchyTypeCode=REVENUE,boundaryType=Block,codes=$.address.locality.code,tenantId=$.tenantId
+          queryParam: hierarchyTypeCode=REVENUE,boundaryType=Block,codes=$.Property.address.locality.code,tenantId=$.Property.tenantId
           apiRequest: {"RequestInfo": {"apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654", "requesterId": "61",
           "authToken": "02dbe5be-28df-4d82-954f-3d27c56cca7d","userInfo":{"id":73}}}
           uriResponseMapping:
@@ -43,7 +43,7 @@ ServiceMaps:
           filter: "[?(@.code == $tenant)]"
           filterMapping:
           - variable: $tenant
-            valueJsonpath: $.tenantId
+            valueJsonpath: $.Property.tenantId
           uriResponseMapping:
           - inJsonPath: $.MdmsRes.tenant.tenants
             outJsonPath: $.Data.tenantData
