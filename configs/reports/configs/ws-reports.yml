@@ -211,7 +211,7 @@ ReportDefinitions:
           INNER JOIN eg_user wsuser ON wsuser.uuid = connholder.userid group by connectionid)
           connholder ON connholder.connectionid = ws.id
     LEFT OUTER JOIN message ON substring(message.code,11) ='CONNECTION_ACTIVATED' AND message.locale = 'en_IN'  
-    LEFT OUTER JOIN eg_ws_service as service ON service.connection_id=ws.id WHERE ws.tenantid like 'pb.ajmer' AND service.connectiontype is NOT NULL
+    LEFT OUTER JOIN eg_ws_service as service ON service.connection_id=ws.id WHERE ws.tenantid like $tenantid AND service.connectiontype is NOT NULL
 
 - reportName: CBWaterRegistryReport
   summary: CB Level Water Registry Report
@@ -599,7 +599,7 @@ ReportDefinitions:
     LEFT OUTER JOIN message ON CONCAT('WF_NEWWS1_',ws.applicationstatus) = message.code AND message.locale='en_IN' 
     LEFT OUTER JOIN message  msgmodify ON CONCAT('WF_MODIFYWSCONNECTION_',ws.applicationstatus) = msgmodify.code AND msgmodify.locale='en_IN' 
     LEFT OUTER JOIN message as msg ON CONCAT('WS_CONNECTION_TYPE_',ws.applicationtype) = msg.code AND msg.locale='en_IN' AND msg.module='rainmaker-ws' 
-    WHERE ws.tenantid like 'pb.ajmer' AND service.connectiontype is NOT NULL 
+    WHERE ws.tenantid like $tenantid AND service.connectiontype is NOT NULL 
   orderby: ORDER BY  ws.applicationno 
 
 - reportName: SewerageConnectionApplicationStatusReport
