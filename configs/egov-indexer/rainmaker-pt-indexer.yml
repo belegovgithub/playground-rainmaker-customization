@@ -10,12 +10,12 @@ ServiceMaps:
       id: $.Property.id, $.Property.tenantId
       isBulk: true
       timeStampField: $.Property.auditDetails.createdTime
-      jsonPath: $.Property
+      jsonPath: $
       customJsonMapping:
         #indexMapping: {"Data":{"propertyId":"","tenantId":"","propertyDetails":{},"address":{},"ward":{},"tenantData":{},"@timestamp":"timestamp"}}
         indexMapping: {"Data":{"property":{},"ward":{},"tenantData":{},"@timestamp":"timestamp"}}
         fieldMapping:
-        - inJsonPath: $
+        - inJsonPath: $.Property
           outJsonPath: $.Data.property
        # - inJsonPath: $.propertyId
        #   outJsonPath: $.Data.propertyId
