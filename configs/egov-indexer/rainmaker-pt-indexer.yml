@@ -16,7 +16,7 @@ ServiceMaps:
         indexMapping: {"Data":{"property":{},"ward":{},"tenantData":{},"@timestamp":"timestamp"}}
         fieldMapping:
         - inJsonPath: $
-          outJsonPath: $.Data.propertyId
+          outJsonPath: $.Data.property
        # - inJsonPath: $.propertyId
        #   outJsonPath: $.Data.propertyId
         #- inJsonPath: $.tenantId
