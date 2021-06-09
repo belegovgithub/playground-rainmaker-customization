@@ -234,7 +234,7 @@
                 "style": "receipt-table-value"
               },
               {
-                "text": "{{payerAddress}}", 
+                "text": "{{doorNo}} {{buildingName}} {{street}} {{tradeAddress}}, {{city}}", 
                 "border": [
                   false,
                   false,
