@@ -1747,7 +1747,7 @@ ReportDefinitions:
     SUM(CASE WHEN dem_code = 'PT_ADVANCE_CARRYFORWARD' THEN ABS(dem_tax) ELSE 0 END) as advance
     from (
     select demand.tenantid,
-    demand.createdtime as createdtime
+    demand.createdtime as createdtime,
     demanddetail.taxamount+COALESCE( amendtaxdetail.taxamount, 0 )  -demanddetail.collectionamount as taxout,
     CASE WHEN amendtaxdetail.id = demanddetail.id then 0 ELSE demanddetail.taxamount END as dem_tax,
     demanddetail.taxheadcode as dem_code,demanddetail.collectionamount,amendtaxdetail.taxamount as amen_tax,
