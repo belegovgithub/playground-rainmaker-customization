@@ -417,6 +417,51 @@
                 }
               },
               {
+                "variable": "doorNo",
+                "value": {
+                  "path": "$.address.doorNo"
+                },
+                "type":"setEmpty"
+            },
+            {
+              "variable": "buildingName",
+              "value": {
+                "path": "$.address.buildingName"
+              },
+              "type":"setEmpty"
+            },
+           {
+            "variable": "street",
+            "value": {
+              "path": "$.address.street"
+              },
+              "type":"setEmpty"
+           },
+              {
+                "variable": "tradeAddress",
+                "value": {
+                  "path": "$.address.locality.code"
+                },
+                "localisation":{
+                  "required":true,
+                  "prefix": "REVENUE",
+                  "module": "rainmaker",
+                  "prefixCbName":true
+               },
+               "type":"boundary"
+            },
+              {
+                "variable": "city",
+                "value": {
+                  "path": "$.address.city"
+                },
+                "localisation":{
+                  "required":true,
+                  "prefix": "TENANT_TENANTS",
+                  "module": "rainmaker-common"
+               }
+            },
+              {
                 "variable": "billNo",
                 "value": {
                   "path": "$.billNumber"
