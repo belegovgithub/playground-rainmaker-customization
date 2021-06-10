@@ -253,6 +253,18 @@
                 }
               },
               {
+                "variable": "old_property_id",
+                "value": {
+                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_OLD_PROP_ID"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-pdf"
+                }
+              },
+              {
                 "variable": "rebate_label",
                 "value": {
                   "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_REBATE"
@@ -430,6 +442,12 @@
               },
               "type":"setEmpty"
             },
+            {
+              "variable": "oldPropertyId",
+              "value": {
+                "path": "$.oldPropertyId"
+              } 
+            },
            {
             "variable": "street",
             "value": {
@@ -454,12 +472,7 @@
                 "variable": "city",
                 "value": {
                   "path": "$.address.city"
-                },
-                "localisation":{
-                  "required":true,
-                  "prefix": "TENANT_TENANTS",
-                  "module": "rainmaker-common"
-               }
+                } 
             },
               {
                 "variable": "billNo",
