@@ -234,7 +234,7 @@
                 "style": "receipt-table-value"
               },
               {
-                "text": "{{payerAddress}}", 
+                "text": "{{doorNo}} {{buildingName}} {{street}} {{tradeAddress}}, {{city}}", 
                 "border": [
                   false,
                   false,
@@ -253,24 +253,38 @@
                 ]
               },
               {
-                "text": "{{bill_due_date}}",
-                "border": [
-                  true,
-                  false,
-                  false,
-                  true
-                ],
-                "style": "right-receipt-table"
+                "stack": [
+                    {
+                    "text":"{{bill_due_date}}",
+                    "style": "receipt-table-value"
+                  },
+                  {
+                    "text": "{{old_property_id}}", 
+                    "style": "receipt-table-value"
+                  }
+              ],"border": [
+                true,
+                false,
+                false,
+                true
+              ]
               },
               {
-                "text": "{{billDueDate}}",
-                "border": [
-                  false,
-                  false,
-                  true,
-                  true
-                ],
-                "style": "right-receipt-table2"
+                "stack": [
+                  {
+                  "text": "{{billDueDate}}",
+                  "style": "receipt-table"
+                  },
+                  {
+                    "text": "{{oldPropertyId}}",
+                    "style": "receipt-table"
+                  }
+              ],"border": [
+                false,
+                false,
+                true,
+                true
+              ]
               }
             ]
           ]
