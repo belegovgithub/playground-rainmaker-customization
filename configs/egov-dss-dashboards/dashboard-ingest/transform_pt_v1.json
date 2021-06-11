@@ -2,12 +2,12 @@
   {
     "operation": "shift",
     "spec": {
-      "property":{
+      "Data":{
         "propertyId":"propertyId",
         "tenantId":"tenantId",
-        "address":"property.address"
-      },
-      "ward" : "ward"
+        "propertyDetails":"propertyDetails",
+        "ward" : "ward"
+      }     
     }
   }
 ]
