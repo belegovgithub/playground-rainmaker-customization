@@ -44,3 +44,33 @@ ReportDefinitions:
       searchClause: AND extract(EPOCH from emp.declaredon)*1000 <= $toDate      
     query: select initcap(split_part(us.tenantid, '.', 2)) as tenantid, To_char(emp.declaredon,'DD/MM/YYYY') as declaredon, To_char(emp.startdate,'DD/MM/YYYY') as startdate, emp.agreed, To_char(emp.endddate,'DD/MM/YYYY') as endddate from eg_emp_declaration_dtls emp left join eg_user us on us.uuid=emp.declaredby where us.tenantid!='pb.testing'
     orderby: order by tenantid,declaredon
+    
+  - reportName: DGDELevelNonDeclarationStatusReport
+    summary: List of Declarations not taken by Employee
+    version: 1.0.0
+    moduleName: rainmaker-empdeclaration
+    sourceColumns:
+    - name: tenantid
+      label: EMP_DECL_TENANTID
+      type: string
+      source: empdeclaration
+      total: false
+    searchParams:
+    - name: year
+      label: EMP_DECL_YEAR
+      type: singlevaluelist
+      pattern: http://birth-death-services:8080/birth-death-services/common/getYears?|$.years.*.option|$.years.*.value
+      source: empdeclaration
+      wrapper: true
+      isMandatory: true      
+      searchClause: AND EXTRACT(year FROM endddate)= $year
+    - name: month
+      label: EMP_DECL_MONTH
+      type: singlevaluelist
+      pattern: http://birth-death-services:8080/birth-death-services/common/getMonths?|$.months.*.option|$.months.*.value
+      source: empdeclaration
+      wrapper: true
+      isMandatory: true 
+      searchClause: AND EXTRACT(month FROM endddate)= $month      
+    query: select initcap(split_part(mst.tenantid, '.', 2)) as tenantid from eg_lams_mst_office mst where mst.tenantid!='pb.testing' EXCEPT select initcap(split_part(us.tenantid, '.', 2)) as tenantid from eg_emp_declaration_dtls emp left join eg_user us on us.uuid=emp.declaredby where us.tenantid!='pb.testing'
+    orderby: order by tenantid
