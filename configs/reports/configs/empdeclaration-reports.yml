@@ -61,16 +61,14 @@ ReportDefinitions:
       type: singlevaluelist
       pattern: http://birth-death-services:8080/birth-death-services/common/getYears?|$.years.*.option|$.years.*.value
       source: empdeclaration
-      wrapper: true
       isMandatory: true      
-      searchClause: AND EXTRACT(year FROM endddate)= $year
+      searchClause: AND CONCAT(EXTRACT(year FROM endddate),'')= $year
     - name: month
       label: EMP_DECL_MONTH
       type: singlevaluelist
       pattern: http://birth-death-services:8080/birth-death-services/common/getMonths?|$.months.*.option|$.months.*.value
       source: empdeclaration
-      wrapper: true
       isMandatory: true 
-      searchClause: AND EXTRACT(month FROM endddate)= $month      
+      searchClause: AND CONCAT(EXTRACT(month FROM endddate),'')= $month      
     query: select initcap(split_part(mst.tenantid, '.', 2)) as tenantid from eg_lams_mst_office mst where mst.tenantid!='pb.testing' EXCEPT select initcap(split_part(us.tenantid, '.', 2)) as tenantid from eg_emp_declaration_dtls emp left join eg_user us on us.uuid=emp.declaredby where us.tenantid!='pb.testing'
     orderby: order by tenantid
