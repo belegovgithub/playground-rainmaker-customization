@@ -412,7 +412,7 @@
                 ]
               },
               {
-                "text": "{{AdvanceAmountPaid}}",
+                "text": "{{advanceAmountPaid}}",
                 "alignment":"right",
                 "margin": [0, -2, 0, -2],
                 "bold": true,
@@ -506,7 +506,7 @@
                 ]
               },
               {
-                "text": "{{AmountAdjustedval}}",
+                "text": "{{amountAdjustedval}}",
                 "alignment":"right",
                 "margin": [0, -2, 0, -2],
                 "bold": true,
@@ -553,7 +553,7 @@
                 ]
               },
               {
-                "text": "{{AdvanceCarryForward}}",
+                "text": "{{advanceCarryForward}}",
                 "alignment":"right",
                 "margin": [0, -2, 0, -2],
                 "bold": true,
@@ -600,7 +600,7 @@
                 ]
               },
               {
-                "text": "{{PayableAmount}}",
+                "text": "{{payableAmount}}",
                 "alignment":"right",
                 "bold": true,
                 "margin": [0, -2, 0, -2],
@@ -844,7 +844,7 @@
                 "style": "receipt-table-value-ack"
               },
               {
-                "text": "{{PayableAmount}}",
+                "text": "{{payableAmount}}",
                 "border": [
                   false,
                   false,

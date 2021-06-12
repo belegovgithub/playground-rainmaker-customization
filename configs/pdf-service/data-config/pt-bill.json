@@ -424,22 +424,6 @@
                 "formula": "(0).toFixed(2)" 
               },
               {
-                "variable": "AmountAdjustedval",
-                "formula": "({{amountAdjustedval}}).toFixed(2)" 
-              },
-              {
-                "variable": "AdvanceAmountPaid",
-                "formula": "({{advanceAmountPaid}}).toFixed(2)" 
-              },
-              {
-                "variable": "AdvanceCarryForward",
-                "formula": "({{advanceCarryForward}}).toFixed(2)" 
-              },
-              {
-                "variable": "PayableAmount",
-                "formula": "({{payableAmount}}).toFixed(2)" 
-              },
-              {
                 "variable": "advanceAdjusted",
                 "formula": "{{totalAmount}}>=0?({{totalAmount}}<{{demandTotalAmount}}?({{demandTotalAmount}} - {{totalAmount}}).toFixed(2):0):{{demandTotalAmount}} * -1"
               },
