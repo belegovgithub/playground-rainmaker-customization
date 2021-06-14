@@ -675,7 +675,7 @@
               },
               {
                 "variable": "demandTotalAmount",
-                "formula": "({{ws_roundoff}}+{{ws_charge}}+{{ws_water_cess}}+{{ws_time_interest}}+{{ws_time_penalty}}).toFixed(2)"
+                "formula": "({{ws_roundoff}}+{{ws_charge}}+{{ws_water_cess}}+{{ws_time_interest}}+{{ws_time_penalty}}+{{ws_time_adhocpenalty}}+{{ws_time_adhocRebate}}).toFixed(2)"
               },
               {
                 "variable": "billTotalAmount",
@@ -687,7 +687,7 @@
               },
               {
                 "variable": "arrears",
-                "formula": "{{billTotalAmount}}>{{demandTotalAmount}}?({{billTotalAmount}}-{{demandTotalAmount}}).toFixed(2):(0).toFixed(2)"
+                "formula": "{{billTotalAmount}}>={{demandTotalAmount}}?({{billTotalAmount}}-{{demandTotalAmount}}).toFixed(2):(0).toFixed(2)"
               },
               {
                 "variable": "advanceAdjusted",
@@ -778,6 +778,14 @@
                   {
                     "variable": "ws_time_penalty",
                     "value": "$.Demands[(@.length-1)].demandDetails[?(@.taxHeadMasterCode == 'WS_TIME_PENALTY')].taxAmount"
+                  },
+                  {
+                    "variable": "ws_time_adhocpenalty",
+                    "value": "$.Demands[(@.length-1)].demandDetails[?(@.taxHeadMasterCode == 'WS_TIME_ADHOC_PENALTY')].taxAmount"
+                  },
+                  {
+                    "variable": "ws_time_adhocRebate",
+                    "value": "$.Demands[(@.length-1)].demandDetails[?(@.taxHeadMasterCode == 'WS_TIME_ADHOC_REBATE')].taxAmount"
                   }
                 ]
               }
