@@ -261,7 +261,7 @@
                     "margin": [0, 0, 0, -4]
                   },
                   {
-                    "text": "{{houseno}} {{street}} {{address}} {{pincode}}",
+                    "text": "{{houseno}} {{address}} {{pincode}}",
                     "style": "label-value",
                     "width": "30%",
                     "margin": [0, 0, 0, -4]
@@ -412,7 +412,7 @@
                 ]
               },
               {
-                "text": "{{advanceAmountPaid}}",
+                "text": "{{AdvanceAmountPaid}}",
                 "alignment":"right",
                 "margin": [0, -2, 0, -2],
                 "bold": true,
@@ -506,7 +506,7 @@
                 ]
               },
               {
-                "text": "{{amountAdjustedval}}",
+                "text": "{{AmountAdjustedval}}",
                 "alignment":"right",
                 "margin": [0, -2, 0, -2],
                 "bold": true,
@@ -553,7 +553,7 @@
                 ]
               },
               {
-                "text": "{{advanceCarryForward}}",
+                "text": "{{AdvanceCarryForward}}",
                 "alignment":"right",
                 "margin": [0, -2, 0, -2],
                 "bold": true,
@@ -600,7 +600,7 @@
                 ]
               },
               {
-                "text": "{{payableAmount}}",
+                "text": "{{PayableAmount}}",
                 "alignment":"right",
                 "bold": true,
                 "margin": [0, -2, 0, -2],
@@ -644,7 +644,7 @@
           "body": [
             [
               {
-                "text": "Bill Due Date: ",
+                "text": "Bill Due Date: 30/06/2021",
                 "bold": true
                 
               } 
@@ -844,7 +844,7 @@
                 "style": "receipt-table-value-ack"
               },
               {
-                "text": "{{payableAmount}}",
+                "text": "{{PayableAmount}}",
                 "border": [
                   false,
                   false,

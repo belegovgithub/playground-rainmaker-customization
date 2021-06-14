@@ -55,14 +55,7 @@
               {
                 "variable": "houseno",
                 "value": {
-                  "path": "$.address.street"
-                },
-                "type":"setEmpty"
-              },
-              {
-                "variable": "street",
-                "value": {
-                  "path": "$.address.street"
+                  "path": "$.address.doorNo"
                 },
                 "type":"setEmpty"
               },
@@ -429,6 +422,22 @@
               {
                 "variable": "demandTotalAmount",
                 "formula": "(0).toFixed(2)" 
+              },
+              {
+                "variable": "AmountAdjustedval",
+                "formula": "({{amountAdjustedval}}).toFixed(2)" 
+              },
+              {
+                "variable": "AdvanceAmountPaid",
+                "formula": "({{advanceAmountPaid}}).toFixed(2)" 
+              },
+              {
+                "variable": "AdvanceCarryForward",
+                "formula": "({{advanceCarryForward}}).toFixed(2)" 
+              },
+              {
+                "variable": "PayableAmount",
+                "formula": "({{payableAmount}}).toFixed(2)" 
               },
               {
                 "variable": "advanceAdjusted",
