@@ -33,22 +33,22 @@
                   {
                     "stack": [
                       {
-                        "text": "{{cb-name}} Cantonment Board.",
+                        "text": "{{cb-name}} {{cantt_board}}.",
                          "style":"header-cbName"
                       },
                       {
-                        "text": "Property Tax Bill",
+                        "text": "{{pt_bill}}",
                         "style":"header-title"
                       },
                       {
-                        "text": "(Under section 66(a) Cantonment Act 2006)",
+                        "text": "{{cant_act}}",
                         "alignment": "center",
                         "italics": true,
                         "fontSize": 10,
                         "bold": true
                       },
                       {
-                        "text": "Tax Bill for the period 01/04/2020 To 31/03/2021",
+                        "text": "{{tax_peroid_label}} 01/04/2020 {{to_label}} 31/03/2021",
                         "alignment": "center",
                         "fontSize": 10,
                         "bold": true
@@ -72,7 +72,7 @@
               {
                 "columns": [
                   {
-                    "text": "Bill No",
+                    "text": "{{bill_no_label}}",
                     "style": "label-headder",
                     "width": "18%",
                     "margin": [0, 0, 0, -5]
@@ -90,7 +90,7 @@
                    
                   },
                   {
-                    "text": "Property No.",
+                    "text": "{{prop_no_label}}",
                     "style": "label-headder",
                     "width": "18%",
                     "margin": [0, 0, 0, -5]
@@ -113,7 +113,7 @@
               {
                 "columns": [
                   {
-                    "text": "Bill Date",
+                    "text": "{{bill_date_label}}",
                     "style": "label-headder",
                     "width": "18%",
                     "margin": [0, 0, 0, -5] 
@@ -131,7 +131,7 @@
                     "margin": [0, 0, 0, -5]        
                   },
                   {
-                    "text": "Old Property No.",
+                    "text": "{{old_prop_no}}.",
                     "style": "label-headder",
                     "width": "18%",
                     "margin": [0, 0, 0, -5]
@@ -155,7 +155,7 @@
               {
                 "columns": [
                   {
-                    "text": "Location",
+                    "text": "{{location_label}}",
                     "style": "label-headder",
                     "width": "18%",
                     "margin": [0, 0, 0, -5] 
@@ -173,7 +173,7 @@
                     "margin": [0, 0, 0, -5]        
                   },
                   {
-                    "text": "Usage Type",
+                    "text": "{{usage_type_label}}",
                     "style": "label-headder",
                     "width": "18%",
                     "margin": [0, 0, 0, -5] 
@@ -197,7 +197,7 @@
               {
                 "columns": [
                   {
-                    "text": "Assessee Name",
+                    "text": "{{assesse_name_label}}",
                     "style": "label-headder",
                     "width": "18%",
                     "margin": [0, 0, 0, -5]
@@ -215,7 +215,7 @@
                     "margin": [0, 0, 0, -5]       
                   },
                   {
-                    "text": "ARV",
+                    "text": "{{arv_label}}",
                     "style": "label-headder",
                     "width": "18%",
                     "margin": [0, 0, 0, -5]
@@ -249,7 +249,7 @@
               {
                 "columns": [
                   {
-                    "text": "Address",
+                    "text": "{{address_label}}",
                     "style": "label-headder",
                     "width": "18%" ,
                     "margin": [0, 0, 0, -4]
@@ -282,28 +282,28 @@
           "body": [
             [
               {
-                "text": "Tax Description",
+                "text": "{{tax_desc_label}}",
                 "fillColor": "#cccccc",
                 "bold": true,
                 "alignment":"center",
                 "margin": [0, -2, 0, -2]
               },
               {
-                "text": "Arrear Amount(Rs)",
+                "text": "{{arrear_demand_label}}",
                 "bold": true,
                 "fillColor": "#cccccc",
                 "alignment":"center",
                 "margin": [0, -2, 0, -2]
               },
               {
-                "text": "Current Demand(Rs)",
+                "text": "{{current_demand_label}}",
                 "bold": true,
                 "fillColor": "#cccccc",
                 "alignment":"center",
                 "margin": [0, -2, 0, -2]
               },
               {
-                "text": "Total Amount(Rs)",
+                "text": "{{total_amt_label}}",
                 "bold": true,
                 "fillColor": "#cccccc", 
                 "alignment":"center",
@@ -330,7 +330,7 @@
           "body": [
             [
               {
-                "text": "Total Bill Amount ",
+                "text": "{{total_bill}}",
                 "bold": true,
                 "margin": [0, -2, 0, -2],
                 "border": [
@@ -379,7 +379,7 @@
             ],
             [
               {
-                "text": "Advance Amount available / Paid",
+                "text": "{{adv_amt}}",
                 "bold": true,
                 "margin": [0, -2, 0, -2],
                 "border": [
@@ -426,7 +426,7 @@
             ],
             [
               {
-                "text": "Amount due as on Date",
+                "text": "{{amt_due}}",
                 "bold": true,
                 "margin": [0, -2, 0, -2],
                 "border": [
@@ -473,7 +473,7 @@
             ],
             [
               {
-                "text": "Amount adjusted against current dues",
+                "text": "{{amt_adjusted}}",
                 "bold": true,
                 "margin": [0, -2, 0, -2],
                 "border": [
@@ -520,7 +520,7 @@
             ],
             [
               {
-                "text": "Advance Carry Forward",
+                "text": "{{adv_carry_forward}}",
                 "bold": true,
                 "margin": [0, -2, 0, -2],
                 "border": [
@@ -567,7 +567,7 @@
             ],
             [
               {
-                "text": "Total Payable Amount",
+                "text": "{{total_payable_amt}}",
                 "bold": true,
                 "margin": [0, -2, 0, -2],
                 "border": [
@@ -622,7 +622,7 @@
           "body": [
             [
               {
-                "text": "Amount (In Words) :{{amountInWords}}",
+                "text": "{{amt_words}} :{{amountInWords}}",
                 "bold": true,
                 "margin": [0, -2, 0, -2],
                 "fillColor": "#cccccc",
@@ -644,7 +644,7 @@
           "body": [
             [
               {
-                "text": "Bill Due Date: 30/06/2021",
+                "text": "{{due_date}} : 30/06/2021",
                 "bold": true
                 
               } 
@@ -659,7 +659,7 @@
           "body": [
             [
               {
-                "text": "**CEO,{{cb-name}} ",
+                "text": "**{{ceo}},{{cb-name}} ",
                 "alignment":"right",
                 "margin":[0,15,0,-20]
                 
@@ -676,7 +676,7 @@
           "body": [
             [
               {
-                "text": "NOTE:",
+                "text": "{{note}}:",
                 "bold": true,
                 "border": [
                   false,
