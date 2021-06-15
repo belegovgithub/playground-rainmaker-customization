@@ -143,8 +143,8 @@ ServiceMaps:
             outJsonPath: $.Data.tenantData
 
   - topic: update-pt-assessment
-      configKey: INDEX
-      indexes:
+    configKey: INDEX
+    indexes:
     - name: ptassessment-v1
       type: assessment
       id: $.assessmentId, $.tenantId
