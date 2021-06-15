@@ -96,7 +96,7 @@ ServiceMaps:
     indexes:
     - name: ptassessment-v1
       type: assessment
-      id: $.assessmentId, $.tenantId
+      id: $.assessmentNumber, $.tenantId
       isBulk: false
       timeStampField: $.auditDetails.createdTime
       jsonPath: $.Assessment
@@ -116,14 +116,14 @@ ServiceMaps:
         #   outJsonPath: $.Data.@timestamp
         externalUriMapping:
         - path: http://egov-location:8080/egov-location/location/v11/boundarys/_search
-          queryParam: hierarchyTypeCode=REVENUE,boundaryType=Block,tenantId=$.tenantId
+          queryParam: hierarchyTypeCode=REVENUE,boundaryType=Block,codes=$.address.locality.code,tenantId=$.tenantId
           apiRequest: {"RequestInfo": {"apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654", "requesterId": "61",
           "authToken": "02dbe5be-28df-4d82-954f-3d27c56cca7d","userInfo":{"id":73}}}
           uriResponseMapping:
           - inJsonPath: $.TenantBoundary[0].boundary[0]
             outJsonPath: $.Data.ward
         - path : https://property-services:8080/property-services/property/_search
-          queryParam: hierarchyTypeCode=REVENUE,boundaryType=Block,codes=$.address.locality.code,tenantId=$.tenantId
+          queryParam: hierarchyTypeCode=REVENUE,boundaryType=Block,codes=$.propertyId,tenantId=$.tenantId
           apiRequest: {"RequestInfo": {"apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654", "requesterId": "61",
           "authToken": "02dbe5be-28df-4d82-954f-3d27c56cca7d","userInfo":{"id":73}}}
           uriResponseMapping:
@@ -147,7 +147,7 @@ ServiceMaps:
     indexes:
     - name: ptassessment-v1
       type: assessment
-      id: $.assessmentId, $.tenantId
+      id: $.assessmentNumber, $.tenantId
       isBulk: false
       timeStampField: $.auditDetails.createdTime
       jsonPath: $.Assessment
@@ -174,7 +174,7 @@ ServiceMaps:
           - inJsonPath: $.TenantBoundary[0].boundary[0]
             outJsonPath: $.Data.ward
         - path : https://property-services:8080/property-services/property/_search
-          queryParam: hierarchyTypeCode=REVENUE,boundaryType=Block,codes=$.address.locality.code,tenantId=$.tenantId
+          queryParam: hierarchyTypeCode=REVENUE,boundaryType=Block,codes=$.propertyId,tenantId=$.tenantId
           apiRequest: {"RequestInfo": {"apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654", "requesterId": "61",
           "authToken": "02dbe5be-28df-4d82-954f-3d27c56cca7d","userInfo":{"id":73}}}
           uriResponseMapping:
