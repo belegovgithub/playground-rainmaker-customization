@@ -226,6 +226,10 @@ ReportDefinitions:
   summary: Receipt Register for cancelled Receipts
   version: 1.0.0
   moduleName: rainmaker-pt
+   additionalConfig:
+    print:
+      pdfPageSize: "A2"
+  decryptionPathId: CancelledReceiptRegister
   externalService:
   - entity: $.TenantBoundary[0].boundary
     apiURL: http://egov-location:8080/egov-location/location/v11/boundarys/_search?hierarchyTypeCode=REVENUE&boundaryType=Locality&tenantId=$tenantId
@@ -327,8 +331,43 @@ ReportDefinitions:
     type: string
     source: pt
     total: true  
+  - name: cash
+    label: reports.pt.cash
+    type: string
+    source: pt
+    total: true
+  - name: card
+    label: reports.pt.card
+    type: string
+    source: pt
+    total: true
+  - name: online
+    label: reports.pt.online
+    type: string
+    source: pt
+    total: true  
   - name: totalcollection
     label: PT_TOTAL_AMOUNT 
+    type: string
+    source: pt
+    total: false
+  - name: collectorname
+    label: reports.pt.collectorname
+    type: string
+    source: pt
+    total: false
+  - name: mohallaname
+    label: PT_PROPERTY_ADDRESS_MOHALLA
+    type: string
+    source: pt
+    total: false
+  - name: doorno
+    label: PT_COMMON_DOOR_NO_LABEL
+    type: string
+    source: pt
+    total: false
+  - name: name
+    label: reports.pt.ownername
     type: string
     source: pt
     total: false
@@ -372,11 +411,14 @@ ReportDefinitions:
     SUM(CASE WHEN taxheadcode LIKE 'PT_ADDL_WATER_TAX' THEN bad.adjustedamount ELSE 0 END) as additionalwatertax,
     SUM(CASE WHEN taxheadcode LIKE 'PT_DRAINAGE_TAX' THEN bad.adjustedamount ELSE 0 END) as drainagetax,
     SUM(CASE WHEN taxheadcode LIKE 'PT_LIGHTING_TAX' THEN bad.adjustedamount ELSE 0 END) as lightingtax,
+    SUM(CASE WHEN pay.paymentmode LIKE 'CASH' THEN bad.adjustedamount ELSE 0 END) as cash,
+    SUM(CASE WHEN pay.paymentmode LIKE 'CARD' THEN bad.adjustedamount ELSE 0 END) as card,
+    SUM(CASE WHEN pay.paymentmode LIKE 'ONLINE' THEN bad.adjustedamount ELSE 0 END) as online,
     pd.amountpaid as totalcollection,
     un.name as collectorname,
     addr.doorno as doorno,
     (SELECT boundary_def.name FROM (VALUES tbl_boundary) AS boundary_def(name,code) where code=addr.locality) as mohallaname,
-    poo.name
+    poo.name as name
     from eg_pt_property pt
     Join eg_pt_address as addr on addr.propertyid=pt.id
     INNER JOIN egcl_bill as bill ON bill.consumercode = pt.propertyid  and bill.status = 'Cancelled'
@@ -460,6 +502,10 @@ ReportDefinitions:
   summary: Receipt Register for cancelled Receipts State
   version: 1.0.0
   moduleName: rainmaker-pt
+   additionalConfig:
+    print:
+      pdfPageSize: "A2"
+  decryptionPathId: StateCancelledReceiptRegister
   externalService:
   - entity: $.TenantBoundary[0].boundary
     apiURL: http://egov-location:8080/egov-location/location/v11/boundarys/_search?hierarchyTypeCode=REVENUE&boundaryType=Locality&tenantId=$tenantId
@@ -566,8 +612,43 @@ ReportDefinitions:
     type: string
     source: pt
     total: true 
+  - name: cash
+    label: reports.pt.cash
+    type: string
+    source: pt
+    total: true
+  - name: card
+    label: reports.pt.card
+    type: string
+    source: pt
+    total: true
+  - name: online
+    label: reports.pt.online
+    type: string
+    source: pt
+    total: true 
   - name: totalcollection
     label: PT_TOTAL_AMOUNT 
+    type: string
+    source: pt
+    total: false
+  - name: collectorname
+    label: reports.pt.collectorname
+    type: string
+    source: pt
+    total: false
+  - name: mohallaname
+    label: PT_PROPERTY_ADDRESS_MOHALLA
+    type: string
+    source: pt
+    total: false
+  - name: doorno
+    label: PT_COMMON_DOOR_NO_LABEL
+    type: string
+    source: pt
+    total: false
+  - name: name
+    label: reports.pt.ownername
     type: string
     source: pt
     total: false
@@ -619,6 +700,9 @@ ReportDefinitions:
     SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_CESS' THEN bad.adjustedamount ELSE 0 END) as educationcess,
     SUM(CASE WHEN taxheadcode LIKE 'PT_ADDL_WATER_TAX' THEN bad.adjustedamount ELSE 0 END) as additionalwatertax,
     SUM(CASE WHEN taxheadcode LIKE 'PT_DRAINAGE_TAX' THEN bad.adjustedamount ELSE 0 END) as drainagetax,
+    SUM(CASE WHEN pay.paymentmode LIKE 'CASH' THEN bad.adjustedamount ELSE 0 END) as cash,
+    SUM(CASE WHEN pay.paymentmode LIKE 'CARD' THEN bad.adjustedamount ELSE 0 END) as card,
+    SUM(CASE WHEN pay.paymentmode LIKE 'ONLINE' THEN bad.adjustedamount ELSE 0 END) as online,
     pd.amountpaid as totalcollection,
     un.name as collectorname,
     addr.doorno as doorno,
