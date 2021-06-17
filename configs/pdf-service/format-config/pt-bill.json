@@ -25,7 +25,7 @@
                 "columns": [
                   {
                     "image": "{{logoImage}}",
-                    "width": 60,
+                    "width": 65,
                     "height": 70,
                     "alignment": "left",
                     "margin": [20, 0, 0, 0]
@@ -85,14 +85,14 @@
                   {
                     "text": "{{billNo}}",
                     "style": "label-value",
-                    "width": "30%",
+                    "width": "28%",
                     "margin": [0, 0, 0, -5]
                    
                   },
                   {
                     "text": "{{prop_no_label}}",
                     "style": "label-headder",
-                    "width": "18%",
+                    "width": "19%",
                     "margin": [0, 0, 0, -5]
                   },
                   {
@@ -103,7 +103,7 @@
                   {
                     "text": "{{propertyNo}}",
                     "style": "label-value",
-                    "width": "30%" ,
+                    "width": "32%" ,
                     "margin": [0, 0, 0, -5]     
                   }
                 ]
@@ -125,15 +125,15 @@
                     "margin": [0, 0, 0, -5]
                   },
                   {
-                    "text": "{{billDate}}",
+                    "text": "01/05/2021",
                     "style": "label-value",
-                    "width": "30%",
+                    "width": "28%",
                     "margin": [0, 0, 0, -5]        
                   },
                   {
-                    "text": "{{old_prop_no}}.",
+                    "text": "{{old_prop_no}}./{{abas_id}}",
                     "style": "label-headder",
-                    "width": "18%",
+                    "width": "19%",
                     "margin": [0, 0, 0, -5]
                   },
                   {
@@ -143,9 +143,9 @@
                     "margin": [0, 0, 0, -5]
                   },
                   {
-                    "text": "{{oldPropertyNo}}",
+                    "text": "{{oldPropertyNo}}/{{abasid}}",
                     "style": "label-value",
-                    "width": "30%",
+                    "width": "32%",
                     "margin": [0, 0, 0, -5]         
                   }
                 ]
@@ -169,13 +169,13 @@
                   {
                     "text": "{{location}}",
                     "style": "label-value",
-                    "width": "30%",
+                    "width": "28%",
                     "margin": [0, 0, 0, -5]        
                   },
                   {
                     "text": "{{usage_type_label}}",
                     "style": "label-headder",
-                    "width": "18%",
+                    "width": "19%",
                     "margin": [0, 0, 0, -5] 
                   },
                   {
@@ -187,7 +187,7 @@
                   {
                     "text": "{{usageType}}",
                     "style": "label-value",
-                    "width": "30%",
+                    "width": "32%",
                     "margin": [0, 0, 0, -5]       
                   }
                 ]
@@ -211,13 +211,13 @@
                   {
                     "text": "{{assesseName}}",
                     "style": "label-value",
-                    "width": "30%" ,
+                    "width": "28%" ,
                     "margin": [0, 0, 0, -5]       
                   },
                   {
                     "text": "{{arv_label}}",
                     "style": "label-headder",
-                    "width": "18%",
+                    "width": "19%",
                     "margin": [0, 0, 0, -5]
                   },
                   {
@@ -229,7 +229,7 @@
                   {
                     "text": "{{arv}}",
                     "style": "label-value",
-                    "width": "30%",
+                    "width": "32%",
                     "margin": [0, 0, 0, -5]       
                   }
                 ]
@@ -263,7 +263,7 @@
                   {
                     "text": "{{houseno}} {{address}} {{pincode}}",
                     "style": "label-value",
-                    "width": "30%",
+                    "width": "50%",
                     "margin": [0, 0, 0, -4]
                           
                   }
@@ -721,185 +721,6 @@
             ]
           ]
         },"layout": "noBorders"
-      },
-      {
-        "canvas": [
-          {
-            "type": "line",
-            "x1": -40,
-            "y1": 5,
-            "x2": 700,
-            "y2": 5,
-            "dash": {
-              "length": 10,
-              "space": 5
-            }
-          }
-        ]
-      },
-      {
-        "image": "{{scissorImage}}",
-        "width": 24,
-        "height": 24,
-        "margin": [
-          -10,
-          -11.2,
-          0,
-          0
-        ]
-      },
-      {
-        "text": "{{acknowledgement_for}}",
-        "style": "footer-header"
-       
-      },
-      {
-        "style": "noc-table4",
-        "table": {
-          "widths": [
-            "20%",
-            "30%",
-            "20%",
-            "30%"
-          ],
-          "body": [
-            [
-              {
-                "text": "{{date_label}}",
-                "border": [
-                  false,
-                  false,
-                  false,
-                  false
-                ],
-                "style": "receipt-table-value-ack"
-                
-              },
-              {
-                "text": "{{billDate}}",
-                "border": [
-                  false,
-                  false,
-                  false,
-                  false
-                ],
-                "style": "receipt-table-value-ack",
-                "bold":false
-                
-              },
-              {
-                "text": "{{bill_no}}",
-                "border": [
-                  false,
-                  false,
-                  false,
-                  false
-                ],
-                "style": "receipt-table-value-ack"
-                
-              },
-              {
-                "text":"{{billNo}}",
-                "border": [
-                  false,
-                  false,
-                  false,
-                  false
-                ],
-                "style": "receipt-table-value-ack" ,
-                "bold":false     
-              }
-            ],
-            [
-              {
-                
-                "text": "{{property_id}}",
-                "border": [
-                  false,
-                  false,
-                  false,
-                  false
-                ],
-                "style": "receipt-table-value-ack"
-              },
-              {
-                "text": "{{propertyNo}}",
-                "border": [
-                  false,
-                  false,
-                  false,
-                  false
-                ],
-                "style": "receipt-table-value-ack",
-                "bold":false
-              },
-              {
-                "text": "{{total_payment}}",
-                "border": [
-                  false,
-                  false,
-                  false,
-                  false
-                ],
-                "style": "receipt-table-value-ack"
-              },
-              {
-                "text": "{{PayableAmount}}",
-                "border": [
-                  false,
-                  false,
-                  false,
-                  false
-                ],
-                "style": "receipt-table-value-ack",
-                "bold":false
-              }
-            ]
-            
-          ]
-        }
-      },
-      {
-        "style": "noc-table5",
-        "table": {
-          "widths": [
-            "20%",
-            "*"
-            
-          ],
-          "body": [
-            [
-              
-                {
-                  "text": "{{name_address}} ",
-                  "border": [
-                    false,
-                    false,
-                    false,
-                    false
-                  ],
-                  "style": "receipt-table-value-ack"
-                },
-                {
-                  "text": "{{assesseName}},{{location}},{{address}}",
-                  "border": [
-                    false,
-                    false,
-                    false,
-                    false
-                  ],
-                  "style": "receipt-table-value-ack",
-                  "bold":false
-                }
-            
-              
-            ]
-          ]
-        }
-      },
-      {
-        "text": "{{receivers_signature}}",
-        "style": "footer-bottom"
       }
     ]
   }
