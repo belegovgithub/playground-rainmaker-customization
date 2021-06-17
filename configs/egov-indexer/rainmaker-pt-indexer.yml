@@ -122,7 +122,7 @@ ServiceMaps:
           uriResponseMapping:
           - inJsonPath: $.TenantBoundary[0].boundary[0]
             outJsonPath: $.Data.ward
-        - path : http://property-services:8080/property-services/property/_search
+        - path : http://13.71.65.215.nip.io/property-services/property/_search
           queryParam: hierarchyTypeCode=REVENUE,propertyIds=$.propertyId,tenantId=$.tenantId
           apiRequest: {"RequestInfo":{"apiId":"Rainmaker","ver":".01","ts":"","action":"_get","did":"1","key":"","msgId":"20170310130900|en_IN",
           "authToken":"049af061-9a21-453e-85db-9f7e757bcf93"}}
@@ -173,7 +173,7 @@ ServiceMaps:
           uriResponseMapping:
           - inJsonPath: $.TenantBoundary[0].boundary[0]
             outJsonPath: $.Data.ward
-        - path : http://property-services:8080/property-services/property/_search
+        - path : http://13.71.65.215.nip.io/property-services/property/_search
           queryParam: hierarchyTypeCode=REVENUE,propertyIds=$.propertyId,tenantId=$.tenantId
           apiRequest: {"RequestInfo":{"apiId":"Rainmaker","ver":".01","ts":"","action":"_get","did":"1","key":"","msgId":"20170310130900|en_IN",
           "authToken":"049af061-9a21-453e-85db-9f7e757bcf93"}}
