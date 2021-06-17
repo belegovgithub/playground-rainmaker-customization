@@ -38,6 +38,11 @@
                 "value": {
                   "path": "$.oldPropertyId"
                 }
+              },{
+                "variable": "abasid",
+                "value": {
+                  "path": "$.abasPropertyId"
+                }
               },
               {
                 "variable": "location",
@@ -254,9 +259,9 @@
                 "type":"amountInWords"
               },
               {
-                "variable": "acknowledgement_for",
+                "variable": "abas_id",
                 "value": {
-                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_ACKNOWLEDGEMENT"
+                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_ABAS_ID_LABEL"
                 },
                 "type": "label",
                 "localisation": {
@@ -269,18 +274,6 @@
                 "variable": "total_payment",
                 "value": {
                   "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_TOTAL_PAYMENT"
-                },
-                "type": "label",
-                "localisation": {
-                  "required": true,
-                  "prefix": null,
-                  "module": "rainmaker-pdf"
-                }
-              },
-              {
-                "variable": "receivers_signature",
-                "value": {
-                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_RECEIVERS_SIGNATURE"
                 },
                 "type": "label",
                 "localisation": {
@@ -684,23 +677,6 @@
                   "prefix": null,
                   "module": "rainmaker-pdf"
                 }
-              },
-              {
-                "variable": "name_address",
-                "value": {
-                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_NAME_ADDRESS"
-                },
-                "type": "label",
-                "localisation": {
-                  "required": true,
-                  "prefix": null,
-                  "module": "rainmaker-pdf"
-                }
-              },
-              {
-                "variable": "scissorImage",
-                "id": "scissor.png",
-                "type": "image"
               },
               {
                 "variable": "variable10",                        
