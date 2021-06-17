@@ -122,10 +122,10 @@ ServiceMaps:
           uriResponseMapping:
           - inJsonPath: $.TenantBoundary[0].boundary[0]
             outJsonPath: $.Data.ward
-        - path : https://property-services:8080/property-services/property/_search
-          queryParam: hierarchyTypeCode=REVENUE,propertyId=$.propertyId,tenantId=$.tenantId
-          apiRequest: {"RequestInfo": {"apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654", "requesterId": "61",
-          "authToken": "02dbe5be-28df-4d82-954f-3d27c56cca7d","userInfo":{"id":73}}}
+        - path : http://property-services:8080/property-services/property/_search
+          queryParam: hierarchyTypeCode=REVENUE,propertyIds=$.propertyId,tenantId=$.tenantId
+          apiRequest: {"RequestInfo":{"apiId":"Rainmaker","ver":".01","ts":"","action":"_get","did":"1","key":"","msgId":"20170310130900|en_IN",
+          "authToken":"049af061-9a21-453e-85db-9f7e757bcf93"}}
           uriResponseMapping:
           - inJsonPath: $.Properties[0]
             outJsonPath: $.Data.propertyDetails
@@ -173,10 +173,10 @@ ServiceMaps:
           uriResponseMapping:
           - inJsonPath: $.TenantBoundary[0].boundary[0]
             outJsonPath: $.Data.ward
-        - path : https://property-services:8080/property-services/property/_search
-          queryParam: hierarchyTypeCode=REVENUE,propertyId=$.propertyId,tenantId=$.tenantId
-          apiRequest: {"RequestInfo": {"apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654", "requesterId": "61",
-          "authToken": "02dbe5be-28df-4d82-954f-3d27c56cca7d","userInfo":{"id":73}}}
+        - path : http://property-services:8080/property-services/property/_search
+          queryParam: hierarchyTypeCode=REVENUE,propertyIds=$.propertyId,tenantId=$.tenantId
+          apiRequest: {"RequestInfo":{"apiId":"Rainmaker","ver":".01","ts":"","action":"_get","did":"1","key":"","msgId":"20170310130900|en_IN",
+          "authToken":"049af061-9a21-453e-85db-9f7e757bcf93"}}
           uriResponseMapping:
           - inJsonPath: $.Properties[0]
             outJsonPath: $.Data.propertyDetails
