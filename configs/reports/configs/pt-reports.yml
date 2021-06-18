@@ -1656,7 +1656,7 @@ ReportDefinitions:
     searchClause: AND createdtime <= $toDate
   query: |
     select initcap(split_part(tenantid, '.', 2)) as tenantid,
-    CONCAT('Demand: ',E'\r\n',E'\r\n','Collected: ',E'\r\n','Outstanding:') as amount,
+    CONCAT('Demand: ',E'\r\n','Collected: ',E'\r\n','Outstanding:') as amount,
     CONCAT(SUM(CASE WHEN dem_code = 'PT_HOUSE_TAX' THEN dem_tax ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_HOUSE_TAX' THEN collectionamount ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_HOUSE_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END) ) as houseTax,
