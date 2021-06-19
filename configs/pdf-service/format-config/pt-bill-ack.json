@@ -261,7 +261,7 @@
                         "margin": [0, 0, 0, -4]
                       },
                       {
-                        "text": "{{houseno}} {{street}} {{building}} {{address}} {{pincode}}",
+                        "text": "{{houseno}} {{building}} {{street}} {{address}} {{pincode}}",
                         "style": "label-value",
                         "width": "80%",
                         "margin": [0, 0, 0, -4]
@@ -881,7 +881,7 @@
                     "style": "receipt-table-value-ack"
                   },
                   {
-                    "text": "{{assesseName}},{{houseno}} {{street}} {{building}} {{location}},{{address}} {{pincode}}",
+                    "text": "{{assesseName}},{{houseno}} {{building}} {{street}} {{location}},{{address}} {{pincode}}",
                     "border": [
                       false,
                       false,
