@@ -127,7 +127,7 @@ ServiceMaps:
           apiRequest: {"RequestInfo":{"apiId":"Rainmaker","ver":".01","ts":"","action":"_get","did":"1","key":"","msgId":"20170310130900|en_IN",
           "authToken":"e358f520-362b-45c1-b575-eff6507bf992","userInfo":{"id":86438}}}
           uriResponseMapping:
-          - inJsonPath: $.Properties
+          - inJsonPath: $.Properties[0]
             outJsonPath: $.Data.propertyDetails
         mdmsMapping:
         - path: http://egov-mdms-service:8080/egov-mdms-service/v1/_search
@@ -178,7 +178,7 @@ ServiceMaps:
           apiRequest: {"RequestInfo":{"apiId":"Rainmaker","ver":".01","ts":"","action":"_get","did":"1","key":"","msgId":"20170310130900|en_IN",
           "authToken":"e358f520-362b-45c1-b575-eff6507bf992","userInfo":{"id":86438}}}
           uriResponseMapping:
-          - inJsonPath: $.Properties
+          - inJsonPath: $.Properties[0]
             outJsonPath: $.Data.propertyDetails
         mdmsMapping:
         - path: http://egov-mdms-service:8080/egov-mdms-service/v1/_search
