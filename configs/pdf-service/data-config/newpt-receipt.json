@@ -451,6 +451,18 @@
                    }
                   },
                   {
+                    "variable": "disclaimer1",
+                    "value": {
+                      "path": "PDF_STATIC_LABEL_PT_RECEIPT_DISCLAIMER1_LABEL"
+                    },
+                    "type": "label",
+                    "localisation":{
+                      "required":true,
+                      "prefix": null,
+                      "module":"rainmaker-pdf"
+                   }
+                  },
+                  {
                     "variable": "disclaimer",
                     "value": {
                       "path": "PDF_STATIC_LABEL_PT_RECEIPT_DISCLAIMER_LABEL"
@@ -525,6 +537,42 @@
                   "type":"setEmpty"
                 },
                 {
+                  "variable": "old_prop_no",
+                  "value": {
+                    "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_OLD_PROPERTY_NO_LABEL"
+                  },
+                  "type": "label",
+                  "localisation": {
+                    "required": true,
+                    "prefix": null,
+                    "module": "rainmaker-pdf"
+                  }
+                },
+                {
+                  "variable": "abas_id",
+                  "value": {
+                    "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_ABAS_ID_LABEL"
+                  },
+                  "type": "label",
+                  "localisation": {
+                    "required": true,
+                    "prefix": null,
+                    "module": "rainmaker-pdf"
+                  }
+                },
+                {
+                  "variable": "abasid",
+                  "value": {
+                    "path": "$.abasPropertyId"
+                  }
+                },
+                {
+                  "variable": "oldPropertyNo",
+                  "value": {
+                    "path": "$.oldPropertyId"
+                  }
+                },
+                {
                   "variable": "street",
                   "value": {
                     "path": "$.address.street"
@@ -592,11 +640,6 @@
                         "value": "billNo"
                       },
                       {
-                        "variable": "date_of_bill",
-                        "value": "billDate",
-                        "type":"date"
-                      },
-                      {
                         "variable": "amount_payable",
                         "value": "amount",
                         "type":"setPositive"
@@ -624,6 +667,11 @@
                     "queryParam": "moduleName=tenant&masterName=tenants&tenantId=pb&filter=%5B?(@.code=='{$.tenantId}')%5D",
                     "apiRequest": null,
                     "responseMapping":[
+                      {
+                        "variable": "logoImage",
+                        "value":"$.MdmsRes.tenant.tenants[0].logoIdPdf",
+                        "type": "image"
+                      },
                       {
                         "variable": "cb-name",
                         "value":"$.MdmsRes.tenant.tenants[0].code",
