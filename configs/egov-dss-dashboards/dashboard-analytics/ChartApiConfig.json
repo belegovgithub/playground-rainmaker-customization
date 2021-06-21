@@ -6071,6 +6071,60 @@
    },
    "_comment": "W&S total collections "
  },
+
+ "wsBillingCollection": {
+  "chartName": "DSS_W&S_BILLING_COLLECTION",
+  "queries": [
+    {
+      "module": "WS",
+      "indexName": "dss-payment_v2",
+      "aggrQuery": "{\"aggs\":{\"AGG\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"dataObject.tenantId.keyword\":\"pb.testing\"}},{\"terms\":{\"dataObject.bill.status.keyword\":[\"Cancelled\"]}}],\"must\":[{\"terms\":{\"dataObject.paymentDetails.businessService.keyword\":[\"WS\"]}}]}},\"aggs\":{\"Total Collection23\":{\"sum\":{\"field\":\"dataObject.paymentDetails.bill.billDetails.amountPaid\"}}}}}}",
+      "requestQueryMap": "{\"tenantId\" : \"dataObject.tenantId\", \"module\" : \"dataObject.paymentDetails.businessService.keyword\",\"wardId\" : \"block.keyword\"}",
+      "dateRefField": "dataObject.paymentDetails.receiptDate"
+    }
+  ],
+   "translateTenantCode": true,
+"chartType": "metric",
+"valueType": "amount",
+"action": "",
+"drillChart": "none",
+"aggregationPaths": [
+  "Total Collection23"
+],
+"insight": {
+},
+"_comment": "W&S total collections "
+},
+
+"wsCollectionCharges": {
+  "chartName": "DSS_W&S_COLLECTION_CHARGES",
+  "queries": [
+    {
+      "module": "WS",
+      "indexName": "dss-payment_v2",
+      "aggrQuery": "{\"aggs\":{\"AGG\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"dataObject.tenantId.keyword\":\"pb.testing\"}},{\"terms\":{\"dataObject.bill.status.keyword\":[\"Cancelled\"]}}],\"must\":[{\"terms\":{\"dataObject.paymentDetails.businessService.keyword\":[\"WS.ONE_TIME_FEE\"]}}]}},\"aggs\":{\"Total Collection23\":{\"sum\":{\"field\":\"dataObject.paymentDetails.bill.billDetails.amountPaid\"}}}}}}",
+      "requestQueryMap": "{\"tenantId\" : \"dataObject.tenantId\", \"module\" : \"dataObject.paymentDetails.businessService.keyword\",\"wardId\" : \"block.keyword\"}",
+      "dateRefField": "dataObject.paymentDetails.receiptDate"
+    }
+  ],
+   "translateTenantCode": true,
+"chartType": "metric",
+"valueType": "amount",
+"action": "",
+"drillChart": "none",
+"aggregationPaths": [
+  "Total Collection23"
+],
+"insight": {
+},
+"_comment": "W&S total collections "
+},
+
+
+
+
+
+
  "wstotalCollection": {
    "chartName": "DSS_W&S_TOTAL_COLLECTION",
    "queries": [
@@ -6209,7 +6263,43 @@
    },
    "_comment": " "
  },
+
+
  "wscumulativeCollections": {
+  "chartName": "DSS_W&S_TOTAL_CUMULATIVE_COLLECTION",
+  "queries": [
+    {
+      "module": "WS",
+      "dateRefField": "dataObject.paymentDetails.receiptDate",
+      "requestQueryMap": "{\"tenantId\" : \"dataObject.tenantId\", \"wardId\" : \"block.keyword\"}",
+      "indexName": "dss-payment_v2",
+      "aggrQuery": "{\"aggs\":{\"AGG\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"dataObject.tenantId.keyword\":\"pb.testing\"}},{\"terms\":{\"dataObject.bill.status.keyword\":[\"Cancelled\"]}}],\"must\":[{\"terms\":{\"dataObject.paymentDetails.businessService.keyword\":[\"WS.ONE_TIME_FEE\"]}}]}},\"aggs\":{\"Connection Charges\":{\"date_histogram\":{\"field\":\"dataObject.paymentDetails.receiptDate\",\"interval\":\"day\"},\"aggs\":{\"Connection Charges\":{\"sum\":{\"field\":\"dataObject.paymentDetails.bill.billDetails.amountPaid\"}}}}}}}}" 
+    },
+  {	 	 
+      "module": "WS",
+      "dateRefField": "dataObject.paymentDetails.receiptDate",
+      "requestQueryMap": "{\"tenantId\" : \"dataObject.tenantId\", \"wardId\" : \"block.keyword\"}",
+      "indexName": "dss-payment_v2",
+      "aggrQuery": "{\"aggs\":{\"AGG\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"dataObject.tenantId.keyword\":\"pb.testing\"}},{\"terms\":{\"dataObject.bill.status.keyword\":[\"Cancelled\"]}}],\"must\":[{\"terms\":{\"dataObject.paymentDetails.businessService.keyword\":[\"WS\"]}}]}},\"aggs\":{\"Billing Collection\":{\"date_histogram\":{\"field\":\"dataObject.paymentDetails.receiptDate\",\"interval\":\"day\"},\"aggs\":{\"Billing Collection\":{\"sum\":{\"field\":\"dataObject.paymentDetails.bill.billDetails.amountPaid\"}}}}}}}}"
+    }
+  ],
+  "chartType": "line",
+  "valueType": "amount",
+  "action": "",
+  "drillChart": "none",
+  "documentType": "_doc",
+  "aggregationPaths": [
+    "Billing Collection",
+  "Connection Charges"
+  ],
+  "isCumulative": true,
+   "interval": "week",
+   "insight": {
+   },
+   "_comment": " "
+},
+
+ "wscumulativeCollections1": {
    "chartName": "DSS_W&S_TOTAL_CUMULATIVE_COLLECTION",
    "queries": [
      {
@@ -6883,6 +6973,87 @@
  },
  
 
+ "waterbillingTaxHeadUlb": {
+  "chartName": "DSS_WS_BILLING_TAX_HEAD_BOUNDARY",
+  "queries": [
+    {
+      "module": "COMMON",
+      "requestQueryMap": "{\"tenantId\" : \"dataObject.tenantId\"}",
+      "dateRefField": "dataObject.paymentDetails.receiptDate",
+      "indexName": "dss-payment_v2",
+      "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"dataObject.tenantId.keyword\":\"pb.testing\"}},{\"terms\":{\"dataObject.bill.status.keyword\":[\"Cancelled\"]}}]}},\"aggs\":{\"ULBs \":{\"terms\":{\"field\":\"dataObject.tenantId.keyword\",\"size\":200},\"aggs\":{\"Total Amount\":{\"bucket_script\":{\"buckets_path\":{\"c1\":\"Time Adhoc Penalty>aggrFilter>amount\",\"c2\":\"Charge>aggrFilter>amount\",\"c3\":\"Time Rebate>aggrFilter>amount\",\"c4\":\"Time Interest>aggrFilter>amount\",\"c5\":\"Time Penalty>aggrFilter>amount\",\"c6\":\"Round Off>aggrFilter>amount\",\"c7\":\"Time Adhoc Rebate>aggrFilter>amount\",\"c8\":\"Advance Carryforward>aggrFilter>amount\"},\"script\":{\"source\":\"params.c1+params.c2+params.c3+params.c4+params.c5+params.c6+params.c7+params.c8\"}}},\"Charge\":{\"nested\":{\"path\":\"dataObject.paymentDetails.bill.billDetails.billAccountDetails\"},\"aggs\":{\"aggrFilter\":{\"filter\":{\"terms\":{\"dataObject.paymentDetails.bill.billDetails.billAccountDetails.taxHeadCode.keyword\":[\"WS_CHARGE\"]}},\"aggs\":{\"amount\":{\"sum\":{\"field\":\"dataObject.paymentDetails.bill.billDetails.billAccountDetails.amount\"}}}}}},\"Time Rebate\":{\"nested\":{\"path\":\"dataObject.paymentDetails.bill.billDetails.billAccountDetails\"},\"aggs\":{\"aggrFilter\":{\"filter\":{\"terms\":{\"dataObject.paymentDetails.bill.billDetails.billAccountDetails.taxHeadCode.keyword\":[\"WS_TIME_REBATE\"]}},\"aggs\":{\"amount\":{\"sum\":{\"field\":\"dataObject.paymentDetails.bill.billDetails.billAccountDetails.amount\"}}}}}},\"Time Interest\":{\"nested\":{\"path\":\"dataObject.paymentDetails.bill.billDetails.billAccountDetails\"},\"aggs\":{\"aggrFilter\":{\"filter\":{\"terms\":{\"dataObject.paymentDetails.bill.billDetails.billAccountDetails.taxHeadCode.keyword\":[\"WS_TIME_INTEREST\"]}},\"aggs\":{\"amount\":{\"sum\":{\"field\":\"dataObject.paymentDetails.bill.billDetails.billAccountDetails.amount\"}}}}}},\"Time Penalty\":{\"nested\":{\"path\":\"dataObject.paymentDetails.bill.billDetails.billAccountDetails\"},\"aggs\":{\"aggrFilter\":{\"filter\":{\"terms\":{\"dataObject.paymentDetails.bill.billDetails.billAccountDetails.taxHeadCode.keyword\":[\"WS_TIME_PENALTY\"]}},\"aggs\":{\"amount\":{\"sum\":{\"field\":\"dataObject.paymentDetails.bill.billDetails.billAccountDetails.amount\"}}}}}},\"Round Off\":{\"nested\":{\"path\":\"dataObject.paymentDetails.bill.billDetails.billAccountDetails\"},\"aggs\":{\"aggrFilter\":{\"filter\":{\"terms\":{\"dataObject.paymentDetails.bill.billDetails.billAccountDetails.taxHeadCode.keyword\":[\"WS_Round_Off\"]}},\"aggs\":{\"amount\":{\"sum\":{\"field\":\"dataObject.paymentDetails.bill.billDetails.billAccountDetails.amount\"}}}}}},\"Time Adhoc Rebate\":{\"nested\":{\"path\":\"dataObject.paymentDetails.bill.billDetails.billAccountDetails\"},\"aggs\":{\"aggrFilter\":{\"filter\":{\"terms\":{\"dataObject.paymentDetails.bill.billDetails.billAccountDetails.taxHeadCode.keyword\":[\"WS_TIME_ADHOC_REBATE\"]}},\"aggs\":{\"amount\":{\"sum\":{\"field\":\"dataObject.paymentDetails.bill.billDetails.billAccountDetails.amount\"}}}}}},\"Time Adhoc Penalty\":{\"nested\":{\"path\":\"dataObject.paymentDetails.bill.billDetails.billAccountDetails\"},\"aggs\":{\"aggrFilter\":{\"filter\":{\"terms\":{\"dataObject.paymentDetails.bill.billDetails.billAccountDetails.taxHeadCode.keyword\":[\"WS_TIME_ADHOC_PENALTY\"]}},\"aggs\":{\"amount\":{\"sum\":{\"field\":\"dataObject.paymentDetails.bill.billDetails.billAccountDetails.amount\"}}}}}},\"Advance Carryforward\":{\"nested\":{\"path\":\"dataObject.paymentDetails.bill.billDetails.billAccountDetails\"},\"aggs\":{\"aggrFilter\":{\"filter\":{\"terms\":{\"dataObject.paymentDetails.bill.billDetails.billAccountDetails.taxHeadCode.keyword\":[\"WS_ADVANCE_CARRYFORWARD\"]}},\"aggs\":{\"amount\":{\"sum\":{\"field\":\"dataObject.paymentDetails.bill.billDetails.billAccountDetails.amount\"}}}}}},\"Total Transactions\":{\"value_count\":{\"field\":\"dataObject.paymentDetails.id.keyword\"}}}}}}}}"
+    },
+     {
+      "module": "COMMON",
+      "requestQueryMap": "{\"module\" : \"businessService.keyword\", \"tenantId\" : \"tenantIdForMunicipalCorporation.keyword\"}",
+      "dateRefField": "",
+      "indexName": "dss-target_v1",
+      "aggrQuery": "{\"aggs\":{\"Target Collectionz\":{\"sum\":{\"field\":\"budgetProposedForMunicipalCorporation\"}}}}}}"
+    }
+  ],
+ "filterKeys": [
+    {"key": "tenantId", "column": "Boundary"}
+  ],    
+  "chartType": "xtable",
+  "valueType": "number",
+  "drillChart": "",
+  "action": "",
+  "plotLabel": "Boundary",
+  "postAggregationTheory" : "",
+  "aggregationPaths": [
+  
+   "Charge",
+   "Time Rebate",
+   "Time Interest",
+   "Time Penalty",
+   "Round Off",
+   "Time Adhoc Penalty", 
+   "Time Adhoc Rebate",            
+   "Advance Carryforward",
+    "Total Amount"
+
+  ],
+  "pathDataTypeMapping": [
+    {
+      "Time Adhoc Penalty": "amount"
+    },
+    {
+      "Charge": "amount"
+    },
+    {
+      "Time Rebate": "amount"
+    },
+    {
+      "Time Interest": "amount"
+    },
+    {
+      "Time Penalty": "amount"
+    },
+    {
+      "Round Off": "amount"
+    },
+    {
+      "Time Adhoc Rebate": "amount"
+    },
+    {
+      "Advance Carryforward": "amount"
+    },
+     {
+      "Total Amount": "amount"
+    }
+  ],
+  "insight": {
+  },
+  "_comment": ""
+},
+
+
+
+
+
+
+
+
 
  "wstotalConnection": {
    "chartName": "DSS_WS_TOTAL_CONNECTIONS",
@@ -7240,6 +7411,59 @@
    },
    "_comment": "SW total collections "
  },
+
+ "swBillingCollection": {
+  "chartName": "DSS_SW_BILLING_COLLECTION",
+  "queries": [
+    {
+      "module": "SW",
+      "indexName": "dss-payment_v2",
+      "aggrQuery": "{\"aggs\":{\"AGG\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"dataObject.tenantId.keyword\":\"pb.testing\"}},{\"terms\":{\"dataObject.bill.status.keyword\":[\"Cancelled\"]}}],\"must\":[{\"terms\":{\"dataObject.paymentDetails.businessService.keyword\":[\"SW\"]}}]}},\"aggs\":{\"Total Collection23\":{\"sum\":{\"field\":\"dataObject.paymentDetails.bill.billDetails.amountPaid\"}}}}}}",
+      "requestQueryMap": "{\"tenantId\" : \"dataObject.tenantId\", \"module\" : \"dataObject.paymentDetails.businessService.keyword\",\"wardId\" : \"block.keyword\"}",
+      "dateRefField": "dataObject.paymentDetails.receiptDate"
+    }
+  ],
+   "translateTenantCode": true,
+"chartType": "metric",
+"valueType": "amount",
+"action": "",
+"drillChart": "none",
+"aggregationPaths": [
+  "Total Collection23"
+],
+"insight": {
+},
+"_comment": "SW total collections "
+},
+
+"swCollectionCharges": {
+  "chartName": "DSS_SW_COLLECTION_CHARGES",
+  "queries": [
+    {
+      "module": "SW",
+      "indexName": "dss-payment_v2",
+      "aggrQuery": "{\"aggs\":{\"AGG\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"dataObject.tenantId.keyword\":\"pb.testing\"}},{\"terms\":{\"dataObject.bill.status.keyword\":[\"Cancelled\"]}}],\"must\":[{\"terms\":{\"dataObject.paymentDetails.businessService.keyword\":[\"SW.ONE_TIME_FEE\"]}}]}},\"aggs\":{\"Total Collection23\":{\"sum\":{\"field\":\"dataObject.paymentDetails.bill.billDetails.amountPaid\"}}}}}}",
+      "requestQueryMap": "{\"tenantId\" : \"dataObject.tenantId\", \"module\" : \"dataObject.paymentDetails.businessService.keyword\",\"wardId\" : \"block.keyword\"}",
+      "dateRefField": "dataObject.paymentDetails.receiptDate"
+    }
+  ],
+   "translateTenantCode": true,
+"chartType": "metric",
+"valueType": "amount",
+"action": "",
+"drillChart": "none",
+"aggregationPaths": [
+  "Total Collection23"
+],
+"insight": {
+},
+"_comment": "SW total collections "
+},
+
+
+
+
+
  "swtotalCollection": {
    "chartName": "DSS_SW_TOTAL_COLLECTION",
    "queries": [
@@ -7378,7 +7602,46 @@
    },
    "_comment": " "
  },
+
+
  "swcumulativeCollections": {
+  "chartName": "DSS_SW_TOTAL_CUMULATIVE_COLLECTION",
+  "queries": [
+    {
+      "module": "SW",
+      "dateRefField": "dataObject.paymentDetails.receiptDate",
+      "requestQueryMap": "{\"tenantId\" : \"dataObject.tenantId\", \"wardId\" : \"Data.ward.name.keyword\"}",
+      "indexName": "dss-payment_v2",
+      "aggrQuery":    "{\"aggs\":{\"AGG\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"dataObject.tenantId.keyword\":\"pb.testing\"}},{\"terms\":{\"dataObject.bill.status.keyword\":[\"Cancelled\"]}}],\"must\":[{\"terms\":{\"dataObject.paymentDetails.businessService.keyword\":[\"SW.ONE_TIME_FEE\"]}}]}},\"aggs\":{\"Connection Charges\":{\"date_histogram\":{\"field\":\"dataObject.paymentDetails.receiptDate\",\"interval\":\"day\"},\"aggs\":{\"Connection Charges\":{\"sum\":{\"field\":\"dataObject.paymentDetails.bill.billDetails.amountPaid\"}}}}}}}}"
+    }, 
+    {
+      "module": "SW",
+      "dateRefField": "dataObject.paymentDetails.receiptDate",
+      "requestQueryMap": "{\"tenantId\" : \"dataObject.tenantId\", \"wardId\" : \"Data.ward.name.keyword\"}",
+      "indexName": "dss-payment_v2",
+      "aggrQuery": "{\"aggs\":{\"AGG\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"dataObject.tenantId.keyword\":\"pb.testing\"}},{\"terms\":{\"dataObject.bill.status.keyword\":[\"Cancelled\"]}}],\"must\":[{\"terms\":{\"dataObject.paymentDetails.businessService.keyword\":[\"SW\"]}}]}},\"aggs\":{\"Billing Collection\":{\"date_histogram\":{\"field\":\"dataObject.paymentDetails.receiptDate\",\"interval\":\"day\"},\"aggs\": {\"Billing Collection\":{\"sum\":{\"field\":\"dataObject.paymentDetails.bill.billDetails.amountPaid\"}}}}}}}}"   
+    }
+  ],
+  "chartType": "line",
+   "valueType": "number",
+   "action": "",
+   "drillChart": "none",
+   "documentType": "_doc",
+   "aggregationPaths": [
+	   "Connection Charges",
+     "Billing Collection"	
+	 
+   ],
+   "isCumulative": false,
+   "interval": "week",
+   "insight": {
+   },
+   "_comment": " "
+ },
+
+
+
+ "swcumulativeCollections1": {
    "chartName": "DSS_SW_TOTAL_CUMULATIVE_COLLECTION",
    "queries": [
      {
@@ -8051,6 +8314,86 @@
    "_comment": ""
  },
  
+
+ "swBillingTaxHeadUlb": {
+  "chartName": "DSS_SW_BILLING_TAX_HEAD_BOUNDARY",
+  "queries": [
+    {
+      "module": "COMMON",
+      "requestQueryMap": "{\"tenantId\" : \"dataObject.tenantId\"}",
+      "dateRefField": "dataObject.paymentDetails.receiptDate",
+      "indexName": "dss-payment_v2",
+      "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"dataObject.tenantId.keyword\":\"pb.testing\"}},{\"terms\":{\"dataObject.bill.status.keyword\":[\"Cancelled\"]}}]}},\"aggs\":{\"ULBs \":{\"terms\":{\"field\":\"dataObject.tenantId.keyword\",\"size\":200},\"aggs\":{\"Total Amount\":{\"bucket_script\":{\"buckets_path\":{\"c1\":\"Time Adhoc Penalty>aggrFilter>amount\",\"c2\":\"Charge>aggrFilter>amount\",\"c3\":\"Time Rebate>aggrFilter>amount\",\"c4\":\"Time Interest>aggrFilter>amount\",\"c5\":\"Time Penalty>aggrFilter>amount\",\"c6\":\"Round Off>aggrFilter>amount\",\"c7\":\"Time Adhoc Rebate>aggrFilter>amount\",\"c8\":\"Advance Carryforward>aggrFilter>amount\"},\"script\":{\"source\":\"params.c1+params.c2+params.c3+params.c4+params.c5+params.c6+params.c7+params.c8\"}}},\"Charge\":{\"nested\":{\"path\":\"dataObject.paymentDetails.bill.billDetails.billAccountDetails\"},\"aggs\":{\"aggrFilter\":{\"filter\":{\"terms\":{\"dataObject.paymentDetails.bill.billDetails.billAccountDetails.taxHeadCode.keyword\":[\"SW_CHARGE\"]}},\"aggs\":{\"amount\":{\"sum\":{\"field\":\"dataObject.paymentDetails.bill.billDetails.billAccountDetails.amount\"}}}}}},\"Time Rebate\":{\"nested\":{\"path\":\"dataObject.paymentDetails.bill.billDetails.billAccountDetails\"},\"aggs\":{\"aggrFilter\":{\"filter\":{\"terms\":{\"dataObject.paymentDetails.bill.billDetails.billAccountDetails.taxHeadCode.keyword\":[\"SW_TIME_REBATE\"]}},\"aggs\":{\"amount\":{\"sum\":{\"field\":\"dataObject.paymentDetails.bill.billDetails.billAccountDetails.amount\"}}}}}},\"Time Interest\":{\"nested\":{\"path\":\"dataObject.paymentDetails.bill.billDetails.billAccountDetails\"},\"aggs\":{\"aggrFilter\":{\"filter\":{\"terms\":{\"dataObject.paymentDetails.bill.billDetails.billAccountDetails.taxHeadCode.keyword\":[\"SW_TIME_INTEREST\"]}},\"aggs\":{\"amount\":{\"sum\":{\"field\":\"dataObject.paymentDetails.bill.billDetails.billAccountDetails.amount\"}}}}}},\"Time Penalty\":{\"nested\":{\"path\":\"dataObject.paymentDetails.bill.billDetails.billAccountDetails\"},\"aggs\":{\"aggrFilter\":{\"filter\":{\"terms\":{\"dataObject.paymentDetails.bill.billDetails.billAccountDetails.taxHeadCode.keyword\":[\"SW_TIME_PENALTY\"]}},\"aggs\":{\"amount\":{\"sum\":{\"field\":\"dataObject.paymentDetails.bill.billDetails.billAccountDetails.amount\"}}}}}},\"Round Off\":{\"nested\":{\"path\":\"dataObject.paymentDetails.bill.billDetails.billAccountDetails\"},\"aggs\":{\"aggrFilter\":{\"filter\":{\"terms\":{\"dataObject.paymentDetails.bill.billDetails.billAccountDetails.taxHeadCode.keyword\":[\"SW_Round_Off\"]}},\"aggs\":{\"amount\":{\"sum\":{\"field\":\"dataObject.paymentDetails.bill.billDetails.billAccountDetails.amount\"}}}}}},\"Time Adhoc Rebate\":{\"nested\":{\"path\":\"dataObject.paymentDetails.bill.billDetails.billAccountDetails\"},\"aggs\":{\"aggrFilter\":{\"filter\":{\"terms\":{\"dataObject.paymentDetails.bill.billDetails.billAccountDetails.taxHeadCode.keyword\":[\"SW_TIME_ADHOC_REBATE\"]}},\"aggs\":{\"amount\":{\"sum\":{\"field\":\"dataObject.paymentDetails.bill.billDetails.billAccountDetails.amount\"}}}}}},\"Time Adhoc Penalty\":{\"nested\":{\"path\":\"dataObject.paymentDetails.bill.billDetails.billAccountDetails\"},\"aggs\":{\"aggrFilter\":{\"filter\":{\"terms\":{\"dataObject.paymentDetails.bill.billDetails.billAccountDetails.taxHeadCode.keyword\":[\"SW_TIME_ADHOC_PENALTY\"]}},\"aggs\":{\"amount\":{\"sum\":{\"field\":\"dataObject.paymentDetails.bill.billDetails.billAccountDetails.amount\"}}}}}},\"Advance Carryforward\":{\"nested\":{\"path\":\"dataObject.paymentDetails.bill.billDetails.billAccountDetails\"},\"aggs\":{\"aggrFilter\":{\"filter\":{\"terms\":{\"dataObject.paymentDetails.bill.billDetails.billAccountDetails.taxHeadCode.keyword\":[\"SW_ADVANCE_CARRYFORWARD\"]}},\"aggs\":{\"amount\":{\"sum\":{\"field\":\"dataObject.paymentDetails.bill.billDetails.billAccountDetails.amount\"}}}}}},\"Total Transactions\":{\"value_count\":{\"field\":\"dataObject.paymentDetails.id.keyword\"}}}}}}}}"
+    },
+     {
+      "module": "COMMON",
+      "requestQueryMap": "{\"module\" : \"businessService.keyword\", \"tenantId\" : \"tenantIdForMunicipalCorporation.keyword\"}",
+      "dateRefField": "",
+      "indexName": "dss-target_v1",
+      "aggrQuery": "{\"aggs\":{\"Target Collectionz\":{\"sum\":{\"field\":\"budgetProposedForMunicipalCorporation\"}}}}}}"
+    }
+  ],
+ "filterKeys": [
+    {"key": "tenantId", "column": "Boundary"}
+  ],    
+  "chartType": "xtable",
+  "valueType": "number",
+  "drillChart": "",
+  "action": "",
+  "plotLabel": "Boundary",
+  "postAggregationTheory" : "",
+  "aggregationPaths": [
+  
+   "Charge",
+   "Time Rebate",
+   "Time Interest",
+   "Time Penalty",
+   "Round Off",
+ "Time Adhoc Penalty", 
+   "Time Adhoc Rebate",            
+   "Advance Carryforward",
+    "Total Amount"
+
+  ],
+  "pathDataTypeMapping": [
+    {
+      "Time Adhoc Penalty": "amount"
+    },
+    {
+      "Charge": "amount"
+    },
+    {
+      "Time Rebate": "amount"
+    },
+    {
+      "Time Interest": "amount"
+    },
+    {
+      "Time Penalty": "amount"
+    },
+    {
+      "Round Off": "amount"
+    },
+    {
+      "Time Adhoc Rebate": "amount"
+    },
+    {
+      "Advance Carryforward": "amount"
+    },
+     {
+      "Total Amount": "amount"
+    }
+  ],
+  "insight": {
+  },
+  "_comment": ""
+},
+
+
+
+
+
+
 
 
  "swtotalConnection": {
