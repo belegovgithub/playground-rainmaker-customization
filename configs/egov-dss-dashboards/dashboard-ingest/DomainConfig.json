@@ -5,7 +5,7 @@
       "domain": "PT",
       "indexName": "ptindex-v1",
       "documentType": "",
-      "query": "{\"query\":{\"bool\":{\"must\":[{\"match_phrase\":{\"Data.propertyDetails.assessmentNumber\":\"value\"}},{\"match_phrase\":{\"Data.propertyId\":\"value\"}}]}}}",
+      "query": "{\"query\":{\"bool\":{\"must\":[{\"match_phrase\":{\"Data.propertyId\":\"value\"}}]}}}",
       "targetReferences": [
         {
           "fieldName": "propertyId",
@@ -14,14 +14,6 @@
           "value": "$value",
           "seperator": " ",
           "expression": "propertyId"
-        },
-        {
-          "fieldName": "assessmentNumber",
-          "argument": "Data.propertyDetails.assessmentNumber",
-          "dataType": "String",
-          "value": "$value",
-          "seperator": " ",
-          "expression": "assessmentNumber"
         }
       ],
       "sourceReferences": [
@@ -31,7 +23,7 @@
           "dataType": "String",
           "value": "$value",
           "seperator": ":",
-          "expression": "propertyId:assessmentNumber"
+          "expression": "propertyId"
         }
       ]
     },
@@ -220,6 +212,33 @@
           "value": "$value",
           "seperator": " ",
           "expression": "birthCertificateNo"
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "domain": "DEATH_CERT",
+      "indexName": "death-cert-v1",
+      "documentType": "",
+      "query": "{\"query\":{\"bool\":{\"must\":[{\"match_phrase\":{\"Data.deathCertificateNo\":\"value\"}}]}}}",
+      "targetReferences": [
+        {
+          "fieldName": "deathCertificateNo",
+          "argument": "Data.deathCertificateNo",
+          "dataType": "String",
+          "value": "$value",
+          "seperator": " ",
+          "expression": "deathCertificateNo"
+        }
+      ],
+      "sourceReferences": [
+        {
+          "fieldName": "consumerCode",
+          "argument": "Data.deathCertificateNo",
+          "dataType": "String",
+          "value": "$value",
+          "seperator": " ",
+          "expression": "deathCertificateNo"
         }
       ]
     }
