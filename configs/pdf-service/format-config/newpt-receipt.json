@@ -21,6 +21,13 @@
               {
                 "columns": [
                   {
+                    "image": "{{logoImage}}",
+                    "width": 65,
+                    "height": 70,
+                    "alignment": "left",
+                    "margin": [40, 0, 0, 10]
+                  },
+                  {
                     "stack": [
                       {
                         "text": "{{cb-name}} {{cantonment-board}}",
@@ -100,6 +107,7 @@
                 "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"]
               }
             ],
+            
             [
               {
                 "text": "Address",
@@ -107,7 +115,7 @@
                 "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"]
               },
               {
-                "text": "{{houseno}} {{street}} {{building}} {{location}},{{city}} {{pincode}}",
+                "text": "{{houseno}} {{building}} {{street}} {{location}},{{city}} {{pincode}}",
                 "style": "pdf-value",
                 "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"]
               }
@@ -156,6 +164,18 @@
               },
               {
                 "text": "{{consumerCode}}",
+                "style": "pdf-value",
+                "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"]
+              }
+            ],
+            [
+              {
+                "text": "{{old_prop_no}}./{{abas_id}}",
+                "style": "pdf-label",
+                "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"]
+              },
+              {
+                "text": "{{oldPropertyNo}} / {{abasid}}",
                 "style": "pdf-value",
                 "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"]
               }
@@ -275,7 +295,7 @@
         "table": {
           "widths": ["16%", "9.7%","19.6%","23.6%","31.2%"],
           "body": [
-            "{{#variable10}}[{\"text\": \"{{bill_no}}\",\"style\": \"pdf-value\", \"borderColor\": [\"#A9A9A9\", \"#A9A9A9\", \"#A9A9A9\", \"#A9A9A9\"]},{ \"text\": \"{{date_of_bill}}\", \"style\": \"pdf-value\", \"borderColor\": [\"#A9A9A9\", \"#A9A9A9\", \"#A9A9A9\", \"#A9A9A9\"]},{ \"text\": \"{{tax_head}}\", \"style\": \"pdf-value\",\"borderColor\": [\"#A9A9A9\", \"#A9A9A9\", \"#A9A9A9\", \"#A9A9A9\"]},{\"text\": \"{{amount_payable}}\",\"style\": \"pdf-value\",\"borderColor\": [\"#A9A9A9\", \"#A9A9A9\", \"#A9A9A9\", \"#A9A9A9\"]},{\"text\": \"{{amount_recieved}}\",\"style\": \"pdf-value\",\"borderColor\": [\"#A9A9A9\", \"#A9A9A9\", \"#A9A9A9\", \"#A9A9A9\"]}]{{/variable10}}"
+            "{{#variable10}}[{\"text\": \"{{bill_no}}\",\"style\": \"pdf-value\", \"borderColor\": [\"#A9A9A9\", \"#A9A9A9\", \"#A9A9A9\", \"#A9A9A9\"]},{ \"text\": \"01/05/2021\", \"style\": \"pdf-value\", \"borderColor\": [\"#A9A9A9\", \"#A9A9A9\", \"#A9A9A9\", \"#A9A9A9\"]},{ \"text\": \"{{tax_head}}\", \"style\": \"pdf-value\",\"borderColor\": [\"#A9A9A9\", \"#A9A9A9\", \"#A9A9A9\", \"#A9A9A9\"]},{\"text\": \"{{amount_payable}}\",\"style\": \"pdf-value\",\"borderColor\": [\"#A9A9A9\", \"#A9A9A9\", \"#A9A9A9\", \"#A9A9A9\"]},{\"text\": \"{{amount_recieved}}\",\"style\": \"pdf-value\",\"borderColor\": [\"#A9A9A9\", \"#A9A9A9\", \"#A9A9A9\", \"#A9A9A9\"]}]{{/variable10}}"
           ]
         }
       },
@@ -307,9 +327,9 @@
           "body": [
             [
               {
-                "text": "{{disclaimer}}",
+                "text": "{{disclaimer1}}",
                 "border": [true, false, false, false],
-                "fontSize":7,
+                "fontSize":8,
                 "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"]
               },
               {
@@ -320,27 +340,31 @@
             ],
             [
               {
+                "text": "{{disclaimer}}",
+                "border": [true, false, false, false],
+                "fontSize":7,
+                "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"],
+                "margin":[0,-30,0,0]
+              },
+              {
+                "text": " ",
+                "border": [false, false, true, false],
+                "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"],
+                "margin":[0,-30,0,0]
+              }
+            ],
+            [
+              {
                 "image": "{{qrcodeimage}}",
                 "border": [true, false, false, true],
                 "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"],
                 "width": 64,
                 "height": 64,
-                "margin":[10,-10,0,0]
+                "margin":[10,-50,0,0]
               },
               {
-                "stack": [
-                  {
-                    "text": "............................."
-                  },
-                  {
-                    "text": "{{signature_label}}",
-                    "fontSize":7
-                  },
-                  {
-                    "text": "{{designation_label}}",
-                    "fontSize":7
-                  }
-                ],
+               
+                 "text": " ",
                 "border": [false, false, true, true],
                 "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"]
               }
