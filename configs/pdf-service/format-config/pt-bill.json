@@ -243,7 +243,7 @@
         {
               "style": "ws-head",
               "table": {
-                "widths": ["110%","*","*"],
+                "widths": ["108%","*","*"],
                 "body": [
             [
               {
@@ -261,9 +261,9 @@
                     "margin": [0, 0, 0, -4]
                   },
                   {
-                    "text": "{{houseno}} {{address}} {{pincode}}",
+                    "text": "{{houseno}} {{building}} {{street}} {{address}} {{pincode}}",
                     "style": "label-value",
-                    "width": "50%",
+                    "width": "80%",
                     "margin": [0, 0, 0, -4]
                           
                   }

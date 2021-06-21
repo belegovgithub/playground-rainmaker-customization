@@ -38,7 +38,8 @@
                 "value": {
                   "path": "$.oldPropertyId"
                 }
-              },{
+              },
+              {
                 "variable": "abasid",
                 "value": {
                   "path": "$.abasPropertyId"
@@ -47,7 +48,7 @@
               {
                 "variable": "location",
                 "value": {
-                  "path": "$.address.locality"
+                  "path": "$.address.locality.code"
                 },
                 "localisation":{
                   "required":true,
@@ -257,6 +258,20 @@
                   "path": "$.payableAmount"
                 },
                 "type":"amountInWords"
+              },
+              {
+                "variable": "street",
+                "value": {
+                  "path": "$.address.street"
+                },
+                "type":"setEmpty"
+              },
+              {
+                "variable": "building",
+                "value": {
+                  "path": "$.address.buildingName"
+                },
+                "type":"setEmpty"
               },
               {
                 "variable": "abas_id",
@@ -786,8 +801,8 @@
                       "value": "$.MdmsRes.tenant.tenants[0].code",
                       "localisation": {
                         "required": true,
-                        "prefix": "PDF_STATIC_LABEL_BD_CB_EN",
-                        "module": "rainmaker-pdf"
+                        "prefix": "TENANT_TENANTS",
+                        "module":"rainmaker-common"
                       }
                     },
                     {

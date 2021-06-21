@@ -451,6 +451,18 @@
                    }
                   },
                   {
+                    "variable": "disclaimer1",
+                    "value": {
+                      "path": "PDF_STATIC_LABEL_PT_RECEIPT_DISCLAIMER1_LABEL"
+                    },
+                    "type": "label",
+                    "localisation":{
+                      "required":true,
+                      "prefix": null,
+                      "module":"rainmaker-pdf"
+                   }
+                  },
+                  {
                     "variable": "disclaimer",
                     "value": {
                       "path": "PDF_STATIC_LABEL_PT_RECEIPT_DISCLAIMER_LABEL"
@@ -473,6 +485,12 @@
                       "prefix": null,
                       "module":"rainmaker-pdf"
                    }
+                  },
+                  {
+                    "variable": "tenantId",
+                    "value": {
+                      "path": "$.tenantId"
+                    }
                   },
                   {
                     "variable": "designation_label",
@@ -525,11 +543,51 @@
                   "type":"setEmpty"
                 },
                 {
+                  "variable": "old_prop_no",
+                  "value": {
+                    "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_OLD_PROPERTY_NO_LABEL"
+                  },
+                  "type": "label",
+                  "localisation": {
+                    "required": true,
+                    "prefix": null,
+                    "module": "rainmaker-pdf"
+                  }
+                },
+                {
+                  "variable": "abas_id",
+                  "value": {
+                    "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_ABAS_ID_LABEL"
+                  },
+                  "type": "label",
+                  "localisation": {
+                    "required": true,
+                    "prefix": null,
+                    "module": "rainmaker-pdf"
+                  }
+                },
+                {
+                  "variable": "abasid",
+                  "value": {
+                    "path": "$.abasPropertyId"
+                  }
+                },
+                {
+                  "variable": "oldPropertyNo",
+                  "value": {
+                    "path": "$.oldPropertyId"
+                  }
+                },
+                {
                   "variable": "street",
                   "value": {
                     "path": "$.address.street"
                   },
                   "type":"setEmpty"
+                },
+                {
+                  "variable":"hostName",
+                  "type": "host"
                 },
                 {
                   "variable": "pincode",
@@ -592,11 +650,6 @@
                         "value": "billNo"
                       },
                       {
-                        "variable": "date_of_bill",
-                        "value": "billDate",
-                        "type":"date"
-                      },
-                      {
                         "variable": "amount_payable",
                         "value": "amount",
                         "type":"setPositive"
@@ -625,6 +678,11 @@
                     "apiRequest": null,
                     "responseMapping":[
                       {
+                        "variable": "logoImage",
+                        "value":"$.MdmsRes.tenant.tenants[0].logoIdPdf",
+                        "type": "image"
+                      },
+                      {
                         "variable": "cb-name",
                         "value":"$.MdmsRes.tenant.tenants[0].code",
                         "localisation":{
@@ -652,7 +710,7 @@
               "qrcodeConfig": [
                 {
                     "variable": "qrcodeimage",
-                    "value":"Payer Name : {{payerName}}, Address : {{location}}, Receipt number: {{receiptNo}}, Date of payment: {{receiptDate}}, Fees Paid: {{paidAmount}}"
+                    "value":"{{hostName}}/citizen/withoutAuth/pt-mutation/viewReceipt?receiptNo={{receiptNo}}&tenantId={{tenantId}}"
                 }
               ]
           }
