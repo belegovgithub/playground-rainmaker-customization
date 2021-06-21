@@ -109,6 +109,11 @@ ReportDefinitions:
     type: string
     source: pt
     total: true
+  - name: scavengingtax
+    label: PT_SCAVENGING_TAX
+    type: string
+    source: pt
+    total: true    
   - name: cash
     label: reports.pt.cash
     type: string
@@ -197,6 +202,7 @@ ReportDefinitions:
     SUM(CASE WHEN taxheadcode LIKE 'PT_ADDL_WATER_TAX' THEN bad.adjustedamount ELSE 0 END) as additionalwatertax,
     SUM(CASE WHEN taxheadcode LIKE 'PT_DRAINAGE_TAX' THEN bad.adjustedamount ELSE 0 END) as drainagetax,
     SUM(CASE WHEN taxheadcode LIKE 'PT_LIGHTING_TAX' THEN bad.adjustedamount ELSE 0 END) as lightingtax,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_SCAVENGING_TAX' THEN bad.adjustedamount ELSE 0 END) as scavengingtax,
     SUM(CASE WHEN pay.paymentmode LIKE 'CASH' THEN bad.adjustedamount ELSE 0 END) as cash,
     SUM(CASE WHEN pay.paymentmode LIKE 'CARD' THEN bad.adjustedamount ELSE 0 END) as card,
     SUM(CASE WHEN pay.paymentmode LIKE 'ONLINE' THEN bad.adjustedamount ELSE 0 END) as online,
@@ -917,6 +923,11 @@ ReportDefinitions:
     type: string
     source: pt
     total: true
+  - name: scavengingtax
+    label: PT_SCAVENGING_TAX
+    type: string
+    source: pt
+    total: true   
   - name: cash
     label: reports.pt.cash
     type: string
@@ -1013,6 +1024,7 @@ ReportDefinitions:
     SUM(CASE WHEN taxheadcode LIKE 'PT_ADDL_WATER_TAX' THEN bad.adjustedamount ELSE 0 END) as additionalwatertax,
     SUM(CASE WHEN taxheadcode LIKE 'PT_DRAINAGE_TAX' THEN bad.adjustedamount ELSE 0 END) as drainagetax,
     SUM(CASE WHEN taxheadcode LIKE 'PT_LIGHTING_TAX' THEN bad.adjustedamount ELSE 0 END) as lightingtax,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_SCAVENGING_TAX' THEN bad.adjustedamount ELSE 0 END) as scavengingtax,
     SUM(CASE WHEN pay.paymentmode LIKE 'CASH' THEN bad.adjustedamount ELSE 0 END) as cash,
     SUM(CASE WHEN pay.paymentmode LIKE 'CARD' THEN bad.adjustedamount ELSE 0 END) as card,
     SUM(CASE WHEN pay.paymentmode LIKE 'ONLINE' THEN bad.adjustedamount ELSE 0 END) as online,
@@ -1156,7 +1168,12 @@ ReportDefinitions:
     label: PT_LIGHTINING_TAX
     type: string
     source: pt
-    total: false      
+    total: false
+  - name: scavengingtax
+    label: PT_SCAVENGING_TAX
+    type: string
+    source: pt
+    total: false         
   - name: demandnoticecharge
     label: PT_DEMANDNOTICE_CHARGE
     type: string
@@ -1244,6 +1261,9 @@ ReportDefinitions:
     CONCAT(SUM(CASE WHEN dem_code = 'PT_LIGHTINING_TAX' THEN dem_tax ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_LIGHTINING_TAX' THEN collectionamount ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_LIGHTINING_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as lightanddrainge,
+    CONCAT(SUM(CASE WHEN dem_code = 'PT_SCAVENGING_TAX' THEN dem_tax ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN dem_code = 'PT_SCAVENGING_TAX' THEN collectionamount ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN dem_code = 'PT_SCAVENGING_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as scavengingtax,
     CONCAT(SUM(CASE WHEN dem_code = 'PT_TIME_INTEREST' THEN dem_tax ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_TIME_INTEREST' THEN collectionamount ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_TIME_INTEREST'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as interest,
@@ -1411,7 +1431,12 @@ ReportDefinitions:
     label: PT_LIGHTINING_TAX
     type: string
     source: pt
-    total: false      
+    total: false
+  - name: scavengingtax
+    label: PT_SCAVENGING_TAX
+    type: string
+    source: pt
+    total: false        
   - name: demandnoticecharge
     label: PT_DEMANDNOTICE_CHARGE
     type: string
@@ -1507,6 +1532,9 @@ ReportDefinitions:
     CONCAT(SUM(CASE WHEN dem_code = 'PT_LIGHTINING_TAX' THEN dem_tax ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_LIGHTINING_TAX' THEN collectionamount ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_LIGHTINING_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as lightanddrainge,
+    CONCAT(SUM(CASE WHEN dem_code = 'PT_SCAVENGING_TAX' THEN dem_tax ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN dem_code = 'PT_SCAVENGING_TAX' THEN collectionamount ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN dem_code = 'PT_SCAVENGING_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as scavengingtax,
     CONCAT(SUM(CASE WHEN dem_code = 'PT_TIME_INTEREST' THEN dem_tax ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_TIME_INTEREST' THEN collectionamount ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_TIME_INTEREST'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as interest,
@@ -1615,7 +1643,12 @@ ReportDefinitions:
     label: PT_LIGHTINING_TAX
     type: string
     source: pt
-    total: false      
+    total: false
+  - name: scavengingtax
+    label: PT_SCAVENGING_TAX
+    type: string
+    source: pt
+    total: false         
   - name: demandnoticecharge
     label: PT_DEMANDNOTICE_CHARGE
     type: string
@@ -1690,6 +1723,9 @@ ReportDefinitions:
     CONCAT(SUM(CASE WHEN dem_code = 'PT_LIGHTINING_TAX' THEN dem_tax ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_LIGHTINING_TAX' THEN collectionamount ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_LIGHTINING_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as lightanddrainge,
+    CONCAT(SUM(CASE WHEN dem_code = 'PT_SCAVENGING_TAX' THEN dem_tax ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN dem_code = 'PT_SCAVENGING_TAX' THEN collectionamount ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN dem_code = 'PT_SCAVENGING_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as scavengingtax,
     CONCAT(SUM(CASE WHEN dem_code = 'PT_TIME_INTEREST' THEN dem_tax ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_TIME_INTEREST' THEN collectionamount ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_TIME_INTEREST' then  dem_tax -collectionamount ELSE 0 END)) as interest,
