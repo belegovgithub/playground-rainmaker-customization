@@ -40,9 +40,15 @@
                 }
               },
               {
+                "variable": "abasid",
+                "value": {
+                  "path": "$.abasPropertyId"
+                }
+              },
+              {
                 "variable": "location",
                 "value": {
-                  "path": "$.address.locality"
+                  "path": "$.address.locality.code"
                 },
                 "localisation":{
                   "required":true,
@@ -254,9 +260,23 @@
                 "type":"amountInWords"
               },
               {
-                "variable": "acknowledgement_for",
+                "variable": "street",
                 "value": {
-                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_ACKNOWLEDGEMENT"
+                  "path": "$.address.street"
+                },
+                "type":"setEmpty"
+              },
+              {
+                "variable": "building",
+                "value": {
+                  "path": "$.address.buildingName"
+                },
+                "type":"setEmpty"
+              },
+              {
+                "variable": "abas_id",
+                "value": {
+                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_ABAS_ID_LABEL"
                 },
                 "type": "label",
                 "localisation": {
@@ -269,18 +289,6 @@
                 "variable": "total_payment",
                 "value": {
                   "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_TOTAL_PAYMENT"
-                },
-                "type": "label",
-                "localisation": {
-                  "required": true,
-                  "prefix": null,
-                  "module": "rainmaker-pdf"
-                }
-              },
-              {
-                "variable": "receivers_signature",
-                "value": {
-                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_RECEIVERS_SIGNATURE"
                 },
                 "type": "label",
                 "localisation": {
@@ -350,9 +358,9 @@
                 }
               },
               {
-                "variable": "name_address",
+                "variable": "total_bill",
                 "value": {
-                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_NAME_ADDRESS"
+                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_TOTAL_BILL_LABEL"
                 },
                 "type": "label",
                 "localisation": {
@@ -362,9 +370,328 @@
                 }
               },
               {
-                "variable": "scissorImage",
-                "id": "scissor.png",
-                "type": "image"
+                "variable": "amt_due",
+                "value": {
+                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_AMT_DUE_LABEL"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-pdf"
+                }
+              },
+              {
+                "variable": "amt_adjusted",
+                "value": {
+                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_AMT_ADJUSTED_LABEL"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-pdf"
+                }
+              },
+              {
+                "variable": "adv_carry_forward",
+                "value": {
+                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_ADV_CARRY_FORWARD_LABEL"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-pdf"
+                }
+              },
+              {
+                "variable": "amt_words",
+                "value": {
+                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_AMT_IN_WORDS_LABEL"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-pdf"
+                }
+              },
+              {
+                "variable": "due_date",
+                "value": {
+                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_DUE_DATE_LABEL"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-pdf"
+                }
+              },
+              {
+                "variable": "note",
+                "value": {
+                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_NOTE_LABEL"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-pdf"
+                }
+              },
+              {
+                "variable": "ceo",
+                "value": {
+                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_CEO_LABEL"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-pdf"
+                }
+              },
+              {
+                "variable": "cantt_board",
+                "value": {
+                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_CANT_BOARD_LABEL"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-pdf"
+                }
+              },
+              {
+                "variable": "pt_bill",
+                "value": {
+                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_PROPERTY_TAX_LABEL"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-pdf"
+                }
+              },
+              {
+                "variable": "cant_act",
+                "value": {
+                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_CANT_ACT_LABEL"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-pdf"
+                }
+              },
+              {
+                "variable": "bill_no_label",
+                "value": {
+                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_BILL_NO_LABEL"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-pdf"
+                }
+              },
+              {
+                "variable": "prop_no_label",
+                "value": {
+                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_PROPERTY_NO_LABEL"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-pdf"
+                }
+              },
+              {
+                "variable": "bill_date_label",
+                "value": {
+                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_BILL_DATE_LABEL"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-pdf"
+                }
+              },
+              {
+                "variable": "old_prop_no",
+                "value": {
+                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_OLD_PROPERTY_NO_LABEL"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-pdf"
+                }
+              },
+              {
+                "variable": "location_label",
+                "value": {
+                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_LOCATION_LABEL"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-pdf"
+                }
+              },
+              {
+                "variable": "usage_type_label",
+                "value": {
+                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_USAGE_TYPE_LABEL"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-pdf"
+                }
+              },
+              {
+                "variable": "assesse_name_label",
+                "value": {
+                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_ASSESSE_NAME_LABEL"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-pdf"
+                }
+              },
+              {
+                "variable": "arv_label",
+                "value": {
+                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_ARV_LABEL"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-pdf"
+                }
+              },
+              {
+                "variable": "address_label",
+                "value": {
+                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_ADDRESS_LABEL"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-pdf"
+                }
+              },
+              {
+                "variable": "tax_desc_label",
+                "value": {
+                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_TAX_DESC_LABEL"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-pdf"
+                }
+              },
+              {
+                "variable": "arrear_demand_label",
+                "value": {
+                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_ARREAR_DEMAND_LABEL"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-pdf"
+                }
+              },
+              {
+                "variable": "current_demand_label",
+                "value": {
+                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_CURRENT_DEMAND_LABEL"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-pdf"
+                }
+              },
+              {
+                "variable": "total_amt_label",
+                "value": {
+                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILLTOTAL_AMT_LABEL"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-pdf"
+                }
+              },
+              {
+                "variable": "total_payable_amt",
+                "value": {
+                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_TOTAL_PAYABLE_LABEL"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-pdf"
+                }
+              },
+              {
+                "variable": "adv_amt",
+                "value": {
+                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_ADV_AMT_LABEL"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-pdf"
+                }
+              },
+              {
+                "variable": "to_label",
+                "value": {
+                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_TO_LABLE"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-pdf"
+                }
+              },
+              {
+                "variable": "tax_peroid_label",
+                "value": {
+                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_TAX_PEROID_LABLE"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-pdf"
+                }
               },
               {
                 "variable": "variable10",                        
@@ -460,7 +787,7 @@
           {
             "externalAPI": [     
               { 
-                "path": "http://egov-mdms-service:8080/egov-mdms-service/v1/_get",
+                "path": "http://localhost:8085/egov-mdms-service/v1/_get",
                 "queryParam": "moduleName=tenant&masterName=tenants&tenantId=pb&filter=%5B?(@.code=='{$.tenantId}')%5D",
                   "apiRequest": null,
                   "responseMapping":[
@@ -474,8 +801,8 @@
                       "value": "$.MdmsRes.tenant.tenants[0].code",
                       "localisation": {
                         "required": true,
-                        "prefix": "PDF_STATIC_LABEL_BD_CB_EN",
-                        "module": "rainmaker-pdf"
+                        "prefix": "TENANT_TENANTS",
+                        "module":"rainmaker-common"
                       }
                     },
                     {
