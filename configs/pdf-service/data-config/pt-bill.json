@@ -801,8 +801,8 @@
                       "value": "$.MdmsRes.tenant.tenants[0].code",
                       "localisation": {
                         "required": true,
-                        "prefix": "PDF_STATIC_LABEL_BD_CB_EN",
-                        "module": "rainmaker-pdf"
+                        "prefix": "TENANT_TENANTS",
+                        "module":"rainmaker-common"
                       }
                     },
                     {

@@ -487,6 +487,12 @@
                    }
                   },
                   {
+                    "variable": "tenantId",
+                    "value": {
+                      "path": "$.tenantId"
+                    }
+                  },
+                  {
                     "variable": "designation_label",
                     "value": {
                       "path": "PDF_STATIC_LABEL_PT_RECEIPT_DESIGNATION_LABEL"
@@ -578,6 +584,10 @@
                     "path": "$.address.street"
                   },
                   "type":"setEmpty"
+                },
+                {
+                  "variable":"hostName",
+                  "type": "host"
                 },
                 {
                   "variable": "pincode",
@@ -700,7 +710,7 @@
               "qrcodeConfig": [
                 {
                     "variable": "qrcodeimage",
-                    "value":"Payer Name : {{payerName}}, Address : {{location}}, Receipt number: {{receiptNo}}, Date of payment: {{receiptDate}}, Fees Paid: {{paidAmount}}"
+                    "value":"{{hostName}}/citizen/withoutAuth/pt-mutation/viewReceipt?receiptNo={{receiptNo}}&tenantId={{tenantId}}"
                 }
               ]
           }
