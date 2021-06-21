@@ -124,8 +124,7 @@ ServiceMaps:
             outJsonPath: $.Data.ward
         - path : http://property-services:8080/property-services/property/_search
           queryParam: propertyIds=$.propertyId,tenantId=$.tenantId
-          apiRequest: {"RequestInfo": {"apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654", "requesterId": "61",
-          "authToken": "02dbe5be-28df-4d82-954f-3d27c56cca7d","userInfo":{"id":73}}}
+          apiRequest: {"RequestInfo":{"apiId":"Rainmaker","ver":".01","ts":null,"action":"_update","did":"1","key":"","msgId":"20170310130900|en_IN","correlationId":"27bd8eae-7961-4ff2-aed2-01ae922ad043","userInfo":{"id":86438,"userName":"PT_CEMP_MORA","salutation":null,"name":"PT Employee","gender":"MALE","mobileNumber":"7777777159","emailId":null,"altContactNumber":null,"pan":null,"aadhaarNumber":null,"permanentAddress":null,"permanentCity":null,"permanentPinCode":null,"correspondenceAddress":"agra","correspondenceCity":null,"correspondencePinCode":null,"active":true,"locale":null,"type":"EMPLOYEE","accountLocked":false,"accountLockedDate":0,"fatherOrHusbandName":"tldetail father","signature":null,"bloodGroup":null,"photo":null,"identificationMark":null,"createdBy":2191,"lastModifiedBy":1,"tenantId":"pb.morar","roles":[{"code":"PT_CEMP","name":"PT Counter Employee","tenantId":"pb.morar"},{"code":"TL_CEMP","name":"TL Counter Employee","tenantId":"pb.morar"},{"code":"EMPLOYEE","name":"Employee","tenantId":"pb.morar"},{"code":"PT_APPROVER","name":"PT Counter Approver","tenantId":"pb.morar"}],"uuid":"f0e88cba-9caf-44e3-80b5-4e0d0d154122","createdDate":"04-05-2021 12:30:59","lastModifiedDate":"20-05-2021 13:22:33","dob":"1/1/1990","pwdExpiryDate":"28-01-2021 16:58:22"}}} 
           uriResponseMapping:
           - inJsonPath: $.Properties[0]
             outJsonPath: $.Data.propertyDetails
@@ -166,32 +165,12 @@ ServiceMaps:
         # - inJsonPath: $.@timestamp
         #   outJsonPath: $.Data.@timestamp
         externalUriMapping:
-        - path: http://egov-location:8080/egov-location/location/v11/boundarys/_search
-          queryParam: hierarchyTypeCode=REVENUE,boundaryType=Block,codes=$.address.locality.code,tenantId=$.tenantId
-          apiRequest: {"RequestInfo": {"apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654", "requesterId": "61",
-          "authToken": "02dbe5be-28df-4d82-954f-3d27c56cca7d","userInfo":{"id":73}}}
-          uriResponseMapping:
-          - inJsonPath: $.TenantBoundary[0].boundary[0]
-            outJsonPath: $.Data.ward
         - path : http://property-services:8080/property-services/property/_search
           queryParam: propertyIds=$.propertyId,tenantId=$.tenantId
-          apiRequest: {"RequestInfo": {"apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654", "requesterId": "61",
-          "authToken": "02dbe5be-28df-4d82-954f-3d27c56cca7d","userInfo":{"id":73}}}
-          uriResponseMapping:
+          apiRequest: {"RequestInfo":{"apiId":"Rainmaker","ver":".01","ts":null,"action":"_update","did":"1","key":"","msgId":"20170310130900|en_IN","correlationId":"27bd8eae-7961-4ff2-aed2-01ae922ad043","userInfo":{"id":86438,"userName":"PT_CEMP_MORA","salutation":null,"name":"PT Employee","gender":"MALE","mobileNumber":"7777777159","emailId":null,"altContactNumber":null,"pan":null,"aadhaarNumber":null,"permanentAddress":null,"permanentCity":null,"permanentPinCode":null,"correspondenceAddress":"agra","correspondenceCity":null,"correspondencePinCode":null,"active":true,"locale":null,"type":"EMPLOYEE","accountLocked":false,"accountLockedDate":0,"fatherOrHusbandName":"tldetail father","signature":null,"bloodGroup":null,"photo":null,"identificationMark":null,"createdBy":2191,"lastModifiedBy":1,"tenantId":"pb.morar","roles":[{"code":"PT_CEMP","name":"PT Counter Employee","tenantId":"pb.morar"},{"code":"TL_CEMP","name":"TL Counter Employee","tenantId":"pb.morar"},{"code":"EMPLOYEE","name":"Employee","tenantId":"pb.morar"},{"code":"PT_APPROVER","name":"PT Counter Approver","tenantId":"pb.morar"}],"uuid":"f0e88cba-9caf-44e3-80b5-4e0d0d154122","createdDate":"04-05-2021 12:30:59","lastModifiedDate":"20-05-2021 13:22:33","dob":"1/1/1990","pwdExpiryDate":"28-01-2021 16:58:22"}}} 
+        uriResponseMapping:
           - inJsonPath: $.Properties[0]
             outJsonPath: $.Data.propertyDetails
-        mdmsMapping:
-        - path: http://egov-mdms-service:8080/egov-mdms-service/v1/_search
-          moduleName: tenant
-          masterName: tenants
-          tenantId: pb
-          filter: "[?(@.code == $tenant)]"
-          filterMapping:
-          - variable: $tenant
-            valueJsonpath: $.tenantId
-          uriResponseMapping:
-          - inJsonPath: $.MdmsRes.tenant.tenants
-            outJsonPath: $.Data.tenantData
 
   - topic: pt-property-reindex
     configKey: REINDEX
