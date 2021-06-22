@@ -4648,7 +4648,7 @@
           "row": 4,
           "name": "DSS_REVENUE",
           "vizArray": [
-                     {
+            {
               "id": 231,
               "name": "DSS_TL_KEY_FY_INDICATORS",
               "dimensions": {
@@ -4683,7 +4683,6 @@
           
           ]
         },
-
         {
           "row": 5,
           "name": "DSS_SERVICE",
@@ -4713,9 +4712,9 @@
             }
           ]
         }
-        
       ]
     },
+      
 
     {
       "name": "DSS_PGR_DASHBOARD",
@@ -6490,6 +6489,26 @@
                   "filter": "",
                   "headers": []
                 },
+
+                {
+                  "id": "wsCollectionCharges",
+                  "name": "DSS_W&S_COLLECTION_CHARGES",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+
+                {
+                  "id": "wsBillingCollection",
+                  "name": "DSS_W&S_BILLING_COLLECTION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+
+
                 {
                   "id": "wstotalCollection",
                   "name": "DSS_W&S_TOTAL_COLLECTION",
@@ -6647,6 +6666,40 @@
             }
             ]
             },
+
+            {
+              "row": 5,
+              "name": "DSS_REVENUE",
+              "vizArray": [
+            {
+                  "id": 231,
+                  "name": "DSS_WS_BILLING_TAX_HEAD_BOUNDARY",
+                  "dimensions": {
+                    "height": 350,
+                    "width": 12
+                  },
+                  "vizType": "chart",
+                  "label": "",
+                  "noUnit": false,
+                  "isCollapsible": true,
+                  "charts": [
+                    {
+                      "id": "waterbillingTaxHeadUlb",
+                      "name": "DSS_WS_BILLING_TAX_HEAD_BOUNDARY",
+                      "code": "",
+                      "chartType": "table",
+                      "filter": "",
+                      "headers": [],
+                      "tabName": "Boundary"
+                    }
+                  ]
+                }
+                ]
+                },
+
+
+
+
            
         {
           "row": 7,
@@ -7453,6 +7506,24 @@
                   "headers": []
                 },
                 {
+                  "id": "swCollectionCharges",
+                  "name": "DSS_SW_COLLECTION_CHARGES",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+
+                {
+                  "id": "swBillingCollection",
+                  "name": "DSS_SW_BILLING_COLLECTION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+
+                {
                   "id": "swtotalCollection",
                   "name": "DSS_SW_TOTAL_COLLECTION",
                   "code": "",
@@ -7609,6 +7680,39 @@
             }
             ]
             },
+
+            {
+              "row": 4,
+              "name": "DSS_REVENUE",
+              "vizArray": [
+            {
+                  "id": 231,
+                  "name": "DSS_SW_BIILLING_TAX_HEAD_BOUNDARY",
+                  "dimensions": {
+                    "height": 350,
+                    "width": 12
+                  },
+                  "vizType": "chart",
+                  "label": "",
+                  "noUnit": false,
+                  "isCollapsible": true,
+                  "charts": [
+                    {
+                      "id": "swBillingTaxHeadUlb",
+                      "name": "DSS_SW_BILLING_TAX_HEAD_BOUNDARY",
+                      "code": "",
+                      "chartType": "table",
+                      "filter": "",
+                      "headers": [],
+                      "tabName": "Boundary"
+                    }
+                  ]
+                }
+                ]
+                },
+
+
+
            
         {
           "row": 7,
@@ -8097,6 +8201,25 @@
                   "filter": "",
                   "headers": []
                 },
+
+                {
+                  "id": "swCollectionCharges",
+                  "name": "DSS_SW_COLLECTION_CHARGES",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+
+                {
+                  "id": "swBillingCollection",
+                  "name": "DSS_SW_BILLING_COLLECTION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+
                 {
                   "id": "swtotalCollection",
                   "name": "DSS_SW_TOTAL_COLLECTION",
