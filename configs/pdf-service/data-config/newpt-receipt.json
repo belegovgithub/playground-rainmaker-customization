@@ -549,6 +549,18 @@
                   }
                 },
                 {
+                  "variable": "address_label",
+                  "value": {
+                    "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_ADDRESS_LABEL"
+                  },
+                  "type": "label",
+                  "localisation": {
+                    "required": true,
+                    "prefix": null,
+                    "module": "rainmaker-pdf"
+                  }
+                },
+                {
                   "variable": "abas_id",
                   "value": {
                     "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_ABAS_ID_LABEL"
