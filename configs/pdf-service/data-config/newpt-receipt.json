@@ -487,12 +487,6 @@
                    }
                   },
                   {
-                    "variable": "tenantId",
-                    "value": {
-                      "path": "$.tenantId"
-                    }
-                  },
-                  {
                     "variable": "designation_label",
                     "value": {
                       "path": "PDF_STATIC_LABEL_PT_RECEIPT_DESIGNATION_LABEL"
@@ -586,10 +580,6 @@
                   "type":"setEmpty"
                 },
                 {
-                  "variable":"hostName",
-                  "type": "host"
-                },
-                {
                   "variable": "pincode",
                   "value": {
                     "path": "$.address.pincode"
@@ -613,6 +603,13 @@
                   "value": {
                     "path": "$.owners[0].name"
                   }
+                },
+                {
+                  "variable": "receiptLink",
+                  "value": {
+                    "path": "$.receiptLink"
+                  },
+                  "type":"setEmpty"
                 },
                 {
                     "variable": "cantonment-board",
@@ -710,7 +707,7 @@
               "qrcodeConfig": [
                 {
                     "variable": "qrcodeimage",
-                    "value":"{{hostName}}/citizen/withoutAuth/pt-mutation/viewReceipt?receiptNo={{receiptNo}}&tenantId={{tenantId}}"
+                    "value":"{{receiptLink}}"
                 }
               ]
           }
