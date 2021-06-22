@@ -110,7 +110,7 @@
             
             [
               {
-                "text": "Address",
+                "text": "{{address_label}}",
                 "style": "pdf-label",
                 "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"]
               },
