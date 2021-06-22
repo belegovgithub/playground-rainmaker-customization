@@ -2,10 +2,11 @@
   {
     "operation": "shift",
     "spec": {
-      "tenantId": "tenantId",
-      "propertyId": "propertyId",
-      "propertyDetails": "propertyDetails",
-      "ward" : "ward"
+        "propertyId":"propertyId",
+        "tenantId":"tenantId",
+        "propertyDetails":"propertyDetails",  
+        "ward" : "ward"     
     }
   }
 ]
+      
