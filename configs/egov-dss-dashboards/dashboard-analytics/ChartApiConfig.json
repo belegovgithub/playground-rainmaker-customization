@@ -2880,15 +2880,48 @@
    },
    "_comment": " properties having assessmentNumber per usage type"
  },
+ "totalProperties": {
+  "chartName": "DSS_PT_TOTAL_PROPERTIES",
+  "queries": [
+    {
+      "module": "PT",
+      "indexName": "ptindex-v1",
+      "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"Total Properties\":{\"value_count\":{\"field\":\"Data.propertyId.keyword\"}}}}}}",
+      "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\",\"tenantId\" : \"Data.tenantId\" ,\"district\" : \"Data.tenantData.city.districtCode\"}",
+      "dateRefField": "Data.@timestamp"
+    }
+  ],
+  "chartType": "metric",
+  "valueType": "number",
+  "action": "",
+  "documentType": "_doc",
+  "drillChart": "none",
+  "aggregationPaths": [
+    "Total Properties"
+  ],
+  "insight": {
+    "chartResponseMap" : "totalProperties",
+    "action" : "differenceOfNumbers",
+    "upwardIndicator" : "positive",
+    "downwardIndicator" : "negative",
+    "textMessage" : "$indicator$value% than last $insightInterval",
+    "colorCode" : "#228B22",
+    "insightInterval" : "month"
+  },
+  "_comment": " total number of properties "
+},
+
+
+
  "propertiesAssessed": {
    "chartName": "DSS_PT_TOTAL_PROPERTIES_ASSESSED",
    "queries": [
      {
        "module": "PT",
-       "indexName": "ptindex-v1",
-       "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"Assessed Properties\":{\"value_count\":{\"field\":\"Data.propertyId.keyword\"}}}}}}",
+       "indexName": "ptassessment-v1",
+       "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"Assessed Properties\":{\"value_count\":{\"field\":\"Data.assessmentDetails.assessmentNumber.keyword\"}}}}}}",
        "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\",\"tenantId\" : \"Data.tenantId\" ,\"district\" : \"Data.tenantData.city.districtCode\"}",
-       "dateRefField": "Data.@timestamp"
+       "dateRefField": "Data.assessmentDetails.assessmentDate"
      }
    ],
    "chartType": "metric",
@@ -2908,7 +2941,7 @@
      "colorCode" : "#228B22",
      "insightInterval" : "month"
    },
-   "_comment": " totol properties having assessmentNumber "
+   "_comment": " total properties having assessmentNumber "
  },
  "totalAssessment": {
    "chartName": "DSS_PT_TOTAL_ASSESSMENTS",
@@ -2946,10 +2979,10 @@
    "queries": [
      {
        "module": "PT",
-       "indexName": "ptindex-v1",
-       "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"Collections\":{\"date_histogram\":{\"field\":\"Data.@timestamp\",\"interval\":\"intervalvalue\"},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.propertyDetails.assessmentNumber.keyword\"}}}}}}}}",
+       "indexName": "ptassessment-v1",
+       "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"Collections\":{\"date_histogram\":{\"field\":\"Data.assessmentDetails.assessmentDate\",\"interval\":\"intervalvalue\"},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.assessmentDetails.assessmentNumber.keyword\"}}}}}}}}",
        "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\", \"tenantId\" : \"Data.tenantId\" ,\"district\" : \"Data.tenantData.city.districtCode\"}",
-       "dateRefField": "Data.@timestamp"
+       "dateRefField": "Data.assessmentDetails.assessmentDate"
      }
    ],
    "chartType": "line",
@@ -2961,7 +2994,7 @@
      "Collections"
    ],
    "isCumulative": true,
-   "interval": "week",
+   "interval": "day",
    "insight": {
    },
    "_comment": " totol properties having assessmentNumber "
@@ -4574,6 +4607,31 @@
    },
    "_comment": ""
  },
+
+ "xptAssByCant": {
+  "chartName": "DSS_PT_PROPERTIES_ASSESSED_CANT_WISE",
+  "queries": [
+    {
+      "module": "PT",
+      "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\",\"tenantId\" : \"Data.tenantId.keyword\" }",
+      "dateRefField": "Data.assessmentDetails.assessmentDate",
+      "indexName": "ptassessment-v1",
+      "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"ULBs \":{\"terms\":{\"field\":\"Data.tenantId.keyword\",\"size\":1000},\"aggs\":{\"Total Properties\":{\"filter\":{\"exists\":{\"field\":\"Data.assessmentDetails.propertyId.keyword\"}},\"aggs\":{\"Total Properties\":{\"value_count\":{\"field\":\"Data.assessmentDetails.propertyId.keyword\"}}}},\"Properties Assessed\":{\"filter\":{\"exists\":{\"field\":\"Data.assessmentDetails.assessmentNumber.keyword\"}},\"aggs\":{\"Properties Assessed\":{\"value_count\":{\"field\":\"Data.assessmentDetails.assessmentNumber.keyword\"}}}}}}}}}}"
+    }
+  ],
+  
+  "filterKeys": [
+    {"key": "tenantId", "column": "Boundary"}
+  ],
+  "chartType": "xtable",
+  "valueType": "number",
+  "drillChart": "",
+  "plotLabel": "Boundary",
+  "insight": {
+  },
+  "_comment": ""
+},
+
  "xptFyByDDR": {
    "chartName": "DSS_TL_STATUS_BY_TENANT",
    "queries": [
