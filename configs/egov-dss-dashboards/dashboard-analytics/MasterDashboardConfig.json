@@ -4298,13 +4298,68 @@
       "style": "linear",
       "visualizations": [
         
-      {
-          "row": 9,
+        {
+          "row": 5,
           "name": "DSS_SERVICE",
           "vizArray": [
             {
-              "id": 431,
-              "name": "DSS_MC_TRANSACTIONS_BY_TENANT",
+              "id": 241,
+              "name": "DSS_OVERVIEW",
+              "dimensions": {
+                "height": 350,
+                "width": 5
+              },
+              "vizType": "metric-collection",
+              "isCollapsible": false,
+              "label": "DSS_OVERVIEW",
+              "charts": [
+                {
+                  "id": "totalProperties",
+                  "name": "DSS_PT_TOTAL_PROPERTIES",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "propertiesAssessed",
+                  "name": "DSS_PT_TOTAL_PROPERTIES_ASSESSED",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 242,
+              "name": "DSS_PT_CUMULATIVE_PROPERTIES_ASSESSED",
+              "dimensions": {
+                "height": 350,
+                "width": 7
+              },
+              "vizType": "chart",
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "cumulativePropertiesAssessed",
+                  "name": "Weekly",
+                  "code": "",
+                  "chartType": "line",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 6,
+          "name": "DSS_SERVICE",
+          "vizArray": [
+            {
+              "id": 231,
+              "name": "DSS_PT_PROPERTIES_ASSESSED_CANT_WISE",
               "dimensions": {
                 "height": 350,
                 "width": 12
@@ -4315,8 +4370,8 @@
               "isCollapsible": true,
               "charts": [
                 {
-                  "id": "xMcTransactionsByTenant",
-                  "name": "DSS_MC_TRANSACTIONS_BY_TENANT",
+                  "id": "xptAssByCant",
+                  "name": "DSS_PT_PROPERTIES_ASSESSED_CANT_WISE",
                   "code": "",
                   "chartType": "table",
                   "filter": "",
@@ -4689,8 +4744,63 @@
           "name": "DSS_SERVICE",
           "vizArray": [
             {
-              "id": 431,
-              "name": "DSS_MC_TRANSACTIONS_BY_TENANT",
+              "id": 241,
+              "name": "DSS_OVERVIEW",
+              "dimensions": {
+                "height": 350,
+                "width": 5
+              },
+              "vizType": "metric-collection",
+              "isCollapsible": false,
+              "label": "DSS_OVERVIEW",
+              "charts": [
+                {
+                  "id": "totalProperties",
+                  "name": "DSS_PT_TOTAL_PROPERTIES",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "propertiesAssessed",
+                  "name": "DSS_PT_TOTAL_PROPERTIES_ASSESSED",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 242,
+              "name": "DSS_PT_CUMULATIVE_PROPERTIES_ASSESSED",
+              "dimensions": {
+                "height": 350,
+                "width": 7
+              },
+              "vizType": "chart",
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "cumulativePropertiesAssessed",
+                  "name": "Weekly",
+                  "code": "",
+                  "chartType": "line",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 6,
+          "name": "DSS_SERVICE",
+          "vizArray": [
+            {
+              "id": 231,
+              "name": "DSS_PT_PROPERTIES_ASSESSED_CANT_WISE",
               "dimensions": {
                 "height": 350,
                 "width": 12
@@ -4701,8 +4811,8 @@
               "isCollapsible": true,
               "charts": [
                 {
-                  "id": "xMcTransactionsByTenant",
-                  "name": "DSS_MC_TRANSACTIONS_BY_TENANT",
+                  "id": "xptAssByCant",
+                  "name": "DSS_PT_PROPERTIES_ASSESSED_CANT_WISE",
                   "code": "",
                   "chartType": "table",
                   "filter": "",
@@ -5189,8 +5299,63 @@
           "name": "DSS_SERVICE",
           "vizArray": [
             {
-              "id": 431,
-              "name": "DSS_MC_TRANSACTIONS_BY_TENANT",
+              "id": 241,
+              "name": "DSS_OVERVIEW",
+              "dimensions": {
+                "height": 350,
+                "width": 5
+              },
+              "vizType": "metric-collection",
+              "isCollapsible": false,
+              "label": "DSS_OVERVIEW",
+              "charts": [
+                {
+                  "id": "totalProperties",
+                  "name": "DSS_PT_TOTAL_PROPERTIES",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "propertiesAssessed",
+                  "name": "DSS_PT_TOTAL_PROPERTIES_ASSESSED",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 242,
+              "name": "DSS_PT_CUMULATIVE_PROPERTIES_ASSESSED",
+              "dimensions": {
+                "height": 350,
+                "width": 7
+              },
+              "vizType": "chart",
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "cumulativePropertiesAssessed",
+                  "name": "Weekly",
+                  "code": "",
+                  "chartType": "line",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 6,
+          "name": "DSS_SERVICE",
+          "vizArray": [
+            {
+              "id": 231,
+              "name": "DSS_PT_PROPERTIES_ASSESSED_CANT_WISE",
               "dimensions": {
                 "height": 350,
                 "width": 12
@@ -5201,8 +5366,8 @@
               "isCollapsible": true,
               "charts": [
                 {
-                  "id": "xMcTransactionsByTenant",
-                  "name": "DSS_MC_TRANSACTIONS_BY_TENANT",
+                  "id": "xptAssByCant",
+                  "name": "DSS_PT_PROPERTIES_ASSESSED_CANT_WISE",
                   "code": "",
                   "chartType": "table",
                   "filter": "",
@@ -7190,6 +7355,26 @@
                   "filter": "",
                   "headers": []
                 },
+
+                {
+                  "id": "wsCollectionCharges",
+                  "name": "DSS_W&S_COLLECTION_CHARGES",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+
+                {
+                  "id": "wsBillingCollection",
+                  "name": "DSS_W&S_BILLING_COLLECTION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+
+
                 {
                   "id": "wstotalCollection",
                   "name": "DSS_W&S_TOTAL_COLLECTION",
@@ -7199,7 +7384,7 @@
                   "headers": []
                 },
                 {
-                  "id": "targetCollection",
+                  "id": "wstargetCollection",
                   "name": "DSS_W&S_TARGET_COLLECTION",
                   "code": "",
                   "chartType": "metric",
@@ -7288,7 +7473,7 @@
             },
             {
               "id": 223,
-              "name": "DSS_W&S_COLLECTION_BY_USAGE",
+              "name": "DSS_W&S_COLLECTION_BY_CONNECTION_TYPE",
               "dimensions": {
                 "height": 250,
                 "width": 4
@@ -7299,7 +7484,7 @@
               "charts": [
                 {
                   "id": "wscollectionByUsage",
-                  "name": "DSS_W&S_COLLECTION_BY_USAGE",
+                  "name": "DSS_W&S_COLLECTION_BY_CONNECTION_TYPE",
                   "code": "",
                   "chartType": "donut",
                   "filter": "",
@@ -7310,33 +7495,78 @@
           ]
         },
         {
-          "row": 3,
+          "row": 4,
           "name": "DSS_REVENUE",
           "vizArray": [
             {
               "id": 231,
-              "name": "DSS_W&S_DEMAND_COLLECTION_BOUNDARY",
+              "name": "DSS_WS_CON_TAX_HEAD_BOUNDARY",
               "dimensions": {
                 "height": 350,
                 "width": 12
               },
               "vizType": "chart",
+              "label": "",
               "noUnit": false,
-              "isCollapsible": false,
+              "isCollapsible": true,
               "charts": [
                 {
-                  "id": "wsFinancialIndicatorDDR",
-                  "name": "DSS_W&S_DEMAND_COLLECTION_BOUNDARY",
+                  "id": "waterConTaxHeadUlb",
+                  "name": "DSS_WS_CON_TAX_HEAD_BOUNDARY",
                   "code": "",
                   "chartType": "table",
                   "filter": "",
                   "headers": [],
                   "tabName": "Boundary"
+                },
+                {
+                  "id": "waterConTaxHeadWard",
+                  "name": "DSS_WS_CON_TAX_HEAD_BOUNDARY",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "Ward"
                 }
               ]
             }
-          ]
-        },
+            ]
+            },
+
+            {
+              "row": 5,
+              "name": "DSS_REVENUE",
+              "vizArray": [
+            {
+                  "id": 231,
+                  "name": "DSS_WS_BILLING_TAX_HEAD_BOUNDARY",
+                  "dimensions": {
+                    "height": 350,
+                    "width": 12
+                  },
+                  "vizType": "chart",
+                  "label": "",
+                  "noUnit": false,
+                  "isCollapsible": true,
+                  "charts": [
+                    {
+                      "id": "waterbillingTaxHeadUlb",
+                      "name": "DSS_WS_BILLING_TAX_HEAD_BOUNDARY",
+                      "code": "",
+                      "chartType": "table",
+                      "filter": "",
+                      "headers": [],
+                      "tabName": "Boundary"
+                    }
+                  ]
+                }
+                ]
+                },
+
+
+
+
+           
         {
           "row": 7,
           "name": "DSS_SERVICE",
@@ -7354,6 +7584,14 @@
               "isCollapsible": true,
               "moduleLevel":"WS",
               "charts": [
+              {
+                  "id": "totalApplication",
+                  "name": "DSS_W&S_APPLICATIONS",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
                 {
                   "id": "wstotalConnection",
                   "name": "DSS_W&S_CONNECTIONS",
@@ -8230,7 +8468,7 @@
                   "headers": []
                 },
                 {
-                  "id": "targetCollection",
+                  "id": "swtargetCollection",
                   "name": "DSS_SW_TARGET_COLLECTION",
                   "code": "",
                   "chartType": "metric",
@@ -8319,7 +8557,7 @@
             },
             {
               "id": 223,
-              "name": "DSS_SW_COLLECTION_BY_USAGE",
+              "name": "DSS_SW_COLLECTION_BY_CONNECTION_TYPE",
               "dimensions": {
                 "height": 250,
                 "width": 4
@@ -8330,7 +8568,7 @@
               "charts": [
                 {
                   "id": "swcollectionByUsage",
-                  "name": "DSS_SW_COLLECTION_BY_USAGE",
+                  "name": "DSS_SW_COLLECTION_BY_CONNECTION_TYPE",
                   "code": "",
                   "chartType": "donut",
                   "filter": "",
@@ -8341,33 +8579,74 @@
           ]
         },
         {
-          "row": 3,
+          "row": 4,
           "name": "DSS_REVENUE",
           "vizArray": [
             {
               "id": 231,
-              "name": "DSS_SW_DEMAND_COLLECTION_BOUNDARY",
+              "name": "DSS_SW_CON_TAX_HEAD_BOUNDARY",
               "dimensions": {
                 "height": 350,
                 "width": 12
               },
               "vizType": "chart",
+              "label": "",
               "noUnit": false,
-              "isCollapsible": false,
+              "isCollapsible": true,
               "charts": [
                 {
-                  "id": "swFinancialIndicatorDDR",
-                  "name": "DSS_SW_DEMAND_COLLECTION_BOUNDARY",
+                  "id": "swConTaxHeadUlb",
+                  "name": "DSS_SW_CON_TAX_HEAD_BOUNDARY",
                   "code": "",
                   "chartType": "table",
                   "filter": "",
                   "headers": [],
                   "tabName": "Boundary"
+                },
+                {
+                  "id": "swConTaxHeadWard",
+                  "name": "DSS_SW_CON_TAX_HEAD_BOUNDARY",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "Ward"
                 }
               ]
             }
-          ]
-        },
+            ]
+            },
+
+            {
+              "row": 4,
+              "name": "DSS_REVENUE",
+              "vizArray": [
+            {
+                  "id": 231,
+                  "name": "DSS_SW_BIILLING_TAX_HEAD_BOUNDARY",
+                  "dimensions": {
+                    "height": 350,
+                    "width": 12
+                  },
+                  "vizType": "chart",
+                  "label": "",
+                  "noUnit": false,
+                  "isCollapsible": true,
+                  "charts": [
+                    {
+                      "id": "swBillingTaxHeadUlb",
+                      "name": "DSS_SW_BILLING_TAX_HEAD_BOUNDARY",
+                      "code": "",
+                      "chartType": "table",
+                      "filter": "",
+                      "headers": [],
+                      "tabName": "Boundary"
+                    }
+                  ]
+                }
+                ]
+                },
+   
         {
           "row": 7,
           "name": "DSS_SERVICE",
@@ -8383,8 +8662,16 @@
               "label": "",
               "noUnit": false,
               "isCollapsible": true,
-              "moduleLevel":"SW",
+              "moduleLevel":"SW", 
               "charts": [
+              {
+                  "id": "totalApplication",
+                  "name": "DSS_SW_APPLICATIONS",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
                 {
                   "id": "swtotalConnection",
                   "name": "DSS_SW_CONNECTIONS",
