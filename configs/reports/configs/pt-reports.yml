@@ -64,12 +64,12 @@ ReportDefinitions:
     type: string
     source: pt
     total: true
-  - name: conservancytax
+  - name: conservancyandscaveningtax
     label: PT_CONSERVANCY_TAX
     type: string
     source: pt
     total: true
-  - name: lightiningtax
+  - name: lightininganddrainagetax
     label: PT_LIGHTINING_TAX
     type: string
     source: pt
@@ -113,7 +113,22 @@ ReportDefinitions:
     label: PT_SCAVENGING_TAX
     type: string
     source: pt
-    total: true    
+    total: true  
+  - name: librarycess
+    label: PT_LIBRARY_CESS
+    type: string
+    source: pt
+    total: true 
+  - name: conservancytax
+    label: PT_CONSERVE_TAX
+    type: string
+    source: pt
+    total: true   
+  - name: specialconservancytax
+    label: PT_SPECIAL_CONSERVANCY_TAX
+    type: string
+    source: pt
+    total: true       
   - name: cash
     label: reports.pt.cash
     type: string
@@ -193,8 +208,8 @@ ReportDefinitions:
     SUM(CASE WHEN taxheadcode LIKE 'PT_DEMANDNOTICE_CHARGE' THEN bad.adjustedamount ELSE 0 END) as demandnoticecharge,
     SUM(CASE WHEN taxheadcode LIKE 'PT_HOUSE_TAX' THEN bad.adjustedamount ELSE 0 END) as housetax,
     SUM(CASE WHEN taxheadcode LIKE 'PT_WATER_TAX'  THEN bad.adjustedamount ELSE 0 END) as watertax ,
-    SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN bad.adjustedamount ELSE 0 END) as conservancytax ,
-    SUM( CASE WHEN taxheadcode LIKE 'PT_LIGHTINING_TAX' THEN bad.adjustedamount ELSE 0 END) as lightiningtax ,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN bad.adjustedamount ELSE 0 END) as conservancyandscaveningtax ,
+    SUM( CASE WHEN taxheadcode LIKE 'PT_LIGHTINING_TAX' THEN bad.adjustedamount ELSE 0 END) as lightininganddrainagetax ,
     SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_TAX' THEN bad.adjustedamount ELSE 0 END) as educationtax ,
     SUM(CASE WHEN taxheadcode LIKE 'PT_CONSOLIDATED_PROPERTY_TAX' THEN bad.adjustedamount ELSE 0 END) as consolidatedpropertytax,
     SUM(CASE WHEN taxheadcode LIKE 'PT_SANITARY_CESS' THEN bad.adjustedamount ELSE 0 END) as sanitarycess,
@@ -203,6 +218,9 @@ ReportDefinitions:
     SUM(CASE WHEN taxheadcode LIKE 'PT_DRAINAGE_TAX' THEN bad.adjustedamount ELSE 0 END) as drainagetax,
     SUM(CASE WHEN taxheadcode LIKE 'PT_LIGHTING_TAX' THEN bad.adjustedamount ELSE 0 END) as lightingtax,
     SUM(CASE WHEN taxheadcode LIKE 'PT_SCAVENGING_TAX' THEN bad.adjustedamount ELSE 0 END) as scavengingtax,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_LIBRARY_CESS' THEN bad.adjustedamount ELSE 0 END) as librarycess,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVE_TAX' THEN bad.adjustedamount ELSE 0 END) as conservancytax,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_SPECIAL_CONSERVANCY_TAX' THEN bad.adjustedamount ELSE 0 END) as specialconservancytax,
     SUM(CASE WHEN pay.paymentmode LIKE 'CASH' THEN bad.adjustedamount ELSE 0 END) as cash,
     SUM(CASE WHEN pay.paymentmode LIKE 'CARD' THEN bad.adjustedamount ELSE 0 END) as card,
     SUM(CASE WHEN pay.paymentmode LIKE 'ONLINE' THEN bad.adjustedamount ELSE 0 END) as online,
@@ -288,12 +306,12 @@ ReportDefinitions:
     type: string
     source: pt
     total: true
-  - name: conservancytax
+  - name: conservancyandscaveningtax
     label: PT_CONSERVANCY_TAX
     type: string
     source: pt
     total: true
-  - name: lightiningtax
+  - name: lightininganddrainagetax
     label: PT_LIGHTINING_TAX
     type: string
     source: pt
@@ -333,6 +351,26 @@ ReportDefinitions:
     type: string
     source: pt
     total: true  
+  - name: scavengingtax
+    label: PT_SCAVENGING_TAX
+    type: string
+    source: pt
+    total: true  
+  - name: librarycess
+    label: PT_LIBRARY_CESS
+    type: string
+    source: pt
+    total: true 
+  - name: conservancytax
+    label: PT_CONSERVE_TAX
+    type: string
+    source: pt
+    total: true   
+  - name: specialconservancytax
+    label: PT_SPECIAL_CONSERVANCY_TAX
+    type: string
+    source: pt
+    total: true       
   - name: totalcollection
     label: PT_TOTAL_AMOUNT 
     type: string
@@ -369,8 +407,8 @@ ReportDefinitions:
     SUM(CASE WHEN taxheadcode LIKE 'PT_DEMANDNOTICE_CHARGE' THEN bad.adjustedamount ELSE 0 END) as demandnoticecharge,
     SUM(CASE WHEN taxheadcode LIKE 'PT_HOUSE_TAX' THEN bad.adjustedamount ELSE 0 END) as housetax,
     SUM(CASE WHEN taxheadcode LIKE 'PT_WATER_TAX'  THEN bad.adjustedamount ELSE 0 END) as watertax ,
-    SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN bad.adjustedamount ELSE 0 END) as conservancytax ,
-    SUM(CASE WHEN taxheadcode LIKE 'PT_LIGHTINING_TAX' THEN bad.adjustedamount ELSE 0 END) as lightiningtax ,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN bad.adjustedamount ELSE 0 END) as conservancyandscaveningtax ,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_LIGHTINING_TAX' THEN bad.adjustedamount ELSE 0 END) as lightininganddrainagetax ,
     SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_TAX' THEN bad.adjustedamount ELSE 0 END) as educationtax ,
     SUM(CASE WHEN taxheadcode LIKE 'PT_CONSOLIDATED_PROPERTY_TAX' THEN bad.adjustedamount ELSE 0 END) as consolidatedpropertytax,
     SUM(CASE WHEN taxheadcode LIKE 'PT_SANITARY_CESS' THEN bad.adjustedamount ELSE 0 END) as sanitarycess,
@@ -378,6 +416,10 @@ ReportDefinitions:
     SUM(CASE WHEN taxheadcode LIKE 'PT_ADDL_WATER_TAX' THEN bad.adjustedamount ELSE 0 END) as additionalwatertax,
     SUM(CASE WHEN taxheadcode LIKE 'PT_DRAINAGE_TAX' THEN bad.adjustedamount ELSE 0 END) as drainagetax,
     SUM(CASE WHEN taxheadcode LIKE 'PT_LIGHTING_TAX' THEN bad.adjustedamount ELSE 0 END) as lightingtax,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_SCAVENGING_TAX' THEN bad.adjustedamount ELSE 0 END) as scavengingtax,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_LIBRARY_CESS' THEN bad.adjustedamount ELSE 0 END) as librarycess,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVE_TAX' THEN bad.adjustedamount ELSE 0 END) as conservancytax,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_SPECIAL_CONSERVANCY_TAX' THEN bad.adjustedamount ELSE 0 END) as specialconservancytax,
     pd.amountpaid as totalcollection,
     un.name as collectorname,
     addr.doorno as doorno,
@@ -527,12 +569,12 @@ ReportDefinitions:
     type: string
     source: pt
     total: true
-  - name: conservancytax
+  - name: conservancyandscaveningtax
     label: PT_CONSERVANCY_TAX
     type: string
     source: pt
     total: true
-  - name: lightiningtax
+  - name: lightininganddrainagetax
     label: PT_LIGHTINING_TAX
     type: string
     source: pt
@@ -572,6 +614,26 @@ ReportDefinitions:
     type: string
     source: pt
     total: true 
+  - name: scavengingtax
+    label: PT_SCAVENGING_TAX
+    type: string
+    source: pt
+    total: true  
+  - name: librarycess
+    label: PT_LIBRARY_CESS
+    type: string
+    source: pt
+    total: true 
+  - name: conservancytax
+    label: PT_CONSERVE_TAX
+    type: string
+    source: pt
+    total: true   
+  - name: specialconservancytax
+    label: PT_SPECIAL_CONSERVANCY_TAX
+    type: string
+    source: pt
+    total: true       
   - name: totalcollection
     label: PT_TOTAL_AMOUNT 
     type: string
@@ -616,8 +678,8 @@ ReportDefinitions:
     SUM(CASE WHEN taxheadcode LIKE 'PT_DEMANDNOTICE_CHARGE' THEN bad.adjustedamount ELSE 0 END) as demandnoticecharge,
     SUM(CASE WHEN taxheadcode LIKE 'PT_HOUSE_TAX' THEN bad.adjustedamount ELSE 0 END) as housetax,
     SUM(CASE WHEN taxheadcode LIKE 'PT_WATER_TAX'  THEN bad.adjustedamount ELSE 0 END) as watertax ,
-    SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN bad.adjustedamount ELSE 0 END) as conservancytax ,
-    SUM(CASE WHEN taxheadcode LIKE 'PT_LIGHTINING_TAX' THEN bad.adjustedamount ELSE 0 END) as lightiningtax ,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN bad.adjustedamount ELSE 0 END) as conservancyandscaveningtax ,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_LIGHTINING_TAX' THEN bad.adjustedamount ELSE 0 END) as lightininganddrainagetax ,
     SUM(CASE WHEN taxheadcode LIKE 'PT_LIGHTING_TAX' THEN bad.adjustedamount ELSE 0 END) as lightingtax,
     SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_TAX' THEN bad.adjustedamount ELSE 0 END) as educationtax ,
     SUM(CASE WHEN taxheadcode LIKE 'PT_CONSOLIDATED_PROPERTY_TAX' THEN bad.adjustedamount ELSE 0 END) as consolidatedpropertytax,
@@ -625,6 +687,10 @@ ReportDefinitions:
     SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_CESS' THEN bad.adjustedamount ELSE 0 END) as educationcess,
     SUM(CASE WHEN taxheadcode LIKE 'PT_ADDL_WATER_TAX' THEN bad.adjustedamount ELSE 0 END) as additionalwatertax,
     SUM(CASE WHEN taxheadcode LIKE 'PT_DRAINAGE_TAX' THEN bad.adjustedamount ELSE 0 END) as drainagetax,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_SCAVENGING_TAX' THEN bad.adjustedamount ELSE 0 END) as scavengingtax,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_LIBRARY_CESS' THEN bad.adjustedamount ELSE 0 END) as librarycess,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVE_TAX' THEN bad.adjustedamount ELSE 0 END) as conservancytax,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_SPECIAL_CONSERVANCY_TAX' THEN bad.adjustedamount ELSE 0 END) as specialconservancytax,
     pd.amountpaid as totalcollection,
     un.name as collectorname,
     addr.doorno as doorno,
@@ -878,12 +944,12 @@ ReportDefinitions:
     type: string
     source: pt
     total: true
-  - name: conservancytax
+  - name: conservancyandscaveningtax
     label: PT_CONSERVANCY_TAX
     type: string
     source: pt
     total: true
-  - name: lightiningtax
+  - name: lightininganddrainagetax
     label: PT_LIGHTINING_TAX
     type: string
     source: pt
@@ -927,7 +993,22 @@ ReportDefinitions:
     label: PT_SCAVENGING_TAX
     type: string
     source: pt
+    total: true  
+  - name: librarycess
+    label: PT_LIBRARY_CESS
+    type: string
+    source: pt
+    total: true 
+  - name: conservancytax
+    label: PT_CONSERVE_TAX
+    type: string
+    source: pt
     total: true   
+  - name: specialconservancytax
+    label: PT_SPECIAL_CONSERVANCY_TAX
+    type: string
+    source: pt
+    total: true        
   - name: cash
     label: reports.pt.cash
     type: string
@@ -1015,8 +1096,8 @@ ReportDefinitions:
     SUM(CASE WHEN taxheadcode LIKE 'PT_DEMANDNOTICE_CHARGE' THEN bad.adjustedamount ELSE 0 END) as demandnoticecharge,
     SUM(CASE WHEN taxheadcode LIKE 'PT_HOUSE_TAX' THEN bad.adjustedamount ELSE 0 END) as housetax,
     SUM(CASE WHEN taxheadcode LIKE 'PT_WATER_TAX'  THEN bad.adjustedamount ELSE 0 END) as watertax ,
-    SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN bad.adjustedamount ELSE 0 END) as conservancytax ,
-    SUM(CASE WHEN taxheadcode LIKE 'PT_LIGHTINING_TAX' THEN bad.adjustedamount ELSE 0 END) as lightiningtax ,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN bad.adjustedamount ELSE 0 END) as conservancyandscaveningtax ,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_LIGHTINING_TAX' THEN bad.adjustedamount ELSE 0 END) as lightininganddrainagetax ,
     SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_TAX' THEN bad.adjustedamount ELSE 0 END) as educationtax ,
     SUM(CASE WHEN taxheadcode LIKE 'PT_CONSOLIDATED_PROPERTY_TAX' THEN bad.adjustedamount ELSE 0 END) as consolidatedpropertytax,
     SUM(CASE WHEN taxheadcode LIKE 'PT_SANITARY_CESS' THEN bad.adjustedamount ELSE 0 END) as sanitarycess,
@@ -1025,6 +1106,9 @@ ReportDefinitions:
     SUM(CASE WHEN taxheadcode LIKE 'PT_DRAINAGE_TAX' THEN bad.adjustedamount ELSE 0 END) as drainagetax,
     SUM(CASE WHEN taxheadcode LIKE 'PT_LIGHTING_TAX' THEN bad.adjustedamount ELSE 0 END) as lightingtax,
     SUM(CASE WHEN taxheadcode LIKE 'PT_SCAVENGING_TAX' THEN bad.adjustedamount ELSE 0 END) as scavengingtax,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_LIBRARY_CESS' THEN bad.adjustedamount ELSE 0 END) as librarycess,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVE_TAX' THEN bad.adjustedamount ELSE 0 END) as conservancytax,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_SPECIAL_CONSERVANCY_TAX' THEN bad.adjustedamount ELSE 0 END) as specialconservancytax,
     SUM(CASE WHEN pay.paymentmode LIKE 'CASH' THEN bad.adjustedamount ELSE 0 END) as cash,
     SUM(CASE WHEN pay.paymentmode LIKE 'CARD' THEN bad.adjustedamount ELSE 0 END) as card,
     SUM(CASE WHEN pay.paymentmode LIKE 'ONLINE' THEN bad.adjustedamount ELSE 0 END) as online,
@@ -1124,7 +1208,7 @@ ReportDefinitions:
     type: string
     source: pt
     total: false
-  - name: conservancytax
+  - name: conservancyandscaveningtax
     label: PT_CONSERVANCY_TAX
     type: string
     source: pt
@@ -1164,7 +1248,7 @@ ReportDefinitions:
     type: string
     source: pt
     total: false
-  - name: lightanddrainge
+  - name: lightininganddrainagetax
     label: PT_LIGHTINING_TAX
     type: string
     source: pt
@@ -1173,7 +1257,22 @@ ReportDefinitions:
     label: PT_SCAVENGING_TAX
     type: string
     source: pt
-    total: false         
+    total: false   
+  - name: librarycess
+    label: PT_LIBRARY_CESS
+    type: string
+    source: pt
+    total: false 
+  - name: conservancytax
+    label: PT_CONSERVE_TAX
+    type: string
+    source: pt
+    total: false   
+  - name: specialconservancytax
+    label: PT_SPECIAL_CONSERVANCY_TAX
+    type: string
+    source: pt
+    total: false             
   - name: demandnoticecharge
     label: PT_DEMANDNOTICE_CHARGE
     type: string
@@ -1236,7 +1335,7 @@ ReportDefinitions:
     SUM(CASE WHEN dem_code = 'PT_WATER_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as watertax,
     CONCAT(SUM(CASE WHEN dem_code = 'PT_CONSERVANCY_TAX' THEN dem_tax ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_CONSERVANCY_TAX' THEN collectionamount ELSE 0 END),E'\r\n',
-    SUM(CASE WHEN dem_code = 'PT_CONSERVANCY_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as conservancytax,
+    SUM(CASE WHEN dem_code = 'PT_CONSERVANCY_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as conservancyandscaveningtax,
     CONCAT(SUM(CASE WHEN dem_code = 'PT_EDUCATION_TAX' THEN dem_tax ELSE 0 END),E'\r\n', 
     SUM(CASE WHEN dem_code = 'PT_EDUCATION_TAX' THEN collectionamount ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_EDUCATION_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as educationtax,
@@ -1260,10 +1359,19 @@ ReportDefinitions:
     SUM(CASE WHEN dem_code = 'PT_LIGHTING_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as lightingtax,
     CONCAT(SUM(CASE WHEN dem_code = 'PT_LIGHTINING_TAX' THEN dem_tax ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_LIGHTINING_TAX' THEN collectionamount ELSE 0 END),E'\r\n',
-    SUM(CASE WHEN dem_code = 'PT_LIGHTINING_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as lightanddrainge,
+    SUM(CASE WHEN dem_code = 'PT_LIGHTINING_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as lightininganddrainagetax,
     CONCAT(SUM(CASE WHEN dem_code = 'PT_SCAVENGING_TAX' THEN dem_tax ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_SCAVENGING_TAX' THEN collectionamount ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_SCAVENGING_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as scavengingtax,
+    CONCAT(SUM(CASE WHEN dem_code = 'PT_LIBRARY_CESS' THEN dem_tax ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN dem_code = 'PT_LIBRARY_CESS' THEN collectionamount ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN dem_code = 'PT_LIBRARY_CESS'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as librarycess,
+	  CONCAT(SUM(CASE WHEN dem_code = 'PT_CONSERVE_TAX' THEN dem_tax ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN dem_code = 'PT_CONSERVE_TAX' THEN collectionamount ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN dem_code = 'PT_CONSERVE_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as conservancytax,
+	  CONCAT(SUM(CASE WHEN dem_code = 'PT_SPECIAL_CONSERVANCY_TAX' THEN dem_tax ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN dem_code = 'PT_SPECIAL_CONSERVANCY_TAX' THEN collectionamount ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN dem_code = 'PT_SPECIAL_CONSERVANCY_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as specialconservancytax,
     CONCAT(SUM(CASE WHEN dem_code = 'PT_TIME_INTEREST' THEN dem_tax ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_TIME_INTEREST' THEN collectionamount ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_TIME_INTEREST'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as interest,
@@ -1387,7 +1495,7 @@ ReportDefinitions:
     type: string
     source: pt
     total: false
-  - name: conservancytax
+  - name: conservancyandscaveningtax
     label: PT_CONSERVANCY_TAX
     type: string
     source: pt
@@ -1427,7 +1535,7 @@ ReportDefinitions:
     type: string
     source: pt
     total: false
-  - name: lightanddrainge
+  - name: lightininganddrainagetax
     label: PT_LIGHTINING_TAX
     type: string
     source: pt
@@ -1436,7 +1544,22 @@ ReportDefinitions:
     label: PT_SCAVENGING_TAX
     type: string
     source: pt
-    total: false        
+    total: false   
+  - name: librarycess
+    label: PT_LIBRARY_CESS
+    type: string
+    source: pt
+    total: false 
+  - name: conservancytax
+    label: PT_CONSERVE_TAX
+    type: string
+    source: pt
+    total: false   
+  - name: specialconservancytax
+    label: PT_SPECIAL_CONSERVANCY_TAX
+    type: string
+    source: pt
+    total: false            
   - name: demandnoticecharge
     label: PT_DEMANDNOTICE_CHARGE
     type: string
@@ -1507,7 +1630,7 @@ ReportDefinitions:
     SUM(CASE WHEN dem_code = 'PT_WATER_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as watertax,
     CONCAT(SUM(CASE WHEN dem_code = 'PT_CONSERVANCY_TAX' THEN dem_tax ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_CONSERVANCY_TAX' THEN collectionamount ELSE 0 END),E'\r\n',
-    SUM(CASE WHEN dem_code = 'PT_CONSERVANCY_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as conservancytax,
+    SUM(CASE WHEN dem_code = 'PT_CONSERVANCY_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as conservancyandscaveningtax,
     CONCAT(SUM(CASE WHEN dem_code = 'PT_EDUCATION_TAX' THEN dem_tax ELSE 0 END),E'\r\n', 
     SUM(CASE WHEN dem_code = 'PT_EDUCATION_TAX' THEN collectionamount ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_EDUCATION_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as educationtax,
@@ -1531,10 +1654,19 @@ ReportDefinitions:
     SUM(CASE WHEN dem_code = 'PT_LIGHTING_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as lightingtax,
     CONCAT(SUM(CASE WHEN dem_code = 'PT_LIGHTINING_TAX' THEN dem_tax ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_LIGHTINING_TAX' THEN collectionamount ELSE 0 END),E'\r\n',
-    SUM(CASE WHEN dem_code = 'PT_LIGHTINING_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as lightanddrainge,
+    SUM(CASE WHEN dem_code = 'PT_LIGHTINING_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as lightininganddrainagetax,
     CONCAT(SUM(CASE WHEN dem_code = 'PT_SCAVENGING_TAX' THEN dem_tax ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_SCAVENGING_TAX' THEN collectionamount ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_SCAVENGING_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as scavengingtax,
+     CONCAT(SUM(CASE WHEN dem_code = 'PT_LIBRARY_CESS' THEN dem_tax ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN dem_code = 'PT_LIBRARY_CESS' THEN collectionamount ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN dem_code = 'PT_LIBRARY_CESS'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as librarycess,
+	 CONCAT(SUM(CASE WHEN dem_code = 'PT_CONSERVE_TAX' THEN dem_tax ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN dem_code = 'PT_CONSERVE_TAX' THEN collectionamount ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN dem_code = 'PT_CONSERVE_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as conservancytax,
+	 CONCAT(SUM(CASE WHEN dem_code = 'PT_SPECIAL_CONSERVANCY_TAX' THEN dem_tax ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN dem_code = 'PT_SPECIAL_CONSERVANCY_TAX' THEN collectionamount ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN dem_code = 'PT_SPECIAL_CONSERVANCY_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as specialconservancytax,
     CONCAT(SUM(CASE WHEN dem_code = 'PT_TIME_INTEREST' THEN dem_tax ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_TIME_INTEREST' THEN collectionamount ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_TIME_INTEREST'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as interest,
@@ -1599,7 +1731,7 @@ ReportDefinitions:
     type: string
     source: pt
     total: false
-  - name: conservancytax
+  - name: conservancyandscaveningtax
     label: PT_CONSERVANCY_TAX
     type: string
     source: pt
@@ -1639,7 +1771,7 @@ ReportDefinitions:
     type: string
     source: pt
     total: false
-  - name: lightanddrainge
+  - name: lightininganddrainagetax
     label: PT_LIGHTINING_TAX
     type: string
     source: pt
@@ -1648,7 +1780,22 @@ ReportDefinitions:
     label: PT_SCAVENGING_TAX
     type: string
     source: pt
-    total: false         
+    total: false   
+  - name: librarycess
+    label: PT_LIBRARY_CESS
+    type: string
+    source: pt
+    total: false 
+  - name: conservancytax
+    label: PT_CONSERVE_TAX
+    type: string
+    source: pt
+    total: false   
+  - name: specialconservancytax
+    label: PT_SPECIAL_CONSERVANCY_TAX
+    type: string
+    source: pt
+    total: false             
   - name: demandnoticecharge
     label: PT_DEMANDNOTICE_CHARGE
     type: string
@@ -1698,7 +1845,7 @@ ReportDefinitions:
     SUM(CASE WHEN dem_code = 'PT_WATER_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as watertax,
     CONCAT(SUM(CASE WHEN dem_code = 'PT_CONSERVANCY_TAX' THEN dem_tax ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_CONSERVANCY_TAX' THEN collectionamount ELSE 0 END),E'\r\n',
-    SUM(CASE WHEN dem_code = 'PT_CONSERVANCY_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END) ) as conservancytax,
+    SUM(CASE WHEN dem_code = 'PT_CONSERVANCY_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END) ) as conservancyandscaveningtax,
     CONCAT(SUM(CASE WHEN dem_code = 'PT_EDUCATION_TAX' THEN dem_tax ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_EDUCATION_TAX' THEN collectionamount ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_EDUCATION_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as educationtax,
@@ -1722,10 +1869,19 @@ ReportDefinitions:
     SUM(CASE WHEN dem_code = 'PT_LIGHTING_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as lightingtax,
     CONCAT(SUM(CASE WHEN dem_code = 'PT_LIGHTINING_TAX' THEN dem_tax ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_LIGHTINING_TAX' THEN collectionamount ELSE 0 END),E'\r\n',
-    SUM(CASE WHEN dem_code = 'PT_LIGHTINING_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as lightanddrainge,
+    SUM(CASE WHEN dem_code = 'PT_LIGHTINING_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as lightininganddrainagetax,
     CONCAT(SUM(CASE WHEN dem_code = 'PT_SCAVENGING_TAX' THEN dem_tax ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_SCAVENGING_TAX' THEN collectionamount ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_SCAVENGING_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as scavengingtax,
+     CONCAT(SUM(CASE WHEN dem_code = 'PT_LIBRARY_CESS' THEN dem_tax ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN dem_code = 'PT_LIBRARY_CESS' THEN collectionamount ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN dem_code = 'PT_LIBRARY_CESS'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as librarycess,
+	 CONCAT(SUM(CASE WHEN dem_code = 'PT_CONSERVE_TAX' THEN dem_tax ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN dem_code = 'PT_CONSERVE_TAX' THEN collectionamount ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN dem_code = 'PT_CONSERVE_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as conservancytax,
+	 CONCAT(SUM(CASE WHEN dem_code = 'PT_SPECIAL_CONSERVANCY_TAX' THEN dem_tax ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN dem_code = 'PT_SPECIAL_CONSERVANCY_TAX' THEN collectionamount ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN dem_code = 'PT_SPECIAL_CONSERVANCY_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as specialconservancytax,
     CONCAT(SUM(CASE WHEN dem_code = 'PT_TIME_INTEREST' THEN dem_tax ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_TIME_INTEREST' THEN collectionamount ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_TIME_INTEREST' then  dem_tax -collectionamount ELSE 0 END)) as interest,
