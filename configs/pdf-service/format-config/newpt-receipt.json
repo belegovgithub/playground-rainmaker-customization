@@ -110,7 +110,7 @@
             
             [
               {
-                "text": "Address",
+                "text": "{{address_label}}",
                 "style": "pdf-label",
                 "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"]
               },
@@ -351,6 +351,21 @@
                 "border": [false, false, true, false],
                 "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"],
                 "margin":[0,-30,0,0]
+              }
+            ],
+            [
+              {
+                "text": "{{disclaimer2}}",
+                "border": [true, false, false, false],
+                "fontSize":7,
+                "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"],
+                "margin":[43,-74,0,0]
+              },
+              {
+                "text": " ",
+                "border": [false, false, true, false],
+                "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"],
+                "margin":[43,-74,0,0]
               }
             ],
             [

@@ -203,7 +203,7 @@
               {
                 "columns": [
                   {
-                    "text": "{{name_label_multiLang}} / {{name_label}}:{{name}}",
+                    "text": "{{name_label_multiLang}} / {{name_label}}: {{name}}",
                     "width": "59%",
                     "style": "details-body"
                   },
