@@ -1366,10 +1366,10 @@ ReportDefinitions:
     CONCAT(SUM(CASE WHEN dem_code = 'PT_LIBRARY_CESS' THEN dem_tax ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_LIBRARY_CESS' THEN collectionamount ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_LIBRARY_CESS'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as librarycess,
-	  CONCAT(SUM(CASE WHEN dem_code = 'PT_CONSERVE_TAX' THEN dem_tax ELSE 0 END),E'\r\n',
+    CONCAT(SUM(CASE WHEN dem_code = 'PT_CONSERVE_TAX' THEN dem_tax ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_CONSERVE_TAX' THEN collectionamount ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_CONSERVE_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as conservancytax,
-	  CONCAT(SUM(CASE WHEN dem_code = 'PT_SPECIAL_CONSERVANCY_TAX' THEN dem_tax ELSE 0 END),E'\r\n',
+    CONCAT(SUM(CASE WHEN dem_code = 'PT_SPECIAL_CONSERVANCY_TAX' THEN dem_tax ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_SPECIAL_CONSERVANCY_TAX' THEN collectionamount ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_SPECIAL_CONSERVANCY_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as specialconservancytax,
     CONCAT(SUM(CASE WHEN dem_code = 'PT_TIME_INTEREST' THEN dem_tax ELSE 0 END),E'\r\n',
@@ -1413,7 +1413,7 @@ ReportDefinitions:
       INNER JOIN eg_user ptuser ON ptuser.uuid = poo.userid where status = 'ACTIVE' group by propertyid)
       poo ON poo.propertyid = pt.id
       where demand.tenantid LIKE $tenantid and demand.businessservice ='PT')t where 1=1 
-  groupby: GROUP BY tenantid,consumercode,doorno,name,oldpropertyid,propertytype,usagecategory,mobilenumber, arv,locality,createdtime,street,buildingname
+  groupby: GROUP BY tenantid,consumercode,doorno,name,oldpropertyid,propertytype,usagecategory,mobilenumber,arv,locality,createdtime,street,buildingname
   orderby: ORDER BY consumercode
 
 - reportName: DGDEDemandRegisterReport
@@ -1658,13 +1658,13 @@ ReportDefinitions:
     CONCAT(SUM(CASE WHEN dem_code = 'PT_SCAVENGING_TAX' THEN dem_tax ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_SCAVENGING_TAX' THEN collectionamount ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_SCAVENGING_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as scavengingtax,
-     CONCAT(SUM(CASE WHEN dem_code = 'PT_LIBRARY_CESS' THEN dem_tax ELSE 0 END),E'\r\n',
+    CONCAT(SUM(CASE WHEN dem_code = 'PT_LIBRARY_CESS' THEN dem_tax ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_LIBRARY_CESS' THEN collectionamount ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_LIBRARY_CESS'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as librarycess,
-	 CONCAT(SUM(CASE WHEN dem_code = 'PT_CONSERVE_TAX' THEN dem_tax ELSE 0 END),E'\r\n',
+    CONCAT(SUM(CASE WHEN dem_code = 'PT_CONSERVE_TAX' THEN dem_tax ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_CONSERVE_TAX' THEN collectionamount ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_CONSERVE_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as conservancytax,
-	 CONCAT(SUM(CASE WHEN dem_code = 'PT_SPECIAL_CONSERVANCY_TAX' THEN dem_tax ELSE 0 END),E'\r\n',
+    CONCAT(SUM(CASE WHEN dem_code = 'PT_SPECIAL_CONSERVANCY_TAX' THEN dem_tax ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_SPECIAL_CONSERVANCY_TAX' THEN collectionamount ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_SPECIAL_CONSERVANCY_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as specialconservancytax,
     CONCAT(SUM(CASE WHEN dem_code = 'PT_TIME_INTEREST' THEN dem_tax ELSE 0 END),E'\r\n',
@@ -1873,13 +1873,13 @@ ReportDefinitions:
     CONCAT(SUM(CASE WHEN dem_code = 'PT_SCAVENGING_TAX' THEN dem_tax ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_SCAVENGING_TAX' THEN collectionamount ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_SCAVENGING_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as scavengingtax,
-     CONCAT(SUM(CASE WHEN dem_code = 'PT_LIBRARY_CESS' THEN dem_tax ELSE 0 END),E'\r\n',
+    CONCAT(SUM(CASE WHEN dem_code = 'PT_LIBRARY_CESS' THEN dem_tax ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_LIBRARY_CESS' THEN collectionamount ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_LIBRARY_CESS'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as librarycess,
-	 CONCAT(SUM(CASE WHEN dem_code = 'PT_CONSERVE_TAX' THEN dem_tax ELSE 0 END),E'\r\n',
+    CONCAT(SUM(CASE WHEN dem_code = 'PT_CONSERVE_TAX' THEN dem_tax ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_CONSERVE_TAX' THEN collectionamount ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_CONSERVE_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as conservancytax,
-	 CONCAT(SUM(CASE WHEN dem_code = 'PT_SPECIAL_CONSERVANCY_TAX' THEN dem_tax ELSE 0 END),E'\r\n',
+    CONCAT(SUM(CASE WHEN dem_code = 'PT_SPECIAL_CONSERVANCY_TAX' THEN dem_tax ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_SPECIAL_CONSERVANCY_TAX' THEN collectionamount ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_SPECIAL_CONSERVANCY_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as specialconservancytax,
     CONCAT(SUM(CASE WHEN dem_code = 'PT_TIME_INTEREST' THEN dem_tax ELSE 0 END),E'\r\n',
