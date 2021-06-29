@@ -4298,7 +4298,35 @@
       "style": "linear",
       "visualizations": [
         
-        
+        {
+          "row": 5,
+          "name": "DSS_SERVICE",
+          "vizArray": [
+            {
+              "id": 431,
+              "name": "DSS_MC_TRANSACTIONS_BY_TENANT",
+              "dimensions": {
+                "height": 350,
+                "width": 12
+              },
+              "vizType": "chart",
+              "label": "",
+              "noUnit": false,
+              "isCollapsible": true,
+              "charts": [
+                {
+                  "id": "xMcTransactionsByTenant",
+                  "name": "DSS_MC_TRANSACTIONS_BY_TENANT",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "Boundary"
+                }
+              ]
+            }
+          ]
+        }
       
       ]
     },
@@ -4654,7 +4682,38 @@
             }
           
           ]
+        },
+
+        {
+          "row": 5,
+          "name": "DSS_SERVICE",
+          "vizArray": [
+            {
+              "id": 431,
+              "name": "DSS_MC_TRANSACTIONS_BY_TENANT",
+              "dimensions": {
+                "height": 350,
+                "width": 12
+              },
+              "vizType": "chart",
+              "label": "",
+              "noUnit": false,
+              "isCollapsible": true,
+              "charts": [
+                {
+                  "id": "xMcTransactionsByTenant",
+                  "name": "DSS_MC_TRANSACTIONS_BY_TENANT",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "Boundary"
+                }
+              ]
+            }
+          ]
         }
+
         
       ]
     },
@@ -5124,6 +5183,35 @@
               ]
             }
           
+          ]
+        },
+        {
+          "row": 5,
+          "name": "DSS_SERVICE",
+          "vizArray": [
+            {
+              "id": 431,
+              "name": "DSS_MC_TRANSACTIONS_BY_TENANT",
+              "dimensions": {
+                "height": 350,
+                "width": 12
+              },
+              "vizType": "chart",
+              "label": "",
+              "noUnit": false,
+              "isCollapsible": true,
+              "charts": [
+                {
+                  "id": "xMcTransactionsByTenant",
+                  "name": "DSS_MC_TRANSACTIONS_BY_TENANT",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "Boundary"
+                }
+              ]
+            }
           ]
         }
         
