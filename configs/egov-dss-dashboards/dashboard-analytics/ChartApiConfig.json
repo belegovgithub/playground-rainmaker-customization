@@ -4628,6 +4628,32 @@
   "_comment": ""
 },
 
+"xptAssByCantt": {
+  "chartName": "DSS_PT_TOTAL_PROPERTIES_CANT_WISE",
+  "queries": [
+   
+    {
+      "module": "PT",
+      "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\",\"tenantId\" : \"Data.tenantId.keyword\" }",
+      "dateRefField": "",
+      "indexName": "ptindex-v1",
+      "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.tenantId.keyword\":\"pb.testing\"}}]}},\"aggs\":{\"ULBs \":{\"terms\":{\"field\":\"Data.tenantId.keyword\",\"size\":1000,\"order\":{\"_term\":\"asc\"}},\"aggs\":{\"Total Properties\":{\"filter\":{\"bool\":{\"must_not\":[]}},\"aggs\":{\"Total Properties\":{\"value_count\":{\"field\":\"Data.propertyId.keyword\"}}}}}}}}}}"
+    }   
+  ],
+  "filterKeys": [
+    {"key": "tenantId", "column": "Boundary"}
+  ],
+  "chartType": "xtable",
+  "valueType": "number",
+  "drillChart": "none",
+  "plotLabel": "Boundary",
+  "excludedColumns": [],
+  "oldComputedFields": [
+  ],
+  "insight": {
+  },
+  "_comment": ""
+},
 
 
 
