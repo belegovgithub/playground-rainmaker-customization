@@ -2900,13 +2900,6 @@
     "Total Properties"
   ],
   "insight": {
-    "chartResponseMap" : "totalProperties",
-    "action" : "differenceOfNumbers",
-    "upwardIndicator" : "positive",
-    "downwardIndicator" : "negative",
-    "textMessage" : "$indicator$value% than last $insightInterval",
-    "colorCode" : "#228B22",
-    "insightInterval" : "month"
   },
   "_comment": " total number of properties "
 },
@@ -2933,13 +2926,6 @@
      "Properties Assessed"
    ],
    "insight": {
-     "chartResponseMap" : "propertiesAssessed",
-     "action" : "differenceOfNumbers",
-     "upwardIndicator" : "positive",
-     "downwardIndicator" : "negative",
-     "textMessage" : "$indicator$value% than last $insightInterval",
-     "colorCode" : "#228B22",
-     "insightInterval" : "month"
    },
    "_comment": " total properties having assessmentNumber "
  },
