@@ -475,6 +475,18 @@
                    }
                   },
                   {
+                    "variable": "disclaimer_label",
+                    "value": {
+                      "path": "PDF_STATIC_LABEL_PT_RECEIPT_DISCLAIMER_HEADING"
+                    },
+                    "type": "label",
+                    "localisation":{
+                      "required":true,
+                      "prefix": null,
+                      "module":"rainmaker-pdf"
+                   }
+                  },
+                  {
                     "variable": "disclaimer",
                     "value": {
                       "path": "PDF_STATIC_LABEL_PT_RECEIPT_DISCLAIMER_LABEL"
