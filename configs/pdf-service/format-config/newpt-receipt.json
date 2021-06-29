@@ -323,7 +323,6 @@
         "style": "ws-head",
         "table": {
           "widths": ["70%", "30%"],
-          "heights": [40, 50],
           "body": [
             [
               {
@@ -337,37 +336,58 @@
                 "border": [false, false, true, false],
                 "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"]
               }
-            ],
+            ]
+          ]
+        }
+      },
+      {
+        "style": "ws-head",
+        "table": {
+          "widths": ["9.5%","90.5%"],
+          "body": [
             [
+              {
+                "text": "{{disclaimer_label}}",
+                "border": [true, false, false, false],
+                "fontSize":7,
+                "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"],
+                "margin":[0,-12,0,0]
+              },
               {
                 "text": "{{disclaimer}}",
-                "border": [true, false, false, false],
+                "border": [false, false, true, false],
                 "fontSize":7,
                 "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"],
-                "margin":[0,-30,0,0]
-              },
-              {
-                "text": " ",
-                "border": [false, false, true, false],
-                "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"],
-                "margin":[0,-30,0,0]
+                "margin":[0,-12,0,0]
+
               }
+
             ],
             [
               {
-                "text": "{{disclaimer2}}",
+                "text": " ",
                 "border": [true, false, false, false],
                 "fontSize":7,
                 "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"],
-                "margin":[43,-74,0,0]
+                "margin":[0,-3,0,0]
               },
               {
-                "text": " ",
+                "text": "{{disclaimer2}}",
                 "border": [false, false, true, false],
                 "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"],
-                "margin":[43,-74,0,0]
+               "fontSize":7,
+               "margin":[0,-3,0,0]
               }
-            ],
+            ]
+          ]
+        }
+      },
+      {
+        "style": "ws-head",
+        "table": {
+          "widths": ["70%", "30%"],
+          "heights": [40, 50],
+          "body": [
             [
               {
                 "image": "{{qrcodeimage}}",
@@ -375,7 +395,7 @@
                 "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"],
                 "width": 64,
                 "height": 64,
-                "margin":[10,-50,0,0]
+                "margin":[10,3,0,0]
               },
               {
                
