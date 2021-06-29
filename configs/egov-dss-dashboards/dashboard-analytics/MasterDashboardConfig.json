@@ -4303,8 +4303,36 @@
           "name": "DSS_SERVICE",
           "vizArray": [
             {
-              "id": 431,
-              "name": "DSS_MC_TRANSACTIONS_BY_TENANT",
+              "id": 241,
+              "name": "DSS_OVERVIEW",
+              "dimensions": {
+                "height": 350,
+                "width": 5
+              },
+              "vizType": "metric-collection",
+              "isCollapsible": false,
+              "label": "DSS_OVERVIEW",
+              "charts": [
+                {
+                  "id": "totalProperties",
+                  "name": "DSS_PT_TOTAL_PROPERTIES",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+           
+          ]
+        },
+        {
+          "row": 6,
+          "name": "DSS_SERVICE",
+          "vizArray": [
+            {
+              "id": 231,
+              "name": "DSS_PT_PROPERTIES_ASSESSED_CANT_WISE",
               "dimensions": {
                 "height": 350,
                 "width": 12
@@ -4315,8 +4343,8 @@
               "isCollapsible": true,
               "charts": [
                 {
-                  "id": "xMcTransactionsByTenant",
-                  "name": "DSS_MC_TRANSACTIONS_BY_TENANT",
+                  "id": "xptAssByCantt",
+                  "name": "DSS_PT_TOTAL_PROPERTIES_CANT_WISE",
                   "code": "",
                   "chartType": "table",
                   "filter": "",
@@ -4689,8 +4717,36 @@
           "name": "DSS_SERVICE",
           "vizArray": [
             {
-              "id": 431,
-              "name": "DSS_MC_TRANSACTIONS_BY_TENANT",
+              "id": 241,
+              "name": "DSS_OVERVIEW",
+              "dimensions": {
+                "height": 350,
+                "width": 5
+              },
+              "vizType": "metric-collection",
+              "isCollapsible": false,
+              "label": "DSS_OVERVIEW",
+              "charts": [
+                {
+                  "id": "totalProperties",
+                  "name": "DSS_PT_TOTAL_PROPERTIES",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+           
+          ]
+        },
+        {
+          "row": 6,
+          "name": "DSS_SERVICE",
+          "vizArray": [
+            {
+              "id": 231,
+              "name": "DSS_PT_PROPERTIES_ASSESSED_CANT_WISE",
               "dimensions": {
                 "height": 350,
                 "width": 12
@@ -4701,8 +4757,8 @@
               "isCollapsible": true,
               "charts": [
                 {
-                  "id": "xMcTransactionsByTenant",
-                  "name": "DSS_MC_TRANSACTIONS_BY_TENANT",
+                  "id": "xptAssByCantt",
+                  "name": "DSS_PT_TOTAL_PROPERTIES_CANT_WISE",
                   "code": "",
                   "chartType": "table",
                   "filter": "",
@@ -5190,8 +5246,36 @@
           "name": "DSS_SERVICE",
           "vizArray": [
             {
-              "id": 431,
-              "name": "DSS_MC_TRANSACTIONS_BY_TENANT",
+              "id": 241,
+              "name": "DSS_OVERVIEW",
+              "dimensions": {
+                "height": 350,
+                "width": 5
+              },
+              "vizType": "metric-collection",
+              "isCollapsible": false,
+              "label": "DSS_OVERVIEW",
+              "charts": [
+                {
+                  "id": "totalProperties",
+                  "name": "DSS_PT_TOTAL_PROPERTIES",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+           
+          ]
+        },
+        {
+          "row": 6,
+          "name": "DSS_SERVICE",
+          "vizArray": [
+            {
+              "id": 231,
+              "name": "DSS_PT_PROPERTIES_ASSESSED_CANT_WISE",
               "dimensions": {
                 "height": 350,
                 "width": 12
@@ -5202,8 +5286,8 @@
               "isCollapsible": true,
               "charts": [
                 {
-                  "id": "xMcTransactionsByTenant",
-                  "name": "DSS_MC_TRANSACTIONS_BY_TENANT",
+                  "id": "xptAssByCantt",
+                  "name": "DSS_PT_TOTAL_PROPERTIES_CANT_WISE",
                   "code": "",
                   "chartType": "table",
                   "filter": "",
