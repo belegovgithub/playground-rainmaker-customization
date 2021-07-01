@@ -183,14 +183,14 @@ ReportDefinitions:
     isMandatory: false
     searchClause: AND pd.receiptdate <= $toDate
   - name: paymentMode
-    label: Payment Mode
+    label: reports.pt.paymentMode
     type: singlevaluelist
-    pattern: 'list://CARD:CARD,CASH:CASH,CHEQUE:CHEQUE,Online:Online'
+    pattern: 'list://CARD:PT_PAYMENT_METHOD_CARD,CASH:PT_PAYMENT_METHOD_CASH,CHEQUE:PT_PAYMENT_METHOD_CHEQUE,Online:PT_PAYMENT_METHOD_ONLINE'
     source: pt
     isMandatory: false
     searchClause: AND paymentmode = $paymentMode
   - name: collectorname
-    label: Collector Name
+    label: reports.pt.collectorname
     type: singlevaluelist
     pattern: http://egov-hrms:8080/egov-hrms/employees/_search?tenantId=$tenantid&roles=PT_CEMP|$.Employees[*].user.id|$.Employees[*].user.name
     source: pt
@@ -479,7 +479,7 @@ ReportDefinitions:
     total: true
   searchParams:
   - name: financialyear
-    label: Financial Year
+    label: reports.pt.financialYear
     type: singlevaluelist
     pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=egf-master&masterName=FinancialYear|$.MdmsRes.egf-master.FinancialYear.[?(@.module=='PT')].code|$.MdmsRes.egf-master.FinancialYear.[?(@.module=='PT')].name
     source: pt
@@ -775,7 +775,7 @@ ReportDefinitions:
     isMandatory: false
     searchClause: AND bill.tenantid = $ulb
   - name: financialyear
-    label: Financial Year
+    label: reports.pt.financialYear
     type: singlevaluelist
     pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=egf-master&masterName=FinancialYear|$.MdmsRes.egf-master.FinancialYear.[?(@.module=='PT')].code|$.MdmsRes.egf-master.FinancialYear.[?(@.module=='PT')].name
     source: pt
@@ -844,7 +844,7 @@ ReportDefinitions:
     isMandatory: false
     searchClause: AND receiptdate <= $toDate
   - name: financialyear
-    label: Financial Year
+    label: reports.pt.financialYear
     type: singlevaluelist
     pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=egf-master&masterName=FinancialYear|$.MdmsRes.egf-master.FinancialYear.[?(@.module=='PT')].code|$.MdmsRes.egf-master.FinancialYear.[?(@.module=='PT')].name
     source: pt
@@ -1071,14 +1071,14 @@ ReportDefinitions:
     isMandatory: false
     searchClause: AND pay.tenantid = $ulb
   - name: paymentMode
-    label: Payment Mode
+    label: reports.pt.paymentMode
     type: singlevaluelist
-    pattern: 'list://CASH:CASH,Online:Online,CARD:CARD,DD:DD,CHEQUE:CHEQUE'
+    pattern: 'list://CASH:PT_PAYMENT_METHOD_CASH,Online:PT_PAYMENT_METHOD_ONLINE,CARD:PT_PAYMENT_METHOD_CARD,DD:PT_PAYMENT_METHOD_DD,CHEQUE:PT_PAYMENT_METHOD_CHEQUE'
     source: pt
     isMandatory: false
     searchClause: AND paymentmode = $paymentMode
   - name: collectorname
-    label: Collector Name
+    label: reports.pt.collectorname
     type: singlevaluelist
     pattern: http://egov-hrms:8080/egov-hrms/employees/_search?tenantId=$tenantid&roles=PTCEMP|$.Employees[*].user.id|$.Employees[*].user.name
     source: pt
@@ -1312,7 +1312,7 @@ ReportDefinitions:
     isMandatory: false
     searchClause: AND createdtime <= $toDate
   - name: Wardname
-    label: Mohalla
+    label: PT_PROPERTY_ADDRESS_MOHALLA
     type: singlevaluelist
     pattern: http://egov-location:8080/egov-location/location/v11/boundarys/_search?hierarchyTypeCode=REVENUE&boundaryType=Locality&tenantId=$tenantid|$.TenantBoundary[*].boundary[*].code|$.TenantBoundary[*].boundary[*].name
     source: pt
@@ -1607,7 +1607,7 @@ ReportDefinitions:
     isMandatory: false
     searchClause: AND tenantid = $ulb
   - name: Wardname
-    label: Mohalla
+    label: PT_PROPERTY_ADDRESS_MOHALLA
     type: singlevaluelist
     pattern: http://egov-location:8080/egov-location/location/v11/boundarys/_search?hierarchyTypeCode=REVENUE&boundaryType=Locality&tenantId=$tenantid|$.TenantBoundary[*].boundary[*].code|$.TenantBoundary[*].boundary[*].name
     source: pt
