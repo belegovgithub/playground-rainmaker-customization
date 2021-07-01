@@ -185,7 +185,7 @@ ReportDefinitions:
   - name: paymentMode
     label: reports.pt.paymentMode
     type: singlevaluelist
-    pattern: 'list://CARD:PT_PAYMENT_METHOD_CARD,CASH:PT_PAYMENT_METHOD_CASH,CHEQUE:PT_PAYMENT_METHOD_CHEQUE,Online:PT_PAYMENT_METHOD_ONLINE'
+    pattern: 'list://CARD:Card,CASH:Cash,CHEQUE:Cheque,Online:Online'
     source: pt
     isMandatory: false
     searchClause: AND paymentmode = $paymentMode
@@ -1073,7 +1073,7 @@ ReportDefinitions:
   - name: paymentMode
     label: reports.pt.paymentMode
     type: singlevaluelist
-    pattern: 'list://CASH:PT_PAYMENT_METHOD_CASH,Online:PT_PAYMENT_METHOD_ONLINE,CARD:PT_PAYMENT_METHOD_CARD,DD:PT_PAYMENT_METHOD_DD,CHEQUE:PT_PAYMENT_METHOD_CHEQUE'
+    pattern: 'list://CASH:Cash,Online:Online,CARD:Card,DD:DD,CHEQUE:Cheque'
     source: pt
     isMandatory: false
     searchClause: AND paymentmode = $paymentMode
