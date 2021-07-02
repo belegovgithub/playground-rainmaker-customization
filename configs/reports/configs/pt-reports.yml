@@ -488,7 +488,6 @@ ReportDefinitions:
     searchClause: AND financialyear = $financialyear
   query: |
     SELECT 
-      bill.tenantid, 
       SUM(totalast),SUM(totalamount),SUM(amountpaid) AS totalamountpaid, 
       SUM(onltotalamountpaid) as online,SUM(offtotalamountpaid) as offline, (SUM(totalamount) - SUM(amountpaid)) AS totalamountdue
     FROM (select DISTINCT on (propertyid) COUNT(*) as totalast, bill.totalamount as totalamount,pd.amountpaid as amountpaid ,onl.totalamountpaid as onltotalamountpaid,offl.totalamountpaid as offtotalamountpaid from eg_pt_asmt_assessment asmt
