@@ -183,7 +183,7 @@ ReportDefinitions:
     isMandatory: false
     searchClause: AND pd.receiptdate <= $toDate
   - name: paymentMode
-    label: reports.pt.paymentMode
+    label: PT_RECEIPT_PAYMENT_MODE
     type: singlevaluelist
     pattern: 'list://CARD:Card,CASH:Cash,CHEQUE:Cheque,Online:Online'
     source: pt
@@ -390,7 +390,7 @@ ReportDefinitions:
     isMandatory: false
     searchClause: AND pd.receiptdate <= $toDate
   - name: paymentMode
-    label: Payment Mode
+    label: PT_RECEIPT_PAYMENT_MODE
     type: singlevaluelist
     pattern: 'list://CARD:CARD,CASH:CASH,CHEQUE:CHEQUE,Online:Online'
     source: pt
@@ -488,21 +488,14 @@ ReportDefinitions:
     searchClause: AND financialyear = $financialyear
   query: |
     SELECT 
-      bill.tenantid, 
-      COUNT(*) AS totalassessments,
-      SUM(bill.totalamount) AS totalamount, 
-      SUM(pd.amountpaid) AS totalamountpaid,
-      SUM(onl.totalamountpaid) as online,
-      SUM(offl.totalamountpaid) as offline, 
-      (SUM(bill.totalamount) - SUM(pd.amountpaid)) AS totalamountdue
-    FROM eg_pt_asmt_assessment AS asmt
-    LEFT OUTER JOIN (Select DISTINCT on (consumercode) bill.id,tenantid,consumercode,status,totalamount from egcl_bill bill ) as bill ON bill.consumercode = asmt.propertyid  and bill.status != 'Cancelled'
-    LEFT OUTER JOIN (SELECT billid,amountpaid,paymentid from egcl_paymentdetail pd ) as pd ON pd.billid = bill.id
-    LEFT OUTER JOIN (SELECT id,paymentmode,totalamountpaid FROM egcl_payment WHERE paymentmode = 'ONLINE') AS onl ON onl.id = pd.paymentid 
-    LEFT OUTER JOIN (SELECT id,paymentmode,totalamountpaid FROM egcl_payment WHERE paymentmode != 'ONLINE' ) AS offl ON offl.id = pd.paymentid   
-    WHERE bill.tenantid = $tenantid
-  groupby: GROUP BY bill.tenantid
-  orderby: ORDER BY bill.tenantid
+      SUM(totalast),SUM(totalamount),SUM(amountpaid) AS totalamountpaid, 
+      SUM(onltotalamountpaid) as online,SUM(offtotalamountpaid) as offline, (SUM(totalamount) - SUM(amountpaid)) AS totalamountdue
+    FROM (select DISTINCT on (propertyid) COUNT(*) as totalast, bill.totalamount as totalamount,pd.amountpaid as amountpaid ,onl.totalamountpaid as onltotalamountpaid,offl.totalamountpaid as offtotalamountpaid from eg_pt_asmt_assessment asmt
+    inner join egcl_bill bill on  bill.consumercode=asmt.propertyid 
+    INNER JOIN (SELECT billid,amountpaid,paymentid from egcl_paymentdetail pd ) as pd ON pd.billid = bill.id
+    LEFT OUTER JOIN (SELECT id,paymentmode,totalamountpaid FROM egcl_payment WHERE paymentmode = 'ONLINE') AS onl ON onl.id = pd.paymentid
+    LEFT OUTER JOIN (SELECT id,paymentmode,totalamountpaid FROM egcl_payment WHERE paymentmode != 'ONLINE' ) AS offl ON offl.id = pd.paymentid
+    where asmt.tenantid = $tenantid GROUP BY asmt.propertyid,bill.tenantid,bill.totalamount,pd.amountpaid,onl.totalamountpaid,offl.totalamountpaid)t where 1=1
 
 - reportName: StateCancelledReceiptRegister
   summary: Receipt Register for cancelled Receipts State
@@ -661,7 +654,7 @@ ReportDefinitions:
     isMandatory: false
     searchClause: AND pay.tenantid = $ulb
   - name: paymentMode
-    label: Payment Mode
+    label: PT_RECEIPT_PAYMENT_MODE
     type: singlevaluelist
     pattern: 'list://CASH:CASH,Online:Online,CARD:CARD,DD:DD,CHEQUE:CHEQUE'
     source: pt
@@ -1071,7 +1064,7 @@ ReportDefinitions:
     isMandatory: false
     searchClause: AND pay.tenantid = $ulb
   - name: paymentMode
-    label: reports.pt.paymentMode
+    label: PT_RECEIPT_PAYMENT_MODE
     type: singlevaluelist
     pattern: 'list://CASH:Cash,Online:Online,CARD:Card,DD:DD,CHEQUE:Cheque'
     source: pt
