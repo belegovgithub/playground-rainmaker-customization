@@ -1971,13 +1971,13 @@ ReportDefinitions:
     type: epoch
     source: pt
     isMandatory: false
-    searchClause: AND createdtime >= $fromDate
+    searchClause: AND demand.createdtime >= $fromDate
   - name: toDate
     label: reports.pt.toDate
     type: epoch
     source: pt
     isMandatory: false
-    searchClause: AND createdtime <= $toDate
+    searchClause: AND demand.createdtime <= $toDate
   - name: Wardname
     label: PT_PROPERTY_ADDRESS_MOHALLA
     type: singlevaluelist
