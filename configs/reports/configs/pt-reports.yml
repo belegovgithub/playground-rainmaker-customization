@@ -488,7 +488,7 @@ ReportDefinitions:
     searchClause: AND financialyear = $financialyear
   query: |
     SELECT 
-      SUM(totalast),SUM(totalamount),SUM(amountpaid) AS totalamountpaid, 
+      SUM(totalast) as totalassessments,SUM(totalamount) as totalamount,SUM(amountpaid) AS totalamountpaid, 
       SUM(onltotalamountpaid) as online,SUM(offtotalamountpaid) as offline, (SUM(totalamount) - SUM(amountpaid)) AS totalamountdue
     FROM (select DISTINCT on (propertyid) COUNT(*) as totalast, bill.totalamount as totalamount,pd.amountpaid as amountpaid ,onl.totalamountpaid as onltotalamountpaid,offl.totalamountpaid as offtotalamountpaid from eg_pt_asmt_assessment asmt
     inner join egcl_bill bill on  bill.consumercode=asmt.propertyid 
@@ -776,22 +776,18 @@ ReportDefinitions:
     isMandatory: false
     searchClause: AND financialyear = $financialyear
   query: |
-    SELECT 
-      initcap(split_part(bill.tenantid, '.', 2)) as tenantid, 
-      COUNT(*) AS totalassessments,
-      SUM(bill.totalamount) AS totalamount, 
-      SUM(pd.amountpaid) AS totalamountpaid,
-      SUM(onl.totalamountpaid) as online,
-      SUM(offl.totalamountpaid) as offline, 
-      (SUM(bill.totalamount) - SUM(pd.amountpaid)) AS totalamountdue
-    FROM eg_pt_asmt_assessment AS asmt
-    LEFT OUTER JOIN (Select DISTINCT on (consumercode) bill.id,tenantid,consumercode,status,totalamount from egcl_bill bill ) as bill ON bill.consumercode = asmt.propertyid  and bill.status != 'Cancelled'
-    LEFT OUTER JOIN (SELECT billid,amountpaid,paymentid from egcl_paymentdetail pd ) as pd ON pd.billid = bill.id
-    LEFT OUTER JOIN (SELECT id,paymentmode,totalamountpaid FROM egcl_payment WHERE paymentmode = 'ONLINE') AS onl ON onl.id = pd.paymentid 
-    LEFT OUTER JOIN (SELECT id,paymentmode,totalamountpaid FROM egcl_payment WHERE paymentmode != 'ONLINE' ) AS offl ON offl.id = pd.paymentid   
-    WHERE bill.tenantid != 'pb.testing'
-  groupby: GROUP BY bill.tenantid
-  orderby: ORDER BY bill.tenantid, totalamountpaid DESC NULLS LAST
+    SELECT
+    initcap(split_part(tenantid, '.', 2)) as tenantid, 
+      SUM(totalast) as totalassessments,SUM(totalamount) as totalamount,SUM(amountpaid) AS totalamountpaid, 
+      SUM(onltotalamountpaid) as online,SUM(offtotalamountpaid) as offline, (SUM(totalamount) - SUM(amountpaid)) AS totalamountdue
+    FROM (select DISTINCT on (propertyid) COUNT(*) as totalast, bill.totalamount as totalamount,pd.amountpaid as amountpaid ,onl.totalamountpaid as onltotalamountpaid,offl.totalamountpaid as offtotalamountpaid from eg_pt_asmt_assessment asmt
+    inner join egcl_bill bill on  bill.consumercode=asmt.propertyid 
+    INNER JOIN (SELECT billid,amountpaid,paymentid from egcl_paymentdetail pd ) as pd ON pd.billid = bill.id
+    LEFT OUTER JOIN (SELECT id,paymentmode,totalamountpaid FROM egcl_payment WHERE paymentmode = 'ONLINE') AS onl ON onl.id = pd.paymentid
+    LEFT OUTER JOIN (SELECT id,paymentmode,totalamountpaid FROM egcl_payment WHERE paymentmode != 'ONLINE' ) AS offl ON offl.id = pd.paymentid
+    where asmt.tenantid != 'pb.testing' GROUP BY asmt.propertyid,bill.tenantid,bill.totalamount,pd.amountpaid,onl.totalamountpaid,offl.totalamountpaid)t where 1=1
+  groupby: GROUP BY tenantid
+  orderby: ORDER BY tenantid, totalamountpaid DESC NULLS LAST
 
 - reportName: UlbWisePtCollection
   summary: State Wide PT Collection
