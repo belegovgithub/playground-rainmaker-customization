@@ -64,12 +64,12 @@ ReportDefinitions:
     type: string
     source: pt
     total: true
-  - name: conservancytax
+  - name: conservancyandscaveningtax
     label: PT_CONSERVANCY_TAX
     type: string
     source: pt
     total: true
-  - name: lightiningtax
+  - name: lightininganddrainagetax
     label: PT_LIGHTINING_TAX
     type: string
     source: pt
@@ -109,6 +109,26 @@ ReportDefinitions:
     type: string
     source: pt
     total: true
+  - name: scavengingtax
+    label: PT_SCAVENGING_TAX
+    type: string
+    source: pt
+    total: true  
+  - name: librarycess
+    label: PT_LIBRARY_CESS
+    type: string
+    source: pt
+    total: true 
+  - name: conservancytax
+    label: PT_CONSERVE_TAX
+    type: string
+    source: pt
+    total: true   
+  - name: specialconservancytax
+    label: PT_SPECIAL_CONSERVANCY_TAX
+    type: string
+    source: pt
+    total: true       
   - name: cash
     label: reports.pt.cash
     type: string
@@ -163,14 +183,14 @@ ReportDefinitions:
     isMandatory: false
     searchClause: AND pd.receiptdate <= $toDate
   - name: paymentMode
-    label: Payment Mode
+    label: PT_RECEIPT_PAYMENT_MODE
     type: singlevaluelist
-    pattern: 'list://CARD:CARD,CASH:CASH,CHEQUE:CHEQUE,Online:Online'
+    pattern: 'list://CARD:Card,CASH:Cash,CHEQUE:Cheque,Online:Online'
     source: pt
     isMandatory: false
     searchClause: AND paymentmode = $paymentMode
   - name: collectorname
-    label: Collector Name
+    label: reports.pt.collectorname
     type: singlevaluelist
     pattern: http://egov-hrms:8080/egov-hrms/employees/_search?tenantId=$tenantid&roles=PT_CEMP|$.Employees[*].user.id|$.Employees[*].user.name
     source: pt
@@ -188,8 +208,8 @@ ReportDefinitions:
     SUM(CASE WHEN taxheadcode LIKE 'PT_DEMANDNOTICE_CHARGE' THEN bad.adjustedamount ELSE 0 END) as demandnoticecharge,
     SUM(CASE WHEN taxheadcode LIKE 'PT_HOUSE_TAX' THEN bad.adjustedamount ELSE 0 END) as housetax,
     SUM(CASE WHEN taxheadcode LIKE 'PT_WATER_TAX'  THEN bad.adjustedamount ELSE 0 END) as watertax ,
-    SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN bad.adjustedamount ELSE 0 END) as conservancytax ,
-    SUM( CASE WHEN taxheadcode LIKE 'PT_LIGHTINING_TAX' THEN bad.adjustedamount ELSE 0 END) as lightiningtax ,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN bad.adjustedamount ELSE 0 END) as conservancyandscaveningtax ,
+    SUM( CASE WHEN taxheadcode LIKE 'PT_LIGHTINING_TAX' THEN bad.adjustedamount ELSE 0 END) as lightininganddrainagetax ,
     SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_TAX' THEN bad.adjustedamount ELSE 0 END) as educationtax ,
     SUM(CASE WHEN taxheadcode LIKE 'PT_CONSOLIDATED_PROPERTY_TAX' THEN bad.adjustedamount ELSE 0 END) as consolidatedpropertytax,
     SUM(CASE WHEN taxheadcode LIKE 'PT_SANITARY_CESS' THEN bad.adjustedamount ELSE 0 END) as sanitarycess,
@@ -197,6 +217,10 @@ ReportDefinitions:
     SUM(CASE WHEN taxheadcode LIKE 'PT_ADDL_WATER_TAX' THEN bad.adjustedamount ELSE 0 END) as additionalwatertax,
     SUM(CASE WHEN taxheadcode LIKE 'PT_DRAINAGE_TAX' THEN bad.adjustedamount ELSE 0 END) as drainagetax,
     SUM(CASE WHEN taxheadcode LIKE 'PT_LIGHTING_TAX' THEN bad.adjustedamount ELSE 0 END) as lightingtax,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_SCAVENGING_TAX' THEN bad.adjustedamount ELSE 0 END) as scavengingtax,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_LIBRARY_CESS' THEN bad.adjustedamount ELSE 0 END) as librarycess,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVE_TAX' THEN bad.adjustedamount ELSE 0 END) as conservancytax,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_SPECIAL_CONSERVANCY_TAX' THEN bad.adjustedamount ELSE 0 END) as specialconservancytax,
     SUM(CASE WHEN pay.paymentmode LIKE 'CASH' THEN bad.adjustedamount ELSE 0 END) as cash,
     SUM(CASE WHEN pay.paymentmode LIKE 'CARD' THEN bad.adjustedamount ELSE 0 END) as card,
     SUM(CASE WHEN pay.paymentmode LIKE 'ONLINE' THEN bad.adjustedamount ELSE 0 END) as online,
@@ -282,12 +306,12 @@ ReportDefinitions:
     type: string
     source: pt
     total: true
-  - name: conservancytax
+  - name: conservancyandscaveningtax
     label: PT_CONSERVANCY_TAX
     type: string
     source: pt
     total: true
-  - name: lightiningtax
+  - name: lightininganddrainagetax
     label: PT_LIGHTINING_TAX
     type: string
     source: pt
@@ -327,6 +351,26 @@ ReportDefinitions:
     type: string
     source: pt
     total: true  
+  - name: scavengingtax
+    label: PT_SCAVENGING_TAX
+    type: string
+    source: pt
+    total: true  
+  - name: librarycess
+    label: PT_LIBRARY_CESS
+    type: string
+    source: pt
+    total: true 
+  - name: conservancytax
+    label: PT_CONSERVE_TAX
+    type: string
+    source: pt
+    total: true   
+  - name: specialconservancytax
+    label: PT_SPECIAL_CONSERVANCY_TAX
+    type: string
+    source: pt
+    total: true       
   - name: totalcollection
     label: PT_TOTAL_AMOUNT 
     type: string
@@ -346,7 +390,7 @@ ReportDefinitions:
     isMandatory: false
     searchClause: AND pd.receiptdate <= $toDate
   - name: paymentMode
-    label: Payment Mode
+    label: PT_RECEIPT_PAYMENT_MODE
     type: singlevaluelist
     pattern: 'list://CARD:CARD,CASH:CASH,CHEQUE:CHEQUE,Online:Online'
     source: pt
@@ -363,8 +407,8 @@ ReportDefinitions:
     SUM(CASE WHEN taxheadcode LIKE 'PT_DEMANDNOTICE_CHARGE' THEN bad.adjustedamount ELSE 0 END) as demandnoticecharge,
     SUM(CASE WHEN taxheadcode LIKE 'PT_HOUSE_TAX' THEN bad.adjustedamount ELSE 0 END) as housetax,
     SUM(CASE WHEN taxheadcode LIKE 'PT_WATER_TAX'  THEN bad.adjustedamount ELSE 0 END) as watertax ,
-    SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN bad.adjustedamount ELSE 0 END) as conservancytax ,
-    SUM(CASE WHEN taxheadcode LIKE 'PT_LIGHTINING_TAX' THEN bad.adjustedamount ELSE 0 END) as lightiningtax ,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN bad.adjustedamount ELSE 0 END) as conservancyandscaveningtax ,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_LIGHTINING_TAX' THEN bad.adjustedamount ELSE 0 END) as lightininganddrainagetax ,
     SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_TAX' THEN bad.adjustedamount ELSE 0 END) as educationtax ,
     SUM(CASE WHEN taxheadcode LIKE 'PT_CONSOLIDATED_PROPERTY_TAX' THEN bad.adjustedamount ELSE 0 END) as consolidatedpropertytax,
     SUM(CASE WHEN taxheadcode LIKE 'PT_SANITARY_CESS' THEN bad.adjustedamount ELSE 0 END) as sanitarycess,
@@ -372,6 +416,10 @@ ReportDefinitions:
     SUM(CASE WHEN taxheadcode LIKE 'PT_ADDL_WATER_TAX' THEN bad.adjustedamount ELSE 0 END) as additionalwatertax,
     SUM(CASE WHEN taxheadcode LIKE 'PT_DRAINAGE_TAX' THEN bad.adjustedamount ELSE 0 END) as drainagetax,
     SUM(CASE WHEN taxheadcode LIKE 'PT_LIGHTING_TAX' THEN bad.adjustedamount ELSE 0 END) as lightingtax,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_SCAVENGING_TAX' THEN bad.adjustedamount ELSE 0 END) as scavengingtax,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_LIBRARY_CESS' THEN bad.adjustedamount ELSE 0 END) as librarycess,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVE_TAX' THEN bad.adjustedamount ELSE 0 END) as conservancytax,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_SPECIAL_CONSERVANCY_TAX' THEN bad.adjustedamount ELSE 0 END) as specialconservancytax,
     pd.amountpaid as totalcollection,
     un.name as collectorname,
     addr.doorno as doorno,
@@ -431,7 +479,7 @@ ReportDefinitions:
     total: true
   searchParams:
   - name: financialyear
-    label: Financial Year
+    label: reports.pt.financialYear
     type: singlevaluelist
     pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=egf-master&masterName=FinancialYear|$.MdmsRes.egf-master.FinancialYear.[?(@.module=='PT')].code|$.MdmsRes.egf-master.FinancialYear.[?(@.module=='PT')].name
     source: pt
@@ -440,21 +488,14 @@ ReportDefinitions:
     searchClause: AND financialyear = $financialyear
   query: |
     SELECT 
-      bill.tenantid, 
-      COUNT(*) AS totalassessments,
-      SUM(bill.totalamount) AS totalamount, 
-      SUM(pd.amountpaid) AS totalamountpaid,
-      SUM(onl.totalamountpaid) as online,
-      SUM(offl.totalamountpaid) as offline, 
-      (SUM(bill.totalamount) - SUM(pd.amountpaid)) AS totalamountdue
-    FROM eg_pt_asmt_assessment AS asmt
-    LEFT OUTER JOIN (Select DISTINCT on (consumercode) bill.id,tenantid,consumercode,status,totalamount from egcl_bill bill ) as bill ON bill.consumercode = asmt.propertyid  and bill.status != 'Cancelled'
-    LEFT OUTER JOIN (SELECT billid,amountpaid,paymentid from egcl_paymentdetail pd ) as pd ON pd.billid = bill.id
-    LEFT OUTER JOIN (SELECT id,paymentmode,totalamountpaid FROM egcl_payment WHERE paymentmode = 'ONLINE') AS onl ON onl.id = pd.paymentid 
-    LEFT OUTER JOIN (SELECT id,paymentmode,totalamountpaid FROM egcl_payment WHERE paymentmode != 'ONLINE' ) AS offl ON offl.id = pd.paymentid   
-    WHERE bill.tenantid = $tenantid
-  groupby: GROUP BY bill.tenantid
-  orderby: ORDER BY bill.tenantid
+      SUM(totalast) as totalassessments,SUM(totalamount) as totalamount,SUM(amountpaid) AS totalamountpaid, 
+      SUM(onltotalamountpaid) as online,SUM(offtotalamountpaid) as offline, (SUM(totalamount) - SUM(amountpaid)) AS totalamountdue
+    FROM (select DISTINCT on (propertyid) COUNT(*) as totalast, bill.totalamount as totalamount,pd.amountpaid as amountpaid ,onl.totalamountpaid as onltotalamountpaid,offl.totalamountpaid as offtotalamountpaid from eg_pt_asmt_assessment asmt
+    inner join egcl_bill bill on  bill.consumercode=asmt.propertyid 
+    INNER JOIN (SELECT billid,amountpaid,paymentid from egcl_paymentdetail pd ) as pd ON pd.billid = bill.id
+    LEFT OUTER JOIN (SELECT id,paymentmode,totalamountpaid FROM egcl_payment WHERE paymentmode = 'ONLINE') AS onl ON onl.id = pd.paymentid
+    LEFT OUTER JOIN (SELECT id,paymentmode,totalamountpaid FROM egcl_payment WHERE paymentmode != 'ONLINE' ) AS offl ON offl.id = pd.paymentid
+    where asmt.tenantid = $tenantid GROUP BY asmt.propertyid,bill.tenantid,bill.totalamount,pd.amountpaid,onl.totalamountpaid,offl.totalamountpaid)t where 1=1
 
 - reportName: StateCancelledReceiptRegister
   summary: Receipt Register for cancelled Receipts State
@@ -521,12 +562,12 @@ ReportDefinitions:
     type: string
     source: pt
     total: true
-  - name: conservancytax
+  - name: conservancyandscaveningtax
     label: PT_CONSERVANCY_TAX
     type: string
     source: pt
     total: true
-  - name: lightiningtax
+  - name: lightininganddrainagetax
     label: PT_LIGHTINING_TAX
     type: string
     source: pt
@@ -566,6 +607,26 @@ ReportDefinitions:
     type: string
     source: pt
     total: true 
+  - name: scavengingtax
+    label: PT_SCAVENGING_TAX
+    type: string
+    source: pt
+    total: true  
+  - name: librarycess
+    label: PT_LIBRARY_CESS
+    type: string
+    source: pt
+    total: true 
+  - name: conservancytax
+    label: PT_CONSERVE_TAX
+    type: string
+    source: pt
+    total: true   
+  - name: specialconservancytax
+    label: PT_SPECIAL_CONSERVANCY_TAX
+    type: string
+    source: pt
+    total: true       
   - name: totalcollection
     label: PT_TOTAL_AMOUNT 
     type: string
@@ -593,7 +654,7 @@ ReportDefinitions:
     isMandatory: false
     searchClause: AND pay.tenantid = $ulb
   - name: paymentMode
-    label: Payment Mode
+    label: PT_RECEIPT_PAYMENT_MODE
     type: singlevaluelist
     pattern: 'list://CASH:CASH,Online:Online,CARD:CARD,DD:DD,CHEQUE:CHEQUE'
     source: pt
@@ -610,8 +671,8 @@ ReportDefinitions:
     SUM(CASE WHEN taxheadcode LIKE 'PT_DEMANDNOTICE_CHARGE' THEN bad.adjustedamount ELSE 0 END) as demandnoticecharge,
     SUM(CASE WHEN taxheadcode LIKE 'PT_HOUSE_TAX' THEN bad.adjustedamount ELSE 0 END) as housetax,
     SUM(CASE WHEN taxheadcode LIKE 'PT_WATER_TAX'  THEN bad.adjustedamount ELSE 0 END) as watertax ,
-    SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN bad.adjustedamount ELSE 0 END) as conservancytax ,
-    SUM(CASE WHEN taxheadcode LIKE 'PT_LIGHTINING_TAX' THEN bad.adjustedamount ELSE 0 END) as lightiningtax ,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN bad.adjustedamount ELSE 0 END) as conservancyandscaveningtax ,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_LIGHTINING_TAX' THEN bad.adjustedamount ELSE 0 END) as lightininganddrainagetax ,
     SUM(CASE WHEN taxheadcode LIKE 'PT_LIGHTING_TAX' THEN bad.adjustedamount ELSE 0 END) as lightingtax,
     SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_TAX' THEN bad.adjustedamount ELSE 0 END) as educationtax ,
     SUM(CASE WHEN taxheadcode LIKE 'PT_CONSOLIDATED_PROPERTY_TAX' THEN bad.adjustedamount ELSE 0 END) as consolidatedpropertytax,
@@ -619,6 +680,10 @@ ReportDefinitions:
     SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_CESS' THEN bad.adjustedamount ELSE 0 END) as educationcess,
     SUM(CASE WHEN taxheadcode LIKE 'PT_ADDL_WATER_TAX' THEN bad.adjustedamount ELSE 0 END) as additionalwatertax,
     SUM(CASE WHEN taxheadcode LIKE 'PT_DRAINAGE_TAX' THEN bad.adjustedamount ELSE 0 END) as drainagetax,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_SCAVENGING_TAX' THEN bad.adjustedamount ELSE 0 END) as scavengingtax,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_LIBRARY_CESS' THEN bad.adjustedamount ELSE 0 END) as librarycess,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVE_TAX' THEN bad.adjustedamount ELSE 0 END) as conservancytax,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_SPECIAL_CONSERVANCY_TAX' THEN bad.adjustedamount ELSE 0 END) as specialconservancytax,
     pd.amountpaid as totalcollection,
     un.name as collectorname,
     addr.doorno as doorno,
@@ -703,7 +768,7 @@ ReportDefinitions:
     isMandatory: false
     searchClause: AND bill.tenantid = $ulb
   - name: financialyear
-    label: Financial Year
+    label: reports.pt.financialYear
     type: singlevaluelist
     pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=egf-master&masterName=FinancialYear|$.MdmsRes.egf-master.FinancialYear.[?(@.module=='PT')].code|$.MdmsRes.egf-master.FinancialYear.[?(@.module=='PT')].name
     source: pt
@@ -711,22 +776,18 @@ ReportDefinitions:
     isMandatory: false
     searchClause: AND financialyear = $financialyear
   query: |
-    SELECT 
-      initcap(split_part(bill.tenantid, '.', 2)) as tenantid, 
-      COUNT(*) AS totalassessments,
-      SUM(bill.totalamount) AS totalamount, 
-      SUM(pd.amountpaid) AS totalamountpaid,
-      SUM(onl.totalamountpaid) as online,
-      SUM(offl.totalamountpaid) as offline, 
-      (SUM(bill.totalamount) - SUM(pd.amountpaid)) AS totalamountdue
-    FROM eg_pt_asmt_assessment AS asmt
-    LEFT OUTER JOIN (Select DISTINCT on (consumercode) bill.id,tenantid,consumercode,status,totalamount from egcl_bill bill ) as bill ON bill.consumercode = asmt.propertyid  and bill.status != 'Cancelled'
-    LEFT OUTER JOIN (SELECT billid,amountpaid,paymentid from egcl_paymentdetail pd ) as pd ON pd.billid = bill.id
-    LEFT OUTER JOIN (SELECT id,paymentmode,totalamountpaid FROM egcl_payment WHERE paymentmode = 'ONLINE') AS onl ON onl.id = pd.paymentid 
-    LEFT OUTER JOIN (SELECT id,paymentmode,totalamountpaid FROM egcl_payment WHERE paymentmode != 'ONLINE' ) AS offl ON offl.id = pd.paymentid   
-    WHERE bill.tenantid != 'pb.testing'
-  groupby: GROUP BY bill.tenantid
-  orderby: ORDER BY bill.tenantid, totalamountpaid DESC NULLS LAST
+    SELECT
+    initcap(split_part(tenantid, '.', 2)) as tenantid, 
+      SUM(totalast) as totalassessments,SUM(totalamount) as totalamount,SUM(amountpaid) AS totalamountpaid, 
+      SUM(onltotalamountpaid) as online,SUM(offtotalamountpaid) as offline, (SUM(totalamount) - SUM(amountpaid)) AS totalamountdue
+    FROM (select DISTINCT on (propertyid) COUNT(*) as totalast, bill.totalamount as totalamount,pd.amountpaid as amountpaid ,onl.totalamountpaid as onltotalamountpaid,offl.totalamountpaid as offtotalamountpaid from eg_pt_asmt_assessment asmt
+    inner join egcl_bill bill on  bill.consumercode=asmt.propertyid 
+    INNER JOIN (SELECT billid,amountpaid,paymentid from egcl_paymentdetail pd ) as pd ON pd.billid = bill.id
+    LEFT OUTER JOIN (SELECT id,paymentmode,totalamountpaid FROM egcl_payment WHERE paymentmode = 'ONLINE') AS onl ON onl.id = pd.paymentid
+    LEFT OUTER JOIN (SELECT id,paymentmode,totalamountpaid FROM egcl_payment WHERE paymentmode != 'ONLINE' ) AS offl ON offl.id = pd.paymentid
+    where asmt.tenantid != 'pb.testing' GROUP BY asmt.propertyid,bill.tenantid,bill.totalamount,pd.amountpaid,onl.totalamountpaid,offl.totalamountpaid)t where 1=1
+  groupby: GROUP BY tenantid
+  orderby: ORDER BY tenantid, totalamountpaid DESC NULLS LAST
 
 - reportName: UlbWisePtCollection
   summary: State Wide PT Collection
@@ -772,7 +833,7 @@ ReportDefinitions:
     isMandatory: false
     searchClause: AND receiptdate <= $toDate
   - name: financialyear
-    label: Financial Year
+    label: reports.pt.financialYear
     type: singlevaluelist
     pattern: http://egov-mdms-service:8080/egov-mdms-service/v1/_get?tenantId=$tenantid&moduleName=egf-master&masterName=FinancialYear|$.MdmsRes.egf-master.FinancialYear.[?(@.module=='PT')].code|$.MdmsRes.egf-master.FinancialYear.[?(@.module=='PT')].name
     source: pt
@@ -872,12 +933,12 @@ ReportDefinitions:
     type: string
     source: pt
     total: true
-  - name: conservancytax
+  - name: conservancyandscaveningtax
     label: PT_CONSERVANCY_TAX
     type: string
     source: pt
     total: true
-  - name: lightiningtax
+  - name: lightininganddrainagetax
     label: PT_LIGHTINING_TAX
     type: string
     source: pt
@@ -917,6 +978,26 @@ ReportDefinitions:
     type: string
     source: pt
     total: true
+  - name: scavengingtax
+    label: PT_SCAVENGING_TAX
+    type: string
+    source: pt
+    total: true  
+  - name: librarycess
+    label: PT_LIBRARY_CESS
+    type: string
+    source: pt
+    total: true 
+  - name: conservancytax
+    label: PT_CONSERVE_TAX
+    type: string
+    source: pt
+    total: true   
+  - name: specialconservancytax
+    label: PT_SPECIAL_CONSERVANCY_TAX
+    type: string
+    source: pt
+    total: true        
   - name: cash
     label: reports.pt.cash
     type: string
@@ -979,14 +1060,14 @@ ReportDefinitions:
     isMandatory: false
     searchClause: AND pay.tenantid = $ulb
   - name: paymentMode
-    label: Payment Mode
+    label: PT_RECEIPT_PAYMENT_MODE
     type: singlevaluelist
-    pattern: 'list://CASH:CASH,Online:Online,CARD:CARD,DD:DD,CHEQUE:CHEQUE'
+    pattern: 'list://CASH:Cash,Online:Online,CARD:Card,DD:DD,CHEQUE:Cheque'
     source: pt
     isMandatory: false
     searchClause: AND paymentmode = $paymentMode
   - name: collectorname
-    label: Collector Name
+    label: reports.pt.collectorname
     type: singlevaluelist
     pattern: http://egov-hrms:8080/egov-hrms/employees/_search?tenantId=$tenantid&roles=PTCEMP|$.Employees[*].user.id|$.Employees[*].user.name
     source: pt
@@ -1004,8 +1085,8 @@ ReportDefinitions:
     SUM(CASE WHEN taxheadcode LIKE 'PT_DEMANDNOTICE_CHARGE' THEN bad.adjustedamount ELSE 0 END) as demandnoticecharge,
     SUM(CASE WHEN taxheadcode LIKE 'PT_HOUSE_TAX' THEN bad.adjustedamount ELSE 0 END) as housetax,
     SUM(CASE WHEN taxheadcode LIKE 'PT_WATER_TAX'  THEN bad.adjustedamount ELSE 0 END) as watertax ,
-    SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN bad.adjustedamount ELSE 0 END) as conservancytax ,
-    SUM(CASE WHEN taxheadcode LIKE 'PT_LIGHTINING_TAX' THEN bad.adjustedamount ELSE 0 END) as lightiningtax ,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVANCY_TAX' THEN bad.adjustedamount ELSE 0 END) as conservancyandscaveningtax ,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_LIGHTINING_TAX' THEN bad.adjustedamount ELSE 0 END) as lightininganddrainagetax ,
     SUM(CASE WHEN taxheadcode LIKE 'PT_EDUCATION_TAX' THEN bad.adjustedamount ELSE 0 END) as educationtax ,
     SUM(CASE WHEN taxheadcode LIKE 'PT_CONSOLIDATED_PROPERTY_TAX' THEN bad.adjustedamount ELSE 0 END) as consolidatedpropertytax,
     SUM(CASE WHEN taxheadcode LIKE 'PT_SANITARY_CESS' THEN bad.adjustedamount ELSE 0 END) as sanitarycess,
@@ -1013,6 +1094,10 @@ ReportDefinitions:
     SUM(CASE WHEN taxheadcode LIKE 'PT_ADDL_WATER_TAX' THEN bad.adjustedamount ELSE 0 END) as additionalwatertax,
     SUM(CASE WHEN taxheadcode LIKE 'PT_DRAINAGE_TAX' THEN bad.adjustedamount ELSE 0 END) as drainagetax,
     SUM(CASE WHEN taxheadcode LIKE 'PT_LIGHTING_TAX' THEN bad.adjustedamount ELSE 0 END) as lightingtax,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_SCAVENGING_TAX' THEN bad.adjustedamount ELSE 0 END) as scavengingtax,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_LIBRARY_CESS' THEN bad.adjustedamount ELSE 0 END) as librarycess,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVE_TAX' THEN bad.adjustedamount ELSE 0 END) as conservancytax,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_SPECIAL_CONSERVANCY_TAX' THEN bad.adjustedamount ELSE 0 END) as specialconservancytax,
     SUM(CASE WHEN pay.paymentmode LIKE 'CASH' THEN bad.adjustedamount ELSE 0 END) as cash,
     SUM(CASE WHEN pay.paymentmode LIKE 'CARD' THEN bad.adjustedamount ELSE 0 END) as card,
     SUM(CASE WHEN pay.paymentmode LIKE 'ONLINE' THEN bad.adjustedamount ELSE 0 END) as online,
@@ -1112,7 +1197,7 @@ ReportDefinitions:
     type: string
     source: pt
     total: false
-  - name: conservancytax
+  - name: conservancyandscaveningtax
     label: PT_CONSERVANCY_TAX
     type: string
     source: pt
@@ -1152,11 +1237,31 @@ ReportDefinitions:
     type: string
     source: pt
     total: false
-  - name: lightanddrainge
+  - name: lightininganddrainagetax
     label: PT_LIGHTINING_TAX
     type: string
     source: pt
-    total: false      
+    total: false
+  - name: scavengingtax
+    label: PT_SCAVENGING_TAX
+    type: string
+    source: pt
+    total: false   
+  - name: librarycess
+    label: PT_LIBRARY_CESS
+    type: string
+    source: pt
+    total: false 
+  - name: conservancytax
+    label: PT_CONSERVE_TAX
+    type: string
+    source: pt
+    total: false   
+  - name: specialconservancytax
+    label: PT_SPECIAL_CONSERVANCY_TAX
+    type: string
+    source: pt
+    total: false             
   - name: demandnoticecharge
     label: PT_DEMANDNOTICE_CHARGE
     type: string
@@ -1196,7 +1301,7 @@ ReportDefinitions:
     isMandatory: false
     searchClause: AND createdtime <= $toDate
   - name: Wardname
-    label: Mohalla
+    label: PT_PROPERTY_ADDRESS_MOHALLA
     type: singlevaluelist
     pattern: http://egov-location:8080/egov-location/location/v11/boundarys/_search?hierarchyTypeCode=REVENUE&boundaryType=Locality&tenantId=$tenantid|$.TenantBoundary[*].boundary[*].code|$.TenantBoundary[*].boundary[*].name
     source: pt
@@ -1219,7 +1324,7 @@ ReportDefinitions:
     SUM(CASE WHEN dem_code = 'PT_WATER_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as watertax,
     CONCAT(SUM(CASE WHEN dem_code = 'PT_CONSERVANCY_TAX' THEN dem_tax ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_CONSERVANCY_TAX' THEN collectionamount ELSE 0 END),E'\r\n',
-    SUM(CASE WHEN dem_code = 'PT_CONSERVANCY_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as conservancytax,
+    SUM(CASE WHEN dem_code = 'PT_CONSERVANCY_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as conservancyandscaveningtax,
     CONCAT(SUM(CASE WHEN dem_code = 'PT_EDUCATION_TAX' THEN dem_tax ELSE 0 END),E'\r\n', 
     SUM(CASE WHEN dem_code = 'PT_EDUCATION_TAX' THEN collectionamount ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_EDUCATION_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as educationtax,
@@ -1243,7 +1348,19 @@ ReportDefinitions:
     SUM(CASE WHEN dem_code = 'PT_LIGHTING_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as lightingtax,
     CONCAT(SUM(CASE WHEN dem_code = 'PT_LIGHTINING_TAX' THEN dem_tax ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_LIGHTINING_TAX' THEN collectionamount ELSE 0 END),E'\r\n',
-    SUM(CASE WHEN dem_code = 'PT_LIGHTINING_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as lightanddrainge,
+    SUM(CASE WHEN dem_code = 'PT_LIGHTINING_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as lightininganddrainagetax,
+    CONCAT(SUM(CASE WHEN dem_code = 'PT_SCAVENGING_TAX' THEN dem_tax ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN dem_code = 'PT_SCAVENGING_TAX' THEN collectionamount ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN dem_code = 'PT_SCAVENGING_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as scavengingtax,
+    CONCAT(SUM(CASE WHEN dem_code = 'PT_LIBRARY_CESS' THEN dem_tax ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN dem_code = 'PT_LIBRARY_CESS' THEN collectionamount ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN dem_code = 'PT_LIBRARY_CESS'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as librarycess,
+    CONCAT(SUM(CASE WHEN dem_code = 'PT_CONSERVE_TAX' THEN dem_tax ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN dem_code = 'PT_CONSERVE_TAX' THEN collectionamount ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN dem_code = 'PT_CONSERVE_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as conservancytax,
+    CONCAT(SUM(CASE WHEN dem_code = 'PT_SPECIAL_CONSERVANCY_TAX' THEN dem_tax ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN dem_code = 'PT_SPECIAL_CONSERVANCY_TAX' THEN collectionamount ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN dem_code = 'PT_SPECIAL_CONSERVANCY_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as specialconservancytax,
     CONCAT(SUM(CASE WHEN dem_code = 'PT_TIME_INTEREST' THEN dem_tax ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_TIME_INTEREST' THEN collectionamount ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_TIME_INTEREST'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as interest,
@@ -1285,7 +1402,7 @@ ReportDefinitions:
       INNER JOIN eg_user ptuser ON ptuser.uuid = poo.userid where status = 'ACTIVE' group by propertyid)
       poo ON poo.propertyid = pt.id
       where demand.tenantid LIKE $tenantid and demand.businessservice ='PT')t where 1=1 
-  groupby: GROUP BY tenantid,consumercode,doorno,name,oldpropertyid,propertytype,usagecategory,mobilenumber, arv,locality,createdtime,street,buildingname
+  groupby: GROUP BY tenantid,consumercode,doorno,name,oldpropertyid,propertytype,usagecategory,mobilenumber,arv,locality,createdtime,street,buildingname
   orderby: ORDER BY consumercode
 
 - reportName: DGDEDemandRegisterReport
@@ -1367,7 +1484,7 @@ ReportDefinitions:
     type: string
     source: pt
     total: false
-  - name: conservancytax
+  - name: conservancyandscaveningtax
     label: PT_CONSERVANCY_TAX
     type: string
     source: pt
@@ -1407,11 +1524,31 @@ ReportDefinitions:
     type: string
     source: pt
     total: false
-  - name: lightanddrainge
+  - name: lightininganddrainagetax
     label: PT_LIGHTINING_TAX
     type: string
     source: pt
-    total: false      
+    total: false
+  - name: scavengingtax
+    label: PT_SCAVENGING_TAX
+    type: string
+    source: pt
+    total: false   
+  - name: librarycess
+    label: PT_LIBRARY_CESS
+    type: string
+    source: pt
+    total: false 
+  - name: conservancytax
+    label: PT_CONSERVE_TAX
+    type: string
+    source: pt
+    total: false   
+  - name: specialconservancytax
+    label: PT_SPECIAL_CONSERVANCY_TAX
+    type: string
+    source: pt
+    total: false            
   - name: demandnoticecharge
     label: PT_DEMANDNOTICE_CHARGE
     type: string
@@ -1459,7 +1596,7 @@ ReportDefinitions:
     isMandatory: false
     searchClause: AND tenantid = $ulb
   - name: Wardname
-    label: Mohalla
+    label: PT_PROPERTY_ADDRESS_MOHALLA
     type: singlevaluelist
     pattern: http://egov-location:8080/egov-location/location/v11/boundarys/_search?hierarchyTypeCode=REVENUE&boundaryType=Locality&tenantId=$tenantid|$.TenantBoundary[*].boundary[*].code|$.TenantBoundary[*].boundary[*].name
     source: pt
@@ -1482,7 +1619,7 @@ ReportDefinitions:
     SUM(CASE WHEN dem_code = 'PT_WATER_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as watertax,
     CONCAT(SUM(CASE WHEN dem_code = 'PT_CONSERVANCY_TAX' THEN dem_tax ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_CONSERVANCY_TAX' THEN collectionamount ELSE 0 END),E'\r\n',
-    SUM(CASE WHEN dem_code = 'PT_CONSERVANCY_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as conservancytax,
+    SUM(CASE WHEN dem_code = 'PT_CONSERVANCY_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as conservancyandscaveningtax,
     CONCAT(SUM(CASE WHEN dem_code = 'PT_EDUCATION_TAX' THEN dem_tax ELSE 0 END),E'\r\n', 
     SUM(CASE WHEN dem_code = 'PT_EDUCATION_TAX' THEN collectionamount ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_EDUCATION_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as educationtax,
@@ -1506,7 +1643,19 @@ ReportDefinitions:
     SUM(CASE WHEN dem_code = 'PT_LIGHTING_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as lightingtax,
     CONCAT(SUM(CASE WHEN dem_code = 'PT_LIGHTINING_TAX' THEN dem_tax ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_LIGHTINING_TAX' THEN collectionamount ELSE 0 END),E'\r\n',
-    SUM(CASE WHEN dem_code = 'PT_LIGHTINING_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as lightanddrainge,
+    SUM(CASE WHEN dem_code = 'PT_LIGHTINING_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as lightininganddrainagetax,
+    CONCAT(SUM(CASE WHEN dem_code = 'PT_SCAVENGING_TAX' THEN dem_tax ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN dem_code = 'PT_SCAVENGING_TAX' THEN collectionamount ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN dem_code = 'PT_SCAVENGING_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as scavengingtax,
+    CONCAT(SUM(CASE WHEN dem_code = 'PT_LIBRARY_CESS' THEN dem_tax ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN dem_code = 'PT_LIBRARY_CESS' THEN collectionamount ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN dem_code = 'PT_LIBRARY_CESS'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as librarycess,
+    CONCAT(SUM(CASE WHEN dem_code = 'PT_CONSERVE_TAX' THEN dem_tax ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN dem_code = 'PT_CONSERVE_TAX' THEN collectionamount ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN dem_code = 'PT_CONSERVE_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as conservancytax,
+    CONCAT(SUM(CASE WHEN dem_code = 'PT_SPECIAL_CONSERVANCY_TAX' THEN dem_tax ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN dem_code = 'PT_SPECIAL_CONSERVANCY_TAX' THEN collectionamount ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN dem_code = 'PT_SPECIAL_CONSERVANCY_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as specialconservancytax,
     CONCAT(SUM(CASE WHEN dem_code = 'PT_TIME_INTEREST' THEN dem_tax ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_TIME_INTEREST' THEN collectionamount ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_TIME_INTEREST'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as interest,
@@ -1571,7 +1720,7 @@ ReportDefinitions:
     type: string
     source: pt
     total: false
-  - name: conservancytax
+  - name: conservancyandscaveningtax
     label: PT_CONSERVANCY_TAX
     type: string
     source: pt
@@ -1611,11 +1760,31 @@ ReportDefinitions:
     type: string
     source: pt
     total: false
-  - name: lightanddrainge
+  - name: lightininganddrainagetax
     label: PT_LIGHTINING_TAX
     type: string
     source: pt
-    total: false      
+    total: false
+  - name: scavengingtax
+    label: PT_SCAVENGING_TAX
+    type: string
+    source: pt
+    total: false   
+  - name: librarycess
+    label: PT_LIBRARY_CESS
+    type: string
+    source: pt
+    total: false 
+  - name: conservancytax
+    label: PT_CONSERVE_TAX
+    type: string
+    source: pt
+    total: false   
+  - name: specialconservancytax
+    label: PT_SPECIAL_CONSERVANCY_TAX
+    type: string
+    source: pt
+    total: false             
   - name: demandnoticecharge
     label: PT_DEMANDNOTICE_CHARGE
     type: string
@@ -1665,7 +1834,7 @@ ReportDefinitions:
     SUM(CASE WHEN dem_code = 'PT_WATER_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as watertax,
     CONCAT(SUM(CASE WHEN dem_code = 'PT_CONSERVANCY_TAX' THEN dem_tax ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_CONSERVANCY_TAX' THEN collectionamount ELSE 0 END),E'\r\n',
-    SUM(CASE WHEN dem_code = 'PT_CONSERVANCY_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END) ) as conservancytax,
+    SUM(CASE WHEN dem_code = 'PT_CONSERVANCY_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END) ) as conservancyandscaveningtax,
     CONCAT(SUM(CASE WHEN dem_code = 'PT_EDUCATION_TAX' THEN dem_tax ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_EDUCATION_TAX' THEN collectionamount ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_EDUCATION_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as educationtax,
@@ -1689,7 +1858,19 @@ ReportDefinitions:
     SUM(CASE WHEN dem_code = 'PT_LIGHTING_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as lightingtax,
     CONCAT(SUM(CASE WHEN dem_code = 'PT_LIGHTINING_TAX' THEN dem_tax ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_LIGHTINING_TAX' THEN collectionamount ELSE 0 END),E'\r\n',
-    SUM(CASE WHEN dem_code = 'PT_LIGHTINING_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as lightanddrainge,
+    SUM(CASE WHEN dem_code = 'PT_LIGHTINING_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as lightininganddrainagetax,
+    CONCAT(SUM(CASE WHEN dem_code = 'PT_SCAVENGING_TAX' THEN dem_tax ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN dem_code = 'PT_SCAVENGING_TAX' THEN collectionamount ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN dem_code = 'PT_SCAVENGING_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as scavengingtax,
+    CONCAT(SUM(CASE WHEN dem_code = 'PT_LIBRARY_CESS' THEN dem_tax ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN dem_code = 'PT_LIBRARY_CESS' THEN collectionamount ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN dem_code = 'PT_LIBRARY_CESS'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as librarycess,
+    CONCAT(SUM(CASE WHEN dem_code = 'PT_CONSERVE_TAX' THEN dem_tax ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN dem_code = 'PT_CONSERVE_TAX' THEN collectionamount ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN dem_code = 'PT_CONSERVE_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as conservancytax,
+    CONCAT(SUM(CASE WHEN dem_code = 'PT_SPECIAL_CONSERVANCY_TAX' THEN dem_tax ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN dem_code = 'PT_SPECIAL_CONSERVANCY_TAX' THEN collectionamount ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN dem_code = 'PT_SPECIAL_CONSERVANCY_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as specialconservancytax,
     CONCAT(SUM(CASE WHEN dem_code = 'PT_TIME_INTEREST' THEN dem_tax ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_TIME_INTEREST' THEN collectionamount ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_TIME_INTEREST' then  dem_tax -collectionamount ELSE 0 END)) as interest,
@@ -1717,3 +1898,109 @@ ReportDefinitions:
     where demand.tenantid LIKE $tenantid and demand.businessservice ='PT')t  where 1 =  1 
   groupby: GROUP BY tenantid
   orderby: ORDER BY tenantid
+
+- reportName: DemandRegisterSummaryReport
+  summary: PT Demand Register Summary Report
+  version: 1.0.0
+  moduleName: rainmaker-pt
+  decryptionPathId: DemandRegisterSummaryReport
+  externalService:
+  - entity: $.TenantBoundary[0].boundary
+    apiURL: http://egov-location:8080/egov-location/location/v11/boundarys/_search?hierarchyTypeCode=REVENUE&boundaryType=Locality&tenantId=$tenantId
+    keyOrder: name,code
+    tableName: tbl_boundary
+  sourceColumns:
+  - name: propertyid
+    label: reports.pt.propertyId
+    type: string
+    source: pt
+    total: false
+  - name: oldcode
+    label: PT_EXISTING_PROPERTY_ID
+    type: string
+    source: pt
+    total: false
+  - name: abaspropertyid
+    label: PT_ABAS_ID
+    type: string
+    source: pt
+    total: false
+  - name: name
+    label: PT_OWNER_NAME
+    type: string
+    total: false
+    source: pt
+  - name: mobilenumber
+    label: PT_COMMON_APPLICANT_MOBILE_NO_LABEL
+    type: string
+    total: false
+    source: pt    
+  - name: addr
+    label: reports.pt.address
+    type: string
+    source: pt
+    total: false
+  - name: mohallaname
+    label: PT_PROPERTY_ADDRESS_MOHALLA
+    type: string
+    source: pt  
+    total: false
+  - name: arv
+    label: PT_ASSESMENT_INFO_AREA_RENT
+    type: string
+    source: pt
+    total: true
+  - name: total
+    label: PT_TOTAL_AMOUNT
+    type: string
+    source: pt
+    total: true
+  - name: totalcollection
+    label: reports.pt.collection
+    type: string
+    source: pt
+    total: true
+  - name: outstanding
+    label: PT_DUE
+    type: string
+    source: pt
+    total: true
+  searchParams:
+  - name: fromDate
+    label: reports.pt.fromDate
+    type: epoch
+    source: pt
+    isMandatory: false
+    searchClause: AND demand.createdtime >= $fromDate
+  - name: toDate
+    label: reports.pt.toDate
+    type: epoch
+    source: pt
+    isMandatory: false
+    searchClause: AND demand.createdtime <= $toDate
+  - name: Wardname
+    label: PT_PROPERTY_ADDRESS_MOHALLA
+    type: singlevaluelist
+    pattern: http://egov-location:8080/egov-location/location/v11/boundarys/_search?hierarchyTypeCode=REVENUE&boundaryType=Locality&tenantId=$tenantid|$.TenantBoundary[*].boundary[*].code|$.TenantBoundary[*].boundary[*].name
+    source: pt
+    wrapper: true
+    isMandatory: false
+    searchClause: AND locality = $Wardname
+  query: | 
+    select consumercode as propertyid,pt.oldpropertyid as oldcode,pt.abaspropertyid as abaspropertyid, SUM(dd.taxamount) as total ,SUM(dd.collectionamount) as totalcollection,
+    SUM(dd.taxamount)-SUM(dd.collectionamount)  as  outstanding, CONCAT(addr.doorno,' ',addr.street,' ',addr.buildingname) as addr ,ptunit.arv as arv,
+    (SELECT boundary_def.name FROM (VALUES tbl_boundary) AS boundary_def(name,code) where code=addr.locality) as mohallaname,	
+    poo.name as name,poo.mobilenumber
+    from egbs_demand_v1 demand
+    inner join eg_pt_property as pt on pt.propertyid = demand.consumercode
+    inner join egbs_demanddetail_v1 as dd on dd.demandid= demand.id
+    Join eg_pt_address as addr on addr.propertyid=pt.id
+    LEFT JOIN (
+      SELECT propertyid, array_to_string(array_agg(name),', ') as name, array_to_string(array_agg(mobilenumber),', ') as mobilenumber
+      FROM eg_pt_owner poo
+      INNER JOIN eg_user ptuser ON ptuser.uuid = poo.userid where status = 'ACTIVE' group by propertyid) 
+      poo ON poo.propertyid = pt.id
+      Left outer join eg_pt_unit as ptunit on ptunit.propertyid = pt.id
+      where demand.tenantid LIKE $tenantid
+  groupby: GROUP BY consumercode,pt.oldpropertyid,pt.abaspropertyid,poo.name,poo.mobilenumber,addr.doorno,addr.street,addr.buildingname,ptunit.arv,addr.locality
+  orderby: ORDER BY consumercode
