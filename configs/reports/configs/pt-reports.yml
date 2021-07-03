@@ -1956,7 +1956,7 @@ ReportDefinitions:
     source: pt
     total: true
   - name: totalcollection
-    label: PT_TOTAL_AMOUNT 
+    label: reports.pt.collection
     type: string
     source: pt
     total: true
