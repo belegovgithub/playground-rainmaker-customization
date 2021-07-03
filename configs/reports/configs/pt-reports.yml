@@ -1898,3 +1898,109 @@ ReportDefinitions:
     where demand.tenantid LIKE $tenantid and demand.businessservice ='PT')t  where 1 =  1 
   groupby: GROUP BY tenantid
   orderby: ORDER BY tenantid
+
+- reportName: DemandRegisterSummaryReport
+  summary: PT Demand Register Summary Report
+  version: 1.0.0
+  moduleName: rainmaker-pt
+  decryptionPathId: DemandRegisterSummaryReport
+  externalService:
+  - entity: $.TenantBoundary[0].boundary
+    apiURL: http://egov-location:8080/egov-location/location/v11/boundarys/_search?hierarchyTypeCode=REVENUE&boundaryType=Locality&tenantId=$tenantId
+    keyOrder: name,code
+    tableName: tbl_boundary
+  sourceColumns:
+  - name: propertyid
+    label: reports.pt.propertyId
+    type: string
+    source: pt
+    total: false
+  - name: oldcode
+    label: PT_EXISTING_PROPERTY_ID
+    type: string
+    source: pt
+    total: false
+  - name: abaspropertyid
+    label: PT_ABAS_ID
+    type: string
+    source: pt
+    total: false
+  - name: name
+    label: PT_OWNER_NAME
+    type: string
+    total: false
+    source: pt
+  - name: mobilenumber
+    label: PT_COMMON_APPLICANT_MOBILE_NO_LABEL
+    type: string
+    total: false
+    source: pt    
+  - name: addr
+    label: reports.pt.address
+    type: string
+    source: pt
+    total: false
+  - name: mohallaname
+    label: PT_PROPERTY_ADDRESS_MOHALLA
+    type: string
+    source: pt  
+    total: false
+  - name: arv
+    label: PT_ASSESMENT_INFO_AREA_RENT
+    type: string
+    source: pt
+    total: true
+  - name: total
+    label: PT_TOTAL_AMOUNT
+    type: string
+    source: pt
+    total: true
+  - name: totalcollection
+    label: PT_TOTAL_AMOUNT 
+    type: string
+    source: pt
+    total: true
+  - name: outstanding
+    label: PT_DUE
+    type: string
+    source: pt
+    total: true
+  searchParams:
+  - name: fromDate
+    label: reports.pt.fromDate
+    type: epoch
+    source: pt
+    isMandatory: false
+    searchClause: AND createdtime >= $fromDate
+  - name: toDate
+    label: reports.pt.toDate
+    type: epoch
+    source: pt
+    isMandatory: false
+    searchClause: AND createdtime <= $toDate
+  - name: Wardname
+    label: PT_PROPERTY_ADDRESS_MOHALLA
+    type: singlevaluelist
+    pattern: http://egov-location:8080/egov-location/location/v11/boundarys/_search?hierarchyTypeCode=REVENUE&boundaryType=Locality&tenantId=$tenantid|$.TenantBoundary[*].boundary[*].code|$.TenantBoundary[*].boundary[*].name
+    source: pt
+    wrapper: true
+    isMandatory: false
+    searchClause: AND locality = $Wardname
+  query: | 
+    select consumercode as propertyid,pt.oldpropertyid as oldcode,pt.abaspropertyid as abaspropertyid, SUM(dd.taxamount) as total ,SUM(dd.collectionamount) as collection,
+    SUM(dd.taxamount)-SUM(dd.collectionamount)  as  outstanding, CONCAT(addr.doorno,' ',addr.street,' ',addr.buildingname) as address ,ptunit.arv as arv,
+    (SELECT boundary_def.name FROM (VALUES tbl_boundary) AS boundary_def(name,code) where code=addr.locality) as mohallaname,	
+    poo.name as name,poo.mobilenumber
+    from egbs_demand_v1 demand
+    inner join eg_pt_property as pt on pt.propertyid = demand.consumercode
+    inner join egbs_demanddetail_v1 as dd on dd.demandid= demand.id
+    Join eg_pt_address as addr on addr.propertyid=pt.id
+    LEFT JOIN (
+      SELECT propertyid, array_to_string(array_agg(name),', ') as name, array_to_string(array_agg(mobilenumber),', ') as mobilenumber
+      FROM eg_pt_owner poo
+      INNER JOIN eg_user ptuser ON ptuser.uuid = poo.userid where status = 'ACTIVE' group by propertyid) 
+      poo ON poo.propertyid = pt.id
+      Left outer join eg_pt_unit as ptunit on ptunit.propertyid = pt.id
+      where demand.tenantid LIKE $tenantid
+  groupby: GROUP BY consumercode,pt.oldpropertyid,pt.abaspropertyid,poo.name,poo.mobilenumber,addr.doorno,addr.street,addr.buildingname,ptunit.arv,addr.locality
+  orderby: ORDER BY consumercode
