@@ -1987,8 +1987,8 @@ ReportDefinitions:
     isMandatory: false
     searchClause: AND locality = $Wardname
   query: | 
-    select consumercode as propertyid,pt.oldpropertyid as oldcode,pt.abaspropertyid as abaspropertyid, SUM(dd.taxamount) as total ,SUM(dd.collectionamount) as collection,
-    SUM(dd.taxamount)-SUM(dd.collectionamount)  as  outstanding, CONCAT(addr.doorno,' ',addr.street,' ',addr.buildingname) as address ,ptunit.arv as arv,
+    select consumercode as propertyid,pt.oldpropertyid as oldcode,pt.abaspropertyid as abaspropertyid, SUM(dd.taxamount) as total ,SUM(dd.collectionamount) as totalcollection,
+    SUM(dd.taxamount)-SUM(dd.collectionamount)  as  outstanding, CONCAT(addr.doorno,' ',addr.street,' ',addr.buildingname) as addr ,ptunit.arv as arv,
     (SELECT boundary_def.name FROM (VALUES tbl_boundary) AS boundary_def(name,code) where code=addr.locality) as mohallaname,	
     poo.name as name,poo.mobilenumber
     from egbs_demand_v1 demand
