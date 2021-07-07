@@ -13,7 +13,7 @@ ServiceMaps:
       jsonPath: $.Property
       customJsonMapping:
         #indexMapping: {"Data":{"propertyId":"","tenantId":"","propertyDetails":{},"address":{},"ward":{},"tenantData":{},"@timestamp":"timestamp"}}
-        indexMapping: {"Data":{"propertyId":"","tenantId":"","propertyDetails":{},"address":{},"ward":{},"tenantData":{}}}
+        indexMapping: {"Data":{"propertyId":"","tenantId":"","propertyDetails":{},"ward":{},"tenantData":{}}}
         fieldMapping:
         - inJsonPath: $.propertyId
           outJsonPath: $.Data.propertyId
@@ -21,8 +21,8 @@ ServiceMaps:
           outJsonPath: $.Data.tenantId
         - inJsonPath: $
           outJsonPath: $.Data.propertyDetails
-        - inJsonPath: $.address
-          outJsonPath: $.Data.address
+        #- inJsonPath: $.address
+        #  outJsonPath: $.Data.address
         # - inJsonPath: $.@timestamp
         #   outJsonPath: $.Data.@timestamp
         externalUriMapping:
@@ -58,7 +58,7 @@ ServiceMaps:
       jsonPath: $.Property
       customJsonMapping:
         #indexMapping: {"Data":{"propertyId":"","tenantId":"","propertyDetails":{},"address":{},"ward":{},"tenantData":{},"@timestamp":"timestamp"}}
-        indexMapping: {"Data":{"propertyId":"","tenantId":"","propertyDetails":{},"address":{},"ward":{},"tenantData":{}}}
+        indexMapping: {"Data":{"propertyId":"","tenantId":"","propertyDetails":{},"ward":{},"tenantData":{}}}
         fieldMapping:
         - inJsonPath: $.propertyId
           outJsonPath: $.Data.propertyId
@@ -66,8 +66,8 @@ ServiceMaps:
           outJsonPath: $.Data.tenantId
         - inJsonPath: $
           outJsonPath: $.Data.propertyDetails
-        - inJsonPath: $.address
-          outJsonPath: $.Data.address
+        #- inJsonPath: $.address
+        #  outJsonPath: $.Data.address
         # - inJsonPath: $.@timestamp
         #   outJsonPath: $.Data.@timestamp
         externalUriMapping:

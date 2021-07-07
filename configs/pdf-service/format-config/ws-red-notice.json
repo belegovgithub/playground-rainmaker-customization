@@ -1,0 +1,191 @@
+{
+  "key": "ws-red-notice",
+  "config": {
+    "defaultStyle": {
+      "font": "Cambay"
+    },
+    "watermark": {
+      "text": "BEL UAT BEL UAT",
+      "color": "gery",
+      "opacity": 0.1,
+      "bold": true,
+      "italics": false
+    },
+    "content": [
+      {
+        "style": "ws-head",
+        "table": {
+          "widths": ["*"],
+          "body": [
+            [
+              {
+                "stack": [
+                  {
+                    "text": "{{consumer_copy_label}}",
+                    "style": "header-right",
+                    "margin": [0, 4, 0, 4]
+                  },
+                  {
+                    "text": "{{cb-name}} {{municipal_corportaion_en}}",
+                    "style": "header-center"
+                  },
+                  {
+                    "text": "{{cb-name}} {{municipal_corportaion_hi}}",
+                    "style": "header-center",
+                    "margin": [0, 4, 0, 18]
+                  }
+                ]
+              }
+            ]
+          ]
+        }
+      },
+      {
+        "table": {
+          "widths": ["*"],
+          "body": [
+            [
+              {
+                "stack": [
+                  {
+                    "table": {
+                      "widths": ["*"],
+                      "body": [
+                        [
+                          {
+                            "text": "{{disconnection_notice_label}}",
+                            "border": [true, false, true, false],
+                            "alignment": "center",
+                            "bold": "true"
+                          }
+                        ],
+                        [
+                          {
+                            "text": "{{to_label}},",
+                            "style": "receipt-value-down-rec",
+                            "border": [true, false, true, false],
+                            "margin": [0, 0, 0, -2]
+                          }
+                        ],
+                        [
+                          {
+                            "text": "{{name}}",
+                            "style": "receipt-value-down-rec",
+                            "border": [true, false, true, false],
+                            "margin": [0, 0, 0, -2]
+                          }
+                        ],
+                        [
+                          {
+                            "text": "{{doorNo}}",
+                            "style": "receipt-value-down-rec",
+                            "border": [true, false, true, false],
+                            "margin": [0, 0, 0, -2]
+                          }
+                        ],
+                        [
+                          {
+                            "text": "{{locality}}",
+                            "style": "receipt-value-down-rec",
+                            "border": [true, false, true, false],
+                            "margin": [0, 0, 0, -2]
+                          }
+                        ],
+                        [
+                          {
+                            "text": "{{statement_1}} {{Rs}}{{amount}} {{statement_2}} {{statement_3}}",
+                            "style": "receipt-value-down-rec",
+                            "border": [true, false, true, false],
+                            "margin": [0, 15, 0, 18]
+                          }
+                        ],
+                        [
+                          {
+                            "text": "{{date}}",
+                            "style": "receipt-value-down-rec",
+                            "border": [true, false, true, false]
+                          }
+                        ],
+                        [
+                          {
+                            "text": "{{ceo}}",
+                            "alignment": "right",
+                            "style": "receipt-value-down-rec",
+                            "border": [true, false, true, false],
+                            "margin": [0, 0, 0, -2]
+                          }
+                        ],
+                        [
+                          {
+                            "text": "{{municipal_corportaion}}",
+                            "alignment": "right",
+                            "style": "receipt-value-down-rec",
+                            "border": [true, false, true, true]
+                          }
+                        ]
+                      ]
+                    }
+                  }
+                ]
+              }
+            ]
+          ]
+        },
+        "layout": "noBorders",
+        "margin": [0, -2, 0, -2]
+      }
+    ],
+    "styles": {
+      "pdf-header": { "fillcolor": "#F2F2F2", "margin": [-70, -41, -81, 10] },
+      "header-right": {
+        "color": "#000000",
+        "bold": false,
+        "fontSize": 10,
+        "fontWeight": 400,
+        "alignment": "right"
+      },
+      "header-center": {
+        "color": "#000000",
+        "fontSize": 12,
+        "bold": false,
+        "fontWeight": 400,
+        "alignment": "center"
+      },
+      "appendix-header": {
+        "color": "#000000",
+        "bold": true,
+        "fontSize": 11,
+        "fontWeight": 400,
+        "alignment": "right"
+      },
+      "receipt-value-down-sub": {
+        "color": "#000000",
+        "bold": false,
+        "fontSize": 11,
+        "fontWeight": 400,
+        "alignment": "left",
+        "margin": [0, 0, 0, 5]
+      },
+      "receipt-value-down-rec": {
+        "color": "#000000",
+        "bold": false,
+        "fontSize": 11,
+        "fontWeight": 400,
+        "alignment": "left"
+      },
+      "receipt-value-down": {
+        "color": "#000000",
+        "bold": false,
+        "fontSize": 12.5,
+        "fontWeight": 400,
+        "alignment": "left",
+        "margin": [-8, 0, 0, 5]
+      },
+
+      "pdf-head-qr-code": {
+        "fillcolor": "#F2F2F2",
+        "margin": [-70, -41, -81, 0]
+      }
+    }
+  }
+}
