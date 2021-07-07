@@ -36,7 +36,7 @@ SearchDefinitions:
             ad.additionaldetails as ad_additionaldetails,
             ptadd.doorNo as ptadd_doorNo,ptadd.landmark as ptadd_landmark, 
             ptadd.city as ptadd_city, ptadd.pincode as ptadd_pincode, 
-            ptadd.locality as ptadd_locality, ptown.userid as ptown_userid 
+            ptadd.locality as ptadd_locality, ptown.userid as ptown_userid, pt.oldpropertyid as oldpropertyid 
             
             FROM egbs_bill_v1 b INNER JOIN egbs_billdetail_v1 bd ON b.id = bd.billid AND b.tenantid = bd.tenantid 
             INNER JOIN egbs_billaccountdetail_v1 ad ON bd.id = ad.billdetail AND bd.tenantid = ad.tenantid 
@@ -46,6 +46,7 @@ SearchDefinitions:
             INNER JOIN eg_pt_owner ptown ON pt.id = ptown.propertyid $where )
 
       select * from bill_data inner join (select max(b_createddate) as maxcreateddate, bd_consumercode from bill_data group by bd_consumercode) as max ON max.maxcreateddate=b_createddate
+    orderBy: oldpropertyid,asc      
    searchParams: 
     condition: AND
     params:
