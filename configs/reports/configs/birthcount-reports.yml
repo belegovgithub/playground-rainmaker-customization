@@ -189,72 +189,72 @@ ReportDefinitions:
     moduleName: rainmaker-bnd
     sourceColumns:
     - name: servicetype
-      label: PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_SERVICE_TYPE
+      label: BND_SERVICE_TYPE
       type: string
       source: bnd
       total: false
     - name: receiptnumber
-      label: PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_RECEIPT_NO
+      label: BND_RECEIPT_NO
       type: string
       source: bnd
       total: false
     - name: paymentdate
-      label: PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_PAYMENT_DATE
+      label: BND_PAYMENT_DATE
       type: string
       source: bnd
       total: false
     - name: consumer_code
-      label: PDF_STATIC_LABEL_CONSOLIDATED_TLCERTIFICATE_APPLICATION_NO
+      label: BND_APPL_NO
       type: string
       source: bnd
       total: false
     - name: paidby
-      label: PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_CONSUMER_NAME
+      label: BND_CONSUMER_NAME
       type: string
       source: bnd
       total: false
     - name: payername
-      label: PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_PAYER_NAME
+      label: BND_PAYER_NAME
       type: string
       source: bnd
       total: false      
     - name: mobilenumber
-      label: PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_PAYER_CONTACT
+      label: BND_PAYER_CONTACT
       type: string
       source: bnd
       total: false
     - name: paymentmode
-      label: PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_PAYMENT_MODE
+      label: BND_PAYMENT_MODE
       type: string
       source: bnd
       total: false
     - name: txn_amount
-      label: PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_PAID_AMOUNT
+      label: BND_PAID_AMOUNT
       type: string
       source: bnd
-      total: false
+      total: true
     - name: transactionnumber
-      label: PDF_STATIC_LABEL_CONSOLIDATED_RECEIPT_TRANSACTION_ID
+      label: BND_TRANSACTION_ID
       type: string
       source: bnd
       total: false   
     - name: bank_transaction_no
-      label: PDF_STATIC_LABEL_PT_RECEIPT_BANK_TRANSACTION_NO
+      label: BND_BANK_TRANSACTION_NO
       type: string
       source: bnd
       total: false      
     searchParams:
     - name: fromDate
-      label: PDF_STATIC_LABEL_CONSOLIDATED_PASS_LICENSE_VALIDITY_FROM
+      label: BND_FROM_DATE
       type: epoch
       source: bnd
       isMandatory: false
       searchClause: AND pay.createdtime >= $fromDate
     - name: toDate
-      label: PDF_STATIC_LABEL_CONSOLIDATED_PASS_LICENSE_VALIDITY_TO
+      label: BND_TO_DATE
       type: epoch
       source: bnd
       isMandatory: false
       searchClause: AND pay.createdtime <= $toDate       
-    query: select CONCAT(case when paydtl.businessservice = 'BIRTH_CERT' THEN 'Birth' when paydtl.businessservice = 'DEATH_CERT' THEN 'Death' END ,' Certificate Payment Receipt') as servicetype ,paydtl.receiptnumber, To_char((To_timestamp(pay.transactiondate / 1000) at time Zone 'Asia/Kolkata'), 'DD/MM/YYYY') as paymentdate, txn.consumer_code, pay.paidby, pay.payername, pay.mobilenumber, pay.paymentmode, CAST(txn.txn_amount as text) txn_amount, pay.transactionnumber, txn.bank_transaction_no from egcl_payment pay left join egcl_paymentdetail paydtl ON paydtl.paymentid = pay.id left join eg_pg_transactions txn on txn.txn_id = pay.transactionnumber where paydtl.businessservice in ('BIRTH_CERT','DEATH_CERT') and pay.tenantid = $tenantid
+    query: select case when paydtl.businessservice = 'BIRTH_CERT' THEN 'Birth' when paydtl.businessservice = 'DEATH_CERT' THEN 'Death' END as servicetype ,paydtl.receiptnumber, To_char((To_timestamp(pay.transactiondate / 1000) at time Zone 'Asia/Kolkata'), 'DD/MM/YYYY') as paymentdate, txn.consumer_code, pay.paidby, pay.payername, pay.mobilenumber, pay.paymentmode, CAST(txn.txn_amount as text) txn_amount, pay.transactionnumber, txn.bank_transaction_no from egcl_payment pay left join egcl_paymentdetail paydtl ON paydtl.paymentid = pay.id left join eg_pg_transactions txn on txn.txn_id = pay.transactionnumber where paydtl.businessservice in ('BIRTH_CERT','DEATH_CERT') and pay.tenantid = $tenantid
     orderby: order by pay.createdtime desc    
