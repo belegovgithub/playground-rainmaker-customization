@@ -11,21 +11,21 @@
           "topic": "common-pdf-generation-3",
           "mappings": [
             {
-              "direct": [
+              "direct": [ 
                 {
-                    "variable": "emblemImage",
-                    "url": "https://raw.githubusercontent.com/belsoftware/webaccess/master/images/birth/emblemInd.png",
-                    "type": "image"
+                  "variable": "emblemImage",                        
+                  "id":"emblemInd.png",
+                  "type":"image"      
                 },
                 {
-                    "variable": "govtImage",
-                    "url": "https://raw.githubusercontent.com/belsoftware/webaccess/master/images/birth/lebongCant.png",
-                    "type": "image"
+                  "variable": "govtImage",                        
+                  "id":"lebongCant.png",
+                  "type":"image"      
                 },
                 {
-                    "variable": "form5",
-                    "url": "https://raw.githubusercontent.com/belsoftware/webaccess/master/images/birth/form5.png",
-                    "type": "image"
+                  "variable": "form5",                        
+                  "id":"form5.png",
+                  "type":"image"      
                 },
                 {
                   "variable": "name", 

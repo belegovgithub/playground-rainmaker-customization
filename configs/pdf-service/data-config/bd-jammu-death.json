@@ -11,21 +11,26 @@
           "topic": "common-pdf-generation-3",
           "mappings": [
             {
-              "direct": [
-                {
-                    "variable": "emblemImage",
-                    "url": "https://raw.githubusercontent.com/belsoftware/webaccess/master/images/birth/emblemInd.png",
-                    "type": "image"
-                },
-                {
-                    "variable": "govtImage",
-                    "url": "https://raw.githubusercontent.com/belsoftware/webaccess/master/images/birth/jammuKashmirGovtBnW.png",
-                    "type": "image"
-                },
-                {
-                  "variable": "govtImage1",
-                  "url": "https://raw.githubusercontent.com/belsoftware/webaccess/master/images/birth/jammuGovt.png",
-                  "type": "image"
+              "direct": [ 
+              {
+                "variable": "emblemImage",                        
+                "id":"emblemInd.png",
+                "type":"image"      
+              },
+              {
+                "variable": "govtImage",                        
+                "id":"jkBnwGovt.png",
+                "type":"image"      
+              },
+              {
+                "variable": "govtImage1",                        
+                "id":"jammuGovt.png",
+                "type":"image"      
+              },
+              {
+                "variable": "form5",                        
+                "id":"form5.png",
+                "type":"image"      
               },
                 {
                     "variable": "form5",

@@ -13,20 +13,10 @@
           {
             "direct": [
               {
-                "variable": "emblemImage",
-                "url": "https://raw.githubusercontent.com/belsoftware/webaccess/master/images/birth/secundrabad.png",
-                "type": "image"
-              },
-              {
-                "variable": "govtImage",
-                "url": "https://raw.githubusercontent.com/belsoftware/webaccess/master/images/birth/biharGovt.png",
-                "type": "image"
-              },
-              {
-                "variable": "form5",
-                "url": "https://raw.githubusercontent.com/belsoftware/webaccess/master/images/birth/form5.png",
-                "type": "image"
-              },
+                "variable": "emblemImage",                        
+                "id":"scb.png",
+                "type":"image"      
+              }, 
               {
                 "variable": "name",
                 "value": {
