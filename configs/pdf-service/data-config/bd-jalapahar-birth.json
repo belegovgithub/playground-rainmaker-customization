@@ -13,24 +13,31 @@
             {
               "direct": [
                 {
-                    "variable": "emblemImage",
-                    "url": "https://raw.githubusercontent.com/belsoftware/webaccess/master/images/birth/emblemInd.png",
-                    "type": "image"
+                  "variable": "emblemImage",                        
+                  "id":"emblemInd.png",
+                  "type":"image"      
                 },
                 {
-                    "variable": "govtImage",
-                    "url": "https://raw.githubusercontent.com/belsoftware/webaccess/master/images/birth/jalapaharCant.png",
-                    "type": "image"
+                  "variable": "govtImage",                        
+                  "id":"jalapaharCant.png",
+                  "type":"image"      
                 },
                 {
-                    "variable": "form5",
-                    "url": "https://raw.githubusercontent.com/belsoftware/webaccess/master/images/birth/form5.png",
-                    "type": "image"
+                  "variable": "form5",                        
+                  "id":"form5.png",
+                  "type":"image"      
                 },
                 {
                   "variable": "name", 
                   "value": {
-                    "path": "$.fullname"
+                    "path": "$.fullName"
+                  },
+                  "type":"setEmpty"
+                },
+                {
+                  "variable": "name1", 
+                  "value": {
+                    "path": "$.firstname"
                   },
                   "type":"setEmpty"
                 },

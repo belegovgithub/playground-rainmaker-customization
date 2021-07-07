@@ -11,18 +11,17 @@
         "topic": "common-pdf-generation-3",
         "mappings": [
           {
-            "direct": [
-               
+            "direct": [    
               {
-                "variable": "govtImage",
-                "url": "https://raw.githubusercontent.com/belsoftware/webaccess/master/images/birth/barrakporeGovt1.png",
-                "type": "image"
-            },
+                "variable": "govtImage",                        
+                "id":"barrackporelogo.png",
+                "type":"image"      
+              },
               {
-                "variable": "form5",
-                "url": "https://raw.githubusercontent.com/belsoftware/webaccess/master/images/birth/form5.png",
-                "type": "image"
-            },
+                "variable": "form5",                        
+                "id":"form5.png",
+                "type":"image"      
+              },
               {
                 "variable": "name",
                 "value": {
