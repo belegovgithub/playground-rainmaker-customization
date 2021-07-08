@@ -130,6 +130,57 @@ serviceMaps:
 
        - jsonPath: $.WaterConnection.auditDetails.lastModifiedTime   
 
+    - query: INSERT INTO eg_ws_plumberinfo(id, tenantId, name, licenseno, mobilenumber, gender, fatherorhusbandname, correspondenceaddress, relationship, createdBy, lastModifiedBy, createdTime, lastModifiedTime, wsid) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ON CONFLICT (id) DO UPDATE SET name =?, licenseno =?,mobilenumber =?, gender =?, fatherorhusbandname =?, correspondenceaddress =?, relationship=?, lastmodifiedby =?, lastmodifiedtime =?;
+      basePath: $.WaterConnection.plumberInfo.*
+      jsonMaps:
+         
+      - jsonPath: $.WaterConnection.plumberInfo.*.id
+          
+      - jsonPath: $.WaterConnection.tenantId
+
+      - jsonPath: $.WaterConnection.plumberInfo.*.name
+
+      - jsonPath: $.WaterConnection.plumberInfo.*.licenseNo
+
+      - jsonPath: $.WaterConnection.plumberInfo.*.mobileNumber
+
+      - jsonPath: $.WaterConnection.plumberInfo.*.gender
+
+      - jsonPath: $.WaterConnection.plumberInfo.*.fatherOrHusbandName
+
+      - jsonPath: $.WaterConnection.plumberInfo.*.correspondenceAddress
+
+      - jsonPath: $.WaterConnection.plumberInfo.*.relationship
+          
+      - jsonPath: $.WaterConnection.plumberInfo.*.auditDetails.createdBy
+
+      - jsonPath: $.WaterConnection.plumberInfo.*.auditDetails.lastModifiedBy
+
+      - jsonPath: $.WaterConnection.plumberInfo.*.auditDetails.createdTime
+
+      - jsonPath: $.WaterConnection.plumberInfo.*.auditDetails.lastModifiedTime
+          
+      - jsonPath: $.WaterConnection.id         
+          
+      - jsonPath: $.WaterConnection.plumberInfo.*.name
+
+      - jsonPath: $.WaterConnection.plumberInfo.*.licenseNo
+
+      - jsonPath: $.WaterConnection.plumberInfo.*.mobileNumber
+
+      - jsonPath: $.WaterConnection.plumberInfo.*.gender
+
+      - jsonPath: $.WaterConnection.plumberInfo.*.fatherOrHusbandName
+
+      - jsonPath: $.WaterConnection.plumberInfo.*.correspondenceAddress
+
+      - jsonPath: $.WaterConnection.plumberInfo.*.relationship
+          
+      - jsonPath: $.WaterConnection.plumberInfo.*.auditDetails.lastModifiedBy
+
+      - jsonPath: $.WaterConnection.plumberInfo.*.auditDetails.lastModifiedTime
+
+
 
  - version: 1.0
    name: WaterConnection
