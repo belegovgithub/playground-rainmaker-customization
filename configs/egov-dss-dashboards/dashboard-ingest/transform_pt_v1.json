@@ -4,7 +4,31 @@
     "spec": {
         "propertyId":"propertyId",
         "tenantId":"tenantId",
-        "propertyDetails":"propertyDetails",  
+        "propertyDetails": {
+          "surveyId": "propertyDetails.surveyId",
+          "linkedProperties": "propertyDetails.linkedProperties",
+          "landArea": "propertyDetails.landArea",
+          "superBuiltUpArea": "propertyDetails.superBuiltUpArea",
+          "channel": "propertyDetails.channel", 
+          "source": "propertyDetails.source",
+          "propertyType": "propertyDetails.propertyType",
+          "id": "propertyDetails.id",
+          "propertyId": "propertyDetails.propertyId",
+          "abasPropertyId": "propertyDetails.abasPropertyId",
+          "oldPropertyId": "propertyDetails.oldPropertyId",
+          "address": "propertyDetails.address",         
+          "creationReason": "propertyDetails.creationReason",
+          "additionalDetails": "propertyDetails.additionalDetails",
+          "accountId": "propertyDetails.accountId",
+          "noOfFloors": "propertyDetails.noOfFloors",
+          "noOfFlats": "propertyDetails.noOfFlats",
+          "ownershipCategory": "propertyDetails.ownershipCategory",
+          "tenantId": "propertyDetails.tenantId",
+          "status": "propertyDetails.status",
+          "acknowldgementNumber": "propertyDetails.acknowldgementNumber",
+          "usageCategory": "propertyDetails.usageCategory",
+          "timestamp": "propertyDetails.timestamp"          
+        },
         "ward" : "ward"     
     }
   }
