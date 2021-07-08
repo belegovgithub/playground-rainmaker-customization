@@ -115,7 +115,7 @@
                 "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"]
               },
               {
-                "text": "{{houseno}} {{building}} {{street}} {{location}},{{city}} {{pincode}}",
+                "text": "{{houseno}} {{building}} {{street}} {{location}},{{cb-name}} {{pincode}}",
                 "style": "pdf-value",
                 "borderColor": ["#A9A9A9", "#A9A9A9", "#A9A9A9", "#A9A9A9"]
               }
@@ -295,7 +295,7 @@
         "table": {
           "widths": ["16%", "9.7%","19.6%","23.6%","31.2%"],
           "body": [
-            "{{#variable10}}[{\"text\": \"{{bill_no}}\",\"style\": \"pdf-value\", \"borderColor\": [\"#A9A9A9\", \"#A9A9A9\", \"#A9A9A9\", \"#A9A9A9\"]},{ \"text\": \"01/05/2021\", \"style\": \"pdf-value\", \"borderColor\": [\"#A9A9A9\", \"#A9A9A9\", \"#A9A9A9\", \"#A9A9A9\"]},{ \"text\": \"{{tax_head}}\", \"style\": \"pdf-value\",\"borderColor\": [\"#A9A9A9\", \"#A9A9A9\", \"#A9A9A9\", \"#A9A9A9\"]},{\"text\": \"{{amount_payable}}\",\"style\": \"pdf-value\",\"borderColor\": [\"#A9A9A9\", \"#A9A9A9\", \"#A9A9A9\", \"#A9A9A9\"]},{\"text\": \"{{amount_recieved}}\",\"style\": \"pdf-value\",\"borderColor\": [\"#A9A9A9\", \"#A9A9A9\", \"#A9A9A9\", \"#A9A9A9\"]}]{{/variable10}}"
+            "{{#variable10}}[{\"text\": \"{{bill_no}}\",\"style\": \"pdf-value\", \"borderColor\": [\"#A9A9A9\", \"#A9A9A9\", \"#A9A9A9\", \"#A9A9A9\"]},{ \"text\": \"01/08/2021\", \"style\": \"pdf-value\", \"borderColor\": [\"#A9A9A9\", \"#A9A9A9\", \"#A9A9A9\", \"#A9A9A9\"]},{ \"text\": \"{{tax_head}}\", \"style\": \"pdf-value\",\"borderColor\": [\"#A9A9A9\", \"#A9A9A9\", \"#A9A9A9\", \"#A9A9A9\"]},{\"text\": \"{{amount_payable}}\",\"style\": \"pdf-value\",\"borderColor\": [\"#A9A9A9\", \"#A9A9A9\", \"#A9A9A9\", \"#A9A9A9\"]},{\"text\": \"{{amount_recieved}}\",\"style\": \"pdf-value\",\"borderColor\": [\"#A9A9A9\", \"#A9A9A9\", \"#A9A9A9\", \"#A9A9A9\"]}]{{/variable10}}"
           ]
         }
       },

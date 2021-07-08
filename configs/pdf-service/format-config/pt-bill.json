@@ -125,7 +125,7 @@
                     "margin": [0, 0, 0, -5]
                   },
                   {
-                    "text": "01/05/2021",
+                    "text": "01/08/2021",
                     "style": "label-value",
                     "width": "28%",
                     "margin": [0, 0, 0, -5]        
@@ -644,7 +644,7 @@
           "body": [
             [
               {
-                "text": "{{due_date}} : 30/06/2021",
+                "text": "{{due_date}} : 31/08/2021",
                 "bold": true
                 
               } 
