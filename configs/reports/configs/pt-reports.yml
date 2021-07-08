@@ -487,15 +487,23 @@ ReportDefinitions:
     isMandatory: false
     searchClause: AND financialyear = $financialyear
   query: |
-    SELECT 
-      SUM(totalast) as totalassessments,SUM(totalamount) as totalamount,SUM(amountpaid) AS totalamountpaid, 
-      SUM(onltotalamountpaid) as online,SUM(offtotalamountpaid) as offline, (SUM(totalamount) - SUM(amountpaid)) AS totalamountdue
-    FROM (select DISTINCT on (propertyid) COUNT(*) as totalast, bill.totalamount as totalamount,pd.amountpaid as amountpaid ,onl.totalamountpaid as onltotalamountpaid,offl.totalamountpaid as offtotalamountpaid from eg_pt_asmt_assessment asmt
-    inner join egcl_bill bill on  bill.consumercode=asmt.propertyid 
+    SELECT SUM(totalast) as totalassessments,SUM(totalamount) as totalamount,SUM(amountpaid) AS totalamountpaid,
+    SUM(onltotalamountpaid) as online,SUM(offtotalamountpaid) as offline, (SUM(totalamount) - SUM(amountpaid)) AS totalamountdue
+    FROM (select COUNT(*) as totalast, propertyid, bill.totalamount as totalamount,pd.amountpaid as amountpaid ,onl.totalamountpaid as onltotalamountpaid,offl.totalamountpaid as offtotalamountpaid from eg_pt_asmt_assessment asmt
+    inner join (select id, consumercode, sum(totalamount) as totalamount from (
+    SELECT id, consumercode, 0 as totalamount FROM egcl_bill
+    union all
+    SELECT t1.id, t1.consumercode, totalamount FROM egcl_bill t1
+    JOIN (
+    SELECT consumercode, MIN(createdtime) AS MINDATE
+    FROM egcl_bill
+    GROUP BY consumercode) t2
+    ON t1.consumercode = t2.consumercode
+    AND t1.createdtime = t2.MINDATE) tab group by id, consumercode) bill on  bill.consumercode=asmt.propertyid 
     INNER JOIN (SELECT billid,amountpaid,paymentid from egcl_paymentdetail pd ) as pd ON pd.billid = bill.id
     LEFT OUTER JOIN (SELECT id,paymentmode,totalamountpaid FROM egcl_payment WHERE paymentmode = 'ONLINE') AS onl ON onl.id = pd.paymentid
     LEFT OUTER JOIN (SELECT id,paymentmode,totalamountpaid FROM egcl_payment WHERE paymentmode != 'ONLINE' ) AS offl ON offl.id = pd.paymentid
-    where asmt.tenantid = $tenantid GROUP BY asmt.propertyid,bill.tenantid,bill.totalamount,pd.amountpaid,onl.totalamountpaid,offl.totalamountpaid)t where 1=1
+    where asmt.tenantid = $tenantid GROUP BY asmt.propertyid, bill.totalamount,pd.amountpaid,onl.totalamountpaid,offl.totalamountpaid)t where 1=1
 
 - reportName: StateCancelledReceiptRegister
   summary: Receipt Register for cancelled Receipts State
