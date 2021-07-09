@@ -146,6 +146,18 @@
                 }
               },
               {
+                "variable": "Rs",
+                "value": {
+                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_TLAPP_RUPEE"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-pdf"
+                }
+              },
+              {
                 "variable": "serviceType",
                 "value": {
                   "path": "$.businessService"
@@ -207,7 +219,19 @@
               {
                 "variable": "charge_label",
                 "value": {
-                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_CHARGE"
+                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_WATER_CHARGE"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-pdf"
+                }
+              },
+              {
+                "variable": "interest_label",
+                "value": {
+                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_INTEREST_CHARGE"
                 },
                 "type": "label",
                 "localisation": {
@@ -220,6 +244,18 @@
                 "variable": "penalty_label",
                 "value": {
                   "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_PENALTY"
+                },
+                "type": "label",
+                "localisation": {
+                  "required": true,
+                  "prefix": null,
+                  "module": "rainmaker-pdf"
+                }
+              },
+              {
+                "variable": "old_property_id",
+                "value": {
+                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_OLD_PROP_ID"
                 },
                 "type": "label",
                 "localisation": {
@@ -264,90 +300,7 @@
                   "module": "rainmaker-pdf"
                 }
               },
-              {
-                "variable": "important_message",
-                "value": {
-                  "path": "PDF_STATIC_LABEL_CONSOLIDATED_BILL_IMPORTANT_MESSAGE"
-                },
-                "type": "label",
-                "localisation": {
-                  "required": true,
-                  "prefix": null,
-                  "module": "rainmaker-pdf"
-                }
-              },
-              {
-                "variable": "payment_received",
-                "value": {
-                  "path": "PDF_STATIC_LABEL_WS_BILL_PAYMENT_RECEIVED"
-                },
-                "type": "label",
-                "localisation": {
-                  "required": true,
-                  "prefix": null,
-                  "module": "rainmaker-ws"
-                }
-              },
-              {
-                "variable": "this_document",
-                "value": {
-                  "path": "PDF_STATIC_LABEL_WS_BILL_THIS_DOCUMENT"
-                },
-                "type": "label",
-                "localisation": {
-                  "required": true,
-                  "prefix": null,
-                  "module": "rainmaker-ws"
-                }
-              },
-              {
-                "variable": "this_is_a",
-                "value": {
-                  "path": "PDF_STATIC_LABEL_WS_BILL_THIS_IS"
-                },
-                "type": "label",
-                "localisation": {
-                  "required": true,
-                  "prefix": null,
-                  "module": "rainmaker-ws"
-                }
-              },
-              {
-                "variable": "assessment_payment",
-                "value": {
-                  "path": "PDF_STATIC_LABEL_WS_BILL_ASSESSSMENT_PAYMENT"
-                },
-                "type": "label",
-                "localisation": {
-                  "required": true,
-                  "prefix": null,
-                  "module": "rainmaker-ws"
-                }
-              },
-              {
-                "variable": "please_deposit",
-                "value": {
-                  "path": "PDF_STATIC_LABEL_WS_BILL_PLEASE_DEPOSIT"
-                },
-                "type": "label",
-                "localisation": {
-                  "required": true,
-                  "prefix": null,
-                  "module": "rainmaker-ws"
-                }
-              },
-              {
-                "variable": "if_the_tax",
-                "value": {
-                  "path": "PDF_STATIC_LABEL_WS_BILL_IF_THE_TAX"
-                },
-                "type": "label",
-                "localisation": {
-                  "required": true,
-                  "prefix": null,
-                  "module": "rainmaker-ws"
-                }
-              },
+              
               {
                 "variable": "acknowledgement_for",
                 "value": {
@@ -457,6 +410,13 @@
                 }
               },
               {
+                "variable": "amountInWords",
+                "value": {
+                  "path": "$.totalAmount"
+                },
+                "type":"amountInWords"
+              },
+              {
                 "variable": "payerAddress",
                 "value": {
                   "path": "$.payerAddress"
@@ -468,6 +428,52 @@
                   "path": "$.payerAddress"
                 }
               },
+              {
+                "variable": "doorNo",
+                "value": {
+                  "path": "$.address.doorNo"
+                },
+                "type":"setEmpty"
+            },
+            {
+              "variable": "buildingName",
+              "value": {
+                "path": "$.address.buildingName"
+              },
+              "type":"setEmpty"
+            },
+            {
+              "variable": "oldPropertyId",
+              "value": {
+                "path": "$.oldPropertyId"
+              } 
+            },
+           {
+            "variable": "street",
+            "value": {
+              "path": "$.address.street"
+              },
+              "type":"setEmpty"
+           },
+              {
+                "variable": "tradeAddress",
+                "value": {
+                  "path": "$.address.locality.code"
+                },
+                "localisation":{
+                  "required":true,
+                  "prefix": "REVENUE",
+                  "module": "rainmaker",
+                  "prefixCbName":true
+               },
+               "type":"boundary"
+            },
+              {
+                "variable": "city",
+                "value": {
+                  "path": "$.address.city"
+                } 
+            },
               {
                 "variable": "billNo",
                 "value": {
@@ -518,49 +524,49 @@
               {
                 "variable": "taxCharge",
                 "value": {
-                  "path": "$.billDetails[0].billAccountDetails[?(@.taxHeadCode == 'PT_TAX' || @.taxHeadCode == 'TL_TAX' || @.taxHeadCode == 'FIRENOC_TAXES' || @.taxHeadCode == 'WS_CHARGE' || @.taxHeadCode == 'SW_CHARGE' )].amount"
+                  "path": "$.billDetails[0].billAccountDetails[?(@.taxHeadCode == 'WS_TAX' || @.taxHeadCode == 'TL_TAX' || @.taxHeadCode == 'FIRENOC_TAXES' || @.taxHeadCode == 'WS_CHARGE' || @.taxHeadCode == 'SW_CHARGE' )].amount"
                 }
               },
               {
                 "variable": "timeRebate",
                 "value": {
-                  "path": "$.billDetails[0].billAccountDetails[?(@.taxHeadCode == 'PT_TIME_REBATE' || @.taxHeadCode == 'WS_TIME_REBATE' || @.taxHeadCode == 'SW_TIME_REBATE')].amount"
+                  "path": "$.billDetails[0].billAccountDetails[?(@.taxHeadCode == 'WS_TIME_REBATE' || @.taxHeadCode == 'WS_TIME_REBATE' || @.taxHeadCode == 'SW_TIME_REBATE')].amount"
                 }
               },
               {
                 "variable": "adhocRebate",
                 "value": {
-                  "path": "$.billDetails[0].billAccountDetails[?(@.taxHeadCode == 'PT_ADHOC_REBATE' || @.taxHeadCode == 'TL_ADHOC_REBATE' || @.taxHeadCode == 'FIRENOC_ADHOC_REBATE')].amount"
+                  "path": "$.billDetails[0].billAccountDetails[?(@.taxHeadCode == 'WS_TIME_ADHOC_REBATE' || @.taxHeadCode == 'TL_ADHOC_REBATE' || @.taxHeadCode == 'FIRENOC_ADHOC_REBATE')].amount"
                 }
               },
               {
                 "variable": "timePenalty",
                 "value": {
-                  "path": "$.billDetails[0].billAccountDetails[?(@.taxHeadCode == 'PT_TIME_PENALTY' || @.taxHeadCode == 'WS_TIME_PENALTY' || @.taxHeadCode == 'SW_TIME_PENALTY')].amount"
+                  "path": "$.billDetails[0].billAccountDetails[?(@.taxHeadCode == 'WS_TIME_PENALTY' || @.taxHeadCode == 'WS_TIME_PENALTY' || @.taxHeadCode == 'SW_TIME_PENALTY')].amount"
                 }
               },
               {
                 "variable": "adhocPenalty",
                 "value": {
-                  "path": "$.billDetails[0].billAccountDetails[?(@.taxHeadCode == 'PT_ADHOC_PENALTY' || @.taxHeadCode == 'TL_ADHOC_PENALTY' || @.taxHeadCode == 'FIRENOC_ADHOC_PENALTY')].amount"
+                  "path": "$.billDetails[0].billAccountDetails[?(@.taxHeadCode == 'WS_TIME_ADHOC_PENALTY' || @.taxHeadCode == 'TL_ADHOC_PENALTY' || @.taxHeadCode == 'FIRENOC_ADHOC_PENALTY')].amount"
                 }
               },
               {
                 "variable": "firecess",
                 "value": {
-                  "path": "$.billDetails[0].billAccountDetails[?(@.taxHeadCode == 'PT_FIRE_CESS')].amount"
+                  "path": "$.billDetails[0].billAccountDetails[?(@.taxHeadCode == 'WS_FIRE_CESS')].amount"
                 }
               },
               {
                 "variable": "usageExemption",
                 "value": {
-                  "path": "$.billDetails[0].billAccountDetails[?(@.taxHeadCode == 'PT_UNIT_USAGE_EXEMPTION')].amount"
+                  "path": "$.billDetails[0].billAccountDetails[?(@.taxHeadCode == 'WS_UNIT_USAGE_EXEMPTION')].amount"
                 }
               },
               {
                 "variable": "roundoff",
                 "value": {
-                  "path": "$.billDetails[0].billAccountDetails[?(@.taxHeadCode == 'PT_ROUNDOFF' || @.taxHeadCode == 'TL_ROUNDOFF' || @.taxHeadCode == 'FIRENOC_ROUNDOFF' || @.taxHeadCode == 'WS_Round_Off' || @.taxHeadCode == 'SW_Round_Off')].amount"
+                  "path": "$.billDetails[0].billAccountDetails[?(@.taxHeadCode == 'WS_ROUNDOFF' || @.taxHeadCode == 'TL_ROUNDOFF' || @.taxHeadCode == 'FIRENOC_ROUNDOFF' || @.taxHeadCode == 'WS_Round_Off' || @.taxHeadCode == 'SW_Round_Off')].amount"
                 }
               },
               {
@@ -572,13 +578,13 @@
               {
                 "variable": "ownerExemption",
                 "value": {
-                  "path": "$.billDetails[0].billAccountDetails[?(@.taxHeadCode == 'PT_OWNER_EXEMPTION')].amount"
+                  "path": "$.billDetails[0].billAccountDetails[?(@.taxHeadCode == 'WS_OWNER_EXEMPTION')].amount"
                 }
               },
               {
                 "variable": "cancerCess",
                 "value": {
-                  "path": "$.billDetails[0].billAccountDetails[?(@.taxHeadCode == 'PT_CANCER_CESS')].amount"
+                  "path": "$.billDetails[0].billAccountDetails[?(@.taxHeadCode == 'WS_CANCER_CESS')].amount"
                 }
               },
               {
@@ -590,19 +596,19 @@
               {
                 "variable": "timeInterest",
                 "value": {
-                  "path": "$.billDetails[0].billAccountDetails[?(@.taxHeadCode == 'PT_TIME_INTEREST' || @.taxHeadCode == 'WS_TIME_INTEREST' || @.taxHeadCode == 'SW_TIME_INTEREST')].amount"
+                  "path": "$.billDetails[0].billAccountDetails[?(@.taxHeadCode == 'WS_TIME_INTEREST' || @.taxHeadCode == 'WS_TIME_INTEREST' || @.taxHeadCode == 'SW_TIME_INTEREST')].amount"
                 }
               },
               {
                 "variable": "ceilingDebit",
                 "value": {
-                  "path": "$.billDetails[0].billAccountDetails[?(@.taxHeadCode == 'PT_DECIMAL_CEILING_DEBIT')].amount"
+                  "path": "$.billDetails[0].billAccountDetails[?(@.taxHeadCode == 'WS_DECIMAL_CEILING_DEBIT')].amount"
                 }
               },
               {
                 "variable": "ceilingCredit",
                 "value": {
-                  "path": "$.billDetails[0].billAccountDetails[?(@.taxHeadCode == 'PT_DECIMAL_CEILING_CREDIT')].amount"
+                  "path": "$.billDetails[0].billAccountDetails[?(@.taxHeadCode == 'WS_DECIMAL_CEILING_CREDIT')].amount"
                 }
               },
               {
@@ -644,7 +650,7 @@
               },
               {
                 "variable": "scissorImage",
-                "url": "http://www.pngall.com/wp-content/uploads/2016/03/Scissor-PNG-Clipart.png",
+                "id": "scissor.png",
                 "type": "image"
               }
             ]
@@ -653,15 +659,15 @@
             "derived": [
               {
                 "variable": "charge",
-                "formula": "{{ws_charge}}"
+                "formula": "({{ws_charge}}).toFixed(2)"
               },
               {
                 "variable": "penalty",
-                "formula": "{{timePenalty}}+{{adhocPenalty}}"
+                "formula": "({{timePenalty}}+{{adhocPenalty}}).toFixed(2)"
               },
               {
                 "variable": "rebate",
-                "formula": "{{timeRebate}}+{{adhocRebate}}"
+                "formula": "({{timeRebate}}+{{adhocRebate}}).toFixed(2)"
               },
               {
                 "variable": "billOthers",
@@ -676,16 +682,20 @@
                 "formula": "{{total}}"
               },
               {
+                "variable": "interest_amount",
+                "formula": "{{ws_time_interest}}>0?({{ws_time_interest}}).toFixed(2):(0).toFixed(2)"
+              },
+              {
                 "variable": "arrears",
-                "formula": "{{billTotalAmount}}>{{demandTotalAmount}}?({{billTotalAmount}}-{{demandTotalAmount}}).toFixed(2):0"
+                "formula": "{{billTotalAmount}}>{{demandTotalAmount}}?({{billTotalAmount}}-{{demandTotalAmount}}).toFixed(2):(0).toFixed(2)"
               },
               {
                 "variable": "advanceAdjusted",
-                "formula": "{{billTotalAmount}}>=0?({{billTotalAmount}}<{{demandTotalAmount}}?({{billTotalAmount}}-{{demandTotalAmount}}).toFixed(2):0):{{demandTotalAmount}} * -1"
+                "formula": "{{billTotalAmount}}>=0?({{billTotalAmount}}<{{demandTotalAmount}}?({{demandTotalAmount}} - {{billTotalAmount}}).toFixed(2):0):{{demandTotalAmount}} * -1"
               },
               {
                 "variable": "advanceAvailable",
-                "formula": "{{billTotalAmount}}<0?{{billTotalAmount}}*-1:0"
+                "formula": "{{billTotalAmount}}<0?({{billTotalAmount}}*-1).toFixed(2):(0).toFixed(2)"
               },
               {
                 "variable": "others",
@@ -693,7 +703,11 @@
               },
               {
                 "variable": "calculatedTotal",
-                "formula": "{{billTotalAmount}}>0?{{billTotalAmount}}:0"
+                "formula": "({{billTotalAmount}}>0?{{billTotalAmount}}:0).toFixed(2)"
+              },
+              {
+                "variable": "addedTotal",
+                "formula": "{{arrears}}+{{charge}}+{{interest_amount}}-{{rebate}}+{{penalty}}+{{others}}"
               }
             ]
           },
@@ -737,7 +751,7 @@
                 ]
               },
               {
-                "path": "http://billing-service.egov:8080/billing-service/demand/_search",
+                "path": "http://billing-service:8080/billing-service/demand/_search",
                 "queryParam": "tenantId=$.tenantId,consumerCode=$.consumerCode,businessService=WS",
                 "apiRequest": null,
                 "responseMapping": [

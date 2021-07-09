@@ -10,8 +10,7 @@
         "table": {
           "widths": [
             60,
-            "*",
-            120
+            "*"
           ],
           "body": [
             [
@@ -19,6 +18,7 @@
                 "image": "{{logoImage}}",
                 "width": 50,
                 "height": 61.25
+                
               },
               {
                 "stack": [
@@ -43,33 +43,16 @@
                     ]
                   }
                 ],
-                "alignment": "left",
+                "alignment": "center",
                 "margin": [
                   0,
-                  10,
+                  5,
                   0,
                   0
                 ]
-              },
-              {
-                "stack": [
-                  {
-                    "text": "{{total_amount_due}}"
-                  },
-                  {
-                    "text": "{{Rs}} {{totalAmountDue}}",
-                    "style": "amount-due"
-                  }
-                ],
-                "alignment": "right",
-                "color": "#484848",
-                "margin": [
-                  -150,
-                  2,
-                  -20,
-                  0
-                ]
+                
               }
+               
             ]
           ]
         },
@@ -88,7 +71,7 @@
           "body": [
             [
               {
-                "text": "{{payer_name}}",
+                "text": "{{consumer_no}}",
                 "border": [
                   true,
                   true,
@@ -98,7 +81,7 @@
                 "style": "receipt-table-value"
               },
               {
-                "text": "{{payerName}}",
+                "text": "{{propertyID}}",
                 "border": [
                   false,
                   true,
@@ -139,7 +122,7 @@
             ],
             [
               {
-                "text": "{{mobile_no}}",
+                "text": "{{payer_name}}",
                 "border": [
                   true,
                   false,
@@ -149,7 +132,7 @@
                 "style": "receipt-table-value"
               },
               {
-                "text": "{{mobileNo}}",
+                "text": "{{payerName}}",
                 "border": [
                   false,
                   false,
@@ -190,7 +173,7 @@
             ],
             [
               {
-                "text": "{{payer_address}}",
+                "text": "{{mobile_no}}",
                 "border": [
                   true,
                   false,
@@ -200,7 +183,7 @@
                 "style": "receipt-table-value"
               },
               {
-                "text": "{{payerAddress}}",
+                "text": "{{mobileNo}}",
                 "border": [
                   false,
                   false,
@@ -241,7 +224,7 @@
             ],
             [
               {
-                "text": " ",
+                "text": "{{payer_address}}",
                 "border": [
                   true,
                   false,
@@ -251,7 +234,7 @@
                 "style": "receipt-table-value"
               },
               {
-                "text": " ",
+                "text": "{{doorNo}} {{buildingName}} {{street}} {{tradeAddress}}, {{city}}", 
                 "border": [
                   false,
                   false,
@@ -270,24 +253,38 @@
                 ]
               },
               {
-                "text": "{{bill_due_date}}",
-                "border": [
-                  true,
-                  false,
-                  false,
-                  true
-                ],
-                "style": "right-receipt-table"
+                "stack": [
+                    {
+                    "text":"{{bill_due_date}}",
+                    "style": "receipt-table-value"
+                  },
+                  {
+                    "text": "{{old_property_id}}", 
+                    "style": "receipt-table-value"
+                  }
+              ],"border": [
+                true,
+                false,
+                false,
+                true
+              ]
               },
               {
-                "text": "{{billDueDate}}",
-                "border": [
-                  false,
-                  false,
-                  true,
-                  true
-                ],
-                "style": "right-receipt-table2"
+                "stack": [
+                  {
+                  "text": "{{billDueDate}}",
+                  "style": "receipt-table"
+                  },
+                  {
+                    "text": "{{oldPropertyId}}",
+                    "style": "receipt-table"
+                  }
+              ],"border": [
+                false,
+                false,
+                true,
+                true
+              ]
               }
             ]
           ]
@@ -312,394 +309,214 @@
                 ],
                 "style": "receipt-table-value"
               }
-            ],
+            ], 
             [
               {
+                "style": "ws-head",
                 "table": {
-                  "widths": [
-                    "26%",
-                    "25%",
-                    "15%",
-                    "17%",
-                    "17%"
-                  ],
+                  "widths": ["80%", "20%"],
                   "body": [
                     [
                       {
-                        "text": "{{consumer_no}}",
-                        "border": [
-                          false,
-                          false,
-                          false,
-                          false
-                        ],
-                        "style": "receipt-table-value2"
-                      },
+                        "text": "Tax Description",
+                        "fillColor": "#cccccc",
+                        "bold": true,
+                        "style": "receipt-taxhead-label"
+                        
+                      }, 
                       {
-                        "text": "{{bill_period}}",
-                        "border": [
-                          false,
-                          false,
-                          false,
-                          false
-                        ],
-                        "style": "receipt-table-value2"
-                      },
-                      {
-                        "text": "{{arrears_label}}",
-                        "border": [
-                          false,
-                          false,
-                          false,
-                          false
-                        ],
-                        "style": "receipt-table-value2"
-                      },
-                      {
-                        "text": "{{advanceAdjusted_label}}",
-                        "border": [
-                          false,
-                          false,
-                          false,
-                          false
-                        ],
-                        "style": "receipt-table-value2"
-                      },
-                      {
-                        "text": "{{advanceAvailable_label}}",
-                        "border": [
-                          false,
-                          false,
-                          false,
-                          false
-                        ],
-                        "style": "receipt-table-value2"
+                        "text": "Total Amount Rs.",
+                        "bold": true,
+                        "fillColor": "#cccccc",
+                        "style": "receipt-taxhead-label"
                       }
                     ],
                     [
                       {
-                        "text": "{{propertyID}}",
-                        "border": [
-                          false,
-                          false,
-                          false,
-                          false
-                        ],
-                        "style": "receipt-table2"
-                      },
-                      {
-                        "text": "{{fromPeriod}}-{{toPeriod}}",
-                        "border": [
-                          false,
-                          false,
-                          false,
-                          false
-                        ],
-                        "style": "receipt-table2"
+                        "text": "{{arrears_label}}",
+                        "style": "receipt-taxhead-label",
+                        "bold": false
                       },
                       {
                         "text": "{{arrears}}",
-                        "border": [
-                          false,
-                          false,
-                          false,
-                          false
-                        ],
-                        "style": "receipt-table2"
-                      },
-                      {
-                        "text":"{{advanceAdjusted}}",
-                        "border": [
-                          false,
-                          false,
-                          false,
-                          false
-                        ],
-                        "style": "receipt-table2"
-                      },
-                      {
-                        "text": "{{advanceAvailable}}",
-                        "border": [
-                          false,
-                          false,
-                          false,
-                          false
-                        ],
-                        "style": "receipt-table2"
-                      }
-                    ]
-                  ]
-                },
-                "border": [
-                  true,
-                  true,
-                  true,
-                  true
-                ]
-              }
-            ],
-            [
-              {
-                "table": {
-                  "widths": [
-                    "26%",
-                    "25%",
-                    "15%",
-                    "17%",
-                    "17%"
-                  ],
-                  "body": [
-                    [
-                      {
-                        "text": "{{charge_label}}",
-                        "border": [
-                          false,
-                          false,
-                          false,
-                          false
-                        ],
-                        "style": "receipt-table-value2"
-                      },
-                      {
-                        "text": "{{penalty_label}}",
-                        "border": [
-                          false,
-                          false,
-                          false,
-                          false
-                        ],
-                        "style": "receipt-table-value2"
-                      },
-                      {
-                        "text": "{{rebate_label}}",
-                        "border": [
-                          false,
-                          false,
-                          false,
-                          false
-                        ],
-                        "style": "receipt-table-value2"
-                      },
-                      {
-                        "text": "{{others_label}}",
-                        "border": [
-                          false,
-                          false,
-                          false,
-                          false
-                        ],
-                        "style": "receipt-table-value2"
-                      },
-                      {
-                        "text": "{{total_label}}",
-                        "border": [
-                          false,
-                          false,
-                          false,
-                          false
-                        ],
-                        "style": "receipt-table-value2"
+                        "style": "receipt-taxhead-value",
+                        "bold": false
+                        
                       }
                     ],
                     [
                       {
+                        "text": "{{charge_label}}",
+                        "style": "receipt-taxhead-label",
+                        "bold": false
+                      },
+                      {
                         "text": "{{charge}}",
-                        "border": [
-                          false,
-                          false,
-                          false,
-                          false
-                        ],
-                        "style": "receipt-table2"
+                        "style": "receipt-taxhead-value",
+                        "bold": false
+                        
+                      }
+                    ],
+                    [
+                      {
+                        "text": "{{interest_label}}",
+                        "style": "receipt-taxhead-label",
+                        "bold": false
+                       
+                      },
+                      {
+                        "text": "{{interest_amount}}",
+                        "style": "receipt-taxhead-value",
+                        "bold": false
+                         
+                      }
+                    ],
+                    [
+                      {
+                        "text": "{{penalty_label}}",
+                        "style": "receipt-taxhead-label",
+                        "bold": false
+                       
                       },
                       {
                         "text": "{{penalty}}",
-                        "border": [
-                          false,
-                          false,
-                          false,
-                          false
-                        ],
-                        "style": "receipt-table2"
+                        "style": "receipt-taxhead-value",
+                        "bold": false
+                         
+                      }
+                    ],
+                    [
+                      {
+                        "text": "{{rebate_label}}",
+                        "style": "receipt-taxhead-label",
+                        "bold": false
+                        
                       },
                       {
                         "text": "{{rebate}}",
-                        "border": [
-                          false,
-                          false,
-                          false,
-                          false
-                        ],
-                        "style": "receipt-table2"
+                        "style": "receipt-taxhead-value",
+                        "bold": false
+                       
+                      }
+                    ],
+                    [
+                      {
+                        "text": "{{others_label}}",
+                        "style": "receipt-taxhead-label",
+                        "bold": false
+                       
                       },
                       {
                         "text": "{{others}}",
-                        "border": [
-                          false,
-                          false,
-                          false,
-                          false
-                        ],
-                        "style": "receipt-table2"
+                        "style": "receipt-taxhead-value",
+                        "bold": false
+                       
+                      }
+                    ],
+                    [
+                      {
+                        "text": "Total",
+                        "style": "receipt-taxhead-label"
+                       
+                      },
+                      {
+                        "text": "{{addedTotal}}",
+                        "style": "receipt-taxhead-value"
+                        
+                      }
+                    ],
+                    [
+                      {
+                        "text": "Advance Amount available ",
+                        "style": "receipt-taxhead-label"
+                       
+                      },
+                      {
+                        "text": "{{advanceAdjusted}}",
+                        "style": "receipt-taxhead-value"
+                        
+                      }
+                    ],
+                    [
+                      {
+                        "text": "Amount due as on Date",
+                        "style": "receipt-taxhead-label"
+                       
+                      },
+                      {
+                        "text": "{{charge}}",
+                        "style": "receipt-taxhead-value"
+                        
+                      }
+                    ],
+                    [
+                      {
+                        "text": "Amount adjusted against current dues",
+                        "style": "receipt-taxhead-label"
+                       
+                      },
+                      {
+                        "text": "{{advanceAdjusted}}",
+                        "style": "receipt-taxhead-value"
+                        
+                      }
+                    ],
+                    [
+                      {
+                        "text": "{{advanceAvailable_label}}",
+                        "style": "receipt-taxhead-label"
+                         
+                      },
+                      {
+                        "text": "{{advanceAvailable}}",
+                        "style": "receipt-taxhead-value"
+                         
+                      }
+                    ],
+                    [
+                      {
+                        "text": "Total Payable Amount",
+                        "style": "receipt-taxhead-label"
+                       
                       },
                       {
                         "text": "{{calculatedTotal}}",
+                        "style": "receipt-taxhead-value"
+                        
+                      }
+                    ],
+                    [
+                      {
+                        "text": "Amount (In Words) :{{amountInWords}}",
+                        "style": "receipt-taxhead-label",
+                        "width":"100%",
+                        "border": [
+                          true,
+                          false,
+                          false,
+                          true
+                        ]
+                      }, 
+                      {
+                        "text": " ",
                         "border": [
                           false,
                           false,
-                          false,
-                          false
-                        ],
-                        "style": "receipt-table2",
-                        "bold": true
+                          true,
+                          true
+                        ]  
                       }
                     ]
                   ]
-                },
-                "border": [
-                  true,
-                  true,
-                  true,
-                  true
-                ]
+                } 
               }
             ]
-
+             
           ]
         },
         "layout": {}
       },
-      {
-        "style": "noc-table3",
-        "table": {
-          "widths": [
-            "103%"
-          ],
-          "body": [
-            [
-              {
-                "text": "{{important_message}}",
-                "border": [
-                  true,
-                  true,
-                  true,
-                  false
-                ],
-                "margin": [
-                  9,
-                  10,
-                  0,
-                  5
-                ],
-                "style": "receipt-table-value"
-              }
-            ],
-            [
-              {
-                "text": "{{payment_received}}",
-                "border": [
-                  true,
-                  false,
-                  true,
-                  false
-                ],
-                "margin": [
-                  8,
-                  0,
-                  0,
-                  3
-                ]
-              }
-            ],
-            [
-              {
-                "text": "{{this_document}}",
-                "border": [
-                  true,
-                  false,
-                  true,
-                  false
-                ],
-                "margin": [
-                  8,
-                  0,
-                  0,
-                  3
-                ]
-              }
-            ],
-            [
-              {
-                "text": "{{this_is_a}}",
-                "border": [
-                  true,
-                  false,
-                  true,
-                  false
-                ],
-                "margin": [
-                  8,
-                  0,
-                  0,
-                  3
-                ]
-              }
-            ],
-            [
-              {
-                "text": "{{assessment_payment}}",
-                "border": [
-                  true,
-                  false,
-                  true,
-                  false
-                ],
-                "margin": [
-                  8,
-                  0,
-                  0,
-                  3
-                ]
-              } 
-            ],
-            [
-              {
-                "text": "{{please_deposit}}",
-                "border": [
-                  true,
-                  false,
-                  true,
-                  false
-                ],
-                "margin": [
-                  8,
-                  0,
-                  0,
-                  3
-                ]
-              }
-            ],
-            [
-              {
-                "text": "{{if_the_tax}}",
-                "border": [
-                  true,
-                  false,
-                  true,
-                  true
-                ],
-                "margin": [
-                  8,
-                  0,
-                  0,
-                  5
-                ]
-              }
-            ]
-          ]
-        },
-        "layout": {}
-      },
+     
       {
         "canvas": [
           {
@@ -728,8 +545,8 @@
       },
       {
         "text": "{{acknowledgement_for}}",
-        "style": "footer-header",
-        "pageBreak": "before"
+        "style": "footer-header"
+       
       },
       {
         "style": "noc-table4",
@@ -894,7 +711,7 @@
           0,
           -10,
           0,
-          5
+          0
         ]
       },
       "receipt-logo-sub-header": {
@@ -918,7 +735,7 @@
         "color": "#484848",
         "margin": [
           -25,
-          75,
+          25,
           -8,
           -8
         ]
@@ -945,39 +762,54 @@
       },
       "receipt-table-value": {
         "color": "#000000",
-        "bold": true,
-        "fontSize": 12,
-        "fontWeight": 500,
-        "margin": [
-          8,
-          5,
-          0,
-          0
-        ]
+               "bold": true,
+               "fontSize": 12,
+               "fontWeight": 500,
+               "margin": [
+                 3,
+                 0,
+                 0,
+                 0
+               ]
+      },
+      "receipt-taxhead-value": {
+        "color": "#000000",
+               "bold": true,
+               "fontSize": 11,
+               "fontWeight": 500,
+               "alignment":"right"
+               
+      },
+      "receipt-taxhead-label": {
+        "color": "#000000",
+               "bold": true,
+               "fontSize": 11,
+               "fontWeight": 500
+               
       },
       "receipt-table-value2": {
         "color": "#000000",
-        "bold": true,
+        "bold": false,
         "fontSize": 12,
         "fontWeight": 500,
         "margin": [
           3,
-          5,
+          0,
           0,
           0
         ]
       },
       "receipt-table": {
         "color": "#484848",
-        "bold": true,
-        "fontSize": 12,
-        "fontWeight": 400,
-        "margin": [
-          -30,
-          5,
-          0,
-          0
-        ]
+               "bold": true,
+               "fontSize": 12,
+               "fontWeight": 400,
+               "margin": [
+                 -30,
+                 0,
+                 0,
+                 0
+               ]
       },
       "receipt-table2": {
         "color": "#484848",
@@ -986,9 +818,9 @@
         "fontWeight": 400,
         "margin": [
           3,
-          8,
           0,
-          10
+          0,
+          0
         ]
       },
       "right-receipt-table": {
@@ -1003,6 +835,33 @@
           10
         ]
       },
+      "receipt-table-value-total": {
+        "color": "#000000",
+        "bold": true,
+        "fontSize": 12,
+        "fontWeight": 500,
+        "alignment": "right",
+        "margin": [
+          0,
+          3,
+          30,
+          0
+        ]
+      },
+      "receipt-table-value-total-val": {
+       "color": "#000000",
+       "bold": true,
+       "fontSize": 12,
+       "font": "Cambay",
+       "fontWeight": 500,
+       "alignment": "right",
+       "margin": [
+         0,
+         3,
+         30,
+         0
+       ]
+     },
       "right-receipt-table2": {
         "color": "#484848",
         "bold": true,
@@ -1086,9 +945,9 @@
       "footer-header": {
         "margin": [
           0,
-          15,
+          5,
           0,
-          -40
+          -20
         ],
         "bold": true,
         "color": "#000000",

@@ -537,7 +537,7 @@
                       },
                       {
                         "variable": "tradeLicenseTax",
-                        "value": "adjustedAmount"
+                        "value": "amount"
                       }
                     ]
                   }

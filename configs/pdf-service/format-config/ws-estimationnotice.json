@@ -241,7 +241,7 @@
                                                 
                                             },
                                             {
-                                                "text": "{{applStatement1}} {{water_conn_small}} {{to_applicant}} {{name_applicant}} {{with_stmt}} {{water_conn_small}} {{grant_stmt2}} {{houseNo}}, {{address}},{{logo_header}} {{cantt_board}} {{applStatement3}}.{{applStatement4}} {{finYear}},{{applStatement4_1}} {{water_conn_small}} {{to_smt}} {{houseNo}} {{address}} ,{{logo_header}} {{cantt_board}} {{applStatement5}}",
+                                                "text": "{{applStatement1}} {{water_conn_small}} {{to_applicant}} {{name_applicant}} {{with_stmt}} {{water_conn_small}} {{grant_stmt2}} {{houseNo}}, {{address}},{{logo_header}} {{cantt_board}} {{applStatement3}}.{{applStatement4_1}} {{water_conn_small}} {{to_smt}} {{houseNo}} {{address}} ,{{logo_header}} {{cantt_board}} {{applStatement5}}",
                                                 "style": "receipt-value-down"
                                             }
                                         ]
