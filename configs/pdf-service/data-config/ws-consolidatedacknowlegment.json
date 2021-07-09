@@ -165,13 +165,15 @@
                 "variable": "lat",
                 "value": {
                   "path": "$.property.address.locality.latitude"
-                }
+                },
+                "type":"setEmpty"
               },
               {
                 "variable": "long",
                 "value": {
                   "path": "$.property.address.locality.longitude"
-                }
+                },
+                "type":"setEmpty"
               },
               {
                 "variable": "ownerName",
