@@ -4332,7 +4332,7 @@
           "vizArray": [
             {
               "id": 231,
-              "name": "DSS_PT_PROPERTIES_ASSESSED_CANT_WISE",
+              "name": "DSS_PT_TOTAL_PROPERTIES_CANT_WISE",
               "dimensions": {
                 "height": 350,
                 "width": 12
