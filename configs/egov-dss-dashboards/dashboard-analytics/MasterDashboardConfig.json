@@ -2621,6 +2621,7 @@
       
       ]
     },
+ 
     
     {
       "name": "DSS_M_COLLECT_DASHBOARD",
@@ -4331,7 +4332,7 @@
           "vizArray": [
             {
               "id": 231,
-              "name": "DSS_PT_PROPERTIES_ASSESSED_CANT_WISE",
+              "name": "DSS_PT_TOTAL_PROPERTIES_CANT_WISE",
               "dimensions": {
                 "height": 350,
                 "width": 12
@@ -4707,8 +4708,10 @@
                 }
               ]
             }
+          
           ]
         },
+
         {
           "row": 5,
           "name": "DSS_SERVICE",
@@ -4734,6 +4737,7 @@
                 }
               ]
             }
+           
           ]
         },
         {
@@ -4765,8 +4769,11 @@
             }
           ]
         }
+
+        
       ]
     },
+      
 
     {
       "name": "DSS_PGR_DASHBOARD",
@@ -5042,6 +5049,7 @@
         }
       ]
     },
+
     {
       "name": "DSS_PROPERTY_TAX_DASHBOARD",
       "id": "ulb-propertytax",
@@ -5064,6 +5072,7 @@
               "isCollapsible": false,
               "label": "DSS_OVERVIEW",
               "charts": [
+
                 {
                   "id": "todaysCollectionv2",
                   "name": "DSS_TOTAL_COLLECTION_TODAY",
@@ -5197,7 +5206,7 @@
           "row": 4,
           "name": "DSS_REVENUE",
           "vizArray": [
-            {
+                     {
               "id": 231,
               "name": "DSS_TL_KEY_FY_INDICATORS",
               "dimensions": {
@@ -5229,6 +5238,7 @@
                 }
               ]
             }
+          
           ]
         },
         {
@@ -5256,6 +5266,7 @@
                 }
               ]
             }
+           
           ]
         },
         {
@@ -5287,8 +5298,12 @@
             }
           ]
         }
+        
+      
+        
       ]
     },
+
     {
       "name": "DSS_TRADE_LICENSE_DASHBOARD",
       "id": "ulb-tradeLicense",
@@ -7405,7 +7420,7 @@
           "row": 4,
           "name": "DSS_REVENUE",
           "vizArray": [
-            {
+        {
               "id": 231,
               "name": "DSS_WS_CON_TAX_HEAD_BOUNDARY",
               "dimensions": {
@@ -8489,7 +8504,7 @@
           "row": 4,
           "name": "DSS_REVENUE",
           "vizArray": [
-            {
+        {
               "id": 231,
               "name": "DSS_SW_CON_TAX_HEAD_BOUNDARY",
               "dimensions": {
