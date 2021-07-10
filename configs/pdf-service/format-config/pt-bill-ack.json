@@ -25,7 +25,7 @@
                   "columns": [
                     {
                       "image": "{{logoImage}}",
-                      "width": 60,
+                      "width": 65,
                       "height": 70,
                       "alignment": "left",
                       "margin": [20, 0, 0, 0]
@@ -341,7 +341,7 @@
                   ]
                 },
                 {
-                  "text": "{{totalArrearsval}}",
+                  "text": "{{totalArrearsVal}}",
                   "bold": true,
                   "margin": [0, -2, 0, -2],
                   "alignment":"right",
@@ -353,7 +353,7 @@
                   ]
                 },
                 {
-                  "text": "{{totalCurrentval}}",
+                  "text": "{{totalCurrentVal}}",
                   "bold": true,
                   "margin": [0, -2, 0, -2],
                   "alignment":"right",
