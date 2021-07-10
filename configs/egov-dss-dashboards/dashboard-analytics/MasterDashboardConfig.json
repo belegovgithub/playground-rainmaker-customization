@@ -1071,7 +1071,7 @@
             },
             {
               "id": 342,
-              "name": "DSS_TL_CUMULATIVE_LICENSE_ISSUED",
+              "name": "DSS_LEASE_CUMMULATIVE_APPL",
               "dimensions": {
                 "height": 350,
                 "width": 7
@@ -1273,7 +1273,7 @@
             },
             {
               "id": 342,
-              "name": "DSS_TL_CUMULATIVE_LICENSE_ISSUED",
+              "name": "DSS_LEASE_CUMMULATIVE_APPL",
               "dimensions": {
                 "height": 350,
                 "width": 7
@@ -1483,7 +1483,7 @@
             },
             {
               "id": 342,
-              "name": "DSS_TL_CUMULATIVE_LICENSE_ISSUED",
+              "name": "DSS_LEASE_CUMMULATIVE_APPL",
               "dimensions": {
                 "height": 350,
                 "width": 7
