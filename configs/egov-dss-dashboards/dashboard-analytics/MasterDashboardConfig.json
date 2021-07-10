@@ -1020,7 +1020,7 @@
               "label": "DSS_OVERVIEW",
               "charts": [
                 {
-                  "id": "insideCivilApplication",
+                  "id": "ainsideCivilApplication",
                   "name": "DSS_TOTAL_INSIDECIVIL_APPLICATION",
                   "code": "",
                   "chartType": "metric",
@@ -1254,7 +1254,7 @@
               "label": "DSS_OVERVIEW",
               "charts": [
                 {
-                  "id": "insideCivilApplication",
+                  "id": "ainsideCivilApplication",
                   "name": "DSS_TOTAL_INSIDECIVIL_APPLICATION",
                   "code": "",
                   "chartType": "metric",
@@ -1472,7 +1472,7 @@
               "label": "DSS_OVERVIEW",
               "charts": [
                 {
-                  "id": "insideCivilApplication",
+                  "id": "ainsideCivilApplication",
                   "name": "DSS_TOTAL_INSIDECIVIL_APPLICATION",
                   "code": "",
                   "chartType": "metric",

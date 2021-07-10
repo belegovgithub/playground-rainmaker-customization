@@ -2326,7 +2326,8 @@
    },
    "_comment": " totalApplication is the chartId"
  },
-  "insideCivilApplication": {
+  "ainsideCivilApplication": {
+    "comment": "a is used because 'i' is used as insight prefix.",
     "chartName": "DSS_TOTAL_APPLICATION",
     "queries": [
       {
