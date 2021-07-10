@@ -1020,6 +1020,22 @@
               "label": "DSS_OVERVIEW",
               "charts": [
                 {
+                  "id": "insideCivilApplication",
+                  "name": "DSS_TOTAL_INSIDECIVIL_APPLICATION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "outsideCivilApplication",
+                  "name": "DSS_TOTAL_OUTSIDECIVIL_APPLICATION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
                   "id": "totalApplication",
                   "name": "DSS_TOTAL_APPLICATION",
                   "code": "",
@@ -1071,7 +1087,7 @@
             },
             {
               "id": 342,
-              "name": "DSS_TL_CUMULATIVE_LICENSE_ISSUED",
+              "name": "DSS_LEASE_CUMMULATIVE_APPL",
               "dimensions": {
                 "height": 350,
                 "width": 7
@@ -1237,6 +1253,22 @@
               "isCollapsible": false,
               "label": "DSS_OVERVIEW",
               "charts": [
+                {
+                  "id": "insideCivilApplication",
+                  "name": "DSS_TOTAL_INSIDECIVIL_APPLICATION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "outsideCivilApplication",
+                  "name": "DSS_TOTAL_OUTSIDECIVIL_APPLICATION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
                 {
                   "id": "totalApplication",
                   "name": "DSS_TOTAL_APPLICATION",
@@ -1439,6 +1471,22 @@
               "isCollapsible": false,
               "label": "DSS_OVERVIEW",
               "charts": [
+                {
+                  "id": "insideCivilApplication",
+                  "name": "DSS_TOTAL_INSIDECIVIL_APPLICATION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "outsideCivilApplication",
+                  "name": "DSS_TOTAL_OUTSIDECIVIL_APPLICATION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
                 {
                   "id": "totalApplication",
                   "name": "DSS_TOTAL_APPLICATION",
