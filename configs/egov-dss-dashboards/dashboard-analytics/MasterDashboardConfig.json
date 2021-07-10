@@ -1020,14 +1020,6 @@
               "label": "DSS_OVERVIEW",
               "charts": [
                 {
-                  "id": "totalApplication",
-                  "name": "DSS_TOTAL_APPLICATION",
-                  "code": "",
-                  "chartType": "metric",
-                  "filter": "",
-                  "headers": []
-                },
-                {
                   "id": "insideCivilApplication",
                   "name": "DSS_TOTAL_INSIDECIVIL_APPLICATION",
                   "code": "",
@@ -1038,6 +1030,14 @@
                 {
                   "id": "outsideCivilApplication",
                   "name": "DSS_TOTAL_OUTSIDECIVIL_APPLICATION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "totalApplication",
+                  "name": "DSS_TOTAL_APPLICATION",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
@@ -1254,6 +1254,22 @@
               "label": "DSS_OVERVIEW",
               "charts": [
                 {
+                  "id": "insideCivilApplication",
+                  "name": "DSS_TOTAL_INSIDECIVIL_APPLICATION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "outsideCivilApplication",
+                  "name": "DSS_TOTAL_OUTSIDECIVIL_APPLICATION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
                   "id": "totalApplication",
                   "name": "DSS_TOTAL_APPLICATION",
                   "code": "",
@@ -1455,6 +1471,22 @@
               "isCollapsible": false,
               "label": "DSS_OVERVIEW",
               "charts": [
+                {
+                  "id": "insideCivilApplication",
+                  "name": "DSS_TOTAL_INSIDECIVIL_APPLICATION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "outsideCivilApplication",
+                  "name": "DSS_TOTAL_OUTSIDECIVIL_APPLICATION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
                 {
                   "id": "totalApplication",
                   "name": "DSS_TOTAL_APPLICATION",
@@ -3688,22 +3720,6 @@
                   "headers": []
                 },
                 {
-                  "id": "insideCivilApplication",
-                  "name": "DSS_TOTAL_INSIDECIVIL_APPLICATION",
-                  "code": "",
-                  "chartType": "metric",
-                  "filter": "",
-                  "headers": []
-                },
-                {
-                  "id": "outsideCivilApplication",
-                  "name": "DSS_TOTAL_OUTSIDECIVIL_APPLICATION",
-                  "code": "",
-                  "chartType": "metric",
-                  "filter": "",
-                  "headers": []
-                },
-                {
                   "id": "totalApplicationsApproved",
                   "name": "DSS_TOTAL_APPROVED",
                   "code": "",
@@ -4177,22 +4193,6 @@
                 {
                   "id": "totalApplication",
                   "name": "DSS_TOTAL_APPLICATION",
-                  "code": "",
-                  "chartType": "metric",
-                  "filter": "",
-                  "headers": []
-                },
-                {
-                  "id": "insideCivilApplication",
-                  "name": "DSS_TOTAL_INSIDECIVIL_APPLICATION",
-                  "code": "",
-                  "chartType": "metric",
-                  "filter": "",
-                  "headers": []
-                },
-                {
-                  "id": "outsideCivilApplication",
-                  "name": "DSS_TOTAL_OUTSIDECIVIL_APPLICATION",
                   "code": "",
                   "chartType": "metric",
                   "filter": "",
