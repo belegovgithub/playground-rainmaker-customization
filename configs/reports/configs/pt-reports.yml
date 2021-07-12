@@ -1221,8 +1221,8 @@ ReportDefinitions:
       INNER JOIN eg_user ptuser ON ptuser.uuid = poo.userid where status = 'ACTIVE' group by propertyid) 
       poo ON poo.propertyid = pt.id
       JOIN eg_user as un ON pay.createdby::INTEGER=un.id
-      where pay.tenantid != 'pb.testing' pd.businessservice='PT'and pay.paymentstatus != 'CANCELLED'
-  groupby: GROUP BY pay.tenantid,pd.receiptnumber,bill.consumercode,pd.receiptdate,pay.transactionnumber,pay.paymentmode,addr.doorno,poo.name,pd.amountpaid,un.name,addr.locality
+      where pay.tenantid != 'pb.testing' and pd.businessservice='PT'and pay.paymentstatus != 'CANCELLED'
+  groupby: GROUP BY pay.tenantid,pd.receiptnumber,bill.consumercode,pd.receiptdate,pay.transactionnumber,pay.paymentmode,addr.doorno,poo.name,pd.amountpaid,un.name,addr.locality,pt.oldpropertyid
 
 - reportName: DemandRegisterReport
   summary: Reports for Reconcillation of data in PT
