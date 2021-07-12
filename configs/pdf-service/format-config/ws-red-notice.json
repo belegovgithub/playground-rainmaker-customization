@@ -93,7 +93,7 @@
                         ],
                         [
                           {
-                            "text": "{{statement_1}} {{Rs}}{{amount}} {{statement_2}} {{statement_3}}",
+                            "text": "{{statement_1}} {{Rs}}{{finalAmount}} {{statement_2}} {{statement_3}}",
                             "style": "receipt-value-down-rec",
                             "border": [true, false, true, false],
                             "margin": [0, 15, 0, 18]
