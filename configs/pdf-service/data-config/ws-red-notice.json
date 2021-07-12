@@ -1220,7 +1220,7 @@
                         "derived": [
                           {
                             "variable": "finalAmount",
-                            "formula": "({{ws_charge}} + {{ws_water_cess}}).toFixed(2)"
+                            "formula": "({{ws_charge}}).toFixed(2)"
                           }
                         ]
                     },
@@ -1241,20 +1241,17 @@
                                     }
                                   } 
                                 ]
-                              },
-                              {
+                            },
+                            {
                                 "path": "http://billing-service:8080/billing-service/bill/v2/_fetchbill",
                                 "queryParam": "tenantId=$.tenantId,consumerCode=$.connectionNo,businessService=WS",
                                 "apiRequest": null,
                                 "responseMapping": [  
                                   {
                                     "variable": "ws_charge",
-                                    "value": "$.Bill[(@.length-1)].billDetails[?(@.taxHeadMasterCode == 'WS_CHARGE')].amount"
-                                  },
-                                  {
-                                    "variable": "ws_water_cess",
-                                    "value": "$.Bill[(@.length-1)].billDetails[?(@.taxHeadMasterCode == 'WS_WATER_CESS')].amount"
-                                  } 
+                                    "value": "$.Bill[(@.length-1)].billDetails.amount"
+                                  }
+                                   
                                 ]
                               }
                         ]
