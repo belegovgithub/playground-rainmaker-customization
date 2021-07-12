@@ -69,7 +69,7 @@
                     "style": "appendix-header-body"
                   },
                   {
-                    "text": "DEPARTMENT OF HEALTH SERVICES AND FAMILY WELFARE",
+                    "text": "DEPARTMENT OF HEALTH AND FAMILY WELFARE",
                     "style": "appendix-header-body"
                   },
                   {
@@ -174,7 +174,7 @@
               {
                 "columns": [
                   {
-                    "text": "यह प्रमाणित किया जाता है निम्नलिखित सूचना जन्म के मूल अभिलेख से ली गई है जो कि छावनी परिषद् {{cb-name-multilang}} तहसील {{block-name-multilang}} जिला {{dist-name-multilang}} राज्य/संघ प्रदेश हिमाचल प्रदेश, भारत के रजिस्टर में उल्लिखित है",
+                    "text": "यह प्रमाणित किया जाता है निम्नलिखित सूचना मृत्यु के मूल अभिलेख से ली गई है जो कि छावनी परिषद् {{cb-name-multilang}} तहसील {{block-name-multilang}} जिला {{dist-name-multilang}} राज्य/संघ प्रदेश हिमाचल प्रदेश, भारत के रजिस्टर में उल्लिखित है",
                     "style": "rule-body_multiLang"
                   }
                 ]
@@ -184,7 +184,7 @@
               {
                 "columns": [
                   {
-                    "text": "THIS IS TO CERTIFY THAT THE FOLLOWING INFORMATION HAS BEEN TAKEN FROM THE ORIGINAL RECORD OF BIRTH WHICH IS THE REGISTER FOR CANTONMENT BOARD {{cb-name}} OF TEHSIL/BLOCK {{block-name}} OF DISTRICT {{dist-name}} OF STATE/UNION TERRITORY HIMACHAL PRADESH, INDIA.",
+                    "text": "THIS IS TO CERTIFY THAT THE FOLLOWING INFORMATION HAS BEEN TAKEN FROM THE ORIGINAL RECORD OF DEATH WHICH IS THE REGISTER FOR CANTONMENT BOARD {{cb-name}} OF TEHSIL/BLOCK {{block-name}} OF DISTRICT {{dist-name}} OF STATE/UNION TERRITORY HIMACHAL PRADESH, INDIA.",
                     "style": "rule-body"
                   }
                 ]
@@ -275,7 +275,7 @@
                     "width": "1%"
                   },
                   {
-                    "text": "आधार नंबर / HUSBAND/WIFE AADHAAR NO : {{fatherName}}",
+                    "text": "आधार नंबर / HUSBAND/WIFE AADHAAR NO : {{spouseAadhar}}",
                     "style": "details-body"
                   }
                 ]
@@ -323,7 +323,7 @@
               {
                 "columns": [
                   {
-                    "text": "मृत्यु के समय मृतक का पता / ADDRESS OF THE DECEASED AT THE TIME OF DEATH: {{childAddress}}",
+                    "text": "मृत्यु के समय मृतक का पता / ADDRESS OF THE DECEASED AT THE TIME OF DEATH: {{presentAdd}}",
                     "width": "59%",
                     "style": "details-body"
                   },
@@ -332,7 +332,7 @@
                     "width": "1%"
                   },
                   {
-                    "text": "मृतक का स्थायी पता/ PERMANENT ADDRESS OF DECEASED: {{parentsAddress}}",
+                    "text": "मृतक का स्थायी पता/ PERMANENT ADDRESS OF DECEASED: {{permanentAddress}}",
                     "style": "details-body"
                   }
                 ]

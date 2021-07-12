@@ -52,16 +52,16 @@
                     "style": "appendix-header-body"
                   },
                   {
-                    "text": "GOVERNMENTOF TAMILNADU",
+                    "text": "GOVERNMENT OF TAMILNADU",
                     "style": "appendix-header-body",
-                    "margin": [0, 0, 0, 5]
+                    "margin": [0, 0, 0, 3]
                   },
                   {
-                    "text": "கண்டான்மெண்ட் கழகம் {{cb-name-multilang-2}}",
+                    "text": "கண்டோன்மெண்ட் கழகம் {{cb-name-multilang-2}}",
                     "style": "appendix-header-body"
                   },
                   {
-                    "text": "CANTONMENTBOARD {{cb-name-2}}",
+                    "text": "CANTONMENT BOARD {{cb-name-2}}",
                     "style": "appendix-header-body"
                   }
                 ]
@@ -229,7 +229,7 @@
             {
               "stack": [
                 {
-                  "text": "UID NUMBER OF  DECEASED / இறந்தவர் ஆதார் எண் : {{aadharNo}}" ,
+                  "text": "UID NUMBER OF  DECEASED / இறந்தவரின் ஆதார் எண் : {{aadharNo}}" ,
                   "style": "details-body"
                 },
                 {
@@ -245,7 +245,7 @@
               {
                 "columns": [
                   {
-                    "text": "AGE OF DECEASED / இறந்தவரின் வயது : {{age}}",
+                    "text": "AGE OF DECEASED / இறந்தவர் வயது : {{age}}",
                     "width": "49%",
                     "style": "details-body"
                   } 
@@ -383,7 +383,7 @@
                 "columns": [
                   {
                     "text": " ",
-                    "width": "49%"
+                    "width": "30%"
                   },
                   {
                     "text": " ",
@@ -397,7 +397,7 @@
                           "alignment": "center" 
                       },
                       {
-                        "text": "பதிவாளர் பிறப்பு மற்றும் இறப்பு ",
+                        "text": "பதிவாளர் (பிறப்பு மற்றும் இறப்பு)",
                          "fontSize": 9,
                           "alignment": "center"
                       },    
@@ -407,7 +407,7 @@
                           "alignment": "center"
                       },
                       {
-                        "text": "கன்டான்மென்ட் போர்டு {{cb-name-multilang-2}}",
+                        "text": "கண்டோன்மெண்ட்  {{cb-name-multilang-2}}",
                          "fontSize": 9,
                           "alignment": "center"
                       }
@@ -441,7 +441,7 @@
     ],
     "footer": [
       {
-      "text": "“THIS IS A COMPUTER GENERATED CERTIFICATE”\n“THE GOVT.OF INDIA VIDE CIRCULAR NO.1/12/2014-VS(CRS) DATED 27-JULY-2015 HAS APPROVED THIS CERTIFICATE AS A VALID LEGAL DOCUMENT FOR ALL OFFICIAL PURPOSES”\n“THE REGISTRATION NUMBER IS UNIQUE TO EACH EVENT.”\n“இது கணினி மூலம் பதிவேற்றம் செய்யப்பட்ட சான்றிதழ்”\n“இந்திய அரசு சுற்றறிக்கை எண் 1 / 12/2014-VS (CRS) தேதியிட்ட 27-ஜூலை -2015  மூலம் அங்கீகரித்த இந்த சான்றிதழ் அனைத்து உத்தியோகப்பூர்வ நோக்கங்களுக்கும் சட்ட ஆவணமாக இந்த சான்றிதழ் செல்லுபடியாகும்”\n“இந்த பதிவு எண் ஒவ்வொரு நிகழ்விற்கும் தனித்துவமானது”\n“பிறப்பு மற்றும் இறப்பு பதிவு செய்வதை உறுதி செய்வீர் / ENSURE REGISTRATION OF EVERY BIRTH AND DEATH”",
+      "text": "“THIS IS A COMPUTER GENERATED CERTIFICATE”\n“THE GOVT.OF INDIA VIDE CIRCULAR NO.1/12/2014-VS(CRS) DATED 27-JULY-2015 HAS APPROVED THIS CERTIFICATE AS A VALID LEGAL DOCUMENT FOR ALL OFFICIAL PURPOSES”\n“THE REGISTRATION NUMBER IS UNIQUE TO EACH EVENT.”\n“இது கணினி மூலம் பதிவேற்றம் செய்யப்பட்ட சான்றிதழ்”\n“இந்திய அரசு சுற்றறிக்கை எண் 1 / 12/2014-VS (CRS) தேதியிட்ட 27-ஜூலை -2015  மூலம் அங்கீகரித்த இந்த சான்றிதழ் அனைத்து உத்தியோகப்பூர்வ நோக்கங்களுக்கும் சட்ட ஆவணமாக இந்த சான்றிதழ் செல்லுபடியாகும்”\n“ இந்த பதிவு எண் ஒவ்வொரு நிகழ்விற்கும் தனித்துவமானது”\n“பிறப்பு மற்றும் இறப்பு பதிவு செய்வதை உறுதி செய்வீர் / ENSURE REGISTRATION OF EVERY BIRTH AND DEATH”",
         "style": "instruction-body" 
       }
     ],
@@ -468,7 +468,7 @@
         "fontSize": 7,
         "fontWeight": 400,
         "alignment": "center",
-        "margin": [0, -40, 0, 0]
+        "margin": [0, -80, 0, 0]
       },
       "qr-code": {
         "color": "#000000",
@@ -505,29 +505,29 @@
       },
       "rule-header": {
         "color": "#000000",
-        "bold": false,
-        "fontSize": 10,
+        "bold": true,
+        "fontSize": 7.5,
         "fontWeight": 400,
-        "margin": [0, -5, 0, 0]
+        "margin": [0, 0, 0, 0]
       },
       "rule-header_multiLang": {
         "color": "#000000",
-        "bold": false,
-        "fontSize": 10,
+        "bold": true,
+        "fontSize": 7.5,
         "fontWeight": 400,
         "margin": [0, -10, 0, 0]
       },
       "rule-body": {
         "color": "#000000",
-        "bold": false,
-        "fontSize": 10,
+        "bold": true,
+        "fontSize": 7.5,
         "fontWeight": 400,
-        "margin": [0, -5, 0, 0]
+        "margin": [0, 0, 0, 0]
       },
       "rule-body_multiLang": {
         "color": "#000000",
-        "bold": false,
-        "fontSize": 10,
+        "bold": true,
+        "fontSize": 7.5,
         "fontWeight": 400,
         "margin": [0, 3, 0, 0]
       },
@@ -631,7 +631,7 @@
         "margin": [0, 3, 0, 0]
       },
       "pdf-card-value": {
-        "fontSize": 10,
+        "fontSize": 8,
         "color": "rgba(0, 0, 0, 0.87)",
         "margin": [0, 0, 0, 1]
       },

@@ -21,9 +21,13 @@
               {
                 "stack": [
                   {
-                    "text": "ਫਾਰਮ/Form-5",
+                    "text": "ਡੀ.ਪੀ.ਐਚ/D.P.H.-369",
                     "style": "appendix-header-serialNo"
-                  }, 
+                  },
+                  {
+                    "text": "ਫਾਰਮ/Form-7",
+                    "style": "appendix-header-serialNo"
+                  },
                   {
                     "image": "{{govtImage}}",
                     "width": 70,
@@ -48,7 +52,7 @@
                     "style": "appendix-header-body"
                   },
                   {
-                    "text": "ਚੀਫ ਰਿਜਸਟਰਾਰ, ਜਨਮ ਅਤੇ ਮੌਤ, ਪੰਜਾਬ",
+                    "text": "ਚੀਫ ਰਜਿਸਟਰਾਰ ਜਨਮ ਤੇ ਮੌਤ,ਪੰਜਾਬ",
                     "style": "appendix-header-body",
                     "margin": [0, 0, 0, 2]
                   },
@@ -56,7 +60,7 @@
                     "text": "Chief Registrar Births & Deaths,Punjab",
                     "style": "appendix-header-body",
                     "margin": [0, 0, 0, 2]
-                  } 
+                  }
                 ]
               },
               {
@@ -85,7 +89,7 @@
           "body": [
             [
               {
-                "text": "ਜਨਮ ਸਰਟੀਿਫਕੇਟ / Birth Certificate",
+                "text": "ਜਨਮ ਸਰਟੀਫਿਕੇਟ / Birth Certificate",
                 "style": "title-header_multiLang"
               }
             ]
@@ -102,7 +106,23 @@
               {
                 "columns": [
                   {
-                    "text": ["ਇਹ ਤਸਦੀਕ ਕੀਤਾ ਜਾਂਦਾ ਹੈ ਕਿ ਹੇਠ ਲਿਖੀ ਸੂਚਨਾ ਅਸਲ ਜਨਮ ਰਿਕਾਰਡ ਤੋਂ ਲਈ ਗਈ ਹੈਜੋ ਸਥਾਨਕ ਲੋ ਕਲ ਰਿਜਸਟਰਾਰ, ਜਨਮ ਤੇ ਮੌਤ , ਮੁਨਸਿਪਲ ਕਾਰਪੋਰੇਸ਼ਨ / ਕ ਸਲ / ਗ੍ਰਾਮ ਪੰਚਾਇਤ {{cb-name-multilang}} ਬਲਾਕ/ ਪੁਿਲਸ ਚੌਕੀ {{block-name-multilang}} ਤਿਹਸੀਲ {{dist-name-multilang}} ਡਿਸਟ੍ਰਿਕਟ {{dist-name-multilang}} ਪੰਜਾਬ, ਸਾਲ  ਦੇ ਸਥਾਨਕ ਰਜਿਸਟਰਾਰ |"],
+                    "text": [
+                      "ਇਹ ਤਸਦੀਕ ਕੀਤਾ ਜਾਂਦਾ ਹੈ ਕਿ ਹੇਠ ਲਿਖੀ ਸੂਚਨਾ ਅਸਲ ਜਨਮ ਰਿਕਾਰਡ ਵਿਚੋਂ ਲਈ ਗਈ ਹੈ ਜਿਹੜੀ ਕਿ ਲੋਕਲ ਰਜਿਸਟਰਾਰ, ਜਨਮ ਤੇ ਮੌਤ, ਨਗਰ ਨਿਗਮ/ਕੌਂਸਲ/ਗ੍ਰਾਮ ਪੰਚਾਇਤ",
+                      { "text": " ਕੰਟੋਨਮੈਂਟ ਬੋਰਡ {{cb-name-multilang}}", "color": "#000000","decoration": "underline" },
+                      " ਬਲਾਕ/ ਪੁਲਿਸ ਥਾਣਾ ",
+                      {
+                        "text": " {{block-name-multilang}}",
+                        "color": "#000000","decoration": "underline"
+                      },
+                      " ਤਹਿਸੀਲ  ",
+                      { "text": "{{dist-name-multilang}}", "color": "#000000" ,"decoration": "underline"},
+                      " ਜ਼ਿਲ੍ਹਾ  ",
+                      {
+                        "text": " {{dist-name-multilang}}",
+                        "color": "#000000","decoration": "underline"
+                      },
+                      " ਪੰਜਾਬ, ਸਾਲ ___  ਦੇ ਜਨਮ ਰਜਿਸਟਰ ਵਿਚ ਦਰਜ ਹੈ |"
+                    ],
                     "style": "rule-header_multiLang"
                   }
                 ]
@@ -112,7 +132,16 @@
               {
                 "columns": [
                   {
-                    "text": ["This is to certify that the following information has been taken from the original birth record which is registered in the birth register of Local Registrar, Birth & Deaths, Muncipal Corporation/Council/Gram Panchayat {{cb-name}} Cantonment Board, Block/ Police Station {{block-name}} Tehsil {{dist-name}} District {{dist-name}} of Punjab State of the Year"],
+                    "text": [
+                      "This is to certify that the following information has been taken from the original birth record which is registered in the birth register of Local Registrar, Births & Deaths, ",
+                      { "text": "  Cantonment Board {{cb-name}} Cantt , {{cb-name}}", "color": "#000000", "decoration": "underline"}, 
+                      "Block/ Police Station", { "text": " {{block-name}}", "color": "#000000" ,"decoration": "underline"},
+                      " Tehsil ",
+                      { "text": " {{dist-name}}", "color": "#000000" ,"decoration": "underline"},
+                      " District ",
+                      { "text": " {{dist-name}}", "color": "#000000" ,"decoration": "underline"},
+                      " of Punjab State of the Year ___"
+                    ],
                     "style": "rule-header"
                   }
                 ]
@@ -131,7 +160,7 @@
               {
                 "columns": [
                   {
-                    "text": "ਸੈਕਸ/ Sex: {{gender}}",
+                    "text": "ਲਿੰਗ/ Sex: {{gender}}",
                     "style": "details-body"
                   },
                   {
@@ -155,7 +184,7 @@
                   },
                   {
                     "text": "ਦਾਦਾ ਜੀ ਦਾ ਨਾਮ/ Grand Father's Name:{{grandFatherName}}",
-                    "style":"details-body"
+                    "style": "details-body"
                   },
                   {
                     "text": "ਮਾਤਾ ਦਾ ਨਾਮ / Mother's Name: {{motherName}}",
@@ -169,15 +198,15 @@
                     "text": "ਜਨਮ ਅਸਥਾਨ / Place of Birth : {{placeOfBirth}}",
                     "style": "details-body"
                   }
-                ] 
-              } 
+                ]
+              }
             ],
-             
+
             [
               {
                 "columns": [
                   {
-                    "text": "ਰਜਿਸਟਰੀ ਕਰਨ ਦੀ ਮਿਤੀ/ Date of Registration: {{registration_date}}",
+                    "text": "ਰਜਿਸਟ੍ਰੇਸ਼ਨ ਦੀ ਮਿਤੀ/ Date of Registration: {{registration_date}}",
                     "width": "49%",
                     "style": "details-body"
                   },
@@ -186,7 +215,7 @@
                     "width": "1%"
                   },
                   {
-                    "text": "ਰਿਜਸਟਰੇਸ਼ਨ ਨੰ ਬਰ / Registration No: {{registrationNo}}",
+                    "text": "ਰਜਿਸਟਰੇਸ਼ਨ ਨੰਬਰ / Registration No: {{registrationNo}}",
                     "style": "details-body"
                   }
                 ]
@@ -196,7 +225,7 @@
               {
                 "columns": [
                   {
-                    "text": "ਬੱਚੇ ਦੇ ਜਨਮ ਦੇ ਸਮ ਮਾਤਾ-ਿਪਤਾ ਦਾ ਪਤਾ / Address of Parents at the time of birth of child: {{childAddress}}",
+                    "text": "ਬੱਚੇ ਦੇ ਜਨਮ ਦੇ ਸਮੇ ਮਾਤਾ ਪਿਤਾ ਦਾ ਪਤਾ/ Address of Parents at the time of birth of child: {{childAddress}}",
                     "width": "49%",
                     "style": "details-body"
                   },
@@ -205,7 +234,7 @@
                     "width": "1%"
                   },
                   {
-                    "text": "ਮਾਿਪਆਂ ਦਾ ਪੱਕਾ ਪਤਾ / Permanent Address of Parents : {{parentsAddress}}",
+                    "text": "ਮਾਪਿਆਂ ਦਾ ਪੱਕਾ ਪਤਾ / Permanent Address of Parents : {{parentsAddress}}",
                     "style": "details-body"
                   }
                 ]
@@ -215,7 +244,7 @@
               {
                 "columns": [
                   {
-                    "text": "ਟਿੱਪਣੀਆਂ (ਜੇ ਕੋਈ ਹੈ ) / Remarks (if any): {{remarks}}",
+                    "text": "ਟਿੱਪਣੀ (ਜੇ ਕੋਈ ਹੈ ) / Remarks (if any): {{remarks}}",
                     "width": "49%",
                     "style": "details-body"
                   }
@@ -226,11 +255,10 @@
               {
                 "columns": [
                   {
-                    "text": "ਜਾਰੀ ਕਰਨ ਦੀ ਿਮਤੀ / Date of Issue: {{issueDate}}",
+                    "text": "ਜਾਰੀ ਕਰਨ ਦੀ ਮਿਤੀ / Date of Issue: {{issueDate}}",
                     "width": "49%",
                     "style": "details-body"
                   }
-                   
                 ]
               }
             ],
@@ -241,13 +269,13 @@
                     "stack": [
                       {
                         "text": "ਸਰਟੀਫਿਕੇਟ ਤਿਆਰ ਕਰਨ ਵਾਲੇ ਅਧਿਕਾਰੀ ਦਾ ਨਾਮ ਅਤੇ ਅਹੁਦਾ",
-                         "fontSize": 9 
+                        "style": "details-body"
                       },
                       {
                         "text": "Name & Designation of Official who prepared certificate",
-                         "fontSize": 9
-                      } 
-                    ] 
+                        "style": "details-body"
+                      }
+                    ]
                   },
                   {
                     "text": " ",
@@ -256,22 +284,22 @@
                   {
                     "stack": [
                       {
-                        "text": "ਜਾਰੀ ਕਰਨ ਵਾਲੇ ਅਿਧਕਾਰੀ ਦੇ ਹਸਤਾਖਰ, ਨਾਮ ਅਤੇ ਪਤਾ",
-                         "fontSize": 9 
+                        "text": "ਜਾਰੀ ਕਰਨ ਵਾਲੇ ਅਧਿਕਾਰੀ ਦੇ ਦਸਖਤ, ਨਾਮ ਤੇ ਪਤਾ",
+                        "style": "details-body"
                       },
                       {
                         "text": "Signature ,Name & address of issuing Authority",
-                         "fontSize": 9
-                      },    
+                        "style": "details-body"
+                      },
                       {
                         "text": "CANTONMENT BOARD {{cb-name}}",
-                         "fontSize": 9
-                      } 
-                    ] 
+                        "style": "details-body"
+                      }
+                    ]
                   }
                 ]
               }
-            ] 
+            ]
           ]
         },
         "layout": "noBorders"
@@ -292,41 +320,12 @@
           ]
         },
         "layout": "noBorders"
-      },
+      }
+    ],
+    "footer": [
       {
-        "style": "ws-head",
-        "table": {
-          "widths": ["*"],
-          "body": [
-            [
-              {
-                "stack": [
-                  {
-                    "text": "ਜਨਮ ਅਤੇ ਮੌਤ ਰਿਜਸਟਰੇਸ਼ਨ ਐਕਟ, 1969 ਦੇ ਧਾਰਾ 12/17 ਅਤੇ ਪੰਜਾਬ ਜਨਮ ਅਤੇ ਮੌਤ ਰਿਜਸਟਰੇਸ਼ਨ ਿਨਯਮ, 2004 ਦੇ ਿਨਯਮ 8/13 ਦੇ ਅਧੀਨ ਜਾਰੀ ਕੀਤਾ ",
-                    "style": "instruction-body"
-                  },
-                  {
-                    "text": "ਹਰ ਜਨਮ ਅਤੇ ਮੌਤ ਦੀ ਰਜਿਸਟ੍ਰੇਸ਼ਨ ਨੂੰ ਯਕੀਨੀ ਬਣਾਉਣਾ /Ensure registration of every birth and death",
-                    "style": "instruction-body"
-                  },    
-                  {
-                    "text": "Issued u/s 12/17 of the Registration of Birth & Death Act,1969 & Rules 8/13 the Punjab Registration of Births & Deaths rules 2004",
-                    "style": "instruction-body"
-                  },
-                  {
-                    "text": "21 ਿਦਨਾਂ ਦੇ ਅੰਦਰ ਜਨਮ / ਮੌਤ ਦੀ ਘਟਨਾ ਦੀ ਰਿਜਸਟਰੀ ਕਰਾਏ ਅਤੇ ਸਰਟੀਿਫਕੇਟ ਦੀ ਮੁਫਤ ਕਾਪੀ ਪ˛ਾਪਤ ਕਰੋ",
-                    "style": "instruction-body"
-                  },
-                  {
-                    "text": "Registered the Births / Deaths event within 21 Days and get a free copy of certificate",
-                    "style": "instruction-body"
-                  }
-                ] 
-              } 
-            ]
-          ]
-        },
-        "layout": "noBorders"
+        "text": "ਜਨਮ ਅਤੇ ਮੌਤ ਰਜਿਸਟਰੇਸ਼ਨ ਐਕਟ, 1969 ਦੇ ਧਾਰਾ 12/17 ਅਤੇ ਪੰਜਾਬ ਜਨਮ ਅਤੇ ਮੌਤ ਰਜਿਸਟਰੇਸ਼ਨ  ਨਿਯਮ, 2004 ਦੇ ਨਿਯਮ 8/13 ਦੇ ਅਧੀਨ ਜਾਰੀ ਕੀਤਾ ਗਿਆ/ Issued u/s 12/17 of the Registration of Birth & Death Act, 1969 & Rules 8/13 the Punjab Registration of Births & Deaths rules 2004.\nਹਰੇਕ ਜਨਮ ਅਤੇ ਮੌਤ ਦੀ ਰਜਿਸਟਰੇਸ਼ਨ ਯਕੀਨੀ ਬਣਾਉ/Ensure registration of every birth and death.\n21 ਦਿਨਾਂ ਦੇ ਅੰਦਰ ਜਨਮ / ਮੌਤ ਦੀ ਘਟਨਾ ਦੀ ਰਜਿਸਟਰੀ ਕਰਾਓ ਅਤੇ ਸਰਟੀਫਿਕੇਟ ਦੀ ਮੁਫਤ ਕਾਪੀ ਪ੍ਰਾਪਤ ਕਰੋ/Register the Births / Deaths event within 21 Days and get a free copy of certificate",
+        "style": "instruction-body"
       }
     ],
     "styles": {
@@ -347,12 +346,11 @@
         "margin": [0, -30, 0, 0]
       },
       "instruction-body": {
-        "color": "#000000",
+        "color": "#004d00",
         "bold": false,
-        "fontSize": 7,
+        "fontSize": 8,
         "fontWeight": 400,
-        "alignment": "center",
-        "margin": [0, -20, 0, 0]
+        "margin": [10, -20, 0, 0]
       },
       "qr-code": {
         "color": "#000000",
@@ -374,53 +372,53 @@
         "margin": [0, 0, 0, 0]
       },
       "appendix-header-serialNo": {
-        "color": "#000000",
+        "color": "#004d00",
         "bold": false,
         "fontSize": 8,
         "fontWeight": 400,
         "margin": [0, -5, 0, 0]
       },
       "appendix-header-formNo": {
-        "color": "#000000",
+        "color": "#004d00",
         "bold": false,
         "fontSize": 8,
         "fontWeight": 400,
         "margin": [20, -5, 0, 0]
       },
       "rule-header": {
-        "color": "#000000",
+        "color": "#004d00",
         "bold": false,
         "fontSize": 10,
         "fontWeight": 400,
         "margin": [0, 0, 0, 3]
       },
       "rule-header_multiLang": {
-        "color": "#000000",
+        "color": "#004d00",
         "bold": false,
         "fontSize": 11,
         "fontWeight": 400,
         "margin": [0, 0, 0, -1]
       },
       "rule-body": {
-        "color": "#000000",
+        "color": "#004d00",
         "bold": false,
         "fontSize": 10,
         "fontWeight": 400,
         "margin": [0, 0, 0, 0]
       },
       "rule-body_multiLang": {
-        "color": "#000000",
+        "color": "#004d00",
         "bold": false,
         "fontSize": 11,
         "fontWeight": 400,
         "margin": [0, 0, 0, 0]
       },
       "details-body": {
-        "color": "#000000",
+        "color": "#004d00",
         "bold": false,
         "fontSize": 11,
         "fontWeight": 400,
-        "margin": [0, 5, 0, 0]
+        "margin": [0, 0, 0, 0]
       },
       "appendix-header-body": {
         "color": "#004d00",

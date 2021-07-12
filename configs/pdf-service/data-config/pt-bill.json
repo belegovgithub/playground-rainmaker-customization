@@ -747,6 +747,14 @@
                 "formula": "({{totalArrearsval}} + {{totalCurrentval}}).toFixed(2)" 
               },
               {
+                "variable": "totalCurrentVal",
+                "formula": "({{totalCurrentval}}).toFixed(2)" 
+              },
+              {
+                "variable": "totalArrearsVal",
+                "formula": "({{totalArrearsval}}).toFixed(2)" 
+              },
+              {
                 "variable": "demandTotalAmount",
                 "formula": "(0).toFixed(2)" 
               },

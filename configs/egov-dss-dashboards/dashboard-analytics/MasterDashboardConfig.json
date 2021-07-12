@@ -1020,6 +1020,22 @@
               "label": "DSS_OVERVIEW",
               "charts": [
                 {
+                  "id": "ainsideCivilApplication",
+                  "name": "DSS_TOTAL_INSIDECIVIL_APPLICATION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "outsideCivilApplication",
+                  "name": "DSS_TOTAL_OUTSIDECIVIL_APPLICATION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
                   "id": "totalApplication",
                   "name": "DSS_TOTAL_APPLICATION",
                   "code": "",
@@ -1071,7 +1087,7 @@
             },
             {
               "id": 342,
-              "name": "DSS_TL_CUMULATIVE_LICENSE_ISSUED",
+              "name": "DSS_LEASE_CUMMULATIVE_APPL",
               "dimensions": {
                 "height": 350,
                 "width": 7
@@ -1238,6 +1254,22 @@
               "label": "DSS_OVERVIEW",
               "charts": [
                 {
+                  "id": "ainsideCivilApplication",
+                  "name": "DSS_TOTAL_INSIDECIVIL_APPLICATION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "outsideCivilApplication",
+                  "name": "DSS_TOTAL_OUTSIDECIVIL_APPLICATION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
                   "id": "totalApplication",
                   "name": "DSS_TOTAL_APPLICATION",
                   "code": "",
@@ -1273,7 +1305,7 @@
             },
             {
               "id": 342,
-              "name": "DSS_TL_CUMULATIVE_LICENSE_ISSUED",
+              "name": "DSS_LEASE_CUMMULATIVE_APPL",
               "dimensions": {
                 "height": 350,
                 "width": 7
@@ -1440,6 +1472,22 @@
               "label": "DSS_OVERVIEW",
               "charts": [
                 {
+                  "id": "ainsideCivilApplication",
+                  "name": "DSS_TOTAL_INSIDECIVIL_APPLICATION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "outsideCivilApplication",
+                  "name": "DSS_TOTAL_OUTSIDECIVIL_APPLICATION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
                   "id": "totalApplication",
                   "name": "DSS_TOTAL_APPLICATION",
                   "code": "",
@@ -1483,7 +1531,7 @@
             },
             {
               "id": 342,
-              "name": "DSS_TL_CUMULATIVE_LICENSE_ISSUED",
+              "name": "DSS_LEASE_CUMMULATIVE_APPL",
               "dimensions": {
                 "height": 350,
                 "width": 7
@@ -4332,7 +4380,7 @@
           "vizArray": [
             {
               "id": 231,
-              "name": "DSS_PT_PROPERTIES_ASSESSED_CANT_WISE",
+              "name": "DSS_PT_TOTAL_PROPERTIES_CANT_WISE",
               "dimensions": {
                 "height": 350,
                 "width": 12
@@ -4769,9 +4817,11 @@
             }
           ]
         }
+
         
       ]
     },
+      
 
     {
       "name": "DSS_PGR_DASHBOARD",
@@ -5239,7 +5289,6 @@
           
           ]
         },
-
         {
           "row": 5,
           "name": "DSS_SERVICE",
@@ -5297,6 +5346,8 @@
             }
           ]
         }
+        
+      
         
       ]
     },
@@ -7417,7 +7468,7 @@
           "row": 4,
           "name": "DSS_REVENUE",
           "vizArray": [
-            {
+        {
               "id": 231,
               "name": "DSS_WS_CON_TAX_HEAD_BOUNDARY",
               "dimensions": {
@@ -8501,7 +8552,7 @@
           "row": 4,
           "name": "DSS_REVENUE",
           "vizArray": [
-            {
+        {
               "id": 231,
               "name": "DSS_SW_CON_TAX_HEAD_BOUNDARY",
               "dimensions": {

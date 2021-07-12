@@ -795,6 +795,14 @@
                   "formula": "({{amountAdjustedval}}).toFixed(2)" 
                 },
                 {
+                  "variable": "totalCurrentVal",
+                  "formula": "({{totalCurrentval}}).toFixed(2)" 
+                },
+                {
+                  "variable": "totalArrearsVal",
+                  "formula": "({{totalArrearsval}}).toFixed(2)" 
+                },
+                {
                   "variable": "AdvanceAmountPaid",
                   "formula": "({{advanceAmountPaid}}).toFixed(2)" 
                 },
