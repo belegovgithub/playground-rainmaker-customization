@@ -341,7 +341,7 @@
                 ]
               },
               {
-                "text": "{{totalArrearsval}}",
+                "text": "{{totalArrearsVal}}",
                 "bold": true,
                 "margin": [0, -2, 0, -2],
                 "alignment":"right",
@@ -353,7 +353,7 @@
                 ]
               },
               {
-                "text": "{{totalCurrentval}}",
+                "text": "{{totalCurrentVal}}",
                 "bold": true,
                 "margin": [0, -2, 0, -2],
                 "alignment":"right",

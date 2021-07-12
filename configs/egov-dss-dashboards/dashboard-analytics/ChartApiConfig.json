@@ -2326,6 +2326,67 @@
    },
    "_comment": " totalApplication is the chartId"
  },
+  "ainsideCivilApplication": {
+    "comment": "a is used because 'i' is used as insight prefix.",
+    "chartName": "DSS_TOTAL_APPLICATION",
+    "queries": [
+      {
+        "module": "LAMS",
+        "indexName": "leaseindex-v1",
+        "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.lease.tenantId.keyword\":\"pb.testing\"}}],\"must\":[{\"term\":{\"Data.lease.workflowCode.keyword\":\"LAMS_NewLR_CEO_V3\"}}]}},\"aggs\":{\"Total Application99\":{\"value_count\":{\"field\":\"Data.lease.applicationNumber.keyword\"}}}}}}",
+        "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\", \r\n  \"district\" : \"Data.tenantData.city.districtCode\", \r\n\"tenantId\" : \"Data.lease.tenantId\" \r\n}",
+        "dateRefField": "Data.lease.applicationDate"
+      }
+    ],
+    "chartType": "metric", 
+    "valueType": "number",
+    "action": "",
+    "documentType": "_doc",
+    "drillChart": "none",
+    "aggregationPaths": [
+      "Total Application99"
+    ],
+    "insight": {
+      "chartResponseMap" : "totalApplication",
+      "action" : "differenceOfNumbers",
+      "upwardIndicator" : "positive",
+      "downwardIndicator" : "negative",
+      "textMessage" : "$indicator$value% than last $insightInterval",
+      "colorCode" : "#228B22",
+      "insightInterval" : "month"
+    },
+    "_comment": " totalApplication is the chartId"
+  },
+  "outsideCivilApplication": {
+    "chartName": "DSS_TOTAL_APPLICATION",
+    "queries": [
+      {
+        "module": "LAMS",
+        "indexName": "leaseindex-v1",
+        "aggrQuery": "{\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"term\":{\"Data.lease.tenantId.keyword\":\"pb.testing\"}}],\"must\":[{\"term\":{\"Data.lease.workflowCode.keyword\":\"LAMS_NewLR_DEO_V3\"}}]}},\"aggs\":{\"Total Application99\":{\"value_count\":{\"field\":\"Data.lease.applicationNumber.keyword\"}}}}}}",
+        "requestQueryMap": "{\"wardId\" : \"Data.ward.name.keyword\", \r\n  \"district\" : \"Data.tenantData.city.districtCode\", \r\n\"tenantId\" : \"Data.lease.tenantId\" \r\n}",
+        "dateRefField": "Data.lease.applicationDate"
+      }
+    ],
+    "chartType": "metric", 
+    "valueType": "number",
+    "action": "",
+    "documentType": "_doc",
+    "drillChart": "none",
+    "aggregationPaths": [
+      "Total Application99"
+    ],
+    "insight": {
+      "chartResponseMap" : "totalApplication",
+      "action" : "differenceOfNumbers",
+      "upwardIndicator" : "positive",
+      "downwardIndicator" : "negative",
+      "textMessage" : "$indicator$value% than last $insightInterval",
+      "colorCode" : "#228B22",
+      "insightInterval" : "month"
+    },
+    "_comment": " totalApplication is the chartId"
+  },
  "totalApplication": {
    "chartName": "DSS_TOTAL_APPLICATION",
    "queries": [
