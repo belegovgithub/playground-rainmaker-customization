@@ -1249,7 +1249,7 @@
                                 "responseMapping": [  
                                   {
                                     "variable": "ws_charge",
-                                    "value": "$.Bill[(@.length-1)].billDetails.amount"
+                                    "value": "$.Bill[(@.length-1)].billDetails[(@.length-1)].amount"
                                   }
                                    
                                 ]
