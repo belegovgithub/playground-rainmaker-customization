@@ -128,7 +128,27 @@ ReportDefinitions:
     label: PT_SPECIAL_CONSERVANCY_TAX
     type: string
     source: pt
-    total: true       
+    total: true   
+  - name: swatchbharatusercharges
+    label: PT_SWATCH_BHARAT_CHARGES
+    type: string
+    source: pt
+    total: true 
+  - name: recordmaintenancefees
+    label: PT_RECORD_MAINTENANCE_FEES
+    type: string
+    source: pt
+    total: true  
+  - name: garbagecollectionfees
+    label: PT_GARBAGE_COLLECTION_FEES
+    type: string
+    source: pt
+    total: true 
+  - name: concervancycharges
+    label: PT_CONCERVANCY_CHARGES
+    type: string
+    source: pt
+    total: true
   - name: cash
     label: reports.pt.cash
     type: string
@@ -221,6 +241,10 @@ ReportDefinitions:
     SUM(CASE WHEN taxheadcode LIKE 'PT_LIBRARY_CESS' THEN bad.adjustedamount ELSE 0 END) as librarycess,
     SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVE_TAX' THEN bad.adjustedamount ELSE 0 END) as conservancytax,
     SUM(CASE WHEN taxheadcode LIKE 'PT_SPECIAL_CONSERVANCY_TAX' THEN bad.adjustedamount ELSE 0 END) as specialconservancytax,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_CONCERVANCY_CHARGES' THEN bad.adjustedamount ELSE 0 END) as concervancycharges,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_GARBAGE_COLLECTION_FEES' THEN bad.adjustedamount ELSE 0 END) as garbagecollectionfees,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_RECORD_MAINTENANCE_FEES' THEN bad.adjustedamount ELSE 0 END) as recordmaintenancefees,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_SWATCH_BHARAT_CHARGES' THEN bad.adjustedamount ELSE 0 END) as swatchbharatusercharges,
     CASE WHEN pay.paymentmode LIKE 'CASH' THEN pd.amountpaid ELSE 0 END as cash,
     CASE WHEN pay.paymentmode LIKE 'CARD' THEN pd.amountpaid ELSE 0 END as card,
     CASE WHEN pay.paymentmode LIKE 'ONLINE' THEN pd.amountpaid ELSE 0 END as online,
@@ -370,7 +394,27 @@ ReportDefinitions:
     label: PT_SPECIAL_CONSERVANCY_TAX
     type: string
     source: pt
-    total: true       
+    total: true  
+  - name: swatchbharatusercharges
+    label: PT_SWATCH_BHARAT_CHARGES
+    type: string
+    source: pt
+    total: true 
+  - name: recordmaintenancefees
+    label: PT_RECORD_MAINTENANCE_FEES
+    type: string
+    source: pt
+    total: true  
+  - name: garbagecollectionfees
+    label: PT_GARBAGE_COLLECTION_FEES
+    type: string
+    source: pt
+    total: true 
+  - name: concervancycharges
+    label: PT_CONCERVANCY_CHARGES
+    type: string
+    source: pt
+    total: true     
   - name: totalcollection
     label: PT_TOTAL_AMOUNT 
     type: string
@@ -420,6 +464,10 @@ ReportDefinitions:
     SUM(CASE WHEN taxheadcode LIKE 'PT_LIBRARY_CESS' THEN bad.adjustedamount ELSE 0 END) as librarycess,
     SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVE_TAX' THEN bad.adjustedamount ELSE 0 END) as conservancytax,
     SUM(CASE WHEN taxheadcode LIKE 'PT_SPECIAL_CONSERVANCY_TAX' THEN bad.adjustedamount ELSE 0 END) as specialconservancytax,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_CONCERVANCY_CHARGES' THEN bad.adjustedamount ELSE 0 END) as concervancycharges,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_GARBAGE_COLLECTION_FEES' THEN bad.adjustedamount ELSE 0 END) as garbagecollectionfees,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_RECORD_MAINTENANCE_FEES' THEN bad.adjustedamount ELSE 0 END) as recordmaintenancefees,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_SWATCH_BHARAT_CHARGES' THEN bad.adjustedamount ELSE 0 END) as swatchbharatusercharges,
     pd.amountpaid as totalcollection,
     un.name as collectorname,
     addr.doorno as doorno,
@@ -629,7 +677,27 @@ ReportDefinitions:
     label: PT_SPECIAL_CONSERVANCY_TAX
     type: string
     source: pt
-    total: true       
+    total: true  
+  - name: swatchbharatusercharges
+    label: PT_SWATCH_BHARAT_CHARGES
+    type: string
+    source: pt
+    total: true 
+  - name: recordmaintenancefees
+    label: PT_RECORD_MAINTENANCE_FEES
+    type: string
+    source: pt
+    total: true  
+  - name: garbagecollectionfees
+    label: PT_GARBAGE_COLLECTION_FEES
+    type: string
+    source: pt
+    total: true 
+  - name: concervancycharges
+    label: PT_CONCERVANCY_CHARGES
+    type: string
+    source: pt
+    total: true     
   - name: totalcollection
     label: PT_TOTAL_AMOUNT 
     type: string
@@ -687,6 +755,10 @@ ReportDefinitions:
     SUM(CASE WHEN taxheadcode LIKE 'PT_LIBRARY_CESS' THEN bad.adjustedamount ELSE 0 END) as librarycess,
     SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVE_TAX' THEN bad.adjustedamount ELSE 0 END) as conservancytax,
     SUM(CASE WHEN taxheadcode LIKE 'PT_SPECIAL_CONSERVANCY_TAX' THEN bad.adjustedamount ELSE 0 END) as specialconservancytax,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_CONCERVANCY_CHARGES' THEN bad.adjustedamount ELSE 0 END) as concervancycharges,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_GARBAGE_COLLECTION_FEES' THEN bad.adjustedamount ELSE 0 END) as garbagecollectionfees,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_RECORD_MAINTENANCE_FEES' THEN bad.adjustedamount ELSE 0 END) as recordmaintenancefees,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_SWATCH_BHARAT_CHARGES' THEN bad.adjustedamount ELSE 0 END) as swatchbharatusercharges,
     pd.amountpaid as totalcollection,
     un.name as collectorname,
     addr.doorno as doorno,
@@ -1000,7 +1072,27 @@ ReportDefinitions:
     label: PT_SPECIAL_CONSERVANCY_TAX
     type: string
     source: pt
-    total: true        
+    total: true    
+  - name: swatchbharatusercharges
+    label: PT_SWATCH_BHARAT_CHARGES
+    type: string
+    source: pt
+    total: true 
+  - name: recordmaintenancefees
+    label: PT_RECORD_MAINTENANCE_FEES
+    type: string
+    source: pt
+    total: true  
+  - name: garbagecollectionfees
+    label: PT_GARBAGE_COLLECTION_FEES
+    type: string
+    source: pt
+    total: true 
+  - name: concervancycharges
+    label: PT_CONCERVANCY_CHARGES
+    type: string
+    source: pt
+    total: true    
   - name: cash
     label: reports.pt.cash
     type: string
@@ -1101,6 +1193,10 @@ ReportDefinitions:
     SUM(CASE WHEN taxheadcode LIKE 'PT_LIBRARY_CESS' THEN bad.adjustedamount ELSE 0 END) as librarycess,
     SUM(CASE WHEN taxheadcode LIKE 'PT_CONSERVE_TAX' THEN bad.adjustedamount ELSE 0 END) as conservancytax,
     SUM(CASE WHEN taxheadcode LIKE 'PT_SPECIAL_CONSERVANCY_TAX' THEN bad.adjustedamount ELSE 0 END) as specialconservancytax,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_CONCERVANCY_CHARGES' THEN bad.adjustedamount ELSE 0 END) as concervancycharges,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_GARBAGE_COLLECTION_FEES' THEN bad.adjustedamount ELSE 0 END) as garbagecollectionfees,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_RECORD_MAINTENANCE_FEES' THEN bad.adjustedamount ELSE 0 END) as recordmaintenancefees,
+    SUM(CASE WHEN taxheadcode LIKE 'PT_SWATCH_BHARAT_CHARGES' THEN bad.adjustedamount ELSE 0 END) as swatchbharatusercharges,
     CASE WHEN pay.paymentmode LIKE 'CASH' THEN pd.amountpaid ELSE 0 END as cash,
     CASE WHEN pay.paymentmode LIKE 'CARD' THEN pd.amountpaid ELSE 0 END as card,
     CASE WHEN pay.paymentmode LIKE 'ONLINE' THEN pd.amountpaid ELSE 0 END as online,
@@ -1264,7 +1360,27 @@ ReportDefinitions:
     label: PT_SPECIAL_CONSERVANCY_TAX
     type: string
     source: pt
-    total: false             
+    total: false  
+  - name: swatchbharatusercharges
+    label: PT_SWATCH_BHARAT_CHARGES
+    type: string
+    source: pt
+    total: false 
+  - name: recordmaintenancefees
+    label: PT_RECORD_MAINTENANCE_FEES
+    type: string
+    source: pt
+    total: false  
+  - name: garbagecollectionfees
+    label: PT_GARBAGE_COLLECTION_FEES
+    type: string
+    source: pt
+    total: false 
+  - name: concervancycharges
+    label: PT_CONCERVANCY_CHARGES
+    type: string
+    source: pt
+    total: false           
   - name: demandnoticecharge
     label: PT_DEMANDNOTICE_CHARGE
     type: string
@@ -1364,6 +1480,18 @@ ReportDefinitions:
     CONCAT(SUM(CASE WHEN dem_code = 'PT_SPECIAL_CONSERVANCY_TAX' THEN dem_tax ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_SPECIAL_CONSERVANCY_TAX' THEN collectionamount ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_SPECIAL_CONSERVANCY_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as specialconservancytax,
+    CONCAT(SUM(CASE WHEN dem_code = 'PT_SWATCH_BHARAT_CHARGES' THEN dem_tax ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN dem_code = 'PT_SWATCH_BHARAT_CHARGES' THEN collectionamount ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN dem_code = 'PT_SWATCH_BHARAT_CHARGES'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as swatchbharatusercharges,
+    CONCAT(SUM(CASE WHEN dem_code = 'PT_RECORD_MAINTENANCE_FEES' THEN dem_tax ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN dem_code = 'PT_RECORD_MAINTENANCE_FEES' THEN collectionamount ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN dem_code = 'PT_RECORD_MAINTENANCE_FEES'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as recordmaintenancefees,
+    CONCAT(SUM(CASE WHEN dem_code = 'PT_GARBAGE_COLLECTION_FEES' THEN dem_tax ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN dem_code = 'PT_GARBAGE_COLLECTION_FEES' THEN collectionamount ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN dem_code = 'PT_GARBAGE_COLLECTION_FEES'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as garbagecollectionfees,
+    CONCAT(SUM(CASE WHEN dem_code = 'PT_CONCERVANCY_CHARGES' THEN dem_tax ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN dem_code = 'PT_CONCERVANCY_CHARGES' THEN collectionamount ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN dem_code = 'PT_CONCERVANCY_CHARGES'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as concervancycharges,
     CONCAT(SUM(CASE WHEN dem_code = 'PT_TIME_INTEREST' THEN dem_tax ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_TIME_INTEREST' THEN collectionamount ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_TIME_INTEREST'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as interest,
@@ -1551,7 +1679,27 @@ ReportDefinitions:
     label: PT_SPECIAL_CONSERVANCY_TAX
     type: string
     source: pt
-    total: false            
+    total: false  
+  - name: swatchbharatusercharges
+    label: PT_SWATCH_BHARAT_CHARGES
+    type: string
+    source: pt
+    total: false 
+  - name: recordmaintenancefees
+    label: PT_RECORD_MAINTENANCE_FEES
+    type: string
+    source: pt
+    total: false  
+  - name: garbagecollectionfees
+    label: PT_GARBAGE_COLLECTION_FEES
+    type: string
+    source: pt
+    total: false 
+  - name: concervancycharges
+    label: PT_CONCERVANCY_CHARGES
+    type: string
+    source: pt
+    total: false          
   - name: demandnoticecharge
     label: PT_DEMANDNOTICE_CHARGE
     type: string
@@ -1659,6 +1807,18 @@ ReportDefinitions:
     CONCAT(SUM(CASE WHEN dem_code = 'PT_SPECIAL_CONSERVANCY_TAX' THEN dem_tax ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_SPECIAL_CONSERVANCY_TAX' THEN collectionamount ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_SPECIAL_CONSERVANCY_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as specialconservancytax,
+    CONCAT(SUM(CASE WHEN dem_code = 'PT_SWATCH_BHARAT_CHARGES' THEN dem_tax ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN dem_code = 'PT_SWATCH_BHARAT_CHARGES' THEN collectionamount ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN dem_code = 'PT_SWATCH_BHARAT_CHARGES'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as swatchbharatusercharges,
+    CONCAT(SUM(CASE WHEN dem_code = 'PT_RECORD_MAINTENANCE_FEES' THEN dem_tax ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN dem_code = 'PT_RECORD_MAINTENANCE_FEES' THEN collectionamount ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN dem_code = 'PT_RECORD_MAINTENANCE_FEES'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as recordmaintenancefees,
+    CONCAT(SUM(CASE WHEN dem_code = 'PT_GARBAGE_COLLECTION_FEES' THEN dem_tax ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN dem_code = 'PT_GARBAGE_COLLECTION_FEES' THEN collectionamount ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN dem_code = 'PT_GARBAGE_COLLECTION_FEES'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as garbagecollectionfees,
+    CONCAT(SUM(CASE WHEN dem_code = 'PT_CONCERVANCY_CHARGES' THEN dem_tax ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN dem_code = 'PT_CONCERVANCY_CHARGES' THEN collectionamount ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN dem_code = 'PT_CONCERVANCY_CHARGES'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as concervancycharges,
     CONCAT(SUM(CASE WHEN dem_code = 'PT_TIME_INTEREST' THEN dem_tax ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_TIME_INTEREST' THEN collectionamount ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_TIME_INTEREST'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as interest,
@@ -1787,7 +1947,27 @@ ReportDefinitions:
     label: PT_SPECIAL_CONSERVANCY_TAX
     type: string
     source: pt
-    total: false             
+    total: false  
+  - name: swatchbharatusercharges
+    label: PT_SWATCH_BHARAT_CHARGES
+    type: string
+    source: pt
+    total: false 
+  - name: recordmaintenancefees
+    label: PT_RECORD_MAINTENANCE_FEES
+    type: string
+    source: pt
+    total: false  
+  - name: garbagecollectionfees
+    label: PT_GARBAGE_COLLECTION_FEES
+    type: string
+    source: pt
+    total: false 
+  - name: concervancycharges
+    label: PT_CONCERVANCY_CHARGES
+    type: string
+    source: pt
+    total: false           
   - name: demandnoticecharge
     label: PT_DEMANDNOTICE_CHARGE
     type: string
@@ -1874,6 +2054,18 @@ ReportDefinitions:
     CONCAT(SUM(CASE WHEN dem_code = 'PT_SPECIAL_CONSERVANCY_TAX' THEN dem_tax ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_SPECIAL_CONSERVANCY_TAX' THEN collectionamount ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_SPECIAL_CONSERVANCY_TAX'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as specialconservancytax,
+    CONCAT(SUM(CASE WHEN dem_code = 'PT_SWATCH_BHARAT_CHARGES' THEN dem_tax ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN dem_code = 'PT_SWATCH_BHARAT_CHARGES' THEN collectionamount ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN dem_code = 'PT_SWATCH_BHARAT_CHARGES'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as swatchbharatusercharges,
+    CONCAT(SUM(CASE WHEN dem_code = 'PT_RECORD_MAINTENANCE_FEES' THEN dem_tax ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN dem_code = 'PT_RECORD_MAINTENANCE_FEES' THEN collectionamount ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN dem_code = 'PT_RECORD_MAINTENANCE_FEES'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as recordmaintenancefees,
+    CONCAT(SUM(CASE WHEN dem_code = 'PT_GARBAGE_COLLECTION_FEES' THEN dem_tax ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN dem_code = 'PT_GARBAGE_COLLECTION_FEES' THEN collectionamount ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN dem_code = 'PT_GARBAGE_COLLECTION_FEES'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as garbagecollectionfees,
+    CONCAT(SUM(CASE WHEN dem_code = 'PT_CONCERVANCY_CHARGES' THEN dem_tax ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN dem_code = 'PT_CONCERVANCY_CHARGES' THEN collectionamount ELSE 0 END),E'\r\n',
+    SUM(CASE WHEN dem_code = 'PT_CONCERVANCY_CHARGES'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as concervancycharges,
     CONCAT(SUM(CASE WHEN dem_code = 'PT_TIME_INTEREST' THEN dem_tax ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_TIME_INTEREST' THEN collectionamount ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_TIME_INTEREST' then  dem_tax -collectionamount ELSE 0 END)) as interest,
