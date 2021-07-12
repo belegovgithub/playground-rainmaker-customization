@@ -1281,6 +1281,11 @@ ReportDefinitions:
     type: string
     source: pt
     total: true
+  - name: taxperiod
+    label: reports.pt.taxperiod
+    type: string
+    source: pt
+    total: false
   - name: emptyheader
     label: reports.pt.empty
     type: string
@@ -1434,6 +1439,8 @@ ReportDefinitions:
     (SELECT boundary_def.name FROM (VALUES tbl_boundary) AS boundary_def(name,code) where code=locality) as mohallaname,
     CONCAT(doorno,' ',street,' ',buildingname) as address  ,arv,
     initcap(split_part(usagecategory, '.', 1)) as usagetype,initcap(split_part(usagecategory, '.', 2)) as subusagetype,
+    CONCAT(split_part(To_char((To_timestamp(taxperiodfrom / 1000) at time Zone 'Asia/Kolkata'), 'DD/MM/YYYY'),'/',3),'-',
+    split_part(To_char((To_timestamp(taxperiodto / 1000) at time Zone 'Asia/Kolkata'), 'DD/MM/YYYY'),'/',3)) as taxperiod,
     CONCAT('Demand: ',E'\r\n','Collected: ',E'\r\n','Outstanding: ') as emptyheader,
     CONCAT(SUM(CASE WHEN dem_code = 'PT_HOUSE_TAX' THEN dem_tax ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_HOUSE_TAX' THEN  collectionamount ELSE 0 END),E'\r\n',
@@ -1508,6 +1515,8 @@ ReportDefinitions:
     select demand.tenantid,
     demand.consumercode,
     demand.createdtime as createdtime,
+    demand.taxperiodfrom as taxperiodfrom,
+    demand.taxperiodto as taxperiodto,
     addr.doorno,
     addr.buildingname,
     addr.street,
@@ -1533,7 +1542,7 @@ ReportDefinitions:
       INNER JOIN eg_user ptuser ON ptuser.uuid = poo.userid where status = 'ACTIVE' group by propertyid)
       poo ON poo.propertyid = pt.id
       where demand.tenantid LIKE $tenantid and demand.businessservice ='PT')t where 1=1 
-  groupby: GROUP BY tenantid,consumercode,doorno,name,oldpropertyid,propertytype,usagecategory,mobilenumber,arv,locality,createdtime,street,buildingname
+  groupby: GROUP BY tenantid,consumercode,doorno,name,oldpropertyid,propertytype,usagecategory,mobilenumber,arv,locality,createdtime,taxperiodfrom,taxperiodto,street,buildingname
   orderby: ORDER BY consumercode
 
 - reportName: DGDEDemandRegisterReport
@@ -1600,6 +1609,11 @@ ReportDefinitions:
     type: string
     source: pt
     total: true
+  - name: taxperiod
+    label: reports.pt.taxperiod
+    type: string
+    source: pt
+    total: false
   - name: emptyheader
     label: reports.pt.empty
     type: string
@@ -1761,6 +1775,8 @@ ReportDefinitions:
     (SELECT boundary_def.name FROM (VALUES tbl_boundary) AS boundary_def(name,code) where code=locality) as mohallaname,
     CONCAT(doorno,' ',street,' ',buildingname) as address  ,arv,
     initcap(split_part(usagecategory, '.', 1)) as usagetype,initcap(split_part(usagecategory, '.', 2)) as subusagetype,
+    CONCAT(split_part(To_char((To_timestamp(taxperiodfrom / 1000) at time Zone 'Asia/Kolkata'), 'DD/MM/YYYY'),'/',3),'-',
+    split_part(To_char((To_timestamp(taxperiodto / 1000) at time Zone 'Asia/Kolkata'), 'DD/MM/YYYY'),'/',3)) as taxperiod,
     CONCAT('Demand: ',E'\r\n','Collected: ',E'\r\n','Outstanding: ') as emptyheader,
     CONCAT(SUM(CASE WHEN dem_code = 'PT_HOUSE_TAX' THEN dem_tax ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_HOUSE_TAX' THEN collectionamount ELSE 0 END),E'\r\n',
@@ -1829,12 +1845,14 @@ ReportDefinitions:
     SUM(CASE WHEN dem_code = 'PT_DEMANDNOTICE_CHARGE' THEN collectionamount ELSE 0 END),E'\r\n',
     SUM(CASE WHEN dem_code = 'PT_DEMANDNOTICE_CHARGE'  then  COALESCE( taxout, 0 ) ELSE 0 END)) as demandnoticecharge,
     CONCAT(SUM(CASE WHEN dem_code != 'PT_ADVANCE_CARRYFORWARD' THEN dem_tax ELSE 0 END),E'\r\n',
-    SUM(collectionamount),E'\r\n',(SUM(CASE WHEN dem_code != 'PT_ADVANCE_CARRYFORWARD' THEN dem_tax ELSE 0 END))-SUM(collectionamount)+SUM(CASE WHEN (amen_tax)!=0 then amen_tax else 0 end))) as total,
+    SUM(collectionamount),E'\r\n',(SUM(CASE WHEN dem_code != 'PT_ADVANCE_CARRYFORWARD' THEN dem_tax ELSE 0 END))-SUM(collectionamount)+SUM(CASE WHEN (amen_tax)!=0 then amen_tax else 0 end)) as total,
     SUM(CASE WHEN dem_code = 'PT_ADVANCE_CARRYFORWARD' THEN ABS(dem_tax) ELSE 0 END) as advance
     from (
     select demand.tenantid,
     demand.consumercode,
     demand.createdtime as createdtime,
+    demand.taxperiodfrom as taxperiodfrom,
+    demand.taxperiodto as taxperiodto,
     addr.doorno,
     addr.buildingname,
     addr.street,
@@ -1860,7 +1878,7 @@ ReportDefinitions:
       INNER JOIN eg_user ptuser ON ptuser.uuid = poo.userid where status = 'ACTIVE' group by propertyid)
       poo ON poo.propertyid = pt.id
       where demand.tenantid != 'pb.testing' and demand.businessservice ='PT')t where 1=1 
-  groupby: GROUP BY tenantid,consumercode,doorno,name,oldpropertyid,propertytype,usagecategory,mobilenumber, arv,locality,createdtime,street,buildingname
+  groupby: GROUP BY tenantid,consumercode,doorno,name,oldpropertyid,propertytype,usagecategory,mobilenumber, arv,locality,createdtime,taxperiodfrom,taxperiodto,street,buildingname
   orderby: ORDER BY tenantid,consumercode
   
 - reportName: CBPTDemandCollection
