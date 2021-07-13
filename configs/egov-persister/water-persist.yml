@@ -257,7 +257,7 @@ serviceMaps:
       jsonMaps:
       - jsonPath: $.WaterConnection.id
 
-    - query: UPDATE eg_ws_service SET connectionCategory=?,connectionType=?,waterSource=?,meterId=?,meterInstallationDate=?,pipeSize=?,noOfTaps=?,proposedPipeSize=?,proposedTaps=?, initialmeterreading = ?, connectionexecutiondate = ?, detailsprovidedby = ?, estimationfileStoreId = ?, sanctionfileStoreId = ?, estimationLetterDate = ?, lastModifiedBy=?, lastModifiedTime=?,motorinfo=?,sourceInfo=?, deactivationDate=?, lastmeterreading=?  WHERE connection_id=?;
+    - query: UPDATE eg_ws_service SET connectionCategory=?,connectionType=?,waterSource=?,meterId=?,meterInstallationDate=?,pipeSize=?,noOfTaps=?,proposedPipeSize=?,proposedTaps=?, initialmeterreading = ?, connectionexecutiondate = ?, detailsprovidedby = ?, estimationfileStoreId = ?, sanctionfileStoreId = ?, estimationLetterDate = ?, lastModifiedBy=?, lastModifiedTime=?,motorinfo=?,sourceInfo=?, deactivationdate=?, lastmeterreading=?  WHERE connection_id=?;
       basePath: $.WaterConnection
       jsonMaps:
        
