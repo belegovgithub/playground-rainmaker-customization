@@ -150,6 +150,20 @@
                   }
                 },
                 {
+                  "variable": "taxFrom",
+                  "value": {
+                    "path": "$.taxFrom"
+                  },
+                  "type":"date"
+                },
+                {
+                  "variable": "taxTo",
+                  "value": {
+                    "path": "$.taxTo"
+                  },
+                  "type":"date"
+                },
+                {
                   "variable": "houseTaxArrear",
                   "value":{
                     "path": "$.arrearDtl[?(@.taxHeadCode == 'PT_HOUSE_TAX')].arrears"
