@@ -301,7 +301,7 @@ serviceMaps:
 
        - jsonPath: $.WaterConnection.deactivationDate
 
-       - jsonPath: $.WaterConnection.additionalDetails.lastmeterreading
+       - jsonPath: $.WaterConnection.additionalDetails.lastMeterReading
 
        - jsonPath: $.WaterConnection.id
 
