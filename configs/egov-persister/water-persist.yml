@@ -101,7 +101,7 @@ serviceMaps:
 
        - jsonPath: $.WaterConnection.deactivationDate
 
-       - jsonPath: $.WaterConnection.additionalDetails.lastmeterreading
+       - jsonPath: $.WaterConnection.additionalDetails.lastMeterReading
        
    
     - query: INSERT INTO eg_ws_connectionholder(tenantid, connectionid,propertyownership, userid, status, isprimaryholder, connectionholdertype, holdershippercentage, relationship, createdby, createdtime, lastmodifiedby, lastmodifiedtime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
