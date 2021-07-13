@@ -3090,6 +3090,15 @@
                   "filter": "",
                   "headers": [],
                   "tabName": "Department"
+                },
+                {
+                  "id": "xpgrStatusByTypeOfComplaint",
+                  "name": "DSS_PGR_STATUS_BY_COMPLAINTTYPE",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "ComplaintType"
                 }
               ]
             }
@@ -3365,6 +3374,15 @@
                   "filter": "",
                   "headers": [],
                   "tabName": "Department"
+                },
+                {
+                  "id": "xpgrStatusByTypeOfComplaint",
+                  "name": "DSS_PGR_STATUS_BY_COMPLAINTTYPE",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "ComplaintType"
                 }
               ]
             }
@@ -5090,6 +5108,15 @@
                   "filter": "",
                   "headers": [],
                   "tabName": "Department"
+                },
+                {
+                  "id": "xpgrStatusByTypeOfComplaint",
+                  "name": "DSS_PGR_STATUS_BY_COMPLAINTTYPE",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "ComplaintType"
                 }
               ]
             }
