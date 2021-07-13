@@ -46,6 +46,20 @@
                 }
               },
               {
+                "variable": "taxFrom",
+                "value": {
+                  "path": "$.taxFrom"
+                },
+                "type":"date"
+              },
+              {
+                "variable": "taxTo",
+                "value": {
+                  "path": "$.taxTo"
+                },
+                "type":"date"
+              },
+              {
                 "variable": "location",
                 "value": {
                   "path": "$.address.locality.code"
