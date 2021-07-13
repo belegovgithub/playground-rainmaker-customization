@@ -48,7 +48,7 @@
                           "bold": true
                         },
                         {
-                          "text": "{{tax_peroid_label}} 01/04/2020 {{to_label}} 31/03/2021",
+                          "text": "{{tax_peroid_label}} {{taxFrom}} {{to_label}} {{taxTo}}",
                           "alignment": "center",
                           "fontSize": 10,
                           "bold": true
