@@ -846,9 +846,9 @@ ReportDefinitions:
     isMandatory: false
     searchClause: AND financialyear = $financialyear
   query: |
-    SELECT SUM(totalamount) as totalamount,SUM(amountpaid) AS totalamountpaid,
+    SELECT initcap(split_part(tenantid, '.', 2)) as tenantid,SUM(totalamount) as totalamount,SUM(amountpaid) AS totalamountpaid,
     SUM(onltotalamountpaid) as online,SUM(offtotalamountpaid) as offline, (SUM(totalamount) - SUM(amountpaid)) AS totalamountdue
-    FROM (select COUNT(*) as totalast, propertyid, bill.totalamount as totalamount,pd.amountpaid as amountpaid ,onl.totalamountpaid as onltotalamountpaid,offl.totalamountpaid as offtotalamountpaid from eg_pt_asmt_assessment asmt
+    FROM (select asmt.tenantid as tenantid, propertyid, bill.totalamount as totalamount,pd.amountpaid as amountpaid ,onl.totalamountpaid as onltotalamountpaid,offl.totalamountpaid as offtotalamountpaid from eg_pt_asmt_assessment asmt
     inner join (select id, consumercode, sum(totalamount) as totalamount from (
     SELECT id, consumercode, 0 as totalamount FROM egcl_bill
     union all
@@ -862,7 +862,9 @@ ReportDefinitions:
     INNER JOIN (SELECT billid,amountpaid,paymentid from egcl_paymentdetail pd ) as pd ON pd.billid = bill.id
     LEFT OUTER JOIN (SELECT id,paymentmode,totalamountpaid FROM egcl_payment WHERE paymentmode = 'ONLINE') AS onl ON onl.id = pd.paymentid
     LEFT OUTER JOIN (SELECT id,paymentmode,totalamountpaid FROM egcl_payment WHERE paymentmode != 'ONLINE' ) AS offl ON offl.id = pd.paymentid
-    where asmt.tenantid != 'pb.testing' GROUP BY asmt.propertyid, bill.totalamount,pd.amountpaid,onl.totalamountpaid,offl.totalamountpaid)t where 1=1
+    where asmt.tenantid != 'pb.testing' GROUP BY asmt.tenantid,asmt.propertyid, bill.totalamount,pd.amountpaid,onl.totalamountpaid,offl.totalamountpaid)t where 1=1
+  groupby: GROUP BY tenantid
+  orderby: ORDER BY tenantid, totalamountpaid DESC NULLS LAST
 
 - reportName: UlbWisePtCollection
   summary: State Wide PT Collection
@@ -1219,8 +1221,8 @@ ReportDefinitions:
       INNER JOIN eg_user ptuser ON ptuser.uuid = poo.userid where status = 'ACTIVE' group by propertyid) 
       poo ON poo.propertyid = pt.id
       JOIN eg_user as un ON pay.createdby::INTEGER=un.id
-      where pay.tenantid != 'pb.testing' pd.businessservice='PT'and pay.paymentstatus != 'CANCELLED'
-  groupby: GROUP BY pay.tenantid,pd.receiptnumber,bill.consumercode,pd.receiptdate,pay.transactionnumber,pay.paymentmode,addr.doorno,poo.name,pd.amountpaid,un.name,addr.locality
+      where pay.tenantid != 'pb.testing' and pd.businessservice='PT'and pay.paymentstatus != 'CANCELLED'
+  groupby: GROUP BY pay.tenantid,pd.receiptnumber,bill.consumercode,pd.receiptdate,pay.transactionnumber,pay.paymentmode,addr.doorno,poo.name,pd.amountpaid,un.name,addr.locality,pt.oldpropertyid
 
 - reportName: DemandRegisterReport
   summary: Reports for Reconcillation of data in PT

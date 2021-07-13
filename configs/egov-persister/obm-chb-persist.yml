@@ -1,0 +1,93 @@
+serviceMaps:
+ serviceName: obm-services
+ mappings:
+ - version: 1.0
+   description: Persists Community Hall Booking details in eg_obm_chb_dtls table
+   fromTopic: save-obm-chb
+   isTransaction: true
+   queryMaps:
+
+       - query: INSERT INTO eg_obm_chb_dtls(id, accountid, hallid, purpose, category, tenantid, fromdate, todate, applicationnumber, applicationdate, action, status, createdby, lastmodifiedby, createdtime, lastmodifiedtime, approveddate) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+         basePath: cHBookDtls
+         jsonMaps:
+          - jsonPath: $.cHBookDtls.id
+
+          - jsonPath: $.cHBookDtls.accountId
+
+          - jsonPath: $.cHBookDtls.hallId
+
+          - jsonPath: $.cHBookDtls.purpose
+
+          - jsonPath: $.cHBookDtls.category
+
+          - jsonPath: $.cHBookDtls.tenantId
+
+          - jsonPath: $.cHBookDtls.fromDate
+
+          - jsonPath: $.cHBookDtls.toDate
+
+          - jsonPath: $.cHBookDtls.applicationNumber
+
+          - jsonPath: $.cHBookDtls.applicationDate
+
+          - jsonPath: $.cHBookDtls.action
+
+          - jsonPath: $.cHBookDtls.status
+
+          - jsonPath: $.cHBookDtls.auditDetails.createdBy
+
+          - jsonPath: $.cHBookDtls.auditDetails.lastModifiedBy
+
+          - jsonPath: $.cHBookDtls.auditDetails.createdTime
+
+          - jsonPath: $.cHBookDtls.auditDetails.lastModifiedTime
+
+          - jsonPath: $.cHBookDtls.approvedDate
+
+
+       - query: INSERT INTO eg_obm_chb_bank_dtls (id, chbdtlid, accountholdername, accountnumber, nameofbank, ifsccode, accounttype, createdby, lastmodifiedby, createdtime, lastmodifiedtime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+         basePath: cHBookDtls.bankDetails
+         jsonMaps:
+          - jsonPath: $.cHBookDtls.bankDetails.id
+
+          - jsonPath: $.cHBookDtls.id
+          
+          - jsonPath: $.cHBookDtls.bankDetails.accountHolderName
+
+          - jsonPath: $.cHBookDtls.bankDetails.accountNumber          
+
+          - jsonPath: $.cHBookDtls.bankDetails.nameOfBank
+
+          - jsonPath: $.cHBookDtls.bankDetails.ifscCode
+
+          - jsonPath: $.cHBookDtls.bankDetails.accountType
+
+          - jsonPath: $.cHBookDtls.auditDetails.createdBy
+
+          - jsonPath: $.cHBookDtls.auditDetails.lastModifiedBy
+
+          - jsonPath: $.cHBookDtls.auditDetails.createdTime
+
+          - jsonPath: $.cHBookDtls.auditDetails.lastModifiedTime
+          
+          
+       - query: INSERT INTO eg_obm_chb_applicationdocument( id, active, documenttype, filestoreid, chbdtlid, createdby, lastmodifiedby, createdtime, lastmodifiedtime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);
+         basePath: cHBookDtls.applicationDocuments.*
+         jsonMaps:
+          - jsonPath: $.cHBookDtls.applicationDocuments.*.id
+
+          - jsonPath: $.cHBookDtls.applicationDocuments.*.active
+
+          - jsonPath: $.cHBookDtls.applicationDocuments.*.documentType
+
+          - jsonPath: $.cHBookDtls.applicationDocuments.*.fileStoreId
+
+          - jsonPath: $.cHBookDtls.id
+
+          - jsonPath: $.cHBookDtls.auditDetails.createdBy
+
+          - jsonPath: $.cHBookDtls.auditDetails.lastModifiedBy
+
+          - jsonPath: $.cHBookDtls.auditDetails.createdTime
+
+          - jsonPath: $.cHBookDtls.auditDetails.lastModifiedTime

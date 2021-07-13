@@ -1217,6 +1217,14 @@
                         ]
                     },
                     {
+                        "derived": [
+                          {
+                            "variable": "finalAmount",
+                            "formula": "({{ws_charge}}).toFixed(2)"
+                          }
+                        ]
+                    },
+                    {
                         "externalAPI": [
                             {
                                 "path": "http://egov-mdms-service:8080/egov-mdms-service/v1/_get",
@@ -1232,6 +1240,18 @@
                                       "module": "rainmaker-pdf"
                                     }
                                   } 
+                                ]
+                            },
+                            {
+                                "path": "http://billing-service:8080/billing-service/bill/v2/_fetchbill",
+                                "queryParam": "tenantId=$.tenantId,consumerCode=$.connectionNo,businessService=WS",
+                                "apiRequest": null,
+                                "responseMapping": [  
+                                  {
+                                    "variable": "ws_charge",
+                                    "value": "$.Bill[(@.length-1)].billDetails[(@.length-1)].amount"
+                                  }
+                                   
                                 ]
                               }
                         ]
