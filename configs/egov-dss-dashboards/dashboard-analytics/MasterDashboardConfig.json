@@ -1020,6 +1020,22 @@
               "label": "DSS_OVERVIEW",
               "charts": [
                 {
+                  "id": "ainsideCivilApplication",
+                  "name": "DSS_TOTAL_INSIDECIVIL_APPLICATION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "outsideCivilApplication",
+                  "name": "DSS_TOTAL_OUTSIDECIVIL_APPLICATION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
                   "id": "totalApplication",
                   "name": "DSS_TOTAL_APPLICATION",
                   "code": "",
@@ -1238,6 +1254,22 @@
               "label": "DSS_OVERVIEW",
               "charts": [
                 {
+                  "id": "ainsideCivilApplication",
+                  "name": "DSS_TOTAL_INSIDECIVIL_APPLICATION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "outsideCivilApplication",
+                  "name": "DSS_TOTAL_OUTSIDECIVIL_APPLICATION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
                   "id": "totalApplication",
                   "name": "DSS_TOTAL_APPLICATION",
                   "code": "",
@@ -1439,6 +1471,22 @@
               "isCollapsible": false,
               "label": "DSS_OVERVIEW",
               "charts": [
+                {
+                  "id": "ainsideCivilApplication",
+                  "name": "DSS_TOTAL_INSIDECIVIL_APPLICATION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "outsideCivilApplication",
+                  "name": "DSS_TOTAL_OUTSIDECIVIL_APPLICATION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
                 {
                   "id": "totalApplication",
                   "name": "DSS_TOTAL_APPLICATION",
@@ -3042,6 +3090,15 @@
                   "filter": "",
                   "headers": [],
                   "tabName": "Department"
+                },
+                {
+                  "id": "xpgrStatusByTypeOfComplaint",
+                  "name": "DSS_PGR_STATUS_BY_COMPLAINTTYPE",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "ComplaintType"
                 }
               ]
             }
@@ -3317,6 +3374,15 @@
                   "filter": "",
                   "headers": [],
                   "tabName": "Department"
+                },
+                {
+                  "id": "xpgrStatusByTypeOfComplaint",
+                  "name": "DSS_PGR_STATUS_BY_COMPLAINTTYPE",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "ComplaintType"
                 }
               ]
             }
@@ -5042,6 +5108,15 @@
                   "filter": "",
                   "headers": [],
                   "tabName": "Department"
+                },
+                {
+                  "id": "xpgrStatusByTypeOfComplaint",
+                  "name": "DSS_PGR_STATUS_BY_COMPLAINTTYPE",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "ComplaintType"
                 }
               ]
             }
