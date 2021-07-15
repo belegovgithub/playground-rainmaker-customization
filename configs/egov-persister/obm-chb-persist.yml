@@ -8,95 +8,95 @@ serviceMaps:
    queryMaps:
 
        - query: INSERT INTO eg_obm_chb_dtls(id, accountid, hallid, purpose, category, purposedescription, residenttypeid, timeslotid, tenantid, fromdate, todate, applicationnumber, applicationdate, action, status, createdby, lastmodifiedby, createdtime, lastmodifiedtime, approveddate) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
-         basePath: cHBookDtls
+         basePath: booking
          jsonMaps:
-          - jsonPath: $.cHBookDtls.id
+          - jsonPath: $.booking.id
 
-          - jsonPath: $.cHBookDtls.accountId
+          - jsonPath: $.booking.accountId
 
-          - jsonPath: $.cHBookDtls.hallId
+          - jsonPath: $.booking.hallId
 
-          - jsonPath: $.cHBookDtls.purpose
+          - jsonPath: $.booking.purpose
 
-          - jsonPath: $.cHBookDtls.category
+          - jsonPath: $.booking.category
 
-          - jsonPath: $.cHBookDtls.purposeDescription
+          - jsonPath: $.booking.purposeDescription
 
-          - jsonPath: $.cHBookDtls.residentTypeId
+          - jsonPath: $.booking.residentTypeId
           
-          - jsonPath: $.cHBookDtls.timeSlotId
+          - jsonPath: $.booking.timeSlotId
           
-          - jsonPath: $.cHBookDtls.tenantId
+          - jsonPath: $.booking.tenantId
 
-          - jsonPath: $.cHBookDtls.fromDate
+          - jsonPath: $.booking.fromDate
 
-          - jsonPath: $.cHBookDtls.toDate
+          - jsonPath: $.booking.toDate
 
-          - jsonPath: $.cHBookDtls.applicationNumber
+          - jsonPath: $.booking.applicationNumber
 
-          - jsonPath: $.cHBookDtls.applicationDate
+          - jsonPath: $.booking.applicationDate
 
-          - jsonPath: $.cHBookDtls.action
+          - jsonPath: $.booking.action
 
-          - jsonPath: $.cHBookDtls.status
+          - jsonPath: $.booking.status
 
-          - jsonPath: $.cHBookDtls.auditDetails.createdBy
+          - jsonPath: $.booking.auditDetails.createdBy
 
-          - jsonPath: $.cHBookDtls.auditDetails.lastModifiedBy
+          - jsonPath: $.booking.auditDetails.lastModifiedBy
 
-          - jsonPath: $.cHBookDtls.auditDetails.createdTime
+          - jsonPath: $.booking.auditDetails.createdTime
 
-          - jsonPath: $.cHBookDtls.auditDetails.lastModifiedTime
+          - jsonPath: $.booking.auditDetails.lastModifiedTime
 
-          - jsonPath: $.cHBookDtls.approvedDate
+          - jsonPath: $.booking.approvedDate
 
 
        - query: INSERT INTO eg_obm_chb_bank_dtls (id, chbdtlid, accountholdername, accountnumber, nameofbank, ifsccode, accounttype, createdby, lastmodifiedby, createdtime, lastmodifiedtime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
-         basePath: cHBookDtls.bankDetails
+         basePath: booking.bankDetails
          jsonMaps:
-          - jsonPath: $.cHBookDtls.bankDetails.id
+          - jsonPath: $.booking.bankDetails.id
 
-          - jsonPath: $.cHBookDtls.id
+          - jsonPath: $.booking.id
           
-          - jsonPath: $.cHBookDtls.bankDetails.accountHolderName
+          - jsonPath: $.booking.bankDetails.accountHolderName
 
-          - jsonPath: $.cHBookDtls.bankDetails.accountNumber          
+          - jsonPath: $.booking.bankDetails.accountNumber          
 
-          - jsonPath: $.cHBookDtls.bankDetails.nameOfBank
+          - jsonPath: $.booking.bankDetails.nameOfBank
 
-          - jsonPath: $.cHBookDtls.bankDetails.ifscCode
+          - jsonPath: $.booking.bankDetails.ifscCode
 
-          - jsonPath: $.cHBookDtls.bankDetails.accountType
+          - jsonPath: $.booking.bankDetails.accountType
 
-          - jsonPath: $.cHBookDtls.auditDetails.createdBy
+          - jsonPath: $.booking.auditDetails.createdBy
 
-          - jsonPath: $.cHBookDtls.auditDetails.lastModifiedBy
+          - jsonPath: $.booking.auditDetails.lastModifiedBy
 
-          - jsonPath: $.cHBookDtls.auditDetails.createdTime
+          - jsonPath: $.booking.auditDetails.createdTime
 
-          - jsonPath: $.cHBookDtls.auditDetails.lastModifiedTime
+          - jsonPath: $.booking.auditDetails.lastModifiedTime
           
           
        - query: INSERT INTO eg_obm_chb_applicationdocument( id, active, documenttype, filestoreid, chbdtlid, createdby, lastmodifiedby, createdtime, lastmodifiedtime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);
-         basePath: cHBookDtls.applicationDocuments.*
+         basePath: booking.applicationDocuments.*
          jsonMaps:
-          - jsonPath: $.cHBookDtls.applicationDocuments.*.id
+          - jsonPath: $.booking.applicationDocuments.*.id
 
-          - jsonPath: $.cHBookDtls.applicationDocuments.*.active
+          - jsonPath: $.booking.applicationDocuments.*.active
 
-          - jsonPath: $.cHBookDtls.applicationDocuments.*.documentType
+          - jsonPath: $.booking.applicationDocuments.*.documentType
 
-          - jsonPath: $.cHBookDtls.applicationDocuments.*.fileStoreId
+          - jsonPath: $.booking.applicationDocuments.*.fileStoreId
 
-          - jsonPath: $.cHBookDtls.id
+          - jsonPath: $.booking.id
 
-          - jsonPath: $.cHBookDtls.auditDetails.createdBy
+          - jsonPath: $.booking.auditDetails.createdBy
 
-          - jsonPath: $.cHBookDtls.auditDetails.lastModifiedBy
+          - jsonPath: $.booking.auditDetails.lastModifiedBy
 
-          - jsonPath: $.cHBookDtls.auditDetails.createdTime
+          - jsonPath: $.booking.auditDetails.createdTime
 
-          - jsonPath: $.cHBookDtls.auditDetails.lastModifiedTime
+          - jsonPath: $.booking.auditDetails.lastModifiedTime
 
  - version: 1.0
    description: Update CHB details
@@ -105,71 +105,71 @@ serviceMaps:
    queryMaps:
 
        - query: UPDATE eg_obm_chb_dtls SET approveddate = ?, action = ?, status = ?,  lastmodifiedby = ?,  lastmodifiedtime = ? WHERE id=?;
-         basePath: cHBookDtls
+         basePath: booking
          jsonMaps:
-          - jsonPath: $.cHBookDtls.approvedDate
+          - jsonPath: $.booking.approvedDate
 
-          - jsonPath: $.cHBookDtls.action
+          - jsonPath: $.booking.action
 
-          - jsonPath: $.cHBookDtls.status
+          - jsonPath: $.booking.status
 
-          - jsonPath: $.cHBookDtls.auditDetails.lastModifiedBy
+          - jsonPath: $.booking.auditDetails.lastModifiedBy
 
-          - jsonPath: $.cHBookDtls.auditDetails.lastModifiedTime
+          - jsonPath: $.booking.auditDetails.lastModifiedTime
 
-          - jsonPath: $.cHBookDtls.id
+          - jsonPath: $.booking.id
           
 
        - query: UPDATE eg_obm_chb_bank_dtls SET accountholdername, accountnumber, nameofbank, ifsccode, accounttype, lastmodifiedby = ?,  lastmodifiedtime = ? WHERE id = ?;
-         basePath: cHBookDtls.bankDetails
+         basePath: booking.bankDetails
          jsonMaps:
-          - jsonPath: $.cHBookDtls.bankDetails.accountHolderName
+          - jsonPath: $.booking.bankDetails.accountHolderName
 
-          - jsonPath: $.cHBookDtls.bankDetails.accountNumber          
+          - jsonPath: $.booking.bankDetails.accountNumber          
 
-          - jsonPath: $.cHBookDtls.bankDetails.nameOfBank
+          - jsonPath: $.booking.bankDetails.nameOfBank
 
-          - jsonPath: $.cHBookDtls.bankDetails.ifscCode
+          - jsonPath: $.booking.bankDetails.ifscCode
 
-          - jsonPath: $.cHBookDtls.bankDetails.accountType
+          - jsonPath: $.booking.bankDetails.accountType
 
-          - jsonPath: $.cHBookDtls.auditDetails.lastModifiedBy
+          - jsonPath: $.booking.auditDetails.lastModifiedBy
 
-          - jsonPath: $.cHBookDtls.auditDetails.lastModifiedTime
+          - jsonPath: $.booking.auditDetails.lastModifiedTime
 
-          - jsonPath: $.cHBookDtls.bankDetails.id
+          - jsonPath: $.booking.bankDetails.id
           
           
        - query: INSERT INTO eg_obm_chb_applicationdocument( id, active, documenttype, filestoreid, chbdtlid, createdby, lastmodifiedby, createdtime, lastmodifiedtime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) ON CONFLICT (id) DO UPDATE SET active = ?, documenttype =?, filestoreid =?,lastmodifiedby =?, lastmodifiedtime =?;
-         basePath: cHBookDtls.applicationDocuments.*
+         basePath: booking.applicationDocuments.*
          jsonMaps:
-          - jsonPath: $.cHBookDtls.applicationDocuments.*.id
+          - jsonPath: $.booking.applicationDocuments.*.id
 
-          - jsonPath: $.cHBookDtls.applicationDocuments.*.active
+          - jsonPath: $.booking.applicationDocuments.*.active
 
-          - jsonPath: $.cHBookDtls.applicationDocuments.*.documentType
+          - jsonPath: $.booking.applicationDocuments.*.documentType
 
-          - jsonPath: $.cHBookDtls.applicationDocuments.*.fileStoreId
+          - jsonPath: $.booking.applicationDocuments.*.fileStoreId
 
-          - jsonPath: $.cHBookDtls.id
+          - jsonPath: $.booking.id
 
-          - jsonPath: $.cHBookDtls.auditDetails.createdBy
+          - jsonPath: $.booking.auditDetails.createdBy
 
-          - jsonPath: $.cHBookDtls.auditDetails.lastModifiedBy
+          - jsonPath: $.booking.auditDetails.lastModifiedBy
 
-          - jsonPath: $.cHBookDtls.auditDetails.createdTime
+          - jsonPath: $.booking.auditDetails.createdTime
 
-          - jsonPath: $.cHBookDtls.auditDetails.lastModifiedTime
+          - jsonPath: $.booking.auditDetails.lastModifiedTime
 
-          - jsonPath: $.cHBookDtls.applicationDocuments.*.active
+          - jsonPath: $.booking.applicationDocuments.*.active
 
-          - jsonPath: $.cHBookDtls.applicationDocuments.*.documentType
+          - jsonPath: $.booking.applicationDocuments.*.documentType
 
-          - jsonPath: $.cHBookDtls.applicationDocuments.*.fileStoreId
+          - jsonPath: $.booking.applicationDocuments.*.fileStoreId
 
-          - jsonPath: $.cHBookDtls.auditDetails.lastModifiedBy
+          - jsonPath: $.booking.auditDetails.lastModifiedBy
 
-          - jsonPath: $.cHBookDtls.auditDetails.lastModifiedTime
+          - jsonPath: $.booking.auditDetails.lastModifiedTime
           
  - version: 1.0
    description: Update CHB details workflow
@@ -178,27 +178,27 @@ serviceMaps:
    queryMaps:
 
        - query: UPDATE eg_obm_chb_dtls SET approveddate = ?, action = ?, status = ?,  lastmodifiedby = ?,  lastmodifiedtime = ? WHERE id=?;
-         basePath: cHBookDtls
+         basePath: booking
          jsonMaps:
-          - jsonPath: $.cHBookDtls.approvedDate
+          - jsonPath: $.booking.approvedDate
 
-          - jsonPath: $.cHBookDtls.action
+          - jsonPath: $.booking.action
 
-          - jsonPath: $.cHBookDtls.status
+          - jsonPath: $.booking.status
 
-          - jsonPath: $.cHBookDtls.auditDetails.lastModifiedBy
+          - jsonPath: $.booking.auditDetails.lastModifiedBy
 
-          - jsonPath: $.cHBookDtls.auditDetails.lastModifiedTime
+          - jsonPath: $.booking.auditDetails.lastModifiedTime
 
-          - jsonPath: $.cHBookDtls.id
+          - jsonPath: $.booking.id
 
 
        - query: UPDATE eg_obm_chb_bank_dtls SET lastmodifiedby = ?,  lastmodifiedtime = ? WHERE id = ?;
-         basePath: cHBookDtls
+         basePath: booking
          jsonMaps:
 
-          - jsonPath: $.cHBookDtls.auditDetails.lastModifiedBy
+          - jsonPath: $.booking.auditDetails.lastModifiedBy
 
-          - jsonPath: $.cHBookDtls.auditDetails.lastModifiedTime
+          - jsonPath: $.booking.auditDetails.lastModifiedTime
 
-          - jsonPath: $.cHBookDtls.bankDetails.id
+          - jsonPath: $.booking.bankDetails.id
