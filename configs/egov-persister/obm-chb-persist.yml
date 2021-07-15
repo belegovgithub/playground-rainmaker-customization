@@ -7,7 +7,7 @@ serviceMaps:
    isTransaction: true
    queryMaps:
 
-       - query: INSERT INTO eg_obm_chb_dtls(id, accountid, hallid, purpose, category, tenantid, fromdate, todate, applicationnumber, applicationdate, action, status, createdby, lastmodifiedby, createdtime, lastmodifiedtime, approveddate) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+       - query: INSERT INTO eg_obm_chb_dtls(id, accountid, hallid, purpose, category, purposedescription, residenttypeid, timeslotid, tenantid, fromdate, todate, applicationnumber, applicationdate, action, status, createdby, lastmodifiedby, createdtime, lastmodifiedtime, approveddate) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
          basePath: cHBookDtls
          jsonMaps:
           - jsonPath: $.cHBookDtls.id
@@ -20,6 +20,12 @@ serviceMaps:
 
           - jsonPath: $.cHBookDtls.category
 
+          - jsonPath: $.cHBookDtls.purposeDescription
+
+          - jsonPath: $.cHBookDtls.residentTypeId
+          
+          - jsonPath: $.cHBookDtls.timeSlotId
+          
           - jsonPath: $.cHBookDtls.tenantId
 
           - jsonPath: $.cHBookDtls.fromDate
@@ -91,3 +97,108 @@ serviceMaps:
           - jsonPath: $.cHBookDtls.auditDetails.createdTime
 
           - jsonPath: $.cHBookDtls.auditDetails.lastModifiedTime
+
+ - version: 1.0
+   description: Update CHB details
+   fromTopic: update-obm-chb
+   isTransaction: true
+   queryMaps:
+
+       - query: UPDATE eg_obm_chb_dtls SET approveddate = ?, action = ?, status = ?,  lastmodifiedby = ?,  lastmodifiedtime = ? WHERE id=?;
+         basePath: cHBookDtls
+         jsonMaps:
+          - jsonPath: $.cHBookDtls.approvedDate
+
+          - jsonPath: $.cHBookDtls.action
+
+          - jsonPath: $.cHBookDtls.status
+
+          - jsonPath: $.cHBookDtls.auditDetails.lastModifiedBy
+
+          - jsonPath: $.cHBookDtls.auditDetails.lastModifiedTime
+
+          - jsonPath: $.cHBookDtls.id
+          
+
+       - query: UPDATE eg_obm_chb_bank_dtls SET accountholdername, accountnumber, nameofbank, ifsccode, accounttype, lastmodifiedby = ?,  lastmodifiedtime = ? WHERE id = ?;
+         basePath: cHBookDtls.bankDetails
+         jsonMaps:
+          - jsonPath: $.cHBookDtls.bankDetails.accountHolderName
+
+          - jsonPath: $.cHBookDtls.bankDetails.accountNumber          
+
+          - jsonPath: $.cHBookDtls.bankDetails.nameOfBank
+
+          - jsonPath: $.cHBookDtls.bankDetails.ifscCode
+
+          - jsonPath: $.cHBookDtls.bankDetails.accountType
+
+          - jsonPath: $.cHBookDtls.auditDetails.lastModifiedBy
+
+          - jsonPath: $.cHBookDtls.auditDetails.lastModifiedTime
+
+          - jsonPath: $.cHBookDtls.bankDetails.id
+          
+          
+       - query: INSERT INTO eg_obm_chb_applicationdocument( id, active, documenttype, filestoreid, chbdtlid, createdby, lastmodifiedby, createdtime, lastmodifiedtime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) ON CONFLICT (id) DO UPDATE SET active = ?, documenttype =?, filestoreid =?,lastmodifiedby =?, lastmodifiedtime =?;
+         basePath: cHBookDtls.applicationDocuments.*
+         jsonMaps:
+          - jsonPath: $.cHBookDtls.applicationDocuments.*.id
+
+          - jsonPath: $.cHBookDtls.applicationDocuments.*.active
+
+          - jsonPath: $.cHBookDtls.applicationDocuments.*.documentType
+
+          - jsonPath: $.cHBookDtls.applicationDocuments.*.fileStoreId
+
+          - jsonPath: $.cHBookDtls.id
+
+          - jsonPath: $.cHBookDtls.auditDetails.createdBy
+
+          - jsonPath: $.cHBookDtls.auditDetails.lastModifiedBy
+
+          - jsonPath: $.cHBookDtls.auditDetails.createdTime
+
+          - jsonPath: $.cHBookDtls.auditDetails.lastModifiedTime
+
+          - jsonPath: $.cHBookDtls.applicationDocuments.*.active
+
+          - jsonPath: $.cHBookDtls.applicationDocuments.*.documentType
+
+          - jsonPath: $.cHBookDtls.applicationDocuments.*.fileStoreId
+
+          - jsonPath: $.cHBookDtls.auditDetails.lastModifiedBy
+
+          - jsonPath: $.cHBookDtls.auditDetails.lastModifiedTime
+          
+ - version: 1.0
+   description: Update CHB details workflow
+   fromTopic: update-obm-chb-workflow
+   isTransaction: true
+   queryMaps:
+
+       - query: UPDATE eg_obm_chb_dtls SET approveddate = ?, action = ?, status = ?,  lastmodifiedby = ?,  lastmodifiedtime = ? WHERE id=?;
+         basePath: cHBookDtls
+         jsonMaps:
+          - jsonPath: $.cHBookDtls.approvedDate
+
+          - jsonPath: $.cHBookDtls.action
+
+          - jsonPath: $.cHBookDtls.status
+
+          - jsonPath: $.cHBookDtls.auditDetails.lastModifiedBy
+
+          - jsonPath: $.cHBookDtls.auditDetails.lastModifiedTime
+
+          - jsonPath: $.cHBookDtls.id
+
+
+       - query: UPDATE eg_obm_chb_bank_dtls SET lastmodifiedby = ?,  lastmodifiedtime = ? WHERE id = ?;
+         basePath: cHBookDtls
+         jsonMaps:
+
+          - jsonPath: $.cHBookDtls.auditDetails.lastModifiedBy
+
+          - jsonPath: $.cHBookDtls.auditDetails.lastModifiedTime
+
+          - jsonPath: $.cHBookDtls.bankDetails.id
