@@ -72,7 +72,7 @@
       "dateRefField": "dataObject.paymentDetails.receiptDate",
       "requestQueryMap": "{\"wardId\" : \"domainObject.ward.name.keyword\",\"module\" : \"dataObject.paymentDetails.businessService.keyword\", \"tenantId\" : \"dataObject.tenantId\"}",
       "indexName": "dss-payment_v2",
-      "aggrQuery": "{\"size\": 0,\"aggs\": {\"AGGR\": {\"filter\": {\"bool\": {\"must\": [{\"term\": {\"dataObject.paymentDetails.businessService.keyword\": \"PT\"}}]}},\"aggs\": {\"trans_per_day\": {\"date_histogram\": {\"field\": \"dataObject.paymentDetails.receiptDate\",\"interval\": \"day\"},\"aggs\": {\"transactions\": {\"value_count\": {\"field\": \"identifier.keyword\"}}}},\"avg_daily_transactions\": {\"avg_bucket\": {\"buckets_path\": \"trans_per_day>transactions\"}}}}}}"
+      "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"dataObject.paymentDetails.businessService.keyword\":\"PT\"}}],\"must_not\":[{\"term\":{\"dataObject.tenantId.keyword\":\"pb.testing\"}},{\"terms\":{\"dataObject.bill.status.keyword\":[\"Cancelled\"]}}]}},\"aggs\":{\"trans_per_day\":{\"date_histogram\":{\"field\":\"dataObject.paymentDetails.receiptDate\",\"interval\":\"day\"},\"aggs\":{\"transactions\":{\"value_count\":{\"field\":\"identifier.keyword\"}}}},\"avg_daily_transactions\":{\"avg_bucket\":{\"buckets_path\":\"trans_per_day>transactions\"}}}}}}"
     }
    ],
    "chartType": "metric",
