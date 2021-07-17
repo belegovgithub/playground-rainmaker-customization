@@ -1701,7 +1701,7 @@ ReportDefinitions:
     source: ws
     wrapper: true
     isMandatory: false
-    searchClause: AND addr.locality = $Wardname
+    searchClause: AND mohallaname = $Wardname
   - name: DueAmount
     label: WS_COMMON_TABLE_COL_DUE_LABEL
     type: string
@@ -1726,7 +1726,7 @@ ReportDefinitions:
     (SUM(CASE WHEN taxheadcode LIKE 'WS_CHARGE' THEN demanddetail.taxamount ELSE 0 END)  + SUM(CASE WHEN taxheadcode LIKE 'WS_TIME_REBATE%' THEN demanddetail.taxamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'WS_TIME_ADHOC_PENALTY' THEN demanddetail.taxamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'WS_TIME_PENALTY' THEN demanddetail.taxamount ELSE 0 END)  +SUM(CASE WHEN taxheadcode LIKE 'WS_ROUND_OFF' THEN demanddetail.taxamount ELSE 0 END) -(SUM(CASE WHEN taxheadcode LIKE 'WS_CHARGE' THEN demanddetail.collectionamount ELSE 0 END)  + SUM(CASE WHEN taxheadcode LIKE 'WS_TIME_REBATE%' THEN demanddetail.collectionamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'WS_TIME_ADHOC_PENALTY' THEN demanddetail.collectionamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'WS_TIME_PENALTY' THEN demanddetail.collectionamount ELSE 0 END)  +SUM(CASE WHEN taxheadcode LIKE 'WS_ROUND_OFF' THEN demanddetail.collectionamount ELSE 0 END) )) as totaldue,
     (CASE WHEN connholder.connname is null THEN poo.name ELSE connholder.connname END) as name ,
     (CASE WHEN connholder.connmobilenumber is null THEN poo.mobilenumber ELSE connholder.connmobilenumber END) as mobilenumber , 
-     addr.doorno as doorno, (SELECT boundary_def.name FROM (VALUES tbl_boundary) AS boundary_def(name,code) where code=addr.locality) as mohallaname 
+     addr.doorno as doorno, (SELECT boundary_def.name FROM (VALUES tbl_boundary) AS boundary_def(name,code) where code=$Wardname) as mohallaname 
     from egbs_demand_v1 demand
     inner join egbs_demanddetail_v1 as demanddetail on demanddetail.demandid= demand.id
     Inner join eg_ws_connection ws on  ws.connectionno=demand.consumercode
