@@ -1695,7 +1695,7 @@ ReportDefinitions:
     total: true
   searchParams:
   - name: Wardname
-    label: Mohalla
+    label: WS_PROP_DETAIL_MOHALLA
     type: singlevaluelist
     pattern: http://egov-location:8080/egov-location/location/v11/boundarys/_search?hierarchyTypeCode=REVENUE&boundaryType=Locality&tenantId=$tenantid|$.TenantBoundary[*].boundary[*].code|$.TenantBoundary[*].boundary[*].name
     source: ws
@@ -1703,11 +1703,11 @@ ReportDefinitions:
     isMandatory: false
     searchClause: AND addr.locality = $Wardname
   - dueamount:
-    label: DueAmount
+    label: WS_COMMON_TABLE_COL_DUE_LABEL
     type: string
     source: ws
     wrapper: true
-    isMandatory: true
+    isMandatory: false
     searchClause: AND DueAmount = $DueAmount
   query: |
     select * from 
