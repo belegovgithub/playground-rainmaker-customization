@@ -1702,7 +1702,7 @@ ReportDefinitions:
     wrapper: true
     isMandatory: false
     searchClause: AND addr.locality = $Wardname
-  - dueamount:
+  - name: DueAmount
     label: WS_COMMON_TABLE_COL_DUE_LABEL
     type: string
     source: ws
