@@ -1704,7 +1704,7 @@ ReportDefinitions:
     searchClause: AND addr.locality = $Wardname
   - dueamount:
     label: DueAmount
-    type: float
+    type: string
     source: ws
     wrapper: true
     isMandatory: true
