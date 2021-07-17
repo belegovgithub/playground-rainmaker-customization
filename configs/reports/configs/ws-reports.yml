@@ -1695,7 +1695,7 @@ ReportDefinitions:
     source: ws
     wrapper: true
     isMandatory: false
-    searchClause: AND totaldue > $DueAmount
+    searchClause: AND totaldue::varchar > $DueAmount
   query: |
     select * from 
     (select initcap(split_part(demand.tenantid, '.', 2)) as tenantid,
