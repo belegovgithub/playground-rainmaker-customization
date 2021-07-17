@@ -1708,7 +1708,7 @@ ReportDefinitions:
     source: ws
     wrapper: true
     isMandatory: false
-    searchClause: AND DueAmount = $DueAmount
+    searchClause: AND dueamount = $DueAmount
   query: |
     select * from 
     (select initcap(split_part(demand.tenantid, '.', 2)) as tenantid,
@@ -1746,4 +1746,4 @@ ReportDefinitions:
       where demand.tenantid LIKE $tenantid  and demand.businessservice ='WS'
     GROUP BY demand.tenantid,demand.consumercode,addr.doorno, poo.name,pt.propertyid,ws.usagecategory,ws.subusagecategory,poo.mobilenumber,connholder.connname,connholder.connmobilenumber,addr.locality,ws.oldconnectionno
     ORDER BY demand.consumercode) t 
-    where totaldue > DueAmount
+    where totaldue > dueamount
