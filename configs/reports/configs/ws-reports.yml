@@ -1607,6 +1607,11 @@ ReportDefinitions:
   additionalConfig:
     print:
       pdfPageSize: "A2"
+  externalService:
+  - entity: $.TenantBoundary[0].boundary
+    apiURL: http://egov-location:8080/egov-location/location/v11/boundarys/_search?hierarchyTypeCode=REVENUE&boundaryType=Locality&tenantId=$tenantId
+    keyOrder: name,code
+    tableName: tbl_boundary
   sourceColumns:
   - name: connectionno
     label: WS_MYCONNECTIONS_CONSUMER_NO
@@ -1637,6 +1642,11 @@ ReportDefinitions:
     label: WS_COMMON_DOOR_NO_LABEL
     type: string
     source: pt
+    total: false
+  - name: mohallaname
+    label: WS_PROP_DETAIL_MOHALLA
+    type: string
+    source: ws
     total: false
   - name: usagetype
     label: WS_COMMON_USAGE_TYPE
@@ -1682,10 +1692,25 @@ ReportDefinitions:
     label: WS_COMMON_TABLE_COL_DUE_LABEL
     type: string
     source: ws
-    total: true  
+    total: true
+  searchParams:
+  - name: Wardname
+    label: Mohalla
+    type: singlevaluelist
+    pattern: http://egov-location:8080/egov-location/location/v11/boundarys/_search?hierarchyTypeCode=REVENUE&boundaryType=Locality&tenantId=$tenantid|$.TenantBoundary[*].boundary[*].code|$.TenantBoundary[*].boundary[*].name
+    source: ws
+    wrapper: true
+    isMandatory: false
+    searchClause: AND addr.locality = $Wardname
+  - dueamount:
+    label: DueAmount
+    type: string
+    source: ws
+    wrapper: true
+    isMandatory: true
+    searchClause: AND DueAmount = $DueAmount
   query: |
-    select * from 
-    (select initcap(split_part(demand.tenantid, '.', 2)) as tenantid,
+    select * from (select initcap(split_part(demand.tenantid, '.', 2)) as tenantid,
     demand.consumercode as connectionno,
     pt.propertyid as propertyid,
     ws.oldconnectionno as oldconnectionno,
@@ -1700,7 +1725,7 @@ ReportDefinitions:
     (SUM(CASE WHEN taxheadcode LIKE 'WS_CHARGE' THEN demanddetail.taxamount ELSE 0 END)  + SUM(CASE WHEN taxheadcode LIKE 'WS_TIME_REBATE%' THEN demanddetail.taxamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'WS_TIME_ADHOC_PENALTY' THEN demanddetail.taxamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'WS_TIME_PENALTY' THEN demanddetail.taxamount ELSE 0 END)  +SUM(CASE WHEN taxheadcode LIKE 'WS_ROUND_OFF' THEN demanddetail.taxamount ELSE 0 END) -(SUM(CASE WHEN taxheadcode LIKE 'WS_CHARGE' THEN demanddetail.collectionamount ELSE 0 END)  + SUM(CASE WHEN taxheadcode LIKE 'WS_TIME_REBATE%' THEN demanddetail.collectionamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'WS_TIME_ADHOC_PENALTY' THEN demanddetail.collectionamount ELSE 0 END) +SUM(CASE WHEN taxheadcode LIKE 'WS_TIME_PENALTY' THEN demanddetail.collectionamount ELSE 0 END)  +SUM(CASE WHEN taxheadcode LIKE 'WS_ROUND_OFF' THEN demanddetail.collectionamount ELSE 0 END) )) as totaldue,
     (CASE WHEN connholder.connname is null THEN poo.name ELSE connholder.connname END) as name ,
     (CASE WHEN connholder.connmobilenumber is null THEN poo.mobilenumber ELSE connholder.connmobilenumber END) as mobilenumber , 
-     addr.doorno as doorno
+     addr.doorno as doorno, (SELECT boundary_def.name FROM (VALUES tbl_boundary) AS boundary_def(name,code) where code=addr.locality) as mohallaname 
     from egbs_demand_v1 demand
     inner join egbs_demanddetail_v1 as demanddetail on demanddetail.demandid= demand.id
     Inner join eg_ws_connection ws on  ws.connectionno=demand.consumercode
@@ -1718,6 +1743,5 @@ ReportDefinitions:
       INNER JOIN eg_user wsuser ON wsuser.uuid = connholder.userid group by connectionid)
       connholder ON connholder.connectionid = ws.id
       where demand.tenantid LIKE $tenantid  and demand.businessservice ='WS'
-  GROUP BY demand.tenantid,demand.consumercode,addr.doorno, poo.name,pt.propertyid,ws.usagecategory,ws.subusagecategory,poo.mobilenumber,connholder.connname,connholder.connmobilenumber,ws.oldconnectionno
-  ORDER BY demand.consumercode) t 
-  where totaldue > 3000
+  GROUP BY demand.tenantid,demand.consumercode,addr.doorno, poo.name,pt.propertyid,ws.usagecategory,ws.subusagecategory,poo.mobilenumber,connholder.connname,connholder.connmobilenumber,addr.locality,ws.oldconnectionno
+  ORDER BY demand.consumercode) t where totaldue > DueAmount
