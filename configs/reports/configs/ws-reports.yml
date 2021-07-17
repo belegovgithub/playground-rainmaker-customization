@@ -1745,4 +1745,4 @@ ReportDefinitions:
       connholder ON connholder.connectionid = ws.id
       where demand.tenantid LIKE $tenantid  and demand.businessservice ='WS'
     GROUP BY demand.tenantid,demand.consumercode,addr.doorno, poo.name,pt.propertyid,ws.usagecategory,ws.subusagecategory,poo.mobilenumber,connholder.connname,connholder.connmobilenumber,addr.locality,ws.oldconnectionno
-    ORDER BY demand.consumercode) td
+    ORDER BY demand.consumercode) td WHERE tenantid LIKE $tenantid  
