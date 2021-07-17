@@ -1700,7 +1700,7 @@ ReportDefinitions:
     source: ws
     wrapper: true
     isMandatory: false
-    searchClause: AND totaldue::varchar > $DueAmount
+    searchClause: AND totaldue > cast($DueAmount as FLOAT) 
   query: |
     select * from 
     (select initcap(split_part(demand.tenantid, '.', 2)) as tenantid,
