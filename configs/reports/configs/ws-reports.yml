@@ -1702,6 +1702,13 @@ ReportDefinitions:
     wrapper: true
     isMandatory: false
     searchClause: AND addr.locality = $Wardname
+  - name: DueAmount
+    label: WS_COMMON_TABLE_COL_DUE_LABEL
+    type: string
+    source: ws
+    wrapper: true
+    isMandatory: true
+    searchClause: AND totaldue > $DueAmount
   query: |
     select * from 
     (select initcap(split_part(demand.tenantid, '.', 2)) as tenantid,
@@ -1738,4 +1745,4 @@ ReportDefinitions:
       connholder ON connholder.connectionid = ws.id
       where demand.tenantid LIKE $tenantid  and demand.businessservice ='WS'
     GROUP BY demand.tenantid,demand.consumercode,addr.doorno, poo.name,pt.propertyid,ws.usagecategory,ws.subusagecategory,poo.mobilenumber,connholder.connname,connholder.connmobilenumber,addr.locality,ws.oldconnectionno
-    ORDER BY demand.consumercode) td WHERE totaldue > $DueAmount 
+    ORDER BY demand.consumercode) td WHERE tenantid LIKE CONCAT('pb.',LOWER($tenantid)) 
